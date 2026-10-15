@@ -1,0 +1,11 @@
+node_modules/
+dist/
+site/
+test-results/
+playwright-report/
+.readme-examples/
+.env*
+.DS_Store
+*.tgz
+data-sources/raw/
+docs/RESUME.md

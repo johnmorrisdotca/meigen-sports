@@ -1,0 +1,159 @@
+[
+  {
+    "id": "wikidata",
+    "status": "eligible-and-seeded",
+    "seed_kind": "history",
+    "data_licence": "CC0-1.0",
+    "code_licence": "Not importing Wikibase code; API software licence does not control structured facts.",
+    "primary_urls": [
+      "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "https://www.wikidata.org/wiki/Wikidata:Data_access",
+      "https://www.wikidata.org/wiki/Wikidata:For_developers",
+      "https://www.mediawiki.org/wiki/Wikimedia_APIs/Access_policy",
+      "https://foundation.wikimedia.org/wiki/Policy:Wikimedia_Foundation_User-Agent_Policy"
+    ],
+    "acquisition": "Named User-Agent with public contact; official API/entity JSON; one Wikimedia request at a time, >=1.1 seconds between downloads; cache raw bytes, revisions, SHA-256; respect Retry-After and stop on limits. API action requests with maxlag=5 returned lag errors; after delayed retry also lagged, official entity JSON endpoint used for the small curated sample; no concurrency or identity rotation. For growth use available dumps/existing DS1 harvest before adding network requests.",
+    "collection_recipe": "Curate sports-event QIDs, use nondeprecated/preferred exact Gregorian day P585 or P580/P582, retain statement GUID and entity revision. Original factual captions only. Store source P710 participants/P1346 winner/P361 parent/P641 sport as relation IDs; no name-only identity joins. Mark ceremony versus event-period date differences.",
+    "exclusions": [
+      "No P569 birthdays or sensitive person properties in this seed.",
+      "No article prose, pictures, quotation texts, or automatic day assignment from a year/month.",
+      "No deprecated/conflicting/uncertain dates; no quote attribution inferred from an item name."
+    ],
+    "sourceId": "wikidata",
+    "snapshot": {
+      "status": "active",
+      "capturedAt": "2026-10-15T04:45:12.945841+00:00",
+      "coverageStart": "1896-04-06",
+      "coverageEnd": "2024-08-11"
+    },
+    "lastUpdated": null,
+    "lastUpdatedNote": "Per-record upstream revisions and capture times are retained; no unsupported project-wide update time is asserted.",
+    "lifecycleEvidence": "https://www.wikidata.org/wiki/Wikidata:For_developers",
+    "lifecyclePolicy": "Historical snapshot or discontinued status never by itself makes rights-cleared history unusable. Consumer source filtering is independent of record type; rights and publication review are separate."
+  },
+  {
+    "id": "gitenberg-dwight",
+    "status": "eligible-and-seeded",
+    "seed_kind": "quote",
+    "primary_urls": [
+      "https://www.gutenberg.org/ebooks/58137",
+      "https://github.com/GITenberg/Lawn-tennis_58137",
+      "https://www.gutenberg.org/policy/permission",
+      "https://www.gutenberg.org/policy/license.html",
+      "https://www.gutenberg.org/policy/robot_access.html"
+    ],
+    "data_licence": "LicenseRef-Public-Domain-Text; Gutenberg trademark/distribution notices retained, not MIT or a new CC0 grant over third-party text.",
+    "code_licence": "No wrapper code imported. Mirror LICENSE is Gutenberg licence.",
+    "authorship": "James Dwight; original title/copyright page says 1886, By James Dwight. Mirror metadata records 1852–1917.",
+    "territorial_basis": "US public-domain notice and pre-1931 publication; Canada term already expired before 2022 extension; UK life+70 expired. No assertion of worldwide public domain.",
+    "acquisition": "Pinned GITenberg commit ad40f048da5472929a0ab22b2ce0cfd741aff53e, 58137-0.txt; direct GitHub raw file plus metadata and complete LICENSE, one request at a time. Do not crawl Gutenberg website; its approved robot/mirror methods apply for future direct acquisition.",
+    "collection_recipe": "Select continuous passages only from authored chapters, whitespace normalization only; store book/author ID, publication year, section, raw line start/end, pinned file URL and checksum. Keep ebook producer credits and full distribution notices; do not publish ads, images, appended editorial material, or infer utterance dates.",
+    "exclusions": [
+      "No claims of broad popularity/fame from inclusion.",
+      "No modern advice endorsement; historical language retained."
+    ],
+    "sourceId": "gitenberg",
+    "snapshot": {
+      "status": "snapshot",
+      "revision": "ad40f048da5472929a0ab22b2ce0cfd741aff53e",
+      "capturedAt": "2026-10-15T04:43:06.463016+00:00"
+    },
+    "publicationYear": 1886,
+    "coverageNote": "Publication year only; quote utterance dates are unknown. No exact date coverage is inferred.",
+    "lastUpdated": null,
+    "lastUpdatedNote": "Original edition publication year is known; mirror maintenance status is not inferred from its pinned commit.",
+    "lifecyclePolicy": "Historical snapshot or discontinued status never by itself makes rights-cleared history unusable. Consumer source filtering is independent of record type; rights and publication review are separate."
+  },
+  {
+    "id": "gitenberg-camp",
+    "status": "eligible-and-seeded",
+    "seed_kind": "quote",
+    "primary_urls": [
+      "https://www.gutenberg.org/ebooks/39743",
+      "https://github.com/GITenberg/American-Football_39743",
+      "https://www.loc.gov/resource/gdcmassbookdig.americanfootball01camp/"
+    ],
+    "data_licence": "LicenseRef-Public-Domain-Text; preserve original Gutenberg notices.",
+    "code_licence": "No wrapper code imported.",
+    "authorship": "Walter Camp; original title/copyright page 1891, Harper & Brothers; author metadata 1859–1925.",
+    "territorial_basis": "US public-domain notice; Canada term expired before 2022 extension; UK life+70 expired.",
+    "acquisition": "Pinned GITenberg commit 8f87c776e77fba95ecf79049714f6dccecfe874b, 39743-8.txt plus metadata and complete LICENSE.",
+    "collection_recipe": "Football tactics/teamwork passages in authored chapters. Exact source line provenance and whitespace-only normalized text. Unknown utterance date stays null.",
+    "exclusions": [
+      "Training/diet/health passages not selected.",
+      "Historical rules are not represented as current football rules.",
+      "No speeches attributed to players from editorial narrative."
+    ],
+    "sourceId": "gitenberg",
+    "snapshot": {
+      "status": "snapshot",
+      "revision": "8f87c776e77fba95ecf79049714f6dccecfe874b",
+      "capturedAt": "2026-10-15T04:43:14.388700+00:00"
+    },
+    "publicationYear": 1891,
+    "coverageNote": "Publication year only; quote utterance dates are unknown. No exact date coverage is inferred.",
+    "lastUpdated": null,
+    "lastUpdatedNote": "Original edition publication year is known; mirror maintenance status is not inferred from its pinned commit.",
+    "lifecyclePolicy": "Historical snapshot or discontinued status never by itself makes rights-cleared history unusable. Consumer source filtering is independent of record type; rights and publication review are separate."
+  },
+  {
+    "id": "gitenberg-pindar",
+    "status": "eligible-and-seeded",
+    "seed_kind": "quote",
+    "primary_urls": [
+      "https://www.gutenberg.org/ebooks/10717",
+      "https://github.com/GITenberg/The-Extant-Odes-of-Pindar--13-Translated-with-Introduction-and-Short-Notes-by-Ernest-Myers_10717"
+    ],
+    "data_licence": "LicenseRef-Public-Domain-Text; original Greek and the selected historical English translation are public domain in reviewed territories; preserve Gutenberg notices.",
+    "code_licence": "No wrapper code imported.",
+    "authorship": "Pindar is the poet, not the athlete who won the event. Translation: Ernest Myers (1844–1921). Original edition page: 1904 reprint with corrections, translation first printed 1874. Source metadata disagrees with modern approximate Pindar life dates; no precise ancient personal dates published.",
+    "territorial_basis": "US public-domain notice; 1904 text and translator died 1921; Canada and UK terms expired.",
+    "acquisition": "Pinned commit 939f977a3c19ecccb5e8e27b3d1ab0837212db50, 10717-8.txt, metadata and complete LICENSE.",
+    "collection_recipe": "Select ode body only, not the translator introduction or section commentary; retain author and translator separately, source edition and exact location. Boxing and wrestling context from explicit ode headings; Olympic versus Pythian/Nemean context stays distinct.",
+    "exclusions": [
+      "No invented translation or quotation attributed to named winning athlete.",
+      "No inferred modern calendar date for ancient victories."
+    ],
+    "sourceId": "gitenberg",
+    "snapshot": {
+      "status": "snapshot",
+      "revision": "939f977a3c19ecccb5e8e27b3d1ab0837212db50",
+      "capturedAt": "2026-10-15T04:44:38.441801+00:00"
+    },
+    "publicationYear": 1904,
+    "coverageNote": "Publication year only; quote utterance dates are unknown. No exact date coverage is inferred.",
+    "lastUpdated": null,
+    "lastUpdatedNote": "Original edition publication year is known; mirror maintenance status is not inferred from its pinned commit.",
+    "lifecyclePolicy": "Historical snapshot or discontinued status never by itself makes rights-cleared history unusable. Consumer source filtering is independent of record type; rights and publication review are separate."
+  },
+  {
+    "id": "openfootball-worldcup",
+    "status": "eligible-and-seeded",
+    "seed_kind": "history",
+    "primary_urls": [
+      "https://github.com/openfootball/worldcup.json",
+      "https://github.com/openfootball/worldcup.json/blob/master/LICENSE.md"
+    ],
+    "data_licence": "CC0-1.0 explicitly in repository data licence.",
+    "code_licence": "Repository dedicated CC0; no program code imported.",
+    "acquisition": "Pinned commit 516d3825c3bd23fdc298c4014e84bde78f2d4965, 2022/worldcup.json plus LICENSE.md and README.md. No key, scraping, remote calls by consumers, or third-party score API.",
+    "collection_recipe": "All 64 2022 tournament matches with dates, round, team labels and scores; immutable source path and JSON pointer, sha256. Maintain full-time, extra-time and penalty scores separately. Source has mixed score arrays/objects, normalize both. Do not assign timezone to naive times; this seed uses dates only.",
+    "exclusions": [
+      "No player/club identity join on a name.",
+      "No photos, logos or article text.",
+      "No need to acquire 2026 or live data for this historical seed."
+    ],
+    "sourceId": "openfootball",
+    "snapshot": {
+      "status": "snapshot",
+      "capturedAt": "2026-10-15T04:46:05.395655+00:00",
+      "coverageStart": "2022-11-20",
+      "coverageEnd": "2022-12-18",
+      "revision": "516d3825c3bd23fdc298c4014e84bde78f2d4965"
+    },
+    "lastUpdated": null,
+    "lastUpdatedNote": "Per-record upstream revisions and capture times are retained; no unsupported project-wide update time is asserted.",
+    "lifecycleEvidence": "Pinned 2022 World Cup corpus, not a claim that its upstream repository is discontinued.",
+    "lifecyclePolicy": "Historical snapshot or discontinued status never by itself makes rights-cleared history unusable. Consumer source filtering is independent of record type; rights and publication review are separate."
+  }
+]

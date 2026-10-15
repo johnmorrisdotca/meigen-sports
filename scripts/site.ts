@@ -1,0 +1,11 @@
+import { cpSync, mkdirSync, rmSync, writeFileSync, readFileSync } from "node:fs";
+import { build } from "esbuild";
+import { renderIndex, renderSources } from "./page.ts";
+rmSync("site", { recursive: true, force: true }); mkdirSync("site", { recursive: true });
+writeFileSync("site/index.html", renderIndex());
+for (const file of ["family.css", "site.css"]) cpSync(`demo/${file}`, `site/${file}`);
+cpSync("data", "site/data", { recursive: true }); cpSync("LICENSES", "site/LICENSES", { recursive: true });
+writeFileSync("site/.nojekyll", "");
+writeFileSync("site/sources.html", renderSources(readFileSync("NOTICE.md", "utf8")));
+await build({ entryPoints: ["demo/demo.ts"], outfile: "site/demo.js", bundle: true, format: "esm", target: "es2022", minify: true });
+console.log("Built the family demo and versioned static feed into site/.");
