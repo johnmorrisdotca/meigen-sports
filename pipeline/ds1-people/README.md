@@ -1,8 +1,7 @@
 # DS1 people from meigen-sports (hand-off)
 
-English: copy these files into spx-stats, load the CSV on DS1, run the build, then
-release the small core tables. Japanese: このフォルダの SQL を spx-stats にコピーし、
-DS1 で CSV を読み、215 を実行してから core の小さな表だけをリリースする。
+Copy these files into spx-stats, load the CSV on DS1, run the build, then
+release the small core tables.
 
 **Do not apply from this worktree with `ds1-apply.sh` unless you are the coordinating
 session.** Agents tested on scratch Postgres only (container `spx-meigen-people-scratch`,

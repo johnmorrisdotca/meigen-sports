@@ -4,7 +4,7 @@
 
 正本は [`data-sources/priority-athletes.csv`](../data-sources/priority-athletes.csv) です。あとのビルドは、これらの行を先に読みます。名簿は **1,000 人**です。John の重複なしの名前が先です。1,000 に足りない分は、次の順で足します（Wikipedia CC BY-SA / Wikidata CC0。NHL の端点、ESPN、Sports Reference は使いません）:
 
-1. スタンレー・カップの決勝点・シリーズを決めた得点者（英語版「List of Stanley Cup champions」の Winning goal 欄）。
+1. スタンレー・カップの決勝点・シリーズを決めた得点者（英語版『`List of Stanley Cup champions`』の `Winning goal` 欄）。
 2. 野球の MVP（ア・リーグ / ナ・リーグ）、著名な本塁打打者、ホームランダービー優勝者。
 3. 扱う競技の、悪名または象徴として広く知られる人物（出典のある事実だけ。噂、民族、宗教、健康、性、家族、政治は書かない）。
 4. それでも足りなければ殿堂・賞の名簿。
