@@ -55,6 +55,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1930/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -114,6 +115,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1930/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -173,6 +175,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1930/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -232,6 +235,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1930/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -291,6 +295,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1930/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -350,6 +355,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1930/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -409,6 +415,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1930/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -468,6 +475,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1930/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -527,6 +535,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1930/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -586,6 +595,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1930/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -645,6 +655,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1930/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -704,6 +715,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1930/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -763,6 +775,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1930/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -822,6 +835,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1930/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -881,6 +895,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1930/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -940,6 +955,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1930/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -999,6 +1015,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1930/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -1058,6 +1075,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1930/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -1117,6 +1135,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1934/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -1176,6 +1195,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1934/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -1235,6 +1255,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1934/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -1294,6 +1315,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1934/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -1353,6 +1375,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1934/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -1412,6 +1435,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1934/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -1471,6 +1495,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1934/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -1530,6 +1555,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1934/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -1589,6 +1615,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1934/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -1648,6 +1675,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1934/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -1707,6 +1735,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1934/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -1766,6 +1795,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1934/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -1825,6 +1855,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1934/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -1884,6 +1915,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1934/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -1943,6 +1975,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1934/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -2002,6 +2035,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1934/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -2061,6 +2095,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1934/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -2120,6 +2155,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1938/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -2179,6 +2215,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1938/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -2238,6 +2275,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1938/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -2297,6 +2335,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1938/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -2356,6 +2395,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1938/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -2415,6 +2455,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1938/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -2474,6 +2515,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1938/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -2533,6 +2575,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1938/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -2592,6 +2635,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1938/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -2651,6 +2695,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1938/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -2710,6 +2755,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1938/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -2769,6 +2815,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1938/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -2828,6 +2875,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1938/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -2887,6 +2935,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1938/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -2946,6 +2995,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1938/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -3005,6 +3055,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1938/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -3064,6 +3115,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1938/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -3123,6 +3175,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1938/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -3182,6 +3235,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1950/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -3241,6 +3295,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1950/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -3300,6 +3355,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1950/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -3359,6 +3415,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1950/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -3418,6 +3475,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1950/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -3477,6 +3535,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1950/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -3536,6 +3595,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1950/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -3595,6 +3655,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1950/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -3654,6 +3715,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1950/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -3713,6 +3775,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1950/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -3772,6 +3835,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1950/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -3831,6 +3895,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1950/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -3890,6 +3955,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1950/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -3949,6 +4015,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1950/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -4008,6 +4075,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1950/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -4067,6 +4135,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1950/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -4126,6 +4195,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1950/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -4185,6 +4255,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1950/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -4244,6 +4315,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1950/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -4303,6 +4375,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1950/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -4362,6 +4435,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1950/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -4421,6 +4495,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1950/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -4480,6 +4555,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1954/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -4539,6 +4615,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1954/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -4598,6 +4675,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1954/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -4657,6 +4735,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1954/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -4716,6 +4795,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1954/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -4775,6 +4855,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1954/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -4834,6 +4915,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1954/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -4893,6 +4975,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1954/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -4952,6 +5035,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1954/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -5011,6 +5095,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1954/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -5070,6 +5155,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1954/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -5129,6 +5215,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1954/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -5188,6 +5275,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1954/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -5247,6 +5335,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1954/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -5306,6 +5395,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1954/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -5365,6 +5455,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1954/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -5424,6 +5515,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1954/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -5483,6 +5575,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1954/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -5542,6 +5635,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1954/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -5601,6 +5695,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1954/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -5660,6 +5755,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1954/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -5719,6 +5815,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1954/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -5778,6 +5875,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1954/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -5837,6 +5935,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1954/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -5896,6 +5995,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1954/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -5955,6 +6055,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1954/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -6014,6 +6115,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1958/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -6073,6 +6175,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1958/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -6132,6 +6235,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1958/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -6191,6 +6295,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1958/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -6250,6 +6355,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1958/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -6309,6 +6415,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1958/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -6368,6 +6475,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1958/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -6427,6 +6535,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1958/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -6486,6 +6595,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1958/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -6545,6 +6655,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1958/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -6604,6 +6715,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1958/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -6663,6 +6775,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1958/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -6722,6 +6835,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1958/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -6781,6 +6895,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1958/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -6840,6 +6955,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1958/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -6899,6 +7015,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1958/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -6958,6 +7075,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1958/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -7017,6 +7135,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1958/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -7076,6 +7195,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1958/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -7135,6 +7255,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1958/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -7194,6 +7315,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1958/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -7253,6 +7375,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1958/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -7312,6 +7435,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1958/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -7371,6 +7495,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1958/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -7430,6 +7555,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1958/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -7489,6 +7615,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1958/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -7548,6 +7675,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1958/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -7607,6 +7735,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1958/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -7666,6 +7795,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1958/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -7725,6 +7855,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1958/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -7784,6 +7915,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1958/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -7843,6 +7975,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1958/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -7902,6 +8035,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1958/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -7961,6 +8095,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1958/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -8020,6 +8155,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1958/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -8079,6 +8215,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1962/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -8138,6 +8275,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1962/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -8197,6 +8335,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1962/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -8256,6 +8395,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1962/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -8315,6 +8455,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1962/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -8374,6 +8515,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1962/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -8433,6 +8575,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1962/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -8492,6 +8635,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1962/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -8551,6 +8695,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1962/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -8610,6 +8755,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1962/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -8669,6 +8815,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1962/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -8728,6 +8875,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1962/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -8787,6 +8935,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1962/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -8846,6 +8995,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1962/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -8905,6 +9055,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1962/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -8964,6 +9115,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1962/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -9023,6 +9175,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1962/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -9082,6 +9235,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1962/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -9141,6 +9295,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1962/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -9200,6 +9355,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1962/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -9259,6 +9415,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1962/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -9318,6 +9475,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1962/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -9377,6 +9535,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1962/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -9436,6 +9595,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1962/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -9495,6 +9655,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1962/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -9554,6 +9715,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1962/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -9613,6 +9775,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1962/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -9672,6 +9835,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1962/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -9731,6 +9895,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1962/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -9790,6 +9955,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1962/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -9849,6 +10015,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1962/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -9908,6 +10075,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1962/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -9967,6 +10135,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1966/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -10026,6 +10195,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1966/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -10085,6 +10255,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1966/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -10144,6 +10315,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1966/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -10203,6 +10375,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1966/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -10262,6 +10435,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1966/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -10321,6 +10495,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1966/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -10380,6 +10555,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1966/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -10439,6 +10615,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1966/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -10498,6 +10675,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1966/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -10557,6 +10735,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1966/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -10616,6 +10795,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1966/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -10675,6 +10855,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1966/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -10734,6 +10915,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1966/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -10793,6 +10975,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1966/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -10852,6 +11035,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1966/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -10911,6 +11095,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1966/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -10970,6 +11155,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1966/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -11029,6 +11215,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1966/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -11088,6 +11275,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1966/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -11147,6 +11335,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1966/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -11206,6 +11395,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1966/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -11265,6 +11455,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1966/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -11324,6 +11515,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1966/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -11383,6 +11575,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1966/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -11442,6 +11635,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1966/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -11501,6 +11695,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1966/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -11560,6 +11755,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1966/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -11619,6 +11815,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1966/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -11678,6 +11875,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1966/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -11737,6 +11935,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1966/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -11796,6 +11995,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1966/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -11855,6 +12055,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1970/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -11914,6 +12115,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1970/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -11973,6 +12175,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1970/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -12032,6 +12235,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1970/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -12091,6 +12295,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1970/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -12150,6 +12355,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1970/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -12209,6 +12415,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1970/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -12268,6 +12475,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1970/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -12327,6 +12535,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1970/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -12386,6 +12595,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1970/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -12445,6 +12655,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1970/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -12504,6 +12715,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1970/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -12563,6 +12775,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1970/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -12622,6 +12835,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1970/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -12681,6 +12895,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1970/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -12740,6 +12955,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1970/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -12799,6 +13015,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1970/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -12858,6 +13075,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1970/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -12917,6 +13135,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1970/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -12976,6 +13195,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1970/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -13035,6 +13255,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1970/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -13094,6 +13315,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1970/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -13153,6 +13375,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1970/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -13212,6 +13435,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1970/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -13271,6 +13495,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1970/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -13330,6 +13555,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1970/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -13389,6 +13615,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1970/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -13448,6 +13675,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1970/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -13507,6 +13735,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1970/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -13566,6 +13795,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1970/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -13625,6 +13855,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1970/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -13684,6 +13915,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1970/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -13743,6 +13975,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -13802,6 +14035,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -13861,6 +14095,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -13920,6 +14155,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -13979,6 +14215,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -14038,6 +14275,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -14097,6 +14335,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -14156,6 +14395,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -14215,6 +14455,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -14274,6 +14515,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -14333,6 +14575,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -14392,6 +14635,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -14451,6 +14695,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -14510,6 +14755,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -14569,6 +14815,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -14628,6 +14875,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -14687,6 +14935,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -14746,6 +14995,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -14805,6 +15055,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -14864,6 +15115,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -14923,6 +15175,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -14982,6 +15235,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -15041,6 +15295,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -15100,6 +15355,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -15159,6 +15415,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -15218,6 +15475,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -15277,6 +15535,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -15336,6 +15595,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -15395,6 +15655,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -15454,6 +15715,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -15513,6 +15775,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -15572,6 +15835,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -15631,6 +15895,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -15690,6 +15955,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -15749,6 +16015,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -15808,6 +16075,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -15867,6 +16135,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -15926,6 +16195,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1974/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -15985,6 +16255,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -16044,6 +16315,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -16103,6 +16375,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -16162,6 +16435,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -16221,6 +16495,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -16280,6 +16555,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -16339,6 +16615,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -16398,6 +16675,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -16457,6 +16735,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -16516,6 +16795,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -16575,6 +16855,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -16634,6 +16915,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -16693,6 +16975,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -16752,6 +17035,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -16811,6 +17095,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -16870,6 +17155,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -16929,6 +17215,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -16988,6 +17275,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -17047,6 +17335,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -17106,6 +17395,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -17165,6 +17455,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -17224,6 +17515,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -17283,6 +17575,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -17342,6 +17635,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -17401,6 +17695,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -17460,6 +17755,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -17519,6 +17815,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -17578,6 +17875,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -17637,6 +17935,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -17696,6 +17995,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -17755,6 +18055,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -17814,6 +18115,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -17873,6 +18175,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -17932,6 +18235,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -17991,6 +18295,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -18050,6 +18355,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -18109,6 +18415,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -18168,6 +18475,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1978/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -18227,6 +18535,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -18286,6 +18595,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -18345,6 +18655,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -18404,6 +18715,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -18463,6 +18775,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -18522,6 +18835,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -18581,6 +18895,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -18640,6 +18955,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -18699,6 +19015,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -18758,6 +19075,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -18817,6 +19135,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -18876,6 +19195,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -18935,6 +19255,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -18994,6 +19315,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -19053,6 +19375,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -19112,6 +19435,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -19171,6 +19495,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -19230,6 +19555,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -19289,6 +19615,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -19348,6 +19675,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -19407,6 +19735,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -19466,6 +19795,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -19525,6 +19855,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -19584,6 +19915,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -19643,6 +19975,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -19702,6 +20035,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -19761,6 +20095,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -19820,6 +20155,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -19879,6 +20215,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -19938,6 +20275,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -19997,6 +20335,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -20056,6 +20395,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -20115,6 +20455,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -20174,6 +20515,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -20233,6 +20575,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -20292,6 +20635,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -20351,6 +20695,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -20410,6 +20755,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -20469,6 +20815,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -20528,6 +20875,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -20587,6 +20935,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -20646,6 +20995,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -20705,6 +21055,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -20764,6 +21115,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -20823,6 +21175,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -20882,6 +21235,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -20941,6 +21295,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -21000,6 +21355,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -21059,6 +21415,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -21118,6 +21475,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -21177,6 +21535,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -21236,6 +21595,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1982/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -21295,6 +21655,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -21354,6 +21715,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -21413,6 +21775,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -21472,6 +21835,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -21531,6 +21895,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -21590,6 +21955,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -21649,6 +22015,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -21708,6 +22075,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -21767,6 +22135,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -21826,6 +22195,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -21885,6 +22255,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -21944,6 +22315,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -22003,6 +22375,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -22062,6 +22435,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -22121,6 +22495,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -22180,6 +22555,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -22239,6 +22615,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -22298,6 +22675,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -22357,6 +22735,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -22416,6 +22795,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -22475,6 +22855,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -22534,6 +22915,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -22593,6 +22975,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -22652,6 +23035,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -22711,6 +23095,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -22770,6 +23155,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -22829,6 +23215,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -22888,6 +23275,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -22947,6 +23335,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -23006,6 +23395,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -23065,6 +23455,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -23124,6 +23515,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -23183,6 +23575,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -23242,6 +23635,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -23301,6 +23695,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -23360,6 +23755,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -23419,6 +23815,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -23478,6 +23875,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -23537,6 +23935,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -23596,6 +23995,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -23655,6 +24055,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -23714,6 +24115,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -23773,6 +24175,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -23832,6 +24235,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -23891,6 +24295,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -23950,6 +24355,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -24009,6 +24415,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -24068,6 +24475,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -24127,6 +24535,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -24186,6 +24595,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -24245,6 +24655,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -24304,6 +24715,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -24363,6 +24775,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -24422,6 +24835,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -24481,6 +24895,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -24540,6 +24955,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -24599,6 +25015,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -24658,6 +25075,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -24717,6 +25135,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -24776,6 +25195,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -24835,6 +25255,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -24894,6 +25315,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -24953,6 +25375,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -25012,6 +25435,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -25071,6 +25495,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -25130,6 +25555,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -25189,6 +25615,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -25248,6 +25675,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -25307,6 +25735,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -25366,6 +25795,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -25425,6 +25855,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -25484,6 +25915,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -25543,6 +25975,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -25602,6 +26035,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -25661,6 +26095,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -25720,6 +26155,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -25779,6 +26215,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -25838,6 +26275,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -25897,6 +26335,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -25956,6 +26395,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -26015,6 +26455,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -26074,6 +26515,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -26133,6 +26575,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -26192,6 +26635,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -26251,6 +26695,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -26310,6 +26755,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -26369,6 +26815,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -26428,6 +26875,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -26487,6 +26935,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -26546,6 +26995,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -26605,6 +27055,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -26664,6 +27115,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -26723,6 +27175,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -26782,6 +27235,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -26841,6 +27295,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -26900,6 +27355,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -26959,6 +27415,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -27018,6 +27475,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -27077,6 +27535,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -27136,6 +27595,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -27195,6 +27655,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -27254,6 +27715,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -27313,6 +27775,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -27372,6 +27835,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1990/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -27431,6 +27895,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -27490,6 +27955,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -27549,6 +28015,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -27608,6 +28075,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -27667,6 +28135,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -27726,6 +28195,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -27785,6 +28255,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -27844,6 +28315,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -27903,6 +28375,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -27962,6 +28435,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -28021,6 +28495,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -28080,6 +28555,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -28139,6 +28615,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -28198,6 +28675,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -28257,6 +28735,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -28316,6 +28795,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -28375,6 +28855,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -28434,6 +28915,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -28493,6 +28975,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -28552,6 +29035,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -28611,6 +29095,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -28670,6 +29155,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -28729,6 +29215,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -28788,6 +29275,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -28847,6 +29335,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -28906,6 +29395,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -28965,6 +29455,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -29024,6 +29515,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -29083,6 +29575,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -29142,6 +29635,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -29201,6 +29695,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -29260,6 +29755,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -29319,6 +29815,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -29378,6 +29875,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -29437,6 +29935,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -29496,6 +29995,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -29555,6 +30055,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -29614,6 +30115,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -29673,6 +30175,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -29732,6 +30235,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -29791,6 +30295,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -29850,6 +30355,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -29909,6 +30415,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -29968,6 +30475,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -30027,6 +30535,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -30086,6 +30595,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -30145,6 +30655,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -30204,6 +30715,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -30263,6 +30775,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -30322,6 +30835,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -30381,6 +30895,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -30440,6 +30955,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1994/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -30499,6 +31015,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -30558,6 +31075,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -30617,6 +31135,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -30676,6 +31195,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -30735,6 +31255,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -30794,6 +31315,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -30853,6 +31375,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -30912,6 +31435,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -30971,6 +31495,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -31030,6 +31555,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -31089,6 +31615,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -31148,6 +31675,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -31207,6 +31735,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -31266,6 +31795,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -31325,6 +31855,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -31384,6 +31915,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -31443,6 +31975,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -31502,6 +32035,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -31561,6 +32095,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -31620,6 +32155,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -31679,6 +32215,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -31738,6 +32275,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -31797,6 +32335,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -31856,6 +32395,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -31915,6 +32455,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -31974,6 +32515,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -32033,6 +32575,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -32092,6 +32635,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -32151,6 +32695,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -32210,6 +32755,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -32269,6 +32815,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -32328,6 +32875,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -32387,6 +32935,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -32446,6 +32995,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -32505,6 +33055,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -32564,6 +33115,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -32623,6 +33175,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -32682,6 +33235,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -32741,6 +33295,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -32800,6 +33355,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -32859,6 +33415,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -32918,6 +33475,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -32977,6 +33535,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -33036,6 +33595,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -33095,6 +33655,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -33154,6 +33715,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -33213,6 +33775,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -33272,6 +33835,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -33331,6 +33895,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -33390,6 +33955,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -33449,6 +34015,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -33508,6 +34075,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -33567,6 +34135,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -33626,6 +34195,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -33685,6 +34255,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -33744,6 +34315,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -33803,6 +34375,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -33862,6 +34435,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -33921,6 +34495,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -33980,6 +34555,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -34039,6 +34615,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -34098,6 +34675,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -34157,6 +34735,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -34216,6 +34795,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1998/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -34275,6 +34855,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -34334,6 +34915,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -34393,6 +34975,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -34452,6 +35035,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -34511,6 +35095,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -34570,6 +35155,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -34629,6 +35215,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -34688,6 +35275,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -34747,6 +35335,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -34806,6 +35395,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -34865,6 +35455,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -34924,6 +35515,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -34983,6 +35575,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -35042,6 +35635,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -35101,6 +35695,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -35160,6 +35755,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -35219,6 +35815,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -35278,6 +35875,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -35337,6 +35935,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -35396,6 +35995,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -35455,6 +36055,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -35514,6 +36115,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -35573,6 +36175,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -35632,6 +36235,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -35691,6 +36295,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -35750,6 +36355,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -35809,6 +36415,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -35868,6 +36475,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -35927,6 +36535,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -35986,6 +36595,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -36045,6 +36655,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -36104,6 +36715,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -36163,6 +36775,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -36222,6 +36835,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -36281,6 +36895,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -36340,6 +36955,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -36399,6 +37015,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -36458,6 +37075,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -36517,6 +37135,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -36576,6 +37195,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -36635,6 +37255,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -36694,6 +37315,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -36753,6 +37375,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -36812,6 +37435,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -36871,6 +37495,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -36930,6 +37555,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -36989,6 +37615,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -37048,6 +37675,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -37107,6 +37735,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -37166,6 +37795,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -37225,6 +37855,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -37284,6 +37915,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -37343,6 +37975,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -37402,6 +38035,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -37461,6 +38095,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -37520,6 +38155,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -37579,6 +38215,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -37638,6 +38275,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -37697,6 +38335,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -37756,6 +38395,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -37815,6 +38455,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -37874,6 +38515,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -37933,6 +38575,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -37992,6 +38635,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2002/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -38051,6 +38695,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -38110,6 +38755,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -38169,6 +38815,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -38228,6 +38875,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -38287,6 +38935,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -38346,6 +38995,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -38405,6 +39055,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -38464,6 +39115,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -38523,6 +39175,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -38582,6 +39235,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -38641,6 +39295,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -38700,6 +39355,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -38759,6 +39415,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -38818,6 +39475,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -38877,6 +39535,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -38936,6 +39595,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -38995,6 +39655,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -39054,6 +39715,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -39113,6 +39775,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -39172,6 +39835,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -39231,6 +39895,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -39290,6 +39955,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -39349,6 +40015,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -39408,6 +40075,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -39467,6 +40135,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -39526,6 +40195,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -39585,6 +40255,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -39644,6 +40315,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -39703,6 +40375,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -39762,6 +40435,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -39821,6 +40495,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -39880,6 +40555,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -39939,6 +40615,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -39998,6 +40675,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -40057,6 +40735,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -40116,6 +40795,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -40175,6 +40855,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -40234,6 +40915,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -40293,6 +40975,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -40352,6 +41035,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -40411,6 +41095,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -40470,6 +41155,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -40529,6 +41215,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -40588,6 +41275,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -40647,6 +41335,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -40706,6 +41395,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -40765,6 +41455,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -40824,6 +41515,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -40883,6 +41575,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -40942,6 +41635,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -41001,6 +41695,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -41060,6 +41755,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -41119,6 +41815,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -41178,6 +41875,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -41237,6 +41935,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -41296,6 +41995,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -41355,6 +42055,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -41414,6 +42115,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -41473,6 +42175,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -41532,6 +42235,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -41591,6 +42295,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -41650,6 +42355,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -41709,6 +42415,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -41768,6 +42475,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2006/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -41827,6 +42535,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -41886,6 +42595,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -41945,6 +42655,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -42004,6 +42715,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -42063,6 +42775,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -42122,6 +42835,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -42181,6 +42895,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -42240,6 +42955,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -42299,6 +43015,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -42358,6 +43075,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -42417,6 +43135,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -42476,6 +43195,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -42535,6 +43255,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -42594,6 +43315,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -42653,6 +43375,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -42712,6 +43435,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -42771,6 +43495,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -42830,6 +43555,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -42889,6 +43615,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -42948,6 +43675,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -43007,6 +43735,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -43066,6 +43795,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -43125,6 +43855,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -43184,6 +43915,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -43243,6 +43975,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -43302,6 +44035,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -43361,6 +44095,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -43420,6 +44155,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -43479,6 +44215,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -43538,6 +44275,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -43597,6 +44335,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -43656,6 +44395,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -43715,6 +44455,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -43774,6 +44515,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -43833,6 +44575,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -43892,6 +44635,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -43951,6 +44695,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -44010,6 +44755,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -44069,6 +44815,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -44128,6 +44875,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -44187,6 +44935,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -44246,6 +44995,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -44305,6 +45055,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -44364,6 +45115,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -44423,6 +45175,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -44482,6 +45235,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -44541,6 +45295,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -44600,6 +45355,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -44659,6 +45415,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -44718,6 +45475,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -44777,6 +45535,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -44836,6 +45595,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -44895,6 +45655,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -44954,6 +45715,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -45013,6 +45775,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -45072,6 +45835,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -45131,6 +45895,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -45190,6 +45955,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -45249,6 +46015,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -45308,6 +46075,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -45367,6 +46135,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -45426,6 +46195,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -45485,6 +46255,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -45544,6 +46315,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2010/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -45603,6 +46375,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -45662,6 +46435,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -45721,6 +46495,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -45780,6 +46555,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -45839,6 +46615,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -45898,6 +46675,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -45957,6 +46735,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -46016,6 +46795,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -46075,6 +46855,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -46134,6 +46915,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -46193,6 +46975,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -46252,6 +47035,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -46311,6 +47095,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -46370,6 +47155,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -46429,6 +47215,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -46488,6 +47275,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -46547,6 +47335,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -46606,6 +47395,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -46665,6 +47455,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -46724,6 +47515,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -46783,6 +47575,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -46842,6 +47635,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -46901,6 +47695,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -46960,6 +47755,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -47019,6 +47815,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -47078,6 +47875,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -47137,6 +47935,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -47196,6 +47995,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -47255,6 +48055,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -47314,6 +48115,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -47373,6 +48175,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -47432,6 +48235,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -47491,6 +48295,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -47550,6 +48355,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -47609,6 +48415,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -47668,6 +48475,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -47727,6 +48535,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -47786,6 +48595,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -47845,6 +48655,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -47904,6 +48715,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -47963,6 +48775,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -48022,6 +48835,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -48081,6 +48895,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -48140,6 +48955,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -48199,6 +49015,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -48258,6 +49075,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -48317,6 +49135,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -48376,6 +49195,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -48435,6 +49255,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -48494,6 +49315,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -48553,6 +49375,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -48612,6 +49435,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -48671,6 +49495,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -48730,6 +49555,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -48789,6 +49615,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -48848,6 +49675,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -48907,6 +49735,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -48966,6 +49795,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -49025,6 +49855,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -49084,6 +49915,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -49143,6 +49975,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -49202,6 +50035,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -49261,6 +50095,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -49320,6 +50155,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2014/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -49379,6 +50215,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -49438,6 +50275,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -49497,6 +50335,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -49556,6 +50395,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -49615,6 +50455,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -49674,6 +50515,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -49733,6 +50575,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -49792,6 +50635,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -49851,6 +50695,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -49910,6 +50755,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -49969,6 +50815,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -50028,6 +50875,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -50087,6 +50935,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -50146,6 +50995,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -50205,6 +51055,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -50264,6 +51115,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -50323,6 +51175,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -50382,6 +51235,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -50441,6 +51295,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -50500,6 +51355,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -50559,6 +51415,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -50618,6 +51475,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -50677,6 +51535,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -50736,6 +51595,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -50795,6 +51655,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -50854,6 +51715,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -50913,6 +51775,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -50972,6 +51835,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -51031,6 +51895,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -51090,6 +51955,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -51149,6 +52015,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -51208,6 +52075,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -51267,6 +52135,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -51326,6 +52195,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -51385,6 +52255,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -51444,6 +52315,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -51503,6 +52375,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -51562,6 +52435,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -51621,6 +52495,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -51680,6 +52555,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -51739,6 +52615,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -51798,6 +52675,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -51857,6 +52735,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -51916,6 +52795,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -51975,6 +52855,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -52034,6 +52915,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -52093,6 +52975,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -52152,6 +53035,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -52211,6 +53095,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -52270,6 +53155,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -52329,6 +53215,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -52388,6 +53275,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -52447,6 +53335,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -52506,6 +53395,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -52565,6 +53455,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -52624,6 +53515,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -52683,6 +53575,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -52742,6 +53635,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -52801,6 +53695,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -52860,6 +53755,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -52919,6 +53815,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -52978,6 +53875,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -53037,6 +53935,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -53096,6 +53995,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2018/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -53155,6 +54055,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -53214,6 +54115,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -53273,6 +54175,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -53332,6 +54235,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -53391,6 +54295,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -53450,6 +54355,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -53509,6 +54415,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -53568,6 +54475,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -53627,6 +54535,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -53686,6 +54595,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -53745,6 +54655,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -53804,6 +54715,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -53863,6 +54775,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -53922,6 +54835,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -53981,6 +54895,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -54040,6 +54955,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -54099,6 +55015,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -54158,6 +55075,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -54217,6 +55135,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -54276,6 +55195,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -54335,6 +55255,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -54394,6 +55315,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -54453,6 +55375,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -54512,6 +55435,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -54571,6 +55495,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -54630,6 +55555,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -54689,6 +55615,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -54748,6 +55675,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -54807,6 +55735,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -54866,6 +55795,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -54925,6 +55855,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -54984,6 +55915,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -55043,6 +55975,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -55102,6 +56035,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -55161,6 +56095,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -55220,6 +56155,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -55279,6 +56215,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -55338,6 +56275,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -55397,6 +56335,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -55456,6 +56395,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -55515,6 +56455,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -55574,6 +56515,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -55633,6 +56575,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -55692,6 +56635,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -55751,6 +56695,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -55810,6 +56755,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -55869,6 +56815,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -55928,6 +56875,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -55987,6 +56935,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -56046,6 +56995,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -56105,6 +57055,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -56164,6 +57115,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -56223,6 +57175,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -56282,6 +57235,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -56341,6 +57295,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -56400,6 +57355,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -56459,6 +57415,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -56518,6 +57475,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -56577,6 +57535,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -56636,6 +57595,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -56695,6 +57655,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -56754,6 +57715,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -56813,6 +57775,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -56872,6 +57835,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2022-12-18"
       },
       "attribution": "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+      "rightsReasoning": "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
@@ -56925,6 +57889,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q1127675&oldid=2549675082",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -56978,6 +57943,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q1127675&oldid=2549675082",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -57031,6 +57997,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q1139930&oldid=2549674997",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -57084,6 +58051,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q1139931&oldid=2549675042",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -57137,6 +58105,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q1144500&oldid=2457278429",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -57190,6 +58159,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q1144500&oldid=2457278429",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -57242,6 +58212,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q1271324&oldid=2502435220",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -57295,6 +58266,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q132515&oldid=2551299936",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -57348,6 +58320,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q132515&oldid=2551299936",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -57401,6 +58374,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q1341797&oldid=2502899039",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -57454,6 +58428,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q1341797&oldid=2502899039",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -57507,6 +58482,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q134202&oldid=2538798550",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -57560,6 +58536,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q134202&oldid=2538798550",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -57615,6 +58592,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q181278&oldid=2550177129",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -57670,6 +58648,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q181278&oldid=2550177129",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -57723,6 +58702,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q19672232&oldid=2552885613",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -57776,6 +58756,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q19672232&oldid=2552885613",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -57829,6 +58810,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q24906838&oldid=2520117421",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -57882,6 +58864,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q24906838&oldid=2520117421",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -57935,6 +58918,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q284163&oldid=2547887431",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -57988,6 +58972,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q284163&oldid=2547887431",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -58040,6 +59025,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q287405&oldid=2546265363",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -58092,6 +59078,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q3087660&oldid=2548462827",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -58144,6 +59131,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q35546&oldid=2534182444",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -58197,6 +59185,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q46938&oldid=2529549333",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -58250,6 +59239,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q46938&oldid=2529549333",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -58303,6 +59293,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q476709&oldid=2517937377",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -58356,6 +59347,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q48432&oldid=2555055860",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -58409,6 +59401,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q48432&oldid=2555055860",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -58461,6 +59454,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q50805&oldid=2484199834",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -58513,6 +59507,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q50817&oldid=2484199846",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -58565,6 +59560,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q50892&oldid=2497678129",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -58617,6 +59613,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q597314&oldid=2400787388",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -58669,6 +59666,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q74109398&oldid=2538327784",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -58724,6 +59722,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8080&oldid=2517800872",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -58779,6 +59778,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8080&oldid=2517800872",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -58834,6 +59834,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8088&oldid=2522132431",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -58889,6 +59890,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8088&oldid=2522132431",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -58944,6 +59946,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8098&oldid=2549950209",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -58999,6 +60002,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8098&oldid=2549950209",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -59054,6 +60058,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8111&oldid=2522132443",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -59109,6 +60114,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8111&oldid=2522132443",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -59164,6 +60170,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8118&oldid=2504782818",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -59219,6 +60226,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8118&oldid=2504782818",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -59274,6 +60282,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8128&oldid=2519964162",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -59329,6 +60338,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8128&oldid=2519964162",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -59384,6 +60394,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8132&oldid=2504783141",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -59439,6 +60450,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8132&oldid=2504783141",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -59494,6 +60506,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8138&oldid=2551394550",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -59549,6 +60562,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8138&oldid=2551394550",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -59604,6 +60618,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8143&oldid=2504783342",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -59659,6 +60674,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8143&oldid=2504783342",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -59714,6 +60730,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8150&oldid=2547640242",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -59769,6 +60786,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8150&oldid=2547640242",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -59824,6 +60842,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8403&oldid=2547107089",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -59879,6 +60898,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8403&oldid=2547107089",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -59934,6 +60954,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8407&oldid=2554469891",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -59989,6 +61010,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8407&oldid=2554469891",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -60044,6 +61066,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8411&oldid=2549950404",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -60099,6 +61122,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8411&oldid=2549950404",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -60154,6 +61178,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8415&oldid=2549950546",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -60209,6 +61234,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8415&oldid=2549950546",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -60264,6 +61290,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8420&oldid=2522132361",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -60319,6 +61346,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8420&oldid=2522132361",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -60374,6 +61402,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8429&oldid=2514654870",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -60429,6 +61458,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8429&oldid=2514654870",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -60484,6 +61514,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8438&oldid=2549950629",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -60539,6 +61570,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8438&oldid=2549950629",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -60594,6 +61626,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8444&oldid=2525813294",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -60649,6 +61682,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8444&oldid=2525813294",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -60704,6 +61738,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8450&oldid=2549950759",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -60759,6 +61794,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8450&oldid=2549950759",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -60814,6 +61850,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8456&oldid=2553297093",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -60869,6 +61906,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8456&oldid=2553297093",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -60924,6 +61962,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8470&oldid=2549950892",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -60979,6 +62018,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8470&oldid=2549950892",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -61031,6 +62071,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q847827&oldid=2518713411",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -61086,6 +62127,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8488&oldid=2522132378",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -61141,6 +62183,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8488&oldid=2522132378",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -61196,6 +62239,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8531&oldid=2549951122",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -61251,6 +62295,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8531&oldid=2549951122",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -61306,6 +62351,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8544&oldid=2553275933",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -61361,6 +62407,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8544&oldid=2553275933",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -61416,6 +62463,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8558&oldid=2537805494",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -61471,6 +62519,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8558&oldid=2537805494",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -61526,6 +62575,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8567&oldid=2549951290",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -61581,6 +62631,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8567&oldid=2549951290",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -61636,6 +62687,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8577&oldid=2549951784",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -61691,6 +62743,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8577&oldid=2549951784",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -61746,6 +62799,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8613&oldid=2542325101",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -61801,6 +62855,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q8613&oldid=2542325101",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -61853,6 +62908,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q939560&oldid=2510235662",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -61908,6 +62964,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q9583&oldid=2517795689",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -61963,6 +63020,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q9583&oldid=2517795689",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -62018,6 +63076,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q9652&oldid=2517796472",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -62073,6 +63132,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q9652&oldid=2517796472",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -62128,6 +63188,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q995653&oldid=2550177752",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
@@ -62183,6 +63244,7 @@ export const history: readonly MeigenRecord[] = [
         "coverageEnd": "2024-08-11"
       },
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+      "rightsReasoning": "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q995653&oldid=2550177752",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"

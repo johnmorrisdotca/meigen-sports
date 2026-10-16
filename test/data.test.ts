@@ -8,10 +8,10 @@ import type { FeedManifest, FeedShard, MeigenRecord } from "../src/types.ts";
 const records = [...quotes, ...history];
 
 test("reviewed real source counts and honest calendar coverage", () => {
-  assert.equal(quotes.length, 41);
+  assert.equal(quotes.length, 30);
   assert.equal(quotes.filter((r) => r.source.sourceId === "gitenberg").length, 22);
-  assert.equal(quotes.filter((r) => r.source.sourceId === "wikiquote").length, 19);
-  assert.equal(quotes.filter((r) => r.types.includes("famous-quotes")).length, 19);
+  assert.equal(quotes.filter((r) => r.source.sourceId === "wikiquote").length, 8);
+  assert.equal(quotes.filter((r) => r.types.includes("famous-quotes")).length, 8);
   assert.equal(history.length, 1062);
   assert.equal(history.filter((r) => r.source.sourceId === "wikidata").length, 98);
   assert.equal(history.filter((r) => r.source.sourceId === "openfootball").length, 964);
@@ -33,11 +33,14 @@ test("every source carries original provenance and independent text rights", () 
       assert.match(r.source.url, /^https:\/\/en\.wikiquote\.org\/w\/index\.php\?title=.+&oldid=\d+$/);
       assert.ok(r.source.section);
       assert.ok(r.source.snapshot?.revision);
+      assert.match(r.source.attribution, /quoted words remain with the speaker/);
+      assert.match(r.source.rightsReasoning, /page compilation/);
       continue;
     }
     assert.equal(r.source.licence, "LicenseRef-Public-Domain-Text");
     assert.match(r.source.url, /\/blob\/[a-f0-9]{40}\/[^#]+#L\d+-L\d+$/);
     assert.ok(r.source.publicationYear && r.source.publicationYear <= 1904);
+    assert.match(r.source.rightsReasoning, /Territorial public domain/);
     if (r.speaker === "Pindar") {
       assert.equal(r.source.translator, "Ernest Myers");
       assert.equal(r.entities.some((e) => e.role === "translator" && e.label === "Ernest Myers"), true);
@@ -69,6 +72,7 @@ test("missing rights, invented dates, duplicate IDs and unsafe sources fail clos
   assert.throws(() => validateRecords([{ ...quotes[0]!, date: "1886-01-01" }]), /invent/);
   assert.throws(() => validateRecords([{ ...quotes[0]!, source: { ...quotes[0]!.source, rawSha256: "" } }]), /archive hash/);
   assert.throws(() => validateRecords([{ ...quotes[0]!, source: { ...quotes[0]!.source, url: "https://user:password@example.com/" } }]), /Unsafe/);
+  assert.throws(() => validateRecords([{ ...quotes[0]!, source: { ...quotes[0]!.source, rightsReasoning: "" } }]), /rights reasoning/);
 });
 
 test("generated source and shard bytes are deterministic and current", () => {
@@ -78,7 +82,7 @@ test("generated source and shard bytes are deterministic and current", () => {
   const forward = buildFiles(records);
   const reversed = buildFiles([...records].reverse());
   assert.deepEqual(forward, reversed);
-  assert.deepEqual(generate(true), { records: 1103, files: 1458 });
+  assert.deepEqual(generate(true), { records: 1092, files: 1445 });
   const manifest = JSON.parse(forward.get("manifest.json")!) as FeedManifest;
   assert.equal(manifest.missingDays.length, 224);
   assert.equal(manifest.coveredDays, 142);

@@ -4,13 +4,26 @@
 
 `famous-quotes` is a **collection tag** on the existing `quote` kind. Records keep `kind: "quote"` and `types: ["quotation", "famous-quotes"]`. It is not one of the 46 `HISTORY_TYPES`. Gutenberg book excerpts stay tagged `historical` only.
 
-Wording is stored only from a rights-cleared source, in that source's original language. Each row carries speaker, source (title, revision, URL), attribution certainty, licence, and translation provenance. Utterance dates stay null unless a source dates the saying; `quoteForDate` still hashes a calendar day without claiming the line was said that day.
+Wording is stored only from a rights-cleared source, in that source's original language. Each row carries speaker, source (title, revision, URL), attribution, licence, and `rightsReasoning`. Utterance dates stay null unless a source dates the saying; `quoteForDate` still hashes a calendar day without claiming the line was said that day.
 
-## Main ingest: English Wikiquote (CC BY-SA 4.0)
+## Page licence versus quoted words
 
-Sports pages and related athlete/coach pages are fetched through the official MediaWiki API (`action=query` revisions, or `action=parse` / REST). Title, revision id and `oldid` URL travel with every row. Attribute [Wikiquote:Copyrights](https://en.wikiquote.org/wiki/Wikiquote:Copyrights): the page compilation is CC BY-SA 4.0; some quotations remain fair use of an underlying work. Movie and television dialogue is not stored. Disputed, unsourced, and sensitive-topic lines are skipped.
+English Wikiquote's **page compilation** is CC BY-SA 4.0. That licence covers Wikiquote's arrangement, wikitext and some original editorial text. It does **not** transfer the quoted words. Those words belong to the speaker or author unless they are already in the public domain, or they are a short uncopyrightable phrase.
 
-This seed adds 19 sourced sports quotations (ticket `cmv91xw8o0000jp06crow6utm`). Combined with 22 Gutenberg excerpts, the public quote feed is 41 rows. English source text only; no Japanese translation is invented.
+A published quote therefore needs both:
+
+1. **Attribution** (speaker, pinned Wikiquote title, revision and URL).
+2. **Recorded `rightsReasoning`** that justifies publishing the *words*, not only the page.
+
+A line whose words cannot be justified is omitted. Holes stay holes.
+
+## Main ingest: English Wikiquote (CC BY-SA 4.0 for the page)
+
+Sports pages and related athlete/coach pages are fetched through the official MediaWiki API (`action=query` revisions, or `action=parse` / REST). Title, revision id and `oldid` URL travel with every row. Attribute [Wikiquote:Copyrights](https://en.wikiquote.org/wiki/Wikiquote:Copyrights). Movie and television dialogue is not stored. Disputed, unsourced, and sensitive-topic lines are skipped.
+
+This seed keeps **8** Wikiquote sports lines whose words are justified (ticket `cmv91xw8o0000jp06crow6utm`): five territorial public-domain texts (Herbert 1651, Goldsmith 1764, Hughes 1857, Roosevelt 1900, Coubertin 1920 oath) and three short slogans that are not copyrightable subject matter in the United States (Sanders, Berra, John Thomas; [Circular 33](https://www.copyright.gov/circs/circ33.pdf)). Combined with 22 Gutenberg excerpts, the public quote feed is 30 rows. English source text only; no Japanese translation is invented.
+
+The 14 Wikiquote JSON files fetched 2026-10-16 are already archived on DS1 as `wikiquote/2026-10-16/`. Do not re-archive them. A later raw hand-off uses `scripts/archive_raw.py <prefix> <dir> <date> --sql-out …`.
 
 ## Checklist sources (not ingested)
 
@@ -25,10 +38,11 @@ Licence is read on the dataset page **before** any download. A tutorial that inv
 
 ## Skipped (gaps)
 
-Famous lines that could not be rights-cleared on Wikiquote, or that fail the project's topic rules, stay out:
+Famous lines that could not be rights-cleared, or that fail the project's topic rules, stay out:
 
 - Movie dialogue (Rocky, The Sandlot, and similar).
 - Ali “float like a butterfly” (listicle only on the page used); Ali “grass grows” compilations.
+- **Dropped from the 19-line seed (speaker's words still in copyright; Wikiquote CC BY-SA does not license them):** Ali 1978 *Newsweek*; Lombardi Packers meeting (reported 2004) and “play every game to the hilt” (2001); Jordan *Nike Culture* (1998); Wooden *They Call Me Coach* (1972) and 2003 IBM commercial; Gehrig 1939 speech (public domain in Canada and the UK, still in copyright in the US until 2035); Paige 1958 newspaper; Pelé 1980 book; Owens Voice of America (2002); Shankly 1981 television interview.
 - Jordan film / NBA.com lines not on the pinned Wikiquote revision as sourced quotes.
 - Wooden “Talent is God-given” (religion).
 - Paige “Don't look back” (image caption, not a sourced Quotes entry); Paige pray lines.

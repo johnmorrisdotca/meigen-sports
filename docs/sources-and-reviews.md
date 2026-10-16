@@ -11,7 +11,7 @@ English only. A licence is listed before a source is used. Nothing here is a new
 | James Dwight, *Lawn-tennis* (1886), Gutenberg 58137 | Public domain in US, Canada and UK | quotations | Territorial; Gutenberg notices kept |
 | Walter Camp, *American Football* (1891), Gutenberg 39743 | Public domain in US, Canada and UK | quotations | Territorial; Gutenberg notices kept |
 | Pindar, Myers translation (1904 ed.), Gutenberg 10717 | Public domain in US, Canada and UK | quotations | Territorial; Gutenberg notices kept |
-| English Wikiquote sports and athlete pages | CC BY-SA 4.0 | 19 quotations (`famous-quotes`) | Title, revision and URL; fair-use caveat; no movie dialogue |
+| English Wikiquote sports and athlete pages | CC BY-SA 4.0 (page compilation) | 8 quotations (`famous-quotes`) | Title, revision, URL and per-row `rightsReasoning`; quoted words stay with the speaker; no movie dialogue |
 
 ## Listed, not in the public seed yet
 

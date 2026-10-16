@@ -2,11 +2,13 @@
 export interface EntityRef { readonly id: string; readonly kind: "person" | "team" | "sport" | "event" | "series" | "competition"; readonly role: string; readonly label?: string }
 /** A source may stop updating without invalidating its historical coverage. */
 export interface SourceSnapshot { readonly status: "active" | "snapshot" | "discontinued" | "unknown"; readonly revision?: string; readonly capturedAt?: string; readonly coverageStart?: string; readonly coverageEnd?: string }
-/** Source and text rights travel with every record, independently of this library's MIT licence. */
+/** Source and text rights travel with every record, independently of this library's MIT licence.
+ * Wikiquote CC BY-SA 4.0 covers the page compilation. Quoted words belong to the speaker or author;
+ * `rightsReasoning` records why those words may be published, or the row is omitted. */
 export interface Citation {
  readonly sourceId: string; readonly key: string; readonly url: string; readonly title: string;
  readonly licence: string; readonly rightsStatus: "cc0" | "public-domain-us-ca-uk" | "cc-by-sa-4.0";
- readonly attribution: string; readonly rawSha256: string; readonly rightsEvidence: readonly string[];
+ readonly attribution: string; readonly rightsReasoning: string; readonly rawSha256: string; readonly rightsEvidence: readonly string[];
  readonly snapshot?: SourceSnapshot; readonly publicationYear?: number; readonly section?: string; readonly translator?: string;
 }
 /** One exact quotation or original caption describing a source-verified historical fact. */

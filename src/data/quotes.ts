@@ -56,6 +56,7 @@ export const quotes: readonly MeigenRecord[] = [
         "capturedAt": "2026-10-15T04:44:38.441801+00:00"
       },
       "attribution": "Pindar; English translation by Ernest Myers, The Extant Odes of Pindar (1904). Original text preserved; public domain in the US, Canada and UK. Original Gutenberg producer credits and notices: LICENSES/.",
+      "rightsReasoning": "Words: Pindar (died c. 438 BCE); English translation by Ernest Myers (died 1921), The Extant Odes of Pindar, 1904 edition (translation first published 1874). Published in the United States before 1931; the translator died more than 70 years ago. Territorial public domain in the US, Canada and the UK; not a worldwide CC0 claim. Gutenberg/GITenberg supplies the pinned source file, not a new grant of rights. Original Gutenberg notices retained.",
       "publicationYear": 1904,
       "section": "Olympian Odes X: For Agesidamos of Epizephyrian Lokris, Winner in the Boys' Boxing-Match",
       "translator": "Ernest Myers",
@@ -121,6 +122,7 @@ export const quotes: readonly MeigenRecord[] = [
         "capturedAt": "2026-10-15T04:44:38.441801+00:00"
       },
       "attribution": "Pindar; English translation by Ernest Myers, The Extant Odes of Pindar (1904). Original text preserved; public domain in the US, Canada and UK. Original Gutenberg producer credits and notices: LICENSES/.",
+      "rightsReasoning": "Words: Pindar (died c. 438 BCE); English translation by Ernest Myers (died 1921), The Extant Odes of Pindar, 1904 edition (translation first published 1874). Published in the United States before 1931; the translator died more than 70 years ago. Territorial public domain in the US, Canada and the UK; not a worldwide CC0 claim. Gutenberg/GITenberg supplies the pinned source file, not a new grant of rights. Original Gutenberg notices retained.",
       "publicationYear": 1904,
       "section": "Pythian Odes VIII: For Aristomenes of Aigina, Winner in the Wrestling-Match",
       "translator": "Ernest Myers",
@@ -186,6 +188,7 @@ export const quotes: readonly MeigenRecord[] = [
         "capturedAt": "2026-10-15T04:44:38.441801+00:00"
       },
       "attribution": "Pindar; English translation by Ernest Myers, The Extant Odes of Pindar (1904). Original text preserved; public domain in the US, Canada and UK. Original Gutenberg producer credits and notices: LICENSES/.",
+      "rightsReasoning": "Words: Pindar (died c. 438 BCE); English translation by Ernest Myers (died 1921), The Extant Odes of Pindar, 1904 edition (translation first published 1874). Published in the United States before 1931; the translator died more than 70 years ago. Territorial public domain in the US, Canada and the UK; not a worldwide CC0 claim. Gutenberg/GITenberg supplies the pinned source file, not a new grant of rights. Original Gutenberg notices retained.",
       "publicationYear": 1904,
       "section": "Nemean Odes IV: For Timasarchos of Aigina, Winner in the Boys' Wrestling-Match",
       "translator": "Ernest Myers",
@@ -252,6 +255,7 @@ export const quotes: readonly MeigenRecord[] = [
         "capturedAt": "2026-10-15T04:44:38.441801+00:00"
       },
       "attribution": "Pindar; English translation by Ernest Myers, The Extant Odes of Pindar (1904). Original text preserved; public domain in the US, Canada and UK. Original Gutenberg producer credits and notices: LICENSES/.",
+      "rightsReasoning": "Words: Pindar (died c. 438 BCE); English translation by Ernest Myers (died 1921), The Extant Odes of Pindar, 1904 edition (translation first published 1874). Published in the United States before 1931; the translator died more than 70 years ago. Territorial public domain in the US, Canada and the UK; not a worldwide CC0 claim. Gutenberg/GITenberg supplies the pinned source file, not a new grant of rights. Original Gutenberg notices retained.",
       "publicationYear": 1904,
       "section": "Olympian Odes X: For Agesidamos of Epizephyrian Lokris, Winner in the Boys' Boxing-Match",
       "translator": "Ernest Myers",
@@ -311,6 +315,7 @@ export const quotes: readonly MeigenRecord[] = [
         "capturedAt": "2026-10-15T04:43:14.388700+00:00"
       },
       "attribution": "Walter Camp, American Football (1891). Original text preserved; public domain in the US, Canada and UK. Original Gutenberg producer credits and notices: LICENSES/.",
+      "rightsReasoning": "Words belong to Walter Camp (died 1925), American Football (1891). Published in the United States before 1931; the author died more than 70 years ago. Territorial public domain in the US, Canada and the UK; not a worldwide CC0 claim. Gutenberg/GITenberg supplies the pinned source file, not a new grant of rights. Original Gutenberg notices retained.",
       "publicationYear": 1891,
       "section": "The Quarter-back",
       "rightsEvidence": [
@@ -369,6 +374,7 @@ export const quotes: readonly MeigenRecord[] = [
         "capturedAt": "2026-10-15T04:43:14.388700+00:00"
       },
       "attribution": "Walter Camp, American Football (1891). Original text preserved; public domain in the US, Canada and UK. Original Gutenberg producer credits and notices: LICENSES/.",
+      "rightsReasoning": "Words belong to Walter Camp (died 1925), American Football (1891). Published in the United States before 1931; the author died more than 70 years ago. Territorial public domain in the US, Canada and the UK; not a worldwide CC0 claim. Gutenberg/GITenberg supplies the pinned source file, not a new grant of rights. Original Gutenberg notices retained.",
       "publicationYear": 1891,
       "section": "End Rusher",
       "rightsEvidence": [
@@ -427,6 +433,7 @@ export const quotes: readonly MeigenRecord[] = [
         "capturedAt": "2026-10-15T04:43:14.388700+00:00"
       },
       "attribution": "Walter Camp, American Football (1891). Original text preserved; public domain in the US, Canada and UK. Original Gutenberg producer credits and notices: LICENSES/.",
+      "rightsReasoning": "Words belong to Walter Camp (died 1925), American Football (1891). Published in the United States before 1931; the author died more than 70 years ago. Territorial public domain in the US, Canada and the UK; not a worldwide CC0 claim. Gutenberg/GITenberg supplies the pinned source file, not a new grant of rights. Original Gutenberg notices retained.",
       "publicationYear": 1891,
       "section": "The Guard",
       "rightsEvidence": [
@@ -485,6 +492,7 @@ export const quotes: readonly MeigenRecord[] = [
         "capturedAt": "2026-10-15T04:43:14.388700+00:00"
       },
       "attribution": "Walter Camp, American Football (1891). Original text preserved; public domain in the US, Canada and UK. Original Gutenberg producer credits and notices: LICENSES/.",
+      "rightsReasoning": "Words belong to Walter Camp (died 1925), American Football (1891). Published in the United States before 1931; the author died more than 70 years ago. Territorial public domain in the US, Canada and the UK; not a worldwide CC0 claim. Gutenberg/GITenberg supplies the pinned source file, not a new grant of rights. Original Gutenberg notices retained.",
       "publicationYear": 1891,
       "section": "The Quarter-back",
       "rightsEvidence": [
@@ -543,6 +551,7 @@ export const quotes: readonly MeigenRecord[] = [
         "capturedAt": "2026-10-15T04:43:14.388700+00:00"
       },
       "attribution": "Walter Camp, American Football (1891). Original text preserved; public domain in the US, Canada and UK. Original Gutenberg producer credits and notices: LICENSES/.",
+      "rightsReasoning": "Words belong to Walter Camp (died 1925), American Football (1891). Published in the United States before 1931; the author died more than 70 years ago. Territorial public domain in the US, Canada and the UK; not a worldwide CC0 claim. Gutenberg/GITenberg supplies the pinned source file, not a new grant of rights. Original Gutenberg notices retained.",
       "publicationYear": 1891,
       "section": "The Quarter-back",
       "rightsEvidence": [
@@ -601,6 +610,7 @@ export const quotes: readonly MeigenRecord[] = [
         "capturedAt": "2026-10-15T04:43:14.388700+00:00"
       },
       "attribution": "Walter Camp, American Football (1891). Original text preserved; public domain in the US, Canada and UK. Original Gutenberg producer credits and notices: LICENSES/.",
+      "rightsReasoning": "Words belong to Walter Camp (died 1925), American Football (1891). Published in the United States before 1931; the author died more than 70 years ago. Territorial public domain in the US, Canada and the UK; not a worldwide CC0 claim. Gutenberg/GITenberg supplies the pinned source file, not a new grant of rights. Original Gutenberg notices retained.",
       "publicationYear": 1891,
       "section": "The Quarter-back",
       "rightsEvidence": [
@@ -659,6 +669,7 @@ export const quotes: readonly MeigenRecord[] = [
         "capturedAt": "2026-10-15T04:43:14.388700+00:00"
       },
       "attribution": "Walter Camp, American Football (1891). Original text preserved; public domain in the US, Canada and UK. Original Gutenberg producer credits and notices: LICENSES/.",
+      "rightsReasoning": "Words belong to Walter Camp (died 1925), American Football (1891). Published in the United States before 1931; the author died more than 70 years ago. Territorial public domain in the US, Canada and the UK; not a worldwide CC0 claim. Gutenberg/GITenberg supplies the pinned source file, not a new grant of rights. Original Gutenberg notices retained.",
       "publicationYear": 1891,
       "section": "The Quarter-back",
       "rightsEvidence": [
@@ -717,6 +728,7 @@ export const quotes: readonly MeigenRecord[] = [
         "capturedAt": "2026-10-15T04:43:14.388700+00:00"
       },
       "attribution": "Walter Camp, American Football (1891). Original text preserved; public domain in the US, Canada and UK. Original Gutenberg producer credits and notices: LICENSES/.",
+      "rightsReasoning": "Words belong to Walter Camp (died 1925), American Football (1891). Published in the United States before 1931; the author died more than 70 years ago. Territorial public domain in the US, Canada and the UK; not a worldwide CC0 claim. Gutenberg/GITenberg supplies the pinned source file, not a new grant of rights. Original Gutenberg notices retained.",
       "publicationYear": 1891,
       "section": "The Quarter-back",
       "rightsEvidence": [
@@ -775,6 +787,7 @@ export const quotes: readonly MeigenRecord[] = [
         "capturedAt": "2026-10-15T04:43:06.463016+00:00"
       },
       "attribution": "James Dwight, Lawn-tennis (1886). Original text preserved; public domain in the US, Canada and UK. Original Gutenberg producer credits and notices: LICENSES/.",
+      "rightsReasoning": "Words belong to James Dwight (died 1917), Lawn-tennis (1886). Published in the United States before 1931; the author died more than 70 years ago. Territorial public domain in the US, Canada and the UK; not a worldwide CC0 claim. Gutenberg/GITenberg supplies the pinned source file, not a new grant of rights. Original Gutenberg notices retained.",
       "publicationYear": 1886,
       "section": "Part II, Chapter III: The Double Game",
       "rightsEvidence": [
@@ -833,6 +846,7 @@ export const quotes: readonly MeigenRecord[] = [
         "capturedAt": "2026-10-15T04:43:06.463016+00:00"
       },
       "attribution": "James Dwight, Lawn-tennis (1886). Original text preserved; public domain in the US, Canada and UK. Original Gutenberg producer credits and notices: LICENSES/.",
+      "rightsReasoning": "Words belong to James Dwight (died 1917), Lawn-tennis (1886). Published in the United States before 1931; the author died more than 70 years ago. Territorial public domain in the US, Canada and the UK; not a worldwide CC0 claim. Gutenberg/GITenberg supplies the pinned source file, not a new grant of rights. Original Gutenberg notices retained.",
       "publicationYear": 1886,
       "section": "Part II, Chapter II: Match Play",
       "rightsEvidence": [
@@ -891,6 +905,7 @@ export const quotes: readonly MeigenRecord[] = [
         "capturedAt": "2026-10-15T04:43:06.463016+00:00"
       },
       "attribution": "James Dwight, Lawn-tennis (1886). Original text preserved; public domain in the US, Canada and UK. Original Gutenberg producer credits and notices: LICENSES/.",
+      "rightsReasoning": "Words belong to James Dwight (died 1917), Lawn-tennis (1886). Published in the United States before 1931; the author died more than 70 years ago. Territorial public domain in the US, Canada and the UK; not a worldwide CC0 claim. Gutenberg/GITenberg supplies the pinned source file, not a new grant of rights. Original Gutenberg notices retained.",
       "publicationYear": 1886,
       "section": "Part II, Chapter II: Match Play",
       "rightsEvidence": [
@@ -949,6 +964,7 @@ export const quotes: readonly MeigenRecord[] = [
         "capturedAt": "2026-10-15T04:43:06.463016+00:00"
       },
       "attribution": "James Dwight, Lawn-tennis (1886). Original text preserved; public domain in the US, Canada and UK. Original Gutenberg producer credits and notices: LICENSES/.",
+      "rightsReasoning": "Words belong to James Dwight (died 1917), Lawn-tennis (1886). Published in the United States before 1931; the author died more than 70 years ago. Territorial public domain in the US, Canada and the UK; not a worldwide CC0 claim. Gutenberg/GITenberg supplies the pinned source file, not a new grant of rights. Original Gutenberg notices retained.",
       "publicationYear": 1886,
       "section": "Part II, Chapter III: The Double Game",
       "rightsEvidence": [
@@ -1007,6 +1023,7 @@ export const quotes: readonly MeigenRecord[] = [
         "capturedAt": "2026-10-15T04:43:06.463016+00:00"
       },
       "attribution": "James Dwight, Lawn-tennis (1886). Original text preserved; public domain in the US, Canada and UK. Original Gutenberg producer credits and notices: LICENSES/.",
+      "rightsReasoning": "Words belong to James Dwight (died 1917), Lawn-tennis (1886). Published in the United States before 1931; the author died more than 70 years ago. Territorial public domain in the US, Canada and the UK; not a worldwide CC0 claim. Gutenberg/GITenberg supplies the pinned source file, not a new grant of rights. Original Gutenberg notices retained.",
       "publicationYear": 1886,
       "section": "Part II, Chapter II: Match Play",
       "rightsEvidence": [
@@ -1065,6 +1082,7 @@ export const quotes: readonly MeigenRecord[] = [
         "capturedAt": "2026-10-15T04:43:06.463016+00:00"
       },
       "attribution": "James Dwight, Lawn-tennis (1886). Original text preserved; public domain in the US, Canada and UK. Original Gutenberg producer credits and notices: LICENSES/.",
+      "rightsReasoning": "Words belong to James Dwight (died 1917), Lawn-tennis (1886). Published in the United States before 1931; the author died more than 70 years ago. Territorial public domain in the US, Canada and the UK; not a worldwide CC0 claim. Gutenberg/GITenberg supplies the pinned source file, not a new grant of rights. Original Gutenberg notices retained.",
       "publicationYear": 1886,
       "section": "Part I, Chapter I: How to Learn to Play",
       "rightsEvidence": [
@@ -1123,6 +1141,7 @@ export const quotes: readonly MeigenRecord[] = [
         "capturedAt": "2026-10-15T04:43:06.463016+00:00"
       },
       "attribution": "James Dwight, Lawn-tennis (1886). Original text preserved; public domain in the US, Canada and UK. Original Gutenberg producer credits and notices: LICENSES/.",
+      "rightsReasoning": "Words belong to James Dwight (died 1917), Lawn-tennis (1886). Published in the United States before 1931; the author died more than 70 years ago. Territorial public domain in the US, Canada and the UK; not a worldwide CC0 claim. Gutenberg/GITenberg supplies the pinned source file, not a new grant of rights. Original Gutenberg notices retained.",
       "publicationYear": 1886,
       "section": "Part I, Chapter I: How to Learn to Play",
       "rightsEvidence": [
@@ -1181,6 +1200,7 @@ export const quotes: readonly MeigenRecord[] = [
         "capturedAt": "2026-10-15T04:43:06.463016+00:00"
       },
       "attribution": "James Dwight, Lawn-tennis (1886). Original text preserved; public domain in the US, Canada and UK. Original Gutenberg producer credits and notices: LICENSES/.",
+      "rightsReasoning": "Words belong to James Dwight (died 1917), Lawn-tennis (1886). Published in the United States before 1931; the author died more than 70 years ago. Territorial public domain in the US, Canada and the UK; not a worldwide CC0 claim. Gutenberg/GITenberg supplies the pinned source file, not a new grant of rights. Original Gutenberg notices retained.",
       "publicationYear": 1886,
       "section": "Part I, Chapter I: How to Learn to Play",
       "rightsEvidence": [
@@ -1239,6 +1259,7 @@ export const quotes: readonly MeigenRecord[] = [
         "capturedAt": "2026-10-15T04:43:06.463016+00:00"
       },
       "attribution": "James Dwight, Lawn-tennis (1886). Original text preserved; public domain in the US, Canada and UK. Original Gutenberg producer credits and notices: LICENSES/.",
+      "rightsReasoning": "Words belong to James Dwight (died 1917), Lawn-tennis (1886). Published in the United States before 1931; the author died more than 70 years ago. Territorial public domain in the US, Canada and the UK; not a worldwide CC0 claim. Gutenberg/GITenberg supplies the pinned source file, not a new grant of rights. Original Gutenberg notices retained.",
       "publicationYear": 1886,
       "section": "Part II, Chapter III: The Double Game",
       "rightsEvidence": [
@@ -1297,71 +1318,11 @@ export const quotes: readonly MeigenRecord[] = [
         "capturedAt": "2026-10-15T04:43:06.463016+00:00"
       },
       "attribution": "James Dwight, Lawn-tennis (1886). Original text preserved; public domain in the US, Canada and UK. Original Gutenberg producer credits and notices: LICENSES/.",
+      "rightsReasoning": "Words belong to James Dwight (died 1917), Lawn-tennis (1886). Published in the United States before 1931; the author died more than 70 years ago. Territorial public domain in the US, Canada and the UK; not a worldwide CC0 claim. Gutenberg/GITenberg supplies the pinned source file, not a new grant of rights. Original Gutenberg notices retained.",
       "publicationYear": 1886,
       "section": "Part II, Chapter II: Match Play",
       "rightsEvidence": [
         "https://github.com/GITenberg/Lawn-tennis_58137/blob/ad40f048da5472929a0ab22b2ce0cfd741aff53e/58137-0.txt#L1512-L1512",
-        "https://blogs.loc.gov/copyright/2025/12/lifecycle-of-copyright-1930-works-in-the-public-domain/",
-        "https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en/guide-copyright",
-        "https://www.gov.uk/copyright/how-long-copyright-lasts",
-        "https://www.gutenberg.org/policy/license.html"
-      ]
-    }
-  },
-  {
-    "id": "quote:wikiquote:11680:555e2feee2d24f68",
-    "kind": "quote",
-    "types": [
-      "quotation",
-      "famous-quotes"
-    ],
-    "text": "I was born for soccer, just as Beethoven was born for music.",
-    "language": "en",
-    "sports": [
-      "soccer"
-    ],
-    "tags": [
-      "famous-quotes",
-      "training"
-    ],
-    "date": null,
-    "monthDay": null,
-    "dateRole": null,
-    "speaker": "Pelé",
-    "entities": [
-      {
-        "id": "wikidata:Q12897",
-        "kind": "person",
-        "role": "author",
-        "label": "Pelé"
-      },
-      {
-        "id": "sport:soccer",
-        "kind": "sport",
-        "role": "subject",
-        "label": "soccer"
-      }
-    ],
-    "source": {
-      "sourceId": "wikiquote",
-      "key": "Pelé@3994431:10-11",
-      "url": "https://en.wikiquote.org/w/index.php?title=Pel%C3%A9&oldid=3994431",
-      "title": "Pelé",
-      "licence": "CC-BY-SA-4.0",
-      "rightsStatus": "cc-by-sa-4.0",
-      "rawSha256": "26a2d9c6fb9902811649f9dc308c19667ba757f1316fc8dec4ba69ec71fd13ee",
-      "snapshot": {
-        "status": "snapshot",
-        "revision": "3994431",
-        "capturedAt": "2026-10-16T13:35:00.000000+00:00"
-      },
-      "attribution": "Pelé, English Wikiquote page \"Pelé\" (Pelé@3994431:10-11). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: sourced. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
-      "publicationYear": 1980,
-      "section": "Quotes; Parton Keese, The measure of greatness (1980)",
-      "rightsEvidence": [
-        "https://en.wikiquote.org/w/index.php?title=Pel%C3%A9&oldid=3994431",
-        "https://creativecommons.org/licenses/by-sa/4.0/",
-        "https://en.wikiquote.org/wiki/Wikiquote:Copyrights",
         "https://blogs.loc.gov/copyright/2025/12/lifecycle-of-copyright-1930-works-in-the-public-domain/",
         "https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en/guide-copyright",
         "https://www.gov.uk/copyright/how-long-copyright-lasts",
@@ -1416,7 +1377,8 @@ export const quotes: readonly MeigenRecord[] = [
         "revision": "3996271",
         "capturedAt": "2026-10-16T13:35:00.000000+00:00"
       },
-      "attribution": "George Herbert, English Wikiquote page \"Sports\" (Sports@3996271:72-73). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: sourced. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
+      "attribution": "George Herbert, English Wikiquote page \"Sports\" (Sports@3996271:72-73). Wikiquote page compilation CC BY-SA 4.0; quoted words remain with the speaker or author. Title, revision and URL travel with the row. Attribution certainty: sourced.",
+      "rightsReasoning": "Words belong to George Herbert (died 1633), Jacula Prudentum (1651). Published centuries before 1931; the author died more than 70 years ago. Territorial public domain in the US, Canada and the UK. English Wikiquote page \"Sports\" at the pinned revision is CC BY-SA 4.0 for the page compilation only; it does not own the quoted words. Title, revision and URL travel with the row.",
       "publicationYear": 1651,
       "section": "Quotes; Jacula Prudentum (1651). Underlying text is public domain; extract cited to Wikiquote CC BY-SA 4.0.",
       "rightsEvidence": [
@@ -1477,7 +1439,8 @@ export const quotes: readonly MeigenRecord[] = [
         "revision": "3996271",
         "capturedAt": "2026-10-16T13:35:00.000000+00:00"
       },
-      "attribution": "Oliver Goldsmith, English Wikiquote page \"Sports\" (Sports@3996271:68-69). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: sourced. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
+      "attribution": "Oliver Goldsmith, English Wikiquote page \"Sports\" (Sports@3996271:68-69). Wikiquote page compilation CC BY-SA 4.0; quoted words remain with the speaker or author. Title, revision and URL travel with the row. Attribution certainty: sourced.",
+      "rightsReasoning": "Words belong to Oliver Goldsmith (died 1774), The Traveller (1764), line 153. Published before 1931; the author died more than 70 years ago. Territorial public domain in the US, Canada and the UK. English Wikiquote page \"Sports\" at the pinned revision is CC BY-SA 4.0 for the page compilation only; it does not own the quoted words. Title, revision and URL travel with the row.",
       "publicationYear": 1764,
       "section": "Quotes; The Traveller (1764), line 153. Underlying text is public domain; extract cited to Wikiquote CC BY-SA 4.0.",
       "rightsEvidence": [
@@ -1538,72 +1501,12 @@ export const quotes: readonly MeigenRecord[] = [
         "revision": "3996271",
         "capturedAt": "2026-10-16T13:35:00.000000+00:00"
       },
-      "attribution": "Thomas Hughes, English Wikiquote page \"Sports\" (Sports@3996271:85-86). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: sourced. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
+      "attribution": "Thomas Hughes, English Wikiquote page \"Sports\" (Sports@3996271:85-86). Wikiquote page compilation CC BY-SA 4.0; quoted words remain with the speaker or author. Title, revision and URL travel with the row. Attribution certainty: sourced.",
+      "rightsReasoning": "Words belong to Thomas Hughes (died 1896), Tom Brown's School Days (1857). Published in the United States and the United Kingdom before 1931; the author died more than 70 years ago. Territorial public domain in the US, Canada and the UK. English Wikiquote page \"Sports\" at the pinned revision is CC BY-SA 4.0 for the page compilation only; it does not own the quoted words. Title, revision and URL travel with the row.",
       "publicationYear": 1857,
       "section": "Quotes; Tom Brown's School Days (1857), Part I, chapter 5. Underlying text is public domain; extract cited to Wikiquote CC BY-SA 4.0.",
       "rightsEvidence": [
         "https://en.wikiquote.org/w/index.php?title=Sports&oldid=3996271",
-        "https://creativecommons.org/licenses/by-sa/4.0/",
-        "https://en.wikiquote.org/wiki/Wikiquote:Copyrights",
-        "https://blogs.loc.gov/copyright/2025/12/lifecycle-of-copyright-1930-works-in-the-public-domain/",
-        "https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en/guide-copyright",
-        "https://www.gov.uk/copyright/how-long-copyright-lasts",
-        "https://www.gutenberg.org/policy/license.html"
-      ]
-    }
-  },
-  {
-    "id": "quote:wikiquote:13058:9399bc991885ed5f",
-    "kind": "quote",
-    "types": [
-      "quotation",
-      "famous-quotes"
-    ],
-    "text": "The road to the Olympics, leads to no city, no country. It goes far beyond New York or Moscow, ancient Greece or Nazi Germany. The road to the Olympics leads — in the end — to the best within us.",
-    "language": "en",
-    "sports": [
-      "athletics"
-    ],
-    "tags": [
-      "famous-quotes",
-      "olympics"
-    ],
-    "date": null,
-    "monthDay": null,
-    "dateRole": null,
-    "speaker": "Jesse Owens",
-    "entities": [
-      {
-        "id": "wikidata:Q52651",
-        "kind": "person",
-        "role": "author",
-        "label": "Jesse Owens"
-      },
-      {
-        "id": "sport:athletics",
-        "kind": "sport",
-        "role": "subject",
-        "label": "athletics"
-      }
-    ],
-    "source": {
-      "sourceId": "wikiquote",
-      "key": "Jesse_Owens@3601029:10-11",
-      "url": "https://en.wikiquote.org/w/index.php?title=Jesse_Owens&oldid=3601029",
-      "title": "Jesse Owens",
-      "licence": "CC-BY-SA-4.0",
-      "rightsStatus": "cc-by-sa-4.0",
-      "rawSha256": "ccacf996dc514f86563ddbe4b93bf8607b37bb0af7fddd7b9c26f3ecfa6d622f",
-      "snapshot": {
-        "status": "snapshot",
-        "revision": "3601029",
-        "capturedAt": "2026-10-16T13:35:00.000000+00:00"
-      },
-      "attribution": "Jesse Owens, English Wikiquote page \"Jesse Owens\" (Jesse_Owens@3601029:10-11). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: sourced. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
-      "publicationYear": 2002,
-      "section": "Quotes; Voice of America, People In America (7 June 2002)",
-      "rightsEvidence": [
-        "https://en.wikiquote.org/w/index.php?title=Jesse_Owens&oldid=3601029",
         "https://creativecommons.org/licenses/by-sa/4.0/",
         "https://en.wikiquote.org/wiki/Wikiquote:Copyrights",
         "https://blogs.loc.gov/copyright/2025/12/lifecycle-of-copyright-1930-works-in-the-public-domain/",
@@ -1660,133 +1563,12 @@ export const quotes: readonly MeigenRecord[] = [
         "revision": "3889631",
         "capturedAt": "2026-10-16T13:35:00.000000+00:00"
       },
-      "attribution": "Pierre de Coubertin, English Wikiquote page \"Olympic Games\" (Olympic_Games@3889631:16-17). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: sourced. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
+      "attribution": "Pierre de Coubertin, English Wikiquote page \"Olympic Games\" (Olympic_Games@3889631:16-17). Wikiquote page compilation CC BY-SA 4.0; quoted words remain with the speaker or author. Title, revision and URL travel with the row. Attribution certainty: sourced.",
+      "rightsReasoning": "Words belong to Pierre de Coubertin (died 1937), the Olympic oath first used at the 1920 Antwerp Games. Spoken and published before 1931; the author died more than 70 years ago (Canada and UK term ended in 2008). Territorial public domain in the US, Canada and the UK. The 1970 Diem book on Wikiquote is a later reprint, not the rights basis. English Wikiquote page \"Olympic Games\" at the pinned revision is CC BY-SA 4.0 for the page compilation only; it does not own the quoted words. Title, revision and URL travel with the row.",
       "publicationYear": 1970,
       "section": "Quotes; as quoted in The Olympic Idea : Discourses and Essays (1970) by Carl Diem, p. 8",
       "rightsEvidence": [
         "https://en.wikiquote.org/w/index.php?title=Olympic_Games&oldid=3889631",
-        "https://creativecommons.org/licenses/by-sa/4.0/",
-        "https://en.wikiquote.org/wiki/Wikiquote:Copyrights",
-        "https://blogs.loc.gov/copyright/2025/12/lifecycle-of-copyright-1930-works-in-the-public-domain/",
-        "https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en/guide-copyright",
-        "https://www.gov.uk/copyright/how-long-copyright-lasts",
-        "https://www.gutenberg.org/policy/license.html"
-      ]
-    }
-  },
-  {
-    "id": "quote:wikiquote:14111:aa24bac06132c650",
-    "kind": "quote",
-    "types": [
-      "quotation",
-      "famous-quotes"
-    ],
-    "text": "A player who makes a team great is more valuable than a great player. Losing yourself for the group, for the good of the group — that’s teamwork.",
-    "language": "en",
-    "sports": [
-      "basketball"
-    ],
-    "tags": [
-      "famous-quotes",
-      "training"
-    ],
-    "date": null,
-    "monthDay": null,
-    "dateRole": null,
-    "speaker": "John Wooden",
-    "entities": [
-      {
-        "id": "wikidata:Q551032",
-        "kind": "person",
-        "role": "author",
-        "label": "John Wooden"
-      },
-      {
-        "id": "sport:basketball",
-        "kind": "sport",
-        "role": "subject",
-        "label": "basketball"
-      }
-    ],
-    "source": {
-      "sourceId": "wikiquote",
-      "key": "John_Wooden@3883962:47-47",
-      "url": "https://en.wikiquote.org/w/index.php?title=John_Wooden&oldid=3883962",
-      "title": "John Wooden",
-      "licence": "CC-BY-SA-4.0",
-      "rightsStatus": "cc-by-sa-4.0",
-      "rawSha256": "2ea8bccfac52358b12451efd80888860c48b969f13b751f76d76f504afd3f982",
-      "snapshot": {
-        "status": "snapshot",
-        "revision": "3883962",
-        "capturedAt": "2026-10-16T13:35:00.000000+00:00"
-      },
-      "attribution": "John Wooden, English Wikiquote page \"John Wooden\" (John_Wooden@3883962:47-47). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: sourced. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
-      "publicationYear": 2003,
-      "section": "IBM Linux Commercial: The Prodigy (2003)",
-      "rightsEvidence": [
-        "https://en.wikiquote.org/w/index.php?title=John_Wooden&oldid=3883962",
-        "https://creativecommons.org/licenses/by-sa/4.0/",
-        "https://en.wikiquote.org/wiki/Wikiquote:Copyrights",
-        "https://blogs.loc.gov/copyright/2025/12/lifecycle-of-copyright-1930-works-in-the-public-domain/",
-        "https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en/guide-copyright",
-        "https://www.gov.uk/copyright/how-long-copyright-lasts",
-        "https://www.gutenberg.org/policy/license.html"
-      ]
-    }
-  },
-  {
-    "id": "quote:wikiquote:14111:ac9a71d38768772e",
-    "kind": "quote",
-    "types": [
-      "quotation",
-      "famous-quotes"
-    ],
-    "text": "The main ingredient of stardom, is the rest of the team.",
-    "language": "en",
-    "sports": [
-      "basketball"
-    ],
-    "tags": [
-      "famous-quotes",
-      "training"
-    ],
-    "date": null,
-    "monthDay": null,
-    "dateRole": null,
-    "speaker": "John Wooden",
-    "entities": [
-      {
-        "id": "wikidata:Q551032",
-        "kind": "person",
-        "role": "author",
-        "label": "John Wooden"
-      },
-      {
-        "id": "sport:basketball",
-        "kind": "sport",
-        "role": "subject",
-        "label": "basketball"
-      }
-    ],
-    "source": {
-      "sourceId": "wikiquote",
-      "key": "John_Wooden@3883962:11-11",
-      "url": "https://en.wikiquote.org/w/index.php?title=John_Wooden&oldid=3883962",
-      "title": "John Wooden",
-      "licence": "CC-BY-SA-4.0",
-      "rightsStatus": "cc-by-sa-4.0",
-      "rawSha256": "2ea8bccfac52358b12451efd80888860c48b969f13b751f76d76f504afd3f982",
-      "snapshot": {
-        "status": "snapshot",
-        "revision": "3883962",
-        "capturedAt": "2026-10-16T13:35:00.000000+00:00"
-      },
-      "attribution": "John Wooden, English Wikiquote page \"John Wooden\" (John_Wooden@3883962:11-11). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: sourced. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
-      "publicationYear": 1972,
-      "section": "They Call Me Coach (1972)",
-      "rightsEvidence": [
-        "https://en.wikiquote.org/w/index.php?title=John_Wooden&oldid=3883962",
         "https://creativecommons.org/licenses/by-sa/4.0/",
         "https://en.wikiquote.org/wiki/Wikiquote:Copyrights",
         "https://blogs.loc.gov/copyright/2025/12/lifecycle-of-copyright-1930-works-in-the-public-domain/",
@@ -1843,74 +1625,15 @@ export const quotes: readonly MeigenRecord[] = [
         "revision": "3915169",
         "capturedAt": "2026-10-16T13:35:00.000000+00:00"
       },
-      "attribution": "Yogi Berra, English Wikiquote page \"Yogi Berra\" (Yogi_Berra@3915169:76-77). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: sourced. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
+      "attribution": "Yogi Berra, English Wikiquote page \"Yogi Berra\" (Yogi_Berra@3915169:76-77). Wikiquote page compilation CC BY-SA 4.0; quoted words remain with the speaker or author. Title, revision and URL travel with the row. Attribution certainty: sourced.",
+      "rightsReasoning": "Words: six-word saying commonly attributed to Yogi Berra. A short phrase or slogan is not copyrightable subject matter in the United States (Copyright Office Circular 33). English Wikiquote page \"Yogi Berra\" at the pinned revision is CC BY-SA 4.0 for the page compilation only; Berra's longer copyrighted remarks are not stored. Title, revision and URL travel with the row.",
       "publicationYear": 1997,
       "section": "Yogiisms; The Yogi book (1997). Wikiquote notes most first-occurrence dates unknown.",
       "rightsEvidence": [
         "https://en.wikiquote.org/w/index.php?title=Yogi_Berra&oldid=3915169",
         "https://creativecommons.org/licenses/by-sa/4.0/",
         "https://en.wikiquote.org/wiki/Wikiquote:Copyrights",
-        "https://blogs.loc.gov/copyright/2025/12/lifecycle-of-copyright-1930-works-in-the-public-domain/",
-        "https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en/guide-copyright",
-        "https://www.gov.uk/copyright/how-long-copyright-lasts",
-        "https://www.gutenberg.org/policy/license.html"
-      ]
-    }
-  },
-  {
-    "id": "quote:wikiquote:2185:8618611ec8a72322",
-    "kind": "quote",
-    "types": [
-      "quotation",
-      "famous-quotes"
-    ],
-    "text": "I hated every minute of it. But I said to myself, 'Suffer now, and live the rest of your life as a champion'.",
-    "language": "en",
-    "sports": [
-      "boxing"
-    ],
-    "tags": [
-      "famous-quotes",
-      "training"
-    ],
-    "date": null,
-    "monthDay": null,
-    "dateRole": null,
-    "speaker": "Muhammad Ali",
-    "entities": [
-      {
-        "id": "wikidata:Q36107",
-        "kind": "person",
-        "role": "author",
-        "label": "Muhammad Ali"
-      },
-      {
-        "id": "sport:boxing",
-        "kind": "sport",
-        "role": "subject",
-        "label": "boxing"
-      }
-    ],
-    "source": {
-      "sourceId": "wikiquote",
-      "key": "Muhammad_Ali@4033816:35-36",
-      "url": "https://en.wikiquote.org/w/index.php?title=Muhammad_Ali&oldid=4033816",
-      "title": "Muhammad Ali",
-      "licence": "CC-BY-SA-4.0",
-      "rightsStatus": "cc-by-sa-4.0",
-      "rawSha256": "5627979feed434cc44cdc16fd642aed74c3dfeacecd86709a6844e71b3eb02c0",
-      "snapshot": {
-        "status": "snapshot",
-        "revision": "4033816",
-        "capturedAt": "2026-10-16T13:35:00.000000+00:00"
-      },
-      "attribution": "Muhammad Ali, English Wikiquote page \"Muhammad Ali\" (Muhammad_Ali@4033816:35-36). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: sourced. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
-      "publicationYear": 1978,
-      "section": "Quotes; on training, Newsweek (25 September 1978)",
-      "rightsEvidence": [
-        "https://en.wikiquote.org/w/index.php?title=Muhammad_Ali&oldid=4033816",
-        "https://creativecommons.org/licenses/by-sa/4.0/",
-        "https://en.wikiquote.org/wiki/Wikiquote:Copyrights",
+        "https://www.copyright.gov/circs/circ33.pdf",
         "https://blogs.loc.gov/copyright/2025/12/lifecycle-of-copyright-1930-works-in-the-public-domain/",
         "https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en/guide-copyright",
         "https://www.gov.uk/copyright/how-long-copyright-lasts",
@@ -1965,7 +1688,8 @@ export const quotes: readonly MeigenRecord[] = [
         "revision": "3970984",
         "capturedAt": "2026-10-16T13:35:00.000000+00:00"
       },
-      "attribution": "Theodore Roosevelt, English Wikiquote page \"Theodore Roosevelt\" (Theodore_Roosevelt@3970984:96-97). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: sourced. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
+      "attribution": "Theodore Roosevelt, English Wikiquote page \"Theodore Roosevelt\" (Theodore_Roosevelt@3970984:96-97). Wikiquote page compilation CC BY-SA 4.0; quoted words remain with the speaker or author. Title, revision and URL travel with the row. Attribution certainty: sourced.",
+      "rightsReasoning": "Words belong to Theodore Roosevelt (died 1919), \"The American Boy\", St. Nicholas 27, no. 7 (May 1900). Published in the United States before 1931; the author died more than 70 years ago. Territorial public domain in the US, Canada and the UK. English Wikiquote page \"Theodore Roosevelt\" at the pinned revision is CC BY-SA 4.0 for the page compilation only; it does not own the quoted words. Title, revision and URL travel with the row.",
       "publicationYear": 1900,
       "section": "Quotes; The American Boy, St. Nicholas 27, no. 7 (May 1900), p. 574. Underlying 1900 text is public domain in the US, Canada and UK; the extract is still cited to Wikiquote CC BY-SA 4.0.",
       "rightsEvidence": [
@@ -2026,135 +1750,15 @@ export const quotes: readonly MeigenRecord[] = [
         "revision": "3984594",
         "capturedAt": "2026-10-16T13:35:00.000000+00:00"
       },
-      "attribution": "John Thomas, English Wikiquote page \"American football\" (American_football@3984594:54-55). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: sourced. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
+      "attribution": "John Thomas, English Wikiquote page \"American football\" (American_football@3984594:54-55). Wikiquote page compilation CC BY-SA 4.0; quoted words remain with the speaker or author. Title, revision and URL travel with the row. Attribution certainty: sourced.",
+      "rightsReasoning": "Words: ten-word chiasmus recorded in the Corpus Christi Times (15 September 1953) and widely treated as a proverb. A short slogan or proverb is not copyrightable subject matter in the United States (Copyright Office Circular 33). English Wikiquote page \"American football\" at the pinned revision is CC BY-SA 4.0 for the page compilation only; it does not own the quoted words. Title, revision and URL travel with the row.",
       "publicationYear": 1953,
       "section": "Quotes; Corpus Christi Times (15 September 1953)",
       "rightsEvidence": [
         "https://en.wikiquote.org/w/index.php?title=American_football&oldid=3984594",
         "https://creativecommons.org/licenses/by-sa/4.0/",
         "https://en.wikiquote.org/wiki/Wikiquote:Copyrights",
-        "https://blogs.loc.gov/copyright/2025/12/lifecycle-of-copyright-1930-works-in-the-public-domain/",
-        "https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en/guide-copyright",
-        "https://www.gov.uk/copyright/how-long-copyright-lasts",
-        "https://www.gutenberg.org/policy/license.html"
-      ]
-    }
-  },
-  {
-    "id": "quote:wikiquote:4403:5e9744fe52c622ff",
-    "kind": "quote",
-    "types": [
-      "quotation",
-      "famous-quotes"
-    ],
-    "text": "There ain't no man can avoid being born average. But there ain't no man got to be common.",
-    "language": "en",
-    "sports": [
-      "baseball"
-    ],
-    "tags": [
-      "famous-quotes",
-      "training"
-    ],
-    "date": null,
-    "monthDay": null,
-    "dateRole": null,
-    "speaker": "Satchel Paige",
-    "entities": [
-      {
-        "id": "wikidata:Q555730",
-        "kind": "person",
-        "role": "author",
-        "label": "Satchel Paige"
-      },
-      {
-        "id": "sport:baseball",
-        "kind": "sport",
-        "role": "subject",
-        "label": "baseball"
-      }
-    ],
-    "source": {
-      "sourceId": "wikiquote",
-      "key": "Satchel_Paige@3883905:14-15",
-      "url": "https://en.wikiquote.org/w/index.php?title=Satchel_Paige&oldid=3883905",
-      "title": "Satchel Paige",
-      "licence": "CC-BY-SA-4.0",
-      "rightsStatus": "cc-by-sa-4.0",
-      "rawSha256": "9242aaf2d6fc1c04d1c90f05fca491990762606e750afbdb446fb848b080270e",
-      "snapshot": {
-        "status": "snapshot",
-        "revision": "3883905",
-        "capturedAt": "2026-10-16T13:35:00.000000+00:00"
-      },
-      "attribution": "Satchel Paige, English Wikiquote page \"Satchel Paige\" (Satchel_Paige@3883905:14-15). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: sourced. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
-      "publicationYear": 1958,
-      "section": "Quotes; Lincoln Evening Journal (26 July 1958)",
-      "rightsEvidence": [
-        "https://en.wikiquote.org/w/index.php?title=Satchel_Paige&oldid=3883905",
-        "https://creativecommons.org/licenses/by-sa/4.0/",
-        "https://en.wikiquote.org/wiki/Wikiquote:Copyrights",
-        "https://blogs.loc.gov/copyright/2025/12/lifecycle-of-copyright-1930-works-in-the-public-domain/",
-        "https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en/guide-copyright",
-        "https://www.gov.uk/copyright/how-long-copyright-lasts",
-        "https://www.gutenberg.org/policy/license.html"
-      ]
-    }
-  },
-  {
-    "id": "quote:wikiquote:615:b9419ca8eca4fb75",
-    "kind": "quote",
-    "types": [
-      "quotation",
-      "famous-quotes"
-    ],
-    "text": "Someone said to me 'To you football is a matter of life or death!' and I said 'Listen, it's more important than that'.",
-    "language": "en",
-    "sports": [
-      "soccer"
-    ],
-    "tags": [
-      "famous-quotes",
-      "training"
-    ],
-    "date": null,
-    "monthDay": null,
-    "dateRole": null,
-    "speaker": "Bill Shankly",
-    "entities": [
-      {
-        "id": "wikidata:Q207457",
-        "kind": "person",
-        "role": "author",
-        "label": "Bill Shankly"
-      },
-      {
-        "id": "sport:soccer",
-        "kind": "sport",
-        "role": "subject",
-        "label": "soccer"
-      }
-    ],
-    "source": {
-      "sourceId": "wikiquote",
-      "key": "Bill_Shankly@3462982:12-13",
-      "url": "https://en.wikiquote.org/w/index.php?title=Bill_Shankly&oldid=3462982",
-      "title": "Bill Shankly",
-      "licence": "CC-BY-SA-4.0",
-      "rightsStatus": "cc-by-sa-4.0",
-      "rawSha256": "4f7bf1ec3ac12c57b5cf79e6b90462a3c5157dff746a51aa75f207e99df141ec",
-      "snapshot": {
-        "status": "snapshot",
-        "revision": "3462982",
-        "capturedAt": "2026-10-16T13:35:00.000000+00:00"
-      },
-      "attribution": "Bill Shankly, English Wikiquote page \"Bill Shankly\" (Bill_Shankly@3462982:12-13). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: sourced. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
-      "publicationYear": 1981,
-      "section": "Quotes; Granada Television interview (20 May 1981)",
-      "rightsEvidence": [
-        "https://en.wikiquote.org/w/index.php?title=Bill_Shankly&oldid=3462982",
-        "https://creativecommons.org/licenses/by-sa/4.0/",
-        "https://en.wikiquote.org/wiki/Wikiquote:Copyrights",
+        "https://www.copyright.gov/circs/circ33.pdf",
         "https://blogs.loc.gov/copyright/2025/12/lifecycle-of-copyright-1930-works-in-the-public-domain/",
         "https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en/guide-copyright",
         "https://www.gov.uk/copyright/how-long-copyright-lasts",
@@ -2209,256 +1813,14 @@ export const quotes: readonly MeigenRecord[] = [
         "revision": "3907303",
         "capturedAt": "2026-10-16T13:35:00.000000+00:00"
       },
-      "attribution": "Henry Russell Sanders, English Wikiquote page \"Vince Lombardi\" (Vince_Lombardi@3907303:32-33). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: corrected-misattribution. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
+      "attribution": "Henry Russell Sanders, English Wikiquote page \"Vince Lombardi\" (Vince_Lombardi@3907303:32-33). Wikiquote page compilation CC BY-SA 4.0; quoted words remain with the speaker or author. Title, revision and URL travel with the row. Attribution certainty: corrected-misattribution.",
+      "rightsReasoning": "Words: short slogan. Wikiquote Misattributed records this as UCLA coach Henry Russell \"Red\" Sanders, not Vince Lombardi. A short slogan or catchphrase is not copyrightable subject matter in the United States (Copyright Office Circular 33). Stored as Sanders. English Wikiquote page \"Vince Lombardi\" at the pinned revision is CC BY-SA 4.0 for the page compilation only; it does not own the quoted words. Title, revision and URL travel with the row.",
       "section": "Misattributed; Wikiquote sources this to UCLA coach Red Sanders, not Lombardi",
       "rightsEvidence": [
         "https://en.wikiquote.org/w/index.php?title=Vince_Lombardi&oldid=3907303",
         "https://creativecommons.org/licenses/by-sa/4.0/",
         "https://en.wikiquote.org/wiki/Wikiquote:Copyrights",
-        "https://blogs.loc.gov/copyright/2025/12/lifecycle-of-copyright-1930-works-in-the-public-domain/",
-        "https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en/guide-copyright",
-        "https://www.gov.uk/copyright/how-long-copyright-lasts",
-        "https://www.gutenberg.org/policy/license.html"
-      ]
-    }
-  },
-  {
-    "id": "quote:wikiquote:6681:a8a600619086852a",
-    "kind": "quote",
-    "types": [
-      "quotation",
-      "famous-quotes"
-    ],
-    "text": "We shall play every game to the hilt with every ounce of fiber we have in our bodies.",
-    "language": "en",
-    "sports": [
-      "american-football"
-    ],
-    "tags": [
-      "famous-quotes",
-      "training"
-    ],
-    "date": null,
-    "monthDay": null,
-    "dateRole": null,
-    "speaker": "Vince Lombardi",
-    "entities": [
-      {
-        "id": "wikidata:Q553321",
-        "kind": "person",
-        "role": "author",
-        "label": "Vince Lombardi"
-      },
-      {
-        "id": "sport:american-football",
-        "kind": "sport",
-        "role": "subject",
-        "label": "american-football"
-      }
-    ],
-    "source": {
-      "sourceId": "wikiquote",
-      "key": "Vince_Lombardi@3907303:22-23",
-      "url": "https://en.wikiquote.org/w/index.php?title=Vince_Lombardi&oldid=3907303",
-      "title": "Vince Lombardi",
-      "licence": "CC-BY-SA-4.0",
-      "rightsStatus": "cc-by-sa-4.0",
-      "rawSha256": "a524434ebcf22aeafe87badee12d4328685e9fff8dff415ca02786853675b1cf",
-      "snapshot": {
-        "status": "snapshot",
-        "revision": "3907303",
-        "capturedAt": "2026-10-16T13:35:00.000000+00:00"
-      },
-      "attribution": "Vince Lombardi, English Wikiquote page \"Vince Lombardi\" (Vince_Lombardi@3907303:22-23). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: sourced. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
-      "publicationYear": 2001,
-      "section": "Quotes; reported in Donald T. Phillips, Run To Win (2001)",
-      "rightsEvidence": [
-        "https://en.wikiquote.org/w/index.php?title=Vince_Lombardi&oldid=3907303",
-        "https://creativecommons.org/licenses/by-sa/4.0/",
-        "https://en.wikiquote.org/wiki/Wikiquote:Copyrights",
-        "https://blogs.loc.gov/copyright/2025/12/lifecycle-of-copyright-1930-works-in-the-public-domain/",
-        "https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en/guide-copyright",
-        "https://www.gov.uk/copyright/how-long-copyright-lasts",
-        "https://www.gutenberg.org/policy/license.html"
-      ]
-    }
-  },
-  {
-    "id": "quote:wikiquote:6681:d0bf0ebec50fc683",
-    "kind": "quote",
-    "types": [
-      "quotation",
-      "famous-quotes"
-    ],
-    "text": "Gentlemen, we are going to relentlessly chase perfection, knowing full well we will not catch it, because nothing is perfect. But we are going to relentlessly chase it, because in the process we will catch excellence. I am not remotely interested in just being good.",
-    "language": "en",
-    "sports": [
-      "american-football"
-    ],
-    "tags": [
-      "famous-quotes",
-      "training"
-    ],
-    "date": null,
-    "monthDay": null,
-    "dateRole": null,
-    "speaker": "Vince Lombardi",
-    "entities": [
-      {
-        "id": "wikidata:Q553321",
-        "kind": "person",
-        "role": "author",
-        "label": "Vince Lombardi"
-      },
-      {
-        "id": "sport:american-football",
-        "kind": "sport",
-        "role": "subject",
-        "label": "american-football"
-      }
-    ],
-    "source": {
-      "sourceId": "wikiquote",
-      "key": "Vince_Lombardi@3907303:19-20",
-      "url": "https://en.wikiquote.org/w/index.php?title=Vince_Lombardi&oldid=3907303",
-      "title": "Vince Lombardi",
-      "licence": "CC-BY-SA-4.0",
-      "rightsStatus": "cc-by-sa-4.0",
-      "rawSha256": "a524434ebcf22aeafe87badee12d4328685e9fff8dff415ca02786853675b1cf",
-      "snapshot": {
-        "status": "snapshot",
-        "revision": "3907303",
-        "capturedAt": "2026-10-16T13:35:00.000000+00:00"
-      },
-      "attribution": "Vince Lombardi, English Wikiquote page \"Vince Lombardi\" (Vince_Lombardi@3907303:19-20). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: sourced. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
-      "publicationYear": 1959,
-      "section": "Quotes; first Packers team meeting (1959), reported in Chuck Carlson, Game of My Life (2004)",
-      "rightsEvidence": [
-        "https://en.wikiquote.org/w/index.php?title=Vince_Lombardi&oldid=3907303",
-        "https://creativecommons.org/licenses/by-sa/4.0/",
-        "https://en.wikiquote.org/wiki/Wikiquote:Copyrights",
-        "https://blogs.loc.gov/copyright/2025/12/lifecycle-of-copyright-1930-works-in-the-public-domain/",
-        "https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en/guide-copyright",
-        "https://www.gov.uk/copyright/how-long-copyright-lasts",
-        "https://www.gutenberg.org/policy/license.html"
-      ]
-    }
-  },
-  {
-    "id": "quote:wikiquote:68552:42ef3b7f06d52f4e",
-    "kind": "quote",
-    "types": [
-      "quotation",
-      "famous-quotes"
-    ],
-    "text": "Yet today, I consider myself the luckiest man on the face of the earth.",
-    "language": "en",
-    "sports": [
-      "baseball"
-    ],
-    "tags": [
-      "famous-quotes",
-      "victory"
-    ],
-    "date": null,
-    "monthDay": null,
-    "dateRole": null,
-    "speaker": "Lou Gehrig",
-    "entities": [
-      {
-        "id": "wikidata:Q357444",
-        "kind": "person",
-        "role": "author",
-        "label": "Lou Gehrig"
-      },
-      {
-        "id": "sport:baseball",
-        "kind": "sport",
-        "role": "subject",
-        "label": "baseball"
-      }
-    ],
-    "source": {
-      "sourceId": "wikiquote",
-      "key": "Lou_Gehrig@3832606:9-10",
-      "url": "https://en.wikiquote.org/w/index.php?title=Lou_Gehrig&oldid=3832606",
-      "title": "Lou Gehrig",
-      "licence": "CC-BY-SA-4.0",
-      "rightsStatus": "cc-by-sa-4.0",
-      "rawSha256": "0b9be587f786c98acaaa85c807ec97fdf2130cac20691e87599fa2b9204158cf",
-      "snapshot": {
-        "status": "snapshot",
-        "revision": "3832606",
-        "capturedAt": "2026-10-16T13:35:00.000000+00:00"
-      },
-      "attribution": "Lou Gehrig, English Wikiquote page \"Lou Gehrig\" (Lou_Gehrig@3832606:9-10). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: sourced. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
-      "publicationYear": 1939,
-      "section": "Quotes; Lou Gehrig Appreciation Day, Yankee Stadium (4 July 1939). The speech date is in the citation, not copied as a quote anniversary.",
-      "rightsEvidence": [
-        "https://en.wikiquote.org/w/index.php?title=Lou_Gehrig&oldid=3832606",
-        "https://creativecommons.org/licenses/by-sa/4.0/",
-        "https://en.wikiquote.org/wiki/Wikiquote:Copyrights",
-        "https://blogs.loc.gov/copyright/2025/12/lifecycle-of-copyright-1930-works-in-the-public-domain/",
-        "https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en/guide-copyright",
-        "https://www.gov.uk/copyright/how-long-copyright-lasts",
-        "https://www.gutenberg.org/policy/license.html"
-      ]
-    }
-  },
-  {
-    "id": "quote:wikiquote:7076:e11bcda3cf8ce789",
-    "kind": "quote",
-    "types": [
-      "quotation",
-      "famous-quotes"
-    ],
-    "text": "I've missed over 9,000 shots in my career. I've lost almost 300 games. 26 times I've been trusted to take the game-winning shot and missed. I've failed over and over and over again in my life. And that is why I succeed.",
-    "language": "en",
-    "sports": [
-      "basketball"
-    ],
-    "tags": [
-      "famous-quotes",
-      "training"
-    ],
-    "date": null,
-    "monthDay": null,
-    "dateRole": null,
-    "speaker": "Michael Jordan",
-    "entities": [
-      {
-        "id": "wikidata:Q41421",
-        "kind": "person",
-        "role": "author",
-        "label": "Michael Jordan"
-      },
-      {
-        "id": "sport:basketball",
-        "kind": "sport",
-        "role": "subject",
-        "label": "basketball"
-      }
-    ],
-    "source": {
-      "sourceId": "wikiquote",
-      "key": "Michael_Jordan@3721621:25-26",
-      "url": "https://en.wikiquote.org/w/index.php?title=Michael_Jordan&oldid=3721621",
-      "title": "Michael Jordan",
-      "licence": "CC-BY-SA-4.0",
-      "rightsStatus": "cc-by-sa-4.0",
-      "rawSha256": "038e038b19c92baf80817ac3cfd3093105b1dae7acfec9bcc1bef3fa0ec5574f",
-      "snapshot": {
-        "status": "snapshot",
-        "revision": "3721621",
-        "capturedAt": "2026-10-16T13:35:00.000000+00:00"
-      },
-      "attribution": "Michael Jordan, English Wikiquote page \"Michael Jordan\" (Michael_Jordan@3721621:25-26). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: secondary. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
-      "publicationYear": 1998,
-      "section": "Quotes; as quoted in Nike Culture : The Sign of the Swoosh (1998), p. 49",
-      "rightsEvidence": [
-        "https://en.wikiquote.org/w/index.php?title=Michael_Jordan&oldid=3721621",
-        "https://creativecommons.org/licenses/by-sa/4.0/",
-        "https://en.wikiquote.org/wiki/Wikiquote:Copyrights",
+        "https://www.copyright.gov/circs/circ33.pdf",
         "https://blogs.loc.gov/copyright/2025/12/lifecycle-of-copyright-1930-works-in-the-public-domain/",
         "https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en/guide-copyright",
         "https://www.gov.uk/copyright/how-long-copyright-lasts",

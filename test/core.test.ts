@@ -6,7 +6,7 @@ const quote: MeigenRecord = {
   id: "quote:source:1", types: ["quotation"], kind: "quote", text: "A verified passage.", language: "en", sports: ["boxing"], tags: [],
   date: null, monthDay: null, dateRole: null, speaker: "Historical author",
   entities: [{ id: "source:person-1", kind: "person", role: "author" }],
-  source: { sourceId: "source", key: "edition:1", url: "https://example.com/book", title: "Book", licence: "LicenseRef-Public-Domain-Text", rightsStatus: "public-domain-us-ca-uk", attribution: "Author, original edition", rawSha256: "a".repeat(64), rightsEvidence: ["https://example.com/rights"] },
+  source: { sourceId: "source", key: "edition:1", url: "https://example.com/book", title: "Book", licence: "LicenseRef-Public-Domain-Text", rightsStatus: "public-domain-us-ca-uk", attribution: "Author, original edition", rightsReasoning: "Words belong to the named author of a book published before 1931; territorial public domain in the US, Canada and the UK.", rawSha256: "a".repeat(64), rightsEvidence: ["https://example.com/rights"] },
 };
 const fact: MeigenRecord = { ...quote, id: "fact:1", types: ["competition-start"], kind: "history", text: "An event began.", date: "2000-02-29", monthDay: "02-29", dateRole: "start", speaker: null };
 
@@ -39,6 +39,7 @@ test("a quote choice is deterministic, does not mutate its input, and has no hid
 test("public loader rejects unclear rights and malformed or incomplete records", () => {
   assert.equal(isRecord(quote), true); assert.equal(isRecord(fact), true);
   assert.equal(isRecord({ ...quote, source: { ...quote.source, licence: "CC-BY-SA-4.0", rightsStatus: "cc-by-sa-4.0" } }), true);
+  assert.equal(isRecord({ ...quote, source: { ...quote.source, rightsReasoning: "" } }), false);
   assert.equal(isRecord({ ...quote, source: { ...quote.source, licence: "unknown" } }), false);
   assert.equal(isRecord({ ...quote, source: { ...quote.source, rightsEvidence: [] } }), false);
   assert.equal(isRecord({ ...fact, date: "2023-02-29" }), false);

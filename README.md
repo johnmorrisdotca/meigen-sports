@@ -46,7 +46,7 @@ historyOnDate(history, "2022-11-20", { sports: ["soccer"] }).length; // 2
 quoteForDate(quotes, "2026-10-14")?.speaker; // "James Dwight"
 ```
 
-The bundled dataset begins with 41 quotations (22 Gutenberg excerpts and 19 Wikiquote sports lines tagged `famous-quotes`) and 1062 dated facts. Facts cover 142 of 366 calendar month-days. This is a sourced starting collection with many coverage gaps, not a complete daily almanac. Quotes have unknown utterance dates and are never assigned invented anniversaries.
+The bundled dataset begins with 30 quotations (22 Gutenberg excerpts and 8 Wikiquote sports lines tagged `famous-quotes`) and 1062 dated facts. Facts cover 142 of 366 calendar month-days. This is a sourced starting collection with many coverage gaps, not a complete daily almanac. Quotes have unknown utterance dates and are never assigned invented anniversaries.
 
 ## Who it is for
 
@@ -152,7 +152,7 @@ The package separates TypeScript code, bundled JSON and source material. Raw sou
 
 ## Where it comes from
 
-The initial quotations are excerpts from James Dwight's *Lawn-tennis* (1886), Walter Camp's *American Football* (1891) and Pindar's odes in Ernest Myers's 1904 edition, plus 19 sports quotations from English Wikiquote at pinned revisions (CC BY-SA 4.0; see [docs/famous-quotes.md](./docs/famous-quotes.md)). The dated facts come from exact-day Wikidata statements and all 964 results in openfootball's 22 World Cup edition files (1930–2022). Full source-specific terms, credits and original notices are in [NOTICE.md](./NOTICE.md) and [LICENSES/](./LICENSES/).
+The initial quotations are excerpts from James Dwight's *Lawn-tennis* (1886), Walter Camp's *American Football* (1891) and Pindar's odes in Ernest Myers's 1904 edition, plus 8 sports quotations from English Wikiquote at pinned revisions (page compilation CC BY-SA 4.0; quoted words justified per row; see [docs/famous-quotes.md](./docs/famous-quotes.md)). The dated facts come from exact-day Wikidata statements and all 964 results in openfootball's 22 World Cup edition files (1930–2022). Full source-specific terms, credits and original notices are in [NOTICE.md](./NOTICE.md) and [LICENSES/](./LICENSES/).
 
 ## The family
 

@@ -1,6 +1,6 @@
 # Reviewed source data
 
-The dataset contains **41 quotations (22 Gutenberg excerpts and 19 Wikiquote sports lines) and 1062 calendar facts**. It covers **142 of 366 month-days**, with **224 gaps**. All 12 months occur, but the collection is not a comprehensive year-round feed. English source text stays English; documentation and interface translations do not imply translated quotations.
+The dataset contains **30 quotations (22 Gutenberg excerpts and 8 Wikiquote sports lines) and 1062 calendar facts**. It covers **142 of 366 month-days**, with **224 gaps**. All 12 months occur, but the collection is not a comprehensive year-round feed. English source text stays English; documentation and interface translations do not imply translated quotations.
 
 `seed/quotes.json` and `seed/history.json` contain selected source records and provenance, not original downloaded books or whole Wikidata responses. `sources.json` records the six accepted book/data sources. Source rights are independent of the MIT code licence; see [historical text and factual data credits](../LICENSES/GUTENBERG-CREDITS.md) and the original licences under `LICENSES/`.
 
@@ -21,7 +21,7 @@ Entity shards are `entities/<base64url-UTF8-ID>.json`: unpadded RFC 4648 base64u
 ## Source selection
 
 - Ten continuous excerpts from James Dwight's *Lawn-tennis* (1886), eight from Walter Camp's *American Football* (1891), and four from the 1904 edition of Ernest Myers's Pindar translation (first published 1874). Author, translator, original section, exact source lines and edition are explicit. These are historical source-verified excerpts. Unknown utterance dates stay null.
-- Nineteen sports quotations from English Wikiquote at pinned revisions (CC BY-SA 4.0; title, revision and URL on each row). Collection tag `famous-quotes`; kind remains `quote`. See [famous quotes](../docs/famous-quotes.md).
+- Eight sports quotations from English Wikiquote at pinned revisions. The page compilation is CC BY-SA 4.0; quoted words belong to the speaker and each row records `rightsReasoning`. Collection tag `famous-quotes`; kind remains `quote`. See [famous quotes](../docs/famous-quotes.md).
 - 98 exact-day facts from Wikidata sporting events. Nondeprecated, unambiguous Gregorian day statements only; an event-period start/end is not automatically an opening/closing ceremony.
 - All 964 matches in openfootball's 22 World Cup edition files (1930–2022). Regulation, extra-time and shootout scores remain distinct. Team labels do not establish authoritative team IDs. The 2022 file was already in the seed; the other 21 editions came from the existing local archive, not a new download.
 
