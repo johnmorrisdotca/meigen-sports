@@ -96,7 +96,7 @@ The snippets under **In 30 seconds** and **Use it in your project** are run by `
 
 ## API
 
-The root export provides `isDate`, `monthDayOf`, `selectRecords`, `historyOnDate`, `quoteForDate`, `EXTRACT_CATEGORIES`, the core record and feed types, on-this-day consume types (`OnThisDayRecord`, `TeamRef`, `PersonRef`), and `SCHEMA_VERSION` and `VERSION`.
+The root export provides `isDate`, `monthDayOf`, `selectRecords`, `historyOnDate`, `quoteForDate`, `EXTRACT_CATEGORIES`, `FACT_CATEGORIES`, on-this-day helpers (`factsFor`, `today`, `calendarDayInZone`, `rankFeed`, `randomFacts`, `tagsOf`, `uniqueRecordIds`, `withCaptions`, `captionFromFact`, `isRichFact`), caption templates (`render`, `templatesFor`, `TEMPLATES`), the core record and feed types, on-this-day consume types (`OnThisDayRecord`, `TeamRef`, `PersonRef`), and `SCHEMA_VERSION` and `VERSION`.
 
 | Import | Contents |
 | --- | --- |

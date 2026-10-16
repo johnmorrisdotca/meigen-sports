@@ -27,6 +27,7 @@ First npm publication.
 - Add source-specific data notices and preserve the included texts' original rights notices.
 - Replace copied tournament-bracket contribution guidance with sports-history package rules.
 - Keep English and Japanese docs on separate pages so GitHub Pages can deploy the day shards.
+- Name every public fact/template export in the README so `pnpm test:readme` passes.
 
 ## [0.1.0] - 2026-10-14
 
