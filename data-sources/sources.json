@@ -155,5 +155,37 @@
     "lastUpdatedNote": "Per-record upstream revisions and capture times are retained; no unsupported project-wide update time is asserted.",
     "lifecycleEvidence": "Pinned 1930–2022 World Cup corpus, not a claim that its upstream repository is discontinued.",
     "lifecyclePolicy": "Historical snapshot or discontinued status never by itself makes rights-cleared history unusable. Consumer source filtering is independent of record type; rights and publication review are separate."
+  },
+  {
+    "id": "wikiquote-sports",
+    "status": "eligible-and-seeded",
+    "seed_kind": "quote",
+    "data_licence": "CC-BY-SA-4.0; Wikiquote compilation licence. Some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
+    "code_licence": "No MediaWiki software imported. Official API JSON only.",
+    "primary_urls": [
+      "https://en.wikiquote.org/wiki/Wikiquote:Copyrights",
+      "https://creativecommons.org/licenses/by-sa/4.0/",
+      "https://en.wikiquote.org/wiki/Sports",
+      "https://foundation.wikimedia.org/wiki/Policy:Wikimedia_Foundation_User-Agent_Policy"
+    ],
+    "authorship": "Named speakers as given on the English Wikiquote page; speaker corrected when the page itself marks a misattribution (Red Sanders, not Lombardi).",
+    "acquisition": "Official en.wikiquote.org MediaWiki API, action=query revisions (content, ids, timestamp, sha1), one title at a time; User-Agent MeigenSports/0.1.0. Title, revision id and oldid URL stored. Raw JSON is gitignored under data-sources/raw/; sha256 in pipeline/archive-manifest.json. Do not copy Kaggle Wikiquote dumps or Goodreads scrapes into git.",
+    "collection_recipe": "Sports-related quotations only from Sports, Olympic Games, American football, and named athlete/coach pages. Store original wording after stripping wikitext markers, speaker, section, attribution certainty, licence CC-BY-SA-4.0, English-only translation provenance. Date remains null; a source year in the citation is not an utterance anniversary.",
+    "exclusions": [
+      "No movie or television dialogue.",
+      "No disputed, unsourced, or sensitive-topic lines (ethnicity, religion, health, sex or gender, family, politics).",
+      "No ESPN, Sports Reference or NHL endpoints.",
+      "Kaggle manann/quotes-500k (licence unknown) and quotes.toscrape.com (GoodReads demo) are checklists only.",
+      "kieranpoc/quotes (WikiQuoteXL, CC BY-SA 4.0) is a Wikiquote extract used only as a pointer; ingest is the live pinned API revision, not the CSV dump."
+    ],
+    "sourceId": "wikiquote",
+    "snapshot": {
+      "status": "snapshot",
+      "capturedAt": "2026-10-16T13:35:00.000000+00:00"
+    },
+    "coverageNote": "Publication year in a citation is not an utterance date. No exact date coverage is inferred.",
+    "lastUpdated": null,
+    "lastUpdatedNote": "Per-record upstream revisions and capture times are retained; no unsupported project-wide update time is asserted.",
+    "lifecyclePolicy": "Historical snapshot or discontinued status never by itself makes rights-cleared history unusable. Consumer source filtering is independent of record type; rights and publication review are separate."
   }
 ]

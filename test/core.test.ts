@@ -38,6 +38,7 @@ test("a quote choice is deterministic, does not mutate its input, and has no hid
 });
 test("public loader rejects unclear rights and malformed or incomplete records", () => {
   assert.equal(isRecord(quote), true); assert.equal(isRecord(fact), true);
+  assert.equal(isRecord({ ...quote, source: { ...quote.source, licence: "CC-BY-SA-4.0", rightsStatus: "cc-by-sa-4.0" } }), true);
   assert.equal(isRecord({ ...quote, source: { ...quote.source, licence: "unknown" } }), false);
   assert.equal(isRecord({ ...quote, source: { ...quote.source, rightsEvidence: [] } }), false);
   assert.equal(isRecord({ ...fact, date: "2023-02-29" }), false);

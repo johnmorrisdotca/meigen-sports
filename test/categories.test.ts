@@ -11,6 +11,7 @@ test("history catalogue separates broad families from player record scopes", () 
   assert.ok(entry.evidence.length > 20);
  }
  assert.equal(HISTORY_TYPES.some(({ id }) => id === "nonwinning-streak"), false);
+ assert.equal(HISTORY_TYPES.some(({ id }) => id === "famous-quotes"), false);
  assert.equal(HISTORY_TYPES.find(({ id }) => id === "sport-record")?.readiness, "needs-source");
  assert.equal(HISTORY_TYPES.find(({ id }) => id === "cancelled-postponed")?.readiness, "extractable-if-populated");
 });

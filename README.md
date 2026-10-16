@@ -46,7 +46,7 @@ historyOnDate(history, "2022-11-20", { sports: ["soccer"] }).length; // 2
 quoteForDate(quotes, "2026-10-14")?.speaker; // "James Dwight"
 ```
 
-The bundled dataset begins with 22 historical quotation excerpts and 1062 dated facts. Facts cover 142 of 366 calendar month-days. This is a sourced starting collection with many coverage gaps, not a complete daily almanac. Quotes have unknown utterance dates and are never assigned invented anniversaries.
+The bundled dataset begins with 41 quotations (22 Gutenberg excerpts and 19 Wikiquote sports lines tagged `famous-quotes`) and 1062 dated facts. Facts cover 142 of 366 calendar month-days. This is a sourced starting collection with many coverage gaps, not a complete daily almanac. Quotes have unknown utterance dates and are never assigned invented anniversaries.
 
 ## Who it is for
 
@@ -54,7 +54,7 @@ Use Meigen Sports in a site, app or research tool that needs cited historical sp
 
 ## Features
 
-- Source-verified quotations from three historical books and dated sporting facts from Wikidata and openfootball.
+- Source-verified quotations from three historical books and English Wikiquote sports pages, and dated sporting facts from Wikidata and openfootball.
 - Deterministic quotation selection and explicit-date history filters; the library does not read the clock or choose randomly.
 - Sport, entity, source, kind, type, language and text filters.
 - Versioned static JSON shards for calendar days, sports and stable entities, validated by an explicit loader.
@@ -114,7 +114,7 @@ Each `MeigenRecord` has a `kind` (`quote` or `history`), exact text, source cita
 
 ## Limits
 
-The current feed is sparse: 224 calendar month-days have no history facts. Source coverage and eligible dates are recorded in [data-sources/coverage.json](./data-sources/coverage.json). The collection contains historical book excerpts, 98 Wikidata event facts and 964 openfootball World Cup match results. It makes no comprehensive player, franchise or world-record claims.
+The current feed is sparse: 224 calendar month-days have no history facts. Source coverage and eligible dates are recorded in [data-sources/coverage.json](./data-sources/coverage.json). The collection contains historical book excerpts, Wikiquote sports quotations (CC BY-SA 4.0), 98 Wikidata event facts and 964 openfootball World Cup match results. It makes no comprehensive player, franchise or world-record claims.
 
 The current API uses exact dates and captions, stable entity references, tags and one primary citation per record. It does not yet expose the planned multi-source record progression, all source evidence, or automatic population from the existing sports database. A year or month alone is not converted into a day. A season total is not treated as evidence for the game where a milestone was reached.
 
@@ -152,7 +152,7 @@ The package separates TypeScript code, bundled JSON and source material. Raw sou
 
 ## Where it comes from
 
-The initial quotations are excerpts from James Dwight's *Lawn-tennis* (1886), Walter Camp's *American Football* (1891) and Pindar's odes in Ernest Myers's 1904 edition. The dated facts come from exact-day Wikidata statements and all 964 results in openfootball's 22 World Cup edition files (1930–2022). Full source-specific terms, credits and original notices are in [NOTICE.md](./NOTICE.md) and [LICENSES/](./LICENSES/).
+The initial quotations are excerpts from James Dwight's *Lawn-tennis* (1886), Walter Camp's *American Football* (1891) and Pindar's odes in Ernest Myers's 1904 edition, plus 19 sports quotations from English Wikiquote at pinned revisions (CC BY-SA 4.0; see [docs/famous-quotes.md](./docs/famous-quotes.md)). The dated facts come from exact-day Wikidata statements and all 964 results in openfootball's 22 World Cup edition files (1930–2022). Full source-specific terms, credits and original notices are in [NOTICE.md](./NOTICE.md) and [LICENSES/](./LICENSES/).
 
 ## The family
 

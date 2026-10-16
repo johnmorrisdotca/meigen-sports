@@ -4,6 +4,8 @@
 
 These 46 identifiers (`HISTORY_TYPES`) are **tags, not exclusive categories**. Store each fact once (`recordId`). One `OnThisDayRecord` may carry several tags: a championship-winning overtime goal is `championship-win` + `match-result` + `overtime-result`. Do not duplicate the event once per tag.
 
+`famous-quotes` is a quotation **collection** tag (`kind: "quote"`, `types` includes `quotation` and `famous-quotes`). It is not one of these 46 history tags. See [famous-quotes.md](famous-quotes.md).
+
 `category` on the record is the extract family that produced it (`game-on-day`, `championship-final`, …). `tags` are these history-type ids, assigned only from structured fields the extract already holds. Never invent a tag.
 
 Favourites filters match if **any** tag matches. A fact is copied into every matching category shard. Variety (`randomFacts`, demo mix) still counts the fact once, and caps two records per tag.

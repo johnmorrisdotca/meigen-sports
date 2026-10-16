@@ -40,7 +40,9 @@ export function isRecord(value: unknown): value is MeigenRecord {
   if (source.snapshot !== undefined && !isSnapshot(source.snapshot)) return false;
   if (!Array.isArray(source.rightsEvidence) || !source.rightsEvidence.length || !source.rightsEvidence.every((url) => typeof url === "string" && /^https:\/\//.test(url))) return false;
   if (!/^https:\/\//.test(source.url ?? "")) return false;
-  return (source.licence === "CC0-1.0" && source.rightsStatus === "cc0") || (source.licence === "LicenseRef-Public-Domain-Text" && source.rightsStatus === "public-domain-us-ca-uk");
+  return (source.licence === "CC0-1.0" && source.rightsStatus === "cc0")
+    || (source.licence === "LicenseRef-Public-Domain-Text" && source.rightsStatus === "public-domain-us-ca-uk")
+    || (source.licence === "CC-BY-SA-4.0" && source.rightsStatus === "cc-by-sa-4.0");
 }
 
 /** Load a versioned static shard. It performs one public file request, never a Turso/Supabase query.

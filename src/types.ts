@@ -5,7 +5,7 @@ export interface SourceSnapshot { readonly status: "active" | "snapshot" | "disc
 /** Source and text rights travel with every record, independently of this library's MIT licence. */
 export interface Citation {
  readonly sourceId: string; readonly key: string; readonly url: string; readonly title: string;
- readonly licence: string; readonly rightsStatus: "cc0" | "public-domain-us-ca-uk";
+ readonly licence: string; readonly rightsStatus: "cc0" | "public-domain-us-ca-uk" | "cc-by-sa-4.0";
  readonly attribution: string; readonly rawSha256: string; readonly rightsEvidence: readonly string[];
  readonly snapshot?: SourceSnapshot; readonly publicationYear?: number; readonly section?: string; readonly translator?: string;
 }

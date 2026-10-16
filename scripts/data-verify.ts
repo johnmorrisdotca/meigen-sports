@@ -5,22 +5,40 @@ import { digest } from "./data.ts";
 import { normalizeScore, type MatchScore } from "./worldcup-archive.ts";
 
 const ROOT = fileURLToPath(new URL("../", import.meta.url));
-interface QuoteSource { text: string; source_title: string; raw_sha256: string; raw_encoding: string; raw_line_start: number; raw_line_end: number }
+interface QuoteSource {
+  text: string; source_title: string; raw_sha256: string; raw_encoding: string;
+  raw_line_start: number; raw_line_end: number; source_id?: string;
+}
 interface HistorySource { source_id: string; raw_sha256: string; event_id?: string; source_property?: string; external_id: string; date: string; source_key: string; source_json_pointer?: string; teams?: string[]; score?: unknown }
 const normalized = (s: string): string => s.replace(/\s+/g, " ").trim();
+const wikiText = (s: string): string => normalized(s.replace(/<br\s*\/?>/gi, " ").replace(/'{2,}/g, "").replace(/\[\[(?:[^|\]]*\|)?([^\]]+)\]\]/g, "$1"));
 
 /** Verify accepted source passages and facts against explicitly supplied private archive bytes. */
 export function verifyOriginals(rawRoot: string): { quotes: number; history: number; sourceFiles: number } {
   const files = new Set<string>();
   const bytes = (name: string, hash: string): Buffer => {
-    if (!/^[a-zA-Z0-9.-]+$/.test(name)) throw new Error("Unsafe original archive name");
+    if (!/^[a-zA-Z0-9][a-zA-Z0-9._-]*$/.test(name)) throw new Error("Unsafe original archive name");
     const data = readFileSync(resolve(rawRoot, name));
     if (digest(data) !== hash) throw new Error("Original source checksum differs");
     files.add(name); return data;
   };
   const quotes = JSON.parse(readFileSync(resolve(ROOT, "data-sources/seed/quotes.json"), "utf8")) as QuoteSource[];
   const bookNames: Record<string, string> = { "Lawn-tennis": "dwight.txt", "American Football": "camp.txt", "The Extant Odes of Pindar": "pindar.txt" };
+  const wikiquoteFile: Record<string, string> = {
+    "Muhammad Ali": "wikiquote-ali.json", "Vince Lombardi": "wikiquote-lombardi.json", "Yogi Berra": "wikiquote-berra.json",
+    "Michael Jordan": "wikiquote-jordan.json", "John Wooden": "wikiquote-wooden.json", "Lou Gehrig": "wikiquote-gehrig.json",
+    "Satchel Paige": "wikiquote-paige.json", "Pelé": "wikiquote-pele.json", "Jesse Owens": "wikiquote-owens.json",
+    "Bill Shankly": "wikiquote-shankly.json", "Theodore Roosevelt": "wikiquote-roosevelt.json", "Sports": "wikiquote-sport.json",
+    "Olympic Games": "wikiquote-olympics.json", "American football": "wikiquote-american-football.json",
+  };
   for (const quote of quotes) {
+    if (quote.source_id === "wikiquote") {
+      const name = wikiquoteFile[quote.source_title];
+      if (!name) throw new Error("Unreviewed Wikiquote page");
+      const original = bytes(name, quote.raw_sha256).toString("utf8");
+      if (!wikiText(original).includes(wikiText(quote.text))) throw new Error("Wikiquote quotation differs from the pinned revision");
+      continue;
+    }
     const name = bookNames[quote.source_title];
     if (!name) throw new Error("Unreviewed quote book");
     const original = bytes(name, quote.raw_sha256).toString(quote.raw_encoding === "latin1" ? "latin1" : "utf8");

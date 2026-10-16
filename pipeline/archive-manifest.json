@@ -960,6 +960,132 @@
       "sha256": "ec50a38ec573310fa5ca7e984315d9912d1ace66945f0f9280f9f12b70c6e428",
       "bytes": 300346,
       "content_type": "text/plain; charset=utf-8"
+    },
+    {
+      "file": "raw/wikiquote-ali.json",
+      "url": "https://en.wikiquote.org/w/api.php?action=query&format=json&formatversion=2&prop=revisions&rvprop=content|ids|timestamp|sha1&rvslots=main&redirects=1&titles=Muhammad_Ali",
+      "fetched_at": "2026-10-16T13:35:00.000000+00:00",
+      "sha256": "5627979feed434cc44cdc16fd642aed74c3dfeacecd86709a6844e71b3eb02c0",
+      "bytes": 45391,
+      "content_type": "application/json; charset=utf-8",
+      "licence": "CC-BY-SA-4.0"
+    },
+    {
+      "file": "raw/wikiquote-lombardi.json",
+      "url": "https://en.wikiquote.org/w/api.php?action=query&format=json&formatversion=2&prop=revisions&rvprop=content|ids|timestamp|sha1&rvslots=main&redirects=1&titles=Vince_Lombardi",
+      "fetched_at": "2026-10-16T13:35:00.000000+00:00",
+      "sha256": "a524434ebcf22aeafe87badee12d4328685e9fff8dff415ca02786853675b1cf",
+      "bytes": 3625,
+      "content_type": "application/json; charset=utf-8",
+      "licence": "CC-BY-SA-4.0"
+    },
+    {
+      "file": "raw/wikiquote-berra.json",
+      "url": "https://en.wikiquote.org/w/api.php?action=query&format=json&formatversion=2&prop=revisions&rvprop=content|ids|timestamp|sha1&rvslots=main&redirects=1&titles=Yogi_Berra",
+      "fetched_at": "2026-10-16T13:35:00.000000+00:00",
+      "sha256": "67fa48725c84f01856f2a8daf0cd92f48d22f7c9def08123c03868c48d02d3df",
+      "bytes": 35604,
+      "content_type": "application/json; charset=utf-8",
+      "licence": "CC-BY-SA-4.0"
+    },
+    {
+      "file": "raw/wikiquote-jordan.json",
+      "url": "https://en.wikiquote.org/w/api.php?action=query&format=json&formatversion=2&prop=revisions&rvprop=content|ids|timestamp|sha1&rvslots=main&redirects=1&titles=Michael_Jordan",
+      "fetched_at": "2026-10-16T13:35:00.000000+00:00",
+      "sha256": "038e038b19c92baf80817ac3cfd3093105b1dae7acfec9bcc1bef3fa0ec5574f",
+      "bytes": 11636,
+      "content_type": "application/json; charset=utf-8",
+      "licence": "CC-BY-SA-4.0"
+    },
+    {
+      "file": "raw/wikiquote-wooden.json",
+      "url": "https://en.wikiquote.org/w/api.php?action=query&format=json&formatversion=2&prop=revisions&rvprop=content|ids|timestamp|sha1&rvslots=main&redirects=1&titles=John_Wooden",
+      "fetched_at": "2026-10-16T13:35:00.000000+00:00",
+      "sha256": "2ea8bccfac52358b12451efd80888860c48b969f13b751f76d76f504afd3f982",
+      "bytes": 4904,
+      "content_type": "application/json; charset=utf-8",
+      "licence": "CC-BY-SA-4.0"
+    },
+    {
+      "file": "raw/wikiquote-gehrig.json",
+      "url": "https://en.wikiquote.org/w/api.php?action=query&format=json&formatversion=2&prop=revisions&rvprop=content|ids|timestamp|sha1&rvslots=main&redirects=1&titles=Lou_Gehrig",
+      "fetched_at": "2026-10-16T13:35:00.000000+00:00",
+      "sha256": "0b9be587f786c98acaaa85c807ec97fdf2130cac20691e87599fa2b9204158cf",
+      "bytes": 9500,
+      "content_type": "application/json; charset=utf-8",
+      "licence": "CC-BY-SA-4.0"
+    },
+    {
+      "file": "raw/wikiquote-paige.json",
+      "url": "https://en.wikiquote.org/w/api.php?action=query&format=json&formatversion=2&prop=revisions&rvprop=content|ids|timestamp|sha1&rvslots=main&redirects=1&titles=Satchel_Paige",
+      "fetched_at": "2026-10-16T13:35:00.000000+00:00",
+      "sha256": "9242aaf2d6fc1c04d1c90f05fca491990762606e750afbdb446fb848b080270e",
+      "bytes": 7483,
+      "content_type": "application/json; charset=utf-8",
+      "licence": "CC-BY-SA-4.0"
+    },
+    {
+      "file": "raw/wikiquote-pele.json",
+      "url": "https://en.wikiquote.org/w/api.php?action=query&format=json&formatversion=2&prop=revisions&rvprop=content|ids|timestamp|sha1&rvslots=main&redirects=1&titles=Pel%C3%A9",
+      "fetched_at": "2026-10-16T13:35:00.000000+00:00",
+      "sha256": "26a2d9c6fb9902811649f9dc308c19667ba757f1316fc8dec4ba69ec71fd13ee",
+      "bytes": 4372,
+      "content_type": "application/json; charset=utf-8",
+      "licence": "CC-BY-SA-4.0"
+    },
+    {
+      "file": "raw/wikiquote-owens.json",
+      "url": "https://en.wikiquote.org/w/api.php?action=query&format=json&formatversion=2&prop=revisions&rvprop=content|ids|timestamp|sha1&rvslots=main&redirects=1&titles=Jesse_Owens",
+      "fetched_at": "2026-10-16T13:35:00.000000+00:00",
+      "sha256": "ccacf996dc514f86563ddbe4b93bf8607b37bb0af7fddd7b9c26f3ecfa6d622f",
+      "bytes": 14308,
+      "content_type": "application/json; charset=utf-8",
+      "licence": "CC-BY-SA-4.0"
+    },
+    {
+      "file": "raw/wikiquote-shankly.json",
+      "url": "https://en.wikiquote.org/w/api.php?action=query&format=json&formatversion=2&prop=revisions&rvprop=content|ids|timestamp|sha1&rvslots=main&redirects=1&titles=Bill_Shankly",
+      "fetched_at": "2026-10-16T13:35:00.000000+00:00",
+      "sha256": "4f7bf1ec3ac12c57b5cf79e6b90462a3c5157dff746a51aa75f207e99df141ec",
+      "bytes": 3613,
+      "content_type": "application/json; charset=utf-8",
+      "licence": "CC-BY-SA-4.0"
+    },
+    {
+      "file": "raw/wikiquote-roosevelt.json",
+      "url": "https://en.wikiquote.org/w/api.php?action=query&format=json&formatversion=2&prop=revisions&rvprop=content|ids|timestamp|sha1&rvslots=main&redirects=1&titles=Theodore_Roosevelt",
+      "fetched_at": "2026-10-16T13:35:00.000000+00:00",
+      "sha256": "30a2b7811367647ce86af45fab5a165d6c6cf564668abc68f7b4eade122db302",
+      "bytes": 343139,
+      "content_type": "application/json; charset=utf-8",
+      "licence": "CC-BY-SA-4.0"
+    },
+    {
+      "file": "raw/wikiquote-sport.json",
+      "url": "https://en.wikiquote.org/w/api.php?action=query&format=json&formatversion=2&prop=revisions&rvprop=content|ids|timestamp|sha1&rvslots=main&redirects=1&titles=Sports",
+      "fetched_at": "2026-10-16T13:35:00.000000+00:00",
+      "sha256": "96ac57c5dab1f97bdab6d8087fbd624c3492fd955bc939756df28fccc9ac1388",
+      "bytes": 39913,
+      "content_type": "application/json; charset=utf-8",
+      "licence": "CC-BY-SA-4.0"
+    },
+    {
+      "file": "raw/wikiquote-olympics.json",
+      "url": "https://en.wikiquote.org/w/api.php?action=query&format=json&formatversion=2&prop=revisions&rvprop=content|ids|timestamp|sha1&rvslots=main&redirects=1&titles=Olympic_Games",
+      "fetched_at": "2026-10-16T13:35:00.000000+00:00",
+      "sha256": "9f140a69f5fb476b02c16f0322a15e9b32fe5618e29152941c8b17e9e74395af",
+      "bytes": 15072,
+      "content_type": "application/json; charset=utf-8",
+      "licence": "CC-BY-SA-4.0"
+    },
+    {
+      "file": "raw/wikiquote-american-football.json",
+      "url": "https://en.wikiquote.org/w/api.php?action=query&format=json&formatversion=2&prop=revisions&rvprop=content|ids|timestamp|sha1&rvslots=main&redirects=1&titles=American_football",
+      "fetched_at": "2026-10-16T13:35:00.000000+00:00",
+      "sha256": "e73c56f2813c62ef1e39f8e60a0a617d05e857e8b594b3730d3df76bbb9b5feb",
+      "bytes": 7624,
+      "content_type": "application/json; charset=utf-8",
+      "licence": "CC-BY-SA-4.0"
     }
   ]
 }

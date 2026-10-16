@@ -12,6 +12,10 @@ The package contains selected English excerpts from three historical books. Thei
 
 Full Gutenberg producer credits are collected in [LICENSES/GUTENBERG-CREDITS.md](./LICENSES/GUTENBERG-CREDITS.md). The original distribution notices and trademarks remain applicable as described there and in the individual files.
 
+## Famous quotations (Wikiquote)
+
+Nineteen sports quotations are extracted from English Wikiquote athlete, coach and Sports pages at pinned revisions. The compilation is CC BY-SA 4.0; title, revision id and URL travel with each row. See [LICENSES/WIKIQUOTE-CC-BY-SA.txt](./LICENSES/WIKIQUOTE-CC-BY-SA.txt) and [docs/famous-quotes.md](./docs/famous-quotes.md). Wikiquote notes that some quotations remain fair use of an underlying work. Movie and television dialogue is not stored. English source text only; no Japanese translation is invented. Utterance dates stay unknown unless a source dates the saying.
+
 ## Factual data
 
 - **Wikidata contributors:** structured event statements are labelled CC0-1.0 under Wikidata's data terms. Captions in this package are original wording based on those statements; no Wikipedia article prose is included. Each item revision and statement identifier is retained in its citation.

@@ -4,6 +4,8 @@
 
 この46個の識別子（`HISTORY_TYPES`）は、排他的な分類ではなく **タグ** です。事実は1件につき1つの `recordId` に一度だけ保存します。1件の `OnThisDayRecord` に複数のタグを付けられます。優勝が決まった延長の得点なら、`championship-win` と `match-result` と `overtime-result` です。タグごとに同じ出来事を複製しません。
 
+`famous-quotes` は引用の **収集タグ** です（`kind` は `quote`、`types` に `quotation` と `famous-quotes`）。この46個の履歴タグには入りません。[有名な引用](famous-quotes.ja.md) を見てください。
+
 記録の `category` は抽出の種類です（`game-on-day`、`championship-final` など）。`tags` はこの履歴タグで、抽出がすでに持つ欄だけから付けます。根拠のないタグは付けません。
 
 絞り込みは、いずれかのタグが一致すれば当たります。事実は一致する分類シャードのすべてに現れます。多様性（`randomFacts`、デモの混ぜ方）では事実を1回だけ数え、タグごとに最大2件です。

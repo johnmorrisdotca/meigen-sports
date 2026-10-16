@@ -11,6 +11,7 @@ English only. A licence is listed before a source is used. Nothing here is a new
 | James Dwight, *Lawn-tennis* (1886), Gutenberg 58137 | Public domain in US, Canada and UK | quotations | Territorial; Gutenberg notices kept |
 | Walter Camp, *American Football* (1891), Gutenberg 39743 | Public domain in US, Canada and UK | quotations | Territorial; Gutenberg notices kept |
 | Pindar, Myers translation (1904 ed.), Gutenberg 10717 | Public domain in US, Canada and UK | quotations | Territorial; Gutenberg notices kept |
+| English Wikiquote sports and athlete pages | CC BY-SA 4.0 | 19 quotations (`famous-quotes`) | Title, revision and URL; fair-use caveat; no movie dialogue |
 
 ## Listed, not in the public seed yet
 
@@ -32,6 +33,9 @@ Copyrighted editorial sites are not sources of wording. Quotes are ingested only
 
 | Site | robots / terms | Finding |
 | --- | --- | --- |
+| Kaggle kieranpoc/quotes (WikiQuoteXL) | CC BY-SA 4.0; Wikiquote people-page extract | Pointer only. Ingest live Wikiquote API revisions; do not commit the CSV dump. |
+| Kaggle manann/quotes-500k | Licence **Unknown**; Goodreads-style samples | Checklist only. Do not copy the files. |
+| quotes.toscrape.com | Zyte Scrapy demo; quotes from GoodReads.com | Checklist only. No sports ingest. |
 | onthisday.com | Allows generic `/sport/`; disallows `/sport/sports.php/` and AI bots; terms URL 404 | Editorial copyright. Contains family events. Checklist only. Never copy wording. |
 | on-this-day.com | Allows `/cgi-bin/otd/sportsotd.pl` | Copyrighted list; a Yogi Berra quote has unverified quote rights. Checklist only. |
 | iHeart sports-history podcasts | Allows `/podcast/` | Copyrighted audio, no dump. Checklist only. |
@@ -41,7 +45,8 @@ Copyrighted editorial sites are not sources of wording. Quotes are ingested only
 
 | Category | Records | Days (MM-DD) | Licence |
 | --- | --- | --- | --- |
-| Historical quotations | 22 | none (utterance dates unknown) | Public domain US/CA/UK |
+| Historical quotations (Gutenberg) | 22 | none (utterance dates unknown) | Public domain US/CA/UK |
+| Famous quotations (Wikiquote) | 19 | none (utterance dates unknown) | CC BY-SA 4.0 |
 | Wikidata exact-day events | 98 | in the 142-day union | CC0 1.0 |
 | openfootball World Cup matches | 964 | in the 142-day union | CC0 1.0 |
 | Combined history | 1062 | 142 of 366 | as above |

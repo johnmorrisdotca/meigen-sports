@@ -33,7 +33,8 @@ interface SeedBase {
 }
 interface SeedQuote extends SeedBase {
   author: string; author_external_id: string; translator: string | null;
-  translator_external_id: string | null; source_section: string; publication_year: number;
+  translator_external_id: string | null; source_section: string; publication_year: number | null;
+  attribution_certainty?: string;
 }
 interface SeedHistory extends SeedBase {
   date: string; month_day: string; date_semantics: string; event_id?: string; event_label?: string;
@@ -51,17 +52,27 @@ export function convertSeed(): { quotes: MeigenRecord[]; history: MeigenRecord[]
   const quotes = quoteInput.map((r): MeigenRecord => {
     const people: EntityRef[] = [{ id: r.author_external_id, kind: "person", role: "author", label: r.author }];
     if (r.translator && r.translator_external_id) people.push({ id: r.translator_external_id, kind: "person", role: "translator", label: r.translator });
+    const wikiquote = r.source_id === "wikiquote";
+    const types = r.tags.includes("famous-quotes") ? ["quotation", "famous-quotes"] : ["quotation"];
+    const certainty = r.attribution_certainty ? ` Attribution certainty: ${r.attribution_certainty}.` : "";
+    const attribution = wikiquote
+      ? `${r.author}, English Wikiquote page "${r.source_title}" (${r.source_key}). Extract CC BY-SA 4.0; title, revision and URL travel with the row.${certainty} Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.`
+      : `${r.author}${r.translator ? `; English translation by ${r.translator}` : ""}, ${r.source_title} (${r.publication_year}). Original text preserved; public domain in the US, Canada and UK. Original Gutenberg producer credits and notices: LICENSES/.`;
+    const rightsEvidence = wikiquote
+      ? [r.source_url, "https://creativecommons.org/licenses/by-sa/4.0/", "https://en.wikiquote.org/wiki/Wikiquote:Copyrights", ...PUBLIC_DOMAIN_EVIDENCE]
+      : [r.source_url, ...PUBLIC_DOMAIN_EVIDENCE];
     return {
-      id: r.id, kind: "quote", types: ["quotation"], text: r.text, language: r.language, sports: r.sports, tags: r.tags,
+      id: r.id, kind: "quote", types, text: r.text, language: r.language, sports: r.sports, tags: r.tags,
       date: null, monthDay: null, dateRole: null, speaker: r.author,
       entities: [...people, ...r.sports.map((sport): EntityRef => ({ id: `sport:${sport}`, kind: "sport", role: "subject", label: sport }))],
       source: {
         sourceId: r.source_id, key: r.source_key, url: r.source_url, title: r.source_title,
         licence: r.licence, rightsStatus: r.rights_status, rawSha256: r.raw_sha256, snapshot: sourceSnapshot(r, "quote"),
-        attribution: `${r.author}${r.translator ? `; English translation by ${r.translator}` : ""}, ${r.source_title} (${r.publication_year}). Original text preserved; public domain in the US, Canada and UK. Original Gutenberg producer credits and notices: LICENSES/.`,
-        publicationYear: r.publication_year, section: r.source_section,
+        attribution,
+        ...(r.publication_year ? { publicationYear: r.publication_year } : {}),
+        section: r.source_section,
         ...(r.translator ? { translator: r.translator } : {}),
-        rightsEvidence: [r.source_url, ...PUBLIC_DOMAIN_EVIDENCE],
+        rightsEvidence,
       },
     };
   }).sort(sortById);
@@ -106,6 +117,8 @@ export function validateRecords(records: readonly MeigenRecord[]): void {
       if (r.source.licence !== "CC0-1.0") throw new Error("CC0 rights/licence mismatch");
     } else if (r.source.rightsStatus === "public-domain-us-ca-uk") {
       if (r.source.licence !== "LicenseRef-Public-Domain-Text" || r.kind !== "quote" || !r.source.publicationYear || !r.source.section) throw new Error("Missing territorial quote evidence");
+    } else if (r.source.rightsStatus === "cc-by-sa-4.0") {
+      if (r.source.licence !== "CC-BY-SA-4.0" || r.kind !== "quote" || !r.source.section) throw new Error("Missing Wikiquote quote evidence");
     } else throw new Error("Unverified rights");
     if (!Array.isArray(r.entities) || r.entities.some((e) => !e.id || !e.role || !["person", "team", "sport", "event", "series", "competition"].includes(e.kind))) throw new Error("Unverified entity reference");
     if (r.kind === "quote") {

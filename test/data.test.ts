@@ -8,7 +8,10 @@ import type { FeedManifest, FeedShard, MeigenRecord } from "../src/types.ts";
 const records = [...quotes, ...history];
 
 test("reviewed real source counts and honest calendar coverage", () => {
-  assert.equal(quotes.length, 22);
+  assert.equal(quotes.length, 41);
+  assert.equal(quotes.filter((r) => r.source.sourceId === "gitenberg").length, 22);
+  assert.equal(quotes.filter((r) => r.source.sourceId === "wikiquote").length, 19);
+  assert.equal(quotes.filter((r) => r.types.includes("famous-quotes")).length, 19);
   assert.equal(history.length, 1062);
   assert.equal(history.filter((r) => r.source.sourceId === "wikidata").length, 98);
   assert.equal(history.filter((r) => r.source.sourceId === "openfootball").length, 964);
@@ -21,9 +24,17 @@ test("reviewed real source counts and honest calendar coverage", () => {
 
 test("every source carries original provenance and independent text rights", () => {
   validateRecords(records);
-  assert.equal(new Set(quotes.map((r) => r.source.title)).size, 3);
+  assert.equal(new Set(quotes.filter((r) => r.source.sourceId === "gitenberg").map((r) => r.source.title)).size, 3);
   assert.equal(quotes.filter((r) => r.speaker === "Pindar").length, 4);
   for (const r of quotes) {
+    if (r.source.sourceId === "wikiquote") {
+      assert.equal(r.source.licence, "CC-BY-SA-4.0");
+      assert.equal(r.source.rightsStatus, "cc-by-sa-4.0");
+      assert.match(r.source.url, /^https:\/\/en\.wikiquote\.org\/w\/index\.php\?title=.+&oldid=\d+$/);
+      assert.ok(r.source.section);
+      assert.ok(r.source.snapshot?.revision);
+      continue;
+    }
     assert.equal(r.source.licence, "LicenseRef-Public-Domain-Text");
     assert.match(r.source.url, /\/blob\/[a-f0-9]{40}\/[^#]+#L\d+-L\d+$/);
     assert.ok(r.source.publicationYear && r.source.publicationYear <= 1904);
@@ -67,7 +78,7 @@ test("generated source and shard bytes are deterministic and current", () => {
   const forward = buildFiles(records);
   const reversed = buildFiles([...records].reverse());
   assert.deepEqual(forward, reversed);
-  assert.deepEqual(generate(true), { records: 1084, files: 1437 });
+  assert.deepEqual(generate(true), { records: 1103, files: 1458 });
   const manifest = JSON.parse(forward.get("manifest.json")!) as FeedManifest;
   assert.equal(manifest.missingDays.length, 224);
   assert.equal(manifest.coveredDays, 142);

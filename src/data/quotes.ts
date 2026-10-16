@@ -1307,6 +1307,1164 @@ export const quotes: readonly MeigenRecord[] = [
         "https://www.gutenberg.org/policy/license.html"
       ]
     }
+  },
+  {
+    "id": "quote:wikiquote:11680:555e2feee2d24f68",
+    "kind": "quote",
+    "types": [
+      "quotation",
+      "famous-quotes"
+    ],
+    "text": "I was born for soccer, just as Beethoven was born for music.",
+    "language": "en",
+    "sports": [
+      "soccer"
+    ],
+    "tags": [
+      "famous-quotes",
+      "training"
+    ],
+    "date": null,
+    "monthDay": null,
+    "dateRole": null,
+    "speaker": "Pelé",
+    "entities": [
+      {
+        "id": "wikidata:Q12897",
+        "kind": "person",
+        "role": "author",
+        "label": "Pelé"
+      },
+      {
+        "id": "sport:soccer",
+        "kind": "sport",
+        "role": "subject",
+        "label": "soccer"
+      }
+    ],
+    "source": {
+      "sourceId": "wikiquote",
+      "key": "Pelé@3994431:10-11",
+      "url": "https://en.wikiquote.org/w/index.php?title=Pel%C3%A9&oldid=3994431",
+      "title": "Pelé",
+      "licence": "CC-BY-SA-4.0",
+      "rightsStatus": "cc-by-sa-4.0",
+      "rawSha256": "26a2d9c6fb9902811649f9dc308c19667ba757f1316fc8dec4ba69ec71fd13ee",
+      "snapshot": {
+        "status": "snapshot",
+        "revision": "3994431",
+        "capturedAt": "2026-10-16T13:35:00.000000+00:00"
+      },
+      "attribution": "Pelé, English Wikiquote page \"Pelé\" (Pelé@3994431:10-11). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: sourced. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
+      "publicationYear": 1980,
+      "section": "Quotes; Parton Keese, The measure of greatness (1980)",
+      "rightsEvidence": [
+        "https://en.wikiquote.org/w/index.php?title=Pel%C3%A9&oldid=3994431",
+        "https://creativecommons.org/licenses/by-sa/4.0/",
+        "https://en.wikiquote.org/wiki/Wikiquote:Copyrights",
+        "https://blogs.loc.gov/copyright/2025/12/lifecycle-of-copyright-1930-works-in-the-public-domain/",
+        "https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en/guide-copyright",
+        "https://www.gov.uk/copyright/how-long-copyright-lasts",
+        "https://www.gutenberg.org/policy/license.html"
+      ]
+    }
+  },
+  {
+    "id": "quote:wikiquote:126639:72357cc0dcf701c8",
+    "kind": "quote",
+    "types": [
+      "quotation",
+      "famous-quotes"
+    ],
+    "text": "It is a poor sport that is not worth the candle.",
+    "language": "en",
+    "sports": [
+      "multi-sport"
+    ],
+    "tags": [
+      "famous-quotes",
+      "historical"
+    ],
+    "date": null,
+    "monthDay": null,
+    "dateRole": null,
+    "speaker": "George Herbert",
+    "entities": [
+      {
+        "id": "wikidata:Q317887",
+        "kind": "person",
+        "role": "author",
+        "label": "George Herbert"
+      },
+      {
+        "id": "sport:multi-sport",
+        "kind": "sport",
+        "role": "subject",
+        "label": "multi-sport"
+      }
+    ],
+    "source": {
+      "sourceId": "wikiquote",
+      "key": "Sports@3996271:72-73",
+      "url": "https://en.wikiquote.org/w/index.php?title=Sports&oldid=3996271",
+      "title": "Sports",
+      "licence": "CC-BY-SA-4.0",
+      "rightsStatus": "cc-by-sa-4.0",
+      "rawSha256": "96ac57c5dab1f97bdab6d8087fbd624c3492fd955bc939756df28fccc9ac1388",
+      "snapshot": {
+        "status": "snapshot",
+        "revision": "3996271",
+        "capturedAt": "2026-10-16T13:35:00.000000+00:00"
+      },
+      "attribution": "George Herbert, English Wikiquote page \"Sports\" (Sports@3996271:72-73). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: sourced. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
+      "publicationYear": 1651,
+      "section": "Quotes; Jacula Prudentum (1651). Underlying text is public domain; extract cited to Wikiquote CC BY-SA 4.0.",
+      "rightsEvidence": [
+        "https://en.wikiquote.org/w/index.php?title=Sports&oldid=3996271",
+        "https://creativecommons.org/licenses/by-sa/4.0/",
+        "https://en.wikiquote.org/wiki/Wikiquote:Copyrights",
+        "https://blogs.loc.gov/copyright/2025/12/lifecycle-of-copyright-1930-works-in-the-public-domain/",
+        "https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en/guide-copyright",
+        "https://www.gov.uk/copyright/how-long-copyright-lasts",
+        "https://www.gutenberg.org/policy/license.html"
+      ]
+    }
+  },
+  {
+    "id": "quote:wikiquote:126639:8b0d2791932c6344",
+    "kind": "quote",
+    "types": [
+      "quotation",
+      "famous-quotes"
+    ],
+    "text": "By sports like these are all their cares beguil'd, The sports of children satisfy the child.",
+    "language": "en",
+    "sports": [
+      "multi-sport"
+    ],
+    "tags": [
+      "famous-quotes",
+      "historical"
+    ],
+    "date": null,
+    "monthDay": null,
+    "dateRole": null,
+    "speaker": "Oliver Goldsmith",
+    "entities": [
+      {
+        "id": "wikidata:Q236236",
+        "kind": "person",
+        "role": "author",
+        "label": "Oliver Goldsmith"
+      },
+      {
+        "id": "sport:multi-sport",
+        "kind": "sport",
+        "role": "subject",
+        "label": "multi-sport"
+      }
+    ],
+    "source": {
+      "sourceId": "wikiquote",
+      "key": "Sports@3996271:68-69",
+      "url": "https://en.wikiquote.org/w/index.php?title=Sports&oldid=3996271",
+      "title": "Sports",
+      "licence": "CC-BY-SA-4.0",
+      "rightsStatus": "cc-by-sa-4.0",
+      "rawSha256": "96ac57c5dab1f97bdab6d8087fbd624c3492fd955bc939756df28fccc9ac1388",
+      "snapshot": {
+        "status": "snapshot",
+        "revision": "3996271",
+        "capturedAt": "2026-10-16T13:35:00.000000+00:00"
+      },
+      "attribution": "Oliver Goldsmith, English Wikiquote page \"Sports\" (Sports@3996271:68-69). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: sourced. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
+      "publicationYear": 1764,
+      "section": "Quotes; The Traveller (1764), line 153. Underlying text is public domain; extract cited to Wikiquote CC BY-SA 4.0.",
+      "rightsEvidence": [
+        "https://en.wikiquote.org/w/index.php?title=Sports&oldid=3996271",
+        "https://creativecommons.org/licenses/by-sa/4.0/",
+        "https://en.wikiquote.org/wiki/Wikiquote:Copyrights",
+        "https://blogs.loc.gov/copyright/2025/12/lifecycle-of-copyright-1930-works-in-the-public-domain/",
+        "https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en/guide-copyright",
+        "https://www.gov.uk/copyright/how-long-copyright-lasts",
+        "https://www.gutenberg.org/policy/license.html"
+      ]
+    }
+  },
+  {
+    "id": "quote:wikiquote:126639:a063b205bd185537",
+    "kind": "quote",
+    "types": [
+      "quotation",
+      "famous-quotes"
+    ],
+    "text": "This is worth living for; the whole sum of school-boy existence gathered up into one straining, struggling half-hour, a half-hour worth a year of common life.",
+    "language": "en",
+    "sports": [
+      "multi-sport"
+    ],
+    "tags": [
+      "famous-quotes",
+      "historical"
+    ],
+    "date": null,
+    "monthDay": null,
+    "dateRole": null,
+    "speaker": "Thomas Hughes",
+    "entities": [
+      {
+        "id": "wikidata:Q332580",
+        "kind": "person",
+        "role": "author",
+        "label": "Thomas Hughes"
+      },
+      {
+        "id": "sport:multi-sport",
+        "kind": "sport",
+        "role": "subject",
+        "label": "multi-sport"
+      }
+    ],
+    "source": {
+      "sourceId": "wikiquote",
+      "key": "Sports@3996271:85-86",
+      "url": "https://en.wikiquote.org/w/index.php?title=Sports&oldid=3996271",
+      "title": "Sports",
+      "licence": "CC-BY-SA-4.0",
+      "rightsStatus": "cc-by-sa-4.0",
+      "rawSha256": "96ac57c5dab1f97bdab6d8087fbd624c3492fd955bc939756df28fccc9ac1388",
+      "snapshot": {
+        "status": "snapshot",
+        "revision": "3996271",
+        "capturedAt": "2026-10-16T13:35:00.000000+00:00"
+      },
+      "attribution": "Thomas Hughes, English Wikiquote page \"Sports\" (Sports@3996271:85-86). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: sourced. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
+      "publicationYear": 1857,
+      "section": "Quotes; Tom Brown's School Days (1857), Part I, chapter 5. Underlying text is public domain; extract cited to Wikiquote CC BY-SA 4.0.",
+      "rightsEvidence": [
+        "https://en.wikiquote.org/w/index.php?title=Sports&oldid=3996271",
+        "https://creativecommons.org/licenses/by-sa/4.0/",
+        "https://en.wikiquote.org/wiki/Wikiquote:Copyrights",
+        "https://blogs.loc.gov/copyright/2025/12/lifecycle-of-copyright-1930-works-in-the-public-domain/",
+        "https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en/guide-copyright",
+        "https://www.gov.uk/copyright/how-long-copyright-lasts",
+        "https://www.gutenberg.org/policy/license.html"
+      ]
+    }
+  },
+  {
+    "id": "quote:wikiquote:13058:9399bc991885ed5f",
+    "kind": "quote",
+    "types": [
+      "quotation",
+      "famous-quotes"
+    ],
+    "text": "The road to the Olympics, leads to no city, no country. It goes far beyond New York or Moscow, ancient Greece or Nazi Germany. The road to the Olympics leads — in the end — to the best within us.",
+    "language": "en",
+    "sports": [
+      "athletics"
+    ],
+    "tags": [
+      "famous-quotes",
+      "olympics"
+    ],
+    "date": null,
+    "monthDay": null,
+    "dateRole": null,
+    "speaker": "Jesse Owens",
+    "entities": [
+      {
+        "id": "wikidata:Q52651",
+        "kind": "person",
+        "role": "author",
+        "label": "Jesse Owens"
+      },
+      {
+        "id": "sport:athletics",
+        "kind": "sport",
+        "role": "subject",
+        "label": "athletics"
+      }
+    ],
+    "source": {
+      "sourceId": "wikiquote",
+      "key": "Jesse_Owens@3601029:10-11",
+      "url": "https://en.wikiquote.org/w/index.php?title=Jesse_Owens&oldid=3601029",
+      "title": "Jesse Owens",
+      "licence": "CC-BY-SA-4.0",
+      "rightsStatus": "cc-by-sa-4.0",
+      "rawSha256": "ccacf996dc514f86563ddbe4b93bf8607b37bb0af7fddd7b9c26f3ecfa6d622f",
+      "snapshot": {
+        "status": "snapshot",
+        "revision": "3601029",
+        "capturedAt": "2026-10-16T13:35:00.000000+00:00"
+      },
+      "attribution": "Jesse Owens, English Wikiquote page \"Jesse Owens\" (Jesse_Owens@3601029:10-11). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: sourced. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
+      "publicationYear": 2002,
+      "section": "Quotes; Voice of America, People In America (7 June 2002)",
+      "rightsEvidence": [
+        "https://en.wikiquote.org/w/index.php?title=Jesse_Owens&oldid=3601029",
+        "https://creativecommons.org/licenses/by-sa/4.0/",
+        "https://en.wikiquote.org/wiki/Wikiquote:Copyrights",
+        "https://blogs.loc.gov/copyright/2025/12/lifecycle-of-copyright-1930-works-in-the-public-domain/",
+        "https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en/guide-copyright",
+        "https://www.gov.uk/copyright/how-long-copyright-lasts",
+        "https://www.gutenberg.org/policy/license.html"
+      ]
+    }
+  },
+  {
+    "id": "quote:wikiquote:132196:4aeec126b88aaf4c",
+    "kind": "quote",
+    "types": [
+      "quotation",
+      "famous-quotes"
+    ],
+    "text": "In the name of all the competitors I promise that we shall take part in these Olympic Games, respecting and abiding by the rules which govern them, in the true spirit of sportsmanship, for the glory of sport and the honour of our teams.",
+    "language": "en",
+    "sports": [
+      "multi-sport"
+    ],
+    "tags": [
+      "famous-quotes",
+      "olympics"
+    ],
+    "date": null,
+    "monthDay": null,
+    "dateRole": null,
+    "speaker": "Pierre de Coubertin",
+    "entities": [
+      {
+        "id": "wikidata:Q82984",
+        "kind": "person",
+        "role": "author",
+        "label": "Pierre de Coubertin"
+      },
+      {
+        "id": "sport:multi-sport",
+        "kind": "sport",
+        "role": "subject",
+        "label": "multi-sport"
+      }
+    ],
+    "source": {
+      "sourceId": "wikiquote",
+      "key": "Olympic_Games@3889631:16-17",
+      "url": "https://en.wikiquote.org/w/index.php?title=Olympic_Games&oldid=3889631",
+      "title": "Olympic Games",
+      "licence": "CC-BY-SA-4.0",
+      "rightsStatus": "cc-by-sa-4.0",
+      "rawSha256": "9f140a69f5fb476b02c16f0322a15e9b32fe5618e29152941c8b17e9e74395af",
+      "snapshot": {
+        "status": "snapshot",
+        "revision": "3889631",
+        "capturedAt": "2026-10-16T13:35:00.000000+00:00"
+      },
+      "attribution": "Pierre de Coubertin, English Wikiquote page \"Olympic Games\" (Olympic_Games@3889631:16-17). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: sourced. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
+      "publicationYear": 1970,
+      "section": "Quotes; as quoted in The Olympic Idea : Discourses and Essays (1970) by Carl Diem, p. 8",
+      "rightsEvidence": [
+        "https://en.wikiquote.org/w/index.php?title=Olympic_Games&oldid=3889631",
+        "https://creativecommons.org/licenses/by-sa/4.0/",
+        "https://en.wikiquote.org/wiki/Wikiquote:Copyrights",
+        "https://blogs.loc.gov/copyright/2025/12/lifecycle-of-copyright-1930-works-in-the-public-domain/",
+        "https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en/guide-copyright",
+        "https://www.gov.uk/copyright/how-long-copyright-lasts",
+        "https://www.gutenberg.org/policy/license.html"
+      ]
+    }
+  },
+  {
+    "id": "quote:wikiquote:14111:aa24bac06132c650",
+    "kind": "quote",
+    "types": [
+      "quotation",
+      "famous-quotes"
+    ],
+    "text": "A player who makes a team great is more valuable than a great player. Losing yourself for the group, for the good of the group — that’s teamwork.",
+    "language": "en",
+    "sports": [
+      "basketball"
+    ],
+    "tags": [
+      "famous-quotes",
+      "training"
+    ],
+    "date": null,
+    "monthDay": null,
+    "dateRole": null,
+    "speaker": "John Wooden",
+    "entities": [
+      {
+        "id": "wikidata:Q551032",
+        "kind": "person",
+        "role": "author",
+        "label": "John Wooden"
+      },
+      {
+        "id": "sport:basketball",
+        "kind": "sport",
+        "role": "subject",
+        "label": "basketball"
+      }
+    ],
+    "source": {
+      "sourceId": "wikiquote",
+      "key": "John_Wooden@3883962:47-47",
+      "url": "https://en.wikiquote.org/w/index.php?title=John_Wooden&oldid=3883962",
+      "title": "John Wooden",
+      "licence": "CC-BY-SA-4.0",
+      "rightsStatus": "cc-by-sa-4.0",
+      "rawSha256": "2ea8bccfac52358b12451efd80888860c48b969f13b751f76d76f504afd3f982",
+      "snapshot": {
+        "status": "snapshot",
+        "revision": "3883962",
+        "capturedAt": "2026-10-16T13:35:00.000000+00:00"
+      },
+      "attribution": "John Wooden, English Wikiquote page \"John Wooden\" (John_Wooden@3883962:47-47). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: sourced. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
+      "publicationYear": 2003,
+      "section": "IBM Linux Commercial: The Prodigy (2003)",
+      "rightsEvidence": [
+        "https://en.wikiquote.org/w/index.php?title=John_Wooden&oldid=3883962",
+        "https://creativecommons.org/licenses/by-sa/4.0/",
+        "https://en.wikiquote.org/wiki/Wikiquote:Copyrights",
+        "https://blogs.loc.gov/copyright/2025/12/lifecycle-of-copyright-1930-works-in-the-public-domain/",
+        "https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en/guide-copyright",
+        "https://www.gov.uk/copyright/how-long-copyright-lasts",
+        "https://www.gutenberg.org/policy/license.html"
+      ]
+    }
+  },
+  {
+    "id": "quote:wikiquote:14111:ac9a71d38768772e",
+    "kind": "quote",
+    "types": [
+      "quotation",
+      "famous-quotes"
+    ],
+    "text": "The main ingredient of stardom, is the rest of the team.",
+    "language": "en",
+    "sports": [
+      "basketball"
+    ],
+    "tags": [
+      "famous-quotes",
+      "training"
+    ],
+    "date": null,
+    "monthDay": null,
+    "dateRole": null,
+    "speaker": "John Wooden",
+    "entities": [
+      {
+        "id": "wikidata:Q551032",
+        "kind": "person",
+        "role": "author",
+        "label": "John Wooden"
+      },
+      {
+        "id": "sport:basketball",
+        "kind": "sport",
+        "role": "subject",
+        "label": "basketball"
+      }
+    ],
+    "source": {
+      "sourceId": "wikiquote",
+      "key": "John_Wooden@3883962:11-11",
+      "url": "https://en.wikiquote.org/w/index.php?title=John_Wooden&oldid=3883962",
+      "title": "John Wooden",
+      "licence": "CC-BY-SA-4.0",
+      "rightsStatus": "cc-by-sa-4.0",
+      "rawSha256": "2ea8bccfac52358b12451efd80888860c48b969f13b751f76d76f504afd3f982",
+      "snapshot": {
+        "status": "snapshot",
+        "revision": "3883962",
+        "capturedAt": "2026-10-16T13:35:00.000000+00:00"
+      },
+      "attribution": "John Wooden, English Wikiquote page \"John Wooden\" (John_Wooden@3883962:11-11). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: sourced. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
+      "publicationYear": 1972,
+      "section": "They Call Me Coach (1972)",
+      "rightsEvidence": [
+        "https://en.wikiquote.org/w/index.php?title=John_Wooden&oldid=3883962",
+        "https://creativecommons.org/licenses/by-sa/4.0/",
+        "https://en.wikiquote.org/wiki/Wikiquote:Copyrights",
+        "https://blogs.loc.gov/copyright/2025/12/lifecycle-of-copyright-1930-works-in-the-public-domain/",
+        "https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en/guide-copyright",
+        "https://www.gov.uk/copyright/how-long-copyright-lasts",
+        "https://www.gutenberg.org/policy/license.html"
+      ]
+    }
+  },
+  {
+    "id": "quote:wikiquote:1598:8127e7d154aff131",
+    "kind": "quote",
+    "types": [
+      "quotation",
+      "famous-quotes"
+    ],
+    "text": "It ain't over till it's over.",
+    "language": "en",
+    "sports": [
+      "baseball"
+    ],
+    "tags": [
+      "famous-quotes",
+      "victory"
+    ],
+    "date": null,
+    "monthDay": null,
+    "dateRole": null,
+    "speaker": "Yogi Berra",
+    "entities": [
+      {
+        "id": "wikidata:Q367566",
+        "kind": "person",
+        "role": "author",
+        "label": "Yogi Berra"
+      },
+      {
+        "id": "sport:baseball",
+        "kind": "sport",
+        "role": "subject",
+        "label": "baseball"
+      }
+    ],
+    "source": {
+      "sourceId": "wikiquote",
+      "key": "Yogi_Berra@3915169:76-77",
+      "url": "https://en.wikiquote.org/w/index.php?title=Yogi_Berra&oldid=3915169",
+      "title": "Yogi Berra",
+      "licence": "CC-BY-SA-4.0",
+      "rightsStatus": "cc-by-sa-4.0",
+      "rawSha256": "67fa48725c84f01856f2a8daf0cd92f48d22f7c9def08123c03868c48d02d3df",
+      "snapshot": {
+        "status": "snapshot",
+        "revision": "3915169",
+        "capturedAt": "2026-10-16T13:35:00.000000+00:00"
+      },
+      "attribution": "Yogi Berra, English Wikiquote page \"Yogi Berra\" (Yogi_Berra@3915169:76-77). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: sourced. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
+      "publicationYear": 1997,
+      "section": "Yogiisms; The Yogi book (1997). Wikiquote notes most first-occurrence dates unknown.",
+      "rightsEvidence": [
+        "https://en.wikiquote.org/w/index.php?title=Yogi_Berra&oldid=3915169",
+        "https://creativecommons.org/licenses/by-sa/4.0/",
+        "https://en.wikiquote.org/wiki/Wikiquote:Copyrights",
+        "https://blogs.loc.gov/copyright/2025/12/lifecycle-of-copyright-1930-works-in-the-public-domain/",
+        "https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en/guide-copyright",
+        "https://www.gov.uk/copyright/how-long-copyright-lasts",
+        "https://www.gutenberg.org/policy/license.html"
+      ]
+    }
+  },
+  {
+    "id": "quote:wikiquote:2185:8618611ec8a72322",
+    "kind": "quote",
+    "types": [
+      "quotation",
+      "famous-quotes"
+    ],
+    "text": "I hated every minute of it. But I said to myself, 'Suffer now, and live the rest of your life as a champion'.",
+    "language": "en",
+    "sports": [
+      "boxing"
+    ],
+    "tags": [
+      "famous-quotes",
+      "training"
+    ],
+    "date": null,
+    "monthDay": null,
+    "dateRole": null,
+    "speaker": "Muhammad Ali",
+    "entities": [
+      {
+        "id": "wikidata:Q36107",
+        "kind": "person",
+        "role": "author",
+        "label": "Muhammad Ali"
+      },
+      {
+        "id": "sport:boxing",
+        "kind": "sport",
+        "role": "subject",
+        "label": "boxing"
+      }
+    ],
+    "source": {
+      "sourceId": "wikiquote",
+      "key": "Muhammad_Ali@4033816:35-36",
+      "url": "https://en.wikiquote.org/w/index.php?title=Muhammad_Ali&oldid=4033816",
+      "title": "Muhammad Ali",
+      "licence": "CC-BY-SA-4.0",
+      "rightsStatus": "cc-by-sa-4.0",
+      "rawSha256": "5627979feed434cc44cdc16fd642aed74c3dfeacecd86709a6844e71b3eb02c0",
+      "snapshot": {
+        "status": "snapshot",
+        "revision": "4033816",
+        "capturedAt": "2026-10-16T13:35:00.000000+00:00"
+      },
+      "attribution": "Muhammad Ali, English Wikiquote page \"Muhammad Ali\" (Muhammad_Ali@4033816:35-36). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: sourced. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
+      "publicationYear": 1978,
+      "section": "Quotes; on training, Newsweek (25 September 1978)",
+      "rightsEvidence": [
+        "https://en.wikiquote.org/w/index.php?title=Muhammad_Ali&oldid=4033816",
+        "https://creativecommons.org/licenses/by-sa/4.0/",
+        "https://en.wikiquote.org/wiki/Wikiquote:Copyrights",
+        "https://blogs.loc.gov/copyright/2025/12/lifecycle-of-copyright-1930-works-in-the-public-domain/",
+        "https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en/guide-copyright",
+        "https://www.gov.uk/copyright/how-long-copyright-lasts",
+        "https://www.gutenberg.org/policy/license.html"
+      ]
+    }
+  },
+  {
+    "id": "quote:wikiquote:227:59a5c6a0ef5f0cd3",
+    "kind": "quote",
+    "types": [
+      "quotation",
+      "famous-quotes"
+    ],
+    "text": "In short, in life, as in a football game, the principle to follow is: Hit the line hard; don't foul and don't shirk, but hit the line hard!",
+    "language": "en",
+    "sports": [
+      "american-football"
+    ],
+    "tags": [
+      "famous-quotes",
+      "training"
+    ],
+    "date": null,
+    "monthDay": null,
+    "dateRole": null,
+    "speaker": "Theodore Roosevelt",
+    "entities": [
+      {
+        "id": "wikidata:Q33866",
+        "kind": "person",
+        "role": "author",
+        "label": "Theodore Roosevelt"
+      },
+      {
+        "id": "sport:american-football",
+        "kind": "sport",
+        "role": "subject",
+        "label": "american-football"
+      }
+    ],
+    "source": {
+      "sourceId": "wikiquote",
+      "key": "Theodore_Roosevelt@3970984:96-97",
+      "url": "https://en.wikiquote.org/w/index.php?title=Theodore_Roosevelt&oldid=3970984",
+      "title": "Theodore Roosevelt",
+      "licence": "CC-BY-SA-4.0",
+      "rightsStatus": "cc-by-sa-4.0",
+      "rawSha256": "30a2b7811367647ce86af45fab5a165d6c6cf564668abc68f7b4eade122db302",
+      "snapshot": {
+        "status": "snapshot",
+        "revision": "3970984",
+        "capturedAt": "2026-10-16T13:35:00.000000+00:00"
+      },
+      "attribution": "Theodore Roosevelt, English Wikiquote page \"Theodore Roosevelt\" (Theodore_Roosevelt@3970984:96-97). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: sourced. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
+      "publicationYear": 1900,
+      "section": "Quotes; The American Boy, St. Nicholas 27, no. 7 (May 1900), p. 574. Underlying 1900 text is public domain in the US, Canada and UK; the extract is still cited to Wikiquote CC BY-SA 4.0.",
+      "rightsEvidence": [
+        "https://en.wikiquote.org/w/index.php?title=Theodore_Roosevelt&oldid=3970984",
+        "https://creativecommons.org/licenses/by-sa/4.0/",
+        "https://en.wikiquote.org/wiki/Wikiquote:Copyrights",
+        "https://blogs.loc.gov/copyright/2025/12/lifecycle-of-copyright-1930-works-in-the-public-domain/",
+        "https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en/guide-copyright",
+        "https://www.gov.uk/copyright/how-long-copyright-lasts",
+        "https://www.gutenberg.org/policy/license.html"
+      ]
+    }
+  },
+  {
+    "id": "quote:wikiquote:29333:1f6233a86242975f",
+    "kind": "quote",
+    "types": [
+      "quotation",
+      "famous-quotes"
+    ],
+    "text": "When the going gets tough, the tough get going.",
+    "language": "en",
+    "sports": [
+      "american-football"
+    ],
+    "tags": [
+      "famous-quotes",
+      "training"
+    ],
+    "date": null,
+    "monthDay": null,
+    "dateRole": null,
+    "speaker": "John Thomas",
+    "entities": [
+      {
+        "id": "wikiquote:John_Thomas_(football_coach)",
+        "kind": "person",
+        "role": "author",
+        "label": "John Thomas"
+      },
+      {
+        "id": "sport:american-football",
+        "kind": "sport",
+        "role": "subject",
+        "label": "american-football"
+      }
+    ],
+    "source": {
+      "sourceId": "wikiquote",
+      "key": "American_football@3984594:54-55",
+      "url": "https://en.wikiquote.org/w/index.php?title=American_football&oldid=3984594",
+      "title": "American football",
+      "licence": "CC-BY-SA-4.0",
+      "rightsStatus": "cc-by-sa-4.0",
+      "rawSha256": "e73c56f2813c62ef1e39f8e60a0a617d05e857e8b594b3730d3df76bbb9b5feb",
+      "snapshot": {
+        "status": "snapshot",
+        "revision": "3984594",
+        "capturedAt": "2026-10-16T13:35:00.000000+00:00"
+      },
+      "attribution": "John Thomas, English Wikiquote page \"American football\" (American_football@3984594:54-55). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: sourced. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
+      "publicationYear": 1953,
+      "section": "Quotes; Corpus Christi Times (15 September 1953)",
+      "rightsEvidence": [
+        "https://en.wikiquote.org/w/index.php?title=American_football&oldid=3984594",
+        "https://creativecommons.org/licenses/by-sa/4.0/",
+        "https://en.wikiquote.org/wiki/Wikiquote:Copyrights",
+        "https://blogs.loc.gov/copyright/2025/12/lifecycle-of-copyright-1930-works-in-the-public-domain/",
+        "https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en/guide-copyright",
+        "https://www.gov.uk/copyright/how-long-copyright-lasts",
+        "https://www.gutenberg.org/policy/license.html"
+      ]
+    }
+  },
+  {
+    "id": "quote:wikiquote:4403:5e9744fe52c622ff",
+    "kind": "quote",
+    "types": [
+      "quotation",
+      "famous-quotes"
+    ],
+    "text": "There ain't no man can avoid being born average. But there ain't no man got to be common.",
+    "language": "en",
+    "sports": [
+      "baseball"
+    ],
+    "tags": [
+      "famous-quotes",
+      "training"
+    ],
+    "date": null,
+    "monthDay": null,
+    "dateRole": null,
+    "speaker": "Satchel Paige",
+    "entities": [
+      {
+        "id": "wikidata:Q555730",
+        "kind": "person",
+        "role": "author",
+        "label": "Satchel Paige"
+      },
+      {
+        "id": "sport:baseball",
+        "kind": "sport",
+        "role": "subject",
+        "label": "baseball"
+      }
+    ],
+    "source": {
+      "sourceId": "wikiquote",
+      "key": "Satchel_Paige@3883905:14-15",
+      "url": "https://en.wikiquote.org/w/index.php?title=Satchel_Paige&oldid=3883905",
+      "title": "Satchel Paige",
+      "licence": "CC-BY-SA-4.0",
+      "rightsStatus": "cc-by-sa-4.0",
+      "rawSha256": "9242aaf2d6fc1c04d1c90f05fca491990762606e750afbdb446fb848b080270e",
+      "snapshot": {
+        "status": "snapshot",
+        "revision": "3883905",
+        "capturedAt": "2026-10-16T13:35:00.000000+00:00"
+      },
+      "attribution": "Satchel Paige, English Wikiquote page \"Satchel Paige\" (Satchel_Paige@3883905:14-15). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: sourced. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
+      "publicationYear": 1958,
+      "section": "Quotes; Lincoln Evening Journal (26 July 1958)",
+      "rightsEvidence": [
+        "https://en.wikiquote.org/w/index.php?title=Satchel_Paige&oldid=3883905",
+        "https://creativecommons.org/licenses/by-sa/4.0/",
+        "https://en.wikiquote.org/wiki/Wikiquote:Copyrights",
+        "https://blogs.loc.gov/copyright/2025/12/lifecycle-of-copyright-1930-works-in-the-public-domain/",
+        "https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en/guide-copyright",
+        "https://www.gov.uk/copyright/how-long-copyright-lasts",
+        "https://www.gutenberg.org/policy/license.html"
+      ]
+    }
+  },
+  {
+    "id": "quote:wikiquote:615:b9419ca8eca4fb75",
+    "kind": "quote",
+    "types": [
+      "quotation",
+      "famous-quotes"
+    ],
+    "text": "Someone said to me 'To you football is a matter of life or death!' and I said 'Listen, it's more important than that'.",
+    "language": "en",
+    "sports": [
+      "soccer"
+    ],
+    "tags": [
+      "famous-quotes",
+      "training"
+    ],
+    "date": null,
+    "monthDay": null,
+    "dateRole": null,
+    "speaker": "Bill Shankly",
+    "entities": [
+      {
+        "id": "wikidata:Q207457",
+        "kind": "person",
+        "role": "author",
+        "label": "Bill Shankly"
+      },
+      {
+        "id": "sport:soccer",
+        "kind": "sport",
+        "role": "subject",
+        "label": "soccer"
+      }
+    ],
+    "source": {
+      "sourceId": "wikiquote",
+      "key": "Bill_Shankly@3462982:12-13",
+      "url": "https://en.wikiquote.org/w/index.php?title=Bill_Shankly&oldid=3462982",
+      "title": "Bill Shankly",
+      "licence": "CC-BY-SA-4.0",
+      "rightsStatus": "cc-by-sa-4.0",
+      "rawSha256": "4f7bf1ec3ac12c57b5cf79e6b90462a3c5157dff746a51aa75f207e99df141ec",
+      "snapshot": {
+        "status": "snapshot",
+        "revision": "3462982",
+        "capturedAt": "2026-10-16T13:35:00.000000+00:00"
+      },
+      "attribution": "Bill Shankly, English Wikiquote page \"Bill Shankly\" (Bill_Shankly@3462982:12-13). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: sourced. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
+      "publicationYear": 1981,
+      "section": "Quotes; Granada Television interview (20 May 1981)",
+      "rightsEvidence": [
+        "https://en.wikiquote.org/w/index.php?title=Bill_Shankly&oldid=3462982",
+        "https://creativecommons.org/licenses/by-sa/4.0/",
+        "https://en.wikiquote.org/wiki/Wikiquote:Copyrights",
+        "https://blogs.loc.gov/copyright/2025/12/lifecycle-of-copyright-1930-works-in-the-public-domain/",
+        "https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en/guide-copyright",
+        "https://www.gov.uk/copyright/how-long-copyright-lasts",
+        "https://www.gutenberg.org/policy/license.html"
+      ]
+    }
+  },
+  {
+    "id": "quote:wikiquote:6681:1084463777e4c04f",
+    "kind": "quote",
+    "types": [
+      "quotation",
+      "famous-quotes"
+    ],
+    "text": "Winning isn't everything; it's the only thing",
+    "language": "en",
+    "sports": [
+      "american-football"
+    ],
+    "tags": [
+      "famous-quotes",
+      "victory"
+    ],
+    "date": null,
+    "monthDay": null,
+    "dateRole": null,
+    "speaker": "Henry Russell Sanders",
+    "entities": [
+      {
+        "id": "wikidata:Q5727807",
+        "kind": "person",
+        "role": "author",
+        "label": "Henry Russell Sanders"
+      },
+      {
+        "id": "sport:american-football",
+        "kind": "sport",
+        "role": "subject",
+        "label": "american-football"
+      }
+    ],
+    "source": {
+      "sourceId": "wikiquote",
+      "key": "Vince_Lombardi@3907303:32-33",
+      "url": "https://en.wikiquote.org/w/index.php?title=Vince_Lombardi&oldid=3907303",
+      "title": "Vince Lombardi",
+      "licence": "CC-BY-SA-4.0",
+      "rightsStatus": "cc-by-sa-4.0",
+      "rawSha256": "a524434ebcf22aeafe87badee12d4328685e9fff8dff415ca02786853675b1cf",
+      "snapshot": {
+        "status": "snapshot",
+        "revision": "3907303",
+        "capturedAt": "2026-10-16T13:35:00.000000+00:00"
+      },
+      "attribution": "Henry Russell Sanders, English Wikiquote page \"Vince Lombardi\" (Vince_Lombardi@3907303:32-33). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: corrected-misattribution. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
+      "section": "Misattributed; Wikiquote sources this to UCLA coach Red Sanders, not Lombardi",
+      "rightsEvidence": [
+        "https://en.wikiquote.org/w/index.php?title=Vince_Lombardi&oldid=3907303",
+        "https://creativecommons.org/licenses/by-sa/4.0/",
+        "https://en.wikiquote.org/wiki/Wikiquote:Copyrights",
+        "https://blogs.loc.gov/copyright/2025/12/lifecycle-of-copyright-1930-works-in-the-public-domain/",
+        "https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en/guide-copyright",
+        "https://www.gov.uk/copyright/how-long-copyright-lasts",
+        "https://www.gutenberg.org/policy/license.html"
+      ]
+    }
+  },
+  {
+    "id": "quote:wikiquote:6681:a8a600619086852a",
+    "kind": "quote",
+    "types": [
+      "quotation",
+      "famous-quotes"
+    ],
+    "text": "We shall play every game to the hilt with every ounce of fiber we have in our bodies.",
+    "language": "en",
+    "sports": [
+      "american-football"
+    ],
+    "tags": [
+      "famous-quotes",
+      "training"
+    ],
+    "date": null,
+    "monthDay": null,
+    "dateRole": null,
+    "speaker": "Vince Lombardi",
+    "entities": [
+      {
+        "id": "wikidata:Q553321",
+        "kind": "person",
+        "role": "author",
+        "label": "Vince Lombardi"
+      },
+      {
+        "id": "sport:american-football",
+        "kind": "sport",
+        "role": "subject",
+        "label": "american-football"
+      }
+    ],
+    "source": {
+      "sourceId": "wikiquote",
+      "key": "Vince_Lombardi@3907303:22-23",
+      "url": "https://en.wikiquote.org/w/index.php?title=Vince_Lombardi&oldid=3907303",
+      "title": "Vince Lombardi",
+      "licence": "CC-BY-SA-4.0",
+      "rightsStatus": "cc-by-sa-4.0",
+      "rawSha256": "a524434ebcf22aeafe87badee12d4328685e9fff8dff415ca02786853675b1cf",
+      "snapshot": {
+        "status": "snapshot",
+        "revision": "3907303",
+        "capturedAt": "2026-10-16T13:35:00.000000+00:00"
+      },
+      "attribution": "Vince Lombardi, English Wikiquote page \"Vince Lombardi\" (Vince_Lombardi@3907303:22-23). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: sourced. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
+      "publicationYear": 2001,
+      "section": "Quotes; reported in Donald T. Phillips, Run To Win (2001)",
+      "rightsEvidence": [
+        "https://en.wikiquote.org/w/index.php?title=Vince_Lombardi&oldid=3907303",
+        "https://creativecommons.org/licenses/by-sa/4.0/",
+        "https://en.wikiquote.org/wiki/Wikiquote:Copyrights",
+        "https://blogs.loc.gov/copyright/2025/12/lifecycle-of-copyright-1930-works-in-the-public-domain/",
+        "https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en/guide-copyright",
+        "https://www.gov.uk/copyright/how-long-copyright-lasts",
+        "https://www.gutenberg.org/policy/license.html"
+      ]
+    }
+  },
+  {
+    "id": "quote:wikiquote:6681:d0bf0ebec50fc683",
+    "kind": "quote",
+    "types": [
+      "quotation",
+      "famous-quotes"
+    ],
+    "text": "Gentlemen, we are going to relentlessly chase perfection, knowing full well we will not catch it, because nothing is perfect. But we are going to relentlessly chase it, because in the process we will catch excellence. I am not remotely interested in just being good.",
+    "language": "en",
+    "sports": [
+      "american-football"
+    ],
+    "tags": [
+      "famous-quotes",
+      "training"
+    ],
+    "date": null,
+    "monthDay": null,
+    "dateRole": null,
+    "speaker": "Vince Lombardi",
+    "entities": [
+      {
+        "id": "wikidata:Q553321",
+        "kind": "person",
+        "role": "author",
+        "label": "Vince Lombardi"
+      },
+      {
+        "id": "sport:american-football",
+        "kind": "sport",
+        "role": "subject",
+        "label": "american-football"
+      }
+    ],
+    "source": {
+      "sourceId": "wikiquote",
+      "key": "Vince_Lombardi@3907303:19-20",
+      "url": "https://en.wikiquote.org/w/index.php?title=Vince_Lombardi&oldid=3907303",
+      "title": "Vince Lombardi",
+      "licence": "CC-BY-SA-4.0",
+      "rightsStatus": "cc-by-sa-4.0",
+      "rawSha256": "a524434ebcf22aeafe87badee12d4328685e9fff8dff415ca02786853675b1cf",
+      "snapshot": {
+        "status": "snapshot",
+        "revision": "3907303",
+        "capturedAt": "2026-10-16T13:35:00.000000+00:00"
+      },
+      "attribution": "Vince Lombardi, English Wikiquote page \"Vince Lombardi\" (Vince_Lombardi@3907303:19-20). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: sourced. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
+      "publicationYear": 1959,
+      "section": "Quotes; first Packers team meeting (1959), reported in Chuck Carlson, Game of My Life (2004)",
+      "rightsEvidence": [
+        "https://en.wikiquote.org/w/index.php?title=Vince_Lombardi&oldid=3907303",
+        "https://creativecommons.org/licenses/by-sa/4.0/",
+        "https://en.wikiquote.org/wiki/Wikiquote:Copyrights",
+        "https://blogs.loc.gov/copyright/2025/12/lifecycle-of-copyright-1930-works-in-the-public-domain/",
+        "https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en/guide-copyright",
+        "https://www.gov.uk/copyright/how-long-copyright-lasts",
+        "https://www.gutenberg.org/policy/license.html"
+      ]
+    }
+  },
+  {
+    "id": "quote:wikiquote:68552:42ef3b7f06d52f4e",
+    "kind": "quote",
+    "types": [
+      "quotation",
+      "famous-quotes"
+    ],
+    "text": "Yet today, I consider myself the luckiest man on the face of the earth.",
+    "language": "en",
+    "sports": [
+      "baseball"
+    ],
+    "tags": [
+      "famous-quotes",
+      "victory"
+    ],
+    "date": null,
+    "monthDay": null,
+    "dateRole": null,
+    "speaker": "Lou Gehrig",
+    "entities": [
+      {
+        "id": "wikidata:Q357444",
+        "kind": "person",
+        "role": "author",
+        "label": "Lou Gehrig"
+      },
+      {
+        "id": "sport:baseball",
+        "kind": "sport",
+        "role": "subject",
+        "label": "baseball"
+      }
+    ],
+    "source": {
+      "sourceId": "wikiquote",
+      "key": "Lou_Gehrig@3832606:9-10",
+      "url": "https://en.wikiquote.org/w/index.php?title=Lou_Gehrig&oldid=3832606",
+      "title": "Lou Gehrig",
+      "licence": "CC-BY-SA-4.0",
+      "rightsStatus": "cc-by-sa-4.0",
+      "rawSha256": "0b9be587f786c98acaaa85c807ec97fdf2130cac20691e87599fa2b9204158cf",
+      "snapshot": {
+        "status": "snapshot",
+        "revision": "3832606",
+        "capturedAt": "2026-10-16T13:35:00.000000+00:00"
+      },
+      "attribution": "Lou Gehrig, English Wikiquote page \"Lou Gehrig\" (Lou_Gehrig@3832606:9-10). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: sourced. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
+      "publicationYear": 1939,
+      "section": "Quotes; Lou Gehrig Appreciation Day, Yankee Stadium (4 July 1939). The speech date is in the citation, not copied as a quote anniversary.",
+      "rightsEvidence": [
+        "https://en.wikiquote.org/w/index.php?title=Lou_Gehrig&oldid=3832606",
+        "https://creativecommons.org/licenses/by-sa/4.0/",
+        "https://en.wikiquote.org/wiki/Wikiquote:Copyrights",
+        "https://blogs.loc.gov/copyright/2025/12/lifecycle-of-copyright-1930-works-in-the-public-domain/",
+        "https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en/guide-copyright",
+        "https://www.gov.uk/copyright/how-long-copyright-lasts",
+        "https://www.gutenberg.org/policy/license.html"
+      ]
+    }
+  },
+  {
+    "id": "quote:wikiquote:7076:e11bcda3cf8ce789",
+    "kind": "quote",
+    "types": [
+      "quotation",
+      "famous-quotes"
+    ],
+    "text": "I've missed over 9,000 shots in my career. I've lost almost 300 games. 26 times I've been trusted to take the game-winning shot and missed. I've failed over and over and over again in my life. And that is why I succeed.",
+    "language": "en",
+    "sports": [
+      "basketball"
+    ],
+    "tags": [
+      "famous-quotes",
+      "training"
+    ],
+    "date": null,
+    "monthDay": null,
+    "dateRole": null,
+    "speaker": "Michael Jordan",
+    "entities": [
+      {
+        "id": "wikidata:Q41421",
+        "kind": "person",
+        "role": "author",
+        "label": "Michael Jordan"
+      },
+      {
+        "id": "sport:basketball",
+        "kind": "sport",
+        "role": "subject",
+        "label": "basketball"
+      }
+    ],
+    "source": {
+      "sourceId": "wikiquote",
+      "key": "Michael_Jordan@3721621:25-26",
+      "url": "https://en.wikiquote.org/w/index.php?title=Michael_Jordan&oldid=3721621",
+      "title": "Michael Jordan",
+      "licence": "CC-BY-SA-4.0",
+      "rightsStatus": "cc-by-sa-4.0",
+      "rawSha256": "038e038b19c92baf80817ac3cfd3093105b1dae7acfec9bcc1bef3fa0ec5574f",
+      "snapshot": {
+        "status": "snapshot",
+        "revision": "3721621",
+        "capturedAt": "2026-10-16T13:35:00.000000+00:00"
+      },
+      "attribution": "Michael Jordan, English Wikiquote page \"Michael Jordan\" (Michael_Jordan@3721621:25-26). Extract CC BY-SA 4.0; title, revision and URL travel with the row. Attribution certainty: secondary. Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.",
+      "publicationYear": 1998,
+      "section": "Quotes; as quoted in Nike Culture : The Sign of the Swoosh (1998), p. 49",
+      "rightsEvidence": [
+        "https://en.wikiquote.org/w/index.php?title=Michael_Jordan&oldid=3721621",
+        "https://creativecommons.org/licenses/by-sa/4.0/",
+        "https://en.wikiquote.org/wiki/Wikiquote:Copyrights",
+        "https://blogs.loc.gov/copyright/2025/12/lifecycle-of-copyright-1930-works-in-the-public-domain/",
+        "https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en/guide-copyright",
+        "https://www.gov.uk/copyright/how-long-copyright-lasts",
+        "https://www.gutenberg.org/policy/license.html"
+      ]
+    }
   }
 ];
 export default quotes;
