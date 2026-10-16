@@ -1,110 +1,77 @@
--- Read-only keyset page. Invoke psql with after_date, after_qid, and page_limit variables.
+-- Read-only keyset page of exact-day player birthdays.
+-- Fast path: core.person.birth_date keyed with Wikidata QID, harvest P569 precision 11 that agrees.
+-- No raw_archive JSON decoding. Page on (birth_date, person_id).
+-- psql -v ON_ERROR_STOP=1 -v after_date='0001-01-01' -v after_id=0 -v page_limit=2000 -f pipeline/queries/player-birthday-candidates.sql
 begin read only;
 set local statement_timeout = '8s';
-with person_redirects as materialized (
-  select old_person_id, person_id from core.person_redirect
+with src as materialized (
+  select source_id, code, licence, attribution
+  from meta.source
+  where code = 'wikidata' and licence like 'CC0%'
 ),
-wikidata_ids as materialized (
-  select distinct coalesce(r.person_id, x.entity_id) as person_id,
-         coalesce(w.to_qid, x.external_key) as qid
-  from core.external_id x
-  join meta.source src on src.source_id = x.source_id and src.code = 'wikidata'
-  left join legacy_people.redirect w on w.from_qid = x.external_key
-  left join person_redirects r on r.old_person_id = x.entity_id
-  where x.entity_kind = 'person' and x.external_key ~ '^Q[0-9]+$'
-),
-single_identity_qids as materialized (
-  select qid, (array_agg(distinct person_id))[1] as person_id
-  from wikidata_ids
-  group by qid
-  having count(distinct person_id) = 1
-),
-all_birth_values as materialized (
-  select coalesce(w.to_qid, c.qid) as qid, c.value_on, c.value_prec
-  from legacy_people.claim c
-  left join legacy_people.redirect w on w.from_qid = c.qid
-  where c.prop = 'P569' and coalesce(c.rank, 'normal') <> 'deprecated'
-),
-unambiguous_births as materialized (
-  select qid, min(value_on) as birth_date
-  from all_birth_values
-  group by qid
-  having count(*) = count(value_on)
-     and count(distinct value_on) = 1
-     and bool_and(value_prec = 11)
-),
-eligible_candidates as materialized (
-  select b.qid, b.birth_date, i.person_id, p.full_name,
+page as materialized (
+  select distinct on (p.birth_date, p.person_id)
+         p.person_id, p.full_name, p.birth_date, x.external_key as qid,
          src.code, src.licence, src.attribution
-  from unambiguous_births b
-  join single_identity_qids i on i.qid = b.qid
-  join core.person p on p.person_id = i.person_id and p.birth_date = b.birth_date
-  join meta.source src on src.code = 'wikidata' and src.licence like 'CC0%'
-  where exists (
-    select 1 from core.roster_stint s
-    where s.person_id = i.person_id and s.role = 'player'
-  )
+  from core.person p
+  join core.external_id x on x.entity_kind = 'person' and x.entity_id = p.person_id
+  join src on src.source_id = x.source_id
+  join legacy_wikidata_harvest.claim c
+    on c.qid = x.external_key and c.prop = 'P569'
+   and c.value_on = p.birth_date and c.value_prec = 11
+   and coalesce(c.rank, 'normal') <> 'deprecated'
+  where p.birth_date is not null
+    and x.external_key ~ '^Q[0-9]+$'
+    and (p.birth_date, p.person_id) > (:'after_date'::date, :'after_id'::bigint)
+    and not exists (
+      select 1 from legacy_wikidata_harvest.claim o
+      where o.qid = x.external_key and o.prop = 'P569'
+        and coalesce(o.rank, 'normal') <> 'deprecated'
+        and (o.value_on is distinct from p.birth_date or o.value_prec is distinct from 11)
+    )
+  order by p.birth_date, p.person_id, x.external_key
+  limit :page_limit
 ),
-limited_candidates as materialized (
-  select * from eligible_candidates
-  where (birth_date, qid) > (:'after_date'::date, :'after_qid')
-  order by birth_date, qid limit :page_limit
-),
-archive_batches as materialized (
-  select a.name, a.saved_on, a.sha256, convert_from(a.data, 'UTF8')::jsonb as payload
-  from legacy_files.raw_archive a
-  where a.name ~ '^people/[0-9]{4}-[0-9]{2}-[0-9]{2}/(persons|persontitles)-[0-9]+\.json$'
-    and a.sha256 ~ '^[a-f0-9]{64}$'
-    and a.saved_on in (select distinct i.fetched_on from limited_candidates c
-                       join legacy_people.item i on i.qid = c.qid)
-),
-verified_evidence as (
-  select c.qid, c.birth_date, c.person_id, c.full_name, c.code, c.licence, c.attribution,
-         i.fetched_on, a.name, a.sha256, cl.n,
-         format('/entities/%s/claims/P569/%s', cl.qid, cl.n) as json_pointer
-  from limited_candidates c
-  join legacy_people.item i on i.qid = c.qid
-  join legacy_people.claim cl on cl.qid = i.qid and cl.prop = 'P569'
-    and cl.value_on = c.birth_date and cl.value_prec = 11
-    and coalesce(cl.rank, 'normal') <> 'deprecated'
-  join archive_batches a on a.saved_on = i.fetched_on
-    and (a.payload -> 'entities') ? cl.qid
-  cross join lateral jsonb_array_elements(a.payload #> array['entities', cl.qid, 'claims', 'P569'])
-    with ordinality as raw_claim(value, ordinal)
-  where raw_claim.ordinal = cl.n + 1
-    and raw_claim.value #>> '{mainsnak,datavalue,value,time}' is not null
-    and raw_claim.value #>> '{mainsnak,datavalue,value,time}' like '%' || to_char(c.birth_date, 'YYYY-MM-DD') || 'T%'
-    and raw_claim.value #>> '{mainsnak,datavalue,value,precision}' = '11'
-    and coalesce(raw_claim.value #>> '{rank}', 'normal') <> 'deprecated'
-),
-page_records as (
-  select jsonb_build_object(
-       'recordId', 'spx:player-birthday:wikidata:' || qid || ':' || birth_date::text,
-       'category', 'player-birthday',
-       'reviewStatus', 'candidate',
-       'datePrecision', 'day',
-       'eventDate', birth_date,
-       'stableEntityId', 'wikidata:' || qid,
-       'displayName', full_name,
-       'sourceId', code,
-       'licence', licence,
-       'attribution', attribution,
-       'sourceUrl', 'https://www.wikidata.org/wiki/' || qid,
-       'playerEligible', true,
-       'sourceEvidence', jsonb_agg(jsonb_build_object(
-         'archiveName', name,
-         'archiveSha256', sha256,
-         'jsonPointer', json_pointer,
-         'fetchedOn', fetched_on
-       ) order by name, json_pointer)) as record
-  from verified_evidence
-  group by qid, birth_date, full_name, code, licence, attribution
+sided as (
+  select p.*,
+         coalesce(t.league_codes, '{}'::text[]) as league_codes,
+         coalesce(t.franchise_ids, '{}'::int[]) as franchise_ids,
+         coalesce(t.team_season_ids, '{}'::int[]) as team_season_ids
+  from page p
+  left join lateral (
+    select array_agg(distinct se.league_code order by se.league_code) as league_codes,
+           array_agg(distinct ts.franchise_id order by ts.franchise_id) as franchise_ids,
+           array_agg(distinct ts.team_season_id order by ts.team_season_id) as team_season_ids
+    from core.roster_stint rs
+    join core.team_season ts on ts.team_season_id = rs.team_season_id
+    join core.season se on se.season_id = ts.season_id
+    where rs.person_id = p.person_id
+  ) t on true
 )
 select jsonb_build_object(
-  'scannedCount', (select count(*) from limited_candidates),
-  'nextCursor', (select jsonb_build_object('date', birth_date, 'qid', qid)
-                 from limited_candidates order by birth_date desc, qid desc limit 1),
-  'records', coalesce((select jsonb_agg(record order by record->>'eventDate', record->>'stableEntityId') from page_records), '[]'::jsonb)
+  'category', 'player-birthday',
+  'scannedCount', (select count(*) from sided),
+  'nextCursor', (select jsonb_build_object('date', birth_date, 'id', person_id) from sided order by birth_date desc, person_id desc limit 1),
+  'records', coalesce((select jsonb_agg(jsonb_build_object(
+      'recordId', 'spx:player-birthday:wikidata:' || qid || ':' || birth_date::text,
+      'category', 'player-birthday',
+      'reviewStatus', 'candidate',
+      'datePrecision', 'day',
+      'eventDate', birth_date,
+      'sport', null,
+      'competition', null,
+      'league', case when array_length(league_codes, 1) = 1 then league_codes[1] else null end,
+      'person', jsonb_build_object(
+        'personId', person_id,
+        'qid', qid,
+        'name', full_name,
+        'leagueCodes', to_jsonb(league_codes),
+        'franchiseIds', to_jsonb(franchise_ids),
+        'teamSeasonIds', to_jsonb(team_season_ids)),
+      'sourceId', code,
+      'licence', licence,
+      'attribution', attribution,
+      'sourceUrl', 'https://www.wikidata.org/wiki/' || qid
+    ) order by birth_date, person_id) from sided), '[]'::jsonb)
 )::text;
-
 rollback;

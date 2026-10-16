@@ -8,6 +8,8 @@ Each paged file returns one JSON object: `scannedCount`, `nextCursor`, `records`
 python3 -I pipeline/extract_ds1.py
 ```
 
-Birthdays use the existing `player-birthday-candidates.sql` (exact-day Wikidata P569, precision 11, player roster, matching `core.person.birth_date`). Do not treat `api.people.birth_date` as exact-day.
+Game extracts (`extract_games_on_day.sql`, `extract_finals.sql`, `extract_soccer_on_day.sql`) attach `home` and `away` team objects (`name`, `franchiseId`, `teamSeasonId`, `soccerTeamId`, `countryCode`, `fifaCode`, `flagCode`), plus `gameId` / `soccerMatchId` and `venueId`. Page games first, then join teams for that page only.
 
-Awards in `core.award_winner` are season-year only. Championship calendar days come from `extract_finals.sql`.
+Birthdays and deaths read `legacy_wikidata_harvest.claim` (`P569` / `P570`, precision 11) agreeing with `core.person`, keyed on `(date, person_id)`. They do not decode `raw_archive`. Drafts dump `core.draft_pick` at year precision. Awards page `core.award_winner`; a championship gets a calendar day only when that season has exactly one distinct final `game_date`.
+
+Website field names: [docs/record-schema.md](../../docs/record-schema.md).

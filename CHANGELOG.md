@@ -4,6 +4,8 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## Unreleased
 
+- Document the website consume schema (`OnThisDayRecord`, `TeamRef`, `PersonRef`) and attach home/away team objects in the game extractors.
+- Demo: today's local date first (up to three facts) and a mixed random panel capped at two per category or competition.
 - Match the family package layout: README badges and demo link, CONTRIBUTING, issue templates, typecheck configs, and the shared family tests.
 - Add read-only DS1 extractor SQL and the 21-file openfootball archive / 0.2.0 snapshot helper (dry-run default).
 - Demo: ten random facts per reload from the GitHub Pages JSON; randomness stays in the demo.

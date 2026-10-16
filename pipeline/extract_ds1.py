@@ -10,25 +10,26 @@ QUERIES = ROOT / "pipeline/queries"
 
 PAGES = [
     ("player-birthday", "pipeline/queries/player-birthday-candidates.sql",
-     "-v after_date='0001-01-01' -v after_qid='' -v page_limit=500"),
+     "-v after_date='0001-01-01' -v after_id=0 -v page_limit=2000"),
     ("player-death", "pipeline/queries/extract_deaths.sql",
-     "-v after_date='0001-01-01' -v after_qid='' -v page_limit=500"),
+     "-v after_date='0001-01-01' -v after_id=0 -v page_limit=2000"),
     ("game-on-day", "pipeline/queries/extract_games_on_day.sql",
-     "-v after_date='0001-01-01' -v after_id=0 -v page_limit=500"),
+     "-v after_date='0001-01-01' -v after_id=0 -v page_limit=2000"),
     ("soccer-on-day", "pipeline/queries/extract_soccer_on_day.sql",
-     "-v after_date='0001-01-01' -v after_id=0 -v page_limit=500"),
+     "-v after_date='0001-01-01' -v after_id=0 -v page_limit=2000"),
     ("championship-final", "pipeline/queries/extract_finals.sql",
-     "-v after_date='0001-01-01' -v after_id=0 -v page_limit=500"),
+     "-v after_date='0001-01-01' -v after_id=0 -v page_limit=2000"),
     ("draft", "pipeline/queries/extract_drafts.sql",
-     "-v after_date='0001-01-01' -v after_qid='' -v page_limit=500"),
+     "-v after_id=0 -v page_limit=2000"),
+    ("award", "pipeline/queries/extract_awards_season.sql",
+     "-v after_id=0 -v page_limit=2000"),
     ("franchise-event", "pipeline/queries/extract_franchise_events.sql",
-     "-v after_date='0001-01-01' -v after_id=0 -v page_limit=500"),
+     "-v after_date='0001-01-01' -v after_id=0 -v page_limit=2000"),
     ("venue-opening", "pipeline/queries/extract_venue_openings.sql",
-     "-v after_date='0001-01-01' -v after_qid='' -v page_limit=500"),
+     "-v after_date='0001-01-01' -v after_qid='' -v page_limit=2000"),
 ]
 
 ONCE = [
-    ("award-season-year", "pipeline/queries/extract_awards_season.sql", ""),
     ("day-coverage", "pipeline/queries/extract_day_coverage.sql", ""),
 ]
 
@@ -49,7 +50,7 @@ def main():
         print(f"# {name}")
         print(command(file, variables))
         print()
-    print("# Paged dumps. Re-run with after_date / after_qid or after_id from nextCursor.")
+    print("# Paged dumps. Re-run with after_date / after_id (or after_qid for venues) from nextCursor.")
     for name, file, variables in PAGES:
         print(f"# {name}")
         print(command(file, variables))

@@ -1,5 +1,9 @@
 import type { FeedContext, MeigenRecord } from "./types.ts";
 export type { Citation, EntityRef, FeedContext, FeedManifest, FeedShard, MeigenRecord, SourceSnapshot } from "./types.ts";
+export type {
+  DatePrecision, ExtractCategory, ExtractSource, OnThisDayRecord, PersonRef, TeamRef,
+} from "./schema.ts";
+export { EXTRACT_CATEGORIES } from "./schema.ts";
 export { SCHEMA_VERSION, VERSION } from "./version.ts";
 
 /** Whether a date is an exact Gregorian calendar day (years 1–9999).
