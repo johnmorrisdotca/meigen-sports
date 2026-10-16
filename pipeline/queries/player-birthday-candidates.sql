@@ -1,5 +1,6 @@
--- Read-only SPX candidate extraction. LIMIT 5 is intentionally retained until reviewed.
+-- Read-only keyset page. Invoke psql with after_date, after_qid, and page_limit variables.
 begin read only;
+set local statement_timeout = '8s';
 with person_redirects as materialized (
   select old_person_id, person_id from core.person_redirect
 ),
@@ -11,6 +12,12 @@ wikidata_ids as materialized (
   left join legacy_people.redirect w on w.from_qid = x.external_key
   left join person_redirects r on r.old_person_id = x.entity_id
   where x.entity_kind = 'person' and x.external_key ~ '^Q[0-9]+$'
+),
+single_identity_qids as materialized (
+  select qid, (array_agg(distinct person_id))[1] as person_id
+  from wikidata_ids
+  group by qid
+  having count(distinct person_id) = 1
 ),
 all_birth_values as materialized (
   select coalesce(w.to_qid, c.qid) as qid, c.value_on, c.value_prec
@@ -30,7 +37,7 @@ eligible_candidates as materialized (
   select b.qid, b.birth_date, i.person_id, p.full_name,
          src.code, src.licence, src.attribution
   from unambiguous_births b
-  join wikidata_ids i on i.qid = b.qid
+  join single_identity_qids i on i.qid = b.qid
   join core.person p on p.person_id = i.person_id and p.birth_date = b.birth_date
   join meta.source src on src.code = 'wikidata' and src.licence like 'CC0%'
   where exists (
@@ -39,7 +46,9 @@ eligible_candidates as materialized (
   )
 ),
 limited_candidates as materialized (
-  select * from eligible_candidates order by birth_date, qid limit 5
+  select * from eligible_candidates
+  where (birth_date, qid) > (:'after_date'::date, :'after_qid')
+  order by birth_date, qid limit :page_limit
 ),
 archive_batches as materialized (
   select a.name, a.saved_on, a.sha256, convert_from(a.data, 'UTF8')::jsonb as payload
@@ -67,27 +76,35 @@ verified_evidence as (
     and raw_claim.value #>> '{mainsnak,datavalue,value,time}' like '%' || to_char(c.birth_date, 'YYYY-MM-DD') || 'T%'
     and raw_claim.value #>> '{mainsnak,datavalue,value,precision}' = '11'
     and coalesce(raw_claim.value #>> '{rank}', 'normal') <> 'deprecated'
-)
-
-select 'spx:player-birthday:wikidata:' || qid || ':' || birth_date::text as record_id,
-       'player-birthday' as category,
-       'candidate' as review_status,
-       'day' as date_precision,
-       birth_date as event_date,
-       'wikidata:' || qid as stable_entity_id,
-       full_name as display_name,
-       code as source_id,
-       licence,
-       attribution,
-       'https://www.wikidata.org/wiki/' || qid as source_url,
-       jsonb_agg(jsonb_build_object(
+),
+page_records as (
+  select jsonb_build_object(
+       'recordId', 'spx:player-birthday:wikidata:' || qid || ':' || birth_date::text,
+       'category', 'player-birthday',
+       'reviewStatus', 'candidate',
+       'datePrecision', 'day',
+       'eventDate', birth_date,
+       'stableEntityId', 'wikidata:' || qid,
+       'displayName', full_name,
+       'sourceId', code,
+       'licence', licence,
+       'attribution', attribution,
+       'sourceUrl', 'https://www.wikidata.org/wiki/' || qid,
+       'playerEligible', true,
+       'sourceEvidence', jsonb_agg(jsonb_build_object(
          'archiveName', name,
          'archiveSha256', sha256,
          'jsonPointer', json_pointer,
          'fetchedOn', fetched_on
-       ) order by name, json_pointer) as source_evidence
-from verified_evidence
-group by qid, birth_date, full_name, code, licence, attribution
-order by birth_date, qid;
+       ) order by name, json_pointer)) as record
+  from verified_evidence
+  group by qid, birth_date, full_name, code, licence, attribution
+)
+select jsonb_build_object(
+  'scannedCount', (select count(*) from limited_candidates),
+  'nextCursor', (select jsonb_build_object('date', birth_date, 'qid', qid)
+                 from limited_candidates order by birth_date desc, qid desc limit 1),
+  'records', coalesce((select jsonb_agg(record order by record->>'eventDate', record->>'stableEntityId') from page_records), '[]'::jsonb)
+)::text;
 
 rollback;

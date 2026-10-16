@@ -15,8 +15,8 @@ class ReadOnlyPlayerBirthdayQueryTests(unittest.TestCase):
         cls.normalized = re.sub(r"\s+", " ", code).lower()
 
     def test_query_is_wrapped_in_read_only_transaction(self):
-        self.assertRegex(self.code.strip(), r"^begin\s+read only;\s*with\b")
-        self.assertRegex(self.code.strip(), r"order by birth_date, qid;\s*rollback;$")
+        self.assertRegex(self.code.strip(), r"^begin\s+read only;\s*set local statement_timeout\s*=.*?;\s*with\b")
+        self.assertRegex(self.code.strip(), r"::text;\s*rollback;$")
         self.assertNotRegex(self.code, r"\b(insert|update|delete|truncate|alter|drop|copy|grant|revoke|create)\b")
 
     def test_candidate_requires_exact_unambiguous_wikidata_birth_date(self):
@@ -37,11 +37,16 @@ class ReadOnlyPlayerBirthdayQueryTests(unittest.TestCase):
             "a.sha256 ~ '^[a-f0-9]{64}$'",
             "a.saved_on in (select distinct i.fetched_on",
             "legacy_files.raw_archive",
-            "source_evidence",
+            "sourceevidence",
             "raw_claim.value #>> '{mainsnak,datavalue,value,precision}' = '11'",
             "raw_claim.ordinal = cl.n + 1",
             "raw_claim.value #>> '{rank}'",
-            "limit 5",
+            "limit :page_limit",
+            "after_date",
+            "after_qid",
+            "single_identity_qids",
+            "scannedcount",
+            "nextcursor",
         ):
             self.assertIn(required, self.normalized)
 
