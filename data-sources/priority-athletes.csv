@@ -403,7 +403,7 @@ Dan Gable,freestyle_wrestling,Q238551,1,
 Jordan Burroughs,freestyle_wrestling,Q252667,1,
 Hassan Yazdani,freestyle_wrestling,Q19816279,1,
 Edoardo Mangiarotti,fencing,Q352640,1,
-Aladár Gerevich,fencing,,1,
+Aladár Gerevich,fencing,Q312971,1,
 Nedo Nadi,fencing,Q33783,1,
 Inna Deriglazova,fencing,Q1657750,1,
 Kim Soo-nyung,archery,Q239901,1,
@@ -417,351 +417,351 @@ Gary Ablett Sr.,australian_rules_football,Q5524578,1,
 Leigh Matthews,australian_rules_football,Q6519630,1,
 Ron Barassi,australian_rules_football,Q3441366,1,
 Henry Shefflin,hurling,Q967636,1,
-TJ Reid,hurling,,1,
-Mick Mackey,hurling,,1,
-Colm Cooper,gaelic_football,,1,
-Peter Canavan,gaelic_football,,1,
-Jack O'Shea,gaelic_football,,1,
-Andrew Johns,rugby_league,,1,
+TJ Reid,hurling,Q7668375,1,
+Mick Mackey,hurling,Q6838296,1,
+Colm Cooper,gaelic_football,Q2984065,1,
+Peter Canavan,gaelic_football,Q3376493,1,
+Jack O'Shea,gaelic_football,Q6114421,1,
+Andrew Johns,rugby_league,Q2846645,1,
 Cameron Smith,rugby_league,,1,
-Billy Slater,rugby_league,,1,
-Wally Lewis,rugby_league,,1,
-Darren Lockyer,rugby_league,,1,
-Irene van Dyk,netball,,1,
-Liz Ellis,netball,,1,
-Casey Kopua,netball,,1,
-Dezső Gyarmati,water_polo,,1,
-Manuel Estiarte,water_polo,,1,
-Maggie Steffens,water_polo,,1,
-Brenda Villa,water_polo,,1,
+Billy Slater,rugby_league,Q2903714,1,
+Wally Lewis,rugby_league,Q3565555,1,
+Darren Lockyer,rugby_league,Q1166639,1,
+Irene van Dyk,netball,Q6069314,1,
+Liz Ellis,netball,Q6660117,1,
+Casey Kopua,netball,Q5048530,1,
+Dezső Gyarmati,water_polo,Q360879,1,
+Manuel Estiarte,water_polo,Q962176,1,
+Maggie Steffens,water_polo,Q2915418,1,
+Brenda Villa,water_polo,Q2563685,1,
 Sarah Storey,para_cycling,Q439085,1,listed:para cycling/para swimming
 Daniel Dias,para_swimming,Q2917073,1,
-Beatrice Vio,wheelchair_fencing,,1,
-Shingo Kunieda,wheelchair_tennis,,1,
-Diede de Groot,wheelchair_tennis,,1,
+Beatrice Vio,wheelchair_fencing,Q3637275,1,
+Shingo Kunieda,wheelchair_tennis,Q959958,1,
+Diede de Groot,wheelchair_tennis,Q24574661,1,
 Ricard Ten Argilés,para_table_tennis,,1,
-Zahra Nemati,para_archery,,1,
-Tony Hawk,skateboarding,,1,
-Rodney Mullen,skateboarding,,1,
-Nyjah Huston,skateboarding,,1,
+Zahra Nemati,para_archery,Q8064739,1,
+Tony Hawk,skateboarding,Q295020,1,
+Rodney Mullen,skateboarding,Q313447,1,
+Nyjah Huston,skateboarding,Q2185882,1,
 Yuto Horigome,skateboarding,,1,
-Rayssa Leal,skateboarding,,1,
+Rayssa Leal,skateboarding,Q64748123,1,
 Anup Kumar,kabaddi,,1,
-Pardeep Narwal,kabaddi,,1,
-Pawan Sehrawat,kabaddi,,1,
+Pardeep Narwal,kabaddi,Q26251631,1,
+Pawan Sehrawat,kabaddi,Q64853314,1,
 Lisa Carrington,canoe_sprint,Q83837,1,
-Danuta Kozák,canoe_sprint,,1,
-Robert Scheidt,sailing,,1,
-Paul Elvstrøm,sailing,,1,
-Hulk Hogan,professional_wrestling,,1,
-Ric Flair,professional_wrestling,,1,
-Stone Cold Steve Austin,professional_wrestling,,1,
+Danuta Kozák,canoe_sprint,Q327145,1,
+Robert Scheidt,sailing,Q381531,1,
+Paul Elvstrøm,sailing,Q50893,1,
+Hulk Hogan,professional_wrestling,Q44176,1,
+Ric Flair,professional_wrestling,Q44546,1,
+Stone Cold Steve Austin,professional_wrestling,Q44313,1,
 The Rock,professional_wrestling,,1,
-The Undertaker,professional_wrestling,,1,
-John Cena,professional_wrestling,,1,
-Bret Hart,professional_wrestling,,1,
-Shawn Michaels,professional_wrestling,,1,
-Randy Savage,professional_wrestling,,1,
-André the Giant,professional_wrestling,,1,
-Bruno Sammartino,professional_wrestling,,1,
-Dusty Rhodes,professional_wrestling,,1,
+The Undertaker,professional_wrestling,Q44304,1,
+John Cena,professional_wrestling,Q44437,1,
+Bret Hart,professional_wrestling,Q81324,1,
+Shawn Michaels,professional_wrestling,Q31317,1,
+Randy Savage,professional_wrestling,Q59635,1,
+André the Giant,professional_wrestling,Q44368,1,
+Bruno Sammartino,professional_wrestling,Q369270,1,
+Dusty Rhodes,professional_wrestling,Q361235,1,
 Sting,professional_wrestling,,1,
-Triple H,professional_wrestling,,1,
-Kurt Angle,professional_wrestling,,1,listed:professional wrestling/freestyle wrestling
-Brock Lesnar,professional_wrestling,,1,listed:professional wrestling/MMA/amateur wrestling
-Eddie Guerrero,professional_wrestling,,1,
-Rey Mysterio,professional_wrestling,,1,
-Chris Jericho,professional_wrestling,,1,
-Roman Reigns,professional_wrestling,,1,
-Cody Rhodes,professional_wrestling,,1,
-CM Punk,professional_wrestling,,1,
-Bryan Danielson,professional_wrestling,,1,
-Kenny Omega,professional_wrestling,,1,
-Kazuchika Okada,professional_wrestling,,1,
-Hiroshi Tanahashi,professional_wrestling,,1,
-Antonio Inoki,professional_wrestling,,1,
-Mitsuharu Misawa,professional_wrestling,,1,
-Kenta Kobashi,professional_wrestling,,1,
-El Santo,professional_wrestling,,1,
-Blue Demon,professional_wrestling,,1,
-Manami Toyota,professional_wrestling,,1,
-Chigusa Nagayo,professional_wrestling,,1,
-Aja Kong,professional_wrestling,,1,
-Bull Nakano,professional_wrestling,,1,
-Trish Stratus,professional_wrestling,,1,
+Triple H,professional_wrestling,Q44567,1,
+Kurt Angle,professional_wrestling,Q44453,1,listed:professional wrestling/freestyle wrestling
+Brock Lesnar,professional_wrestling,Q220556,1,listed:professional wrestling/MMA/amateur wrestling
+Eddie Guerrero,professional_wrestling,Q44374,1,
+Rey Mysterio,professional_wrestling,Q44152,1,
+Chris Jericho,professional_wrestling,Q44144,1,
+Roman Reigns,professional_wrestling,Q275971,1,
+Cody Rhodes,professional_wrestling,Q299222,1,
+CM Punk,professional_wrestling,Q215447,1,
+Bryan Danielson,professional_wrestling,Q299355,1,
+Kenny Omega,professional_wrestling,Q3195235,1,
+Kazuchika Okada,professional_wrestling,Q1057868,1,
+Hiroshi Tanahashi,professional_wrestling,Q1189750,1,
+Antonio Inoki,professional_wrestling,Q45207,1,
+Mitsuharu Misawa,professional_wrestling,Q703827,1,
+Kenta Kobashi,professional_wrestling,Q1343583,1,
+El Santo,professional_wrestling,Q970321,1,
+Blue Demon,professional_wrestling,Q885681,1,
+Manami Toyota,professional_wrestling,Q1141298,1,
+Chigusa Nagayo,professional_wrestling,Q11651401,1,
+Aja Kong,professional_wrestling,Q1827239,1,
+Bull Nakano,professional_wrestling,Q1990140,1,
+Trish Stratus,professional_wrestling,Q229310,1,
 Lita,professional_wrestling,,1,
-Chyna,professional_wrestling,,1,
-Becky Lynch,professional_wrestling,,1,
-Charlotte Flair,professional_wrestling,,1,
-Mercedes Moné,professional_wrestling,,1,
-Bianca Belair,professional_wrestling,,1,
-Rhea Ripley,professional_wrestling,,1,
+Chyna,professional_wrestling,Q466683,1,
+Becky Lynch,professional_wrestling,Q7301800,1,
+Charlotte Flair,professional_wrestling,Q2891336,1,
+Mercedes Moné,professional_wrestling,Q6818195,1,
+Bianca Belair,professional_wrestling,Q30647464,1,
+Rhea Ripley,professional_wrestling,Q56259738,1,
 Asuka,professional_wrestling,,1,
-Iyo Sky,professional_wrestling,,1,
-Shaun White,snowboarding,,1,listed:snowboarding/skateboarding
-Chloe Kim,snowboarding,,1,
-Hannah Teter,snowboarding,,1,
+Iyo Sky,professional_wrestling,Q6061727,1,
+Shaun White,snowboarding,Q288656,1,listed:snowboarding/skateboarding
+Chloe Kim,snowboarding,Q15649119,1,
+Hannah Teter,snowboarding,Q235762,1,
 Jamie Anderson,snowboarding,,1,
-Anna Gasser,snowboarding,,1,
-Ester Ledecká,snowboarding,,1,listed:snowboarding/alpine skiing
-Mikaël Kingsbury,freestyle_skiing,,1,
-Alexandre Bilodeau,freestyle_skiing,,1,
-Sarah Burke,freestyle_skiing,,1,
-Eileen Gu,freestyle_skiing,,1,
-Sara Takanashi,ski_jumping,,1,
-Noriaki Kasai,ski_jumping,,1,
-Adam Małysz,ski_jumping,,1,
-Kamil Stoch,ski_jumping,,1,
-Eric Frenzel,nordic_combined,,1,
-Jørgen Graabak,nordic_combined,,1,
-Brian McKeever,para_cross_country_skiing,,1,
-Oksana Masters,para_nordic_skiing,,1,listed:para Nordic skiing/para cycling/para rowing
+Anna Gasser,snowboarding,Q15633888,1,
+Ester Ledecká,snowboarding,Q12424417,1,listed:snowboarding/alpine skiing
+Mikaël Kingsbury,freestyle_skiing,Q430936,1,
+Alexandre Bilodeau,freestyle_skiing,Q456041,1,
+Sarah Burke,freestyle_skiing,Q233506,1,
+Eileen Gu,freestyle_skiing,Q61203781,1,
+Sara Takanashi,ski_jumping,Q467082,1,
+Noriaki Kasai,ski_jumping,Q343346,1,
+Adam Małysz,ski_jumping,Q203982,1,
+Kamil Stoch,ski_jumping,Q467758,1,
+Eric Frenzel,nordic_combined,Q700807,1,
+Jørgen Graabak,nordic_combined,Q1615861,1,
+Brian McKeever,para_cross_country_skiing,Q593035,1,
+Oksana Masters,para_nordic_skiing,Q2930380,1,listed:para Nordic skiing/para cycling/para rowing
 Natalie Geisenberger,luge,Q63114,1,
-Georg Hackl,luge,,1,
-Felix Loch,luge,,1,
-Francesco Friedrich,bobsleigh,,1,
-André Lange,bobsleigh,,1,
-Lizzy Yarnold,skeleton,,1,
-Amy Williams,skeleton,,1,
-Viktor Ahn,short_track_speed_skating,,1,
-Apolo Anton Ohno,short_track_speed_skating,,1,
-Arianna Fontana,short_track_speed_skating,,1,
-Choi Min-jeong,short_track_speed_skating,,1,
+Georg Hackl,luge,Q39588,1,
+Felix Loch,luge,Q60711,1,
+Francesco Friedrich,bobsleigh,Q108156,1,
+André Lange,bobsleigh,Q60494,1,
+Lizzy Yarnold,skeleton,Q658596,1,
+Amy Williams,skeleton,Q10105,1,
+Viktor Ahn,short_track_speed_skating,Q118002,1,
+Apolo Anton Ohno,short_track_speed_skating,Q329738,1,
+Arianna Fontana,short_track_speed_skating,Q259815,1,
+Choi Min-jeong,short_track_speed_skating,Q18685427,1,
 Wang Meng,short_track_speed_skating,,1,
-Jennifer Jones,curling,,1,
-Sandra Schmirler,curling,,1,
-Rachel Homan,curling,,1,
-Niklas Edin,curling,,1,
+Jennifer Jones,curling,Q189895,1,
+Sandra Schmirler,curling,Q444980,1,
+Rachel Homan,curling,Q7279274,1,
+Niklas Edin,curling,Q1849097,1,
 Kevin Martin,curling,,1,
-Nino Schurter,mountain_biking,,1,
-Julien Absalon,mountain_biking,,1,
-Rachel Atherton,mountain_biking,,1,
-Mariana Pajón,bmx,,1,
+Nino Schurter,mountain_biking,Q666580,1,
+Julien Absalon,mountain_biking,Q382060,1,
+Rachel Atherton,mountain_biking,Q390519,1,
+Mariana Pajón,bmx,Q2358275,1,
 Connor Fields,bmx,,1,
 Chris Hoy,track_cycling,Q310383,1,
 Jason Kenny,track_cycling,Q460643,1,
 Laura Kenny,track_cycling,Q272598,1,
-Kristina Vogel,track_cycling,,1,
-Anna Meares,track_cycling,,1,
-Kerri Walsh Jennings,beach_volleyball,,1,
-Misty May-Treanor,beach_volleyball,,1,
-Gary Gait,lacrosse,,1,
-Paul Gait,lacrosse,,1,
-Paul Rabil,lacrosse,,1,
-Jen Adams,lacrosse,,1,
-Jennie Finch,softball,,1,
-Lisa Fernandez,softball,,1,
-Cat Osterman,softball,,1,
-Monica Abbott,softball,,1,
-Efren Reyes,pool,,1,
-Allison Fisher,pool,,1,listed:pool/snooker
-Raymond Ceulemans,carom_billiards,,1,
-Frédéric Caudron,carom_billiards,,1,
-Semih Saygıner,carom_billiards,,1,
-Earl Anthony,tenpin_bowling,,1,
-Walter Ray Williams Jr.,tenpin_bowling,,1,
-Paeng Nepomuceno,tenpin_bowling,,1,
-Kelly Kulick,tenpin_bowling,,1,
-Lester Piggott,horse_racing,,1,
-Bill Shoemaker,horse_racing,,1,
-Frankie Dettori,horse_racing,,1,
-Julie Krone,horse_racing,,1,
+Kristina Vogel,track_cycling,Q263464,1,
+Anna Meares,track_cycling,Q270657,1,
+Kerri Walsh Jennings,beach_volleyball,Q232666,1,
+Misty May-Treanor,beach_volleyball,Q182106,1,
+Gary Gait,lacrosse,Q3098550,1,
+Paul Gait,lacrosse,Q3371270,1,
+Paul Rabil,lacrosse,Q7153074,1,
+Jen Adams,lacrosse,Q6177256,1,
+Jennie Finch,softball,Q2406028,1,
+Lisa Fernandez,softball,Q2729085,1,
+Cat Osterman,softball,Q2941581,1,
+Monica Abbott,softball,Q3042107,1,
+Efren Reyes,pool,Q982090,1,
+Allison Fisher,pool,Q299898,1,listed:pool/snooker
+Raymond Ceulemans,carom_billiards,Q738860,1,
+Frédéric Caudron,carom_billiards,Q371690,1,
+Semih Saygıner,carom_billiards,Q1196101,1,
+Earl Anthony,tenpin_bowling,Q5325708,1,
+Walter Ray Williams Jr.,tenpin_bowling,Q2900860,1,
+Paeng Nepomuceno,tenpin_bowling,Q7124082,1,
+Kelly Kulick,tenpin_bowling,Q6386141,1,
+Lester Piggott,horse_racing,Q377345,1,
+Bill Shoemaker,horse_racing,Q718423,1,
+Frankie Dettori,horse_racing,Q1119157,1,
+Julie Krone,horse_racing,Q6308321,1,
 Michael Jung,equestrian,,1,
 Mark Todd,equestrian,,1,
-Shun Ikeda,sumo,,1,
+Shun Ikeda,sumo,Q28069146,1,
 Viktor Rudenko,sambo,,1,
-Cung Le,sanda,,1,listed:sanda/MMA
+Cung Le,sanda,Q952839,1,listed:sanda/MMA
 Wu Xu,wushu,,1,
-Anissa Meksen,savate,,1,listed:savate/kickboxing
+Anissa Meksen,savate,Q19952877,1,listed:savate/kickboxing
 Maika Senoo,kendo,,1,
-Elisa Di Francisca,fencing,,1,
-Laura Flessel,fencing,,1,
-Olga Kharlan,fencing,,1,
-John Tavares,box_lacrosse,,1,
-Crystl Bustos,softball,,1,
-Natasha Watley,softball,,1,
-Falcão,futsal,,1,
-Ricardinho,futsal,,1,
-Madjer,beach_soccer,,1,
+Elisa Di Francisca,fencing,Q261939,1,
+Laura Flessel,fencing,Q239263,1,
+Olga Kharlan,fencing,Q430937,1,
+John Tavares,box_lacrosse,Q537353,1,
+Crystl Bustos,softball,Q3006027,1,
+Natasha Watley,softball,Q3130743,1,
+Falcão,futsal,Q312454,1,
+Ricardinho,futsal,Q362447,1,
+Madjer,beach_soccer,Q1367228,1,
 Lucie-Marie Kretzschmar,beach_handball,,1,
-Pedro Gil,rink_hockey,,1,
-Mika Kohonen,floorball,,1,
-Anna Wijk,floorball,,1,
+Pedro Gil,rink_hockey,Q7159603,1,
+Mika Kohonen,floorball,Q974776,1,
+Anna Wijk,floorball,Q4990508,1,
 Sergey Lomanov Sr.,bandy,,1,
-Jhulan Goswami,cricket,,1,
-Suzie Bates,cricket,,1,
+Jhulan Goswami,cricket,Q3526852,1,
+Suzie Bates,cricket,Q5010566,1,
 Sorcha McCartan,camogie,,1,
-Ronald Ross,shinty,,1,
+Ronald Ross,shinty,Q102034,1,
 Toni Kohonen,pesapallo,,1,
 Sami Haapakoski,pesapallo,,1,
-Pornchai Kaokaew,sepak_takraw,,1,
-Priyanka Ingle,kho_kho,,1,
-Pratik Waikar,kho_kho,,1,
-Paul Brady,gaelic_handball,,1,
-Aisling Reilly,gaelic_handball,,1,
-Aimar Olaizola,basque_pelota,,1,
-Paola Longoria,racquetball,,1,
-Fernando Belasteguín,padel,,1,
-Alejandra Salazar,padel,,1,
-Ben Johns,pickleball,,1,
-Anna Leigh Waters,pickleball,,1,
-Dipika Pallikal,squash,,1,
-Joshna Chinappa,squash,,1,
-Camden Riviere,real_tennis,,1,
-Robert Fahey,real_tennis,,1,
-Jens Weissflog,ski_jumping,,1,
-Felix Gottwald,nordic_combined,,1,
-Perrine Laffont,freestyle_skiing,,1,
-Mark McMorris,snowboarding,,1,
-Kelly Clark,snowboarding,,1,
+Pornchai Kaokaew,sepak_takraw,Q117662183,1,
+Priyanka Ingle,kho_kho,Q133203734,1,
+Pratik Waikar,kho_kho,Q133295244,1,
+Paul Brady,gaelic_handball,Q648789,1,
+Aisling Reilly,gaelic_handball,Q108939803,1,
+Aimar Olaizola,basque_pelota,Q3752396,1,
+Paola Longoria,racquetball,Q544138,1,
+Fernando Belasteguín,padel,Q5859236,1,
+Alejandra Salazar,padel,Q5641756,1,
+Ben Johns,pickleball,Q106812168,1,
+Anna Leigh Waters,pickleball,Q114772513,1,
+Dipika Pallikal,squash,Q1227162,1,
+Joshna Chinappa,squash,Q6289572,1,
+Camden Riviere,real_tennis,Q5025805,1,
+Robert Fahey,real_tennis,Q7344238,1,
+Jens Weissflog,ski_jumping,Q161339,1,
+Felix Gottwald,nordic_combined,Q380143,1,
+Perrine Laffont,freestyle_skiing,Q15712845,1,
+Mark McMorris,snowboarding,Q3294177,1,
+Kelly Clark,snowboarding,Q270331,1,
 Yang Yang,short_track_speed_skating,,1,listed:short-track speed skating; born 1976
-Eve Muirhead,curling,,1,
-Kaillie Humphries,bobsleigh,,1,
-Armin Zöggeler,luge,,1,
-Martins Dukurs,skeleton,,1,
-Laetitia Roux,ski_mountaineering,,1,
-Victoria Pendleton,track_cycling,,1,
-Bethany Shriever,bmx,,1,
+Eve Muirhead,curling,Q442730,1,
+Kaillie Humphries,bobsleigh,Q263495,1,
+Armin Zöggeler,luge,Q347993,1,
+Martins Dukurs,skeleton,Q520234,1,
+Laetitia Roux,ski_mountaineering,Q532211,1,
+Victoria Pendleton,track_cycling,Q230999,1,
+Bethany Shriever,bmx,Q25935617,1,
 Logan Martin,bmx,,1,
-Pauline Ferrand-Prévot,mountain_biking,,1,
-Sanne Cant,cyclo_cross,,1,
-Mathieu van der Poel,cyclo_cross,,1,listed:cyclo-cross/road cycling
+Pauline Ferrand-Prévot,mountain_biking,Q462104,1,
+Sanne Cant,cyclo_cross,Q2607845,1,
+Mathieu van der Poel,cyclo_cross,Q3078910,1,listed:cyclo-cross/road cycling
 Svetlana Romashina,artistic_swimming,Q242776,1,
 Natalia Ishchenko,artistic_swimming,Q1800208,1,
-Sharon van Rouwendaal,open_water_swimming,,1,
-Ana Marcela Cunha,open_water_swimming,,1,
-Chloë McCardel,marathon_swimming,,1,
+Sharon van Rouwendaal,open_water_swimming,Q2208967,1,
+Ana Marcela Cunha,open_water_swimming,Q482912,1,
+Chloë McCardel,marathon_swimming,Q108893236,1,
 Sarah Thomas,marathon_swimming,,1,
 Jessica Fox,canoe_slalom,,1,
-Michal Martikán,canoe_slalom,,1,
+Michal Martikán,canoe_slalom,Q287399,1,
 Noémie Fox,kayak_cross,,1,
-Finn Butcher,kayak_cross,,1,
+Finn Butcher,kayak_cross,Q107332874,1,
 Lealyn Baligasa,dragon_boat,,1,
 Shogo Horie,lifesaving,,1,
 Anna Abravanel,lifesaving,,1,
-Petra Senánszky,lifesaving,,1,listed:lifesaving/finswimming
+Petra Senánszky,lifesaving,Q18341237,1,listed:lifesaving/finswimming
 Harley Clifford,wakeboarding,,1,
 Meagan Ethell,wakeboarding,,1,
 Nate Smith,waterskiing,,1,
-Regina Jaquess,waterskiing,,1,
+Regina Jaquess,waterskiing,Q3931833,1,
 Bjørn Dunkerbeck,windsurfing,,1,
-Sarah-Quita Offringa,windsurfing,,1,
-Daniela Moroz,kiteboarding,,1,
-Valentin Bontus,kiteboarding,,1,
-Natalia Molchanova,freediving,,1,
-Alexey Molchanov,freediving,,1,
-Robert Korzeniowski,race_walking,,1,
-Jefferson Pérez,race_walking,,1,
-Paul Tergat,cross_country_running,,1,
-Geoffrey Kamworor,cross_country_running,,1,
-Courtney Dauwalter,trail_running,,1,listed:trail running/ultrarunning
-François D'Haene,trail_running,,1,listed:trail running/ultrarunning
-Yiannis Kouros,ultrarunning,,1,
-Camille Herron,ultrarunning,,1,
+Sarah-Quita Offringa,windsurfing,Q7422018,1,
+Daniela Moroz,kiteboarding,Q98807627,1,
+Valentin Bontus,kiteboarding,Q126000289,1,
+Natalia Molchanova,freediving,Q59920,1,
+Alexey Molchanov,freediving,Q4301107,1,
+Robert Korzeniowski,race_walking,Q310415,1,
+Jefferson Pérez,race_walking,Q15542,1,
+Paul Tergat,cross_country_running,Q313799,1,
+Geoffrey Kamworor,cross_country_running,Q1503019,1,
+Courtney Dauwalter,trail_running,Q55178570,1,listed:trail running/ultrarunning
+François D'Haene,trail_running,Q16011113,1,listed:trail running/ultrarunning
+Yiannis Kouros,ultrarunning,Q708464,1,
+Camille Herron,ultrarunning,Q19282282,1,
 Rob Woestenborghs,duathlon,,1,
-Laura Asadauskaitė,modern_pentathlon,,1,
-András Balczó,modern_pentathlon,,1,
-Jon Albon,obstacle_course_racing,,1,listed:obstacle-course racing/trail running
+Laura Asadauskaitė,modern_pentathlon,Q260438,1,
+András Balczó,modern_pentathlon,Q52582,1,
+Jon Albon,obstacle_course_racing,Q42345695,1,listed:obstacle-course racing/trail running
 Lindsay Webster,obstacle_course_racing,,1,
-Ed Coan,powerlifting,,1,
-Lamar Gant,powerlifting,,1,
-Zydrunas Savickas,strongman,,1,
-Mariusz Pudzianowski,strongman,,1,
+Ed Coan,powerlifting,Q4230342,1,
+Lamar Gant,powerlifting,Q5751249,1,
+Zydrunas Savickas,strongman,Q394378,1,
+Mariusz Pudzianowski,strongman,Q316676,1,
 Donna Moore,strongwoman,,1,
-Lasha Talakhadze,weightlifting,,1,
-Hidilyn Diaz,weightlifting,,1,
-Norm Duke,tenpin_bowling,,1,
+Lasha Talakhadze,weightlifting,Q3218304,1,
+Hidilyn Diaz,weightlifting,Q1844358,1,
+Norm Duke,tenpin_bowling,Q5625326,1,
 Liz Johnson,tenpin_bowling,,1,
 David Bryant,lawn_bowls,,1,
 Karen Murphy,lawn_bowls,,1,
 David Smith,boccia,,1,
-Leung Yuk Wing,boccia,,1,
+Leung Yuk Wing,boccia,Q11755340,1,
 Dylan Rocher,petanque,,1,
-Philippe Quintais,petanque,,1,
+Philippe Quintais,petanque,Q3380589,1,
 Pankaj Advani,english_billiards,,1,listed:English billiards/snooker
-Geet Sethi,english_billiards,,1,
-Shane Van Boening,pool,,1,
-Jasmin Ouschan,pool,,1,
-Dick Jaspers,carom_billiards,,1,
-Torbjörn Blomdahl,carom_billiards,,1,
-Beezie Madden,equestrian,,1,
-Ludger Beerbaum,equestrian,,1,
+Geet Sethi,english_billiards,Q3351827,1,
+Shane Van Boening,pool,Q2276890,1,
+Jasmin Ouschan,pool,Q545743,1,
+Dick Jaspers,carom_billiards,Q1209708,1,
+Torbjörn Blomdahl,carom_billiards,Q523046,1,
+Beezie Madden,equestrian,Q449891,1,
+Ludger Beerbaum,equestrian,Q60968,1,
 María Álvarez Pontón,equestrian,,1,
 Valerie Kanavy,equestrian,,1,
-Adolfo Cambiaso,polo,,1,
-Facundo Pieres,polo,,1,
-Rachael Blackmore,horse_racing,,1,
-Yutaka Take,horse_racing,,1,
-A. J. Foyt,indycar,,1,
-Scott Dixon,indycar,,1,
-Tom Kristensen,endurance_motor_racing,,1,
-Jacky Ickx,endurance_motor_racing,,1,listed:endurance motor racing/Formula One
-Johan Kristoffersson,rallycross,,1,
-Petter Solberg,rallycross,,1,listed:rallycross/rallying
-Stefan Everts,motocross,,1,
-Tony Cairoli,motocross,,1,
-Jeremy McGrath,supercross,,1,
-Ricky Carmichael,supercross,,1,listed:supercross/motocross
-Ivan Mauger,speedway,,1,
-Tony Rickardsson,speedway,,1,
-Toni Bou,motorcycle_trials,,1,
-Dougie Lampkin,motorcycle_trials,,1,
+Adolfo Cambiaso,polo,Q365022,1,
+Facundo Pieres,polo,Q1391774,1,
+Rachael Blackmore,horse_racing,Q101103548,1,
+Yutaka Take,horse_racing,Q997380,1,
+A. J. Foyt,indycar,Q173228,1,
+Scott Dixon,indycar,Q465201,1,
+Tom Kristensen,endurance_motor_racing,Q438117,1,
+Jacky Ickx,endurance_motor_racing,Q173123,1,listed:endurance motor racing/Formula One
+Johan Kristoffersson,rallycross,Q1692026,1,
+Petter Solberg,rallycross,Q215813,1,listed:rallycross/rallying
+Stefan Everts,motocross,Q709854,1,
+Tony Cairoli,motocross,Q2641189,1,
+Jeremy McGrath,supercross,Q2696702,1,
+Ricky Carmichael,supercross,Q532073,1,listed:supercross/motocross
+Ivan Mauger,speedway,Q939125,1,
+Tony Rickardsson,speedway,Q1360421,1,
+Toni Bou,motorcycle_trials,Q2600623,1,
+Dougie Lampkin,motorcycle_trials,Q2705528,1,
 Davide Forè,karting,,1,
-John Force,drag_racing,,1,
-Shirley Muldowney,drag_racing,,1,
-Alina Kabaeva,rhythmic_gymnastics,,1,
-Evgeniya Kanaeva,rhythmic_gymnastics,,1,
-Dina Averina,rhythmic_gymnastics,,1,
-Rosannagh MacLennan,trampoline_gymnastics,,1,
-Dong Dong,trampoline_gymnastics,,1,
-Mikhail Malkin,tumbling,,1,
-Marina Chernova,acrobatic_gymnastics,,1,
+John Force,drag_racing,Q6233593,1,
+Shirley Muldowney,drag_racing,Q4353432,1,
+Alina Kabaeva,rhythmic_gymnastics,Q254220,1,
+Evgeniya Kanaeva,rhythmic_gymnastics,Q253431,1,
+Dina Averina,rhythmic_gymnastics,Q16197510,1,
+Rosannagh MacLennan,trampoline_gymnastics,Q275153,1,
+Dong Dong,trampoline_gymnastics,Q601864,1,
+Mikhail Malkin,tumbling,Q123473845,1,
+Marina Chernova,acrobatic_gymnastics,Q17403326,1,
 Georgii Pataraia,acrobatic_gymnastics,,1,
 Iván Veloz,aerobic_gymnastics,,1,
-Simone Niggli,orienteering,,1,
-Thierry Gueorgiou,orienteering,,1,
-Heather McKay,squash,,1,
-Susan Devoy,squash,,1,
-Nour El Sherbini,squash,,1,
-Chad Hedrick,roller_speed_skating,,1,listed:roller speed skating/ice speed skating
-Joey Mantia,roller_speed_skating,,1,listed:roller speed skating/ice speed skating
+Simone Niggli,orienteering,Q42920,1,
+Thierry Gueorgiou,orienteering,Q56105,1,
+Heather McKay,squash,Q538855,1,
+Susan Devoy,squash,Q2913290,1,
+Nour El Sherbini,squash,Q4355286,1,
+Chad Hedrick,roller_speed_skating,Q434352,1,listed:roller speed skating/ice speed skating
+Joey Mantia,roller_speed_skating,Q2221679,1,listed:roller speed skating/ice speed skating
 Rebecca Tarlazzi,artistic_roller_skating,,1,
 Luca Lucaroni,artistic_roller_skating,,1,
-Kevin VanDam,fishing,,1,
-Edmund Hillary,mountaineering,,1,
-Tenzing Norgay,mountaineering,,1,
-Reinhold Messner,mountaineering,,1,
-Junko Tabei,mountaineering,,1,
-Wanda Rutkiewicz,mountaineering,,1,
+Kevin VanDam,fishing,Q6397682,1,
+Edmund Hillary,mountaineering,Q33817,1,
+Tenzing Norgay,mountaineering,Q80732,1,
+Reinhold Messner,mountaineering,Q189307,1,
+Junko Tabei,mountaineering,Q234491,1,
+Wanda Rutkiewicz,mountaineering,Q237493,1,
 Patrick Anderson,wheelchair_basketball,,1,
-Ryley Batt,wheelchair_rugby,,1,
-Chuck Aoki,wheelchair_rugby,,1,
-Sevda Altunoluk,goalball,,1,
-Ricardinho,blind_football,,1,listed:blind football; Ricardo Alves
-Morteza Mehrzad,sitting_volleyball,,1,
-Tatyana McFadden,para_athletics,,1,listed:para athletics/wheelchair racing
-Jonnie Peacock,para_athletics,,1,
-Sarina Satomi,para_badminton,,1,
-Lisa Gjessing,para_taekwondo,,1,
-Amy Truesdale,para_taekwondo,,1,
-Marie Bochet,para_alpine_skiing,,1,
-Henrieta Farkašová,para_alpine_skiing,,1,
-Verena Bentele,para_nordic_skiing,,1,
-Declan Farmer,para_ice_hockey,,1,
-Terence Parkin,deaflympic_swimming,,1,listed:Deaflympic swimming/Olympic swimming
+Ryley Batt,wheelchair_rugby,Q7385173,1,
+Chuck Aoki,wheelchair_rugby,Q108266858,1,
+Sevda Altunoluk,goalball,Q24302416,1,
+Ricardinho,blind_football,Q362447,1,listed:blind football; Ricardo Alves
+Morteza Mehrzad,sitting_volleyball,Q5715420,1,
+Tatyana McFadden,para_athletics,Q2112488,1,listed:para athletics/wheelchair racing
+Jonnie Peacock,para_athletics,Q3183590,1,
+Sarina Satomi,para_badminton,Q107337885,1,
+Lisa Gjessing,para_taekwondo,Q108000668,1,
+Amy Truesdale,para_taekwondo,Q107677605,1,
+Marie Bochet,para_alpine_skiing,Q8305770,1,
+Henrieta Farkašová,para_alpine_skiing,Q5715883,1,
+Verena Bentele,para_nordic_skiing,Q73349,1,
+Declan Farmer,para_ice_hockey,Q15979652,1,
+Terence Parkin,deaflympic_swimming,Q530054,1,listed:Deaflympic swimming/Olympic swimming
 Joseph Warner,special_olympics_snowboarding,,1,
-Evel Knievel,stunt,,1,
-Robbie Knievel,stunt,,1,
-Travis Pastrana,freestyle_motocross,,1,listed:freestyle motocross/stunt driving
-Robbie Maddison,freestyle_motocross,,1,listed:freestyle motocross/stunt riding
-Felix Baumgartner,skydiving,,1,listed:skydiving/BASE jumping
-Luke Aikins,skydiving,,1,listed:skydiving/aerial stunts
+Evel Knievel,stunt,Q345231,1,
+Robbie Knievel,stunt,Q13607723,1,
+Travis Pastrana,freestyle_motocross,Q379510,1,listed:freestyle motocross/stunt driving
+Robbie Maddison,freestyle_motocross,Q4353690,1,listed:freestyle motocross/stunt riding
+Felix Baumgartner,skydiving,Q4203,1,listed:skydiving/BASE jumping
+Luke Aikins,skydiving,Q26202478,1,listed:skydiving/aerial stunts
 Andy Farrington,skydiving,,1,listed:skydiving/aerial stunts
 Miles Daisher,base_jumping,,1,listed:BASE jumping/skydiving
-Jeb Corliss,wingsuit,,1,listed:wingsuit flying/BASE jumping
+Jeb Corliss,wingsuit,Q342834,1,listed:wingsuit flying/BASE jumping
 Fred Fugen,wingsuit,,1,listed:wingsuit flying/BASE jumping
-Vince Reffet,wingsuit,,1,listed:wingsuit flying/jet-wing flight
-Yves Rossy,jet_wing,,1,
+Vince Reffet,wingsuit,Q102046647,1,listed:wingsuit flying/jet-wing flight
+Yves Rossy,jet_wing,Q460670,1,
 Danny MacAskill,trials_cycling,,1,listed:trials cycling/bicycle stunts
 Fabio Wibmer,trials_cycling,,1,listed:trials cycling/bicycle stunts
 Kriss Kyle,bmx,,1,listed:BMX freestyle/bicycle stunts
@@ -802,200 +802,200 @@ Mil Máscaras,professional_wrestling,,1,
 Satoru Sayama,professional_wrestling,,1,listed:professional wrestling; original Tiger Mask
 Toni Storm,professional_wrestling,,1,
 Gail Kim,professional_wrestling,,1,
-Elaine Thompson-Herah,athletics,Q20035636,1,fame-fill
-Jaroslav Drobný,ice_hockey,,1,fame-fill
-Professional sports,golf,Q1369650,1,fame-fill
-Alberto Ascari,formula_one,Q2086,1,fame-fill
-Archie Moore,boxing,Q470731,1,fame-fill
-Asian Football Confederation,soccer,Q83276,1,fame-fill
-Billy Conn,boxing,Q654686,1,fame-fill
-Bob Foster,boxing,,1,fame-fill
-Bobby Charlton,soccer,Q171583,1,fame-fill
-Bobo Olson,boxing,Q2412267,1,fame-fill
-Carlos Monzón,boxing,,1,fame-fill
-Carlos Ortiz,boxing,,1,fame-fill
-Carmen Basilio,boxing,Q723189,1,fame-fill
-Curtis Cokes,boxing,Q2396455,1,fame-fill
-Daphne Akhurst,tennis,Q436592,1,fame-fill
-Davor Šuker,soccer,,1,fame-fill
-Dick Tiger,boxing,Q326938,1,fame-fill
-Duilio Loi,boxing,Q328126,1,fame-fill
-Eddie Perkins,boxing,Q1282936,1,fame-fill
-Emile Griffith,boxing,Q59051,1,fame-fill
-Emilio Butragueño,soccer,,1,fame-fill
-Ezzard Charles,boxing,Q471727,1,fame-fill
-Fernando Alonso,formula_one,Q10514,1,fame-fill
-Floyd Patterson,boxing,Q314051,1,fame-fill
-Flórián Albert,soccer,,1,fame-fill
-France Football,soccer,Q308705,1,fame-fill
-Fred Alexander,tennis,Q1333525,1,fame-fill
-Fritzie Zivic,boxing,Q1378567,1,fame-fill
-Gary Lineker,soccer,Q47778,1,fame-fill
-Gene Fullmer,boxing,Q942573,1,fame-fill
-Harold Johnson,boxing,,1,fame-fill
-Henry Armstrong,boxing,Q734339,1,fame-fill
-Hristo Stoichkov,soccer,Q187125,1,fame-fill
-Ingemar Johansson,boxing,Q335872,1,fame-fill
-Jack Brabham,formula_one,Q2125,1,fame-fill
-Jake LaMotta,boxing,Q335855,1,fame-fill
-Jersey Joe Walcott,boxing,Q560461,1,fame-fill
-Joey Giardello,boxing,Q718929,1,fame-fill
-Joey Maxim,boxing,Q777476,1,fame-fill
-José Nápoles,boxing,,1,fame-fill
-José Torres,boxing,,1,fame-fill
-Juliette Atkinson,tennis,Q292962,1,fame-fill
-Just Fontaine,soccer,Q192749,1,fame-fill
-Karl-Heinz Rummenigge,soccer,Q152871,1,fame-fill
-Kazimierz Deyna,soccer,Q345702,1,fame-fill
-Kid Gavilán,boxing,,1,fame-fill
-Lennox Lewis,boxing,Q295328,1,fame-fill
-Luis Manuel Rodríguez,boxing,,1,fame-fill
-Marcel Cerdan,boxing,Q347201,1,fame-fill
-Mario Andretti,formula_one,Q171312,1,fame-fill
-Max Schmeling,boxing,Q77102,1,fame-fill
-Michael Owen,soccer,Q128829,1,fame-fill
-Michael Spinks,boxing,Q708416,1,fame-fill
-Nino Benvenuti,boxing,Q1800396,1,fame-fill
-Oliver Kahn,soccer,Q131261,1,fame-fill
-Paolo Rossi,soccer,Q178628,1,fame-fill
-Preben Elkjær,soccer,,1,fame-fill
-Randolph Turpin,boxing,Q777362,1,fame-fill
-Rob Rensenbrink,soccer,Q311393,1,fame-fill
-Roberto Baggio,soccer,Q67964,1,fame-fill
-Roberto Carlos,soccer,Q429039,1,fame-fill
-Rocky Marciano,boxing,Q188362,1,fame-fill
-Ronaldo,soccer,,1,fame-fill
-Salvatore Schillaci,soccer,Q295307,1,fame-fill
-Sonny Liston,boxing,Q313684,1,fame-fill
-Tony Zale,boxing,,1,fame-fill
-Tracy Austin,tennis,,1,fame-fill
-Willie Pastrano,boxing,,1,fame-fill
-World War I,tennis,,1,fame-fill
-Aaron Peirsol,olympics,Q302510,1,fame-fill
-Aaron Pryor,boxing,Q1385420,1,fame-fill
-Abdoulaye Seye,athletics,Q308412,1,fame-fill
-Abdul Qadir,cricket,,1,fame-fill
-Ademir de Menezes,soccer,Q332012,1,fame-fill
-Adine Masson,tennis,Q357354,1,fame-fill
-Adrian Quist,tennis,Q374047,1,fame-fill
-African Lion Safari,canadian_football,Q4689847,1,fame-fill
-"Ainslie Wood, Ontario",canadian_football,,1,fame-fill
-Ajara Nchout,soccer,Q412052,1,fame-fill
-Akinori Nakayama,olympics,Q360661,1,fame-fill
-Al Cervi,basketball,Q1346751,1,fame-fill
-Al Davis,american_football,Q1389376,1,fame-fill
-Al Simmons,baseball,Q711946,1,fame-fill
-Alain Giresse,soccer,Q312170,1,fame-fill
-Alajos Szokolyi,athletics,Q349598,1,fame-fill
-Alan Faneca,american_football,Q2608819,1,fame-fill
-Alan Jones,formula_one,,1,fame-fill
-Alan Keith Davidson,cricket,Q2830487,1,fame-fill
-Alan Knott,cricket,Q4707083,1,fame-fill
-Alan Minter,boxing,Q165873,1,fame-fill
-Alan Shearer,soccer,Q483583,1,fame-fill
-Alastair Cook,cricket,Q500551,1,fame-fill
-Albert Spalding,baseball,Q1272299,1,fame-fill
-Alcides Ghiggia,soccer,Q352611,1,fame-fill
-Alec Bedser,cricket,Q1859529,1,fame-fill
-Alec Connell,ice_hockey,Q466275,1,fame-fill
-Aleksandr Popov,olympics,,1,fame-fill
-Alex Blignaut,formula_one,Q173706,1,fame-fill
-Alex English,basketball,Q739699,1,fame-fill
-Alex Morgan,soccer,Q233510,1,fame-fill
-Alex Olmedo,tennis,Q734544,1,fame-fill
-Alexander Albon,formula_one,Q16149172,1,fame-fill
-Alexander Cartwright,baseball,Q28976,1,fame-fill
-Alexandra Popp,soccer,Q432932,1,fame-fill
-Alexei Kasatonov,ice_hockey,Q1348811,1,fame-fill
-Alexei Nemov,olympics,Q375537,1,fame-fill
-Alexis Argüello,boxing,,1,fame-fill
-Alf Smith,ice_hockey,,1,fame-fill
-Alfa Romeo in Formula One,formula_one,Q65960697,1,fame-fill
-Alfred Lane,olympics,Q1434302,1,fame-fill
-Algernon Kingscote,tennis,Q719277,1,fame-fill
-Alice Brown,athletics,,1,fame-fill
-Alice Marble,tennis,Q54535,1,fame-fill
-Alice Weiwers,tennis,Q4726148,1,fame-fill
-Aline Terry,tennis,Q333104,1,fame-fill
-All-WNBA Team,basketball,Q4728342,1,fame-fill
-Allan Border,cricket,Q1392194,1,fame-fill
-Allan Donald,cricket,Q3345532,1,fame-fill
-Allan Simonsen,soccer,Q153463,1,fame-fill
-Allan Wells,athletics,Q435898,1,fame-fill
-Allen Berg,formula_one,Q173452,1,fame-fill
-Allen Woodring,athletics,Q549671,1,fame-fill
-Allison Schmitt,olympics,Q233469,1,fame-fill
-Alvah Meyer,athletics,Q448204,1,fame-fill
-Amancio,soccer,,1,fame-fill
-Amanda Ilestedt,soccer,Q10407268,1,fame-fill
-Amandine Henry,soccer,Q454261,1,fame-fill
-American Alliance of Museums,tennis,Q2842849,1,fame-fill
-Amy Van Dyken,olympics,Q233569,1,fame-fill
-Amélie Mauresmo,tennis,,1,fame-fill
-Ana Guevara,athletics,Q237002,1,fame-fill
-Ana Ivanovic,tennis,Q30758,1,fame-fill
-Anastasia Davydova,olympics,Q240381,1,fame-fill
-Anastasia Myskina,tennis,Q203591,1,fame-fill
-Anatoli Firsov,ice_hockey,Q488039,1,fame-fill
-Anatoli Khorozov,ice_hockey,Q488137,1,fame-fill
-Anders Hedberg,ice_hockey,Q491024,1,fame-fill
-Andre De Grasse,athletics,Q19952288,1,fame-fill
-Andrea Pirlo,soccer,Q43926,1,fame-fill
-Andrea de Adamich,formula_one,Q173250,1,fame-fill
-Andreas Brehme,soccer,Q159045,1,fame-fill
-Andrei Khomutov,ice_hockey,Q502624,1,fame-fill
-Andres Ambühl,ice_hockey,,1,fame-fill
-Andriy Shevchenko,soccer,Q41244,1,fame-fill
-André Gobert,tennis,,1,fame-fill
-André Vacherot,tennis,,1,fame-fill
-Andrés Gimeno,tennis,,1,fame-fill
-Andy Flower,cricket,Q2849115,1,fame-fill
-Andy Phillip,basketball,Q527022,1,fame-fill
-Andy Roberts,cricket,,1,fame-fill
-Andy Stanfield,athletics,Q527781,1,fame-fill
-Angela James,ice_hockey,Q1531158,1,fame-fill
-Angela Mortimer,tennis,Q241727,1,fame-fill
-Anil Kumble,cricket,Q2849991,1,fame-fill
-Anita Lizana,tennis,Q447534,1,fame-fill
-Anja Mittag,soccer,Q63878,1,fame-fill
-Anjum Chopra,cricket,Q3526701,1,fame-fill
-Ann Jones,tennis,,1,fame-fill
-Ann Kristin Aarønes,soccer,,1,fame-fill
-Ann Meyers,basketball,Q2308003,1,fame-fill
-Ann Packer,athletics,Q241891,1,fame-fill
-Anne Donovan,basketball,Q270947,1,fame-fill
-Annegret Richter,athletics,Q57884,1,fame-fill
-Anthony Wilding,tennis,Q505788,1,fame-fill
-Antoine Griezmann,soccer,Q455462,1,fame-fill
-Anton Heida,olympics,Q180207,1,fame-fill
-Antonio Cabrini,soccer,Q68064,1,fame-fill
-Antonio Cervantes,boxing,Q601512,1,fame-fill
-Antonio Gates,american_football,Q2565943,1,fame-fill
-Arantxa Sánchez Vicario,tennis,,1,fame-fill
-Aravinda de Silva,cricket,Q3522450,1,fame-fill
-Archie Hahn,athletics,,1,fame-fill
-Ariane Hingst,soccer,Q451349,1,fame-fill
-Ariarne Titmus,olympics,Q33320896,1,fame-fill
-Arjen Robben,soccer,Q43913,1,fame-fill
-Arkadiusz Pawlowski,paralympics,Q27149354,1,fame-fill
-Arkady Chernyshev,ice_hockey,Q672110,1,fame-fill
-Armin Hary,athletics,Q57678,1,fame-fill
-Arne Grunander,ice_hockey,Q5773539,1,fame-fill
-Arnie Risen,basketball,Q2731878,1,fame-fill
-Art Berglund,ice_hockey,Q4796699,1,fame-fill
-Art Bisch,formula_one,Q173590,1,fame-fill
-Art Donovan,american_football,Q705517,1,fame-fill
-Art Ross,ice_hockey,Q539010,1,fame-fill
-Arthur Ashe,tennis,Q53325,1,fame-fill
-Arthur Farrell,ice_hockey,Q2865099,1,fame-fill
-Arthur Gore,tennis,,1,fame-fill
-Arthur Jonath,athletics,Q651020,1,fame-fill
-Arthur Larsen,tennis,Q54531,1,fame-fill
-Arthur Morris,cricket,Q2865262,1,fame-fill
-Arthur O'Hara Wood,tennis,,1,fame-fill
-"Arthur Porritt, Baron Porritt",athletics,,1,fame-fill
-Artur Beterbiev,boxing,Q388359,1,fame-fill
-Arturo Gatti,boxing,Q381484,1,fame-fill
-Artūrs Irbe,ice_hockey,,1,fame-fill
-Ashley Cooper,tennis,,1,fame-fill
-Asisat Oshoala,soccer,Q17747951,1,fame-fill
+Billy Barlow,ice_hockey,,1,SC GWG
+Jack Armytage,ice_hockey,,1,SC GWG
+Ernie McLea,ice_hockey,,1,SC GWG
+Robert MacDougall,ice_hockey,,1,SC GWG
+Harry Trihey,ice_hockey,Q5672911,1,SC GWG
+Dan Bain,ice_hockey,Q288572,1,SC GWG
+Fred Scanlan,ice_hockey,Q5496224,1,SC GWG
+Jack Marshall,ice_hockey,,1,SC GWG
+Tommy Phillips,ice_hockey,Q3530843,1,SC GWG
+Suddy Gilmour,ice_hockey,,1,SC GWG
+Frank McGee,ice_hockey,,1,SC GWG
+Arthur A. C. Moore,ice_hockey,,1,SC GWG
+Rat Westwick,ice_hockey,Q7295408,1,SC GWG
+Lester Patrick,ice_hockey,Q1366313,1,SC GWG
+Roxy Beaudro,ice_hockey,,1,SC GWG
+Fred Whitcroft,ice_hockey,,1,SC GWG
+Moose Johnson,ice_hockey,Q3323628,1,SC GWG
+Frank Glass,ice_hockey,,1,SC GWG
+Walter Smaill,ice_hockey,,1,SC GWG
+Hamby Shore,ice_hockey,,1,SC GWG
+Harry Hyland,ice_hockey,Q3127840,1,SC GWG
+Marty Walsh,ice_hockey,,1,SC GWG
+Joe Malone,ice_hockey,Q1691516,1,SC GWG
+Tommy Smith,ice_hockey,,1,SC GWG
+Scotty Davidson,ice_hockey,Q3074880,1,SC GWG
+Harry Cameron,ice_hockey,Q1365935,1,SC GWG
+Barney Stanley,ice_hockey,Q245865,1,SC GWG
+George Prodgers,ice_hockey,,1,SC GWG
+Bernie Morris,ice_hockey,,1,SC GWG
+Corb Denneny,ice_hockey,,1,SC GWG
+Jack Darragh,ice_hockey,Q984269,1,SC GWG
+Babe Dye,ice_hockey,,1,SC GWG
+Punch Broadbent,ice_hockey,Q1147132,1,SC GWG
+Howie Morenz,ice_hockey,Q538946,1,SC GWG
+Gizzy Hart,ice_hockey,,1,SC GWG
+Nels Stewart,ice_hockey,Q1970185,1,SC GWG
+Cy Denneny,ice_hockey,Q1146865,1,SC GWG
+Frank Boucher,ice_hockey,Q1354316,1,SC GWG
+Bill Carson,ice_hockey,,1,SC GWG
+Johnny Gagnon,ice_hockey,,1,SC GWG
+Ace Bailey,ice_hockey,,1,SC GWG
+Bill Cook,ice_hockey,Q709650,1,SC GWG
+Mush March,ice_hockey,,1,SC GWG
+Baldy Northcott,ice_hockey,,1,SC GWG
+Pete Kelly,ice_hockey,,1,SC GWG
+Marty Barry,ice_hockey,Q707919,1,SC GWG
+Carl Voss,ice_hockey,,1,SC GWG
+Roy Conacher,ice_hockey,,1,SC GWG
+Bryan Hextall,ice_hockey,,1,SC GWG
+Bobby Bauer,ice_hockey,,1,SC GWG
+Pete Langelle,ice_hockey,,1,SC GWG
+Joe Carveth,ice_hockey,,1,SC GWG
+Toe Blake,ice_hockey,Q285583,1,SC GWG
+Babe Pratt,ice_hockey,Q325966,1,SC GWG
+Ted Kennedy,ice_hockey,,1,SC GWG
+Harry Watson,ice_hockey,,1,SC GWG
+Cal Gardner,ice_hockey,,1,SC GWG
+Pete Babando,ice_hockey,,1,SC GWG
+Bill Barilko,ice_hockey,,1,SC GWG
+Metro Prystai,ice_hockey,,1,SC GWG
+Elmer Lach,ice_hockey,Q1332986,1,SC GWG
+Tony Leswick,ice_hockey,,1,SC GWG
+Dickie Moore,ice_hockey,,1,SC GWG
+Bernie Geoffrion,ice_hockey,,1,SC GWG
+Marcel Bonin,ice_hockey,,1,SC GWG
+Jean Béliveau,ice_hockey,,1,SC GWG
+Ab McDonald,ice_hockey,,1,SC GWG
+Dick Duff,ice_hockey,,1,SC GWG
+Eddie Shack,ice_hockey,,1,SC GWG
+Andy Bathgate,ice_hockey,,1,SC GWG
+Henri Richard,ice_hockey,,1,SC GWG
+Jim Pappin,ice_hockey,,1,SC GWG
+J. C. Tremblay,ice_hockey,,1,SC GWG
+John Ferguson Sr.,ice_hockey,,1,SC GWG
+Yvan Cournoyer,ice_hockey,,1,SC GWG
+Rick MacLeish,ice_hockey,,1,SC GWG
+Bob Kelly,ice_hockey,,1,SC GWG
+Guy Lafleur,ice_hockey,,1,SC GWG
+Jacques Lemaire,ice_hockey,,1,SC GWG
+Mario Tremblay,ice_hockey,,1,SC GWG
+Bob Nystrom,ice_hockey,,1,SC GWG
+Wayne Merrick,ice_hockey,,1,SC GWG
+Mike Bossy,ice_hockey,,1,SC GWG
+Ken Linseman,ice_hockey,,1,SC GWG
+Paul Coffey,ice_hockey,,1,SC GWG
+Bobby Smith,ice_hockey,,1,SC GWG
+Jari Kurri,ice_hockey,,1,SC GWG
+Doug Gilmour,ice_hockey,,1,SC GWG
+Craig Simpson,ice_hockey,,1,SC GWG
+Ulf Samuelsson,ice_hockey,,1,SC GWG
+Ron Francis,ice_hockey,,1,SC GWG
+Kirk Muller,ice_hockey,,1,SC GWG
+Neal Broten,ice_hockey,,1,SC GWG
+Uwe Krupp,ice_hockey,,1,SC GWG
+Darren McCarty,ice_hockey,,1,SC GWG
+Martin Lapointe,ice_hockey,,1,SC GWG
+Brett Hull,ice_hockey,,1,SC GWG
+Jason Arnott,ice_hockey,,1,SC GWG
+Alex Tanguay,ice_hockey,,1,SC GWG
+Brendan Shanahan,ice_hockey,,1,SC GWG
+Michael Rupp,ice_hockey,,1,SC GWG
+Ruslan Fedotenko,ice_hockey,,1,SC GWG
+František Kaberle,ice_hockey,,1,SC GWG
+Travis Moen,ice_hockey,,1,SC GWG
+Henrik Zetterberg,ice_hockey,,1,SC GWG
+Maxime Talbot,ice_hockey,,1,SC GWG
+Patrick Kane,ice_hockey,,1,SC GWG
+Patrice Bergeron,ice_hockey,Q536741,1,SC GWG
+Jeff Carter,ice_hockey,,1,SC GWG
+Dave Bolland,ice_hockey,,1,SC GWG
+Alec Martinez,ice_hockey,,1,SC GWG
+Duncan Keith,ice_hockey,,1,SC GWG
+Kris Letang,ice_hockey,,1,SC GWG
+Patric Hörnqvist,ice_hockey,,1,SC GWG
+Lars Eller,ice_hockey,,1,SC GWG
+Alex Pietrangelo,ice_hockey,,1,SC GWG
+Brayden Point,ice_hockey,,1,SC GWG
+Ross Colton,ice_hockey,,1,SC GWG
+Artturi Lehkonen,ice_hockey,,1,SC GWG
+Reilly Smith,ice_hockey,,1,SC GWG
+Sam Reinhart,ice_hockey,,1,SC GWG
+Matthew Tkachuk,ice_hockey,,1,SC GWG
+Taylor Hall,ice_hockey,,1,SC GWG
+Frank Schulte,baseball,,1,MLB MVP
+Alex Rodriguez,baseball,,1,HR hitter
+Dave Parker,baseball,,1,HR Derby
+Tris Speaker,baseball,Q1205542,1,MLB MVP
+Jim Thome,baseball,,1,HR hitter
+Larry Doyle,baseball,,1,MLB MVP
+Sammy Sosa,baseball,,1,HR hitter
+Wally Joyner,baseball,,1,HR Derby
+Jake Daubert,baseball,,1,MLB MVP
+Frank Robinson,baseball,,1,HR hitter
+Andre Dawson,baseball,,1,HR Derby
+Eddie Collins,baseball,Q1282739,1,MLB MVP
+Mark McGwire,baseball,,1,HR hitter
+Eric Davis,baseball,,1,HR Derby
+Johnny Evers,baseball,Q1702321,1,MLB MVP
+Harmon Killebrew,baseball,,1,HR hitter
+Ryne Sandberg,baseball,,1,HR Derby
+George Sisler,baseball,Q711950,1,MLB MVP
+Rafael Palmeiro,baseball,,1,HR hitter
+Cal Ripken Jr.,baseball,,1,HR Derby
+Dazzy Vance,baseball,Q1179317,1,MLB MVP
+Reggie Jackson,baseball,,1,HR hitter
+Roger Peckinpaugh,baseball,,1,MLB MVP
+Manny Ramirez,baseball,,1,HR hitter
+Juan González,baseball,,1,HR Derby
+George Burns,baseball,,1,MLB MVP
+Mike Schmidt,baseball,,1,HR hitter
+Texas Rangers,baseball,,1,HR Derby
+Bob O'Farrell,baseball,,1,MLB MVP
+David Ortiz,baseball,,1,HR hitter
+Oriole Park at Camden Yards,baseball,,1,HR Derby
+Paul Waner,baseball,Q710916,1,MLB MVP
+Jimmie Foxx,baseball,Q1329352,1,HR hitter
+Frank Thomas,baseball,,1,HR Derby
+Mickey Cochrane,baseball,Q326416,1,MLB MVP
+Willie McCovey,baseball,,1,HR hitter
+Tino Martinez,baseball,,1,HR Derby
+Jim Bottomley,baseball,,1,MLB MVP
+Lefty Grove,baseball,Q751263,1,MLB MVP
+Ernie Banks,baseball,,1,HR hitter
+Luis Gonzalez,baseball,,1,HR Derby
+Frankie Frisch,baseball,Q2739073,1,MLB MVP
+Eddie Mathews,baseball,,1,HR hitter
+Jason Giambi,baseball,,1,HR Derby
+Miguel Cabrera,baseball,,1,HR hitter
+Garret Anderson,baseball,,1,HR Derby
+Chuck Klein,baseball,,1,MLB MVP
+Mel Ott,baseball,Q726655,1,HR hitter
+Miguel Tejada,baseball,,1,HR Derby
+Carl Hubbell,baseball,Q2938945,1,MLB MVP
+Gary Sheffield,baseball,,1,HR hitter
+Bobby Abreu,baseball,,1,HR Derby
+Dizzy Dean,baseball,Q3032684,1,MLB MVP
+Eddie Murray,baseball,,1,HR hitter
+Ryan Howard,baseball,,1,HR Derby
+Hank Greenberg,baseball,Q687282,1,MLB MVP
+Fred McGriff,baseball,,1,HR hitter
+Vladimir Guerrero,baseball,,1,HR Derby
+Gabby Hartnett,baseball,Q3093501,1,MLB MVP
+Adrián Beltré,baseball,,1,HR hitter
+Justin Morneau,baseball,,1,HR Derby
+Charlie Gehringer,baseball,Q711944,1,MLB MVP
+Willie Stargell,baseball,,1,HR hitter
+Joe Medwick,baseball,Q6211313,1,MLB MVP
+Carlos Delgado,baseball,,1,HR hitter
+Prince Fielder,baseball,,1,HR Derby
+Ernie Lombardi,baseball,,1,MLB MVP
+Chipper Jones,baseball,,1,HR hitter
+Dave Winfield,baseball,,1,HR hitter
+Robinson Canó,baseball,,1,HR Derby
+Joe DiMaggio,baseball,Q297142,1,MLB MVP
+Nelson Cruz,baseball,,1,HR hitter
+Pete Rose,baseball,,1,notorious: banned for gambling
+Shoeless Joe Jackson,baseball,,1,notorious: Black Sox

@@ -2,15 +2,22 @@
 
 # Priority athletes
 
-The master file is [`data-sources/priority-athletes.csv`](../data-sources/priority-athletes.csv). Each later build reads these rows first. The list is **1,000 people**: John’s unique names, then fame-ranked fill if his unique count is under 1,000. If John’s unique names already exceed 1,000, all of his are kept.
+The master file is [`data-sources/priority-athletes.csv`](../data-sources/priority-athletes.csv). Each later build reads these rows first. The list is **1,000 people**: John’s unique names first. If his unique count is under 1,000, fill the rest in this order (Wikipedia CC BY-SA / Wikidata CC0; never NHL endpoints, ESPN, or Sports Reference):
+
+1. Stanley Cup game-winning / Cup-clinching goal scorers (from the “Winning goal” column of *List of Stanley Cup champions*).
+2. Baseball MVPs (AL/NL), famous home-run hitters, Home Run Derby winners.
+3. Other notorious or iconic figures in sports we cover (sourced facts only; no gossip, ethnicity, religion, health, sex, family, or politics).
+4. Only then, Hall of Fame / awards-list fame if still short.
+
+If John’s unique names already exceed 1,000, all of his are kept. Do not drop John’s names to hit 1,000.
 
 | Column | Meaning |
 | --- | --- |
 | `name` | The name as listed |
-| `sport` | Primary sport slug from the parenthetical |
-| `qid` | Wikidata id, filled only when the English Wikipedia article for that name (and sport, when the title needs a qualifier) is a single person |
-| `priority` | `1` = this priority list |
-| `notes` | Extra sports, `ambiguous:…`, `fame-fill`, or why a QID is still empty |
+| `sport` | Primary sport slug |
+| `qid` | Wikidata id, filled only when the English Wikipedia article is a single person |
+| `priority` | `1` = this 1,000 |
+| `notes` | Why a fill row was added (`SC GWG`, `MLB MVP`, `HR hitter`, `HR Derby`, `notorious:…`), extra sports, or `ambiguous:…` |
 
 ## Dedupe
 
@@ -21,16 +28,10 @@ Same person once.
 
 Ambiguous names stay empty and go back to John.
 
-## Cap
-
-After unique John’s names, if the list is short of 1,000, add the highest-evidence names not already on it (Hall of Fame and awards list membership, later sitelinks, records, Olympic and Paralympic medals), across sports and both sexes, until there are 1,000 rows. Do not drop John’s unique names to hit 1,000.
-
-Add a name by appending a CSV row. Do not guess a QID. Re-run `python3 -I pipeline/priority_athletes.py` to fill empty QIDs from Wikipedia `/wiki/` and Wikidata EntityData.
+Add a name by appending a CSV row. Do not guess a QID.
 
 Match onto DS1 `core.person` is **QID only** (`core.external_id` source `wikidata`). Same QID updates empty facts; it never makes a second record. Possible duplicates are logged, never merged.
 
-Sources: Wikidata CC0; English Wikipedia CC BY-SA 4.0. No ESPN, Sports Reference, or NHL endpoints.
-
 ## After this list
 
-Everyone else is ranked by sitelink count, Hall of Fame membership, major awards, records, and Olympic or Paralympic medals. The top 1,000 of that ranked set should be complete before the long tail. Coverage counts (top-100 / top-1,000 / top-10,000 per sport) live in [coverage.md](coverage.md) once the ranked extract exists.
+Everyone else is ranked by sitelink count, Hall of Fame membership, major awards, records, and Olympic or Paralympic medals. Coverage counts live in [coverage.md](coverage.md) once that ranked extract exists.
