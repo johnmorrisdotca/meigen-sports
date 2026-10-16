@@ -14,7 +14,7 @@ Full Gutenberg producer credits are collected in [LICENSES/GUTENBERG-CREDITS.md]
 
 ## Famous quotations (Wikiquote)
 
-Nineteen sports quotations are extracted from English Wikiquote athlete, coach and Sports pages at pinned revisions. The compilation is CC BY-SA 4.0; title, revision id and URL travel with each row. See [LICENSES/WIKIQUOTE-CC-BY-SA.txt](./LICENSES/WIKIQUOTE-CC-BY-SA.txt) and [docs/famous-quotes.md](./docs/famous-quotes.md). Wikiquote notes that some quotations remain fair use of an underlying work. Movie and television dialogue is not stored. English source text only; no Japanese translation is invented. Utterance dates stay unknown unless a source dates the saying.
+Eight sports quotations are extracted from English Wikiquote athlete, coach and Sports pages at pinned revisions. Wikiquote's **page compilation** is CC BY-SA 4.0; title, revision id and URL travel with each row. Quoted **words** belong to the speaker or author. Each row records `rightsReasoning` for those words (territorial public domain, or a short uncopyrightable slogan). Lines whose words could not be justified were omitted. See [LICENSES/WIKIQUOTE-CC-BY-SA.txt](./LICENSES/WIKIQUOTE-CC-BY-SA.txt) and [docs/famous-quotes.md](./docs/famous-quotes.md). Movie and television dialogue is not stored. English source text only; no Japanese translation is invented. Utterance dates stay unknown unless a source dates the saying.
 
 ## Factual data
 

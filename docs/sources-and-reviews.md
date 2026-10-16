@@ -11,7 +11,7 @@ English only. A licence is listed before a source is used. Nothing here is a new
 | James Dwight, *Lawn-tennis* (1886), Gutenberg 58137 | Public domain in US, Canada and UK | quotations | Territorial; Gutenberg notices kept |
 | Walter Camp, *American Football* (1891), Gutenberg 39743 | Public domain in US, Canada and UK | quotations | Territorial; Gutenberg notices kept |
 | Pindar, Myers translation (1904 ed.), Gutenberg 10717 | Public domain in US, Canada and UK | quotations | Territorial; Gutenberg notices kept |
-| English Wikiquote sports and athlete pages | CC BY-SA 4.0 | 19 quotations (`famous-quotes`) | Title, revision and URL; fair-use caveat; no movie dialogue |
+| English Wikiquote sports and athlete pages | CC BY-SA 4.0 (page compilation) | 8 quotations (`famous-quotes`) | Title, revision, URL and per-row `rightsReasoning`; quoted words stay with the speaker; no movie dialogue |
 
 ## Listed, not in the public seed yet
 
@@ -46,7 +46,7 @@ Copyrighted editorial sites are not sources of wording. Quotes are ingested only
 | Category | Records | Days (MM-DD) | Licence |
 | --- | --- | --- | --- |
 | Historical quotations (Gutenberg) | 22 | none (utterance dates unknown) | Public domain US/CA/UK |
-| Famous quotations (Wikiquote) | 19 | none (utterance dates unknown) | CC BY-SA 4.0 |
+| Famous quotations (Wikiquote) | 8 | none (utterance dates unknown) | CC BY-SA 4.0; words justified per row |
 | Wikidata exact-day events | 98 | in the 142-day union | CC0 1.0 |
 | openfootball World Cup matches | 964 | in the 142-day union | CC0 1.0 |
 | Combined history | 1052 | 142 of 366 | 10 same-event rows merged |

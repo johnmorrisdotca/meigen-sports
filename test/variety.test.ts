@@ -15,7 +15,7 @@ function row(id: string, types: string[], tags: string[] = [], kind: MeigenRecor
       : [{ id: `event:${id}`, kind: "event", role: "subject" }],
     source: {
       sourceId: "wikidata", key: id, url: "https://example.com", title: "Example", licence: "CC0-1.0",
-      rightsStatus: "cc0", attribution: "Example", rawSha256: "a".repeat(64), rightsEvidence: ["https://example.com"],
+      rightsStatus: "cc0", attribution: "Example", rightsReasoning: "CC0 structured facts; this caption is original wording, not quoted speech.", rawSha256: "a".repeat(64), rightsEvidence: ["https://example.com"],
     },
   };
 }

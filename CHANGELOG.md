@@ -14,6 +14,7 @@ Not published to npm yet. First publication waits on this set.
 - Convert drops deaths before 1850 and people with no sport, league, roster, priority-athlete QID or sitelinks (Myong-won Kim 1602).
 - Featured lists rank priority athletes first among equals; `featuredReasons` includes `record`.
 - Demo today/random/favourites panels render from templates.
+- Record `rightsReasoning` on every citation. Wikiquote CC BY-SA 4.0 covers the page compilation only; quoted words stay with the speaker. Drop 11 famous-quotes lines whose words could not be justified (22 Gutenberg + 8 Wikiquote remain).
 
 ## [0.2.0] - 2026-10-16
 

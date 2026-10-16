@@ -1,4 +1,4 @@
-English Wikiquote extracts in this package are used under CC BY-SA 4.0.
+English Wikiquote page compilations in this package are used under CC BY-SA 4.0.
 
 Licence: https://creativecommons.org/licenses/by-sa/4.0/
 Wikiquote copyrights: https://en.wikiquote.org/wiki/Wikiquote:Copyrights
@@ -6,6 +6,8 @@ Wikiquote copyrights: https://en.wikiquote.org/wiki/Wikiquote:Copyrights
 Each stored quotation names the English Wikiquote page title, the pinned revision id,
 and a URL with oldid. Share-alike and attribution travel with the row.
 
-Wikiquote notes that some quotations remain fair use of an underlying work.
-Movie and television dialogue is not stored. This file is not a new grant of rights
-over those underlying works.
+CC BY-SA 4.0 covers the Wikiquote page compilation. Quoted words belong to the
+speaker or author. This package publishes a line only when attribution and a
+recorded rightsReasoning justify those words (territorial public domain, or a
+short uncopyrightable slogan). This file is not a new grant of rights over
+underlying works. Movie and television dialogue is not stored.

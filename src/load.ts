@@ -36,7 +36,7 @@ export function isRecord(value: unknown): value is MeigenRecord {
     if (row.date === null && row.monthDay !== null) return false;
   } catch { return false; }
   const source = row.source;
-  if (!source || typeof source.sourceId !== "string" || !source.sourceId || typeof source.key !== "string" || !source.key || typeof source.title !== "string" || typeof source.attribution !== "string" || (typeof source.rawSha256 !== "string" || !/^[a-f0-9]{64}$/.test(source.rawSha256))) return false;
+  if (!source || typeof source.sourceId !== "string" || !source.sourceId || typeof source.key !== "string" || !source.key || typeof source.title !== "string" || typeof source.attribution !== "string" || typeof source.rightsReasoning !== "string" || !source.rightsReasoning.trim() || (typeof source.rawSha256 !== "string" || !/^[a-f0-9]{64}$/.test(source.rawSha256))) return false;
   if (source.snapshot !== undefined && !isSnapshot(source.snapshot)) return false;
   if (!Array.isArray(source.rightsEvidence) || !source.rightsEvidence.length || !source.rightsEvidence.every((url) => typeof url === "string" && /^https:\/\//.test(url))) return false;
   if (!/^https:\/\//.test(source.url ?? "")) return false;

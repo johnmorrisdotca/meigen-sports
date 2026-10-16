@@ -9,7 +9,9 @@ import type { MeigenRecord } from "../src/types.ts";
 
 const source: MeigenRecord["source"] = {
   sourceId: "openfootball", key: "k", url: "https://example.com/a", title: "World Cup 2022",
-  licence: "CC0-1.0", rightsStatus: "cc0", attribution: "openfootball", rawSha256: "a".repeat(64),
+  licence: "CC0-1.0", rightsStatus: "cc0", attribution: "openfootball",
+  rightsReasoning: "CC0 match results; this caption is original wording of those facts, not quoted speech.",
+  rawSha256: "a".repeat(64),
   rightsEvidence: ["https://example.com/rights"],
 };
 

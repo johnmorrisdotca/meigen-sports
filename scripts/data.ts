@@ -35,7 +35,7 @@ interface SeedBase {
 interface SeedQuote extends SeedBase {
   author: string; author_external_id: string; translator: string | null;
   translator_external_id: string | null; source_section: string; publication_year: number | null;
-  attribution_certainty?: string;
+  attribution_certainty?: string; rights_reasoning: string;
 }
 interface SeedHistory extends SeedBase {
   date: string; month_day: string; date_semantics: string; event_id?: string; event_label?: string;
@@ -57,10 +57,10 @@ export function convertSeed(): { quotes: MeigenRecord[]; history: MeigenRecord[]
     const types = r.tags.includes("famous-quotes") ? ["quotation", "famous-quotes"] : ["quotation"];
     const certainty = r.attribution_certainty ? ` Attribution certainty: ${r.attribution_certainty}.` : "";
     const attribution = wikiquote
-      ? `${r.author}, English Wikiquote page "${r.source_title}" (${r.source_key}). Extract CC BY-SA 4.0; title, revision and URL travel with the row.${certainty} Wikiquote notes that some quotations remain fair use of an underlying work; movie and television dialogue is not stored.`
+      ? `${r.author}, English Wikiquote page "${r.source_title}" (${r.source_key}). Wikiquote page compilation CC BY-SA 4.0; quoted words remain with the speaker or author. Title, revision and URL travel with the row.${certainty}`
       : `${r.author}${r.translator ? `; English translation by ${r.translator}` : ""}, ${r.source_title} (${r.publication_year}). Original text preserved; public domain in the US, Canada and UK. Original Gutenberg producer credits and notices: LICENSES/.`;
     const rightsEvidence = wikiquote
-      ? [r.source_url, "https://creativecommons.org/licenses/by-sa/4.0/", "https://en.wikiquote.org/wiki/Wikiquote:Copyrights", ...PUBLIC_DOMAIN_EVIDENCE]
+      ? [r.source_url, "https://creativecommons.org/licenses/by-sa/4.0/", "https://en.wikiquote.org/wiki/Wikiquote:Copyrights", ...(r.rights_reasoning.includes("Circular 33") ? ["https://www.copyright.gov/circs/circ33.pdf"] : []), ...PUBLIC_DOMAIN_EVIDENCE]
       : [r.source_url, ...PUBLIC_DOMAIN_EVIDENCE];
     return {
       id: r.id, kind: "quote", types, text: r.text, language: r.language, sports: r.sports, tags: r.tags,
@@ -69,7 +69,7 @@ export function convertSeed(): { quotes: MeigenRecord[]; history: MeigenRecord[]
       source: {
         sourceId: r.source_id, key: r.source_key, url: r.source_url, title: r.source_title,
         licence: r.licence, rightsStatus: r.rights_status, rawSha256: r.raw_sha256, snapshot: sourceSnapshot(r, "quote"),
-        attribution,
+        attribution, rightsReasoning: r.rights_reasoning,
         ...(r.publication_year ? { publicationYear: r.publication_year } : {}),
         section: r.source_section,
         ...(r.translator ? { translator: r.translator } : {}),
@@ -89,6 +89,7 @@ export function convertSeed(): { quotes: MeigenRecord[]; history: MeigenRecord[]
         sourceId: r.source_id, key: r.source_key, url: r.source_url, title: r.source_title,
         licence: r.licence, rightsStatus: r.rights_status, rawSha256: r.raw_sha256, snapshot: sourceSnapshot(r, "history"),
         attribution: r.source_id === "wikidata" ? "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates." : "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+        rightsReasoning: r.source_id === "wikidata" ? "CC0 structured event facts from Wikidata contributors. This row's caption is original wording of those facts, not quoted speech." : "CC0 match results from openfootball contributors. This row's caption is original wording of those facts, not quoted speech.",
         rightsEvidence: [r.source_url, r.source_id === "wikidata" ? "https://www.wikidata.org/wiki/Wikidata:Licensing" : "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"],
       },
     };
@@ -113,6 +114,8 @@ export function validateRecords(records: readonly MeigenRecord[]): void {
     if (!Array.isArray(r.tags) || r.tags.some((s) => typeof s !== "string")) throw new Error("Invalid tags");
     if (!r.source || !/^[a-f0-9]{64}$/.test(r.source.rawSha256)) throw new Error("Missing original archive hash");
     if (!r.source.sourceId || !r.source.key || !r.source.title || !r.source.attribution) throw new Error("Missing source provenance");
+    if (typeof r.source.rightsReasoning !== "string" || r.source.rightsReasoning.trim().length < 40) throw new Error("Missing rights reasoning");
+    if (r.kind === "quote" && r.source.sourceId === "wikiquote" && !r.source.rightsReasoning.includes("page compilation")) throw new Error("Wikiquote page compilation must be distinct from quoted words");
     const sourceUrl = new URL(r.source.url);
     if (sourceUrl.protocol !== "https:" || sourceUrl.username || sourceUrl.password) throw new Error("Unsafe source URL");
     if (!Array.isArray(r.source.rightsEvidence) || !r.source.rightsEvidence.length || r.source.rightsEvidence.some((s) => !s.startsWith("https://"))) throw new Error("Missing rights evidence");
@@ -127,6 +130,7 @@ export function validateRecords(records: readonly MeigenRecord[]): void {
     if (r.additionalSources) {
       for (const extra of r.additionalSources) {
         if (!extra?.sourceId || !extra.key || !extra.title || !/^[a-f0-9]{64}$/.test(extra.rawSha256)) throw new Error("Missing additional source provenance");
+        if (typeof extra.rightsReasoning !== "string" || extra.rightsReasoning.trim().length < 40) throw new Error("Missing additional source rights reasoning");
       }
     }
     if (r.kind === "quote") {
