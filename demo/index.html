@@ -3,6 +3,21 @@
 <body><main><!--family:header--><!--family:unreviewed-->
 <section class="panel today-panel"><h2 id="today-heading"></h2><p data-say="todayIntro"></p><p id="today-status" class="status" role="status" aria-live="polite"></p><div id="today-facts"></div></section>
 <section class="panel random-panel"><h2 data-say="randomHeading"></h2><p data-say="randomIntro"></p><p id="random-status" class="status" role="status" aria-live="polite"></p><div id="random-facts"></div></section>
+<section class="panel showcase-panel"><h2 data-say="showcaseHeading"></h2><p data-say="showcaseIntro"></p><p id="showcase-status" class="status" role="status" aria-live="polite"></p><div id="showcase-facts"></div></section>
+<section class="panel fav-panel"><h2 data-say="favHeading"></h2><p data-say="favIntro"></p>
+<div class="filter-grid">
+<div class="fam-row"><label><span data-say="sport"></span><select id="fav-sport"><option value="" data-say="allSports"></option></select></label></div>
+<div class="fam-row"><label><span data-say="favLeague"></span><input id="fav-league" type="text" spellcheck="false"></label></div>
+<div class="fam-row"><label><span data-say="favCategory"></span><select id="fav-category"><option value="" data-say="favAllTags"></option></select></label></div>
+<div class="fam-row"><label><span data-say="favFrom"></span><input id="fav-from" type="number" min="1800" max="2100"></label></div>
+<div class="fam-row"><label><span data-say="favTo"></span><input id="fav-to" type="number" min="1800" max="2100"></label></div>
+<div class="fam-row"><label><span data-say="favTeam"></span><input id="fav-team" type="number" min="1"></label></div>
+<div class="fam-row"><label><span data-say="favPlayer"></span><input id="fav-player" type="number" min="1"></label></div>
+</div>
+<button id="fav-find" data-say="favFind"></button>
+<p id="fav-status" class="status" role="status" aria-live="polite"></p>
+<div id="fav-facts"></div>
+</section>
 <section class="lead panel"><h2 data-say="heading"></h2><p data-say="intro"></p><p class="source-note" data-say="sourceNote"></p></section>
 <section class="controls panel" aria-label="Feed context">
 <div class="fam-row" data-help-en="Choose the date to look up. Quotes are a repeatable daily selection, not an anniversary claim." data-help-ja="日付を選びます。引用は日付に応じて選びますが、その日に語られたという意味ではありません。"><label><span data-say="date"></span><input id="date" type="date" value="2026-12-18"></label></div>

@@ -16,7 +16,7 @@ test("the library does not read the clock or choose at random", () => {
   const found: string[] = [];
   for (const file of files("src")) {
     const text = readFileSync(file, "utf8");
-    if (/Math\.random|Date\.now|new Date\s*\(/.test(text)) found.push(file);
+    if (/Math\.random|Date\.now|new Date\s*\(\s*\)/.test(text)) found.push(file);
   }
   assert.deepEqual(found, []);
 });

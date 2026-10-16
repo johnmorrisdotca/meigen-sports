@@ -6,6 +6,8 @@
 
 識別子は安定した ID です。表示名では人やチームを結びません。ライブラリの選択は決定的で、時計も乱数も使いません。
 
+[categories.ja.md](categories.ja.md) の46個の識別子は、排他的な分類ではなく **タグ** です。事実は1件につき1回だけ保存します。絞り込み、分類シャード、多様性（タグごとに最大2件）は集合として扱います。いずれかのタグが一致すればその事実が対象になり、一致する各シャードに現れ、多様性の件数では1回だけ数えます。
+
 ## すべての記録
 
 | 欄 | 型 | 意味 |
@@ -13,7 +15,17 @@
 | `recordId` | 文字列 | データセット内で一意 (`spx:game:123`) |
 | `eventDate` | 文字列または null | 精度が `day` のとき `YYYY-MM-DD`。それ以外は null |
 | `datePrecision` | `day` / `month` / `year` | 年だけの指名や賞は日付を作りません |
-| `category` | `EXTRACT_CATEGORIES` | 試合、決勝、サッカー、誕生日、死去、指名、賞など |
+| `category` | `EXTRACT_CATEGORIES` | 抽出の種類（試合、決勝、サッカー、誕生日、死去、指名、賞など）。`tags` と排他ではありません。 |
+| `tags` | 文字列の配列 | 排他ではない [履歴タグ](categories.ja.md) です。1件の事実は1つの `recordId` に一度だけ保存し、複数のタグを付けられます（優勝と延長の両方など）。根拠がないときは空です。絞り込みは、いずれかのタグが一致すれば当たります。 |
+| `basis` | `source` または `derived` | `source` は出典が述べる事実。`derived` は統計から計算したもので、`derivedRule` と `derivedInputs` が必要です。入力がその範囲で揃っていないときは公開しません。 |
+| `derivedRule` | 文字列 | 導出の規則。出典の事実にはありません。 |
+| `derivedInputs` | 文字列の配列 | その規則の入力。 |
+| `birthDate` | 文字列または null | 誕生日は一度だけ保存します。年齢はその年について計算します。 |
+| `deathDate` | 文字列または null | 出典がある死去日。 |
+| `livingStatus` | `deceased`、`living`、または `unknown` | `unknown` は存命ではありません。`living` は出典があるときだけ。 |
+| `birthPlace` | 文字列または null | 出典のある出生地（Wikidata P19）。推測しません。 |
+| `text` / `textJa` | 文字列 | 既定の文（`wording: "fixed"`）。正本は欄です。[templates.ja.md](templates.ja.md)。 |
+| `record` | オブジェクト | 保持者、値、範囲、フェーズ、樹立日、更新日、前の保持者、公認、出来事（`set` / `held` / `equalled` / `surpassed` / `rescinded` / `title-reassigned`）。破られた記録も事実として残します。 |
 | `sport` | 文字列または null | 競技コード、または `soccer` |
 | `competition` | 文字列または null | リーグ、大会、賞のコード |
 | `league` | 文字列または null | SPXN のリーグコード |
@@ -48,6 +60,7 @@
 {
   "recordId": "spx:game:1849201",
   "category": "game-on-day",
+  "tags": ["match-result"],
   "eventDate": "2023-06-03",
   "datePrecision": "day",
   "sport": "ice_hockey",

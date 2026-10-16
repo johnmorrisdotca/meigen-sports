@@ -2,7 +2,7 @@
 
 # History types and player timelines
 
-History families are curated independently of source datasets. `HISTORY_TYPES` in the `/categories` entry point defines thirty families and the evidence each requires. Its readiness flags describe implementation capability, not verified row counts in a live database. A record may carry several family and subtype tags.
+History identifiers are curated independently of source datasets. `HISTORY_TYPES` in the `/categories` entry point defines forty-six **non-exclusive tags** and the evidence each requires. See [categories.md](categories.md). Its readiness flags describe implementation capability, not verified row counts in a live database. One fact is stored once (`recordId`) and may carry several tags.
 
 Source lifecycle and consumer selection remain independent. An active, frozen or discontinued source can supply useful history. Preserve its original bytes, snapshot, coverage, provenance and reuse terms. Consumers can include or exclude sources and types without deleting the archive. Unclear reuse rights still prevent public export.
 

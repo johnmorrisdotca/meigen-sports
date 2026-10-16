@@ -12,7 +12,44 @@ export const EXTRACT_CATEGORIES = [
   "quotation",
 ] as const;
 export type ExtractCategory = (typeof EXTRACT_CATEGORIES)[number];
-export type DatePrecision = "day" | "month" | "year";
+
+/** Editorial families a favourites feed may add when the structured inputs allow it. Empty until sourced. */
+export const FACT_CATEGORIES = [
+  ...EXTRACT_CATEGORIES,
+  "world-record",
+  "league-record",
+  "milestone",
+  "debut",
+  "last-game",
+  "upset",
+  "comeback",
+  "streak",
+  "first",
+  "trade",
+] as const;
+export type FactCategory = (typeof FACT_CATEGORIES)[number];
+export type DatePrecision = "day" | "month" | "year" | "approximate";
+export type FactBasis = "source" | "derived";
+export type LivingStatus = "deceased" | "living" | "unknown";
+export type RecordEventKind = "set" | "held" | "equalled" | "surpassed" | "rescinded" | "title-reassigned";
+
+/** A sporting record as a progression, not a mutable total. Broken records stay valid facts. */
+export interface RecordProgression {
+  readonly metric: string;
+  readonly scope: string;
+  readonly phase: string | null;
+  readonly holderName: string;
+  readonly holderPersonId: number | null;
+  readonly value: number;
+  readonly unit: string;
+  readonly previousHolderName: string | null;
+  readonly previousHolderPersonId: number | null;
+  readonly previousValue: number | null;
+  readonly setDate: string | null;
+  readonly surpassedDate: string | null;
+  readonly recognition: "claimed" | "ratified" | "unknown";
+  readonly event: RecordEventKind;
+}
 
 /**
  * A club or national team a site can draw, flag, and link.
@@ -52,12 +89,31 @@ export interface ExtractSource {
  * One on-this-day fact for a website. Identity lives on `recordId` and the typed refs, not in `text`.
  * `gameId` is SPXN `core.game.game_id` (`https://spxn.com/<league>/<season>/game/<gameId>-…`).
  * `eventDate` is YYYY-MM-DD only when `datePrecision` is `day`; year-only awards and drafts leave it null.
+ * `text` / `textJa` are captions built from these fields; they are never a source of identity.
+ * `category` is the extract family that produced the row. `tags` are the 46 history-type
+ * identifiers; they are not exclusive. One fact is stored once and may carry several tags
+ * (championship-win and overtime-result on the same recordId).
  */
 export interface OnThisDayRecord {
   readonly recordId: string;
-  readonly category: ExtractCategory;
+  readonly category: FactCategory;
+  /** Non-exclusive history-type ids (`HISTORY_TYPES`). May be empty. Never a second copy of the fact. */
+  readonly tags: readonly string[];
+  /** `source` = a source states the fact. `derived` = computed from statistics; needs `derivedRule` and `derivedInputs`. */
+  readonly basis: FactBasis;
+  readonly derivedRule?: string;
+  readonly derivedInputs?: readonly string[];
   readonly eventDate: string | null;
   readonly datePrecision: DatePrecision;
+  readonly announcedDate?: string | null;
+  readonly awardDate?: string | null;
+  readonly ratifiedDate?: string | null;
+  readonly birthDate?: string | null;
+  readonly deathDate?: string | null;
+  readonly birthPlace?: string | null;
+  readonly livingStatus?: LivingStatus;
+  readonly featuredReasons?: readonly string[];
+  readonly record?: RecordProgression;
   readonly sport: string | null;
   readonly competition: string | null;
   readonly league: string | null;
@@ -65,11 +121,53 @@ export interface OnThisDayRecord {
   readonly home?: TeamRef;
   readonly away?: TeamRef;
   readonly venueId?: number | null;
+  readonly venueName?: string | null;
+  readonly venueCity?: string | null;
+  readonly venueCountry?: string | null;
   readonly gameId?: number | null;
   readonly soccerMatchId?: number | null;
   readonly seasonStartYear?: number | null;
   readonly homeScore?: number | null;
   readonly awayScore?: number | null;
+  readonly phase?: string | null;
+  readonly stage?: string | null;
+  readonly wentToOvertime?: boolean | null;
+  readonly decidedByShootout?: boolean | null;
+  readonly overtimePeriods?: number | null;
+  readonly seriesGameNumber?: number | null;
+  readonly roundLabel?: string | null;
+  readonly seriesBestOf?: number | null;
+  readonly seriesHigherWins?: number | null;
+  readonly seriesLowerWins?: number | null;
+  readonly seriesWinnerTeamSeasonId?: number | null;
   readonly person?: PersonRef;
+  readonly position?: string | null;
+  readonly clubNames?: readonly string[];
+  readonly clubName?: string | null;
+  readonly bornYear?: number | null;
+  readonly ageYears?: number | null;
+  readonly highlight?: string | null;
+  readonly draftYear?: number | null;
+  readonly round?: number | null;
+  readonly overallPick?: number | null;
+  readonly awardName?: string | null;
+  readonly awardKind?: string | null;
+  readonly winnerName?: string | null;
   readonly text?: string;
+  readonly textJa?: string;
+}
+
+/** Combinable filters for `factsFor`. Multiple fields intersect. Names are never identity keys. */
+export interface FactFilters {
+  readonly sport?: string;
+  readonly league?: string;
+  readonly competition?: string;
+  readonly team?: { readonly franchiseId?: number; readonly fifaCode?: string; readonly countryCode?: string; readonly soccerTeamId?: string };
+  readonly player?: { readonly personId?: number; readonly qid?: string };
+  readonly country?: string;
+  /** Matches if the primary `category` or ANY history tag equals this id. */
+  readonly category?: string;
+  readonly date?: string;
+  readonly from?: number;
+  readonly to?: number;
 }

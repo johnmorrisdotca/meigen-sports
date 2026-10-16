@@ -12,7 +12,7 @@ A typed data package with no runtime dependencies. Read the included data offlin
   <img alt="TypeScript" src="https://img.shields.io/badge/types-TypeScript-3178c6">
 </p>
 
-<p align="center"><a href="https://johnmorrisdotca.github.io/meigen-sports/"><strong>Open the demo →</strong></a> · <a href="./NOTICE.md">Sources</a> · <a href="./docs/record-schema.md">Record schema</a> · <a href="./docs/history-model.md">History model</a> · <a href="./docs/data-pipeline.md">Pipeline</a></p>
+<p align="center"><a href="https://johnmorrisdotca.github.io/meigen-sports/"><strong>Open the demo →</strong></a> · <a href="./NOTICE.md">Sources</a> · <a href="./docs/record-schema.md">Record schema</a> · <a href="./docs/templates.md">Templates</a> · <a href="./docs/categories.md">History tags</a> · <a href="./docs/history-model.md">History model</a> · <a href="./docs/data-pipeline.md">Pipeline</a></p>
 
 <p align="center">
 <img alt="The Meigen Sports demo on a desk: a date, a sport, a quotation and on-this-day facts." src="docs/images/hero-desktop.png" width="720">
@@ -108,9 +108,9 @@ The root export provides `isDate`, `monthDayOf`, `selectRecords`, `historyOnDate
 
 Each `MeigenRecord` has a `kind` (`quote` or `history`), exact text, source citation, rights status, sport and type tags, entity references, and date fields. A quotation's `date` and `monthDay` are null when its utterance date is not established. Entity labels are not identity keys; use stable `id` values.
 
-`OnThisDayRecord` is the website consume shape for DS1 extracts: games carry `home` / `away` `TeamRef` objects (franchise, team-season, FIFA and ISO/Hata flag codes), people carry `PersonRef` (SPXN person id, Wikidata QID, leagues, team ids), and every row has `recordId`, date precision, category, sport, competition, source, licence and attribution. The bundled seed still uses `MeigenRecord`. See [docs/record-schema.md](./docs/record-schema.md).
+`OnThisDayRecord` is the website consume shape for DS1 extracts: games carry `home` / `away` `TeamRef` objects (franchise, team-season, FIFA and ISO/Hata flag codes), people carry `PersonRef` (SPXN person id, Wikidata QID, leagues, team ids), and every row has `recordId`, date precision, extract `category`, non-exclusive `tags`, sport, competition, source, licence and attribution. The bundled seed still uses `MeigenRecord`. See [docs/record-schema.md](./docs/record-schema.md).
 
-`HISTORY_TYPES` describes thirty curated history families and the evidence each would require. Its readiness labels describe implementation capability, not verified live data counts. The richer player and record progression design in [docs/history-model.md](./docs/history-model.md) is planned and is not part of the current `MeigenRecord` API. `EXTRACT_CATEGORIES` lists the on-this-day families a site should expect.
+`HISTORY_TYPES` lists forty-six **non-exclusive tags** (not exclusive categories). One fact is stored once and may carry several tags. Catalogue: [docs/categories.md](./docs/categories.md). Readiness labels describe implementation capability, not verified live data counts. The richer player and record progression design in [docs/history-model.md](./docs/history-model.md) is planned and is not part of the current `MeigenRecord` API. `EXTRACT_CATEGORIES` is the extract family that produced the row.
 
 ## Limits
 

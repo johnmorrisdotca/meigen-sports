@@ -22,6 +22,27 @@ python3 -I pipeline/extract_ds1.py
 
 File list and paging notes: [queries/README.md](queries/README.md). Source licences: [docs/sources-and-reviews.md](../docs/sources-and-reviews.md).
 
+Public on-this-day shards (no DS1 connection) from joined extracts:
+
+```sh
+pnpm data:facts
+# or: python3 -I pipeline/convert_extract.py
+```
+
+Writes `data/v1/0.1.0/facts/`. One `recordId` per fact; `tags` are the 46 history identifiers and are not exclusive. Category shards copy the same fact into every matching tag file. Indexes hold ids only; `store/` holds each full record once.
+
+## Wikidata open fetch (women, para, famous)
+
+Does not contact DS1. SPARQL only, 2 s gap, User-Agent `MeigenSports/0.1.0`. Writes gitignored raw JSON under `data-sources/raw/wikidata/` and convert-shaped extracts under `MEIGEN_EXTRACT_DIR` (default `~/Projects/backups/spx-stats/meigen-extract/`). The coordinating session archives those files to DS1/Dropbox.
+
+```sh
+python3 -I pipeline/fetch_wikidata_open.py
+python3 -I pipeline/convert_extract.py
+python3 -I pipeline/coverage_matrix.py
+```
+
+Famous = sitelink rank, top 500. Empty women’s or para extracts fail the fetch and the coverage script.
+
 ## Credentials
 
 John supplies an authorized environment when ready. Never put values into this repository or command history:

@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { pickVaried, categoryOf, competitionOf } from "../demo/variety.ts";
+import { pickVaried, pickVariedFacts, categoryOf, competitionOf } from "../demo/variety.ts";
+import type { OnThisDayRecord } from "../src/schema.ts";
 import { quotes } from "../src/data/quotes.ts";
 import { history } from "../src/data/history.ts";
 import type { MeigenRecord } from "../src/types.ts";
@@ -32,6 +33,22 @@ test("variety never takes more than two from the same category or competition", 
   assert.equal(picked.length, 4);
   assert.equal(picked.filter((r) => categoryOf(r) === "match-result").length, 2);
   assert.equal(picked.filter((r) => competitionOf(r) === "world-cup").length, 2);
+});
+
+test("facts variety keeps one recordId and caps two per tag", () => {
+  const source = { sourceId: "wikidata", licence: "CC0 1.0", attribution: "Wikidata contributors, CC0.", url: "https://www.wikidata.org/" };
+  const fact = (id: string, tags: string[], competition: string): OnThisDayRecord => ({
+    recordId: id, category: "game-on-day", tags, basis: "source", eventDate: "2000-01-01", datePrecision: "day",
+    sport: "ice-hockey", competition, league: competition, source,
+  });
+  const picked = pickVariedFacts([
+    fact("a", ["championship-win", "overtime-result"], "nhl"),
+    fact("b", ["championship-win"], "nba"),
+    fact("c", ["championship-win"], "mlb"),
+    fact("d", ["match-result"], "cfl"),
+  ], 10);
+  assert.equal(new Set(picked.map((r) => r.recordId)).size, picked.length);
+  assert.equal(picked.filter((r) => r.tags.includes("championship-win")).length, 2);
 });
 
 test("the starter seed can still fill ten mixed demo records", () => {

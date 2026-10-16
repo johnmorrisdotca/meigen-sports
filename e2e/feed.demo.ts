@@ -15,7 +15,7 @@ for (const language of ["en", "ja"]) {
   await page.goto(`/?lang=${language}`);
   await expect(page.locator("html")).toHaveAttribute("lang", language);
   await expect(page.locator("#today-heading")).not.toHaveText("");
-  expect(await page.locator("#today-facts .record").count()).toBeLessThanOrEqual(3);
+  await expect(page.locator("#today-facts .record")).toHaveCount(3);
   await expect(page.locator("#random-facts .record")).toHaveCount(10);
   await expect(page.locator("#quote blockquote")).toBeVisible();
   await expect(page.locator("#history")).toContainText("2022");

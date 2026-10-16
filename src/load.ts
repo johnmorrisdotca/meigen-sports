@@ -1,4 +1,5 @@
-import { isDate, monthDayOf } from "./index.ts";
+import { isDate, monthDayOf } from "./dates.ts";
+import type { OnThisDayRecord } from "./schema.ts";
 import type { FeedShard, MeigenRecord } from "./types.ts";
 
 /** A caller-provided fetch keeps network policy, caching and cancellation with the application. */
@@ -89,4 +90,83 @@ export function loadEntity(entityId: string, options: LoadOptions): Promise<Feed
   const key = btoa(Array.from(new TextEncoder().encode(entityId), (byte) => String.fromCharCode(byte)).join(""))
     .replaceAll("+", "-").replaceAll("/", "_").replace(/=+$/, "");
   return loadShard(`entities/${key}.json`, options);
+}
+
+/** A facts shard uses `OnThisDayRecord` rows, not bundled `MeigenRecord` captions. */
+export interface FactShard { readonly schemaVersion: 1; readonly dataVersion: string; readonly records: readonly OnThisDayRecord[] }
+
+const BLOCKED_FACT_SOURCES = new Set(["nhl_api", "spx_database", "spx_files", "spxn_database"]);
+
+function licenceOk(licence: string): boolean {
+  return licence.includes("CC0") || licence.includes("CC BY-SA") || licence.includes("CC BY 4.0") || /retrosheet/i.test(licence);
+}
+
+/** Accept a public on-this-day fact. Drops NHL API and SPX-owned rows. */
+export function isFactRecord(value: unknown): value is OnThisDayRecord {
+  if (!value || typeof value !== "object") return false;
+  const row = value as Partial<OnThisDayRecord>;
+  if (typeof row.recordId !== "string" || !row.recordId || typeof row.category !== "string" || typeof row.datePrecision !== "string") return false;
+  if (!Array.isArray(row.tags) || !row.tags.every((tag) => typeof tag === "string" && /^[a-z][a-z0-9-]*$/.test(tag))) return false;
+  if (row.basis !== "source" && row.basis !== "derived") return false;
+  if (row.basis === "derived" && (typeof row.derivedRule !== "string" || !row.derivedRule || !Array.isArray(row.derivedInputs) || !row.derivedInputs.length)) return false;
+  if (typeof row.text !== "string" || !row.text.trim()) return false;
+  const source = row.source;
+  if (!source || typeof source.sourceId !== "string" || !source.sourceId || typeof source.licence !== "string" || typeof source.attribution !== "string") return false;
+  if (BLOCKED_FACT_SOURCES.has(source.sourceId) || source.licence.startsWith("Owned") || source.licence.startsWith("No licence")) return false;
+  return licenceOk(source.licence);
+}
+
+async function fetchShard(path: string, options: LoadOptions): Promise<unknown> {
+  if (!/^[a-zA-Z0-9][a-zA-Z0-9._-]*$/.test(options.dataVersion)) throw new RangeError("Invalid data version");
+  if (!/^[a-zA-Z0-9/_-]+\.json$/.test(path) || path.includes("..") || path.startsWith("/")) throw new RangeError("Invalid shard path");
+  const base = new URL(options.baseUrl);
+  if (base.username || base.password || base.search || base.hash || (base.protocol !== "https:" && !(base.protocol === "http:" && ["127.0.0.1", "localhost"].includes(base.hostname)))) throw new RangeError("Expected a public HTTPS base URL");
+  base.pathname = `${base.pathname.replace(/\/?$/, "/")}data/v1/${options.dataVersion}/${path}`;
+  const response = await options.fetch(base.href, { signal: options.signal, cache: "force-cache" });
+  if (!response.ok) throw new Error(`Feed request failed (${response.status})`);
+  return response.json();
+}
+
+/** Load a facts shard (`facts/days/10-16.json`, `facts/teams/f-12.json`, …). */
+export async function loadFactShard(path: string, options: LoadOptions): Promise<FactShard> {
+  const rel = path.startsWith("facts/") ? path : `facts/${path}`;
+  const value = await fetchShard(rel, options) as Partial<FactShard> | null;
+  if (!value || value.schemaVersion !== 1 || value.dataVersion !== options.dataVersion || !Array.isArray(value.records) || !value.records.every(isFactRecord)) {
+    throw new TypeError("Invalid or incompatible facts shard");
+  }
+  return value as FactShard;
+}
+
+export function loadFactDay(date: string, options: LoadOptions): Promise<FactShard> {
+  return loadFactShard(`days/${monthDayOf(date)}.json`, options);
+}
+
+export function loadLeague(league: string, options: LoadOptions): Promise<FactShard> {
+  if (!/^[a-z0-9-]+$/.test(league)) throw new RangeError("Invalid league code");
+  return loadFactShard(`leagues/${league}.json`, options);
+}
+
+export function loadTeamFacts(franchiseId: number, options: LoadOptions): Promise<FactShard> {
+  if (!Number.isInteger(franchiseId) || franchiseId < 1) throw new RangeError("Invalid franchise id");
+  return loadFactShard(`teams/f-${franchiseId}.json`, options);
+}
+
+export function loadPlayerBucket(personId: number, options: LoadOptions): Promise<FactShard> {
+  if (!Number.isInteger(personId) || personId < 1) throw new RangeError("Invalid person id");
+  return loadFactShard(`players/${String(personId % 100).padStart(2, "0")}.json`, options);
+}
+
+export function loadFactCategory(category: string, options: LoadOptions): Promise<FactShard> {
+  if (!/^[a-z0-9-]+$/.test(category)) throw new RangeError("Invalid category");
+  return loadFactShard(`feeds/tags/${category}.json`, options);
+}
+
+export function loadFactIndex(path: string, options: LoadOptions): Promise<{ readonly schemaVersion: 1; readonly dataVersion: string; readonly ids: readonly string[] }> {
+  return fetchShard(path.startsWith("facts/") ? path : `facts/${path}`, options).then((value) => {
+    const row = value as { schemaVersion?: number; dataVersion?: string; ids?: unknown } | null;
+    if (!row || row.schemaVersion !== 1 || row.dataVersion !== options.dataVersion || !Array.isArray(row.ids) || !row.ids.every((id) => typeof id === "string")) {
+      throw new TypeError("Invalid or incompatible facts index");
+    }
+    return row as { schemaVersion: 1; dataVersion: string; ids: readonly string[] };
+  });
 }

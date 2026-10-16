@@ -6,7 +6,7 @@ export interface HistoryType {
  readonly evidence: string;
  readonly readiness: "seeded" | "extractable-if-populated" | "validation-needed" | "needs-source";
 }
-/** Thirty history families; quotation and precise event subtypes are separate tags. */
+/** Forty-six non-exclusive history tags (30 from the first catalogue, 16 planned). One fact may carry several. Quotation remains a separate kind. */
 export const HISTORY_TYPES: readonly HistoryType[] = [
  {"id": "championship-win", "label": "Championship victory", "modes": ["spx-derived", "external", "manual"], "evidence": "Champion, competition edition and deciding result", "readiness": "validation-needed"},
  {"id": "historic-cup-series", "label": "Historic cup or series", "modes": ["spx-derived", "external", "manual"], "evidence": "Edition, participants and verified significance", "readiness": "validation-needed"},
@@ -38,4 +38,20 @@ export const HISTORY_TYPES: readonly HistoryType[] = [
  {"id": "combat-sport-result", "label": "Combat sports result or title reign", "modes": ["external", "manual"], "evidence": "Bout result, sanctioning body, division and title lineage where relevant", "readiness": "needs-source"},
  {"id": "athletics-performance", "label": "Athletics performance or medal", "modes": ["external", "manual"], "evidence": "Discipline, round, result, conditions and official placing", "readiness": "needs-source"},
  {"id": "sport-record", "label": "Sporting record progression", "modes": ["external", "manual"], "evidence": "Metric, scope, former holder, attained value, authority and ratification status", "readiness": "needs-source"},
+ {"id": "transfer-trade-signing", "label": "Transfers, trades and signings", "modes": ["spx-derived", "external", "manual"], "evidence": "Dated transactions, free agency and loans", "readiness": "extractable-if-populated"},
+ {"id": "roster-selection-milestone", "label": "Roster and selection milestones", "modes": ["spx-derived", "external", "manual"], "evidence": "National selections, squad selections and captain appointments", "readiness": "needs-source"},
+ {"id": "coaching-management", "label": "Coaching and management history", "modes": ["spx-derived", "external", "manual"], "evidence": "Appointments, departures and coaching milestones", "readiness": "extractable-if-populated"},
+ {"id": "rivalry-meeting", "label": "Rivalries and historic meetings", "modes": ["spx-derived", "external", "manual"], "evidence": "First meetings, derbies and head-to-head milestones", "readiness": "validation-needed"},
+ {"id": "comeback-upset", "label": "Comebacks and upsets", "modes": ["spx-derived", "external", "manual"], "evidence": "Explicit deficit or upset criteria with supporting evidence", "readiness": "needs-source"},
+ {"id": "qualification-promotion", "label": "Qualification, promotion and relegation", "modes": ["external", "manual"], "evidence": "Tournament qualification and division changes", "readiness": "needs-source"},
+ {"id": "ranking", "label": "Rankings", "modes": ["external", "manual"], "evidence": "Ranking peaks, first number-one dates and time at the top", "readiness": "needs-source"},
+ {"id": "participation-longevity", "label": "Participation and longevity", "modes": ["spx-derived", "external", "manual"], "evidence": "Appearance streaks, seasons played, youngest and oldest participants", "readiness": "validation-needed"},
+ {"id": "non-scoring-performance", "label": "Non-scoring performances", "modes": ["spx-derived", "external", "manual"], "evidence": "Assists, saves, rebounds, strikeouts and defensive achievements", "readiness": "validation-needed"},
+ {"id": "exceptional-achievement", "label": "Perfect games and exceptional achievements", "modes": ["external", "manual"], "evidence": "No-hitters, maximum breaks, perfect scores and sport-specific feats", "readiness": "needs-source"},
+ {"id": "rules-format-change", "label": "Rules, equipment and format changes", "modes": ["external", "manual"], "evidence": "Dated adoption of rules, equipment or competition formats", "readiness": "needs-source"},
+ {"id": "league-federation-history", "label": "League and federation history", "modes": ["spx-derived", "external", "manual"], "evidence": "Founding, mergers, expansion and dissolution", "readiness": "needs-source"},
+ {"id": "sporting-first", "label": "Sporting firsts and representation milestones", "modes": ["spx-derived", "external", "manual"], "evidence": "Verified first participation, medals and historic breakthroughs", "readiness": "needs-source"},
+ {"id": "ceremony-recognition", "label": "Ceremonies and recognition", "modes": ["external", "manual"], "evidence": "Jersey retirements, Hall of Fame inductions and commemorations", "readiness": "needs-source"},
+ {"id": "attendance-audience", "label": "Attendance and audience milestones", "modes": ["spx-derived", "external", "manual"], "evidence": "Verified crowds and broadcast audience records", "readiness": "extractable-if-populated"},
+ {"id": "cancelled-postponed", "label": "Cancelled, postponed or abandoned events", "modes": ["spx-derived", "external", "manual"], "evidence": "Cancellations, interruptions, strikes and lockouts", "readiness": "extractable-if-populated"},
 ];

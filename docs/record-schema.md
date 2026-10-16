@@ -6,6 +6,8 @@ This is the shape a website should consume for on-this-day facts. It is additive
 
 Identity lives on stable ids, never on a display name. The library selectors stay deterministic; they do not read the clock or shuffle rows.
 
+The 46 identifiers in [categories.md](categories.md) are **tags, not exclusive categories**. Store each fact once. Favourites filters, category shards and variety (`randomFacts`, max two per tag) treat `tags` as a set: a fact matches a filter if any tag matches; it is copied into every matching shard; variety still counts the fact once.
+
 ## Every record
 
 | Field | Type | Meaning |
@@ -13,7 +15,17 @@ Identity lives on stable ids, never on a display name. The library selectors sta
 | `recordId` | string | Stable id, unique inside a dataset (`spx:game:123`) |
 | `eventDate` | string or null | `YYYY-MM-DD` when `datePrecision` is `day`; otherwise null |
 | `datePrecision` | `day`, `month`, or `year` | Year-only drafts and most awards leave `eventDate` null; never invent 1 January |
-| `category` | `EXTRACT_CATEGORIES` | Game, final, soccer, birthday, death, draft, award, franchise, venue, quotation |
+| `category` | `EXTRACT_CATEGORIES` | Extract family that produced the row (game, final, soccer, birthday, death, draft, award, franchise, venue, quotation). Not exclusive of `tags`. |
+| `tags` | `string[]` | Non-exclusive [history-type](categories.md) ids. One `recordId` is stored once and may carry several (`championship-win` and `overtime-result` on the same championship OT goal). Empty when no history type is evidenced yet. A filter matches if **any** tag matches. |
+| `basis` | `source` or `derived` | `source`: a source states the fact. `derived`: computed from statistics; then `derivedRule` and `derivedInputs` are required and published only when those inputs are complete for the scope. |
+| `derivedRule` | string | How the derived value is computed. Absent on source facts. |
+| `derivedInputs` | `string[]` | Named inputs to that rule. |
+| `birthDate` | string or null | Stored once. Age is computed for a requested year. |
+| `deathDate` | string or null | Sourced death day, when known. |
+| `livingStatus` | `deceased`, `living`, or `unknown` | `unknown` is not living. `living` only when a source confirms it. |
+| `birthPlace` | string or null | Sourced place of birth (Wikidata P19 label). Never inferred. |
+| `text` / `textJa` | string | Default rendered sentence (`wording: "fixed"`). Fields are the source of truth; see [templates.md](templates.md). |
+| `record` | object | Holder, value, scope, phase, date set, date surpassed, previous holder, recognition, and event (`set` / `held` / `equalled` / `surpassed` / `rescinded` / `title-reassigned`). A broken record remains a valid fact. |
 | `sport` | string or null | `ref.league.sport_code`, or `soccer` |
 | `competition` | string or null | League code, tournament id, or award code |
 | `league` | string or null | SPXN league code (`nhl`, `mls`, `wc`) |
@@ -22,7 +34,7 @@ Identity lives on stable ids, never on a display name. The library selectors sta
 | `source.attribution` | string | Required credit line |
 | `source.url` | string or null | Source page when one exists |
 
-Public feeds still drop `nhl_api` ("No licence published") and rows licensed "Owned by SPX".
+Public feeds still drop `nhl_api` ("No licence published") and rows licensed "Owned by SPX". Famous athletes are ranked by Wikidata sitelink count, never by guess. Women’s and para-sport facts come from the same CC0 fetch; empty sport rows are not published as coverage.
 
 ## Games
 
@@ -48,6 +60,7 @@ Soccer matches set `soccerTeamId` and leave `franchiseId` / `teamSeasonId` null.
 {
   "recordId": "spx:game:1849201",
   "category": "game-on-day",
+  "tags": ["match-result"],
   "eventDate": "2023-06-03",
   "datePrecision": "day",
   "sport": "ice_hockey",

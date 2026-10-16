@@ -19,7 +19,7 @@ test("a game carries team objects and a stable game id, not just caption text", 
     countryCode: "US", fifaCode: null, flagCode: "US",
   };
   const record: OnThisDayRecord = {
-    recordId: "spx:game:1", category: "game-on-day", eventDate: "2023-06-03", datePrecision: "day",
+    recordId: "spx:game:1", category: "game-on-day", tags: ["match-result"], basis: "source", eventDate: "2023-06-03", datePrecision: "day",
     sport: "ice_hockey", competition: "nhl", league: "nhl", gameId: 1, venueId: 8, seasonStartYear: 2022,
     home, away,
     source: { sourceId: "wikipedia", licence: "CC BY-SA 4.0", attribution: "Wikipedia contributors", url: null },
@@ -35,7 +35,7 @@ test("a birthday carries person, Wikidata, leagues and team ids", () => {
     leagueCodes: ["nhl"], franchiseIds: [10], teamSeasonIds: [880],
   };
   const record: OnThisDayRecord = {
-    recordId: "spx:player-birthday:wikidata:Q0:1963-08-09", category: "player-birthday",
+    recordId: "spx:player-birthday:wikidata:Q0:1963-08-09", category: "player-birthday", tags: ["player-birthday"], basis: "source",
     eventDate: "1963-08-09", datePrecision: "day", sport: null, competition: null, league: "nhl",
     person,
     source: { sourceId: "wikidata", licence: "CC0 1.0", attribution: "Wikidata contributors", url: "https://www.wikidata.org/wiki/Q0" },
