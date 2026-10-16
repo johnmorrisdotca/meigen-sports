@@ -40,6 +40,9 @@ test("facts variety keeps one recordId and caps two per tag", () => {
   const fact = (id: string, tags: string[], competition: string): OnThisDayRecord => ({
     recordId: id, category: "game-on-day", tags, basis: "source", eventDate: "2000-01-01", datePrecision: "day",
     sport: "ice-hockey", competition, league: competition, source,
+    homeScore: 5, awayScore: 3,
+    home: { name: "Home", franchiseId: 1, teamSeasonId: 1, soccerTeamId: null, countryCode: "CA", fifaCode: null, flagCode: "CA" },
+    away: { name: "Away", franchiseId: 2, teamSeasonId: 2, soccerTeamId: null, countryCode: "US", fifaCode: null, flagCode: "US" },
   });
   const picked = pickVariedFacts([
     fact("a", ["championship-win", "overtime-result"], "nhl"),

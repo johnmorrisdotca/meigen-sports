@@ -36,8 +36,8 @@ Missing `birthPlace`, `highlight`, day precision, or `asOf` skips the template t
 
 Neutral (default, correct either way):
 
-- `birthday-on-this-day`: “Wayne Gretzky was born on this day in 1961.”
-- `birthday-years-ago`: “Wayne Gretzky was born 65 years ago today.”
+- `birthday-on-this-day`: “Wayne Gretzky, the Edmonton Oilers centre, was born on this day in 1961.”
+- `birthday-years-ago`: “Wayne Gretzky, the Edmonton Oilers centre, was born 65 years ago today.”
 - `birthday-place`: “On this day in 1961, Wayne Gretzky was born in Brantford, Ontario.”
 - `birthday-years-ago-highlight`: “65 years ago today: Wayne Gretzky, four-time Stanley Cup champion, was born.”
 
@@ -54,15 +54,13 @@ Never: “would have turned”. Never “turns N” unless `livingStatus` is `li
 
 ## Death wording
 
-Default when only the name and year are sourced:
-
-- `death-on-this-day`: “Howie Morenz died on this day in 1937.”
-
-When club and/or position are sourced, that becomes the default:
+Default when club, position or honour is sourced:
 
 - `death-context`: “Howie Morenz, the Montreal Canadiens centre and three-time Stanley Cup winner, died on this day in 1937, aged 34.”
 
-`clubPosition` is the club name and position joined with a space. `honourAnd` / `aged` are omitted when `highlight` or `ageYears` is missing. Never guess a club, honour, or age.
+No name-and-year death template. If those fields are missing, skip the fact rather than publishing “Howie Morenz died on this day in 1937.” `who` / `whoClause` carry the club, position and honour. `aged` is omitted when `ageYears` is missing. Never guess a club, honour, or age.
+
+Venue openings need a city, home club or hosted final. Franchise identity changes need a league and/or city. Skip the clause you cannot source; skip the fact if none remain.
 
 ## Finals
 

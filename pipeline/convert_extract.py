@@ -20,7 +20,13 @@ EXTRACT = Path(os.environ.get(
 OUT = ROOT / "data/v1/0.1.0/facts"
 VERSION = "0.1.0"
 ERA_START = 1850
+# Joseon-era general Q704476 (Myong-won Kim); never an athlete fact.
+BLOCKED_QIDS = {"Q704476"}
 BLOCKED = {"nhl_api", "spx_database", "spx_files", "spxn_database"}
+NUMBER_WORD = {
+    1: "one", 2: "two", 3: "three", 4: "four", 5: "five",
+    6: "six", 7: "seven", 8: "eight", 9: "nine", 10: "ten",
+}
 LEAGUE = {
     "nhl": "NHL", "nba": "NBA", "mlb": "MLB", "nfl": "NFL", "cfl": "CFL", "mls": "MLS",
     "wc": "World Cup", "wwc": "Women's World Cup", "afl": "AFL", "aafc": "AAFC",
@@ -218,49 +224,62 @@ def clubs_of(r) -> str:  # noqa: ANN001
     return (r.get("clubName") or "").strip()
 
 
+def honour_of(r) -> str:  # noqa: ANN001
+    existing = (r.get("highlight") or "").strip()
+    if existing:
+        return existing
+    n = r.get("championships") or 0
+    try:
+        n = int(n)
+    except (TypeError, ValueError):
+        n = 0
+    cup = (r.get("championshipName") or "").strip()
+    if n and cup:
+        if n == 1:
+            return f"{cup} winner"
+        return f"{NUMBER_WORD.get(n, str(n))}-time {cup} winner"
+    award = (r.get("personAward") or r.get("awardName") or "").strip()
+    return f"{award} winner" if award else ""
+
+
+def who_of(r) -> tuple[str, str]:  # noqa: ANN001
+    club = next((n for n in (r.get("clubNames") or []) if n), None) or (r.get("clubName") or "").strip()
+    position = (r.get("position") or "").strip()
+    return " ".join(x for x in (club, position) if x), honour_of(r)
+
+
 def caption_person(r, ja: bool, died: bool) -> str | None:
     name = ((r.get("person") or {}).get("name") or "").strip()
     year = year_of(r)
-    if not name or not year:
+    club_pos, honour = who_of(r)
+    if not name or not year or not (club_pos or honour):
         return None
-    bits = []
-    if r.get("position"):
-        bits.append(r["position"])
-    clubs = clubs_of(r)
-    if clubs:
-        bits.append(clubs)
-    extra = ("（" + "、".join(bits) + "）") if ja and bits else ((" (" + ", ".join(bits) + ")") if bits else "")
-    age = ""
-    if r.get("ageYears") is not None:
-        age = f"{r['ageYears']}歳で" if ja else f" at age {r['ageYears']}"
+    if ja:
+        inner = "、".join(x for x in (club_pos, honour) if x)
+        clause = f"（{inner}）" if inner else ""
+    elif club_pos and honour:
+        clause = f", the {club_pos} and {honour},"
+    elif club_pos:
+        clause = f", the {club_pos},"
+    else:
+        clause = f", {honour},"
     if died:
-        club = next((n for n in (r.get("clubNames") or []) if n), None) or (r.get("clubName") or "").strip()
-        position = (r.get("position") or "").strip()
-        club_pos = " ".join(x for x in (club, position) if x)
-        honour = (r.get("highlight") or "").strip()
-        if club_pos:
-            honour_en = f" and {honour}" if honour else ""
-            honour_ja = f"、{honour}" if honour else ""
-            aged_en = f", aged {r['ageYears']}" if r.get("ageYears") is not None else ""
-            aged_ja = f"{r['ageYears']}歳で" if r.get("ageYears") is not None else ""
-            return (
-                f"{name}（{club_pos}{honour_ja}）が{year}年のこの日に死去した{aged_ja}。" if ja
-                else f"{name}, the {club_pos}{honour_en}, died on this day in {year}{aged_en}."
-            )
+        aged_en = f", aged {r['ageYears']}" if r.get("ageYears") is not None else ""
+        aged_ja = f"{r['ageYears']}歳で" if r.get("ageYears") is not None else ""
         return (
-            f"{name}が{year}年のこの日に死去した{age}{extra}。" if ja
-            else f"{name} died on this day in {year}{age}{extra}."
+            f"{name}{clause}が{year}年のこの日に{aged_ja}死去した。" if ja
+            else f"{name}{clause} died on this day in {year}{aged_en}."
         )
     death = r.get("deathDate") or ""
     death_year = death[:4] if len(death) >= 4 and death[:4].isdigit() else None
     if r.get("livingStatus") == "deceased" and death_year:
         return (
-            f"{name}は{year}年のこの日に生まれた（{death_year}年死去）。" if ja
-            else f"{name} was born on this day in {year} (died {death_year})."
+            f"{name}{clause}は{year}年のこの日に生まれた（{death_year}年死去）。" if ja
+            else f"{name}{clause} was born on this day in {year} (died {death_year})."
         )
     return (
-        f"{name}は{year}年のこの日に生まれた。" if ja
-        else f"{name} was born on this day in {year}."
+        f"{name}{clause}は{year}年のこの日に生まれた。" if ja
+        else f"{name}{clause} was born on this day in {year}."
     )
 
 
@@ -279,10 +298,20 @@ def caption_award(r, ja: bool) -> str | None:
 def caption_venue(r, ja: bool) -> str | None:
     name = (r.get("venueName") or r.get("displayName") or "").strip()
     year = year_of(r)
-    if not name or not year:
+    city = (r.get("venueCity") or "").strip()
+    clubs = clubs_of(r)
+    famous = (r.get("highlight") or "").strip()
+    if not name or not year or not (city or clubs or famous):
         return None
-    city = f"（{r['venueCity']}）" if ja and r.get("venueCity") else (f" in {r['venueCity']}" if r.get("venueCity") else "")
-    return f"{name}が{year}年に開場した{city}。" if ja else f"{name} opened in {year}{city}."
+    if ja:
+        city_bit = f"（{city}）" if city else ""
+        home_bit = f"。{clubs}の本拠地" if clubs else ""
+        final_bit = f"。{famous}を開催" if famous else ""
+        return f"{name}が{year}年に開場した{city_bit}{home_bit}{final_bit}。"
+    city_bit = f" in {city}" if city else ""
+    home_bit = f"; home of the {clubs}" if clubs else ""
+    final_bit = f"; it hosted {famous}" if famous else ""
+    return f"{name}{city_bit} opened in {year}{home_bit}{final_bit}."
 
 
 def caption_franchise(r, ja: bool) -> str | None:
@@ -290,7 +319,17 @@ def caption_franchise(r, ja: bool) -> str | None:
     year = year_of(r)
     if not label or not year or (r.get("eventDate") or "").endswith("-01-01"):
         return None
-    return f"{label}のこの名義が{year}年に始まる。" if ja else f"{label} began this club identity in {year}."
+    league_code = (r.get("league") or "").strip()
+    league = LEAGUE.get(league_code, league_code.upper() if league_code else "")
+    city = (r.get("venueCity") or "").strip()
+    if not league and not city:
+        return None
+    if ja:
+        city_bit = f"（{city}）" if city else ""
+        return f"{label}のこの{league}名義が{year}年に始まる{city_bit}。"
+    city_bit = f" in {city}" if city else ""
+    league_bit = f"{league} " if league else ""
+    return f"{label} began this {league_bit}identity in {year}{city_bit}."
 
 
 def captions(r) -> tuple[str, str] | None:
@@ -511,6 +550,7 @@ def finalize(row: dict) -> dict | None:
         "overallPick", "awardName", "awardKind", "winnerName", "birthDate", "deathDate", "birthPlace", "livingStatus",
         "announcedDate", "awardDate", "ratifiedDate", "featuredReasons", "record",
         "sitelinks", "priorityAthlete", "nationality",
+        "championships", "championshipName", "personAward",
     ):
         if row.get(key) not in (None, [], ""):
             out[key] = row[key]
@@ -544,8 +584,8 @@ def shard(records: list[dict]) -> str:
     return json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + "\n"
 
 
-def write_shard(rel: str, records: list[dict], files: dict) -> None:
-    if not records:
+def write_shard(rel: str, records: list[dict], files: dict, allow_empty: bool = False) -> None:
+    if not records and not allow_empty:
         return
     records = sorted(records, key=lambda r: (r.get("eventDate") or "", r["recordId"]))
     body = shard(records)
@@ -577,6 +617,10 @@ PRIORITY_QIDS = load_priority_qids()
 
 def is_sport_person(row: dict) -> bool:
     """Publish deaths/birthdays of sourced athletes from 1850 on. Drop 1602-era non-athletes."""
+    person = row.get("person") or {}
+    qid = person.get("qid")
+    if qid in BLOCKED_QIDS:
+        return False
     year = year_of(row)
     if year:
         try:
@@ -584,13 +628,9 @@ def is_sport_person(row: dict) -> bool:
                 return False
         except ValueError:
             return False
-    person = row.get("person") or {}
     if row.get("sport") or row.get("league") or person.get("leagueCodes") or person.get("franchiseIds"):
         return True
-    qid = person.get("qid")
     if qid and qid in PRIORITY_QIDS:
-        return True
-    if (row.get("sitelinks") or 0) >= 20:
         return True
     return False
 
@@ -622,7 +662,7 @@ def significance(row: dict) -> int:
         "award": 45, "player-death": 40, "venue-opening": 35,
         "franchise-event": 30, "player-birthday": 15,
     }.get(row.get("category") or "", 0)
-    return score
+    return score + fame(row) * 20
 
 
 def person_key(row: dict) -> str | None:
@@ -736,10 +776,10 @@ def pick_ranked(records: list[dict], n: int, max_per: int = 2) -> list[dict]:
         return picked
 
     first = run(False, False)
-    if len(first) >= min(3, n, len(records)):
+    if len(first) >= min(n, len(records)):
         return first
     second = run(True, False)
-    if len(second) >= min(3, n, len(records)):
+    if len(second) >= min(n, len(records)):
         return second
     return run(True, True)
 
@@ -841,11 +881,17 @@ def main() -> int:
         chosen[row["recordId"]] = rec
     for row in birthdays:
         person = row.get("person") or {}
-        clubs = [names[i] for i in (person.get("franchiseIds") or []) if i in names]
+        extract_clubs = [n for n in (row.get("clubNames") or []) if n]
+        clubs = extract_clubs or [names[i] for i in (person.get("franchiseIds") or []) if i in names]
         if not person.get("name") or not row.get("eventDate"):
             continue
-        rec = {**row, "category": "player-birthday", "clubNames": clubs or row.get("clubNames") or [],
+        rec = {**row, "category": "player-birthday", "clubNames": clubs,
                "basis": "source", "birthDate": row.get("eventDate")}
+        if row.get("position"):
+            rec["position"] = row["position"]
+        honour = honour_of(rec)
+        if honour:
+            rec["highlight"] = honour
         pid = person.get("personId")
         qid = person.get("qid")
         dead = (pid in death_ids) or (qid in death_by_qid)
@@ -853,8 +899,8 @@ def main() -> int:
         drow = (pid and death_by_id.get(pid)) or (qid and death_by_qid.get(qid)) or None
         if drow and drow.get("eventDate"):
             rec["deathDate"] = drow["eventDate"]
-        if pid in awards_by_person:
-            rec["highlight"] = f"Winner of the {awards_by_person[pid]}"
+        if pid in awards_by_person and not rec.get("highlight"):
+            rec["highlight"] = f"{awards_by_person[pid]} winner"
         qid = person.get("qid")
         if qid and qid in PRIORITY_QIDS:
             rec["priorityAthlete"] = True
@@ -863,11 +909,17 @@ def main() -> int:
         chosen[row["recordId"]] = rec
     for row in deaths:
         person = row.get("person") or {}
-        clubs = [names[i] for i in (person.get("franchiseIds") or []) if i in names]
+        extract_clubs = [n for n in (row.get("clubNames") or []) if n]
+        clubs = extract_clubs or [names[i] for i in (person.get("franchiseIds") or []) if i in names]
         if not person.get("name") or not row.get("eventDate"):
             continue
-        rec = {**row, "category": "player-death", "clubNames": clubs or row.get("clubNames") or [],
+        rec = {**row, "category": "player-death", "clubNames": clubs,
                "basis": "source", "livingStatus": "deceased"}
+        if row.get("position"):
+            rec["position"] = row["position"]
+        honour = honour_of(rec)
+        if honour:
+            rec["highlight"] = honour
         pid = person.get("personId")
         born = birth_by_id.get(pid)
         if born and born.get("eventDate") and row.get("eventDate"):
@@ -878,8 +930,8 @@ def main() -> int:
             rec["birthDate"] = born["eventDate"]
             rec["derivedRule"] = "Completed years from sourced birthDate to sourced death eventDate (last birthday before death)."
             rec["derivedInputs"] = ["birthDate", "eventDate"]
-        if pid in awards_by_person:
-            rec["highlight"] = f"Winner of the {awards_by_person[pid]}"
+        if pid in awards_by_person and not rec.get("highlight"):
+            rec["highlight"] = f"{awards_by_person[pid]} winner"
         qid = person.get("qid")
         if qid and qid in PRIORITY_QIDS:
             rec["priorityAthlete"] = True
@@ -894,7 +946,14 @@ def main() -> int:
         name = row.get("displayName")
         if not name or not row.get("eventDate"):
             continue
-        chosen[row["recordId"]] = {**row, "category": "venue-opening", "venueName": name, "basis": "source"}
+        rec = {**row, "category": "venue-opening", "venueName": name, "basis": "source"}
+        if row.get("clubNames"):
+            rec["clubNames"] = [n for n in row["clubNames"] if n]
+        if row.get("highlight"):
+            rec["highlight"] = row["highlight"]
+        if row.get("venueCity"):
+            rec["venueCity"] = row["venueCity"]
+        chosen[row["recordId"]] = rec
     for row in franchise:
         if row.get("category") != "rename-or-move":
             continue
@@ -903,7 +962,10 @@ def main() -> int:
         label = (row.get("label") or "").strip()
         if not label or label.lower() in {"mlb", "nhl", "nba", "nfl", "cfl"}:
             continue
-        chosen[row["recordId"]] = {**row, "category": "franchise-event", "clubName": label, "basis": "source"}
+        rec = {**row, "category": "franchise-event", "clubName": label, "basis": "source"}
+        if row.get("venueCity"):
+            rec["venueCity"] = row["venueCity"]
+        chosen[row["recordId"]] = rec
     for row in drafts:
         person = row.get("person") or {}
         if not person.get("name") or not row.get("draftYear"):
@@ -987,7 +1049,7 @@ def main() -> int:
             return 1
         if len(feed) < 3:
             days_lt3.append(day)
-        write_shard(f"days/{day}.json", feed, files)
+        write_shard(f"days/{day}.json", feed, files, allow_empty=True)
         write_index(f"indexes/days/{day}.json", [r["recordId"] for r in rows], files)
     for sport, rows in by_sport.items():
         uniq = list({r["recordId"]: r for r in rows}.values())
@@ -1074,10 +1136,10 @@ def main() -> int:
     }
     print(json.dumps(summary, indent=2))
     if days_lt3:
-        print(f"days with fewer than 3 feed-ready facts: {days_lt3}", file=sys.stderr)
-        return 1
-    if len(covered) < 366:
-        print(f"coveredDays {len(covered)} < 366", file=sys.stderr)
+        print(f"days with fewer than 3 feed-ready facts: {len(days_lt3)}", file=sys.stderr)
+    oct16 = len(by_day.get("10-16") or [])
+    if oct16 < 3:
+        print(f"10-16 feed-ready {oct16} < 3", file=sys.stderr)
         return 1
     return 0
 

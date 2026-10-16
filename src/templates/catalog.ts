@@ -4,13 +4,13 @@ import type { SentenceTemplate } from "./types.ts";
 export const TEMPLATES: readonly SentenceTemplate[] = [
   {
     id: "birthday-on-this-day", type: "birthday", locale: "en", gate: "neutral", role: "default",
-    needs: ["name", "year", "dayPrecision"],
-    pattern: "{name} was born on this day in {year}.",
+    needs: ["name", "year", "dayPrecision", "who"],
+    pattern: "{name}{whoClause} was born on this day in {year}{diedParen}.",
   },
   {
     id: "birthday-years-ago", type: "birthday", locale: "en", gate: "neutral", role: "variant",
-    needs: ["name", "yearsAgoToday"],
-    pattern: "{name} was born {yearsAgo} years ago today.",
+    needs: ["name", "yearsAgoToday", "who"],
+    pattern: "{name}{whoClause} was born {yearsAgo} years ago today.",
   },
   {
     id: "birthday-place", type: "birthday", locale: "en", gate: "neutral", role: "variant",
@@ -24,13 +24,13 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
   },
   {
     id: "birthday-deceased-paren", type: "birthday", locale: "en", gate: "deceased", role: "default",
-    needs: ["name", "year", "deathYear", "dayPrecision"],
-    pattern: "{name} was born on this day in {year} (died {deathYear}).",
+    needs: ["name", "year", "deathYear", "dayPrecision", "who"],
+    pattern: "{name}{whoClause} was born on this day in {year} (died {deathYear}).",
   },
   {
     id: "birthday-deceased-clause", type: "birthday", locale: "en", gate: "deceased", role: "variant",
-    needs: ["name", "year", "deathYear", "dayPrecision"],
-    pattern: "{name} was born on this day in {year}. {name} died in {deathYear}.",
+    needs: ["name", "year", "deathYear", "dayPrecision", "who"],
+    pattern: "{name}{whoClause} was born on this day in {year}. {name} died in {deathYear}.",
   },
   {
     id: "birthday-turns", type: "birthday", locale: "en", gate: "living", role: "variant",
@@ -39,13 +39,13 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
   },
   {
     id: "birthday-on-this-day", type: "birthday", locale: "ja", gate: "neutral", role: "default",
-    needs: ["name", "year", "dayPrecision"],
-    pattern: "{name}は{year}年のこの日に生まれた。",
+    needs: ["name", "year", "dayPrecision", "who"],
+    pattern: "{name}{whoClause}は{year}年のこの日に生まれた{diedParenJa}。",
   },
   {
     id: "birthday-years-ago", type: "birthday", locale: "ja", gate: "neutral", role: "variant",
-    needs: ["name", "yearsAgoToday"],
-    pattern: "{name}は今日から{yearsAgo}年前に生まれた。",
+    needs: ["name", "yearsAgoToday", "who"],
+    pattern: "{name}{whoClause}は今日から{yearsAgo}年前に生まれた。",
   },
   {
     id: "birthday-place", type: "birthday", locale: "ja", gate: "neutral", role: "variant",
@@ -59,8 +59,8 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
   },
   {
     id: "birthday-deceased-paren", type: "birthday", locale: "ja", gate: "deceased", role: "default",
-    needs: ["name", "year", "deathYear", "dayPrecision"],
-    pattern: "{name}は{year}年のこの日に生まれた（{deathYear}年死去）。",
+    needs: ["name", "year", "deathYear", "dayPrecision", "who"],
+    pattern: "{name}{whoClause}は{year}年のこの日に生まれた（{deathYear}年死去）。",
   },
   {
     id: "birthday-turns", type: "birthday", locale: "ja", gate: "living", role: "variant",
@@ -69,23 +69,13 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
   },
   {
     id: "death-context", type: "death", locale: "en", gate: "deceased", role: "default",
-    needs: ["name", "year", "dayPrecision", "clubPosition"],
-    pattern: "{name}, the {clubPosition}{honourAnd}, died on this day in {year}{aged}.",
-  },
-  {
-    id: "death-on-this-day", type: "death", locale: "en", gate: "deceased", role: "default",
-    needs: ["name", "year", "dayPrecision"],
-    pattern: "{name} died on this day in {year}{age}{extra}.",
+    needs: ["name", "year", "dayPrecision", "who"],
+    pattern: "{name}{whoClause} died on this day in {year}{aged}.",
   },
   {
     id: "death-context", type: "death", locale: "ja", gate: "deceased", role: "default",
-    needs: ["name", "year", "dayPrecision", "clubPosition"],
-    pattern: "{name}（{clubPosition}{honourAnd}）が{year}年のこの日に{agedJa}死去した。",
-  },
-  {
-    id: "death-on-this-day", type: "death", locale: "ja", gate: "deceased", role: "default",
-    needs: ["name", "year", "dayPrecision"],
-    pattern: "{name}が{year}年のこの日に{age}死去した{extra}。",
+    needs: ["name", "year", "dayPrecision", "who"],
+    pattern: "{name}{whoClause}が{year}年のこの日に{agedJa}死去した。",
   },
   {
     id: "game-beat", type: "game", locale: "en", gate: "neutral", role: "default", when: "decisive",
@@ -159,23 +149,23 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
   },
   {
     id: "venue-opened", type: "venue", locale: "en", gate: "neutral", role: "default",
-    needs: ["venueName", "year"],
-    pattern: "{venueName} opened in {year}{cityIn}.",
+    needs: ["venueName", "year", "venueContext"],
+    pattern: "{venueName}{cityIn} opened in {year}{homeClause}{finalClause}.",
   },
   {
     id: "venue-opened", type: "venue", locale: "ja", gate: "neutral", role: "default",
-    needs: ["venueName", "year"],
-    pattern: "{venueName}が{year}年に開場した{cityIn}。",
+    needs: ["venueName", "year", "venueContext"],
+    pattern: "{venueName}が{year}年に開場した{cityIn}{homeClause}{finalClause}。",
   },
   {
     id: "franchise-began", type: "franchise", locale: "en", gate: "neutral", role: "default",
-    needs: ["clubName", "year"],
-    pattern: "{clubName} began this club identity in {year}.",
+    needs: ["clubName", "year", "franchiseContext"],
+    pattern: "{clubName} began this {leagueIdentity} identity in {year}{cityIn}.",
   },
   {
     id: "franchise-began", type: "franchise", locale: "ja", gate: "neutral", role: "default",
-    needs: ["clubName", "year"],
-    pattern: "{clubName}のこの名義が{year}年に始まる。",
+    needs: ["clubName", "year", "franchiseContext"],
+    pattern: "{clubName}のこの{leagueIdentity}名義が{year}年に始まる{cityIn}。",
   },
   {
     id: "first-on-this-day", type: "first", locale: "en", gate: "neutral", role: "default",

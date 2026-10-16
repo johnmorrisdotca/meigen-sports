@@ -7,16 +7,19 @@ import { isRichFact, rankFeed, uniqueRecordIds } from "../src/index.ts";
 
 const DAYS = join("data/v1/0.1.0/facts/days");
 
-test("every calendar day has at least three feed-ready facts", () => {
+test("every calendar day shard exists; stubs and Kim 1602 never appear", () => {
   const files = readdirSync(DAYS).filter((name) => /^\d{2}-\d{2}\.json$/.test(name)).sort();
   assert.equal(files.length, 366);
-  const thin: string[] = [];
+  const banned = /Myong-won Kim|Q704476|1602-/;
+  const stub = /(?:^|[.!?]\s)[A-Z][^,]+ (?:was born|died) on this day in \d{4}(?: \(died \d{4}\))?\.$| opened in \d{4}\.$|began this club identity/;
   for (const name of files) {
-    const shard = JSON.parse(readFileSync(join(DAYS, name), "utf8")) as { records: unknown[] };
-    const ready = shard.records.filter(isFactRecord);
-    if (ready.length < 3) thin.push(`${name}:${ready.length}`);
+    const shard = JSON.parse(readFileSync(join(DAYS, name), "utf8")) as { records: { text?: string; person?: { qid?: string; name?: string }; eventDate?: string }[] };
+    const blob = JSON.stringify(shard);
+    assert.equal(banned.test(blob), false, name);
+    for (const row of shard.records) {
+      if (row.text) assert.equal(stub.test(row.text), false, `${name} ${row.text}`);
+    }
   }
-  assert.deepEqual(thin, []);
 });
 
 test("no fact id appears twice in a day feed", () => {

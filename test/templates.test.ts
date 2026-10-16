@@ -10,7 +10,8 @@ function gretzky(extra: Partial<OnThisDayRecord> = {}): OnThisDayRecord {
   return {
     recordId: "b1", category: "player-birthday", tags: ["player-birthday"], basis: "source",
     eventDate: "1961-01-26", datePrecision: "day", sport: "ice-hockey", competition: "nhl", league: "nhl",
-    person: { personId: 1866, qid: "Q209518", name: "Wayne Gretzky", leagueCodes: ["nhl"], franchiseIds: [], teamSeasonIds: [] },
+    person: { personId: 1866, qid: "Q209518", name: "Wayne Gretzky", leagueCodes: ["nhl"], franchiseIds: [12], teamSeasonIds: [] },
+    clubNames: ["Edmonton Oilers"], position: "centre",
     livingStatus: "unknown", source, ...extra,
   };
 }
@@ -29,10 +30,10 @@ test("turns appears only on living-gated templates", () => {
 
 test("unknown birthday uses the neutral default and never turns", () => {
   const text = captionFromFact(gretzky());
-  assert.equal(text, "Wayne Gretzky was born on this day in 1961.");
+  assert.equal(text, "Wayne Gretzky, the Edmonton Oilers centre, was born on this day in 1961.");
   assert.equal(/turns|would have turned|celebrates/i.test(text ?? ""), false);
   const ago = render(gretzky(), { wording: "fixed", asOf: "2026-01-26" });
-  assert.equal(ago?.text, "Wayne Gretzky was born on this day in 1961.");
+  assert.equal(ago?.text, "Wayne Gretzky, the Edmonton Oilers centre, was born on this day in 1961.");
   const turns = render(gretzky(), { wording: "seeded", seed: "x", templateId: "birthday-turns", asOf: "2026-01-26" });
   assert.equal(turns, null);
 });
@@ -40,12 +41,13 @@ test("unknown birthday uses the neutral default and never turns", () => {
 test("deceased birthday default names the sourced death year", () => {
   const dead = gretzky({
     livingStatus: "deceased", deathDate: "1948-08-16", eventDate: "1895-02-06",
-    person: { personId: 1, qid: "Q1", name: "Babe Ruth", leagueCodes: ["mlb"], franchiseIds: [], teamSeasonIds: [] },
+    person: { personId: 1, qid: "Q1", name: "Babe Ruth", leagueCodes: ["mlb"], franchiseIds: [20], teamSeasonIds: [] },
+    clubNames: ["New York Yankees"], position: "outfielder",
   });
-  assert.equal(captionFromFact(dead), "Babe Ruth was born on this day in 1895 (died 1948).");
+  assert.equal(captionFromFact(dead), "Babe Ruth, the New York Yankees outfielder, was born on this day in 1895 (died 1948).");
   assert.equal(/turns|would have turned/i.test(captionFromFact(dead) ?? ""), false);
   const ja = captionFromFact(dead, "ja");
-  assert.equal(ja, "Babe Ruthは1895年のこの日に生まれた（1948年死去）。");
+  assert.equal(ja, "Babe Ruth（New York Yankees outfielder）は1895年のこの日に生まれた（1948年死去）。");
 });
 
 test("living-only turns template needs sourced living status and asOf on the birthday", () => {
@@ -70,11 +72,11 @@ test("a template that needs a missing field is skipped", () => {
 
 test("years-ago is true whether living or not", () => {
   const ago = render(gretzky(), { templateId: "birthday-years-ago", asOf: "2026-01-26" });
-  assert.equal(ago?.text, "Wayne Gretzky was born 65 years ago today.");
+  assert.equal(ago?.text, "Wayne Gretzky, the Edmonton Oilers centre, was born 65 years ago today.");
   const deadAgo = render(gretzky({ livingStatus: "deceased", deathDate: "2020-01-01" }), {
     templateId: "birthday-years-ago", asOf: "2026-01-26",
   });
-  assert.equal(deadAgo?.text, "Wayne Gretzky was born 65 years ago today.");
+  assert.equal(deadAgo?.text, "Wayne Gretzky, the Edmonton Oilers centre, was born 65 years ago today.");
 });
 
 test("fixed is stable and seeded variety is deterministic", () => {
@@ -94,7 +96,7 @@ test("varied wording without a seed is refused", () => {
 });
 
 test("Japanese birthday default uses the same fields", () => {
-  assert.equal(captionFromFact(gretzky(), "ja"), "Wayne Gretzkyは1961年のこの日に生まれた。");
+  assert.equal(captionFromFact(gretzky(), "ja"), "Wayne Gretzky（Edmonton Oilers centre）は1961年のこの日に生まれた。");
 });
 
 function morenz(extra: Partial<OnThisDayRecord> = {}): OnThisDayRecord {
@@ -119,7 +121,31 @@ test("a death with club, position and honour names them; missing fields are skip
     "Howie Morenz（Montreal Canadiens centre、three-time Stanley Cup winner）が1937年のこの日に34歳で死去した。",
   );
   const thin = morenz({ clubNames: [], position: null, highlight: null, ageYears: null });
-  assert.equal(captionFromFact(thin), "Howie Morenz died on this day in 1937.");
+  assert.equal(captionFromFact(thin), null);
+});
+
+test("a name-and-year venue or franchise is dropped", () => {
+  const venue: OnThisDayRecord = {
+    recordId: "v1", category: "venue-opening", tags: ["venue-history"], basis: "source",
+    eventDate: "1884-05-01", datePrecision: "day", sport: "baseball", competition: "mlb", league: "mlb",
+    venueName: "League Park", source,
+  };
+  assert.equal(captionFromFact(venue), null);
+  const richVenue = { ...venue, venueCity: "Cleveland", clubNames: ["Cleveland Naps"], highlight: "the 1920 World Series" };
+  assert.equal(
+    captionFromFact(richVenue),
+    "League Park in Cleveland opened in 1884; home of the Cleveland Naps; it hosted the 1920 World Series.",
+  );
+  const franchise: OnThisDayRecord = {
+    recordId: "fr1", category: "franchise-event", tags: ["franchise-identity-change"], basis: "source",
+    eventDate: "1871-05-05", datePrecision: "day", sport: "baseball", competition: "mlb", league: null,
+    clubName: "Boston Red Stockings", source,
+  };
+  assert.equal(captionFromFact(franchise), null);
+  assert.equal(
+    captionFromFact({ ...franchise, league: "mlb", venueCity: "Boston" }),
+    "Boston Red Stockings began this MLB identity in 1871 in Boston.",
+  );
 });
 
 test("a championship final names the winner and the result", () => {

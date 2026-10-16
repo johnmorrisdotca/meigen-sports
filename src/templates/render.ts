@@ -118,6 +118,17 @@ function fieldsOf(record: OnThisDayRecord, locale: TemplateLocale, asOf?: string
   const clubPosition = [club, position].filter(Boolean).join(" ");
   const honour = record.highlight?.trim() ?? "";
   const honourAnd = honour ? (ja ? `、${honour}` : ` and ${honour}`) : "";
+  const whoCore = clubPosition || honour;
+  const who = whoCore ? "who" : "";
+  const whoClause = !whoCore ? ""
+    : ja ? `（${[clubPosition, honour].filter(Boolean).join("、")}）`
+    : clubPosition && honour ? `, the ${clubPosition} and ${honour},`
+    : clubPosition ? `, the ${clubPosition},`
+    : `, ${honour},`;
+  const deathYear = deathYearOf(record);
+  const deceased = record.livingStatus === "deceased" && Boolean(deathYear);
+  const diedParen = deceased ? ` (died ${deathYear})` : "";
+  const diedParenJa = deceased ? `（${deathYear}年死去）` : "";
   const aged = record.ageYears != null ? `, aged ${record.ageYears}` : "";
   const agedJa = record.ageYears != null ? `${record.ageYears}歳で` : "";
   const roundRaw = (record.roundLabel ?? record.stage ?? "").trim();
@@ -129,6 +140,16 @@ function fieldsOf(record: OnThisDayRecord, locale: TemplateLocale, asOf?: string
   const pick = record.overallPick != null ? (ja ? `全体${record.overallPick}位` : ` No. ${record.overallPick} overall`) : "";
   const clubBy = record.clubName?.trim() ? (ja ? `、${record.clubName}` : ` by the ${record.clubName}`) : "";
   const cityIn = record.venueCity ? (ja ? `（${record.venueCity}）` : ` in ${record.venueCity}`) : "";
+  const homeClause = clubs
+    ? (ja ? `。${clubs}の本拠地` : `; home of the ${clubs}`)
+    : "";
+  const famous = honour;
+  const finalClause = famous
+    ? (ja ? `。${famous}を開催` : `; it hosted ${famous}`)
+    : "";
+  const venueContext = (record.venueCity?.trim() || clubs || famous) ? "venue" : "";
+  const leagueIdentity = record.league ? league : "";
+  const franchiseContext = (record.league?.trim() || record.venueCity?.trim()) ? "franchise" : "";
   const yearsAgo = yearsAgoToday(record, asOf);
   const out: Record<string, string> = {
     name, year, league, home, away,
@@ -136,11 +157,13 @@ function fieldsOf(record: OnThisDayRecord, locale: TemplateLocale, asOf?: string
     awayScore: aws == null ? "" : String(aws),
     winner, loser, winScore, loseScore, ctx, ot, stage, venue, gameNo, series,
     extra, age, aged, agedJa, clubs, clubPosition, honourAnd,
+    who, whoClause, diedParen, diedParenJa, homeClause, finalClause,
+    venueContext, franchiseContext, leagueIdentity,
     highlight: record.highlight?.trim() ?? "",
     nationality: record.nationality?.trim() ?? "",
     finalRound,
     birthPlace: record.birthPlace?.trim() ?? "",
-    deathYear: deathYearOf(record),
+    deathYear,
     yearsAgo, yearsAgoToday: yearsAgo,
     dayPrecision: record.datePrecision === "day" && record.eventDate && !/-01-01$/.test(record.eventDate) ? "day" : "",
     winnerName: (record.winnerName?.trim() || name),

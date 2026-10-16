@@ -1,6 +1,6 @@
 import { isDate, monthDayOf } from "./dates.ts";
 import type { FactFilters, OnThisDayRecord, TeamRef } from "./schema.ts";
-import { captionFromFact } from "./sentences.ts";
+import { captionFromFact, isRichFact } from "./sentences.ts";
 
 function sportSlug(value: string | null | undefined): string | null {
   if (!value) return null;
@@ -160,7 +160,7 @@ function significance(record: OnThisDayRecord): number {
   if (record.category === "venue-opening") score += 35;
   if (record.category === "franchise-event") score += 30;
   if (record.category === "player-birthday") score += 15;
-  return score;
+  return score + fame(record) * 20;
 }
 
 function personKey(record: OnThisDayRecord): string | null {
@@ -184,7 +184,7 @@ function teamKeys(record: OnThisDayRecord): string[] {
  * Caps two per tag and per competition. Skips a later fact that repeats a person or team already listed.
  */
 export function rankFeed(records: readonly OnThisDayRecord[], n: number, maxPer = 2): OnThisDayRecord[] {
-  const ordered = records.slice().sort((a, b) => {
+  const ordered = records.filter(isRichFact).slice().sort((a, b) => {
     const diff = significance(b) - significance(a);
     if (diff !== 0) return diff;
     const byFame = fame(b) - fame(a);
@@ -217,10 +217,11 @@ export function rankFeed(records: readonly OnThisDayRecord[], n: number, maxPer 
     }
     return picked;
   };
+  const poolSize = ordered.length;
   const first = pick(false, false);
-  if (first.length >= Math.min(3, n, records.length)) return first;
+  if (first.length >= Math.min(3, n, poolSize)) return first;
   const second = pick(true, false);
-  if (second.length >= Math.min(3, n, records.length)) return second;
+  if (second.length >= Math.min(3, n, poolSize)) return second;
   return pick(true, true);
 }
 
@@ -231,7 +232,7 @@ export function rankFeed(records: readonly OnThisDayRecord[], n: number, maxPer 
  */
 export function randomFacts(records: readonly OnThisDayRecord[], n: number, filters: FactFilters = {}, seed: string): OnThisDayRecord[] {
   if (!seed) throw new RangeError("randomFacts requires an explicit seed");
-  const pool = shuffleWithSeed(factsFor(records, filters), seed);
+  const pool = shuffleWithSeed(factsFor(records, filters).filter(isRichFact), seed);
   const picked: OnThisDayRecord[] = [];
   const seen = new Set<string>();
   const byTag = new Map<string, number>();

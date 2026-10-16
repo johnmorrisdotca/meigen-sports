@@ -4,6 +4,15 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+## [0.3.1] - 2026-10-16
+
+Not published to npm (0.3.0 still waits on 2FA). Pages deploy from main.
+
+- Birthday, death, venue and franchise templates need a sourced claim (club, position, honour, city, home clubs, final, or league+city). Name-and-year stubs are not rendered and are dropped from today/random/featured feeds.
+- Convert drops those stubs; Myong-won Kim Q704476 and any pre-1850 person fact never publish. A test covers 1602.
+- Featured ranking adds priority-athlete and sitelinks weight so famous people outrank obscure filler.
+- Extract SQL asks DS1 for sport, position, clubs+years, awards, championships, nationality, venue city/teams/finals, and franchise league/city.
+
 ## [0.3.0] - 2026-10-16
 
 Not published to npm yet. First publication waits on this set.

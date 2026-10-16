@@ -12,9 +12,32 @@ class ConvertExtractTests(unittest.TestCase):
         kim = {
             "category": "player-death",
             "eventDate": "1602-12-13",
+            "sitelinks": 40,
             "person": {"personId": 1, "qid": "Q704476", "name": "Myong-won Kim", "leagueCodes": [], "franchiseIds": []},
         }
         self.assertFalse(convert.is_sport_person(kim))
+        self.assertIsNone(convert.caption_person(kim, False, True))
+
+    def test_blocked_qid_is_dropped_even_in_the_sport_era(self):
+        kim = {
+            "category": "player-death",
+            "eventDate": "1901-12-13",
+            "league": "nhl",
+            "person": {"personId": 1, "qid": "Q704476", "name": "Myong-won Kim", "leagueCodes": ["nhl"], "franchiseIds": [1]},
+        }
+        self.assertFalse(convert.is_sport_person(kim))
+
+    def test_name_and_year_captions_are_dropped(self):
+        death = {
+            "category": "player-death",
+            "eventDate": "1928-10-16",
+            "person": {"personId": 9, "qid": "Q9", "name": "Luis Paz", "leagueCodes": ["mlb"], "franchiseIds": []},
+        }
+        self.assertIsNone(convert.caption_person(death, False, True))
+        venue = {"category": "venue-opening", "eventDate": "1884-05-01", "venueName": "League Park"}
+        self.assertIsNone(convert.caption_venue(venue, False))
+        franchise = {"category": "franchise-event", "eventDate": "1871-05-05", "clubName": "Boston Red Stockings"}
+        self.assertIsNone(convert.caption_franchise(franchise, False))
 
     def test_rostered_modern_death_is_kept(self):
         morenz = {

@@ -84,7 +84,8 @@ function drawFacts(box: HTMLElement, records: readonly OnThisDayRecord[]) {
     const article = document.createElement("article"); article.className = "record";
     const p = document.createElement("p");
     const drawn = renderFact(fact, { wording: "fixed", locale, asOf });
-    p.textContent = drawn?.text || (locale === "ja" && fact.textJa) || fact.text || "";
+    if (!drawn?.text) continue;
+    p.textContent = drawn.text;
     const tags = document.createElement("p"); tags.className = "credit"; tags.textContent = tagsOf(fact).join(" · ");
     article.append(p, tags, factCredit(fact)); box.append(article);
   }

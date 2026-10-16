@@ -1,4 +1,5 @@
 import { tagsOf } from "../src/facts.ts";
+import { isRichFact } from "../src/sentences.ts";
 import type { OnThisDayRecord } from "../src/schema.ts";
 import type { MeigenRecord } from "../src/types.ts";
 
@@ -38,6 +39,7 @@ export function pickVariedFacts(records: readonly OnThisDayRecord[], count: numb
   const byCompetition = new Map<string, number>();
   for (const record of records) {
     if (picked.length >= count) break;
+    if (!isRichFact(record)) continue;
     const tags = tagsOf(record);
     const competition = record.competition ?? record.league ?? record.category;
     if (tags.some((tag) => (byTag.get(tag) ?? 0) >= maxPer) || (byCompetition.get(competition) ?? 0) >= maxPer) continue;

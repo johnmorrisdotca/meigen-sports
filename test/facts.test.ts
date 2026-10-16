@@ -82,19 +82,21 @@ test("birthday captions are anniversaries and never say turns", () => {
   const row: OnThisDayRecord = {
     recordId: "b1", category: "player-birthday", tags: ["player-birthday"], basis: "source",
     eventDate: "1961-01-26", datePrecision: "day", sport: "ice-hockey", competition: "nhl", league: "nhl",
-    person: { personId: 1866, qid: "Q209518", name: "Wayne Gretzky", leagueCodes: ["nhl"], franchiseIds: [], teamSeasonIds: [] },
+    person: { personId: 1866, qid: "Q209518", name: "Wayne Gretzky", leagueCodes: ["nhl"], franchiseIds: [12], teamSeasonIds: [] },
+    clubNames: ["Edmonton Oilers"], position: "centre",
     livingStatus: "unknown", source,
   };
   const text = captionFromFact(row);
-  assert.equal(text, "Wayne Gretzky was born on this day in 1961.");
+  assert.equal(text, "Wayne Gretzky, the Edmonton Oilers centre, was born on this day in 1961.");
   assert.equal(/turns|would have turned|celebrates/i.test(text ?? ""), false);
   const dead: OnThisDayRecord = {
     ...row, recordId: "b2", livingStatus: "deceased", deathDate: "1948-08-16",
-    person: { personId: 1, qid: "Q1", name: "Babe Ruth", leagueCodes: ["mlb"], franchiseIds: [], teamSeasonIds: [] },
+    person: { personId: 1, qid: "Q1", name: "Babe Ruth", leagueCodes: ["mlb"], franchiseIds: [20], teamSeasonIds: [] },
+    clubNames: ["New York Yankees"], position: "outfielder",
     eventDate: "1895-02-06",
   };
   const deadText = captionFromFact(dead);
-  assert.equal(deadText, "Babe Ruth was born on this day in 1895 (died 1948).");
+  assert.equal(deadText, "Babe Ruth, the New York Yankees outfielder, was born on this day in 1895 (died 1948).");
   assert.equal(/turns|would have turned/i.test(deadText ?? ""), false);
 });
 
@@ -114,6 +116,7 @@ test("rankFeed prefers a priority athlete among equal deaths", () => {
     recordId: "u", category: "player-death", tags: ["age-at-event"], basis: "source",
     eventDate: "1937-03-08", datePrecision: "day", sport: "ice-hockey", competition: "nhl", league: "nhl",
     person: { personId: 9, qid: "Q9", name: "Unknown Skater", leagueCodes: ["nhl"], franchiseIds: [10], teamSeasonIds: [] },
+    clubNames: ["Montreal Canadiens"], position: "forward",
     source,
   };
   const famous: OnThisDayRecord = {
@@ -122,6 +125,25 @@ test("rankFeed prefers a priority athlete among equal deaths", () => {
   };
   const feed = rankFeed([unknown, famous], 1);
   assert.equal(feed[0]?.recordId, "f");
+});
+
+test("rankFeed drops name-and-year stubs and Kim 1602", () => {
+  const kim: OnThisDayRecord = {
+    recordId: "kim", category: "player-death", tags: ["age-at-event"], basis: "source",
+    eventDate: "1602-12-13", datePrecision: "day", sport: null, competition: null, league: null,
+    person: { personId: 1, qid: "Q704476", name: "Myong-won Kim", leagueCodes: [], franchiseIds: [], teamSeasonIds: [] },
+    source,
+  };
+  const gould: OnThisDayRecord = {
+    recordId: "gould", category: "player-birthday", tags: ["player-birthday"], basis: "source",
+    eventDate: "1873-10-16", datePrecision: "day", sport: "ice-hockey", competition: "nhl", league: "nhl",
+    person: { personId: 3, qid: "Q3", name: "David Gould", leagueCodes: ["nhl"], franchiseIds: [], teamSeasonIds: [] },
+    livingStatus: "deceased", deathDate: "1939-01-01", source,
+  };
+  assert.equal(isRichFact(kim), false);
+  assert.equal(isRichFact(gould), false);
+  const feed = rankFeed([kim, gould, game("g-rich")], 3);
+  assert.deepEqual(feed.map((r) => r.recordId), ["g-rich"]);
 });
 
 test("featured record reason ranks with sport records", () => {
