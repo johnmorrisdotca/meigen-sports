@@ -29,7 +29,7 @@ jobs:
       - run: pnpm check
       - run: pnpm build
       - name: The package as npm packs it installs, imports and runs
-        run: node scripts/check-package.mjs
+        run: node scripts/check-package.ts
       - name: The tag is the version in package.json
         run: |
           VERSION="$(node -p "require('./package.json').version")"

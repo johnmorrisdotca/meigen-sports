@@ -1,7 +1,7 @@
 {
   "name": "@johnmorrisdotca/meigen-sports",
   "version": "0.1.0",
-  "description": "Meigen Sports 名言, source-verified sports quotations and on-this-day history: typed offline data and pure date, sport and entity selectors, with static JSON feeds. Zero runtime dependencies.",
+  "description": "Meigen Sports \u540d\u8a00, source-verified sports quotations and on-this-day history: typed offline data and pure date, sport and entity selectors, with static JSON feeds. Zero runtime dependencies.",
   "keywords": [
     "sports",
     "quotes",
@@ -14,7 +14,11 @@
     "static-api",
     "open-data",
     "typescript",
-    "zero-dependencies"
+    "zero-dependencies",
+    "javascript",
+    "browser",
+    "node",
+    "itsutsu"
   ],
   "homepage": "https://johnmorrisdotca.github.io/meigen-sports/",
   "repository": {
@@ -24,7 +28,7 @@
   "bugs": {
     "url": "https://github.com/johnmorrisdotca/meigen-sports/issues"
   },
-  "author": "John Morris <john@johnmorris.ca>",
+  "author": "John Morris",
   "license": "MIT",
   "type": "module",
   "sideEffects": false,
@@ -71,16 +75,16 @@
     "data-sources/README.md"
   ],
   "engines": {
-    "node": ">=22.18"
+    "node": ">=22"
   },
   "publishConfig": {
     "access": "public"
   },
   "packageManager": "pnpm@10.11.0",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\" && tsc -p tsconfig.json",
     "lint": "eslint .",
-    "typecheck": "tsc -p tsconfig.check.json",
+    "typecheck": "tsc -p tsconfig.check.json && tsc -p tsconfig.tools.json && tsc -p tsconfig.demo.json",
     "test": "node --test test/*.test.ts",
     "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm build && node scripts/check-package.ts",
     "test:package": "pnpm build && node scripts/check-package.ts",

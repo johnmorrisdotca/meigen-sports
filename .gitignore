@@ -3,9 +3,10 @@ dist/
 site/
 test-results/
 playwright-report/
-.readme-examples/
-.env*
-.DS_Store
 *.tgz
+.cache/
+.readme-examples/
+.DS_Store
+.env*
 data-sources/raw/
 docs/RESUME.md

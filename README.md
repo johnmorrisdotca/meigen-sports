@@ -1,23 +1,33 @@
 <h1 align="center">Meigen Sports <sub>名言</sub></h1>
 
-<p align="center"><strong>Meigen Sports 名言: source-verified sports quotations and dated events in sports history.</strong><br>
-A typed, zero-runtime-dependency data package for JavaScript and TypeScript. Read the included data offline, filter it by date, sport or source, or load versioned static JSON feeds.</p>
+<p align="center"><strong>Source-verified sports quotations and dated events in sports history.</strong><br>
+A typed data package with no runtime dependencies. Read the included data offline, filter it by date, sport or source, or load versioned static JSON feeds. MIT code; source data keeps its own rights.</p>
 
 <p align="center">
   <a href="https://github.com/johnmorrisdotca/meigen-sports/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/johnmorrisdotca/meigen-sports/actions/workflows/ci.yml/badge.svg"></a>
   <a href="https://www.npmjs.com/package/@johnmorrisdotca/meigen-sports"><img alt="npm" src="https://img.shields.io/npm/v/@johnmorrisdotca/meigen-sports?color=2f5d4a"></a>
-  <a href="./LICENSE"><img alt="MIT licence for code" src="https://img.shields.io/badge/code%20licence-MIT-2f5d4a"></a>
-  <img alt="No runtime dependencies" src="https://img.shields.io/badge/runtime%20dependencies-0-2f5d4a">
+  <a href="./LICENSE"><img alt="MIT licence" src="https://img.shields.io/badge/licence-MIT-2f5d4a"></a>
+  <a href="./NOTICE.md"><img alt="Data keeps its own licences" src="https://img.shields.io/badge/data-source%20licences-2f5d4a"></a>
+  <img alt="No dependencies" src="https://img.shields.io/badge/dependencies-0-2f5d4a">
   <img alt="TypeScript" src="https://img.shields.io/badge/types-TypeScript-3178c6">
 </p>
 
-## Demo
+<p align="center"><a href="https://johnmorrisdotca.github.io/meigen-sports/"><strong>Open the demo →</strong></a> · <a href="./NOTICE.md">Sources</a> · <a href="./docs/history-model.md">History model</a> · <a href="./docs/data-pipeline.md">Pipeline</a></p>
 
-![Meigen Sports demo on desktop](docs/images/hero-desktop.png)
+<p align="center">
+<img alt="The Meigen Sports demo on a desk: a date, a sport, a quotation and on-this-day facts." src="docs/images/hero-desktop.png" width="720">
+</p>
 
-![Meigen Sports demo on a phone](docs/images/hero-phone.png)
-
-![Meigen Sports Japanese demo on a phone](docs/images/hero-phone-ja.png)
+<table align="center">
+<tr>
+<td align="center" valign="top">
+<img alt="The demo on a phone, in English." src="docs/images/hero-phone.png" width="190"><br><em>On a phone</em>
+</td>
+<td align="center" valign="top">
+<img alt="The demo on a phone, in Japanese." src="docs/images/hero-phone-ja.png" width="190"><br><em>In Japanese</em>
+</td>
+</tr>
+</table>
 
 ## In 30 seconds
 
@@ -80,6 +90,10 @@ This network example is not executed by the README check; it requires the static
 
 Static feed publication and release storage setup are still being completed. The repository contains generated JSON and a loader, but this README does not promise that the Pages URL is live or that the source archive and curation workflow has been approved and completed.
 
+## Examples
+
+The snippets under **In 30 seconds** and **Use it in your project** are run by `pnpm test:readme` against the built package. A network load of the public feed is marked `no-run` until Pages is serving that version.
+
 ## API
 
 The root export provides `isDate`, `monthDayOf`, `selectRecords`, `historyOnDate`, `quoteForDate`, the core record and feed types, and `SCHEMA_VERSION` and `VERSION`.
@@ -102,9 +116,18 @@ The current feed is sparse: 224 calendar month-days have no history facts. Sourc
 
 The current API uses exact dates and captions, stable entity references, tags and one primary citation per record. It does not yet expose the planned multi-source record progression, all source evidence, or automatic population from the existing sports database. A year or month alone is not converted into a day. A season total is not treated as evidence for the game where a milestone was reached.
 
-## Browser support
+## Theming
 
-The core selectors work with modern JavaScript runtimes and have no runtime dependencies. Static loading accepts a caller-provided `fetch`, so the application controls network policy and caching. Node.js 22.18 or later is required by the repository's TypeScript test workflow.
+The library ships no colours, drawings or CSS. The demo follows the family's cloth switch (`demo/family.css`).
+
+## Accessibility
+
+Quotations are in a `blockquote`. Each record's source is a real link with its licence. The demo's header language switch and help switch are the family's. Nothing in the library moves or plays a sound.
+
+## Browser and runtime support
+
+Any current browser, and Node 22 or later. The package is plain data and functions, so it also runs in Deno, Bun, a worker and an edge function. Static loading accepts a caller-provided `fetch`, so the application controls network policy and caching. CI tests Node 22 and 24 on Linux, macOS and Windows, and the demo in Chromium and WebKit at a phone's width and a desk's.
+
 
 ## Languages
 
@@ -172,20 +195,27 @@ Meigen Sports is one of twenty-nine packages, each made for the same site, each 
 
 ```sh
 pnpm install
-pnpm check        # lint, type-check, tests, build and packed-package check
-pnpm test:readme  # run README and docs examples against the built package
-pnpm test:demo    # build and exercise the demo in a browser
-pnpm dev          # build and serve the demo
+pnpm check          # lint, types, tests, the build and the packed package
+pnpm dev            # the demo on http://127.0.0.1:7400/
+pnpm test:demo      # the demo in a real browser
+pnpm test:readme    # the README's and the docs' examples
+pnpm screenshots    # retake the README's pictures
 ```
+
+This package owns local ports 7400 to 7499 (see [CONTRIBUTING.md](./CONTRIBUTING.md)).
 
 ## Contributing
 
-See [CONTRIBUTING.md](./CONTRIBUTING.md), the [code of conduct](./CODE_OF_CONDUCT.md) and [SECURITY.md](./SECURITY.md).
+Bug reports and ideas go in the [issues](https://github.com/johnmorrisdotca/meigen-sports/issues); read [CONTRIBUTING.md](./CONTRIBUTING.md) first.
 
 ## Changes
 
 See [CHANGELOG.md](./CHANGELOG.md).
 
+## Credits
+
+Every source is credited in [NOTICE.md](./NOTICE.md), with original notices in [LICENSES/](./LICENSES/).
+
 ## Licence
 
-The package code is MIT, © John Morris. Data has separate source-specific terms; see [LICENSE](./LICENSE), [NOTICE.md](./NOTICE.md) and [LICENSES/](./LICENSES/).
+The code is [MIT](./LICENSE). Source data keeps its own licence, named in [NOTICE.md](./NOTICE.md), with its text in [LICENSES/](./LICENSES/).
