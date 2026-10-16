@@ -338,7 +338,6 @@ Royce Gracie,mma,Q553469,1,listed:MMA/UFC/Brazilian jiu-jitsu
 Hélio Gracie,brazilian_jiu_jitsu,Q455578,1,
 Rickson Gracie,brazilian_jiu_jitsu,Q685722,1,listed:Brazilian jiu-jitsu/MMA
 Roger Gracie,brazilian_jiu_jitsu,Q3051931,1,
-Marcelo Garcia,brazilian_jiu_jitsu,,1,ambiguous:Marcelo_Garcia:disambiguation
 Marcus Almeida,brazilian_jiu_jitsu,Q15987650,1,
 Gordon Ryan,submission_grappling,Q40875419,1,
 André Galvão,brazilian_jiu_jitsu,Q4759914,1,listed:Brazilian jiu-jitsu/submission grappling
@@ -396,7 +395,6 @@ Dieselnoi Chor Thanasukarn,muay_thai,Q4923908,1,
 Yodsanklai Fairtex,muay_thai,Q4022806,1,listed:Muay Thai/kickboxing
 Buvaisar Saitiev,freestyle_wrestling,Q313452,1,
 Abdulrashid Sadulaev,freestyle_wrestling,Q16148663,1,
-John Smith,freestyle_wrestling,,1,ambiguous:need-john
 Kaori Icho,freestyle_wrestling,Q233460,1,
 Mijaín López,greco_roman_wrestling,Q462790,1,
 Dan Gable,freestyle_wrestling,Q238551,1,
@@ -423,7 +421,6 @@ Colm Cooper,gaelic_football,Q2984065,1,
 Peter Canavan,gaelic_football,Q3376493,1,
 Jack O'Shea,gaelic_football,Q6114421,1,
 Andrew Johns,rugby_league,Q2846645,1,
-Cameron Smith,rugby_league,,1,"ambiguous:Cameron_Smith:disambiguation,Cameron_Smith_(rugby_league):disambiguation"
 Billy Slater,rugby_league,Q2903714,1,
 Wally Lewis,rugby_league,Q3565555,1,
 Darren Lockyer,rugby_league,Q1166639,1,
@@ -444,9 +441,7 @@ Zahra Nemati,para_archery,Q8064739,1,
 Tony Hawk,skateboarding,Q295020,1,
 Rodney Mullen,skateboarding,Q313447,1,
 Nyjah Huston,skateboarding,Q2185882,1,
-Yuto Horigome,skateboarding,,1,ambiguous:Yuto_Horigome:disambiguation
 Rayssa Leal,skateboarding,Q64748123,1,
-Anup Kumar,kabaddi,,1,ambiguous:Anup_Kumar:disambiguation
 Pardeep Narwal,kabaddi,Q26251631,1,
 Pawan Sehrawat,kabaddi,Q64853314,1,
 Lisa Carrington,canoe_sprint,Q83837,1,
@@ -501,7 +496,6 @@ Iyo Sky,professional_wrestling,Q6061727,1,
 Shaun White,snowboarding,Q288656,1,listed:snowboarding/skateboarding
 Chloe Kim,snowboarding,Q15649119,1,
 Hannah Teter,snowboarding,Q235762,1,
-Jamie Anderson,snowboarding,,1,ambiguous:Jamie_Anderson:disambiguation
 Anna Gasser,snowboarding,Q15633888,1,
 Ester Ledecká,snowboarding,Q12424417,1,listed:snowboarding/alpine skiing
 Mikaël Kingsbury,freestyle_skiing,Q430936,1,
@@ -527,17 +521,14 @@ Viktor Ahn,short_track_speed_skating,Q118002,1,
 Apolo Anton Ohno,short_track_speed_skating,Q329738,1,
 Arianna Fontana,short_track_speed_skating,Q259815,1,
 Choi Min-jeong,short_track_speed_skating,Q18685427,1,
-Wang Meng,short_track_speed_skating,,1,ambiguous:Wang_Meng:disambiguation
 Jennifer Jones,curling,Q189895,1,
 Sandra Schmirler,curling,Q444980,1,
 Rachel Homan,curling,Q7279274,1,
 Niklas Edin,curling,Q1849097,1,
-Kevin Martin,curling,,1,ambiguous:Kevin_Martin:disambiguation
 Nino Schurter,mountain_biking,Q666580,1,
 Julien Absalon,mountain_biking,Q382060,1,
 Rachel Atherton,mountain_biking,Q390519,1,
 Mariana Pajón,bmx,Q2358275,1,
-Connor Fields,bmx,,1,ambiguous:Connor_Fields:disambiguation
 Chris Hoy,track_cycling,Q310383,1,
 Jason Kenny,track_cycling,Q460643,1,
 Laura Kenny,track_cycling,Q272598,1,
@@ -566,12 +557,9 @@ Lester Piggott,horse_racing,Q377345,1,
 Bill Shoemaker,horse_racing,Q718423,1,
 Frankie Dettori,horse_racing,Q1119157,1,
 Julie Krone,horse_racing,Q6308321,1,
-Michael Jung,equestrian,,1,ambiguous:Michael_Jung:disambiguation
-Mark Todd,equestrian,,1,ambiguous:Mark_Todd:disambiguation
 Shun Ikeda,sumo,Q28069146,1,
 Viktor Rudenko,sambo,,1,unresolved:Viktor_Rudenko:404
 Cung Le,sanda,Q952839,1,listed:sanda/MMA
-Wu Xu,wushu,,1,ambiguous:Wu_Xu:disambiguation
 Anissa Meksen,savate,Q19952877,1,listed:savate/kickboxing
 Maika Senoo,kendo,,1,unresolved:Maika_Senoo:404
 Elisa Di Francisca,fencing,Q261939,1,
@@ -614,7 +602,6 @@ Felix Gottwald,nordic_combined,Q380143,1,
 Perrine Laffont,freestyle_skiing,Q15712845,1,
 Mark McMorris,snowboarding,Q3294177,1,
 Kelly Clark,snowboarding,Q270331,1,
-Yang Yang,short_track_speed_skating,,1,listed:short-track speed skating; born 1976; ambiguous:Yang_Yang:disambiguation
 Eve Muirhead,curling,Q442730,1,
 Kaillie Humphries,bobsleigh,Q263495,1,
 Armin Zöggeler,luge,Q347993,1,
@@ -622,7 +609,6 @@ Martins Dukurs,skeleton,Q520234,1,
 Laetitia Roux,ski_mountaineering,Q532211,1,
 Victoria Pendleton,track_cycling,Q230999,1,
 Bethany Shriever,bmx,Q25935617,1,
-Logan Martin,bmx,,1,ambiguous:Logan_Martin:disambiguation
 Pauline Ferrand-Prévot,mountain_biking,Q462104,1,
 Sanne Cant,cyclo_cross,Q2607845,1,
 Mathieu van der Poel,cyclo_cross,Q3078910,1,listed:cyclo-cross/road cycling
@@ -631,8 +617,6 @@ Natalia Ishchenko,artistic_swimming,Q1800208,1,
 Sharon van Rouwendaal,open_water_swimming,Q2208967,1,
 Ana Marcela Cunha,open_water_swimming,Q482912,1,
 Chloë McCardel,marathon_swimming,Q108893236,1,
-Sarah Thomas,marathon_swimming,,1,ambiguous:Sarah_Thomas:disambiguation
-Jessica Fox,canoe_slalom,,1,ambiguous:Jessica_Fox:disambiguation
 Michal Martikán,canoe_slalom,Q287399,1,
 Noémie Fox,kayak_cross,,1,unresolved:Noémie_Fox:404
 Finn Butcher,kayak_cross,Q107332874,1,
@@ -642,7 +626,6 @@ Anna Abravanel,lifesaving,,1,unresolved:Anna_Abravanel:404
 Petra Senánszky,lifesaving,Q18341237,1,listed:lifesaving/finswimming
 Harley Clifford,wakeboarding,,1,unresolved:Harley_Clifford:404
 Meagan Ethell,wakeboarding,,1,unresolved:Meagan_Ethell:404
-Nate Smith,waterskiing,,1,ambiguous:Nate_Smith:disambiguation
 Regina Jaquess,waterskiing,Q3931833,1,
 Bjørn Dunkerbeck,windsurfing,,1,unresolved:Bjørn_Dunkerbeck:404
 Sarah-Quita Offringa,windsurfing,Q7422018,1,
@@ -667,18 +650,12 @@ Ed Coan,powerlifting,Q4230342,1,
 Lamar Gant,powerlifting,Q5751249,1,
 Zydrunas Savickas,strongman,Q394378,1,
 Mariusz Pudzianowski,strongman,Q316676,1,
-Donna Moore,strongwoman,,1,ambiguous:Donna_Moore:disambiguation
 Lasha Talakhadze,weightlifting,Q3218304,1,
 Hidilyn Diaz,weightlifting,Q1844358,1,
 Norm Duke,tenpin_bowling,Q5625326,1,
-Liz Johnson,tenpin_bowling,,1,ambiguous:Liz_Johnson:disambiguation
-David Bryant,lawn_bowls,,1,ambiguous:David_Bryant:disambiguation
-Karen Murphy,lawn_bowls,,1,ambiguous:Karen_Murphy:disambiguation
-David Smith,boccia,,1,ambiguous:David_Smith:disambiguation
 Leung Yuk Wing,boccia,Q11755340,1,
 Dylan Rocher,petanque,,1,unresolved:Dylan_Rocher:404
 Philippe Quintais,petanque,Q3380589,1,
-Pankaj Advani,english_billiards,,1,listed:English billiards/snooker; ambiguous:Pankaj_Advani:disambiguation
 Geet Sethi,english_billiards,Q3351827,1,
 Shane Van Boening,pool,Q2276890,1,
 Jasmin Ouschan,pool,Q545743,1,
@@ -733,7 +710,6 @@ Tenzing Norgay,mountaineering,Q80732,1,
 Reinhold Messner,mountaineering,Q189307,1,
 Junko Tabei,mountaineering,Q234491,1,
 Wanda Rutkiewicz,mountaineering,Q237493,1,
-Patrick Anderson,wheelchair_basketball,,1,ambiguous:Patrick_Anderson:disambiguation
 Ryley Batt,wheelchair_rugby,Q7385173,1,
 Chuck Aoki,wheelchair_rugby,Q108266858,1,
 Sevda Altunoluk,goalball,Q24302416,1,
@@ -749,7 +725,6 @@ Henrieta Farkašová,para_alpine_skiing,Q5715883,1,
 Verena Bentele,para_nordic_skiing,Q73349,1,
 Declan Farmer,para_ice_hockey,Q15979652,1,
 Terence Parkin,deaflympic_swimming,Q530054,1,listed:Deaflympic swimming/Olympic swimming
-Joseph Warner,special_olympics_snowboarding,,1,ambiguous:Joseph_Warner:disambiguation
 Evel Knievel,stunt,Q345231,1,
 Robbie Knievel,stunt,Q13607723,1,
 Travis Pastrana,freestyle_motocross,Q379510,1,listed:freestyle motocross/stunt driving
@@ -770,7 +745,6 @@ Luc Ackermann,freestyle_motocross,,1,unresolved:Luc_Ackermann:404
 Aaron Fotheringham,wcmx,Q302021,1,listed:wheelchair motocross/WCMX
 Levi LaVallee,snowmobile,Q6535456,1,listed:snowmobile freestyle/stunts
 Ken Block,rallying,Q438382,1,listed:rallying/Gymkhana stunt driving
-Terry Grant,stunt,,1,ambiguous:Terry_Grant:disambiguation
 Nik Wallenda,high_wire,Q2412207,1,
 Karl Wallenda,high_wire,Q1632482,1,
 Philippe Petit,high_wire,Q705289,1,
@@ -878,7 +852,6 @@ J. C. Tremblay,ice_hockey,Q1676285,1,SC GWG
 John Ferguson Sr.,ice_hockey,Q3181489,1,SC GWG
 Yvan Cournoyer,ice_hockey,Q710342,1,SC GWG
 Rick MacLeish,ice_hockey,Q575799,1,SC GWG
-Bob Kelly,ice_hockey,,1,"SC GWG; ambiguous:Bob_Kelly:disambiguation,Bob_Kelly_(ice_hockey):disambiguation"
 Guy Lafleur,ice_hockey,Q553249,1,SC GWG
 Jacques Lemaire,ice_hockey,Q681705,1,SC GWG
 Mario Tremblay,ice_hockey,Q3293581,1,SC GWG
@@ -965,7 +938,6 @@ Tino Martinez,baseball,Q7808412,1,HR Derby
 Jim Bottomley,baseball,Q6193756,1,MLB MVP
 Lefty Grove,baseball,Q751263,1,MLB MVP
 Ernie Banks,baseball,Q3051017,1,HR hitter
-Luis Gonzalez,baseball,,1,"HR Derby; ambiguous:Luis_Gonzalez:disambiguation,Luis_Gonzalez_(baseball):404"
 Frankie Frisch,baseball,Q2739073,1,MLB MVP
 Eddie Mathews,baseball,Q590424,1,HR hitter
 Jason Giambi,baseball,Q1683912,1,HR Derby
@@ -999,3 +971,31 @@ Joe DiMaggio,baseball,Q297142,1,MLB MVP
 Nelson Cruz,baseball,Q1133784,1,HR hitter
 Pete Rose,baseball,Q739866,1,notorious: banned for gambling
 Shoeless Joe Jackson,baseball,Q955322,1,notorious: Black Sox
+Terry Fox,athletics,Q295053,1,Marathon of Hope
+Steve Fonyo,athletics,Q7612565,1,Marathon of Hope successor
+Rick Hansen,wheelchair_racing,Q978803,1,Man in Motion
+Donovan Bailey,athletics,Q311048,1,Olympic sprint
+Andre De Grasse,athletics,Q19952288,1,Olympic sprint
+Percy Williams,athletics,Q436070,1,Olympic sprint
+Harry Jerome,athletics,Q596560,1,Olympic sprint
+Bruny Surin,athletics,Q441217,1,Olympic sprint
+Elaine Thompson-Herah,athletics,Q20035636,1,Olympic sprint
+Sha'Carri Richardson,athletics,Q64514634,1,Olympic sprint
+Fanny Blankers-Koen,athletics,Q229046,1,Olympic sprint
+Wilma Rudolph,athletics,Q31083,1,Olympic sprint
+Gail Devers,athletics,Q217354,1,Olympic sprint
+Cathy Freeman,athletics,Q234762,1,Olympic sprint
+Marie-José Pérec,athletics,Q228808,1,Olympic sprint
+Dina Asher-Smith,athletics,Q14623252,1,Olympic sprint
+Shericka Jackson,athletics,Q9336004,1,Olympic sprint
+Julien Alfred,athletics,Q111507605,1,Olympic sprint
+Linford Christie,athletics,Q310019,1,Olympic sprint
+Maurice Greene,athletics,Q296309,1,Olympic sprint
+Asafa Powell,athletics,Q182747,1,Olympic sprint
+Yohan Blake,athletics,Q1651,1,Olympic sprint
+Tommie Smith,athletics,Q52656,1,Olympic sprint
+John Carlos,athletics,Q370729,1,Olympic sprint
+Bob Hayes,athletics,Q505289,1,Olympic sprint
+Summer McIntosh,swimming,Q107323240,1,Olympic swimming
+Penny Oleksiak,swimming,Q23772068,1,Olympic swimming
+Caeleb Dressel,swimming,Q21005673,1,Olympic swimming
