@@ -4,6 +4,9 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## Unreleased
 
+- Match the family package layout: README badges and demo link, CONTRIBUTING, issue templates, typecheck configs, and the shared family tests.
+- Add read-only DS1 extractor SQL and the 21-file openfootball archive / 0.2.0 snapshot helper (dry-run default).
+- Demo: ten random facts per reload from the GitHub Pages JSON; randomness stays in the demo.
 - Add 900 already-archived FIFA World Cup match results (1930–2018) to the dated seed.
 - Document the source-verified seed dataset, public API and current coverage limits.
 - Add source-specific data notices and preserve the included texts' original rights notices.

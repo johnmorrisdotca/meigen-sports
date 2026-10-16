@@ -2,6 +2,26 @@
 
 This pipeline is separate from the pure library. No timer, worker, database provisioning or paid service is created. It never contacts Supabase. All commands default to dry-run and read no credential files or keychains. The initial DS1 archive and candidate load completed on 2026-10-15: 99 source retrievals, 95 distinct raw hashes and 184 candidate records. Stored byte hashes and a complete DS1 read-back export were verified. The original bytes also have hash-verified copies in the existing local Dropbox raw-backup folder; remote synchronization was not independently confirmed. Turso has not been loaded or exercised against its live server.
 
+
+## Historic World Cup archive (21 files) and dataset 0.2.0
+
+Dry-run is the default. The coordinating session applies. DS1 dataset `0.1.0` stays 184 rows.
+
+```sh
+python3 -I pipeline/archive_openfootball.py archive --raw-root "$MEIGEN_RAW_DIR" --sql-out /tmp/meigen-archive-21.sql
+python3 -I pipeline/archive_openfootball.py snapshot --version 0.2.0 --sql-out /tmp/meigen-snapshot-0.2.0.sql
+```
+
+`--apply` needs `MEIGEN_DS1_*` and, for archive, `--backup-root`. Snapshot refuses `0.1.0`. Expected after archive: +21 `legacy_files.raw_archive`, +21 `legacy_meigen.raw_source` (95 to 116), +21 `raw_download` (99 to 120). Expected after snapshot: `meigen.dataset_record` is 1084 for `0.2.0`; `0.1.0` is still 184.
+
+## DS1 extractor SQL (read-only)
+
+```sh
+python3 -I pipeline/extract_ds1.py
+```
+
+File list and paging notes: [queries/README.md](queries/README.md). Source licences: [docs/sources-and-reviews.md](../docs/sources-and-reviews.md).
+
 ## Credentials
 
 John supplies an authorized environment when ready. Never put values into this repository or command history:
