@@ -113,6 +113,11 @@ export interface OnThisDayRecord {
   readonly birthPlace?: string | null;
   readonly livingStatus?: LivingStatus;
   readonly featuredReasons?: readonly string[];
+  /** Wikidata sitelink count when the extract supplied one. Used to rank famous people, never as identity. */
+  readonly sitelinks?: number;
+  /** True when the person's QID is on the committed 1,000-name priority list. */
+  readonly priorityAthlete?: boolean;
+  readonly nationality?: string | null;
   readonly record?: RecordProgression;
   readonly sport: string | null;
   readonly competition: string | null;

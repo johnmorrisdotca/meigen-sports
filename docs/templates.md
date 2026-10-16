@@ -52,6 +52,28 @@ Living confirmed by a source:
 
 Never: “would have turned”. Never “turns N” unless `livingStatus` is `living`. Unknown is not living.
 
+## Death wording
+
+Default when only the name and year are sourced:
+
+- `death-on-this-day`: “Howie Morenz died on this day in 1937.”
+
+When club and/or position are sourced, that becomes the default:
+
+- `death-context`: “Howie Morenz, the Montreal Canadiens centre and three-time Stanley Cup winner, died on this day in 1937, aged 34.”
+
+`clubPosition` is the club name and position joined with a space. `honourAnd` / `aged` are omitted when `highlight` or `ageYears` is missing. Never guess a club, honour, or age.
+
+## Finals
+
+A decisive championship final names the winner and the result when year and league are sourced:
+
+- `final-won`: “Montreal Canadiens won the 1975 NHL final, beating Boston Bruins 5–3.”
+
+A World Cup match caption in the bundled history feed is rewritten the same way from its own published score line (“Argentina won the 2022 World Cup, beating France 4–2 on penalties after a 3–3 draw.”). Venue is included only when the fact holds it.
+
+Generic “X began/ended” history rows are published only when no richer match exists for that competition edition and date.
+
 ## Adding a template
 
 1. Add a row to `TEMPLATES` in `src/templates/catalog.ts` with a new `id` (unique per type+locale), `needs`, `gate`, and `pattern`.

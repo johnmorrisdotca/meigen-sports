@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import { mkdirSync, readFileSync, writeFileSync, existsSync, unlinkSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { mergeHistoryEvents } from "../src/mergeEvents.ts";
 import type { Citation, EntityRef, FeedManifest, FeedShard, MeigenRecord } from "../src/types.ts";
 
 export const DATA_VERSION = "0.1.0";
@@ -46,7 +47,7 @@ const format = (value: unknown): string => `${JSON.stringify(value)}\n`;
 const sortById = (a: MeigenRecord, b: MeigenRecord): number => a.id < b.id ? -1 : a.id > b.id ? 1 : 0;
 
 /** Source IDs remain distinct from labels and unverified SPX identity matches. */
-export function convertSeed(): { quotes: MeigenRecord[]; history: MeigenRecord[] } {
+export function convertSeed(): { quotes: MeigenRecord[]; history: MeigenRecord[]; merged: number } {
   const quoteInput = json("data-sources/seed/quotes.json") as SeedQuote[];
   const historyInput = json("data-sources/seed/history.json") as SeedHistory[];
   const quotes = quoteInput.map((r): MeigenRecord => {
@@ -76,7 +77,7 @@ export function convertSeed(): { quotes: MeigenRecord[]; history: MeigenRecord[]
       },
     };
   }).sort(sortById);
-  const history = historyInput.map((r): MeigenRecord => {
+  const mapped = historyInput.map((r): MeigenRecord => {
     const entities: EntityRef[] = r.sports.map((sport) => ({ id: `sport:${sport}`, kind: "sport", role: "subject", label: sport }));
     entities.push({ id: r.event_id ?? r.external_id, kind: "event", role: "subject", ...(r.event_label ? { label: r.event_label } : {}) });
     if (r.competition === "World Cup 2022") entities.push({ id: "wikidata:Q284163", kind: "competition", role: "part-of", label: "2022 FIFA World Cup" });
@@ -91,9 +92,11 @@ export function convertSeed(): { quotes: MeigenRecord[]; history: MeigenRecord[]
         rightsEvidence: [r.source_url, r.source_id === "wikidata" ? "https://www.wikidata.org/wiki/Wikidata:Licensing" : "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"],
       },
     };
-  }).sort(sortById);
+  });
+  const { records: history, report } = mergeHistoryEvents(mapped);
+  history.sort(sortById);
   validateRecords([...quotes, ...history]);
-  return { quotes, history };
+  return { quotes, history, merged: report.merged };
 }
 
 /** Fail closed on missing rights, dates, source hashes, identities or duplicate IDs. */
@@ -121,6 +124,11 @@ export function validateRecords(records: readonly MeigenRecord[]): void {
       if (r.source.licence !== "CC-BY-SA-4.0" || r.kind !== "quote" || !r.source.section) throw new Error("Missing Wikiquote quote evidence");
     } else throw new Error("Unverified rights");
     if (!Array.isArray(r.entities) || r.entities.some((e) => !e.id || !e.role || !["person", "team", "sport", "event", "series", "competition"].includes(e.kind))) throw new Error("Unverified entity reference");
+    if (r.additionalSources) {
+      for (const extra of r.additionalSources) {
+        if (!extra?.sourceId || !extra.key || !extra.title || !/^[a-f0-9]{64}$/.test(extra.rawSha256)) throw new Error("Missing additional source provenance");
+      }
+    }
     if (r.kind === "quote") {
       if (!r.speaker || r.date !== null || r.monthDay !== null || r.dateRole !== null) throw new Error("Do not invent quote utterance anniversaries");
     } else {
@@ -157,8 +165,8 @@ export function buildFiles(records: readonly MeigenRecord[], dataVersion = DATA_
   return files;
 }
 
-export function generate(check = false): { records: number; files: number } {
-  const { quotes, history } = convertSeed();
+export function generate(check = false): { records: number; files: number; merged: number } {
+  const { quotes, history, merged } = convertSeed();
   const files = buildFiles([...quotes, ...history]);
   const outputs = new Map<string, string>();
   for (const [name, contents] of files) outputs.set(`data/v1/${DATA_VERSION}/${name}`, contents);
@@ -181,7 +189,7 @@ export function generate(check = false): { records: number; files: number } {
       if (!existsSync(path) || readFileSync(path, "utf8") !== content) throw new Error(`Generated data differs: ${name}`);
     } else { mkdirSync(dirname(path), { recursive: true }); writeFileSync(path, content); }
   }
-  return { records: quotes.length + history.length, files: outputs.size };
+  return { records: quotes.length + history.length, files: outputs.size, merged };
 }
 export function dataReport(): { dataVersion: string; records: number; quotes: number; history: number; coveredDays: number; missingDays: number; sports: string[] } {
   const { quotes, history } = convertSeed();

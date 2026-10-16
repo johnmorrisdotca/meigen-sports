@@ -1,5 +1,6 @@
 -- Read-only keyset page of exact-day player deaths (harvest P570 precision 11 agreeing with core.person.death_date).
 -- No roster requirement. No raw_archive JSON decoding. Page on (death_date, person_id).
+-- Convert publishes athletes from 1850 on (priority list, roster, league, or sitelinks); it drops 1602-era non-athletes.
 -- psql -v ON_ERROR_STOP=1 -v after_date='0001-01-01' -v after_id=0 -v page_limit=2000 -f pipeline/queries/extract_deaths.sql
 begin read only;
 set local statement_timeout = '8s';

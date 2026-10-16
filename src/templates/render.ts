@@ -113,6 +113,15 @@ function fieldsOf(record: OnThisDayRecord, locale: TemplateLocale, asOf?: string
   const extraBits = [record.position, clubs].filter((v): v is string => Boolean(v && v.trim()));
   const extra = extraBits.length ? (ja ? `（${extraBits.join("、")}）` : ` (${extraBits.join(", ")})`) : "";
   const age = record.ageYears != null ? (ja ? `${record.ageYears}歳で` : ` at age ${record.ageYears}`) : "";
+  const club = (record.clubNames?.find((n) => n.trim()) ?? record.clubName ?? "").trim();
+  const position = record.position?.trim() ?? "";
+  const clubPosition = [club, position].filter(Boolean).join(" ");
+  const honour = record.highlight?.trim() ?? "";
+  const honourAnd = honour ? (ja ? `、${honour}` : ` and ${honour}`) : "";
+  const aged = record.ageYears != null ? `, aged ${record.ageYears}` : "";
+  const agedJa = record.ageYears != null ? `${record.ageYears}歳で` : "";
+  const roundRaw = (record.roundLabel ?? record.stage ?? "").trim();
+  const finalRound = roundRaw && !/^regular$/i.test(roundRaw) ? (ja ? roundRaw.replaceAll("_", " ") : ` ${roundRaw.replaceAll("_", " ")}`) : "";
   const rec = record.record;
   const previous = rec?.previousHolderName
     ? (ja ? `。それ以前は${rec.previousHolderName}` : ` Previous holder: ${rec.previousHolderName}.`)
@@ -126,7 +135,10 @@ function fieldsOf(record: OnThisDayRecord, locale: TemplateLocale, asOf?: string
     homeScore: hs == null ? "" : String(hs),
     awayScore: aws == null ? "" : String(aws),
     winner, loser, winScore, loseScore, ctx, ot, stage, venue, gameNo, series,
-    extra, age, clubs, highlight: record.highlight?.trim() ?? "",
+    extra, age, aged, agedJa, clubs, clubPosition, honourAnd,
+    highlight: record.highlight?.trim() ?? "",
+    nationality: record.nationality?.trim() ?? "",
+    finalRound,
     birthPlace: record.birthPlace?.trim() ?? "",
     deathYear: deathYearOf(record),
     yearsAgo, yearsAgoToday: yearsAgo,

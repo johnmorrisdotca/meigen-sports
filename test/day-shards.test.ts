@@ -3,7 +3,7 @@ import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import test from "node:test";
 import { isFactRecord } from "../src/load.ts";
-import { isRichFact, rankFeed } from "../src/index.ts";
+import { isRichFact, rankFeed, uniqueRecordIds } from "../src/index.ts";
 
 const DAYS = join("data/v1/0.1.0/facts/days");
 
@@ -17,6 +17,14 @@ test("every calendar day has at least three feed-ready facts", () => {
     if (ready.length < 3) thin.push(`${name}:${ready.length}`);
   }
   assert.deepEqual(thin, []);
+});
+
+test("no fact id appears twice in a day feed", () => {
+  const files = readdirSync(DAYS).filter((name) => /^\d{2}-\d{2}\.json$/.test(name));
+  for (const name of files) {
+    const shard = JSON.parse(readFileSync(join(DAYS, name), "utf8")) as { records: { recordId: string }[] };
+    assert.equal(uniqueRecordIds(shard.records as never), true, name);
+  }
 });
 
 test("16 Oct is feed-ready and ranks three rich facts", () => {

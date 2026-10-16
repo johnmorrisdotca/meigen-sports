@@ -96,3 +96,40 @@ test("varied wording without a seed is refused", () => {
 test("Japanese birthday default uses the same fields", () => {
   assert.equal(captionFromFact(gretzky(), "ja"), "Wayne Gretzkyは1961年のこの日に生まれた。");
 });
+
+function morenz(extra: Partial<OnThisDayRecord> = {}): OnThisDayRecord {
+  return {
+    recordId: "d1", category: "player-death", tags: ["age-at-event"], basis: "source",
+    eventDate: "1937-03-08", datePrecision: "day", sport: "ice-hockey", competition: "nhl", league: "nhl",
+    person: { personId: 2, qid: "Q537941", name: "Howie Morenz", leagueCodes: ["nhl"], franchiseIds: [10], teamSeasonIds: [] },
+    livingStatus: "deceased", deathDate: "1937-03-08", ageYears: 34,
+    clubNames: ["Montreal Canadiens"], position: "centre",
+    highlight: "three-time Stanley Cup winner",
+    source, ...extra,
+  };
+}
+
+test("a death with club, position and honour names them; missing fields are skipped", () => {
+  assert.equal(
+    captionFromFact(morenz()),
+    "Howie Morenz, the Montreal Canadiens centre and three-time Stanley Cup winner, died on this day in 1937, aged 34.",
+  );
+  assert.equal(
+    captionFromFact(morenz(), "ja"),
+    "Howie Morenz（Montreal Canadiens centre、three-time Stanley Cup winner）が1937年のこの日に34歳で死去した。",
+  );
+  const thin = morenz({ clubNames: [], position: null, highlight: null, ageYears: null });
+  assert.equal(captionFromFact(thin), "Howie Morenz died on this day in 1937.");
+});
+
+test("a championship final names the winner and the result", () => {
+  const final: OnThisDayRecord = {
+    recordId: "f1", category: "championship-final", tags: ["championship-win", "match-result"],
+    basis: "source", eventDate: "1975-05-10", datePrecision: "day", sport: "ice-hockey",
+    competition: "nhl", league: "nhl", homeScore: 5, awayScore: 3, stage: "final",
+    home: { name: "Montreal Canadiens", franchiseId: 10, teamSeasonId: 100, soccerTeamId: null, countryCode: "CA", fifaCode: null, flagCode: "CA" },
+    away: { name: "Boston Bruins", franchiseId: 11, teamSeasonId: 101, soccerTeamId: null, countryCode: "US", fifaCode: null, flagCode: "US" },
+    source,
+  };
+  assert.equal(captionFromFact(final), "Montreal Canadiens won the 1975 NHL final, beating Boston Bruins 5–3.");
+});

@@ -109,6 +109,27 @@ test("rankFeed keeps unique ids and mixes people", () => {
   assert.ok(feed.length >= 1);
 });
 
+test("rankFeed prefers a priority athlete among equal deaths", () => {
+  const unknown: OnThisDayRecord = {
+    recordId: "u", category: "player-death", tags: ["age-at-event"], basis: "source",
+    eventDate: "1937-03-08", datePrecision: "day", sport: "ice-hockey", competition: "nhl", league: "nhl",
+    person: { personId: 9, qid: "Q9", name: "Unknown Skater", leagueCodes: ["nhl"], franchiseIds: [10], teamSeasonIds: [] },
+    source,
+  };
+  const famous: OnThisDayRecord = {
+    ...unknown, recordId: "f", person: { personId: 2, qid: "Q537941", name: "Howie Morenz", leagueCodes: ["nhl"], franchiseIds: [10], teamSeasonIds: [] },
+    priorityAthlete: true,
+  };
+  const feed = rankFeed([unknown, famous], 1);
+  assert.equal(feed[0]?.recordId, "f");
+});
+
+test("featured record reason ranks with sport records", () => {
+  const rec = game("rec", { featuredReasons: ["record"], tags: ["match-result"] });
+  const plain = game("plain", { recordId: "plain", league: "nba", competition: "nba", tags: ["match-result"] });
+  assert.equal(rankFeed([plain, rec], 1)[0]?.recordId, "rec");
+});
+
 test("randomFacts is deterministic for a seed and caps two per category", () => {
   const rows = [game("a"), game("b", { recordId: "b", league: "nba", competition: "nba" }), game("c", { recordId: "c", league: "mlb", competition: "mlb" })];
   const first = randomFacts(rows, 10, {}, "seed-one");

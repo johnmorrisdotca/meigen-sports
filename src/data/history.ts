@@ -242,15 +242,21 @@ export const history: readonly MeigenRecord[] = [
     "id": "history:openfootball:worldcup/1930:3afc1a56d1df0e3c",
     "kind": "history",
     "types": [
-      "match-result"
+      "match-result",
+      "competition-end",
+      "competition-boundary",
+      "championship-win"
     ],
-    "text": "Uruguay 4–2 Argentina (World Cup 1930, Final).",
+    "text": "Uruguay won the 1930 World Cup, beating Argentina 4–2.",
     "language": "en",
     "sports": [
       "soccer"
     ],
     "tags": [
-      "world-cup"
+      "world-cup",
+      "final",
+      "championship",
+      "competition-closing"
     ],
     "date": "1930-07-30",
     "monthDay": "07-30",
@@ -273,6 +279,12 @@ export const history: readonly MeigenRecord[] = [
         "kind": "competition",
         "role": "part-of",
         "label": "World Cup 1930"
+      },
+      {
+        "id": "wikidata:Q48432",
+        "kind": "event",
+        "role": "subject",
+        "label": "1930 FIFA World Cup"
       }
     ],
     "source": {
@@ -295,7 +307,30 @@ export const history: readonly MeigenRecord[] = [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1930/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
       ]
-    }
+    },
+    "additionalSources": [
+      {
+        "sourceId": "wikidata",
+        "key": "Q48432@2555055860:Q48432$99bb2ae4-43a7-84de-6e57-c3a59f2a8c6f",
+        "url": "https://www.wikidata.org/w/index.php?title=Q48432&oldid=2555055860",
+        "title": "1930 FIFA World Cup",
+        "licence": "CC0-1.0",
+        "rightsStatus": "cc0",
+        "rawSha256": "1ddb9c9ba2ee83556a6b971be93d567ab72b23e4f7e6c6eda52ea3493ebf45ee",
+        "snapshot": {
+          "status": "active",
+          "revision": "2555055860",
+          "capturedAt": "2026-10-15T04:44:45.572377+00:00",
+          "coverageStart": "1896-04-06",
+          "coverageEnd": "2024-08-11"
+        },
+        "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+        "rightsEvidence": [
+          "https://www.wikidata.org/w/index.php?title=Q48432&oldid=2555055860",
+          "https://www.wikidata.org/wiki/Wikidata:Licensing"
+        ]
+      }
+    ]
   },
   {
     "id": "history:openfootball:worldcup/1930:3b47addbb2c41fd4",
@@ -596,7 +631,9 @@ export const history: readonly MeigenRecord[] = [
     "id": "history:openfootball:worldcup/1930:668a1f820b035b93",
     "kind": "history",
     "types": [
-      "match-result"
+      "match-result",
+      "competition-start",
+      "competition-boundary"
     ],
     "text": "USA 3–0 Belgium (World Cup 1930, Matchday 1).",
     "language": "en",
@@ -627,6 +664,12 @@ export const history: readonly MeigenRecord[] = [
         "kind": "competition",
         "role": "part-of",
         "label": "World Cup 1930"
+      },
+      {
+        "id": "wikidata:Q48432",
+        "kind": "event",
+        "role": "subject",
+        "label": "1930 FIFA World Cup"
       }
     ],
     "source": {
@@ -649,7 +692,30 @@ export const history: readonly MeigenRecord[] = [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1930/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
       ]
-    }
+    },
+    "additionalSources": [
+      {
+        "sourceId": "wikidata",
+        "key": "Q48432@2555055860:Q48432$9fe4f17e-420d-bcff-b314-949b794b2792",
+        "url": "https://www.wikidata.org/w/index.php?title=Q48432&oldid=2555055860",
+        "title": "1930 FIFA World Cup",
+        "licence": "CC0-1.0",
+        "rightsStatus": "cc0",
+        "rawSha256": "1ddb9c9ba2ee83556a6b971be93d567ab72b23e4f7e6c6eda52ea3493ebf45ee",
+        "snapshot": {
+          "status": "active",
+          "revision": "2555055860",
+          "capturedAt": "2026-10-15T04:44:45.572377+00:00",
+          "coverageStart": "1896-04-06",
+          "coverageEnd": "2024-08-11"
+        },
+        "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+        "rightsEvidence": [
+          "https://www.wikidata.org/w/index.php?title=Q48432&oldid=2555055860",
+          "https://www.wikidata.org/wiki/Wikidata:Licensing"
+        ]
+      }
+    ]
   },
   {
     "id": "history:openfootball:worldcup/1930:6fb81510cf67549e",
@@ -1422,15 +1488,18 @@ export const history: readonly MeigenRecord[] = [
     "id": "history:openfootball:worldcup/1934:4657775a8d1ee510",
     "kind": "history",
     "types": [
-      "match-result"
+      "match-result",
+      "championship-win"
     ],
-    "text": "Italy 2–1 Czechoslovakia (World Cup 1934, Final; after extra time).",
+    "text": "Italy won the 1934 World Cup, beating Czechoslovakia 2–1 after extra time.",
     "language": "en",
     "sports": [
       "soccer"
     ],
     "tags": [
-      "world-cup"
+      "world-cup",
+      "final",
+      "championship"
     ],
     "date": "1934-06-10",
     "monthDay": "06-10",
@@ -2897,15 +2966,18 @@ export const history: readonly MeigenRecord[] = [
     "id": "history:openfootball:worldcup/1938:8a4b667c075cea47",
     "kind": "history",
     "types": [
-      "match-result"
+      "match-result",
+      "championship-win"
     ],
-    "text": "Hungary 2–4 Italy (World Cup 1938, Final).",
+    "text": "Italy won the 1938 World Cup, beating Hungary 4–2.",
     "language": "en",
     "sports": [
       "soccer"
     ],
     "tags": [
-      "world-cup"
+      "world-cup",
+      "final",
+      "championship"
     ],
     "date": "1938-06-19",
     "monthDay": "06-19",
@@ -3251,7 +3323,9 @@ export const history: readonly MeigenRecord[] = [
     "id": "history:openfootball:worldcup/1950:1ab343e5dbfcc77f",
     "kind": "history",
     "types": [
-      "match-result"
+      "match-result",
+      "competition-start",
+      "competition-boundary"
     ],
     "text": "Brazil 4–0 Mexico (World Cup 1950, First round).",
     "language": "en",
@@ -3282,6 +3356,12 @@ export const history: readonly MeigenRecord[] = [
         "kind": "competition",
         "role": "part-of",
         "label": "World Cup 1950"
+      },
+      {
+        "id": "wikidata:Q132515",
+        "kind": "event",
+        "role": "subject",
+        "label": "1950 FIFA World Cup"
       }
     ],
     "source": {
@@ -3304,7 +3384,30 @@ export const history: readonly MeigenRecord[] = [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1950/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
       ]
-    }
+    },
+    "additionalSources": [
+      {
+        "sourceId": "wikidata",
+        "key": "Q132515@2551299936:Q132515$6fa58dff-4bbb-be52-a86e-7d1ab0cd5f40",
+        "url": "https://www.wikidata.org/w/index.php?title=Q132515&oldid=2551299936",
+        "title": "1950 FIFA World Cup",
+        "licence": "CC0-1.0",
+        "rightsStatus": "cc0",
+        "rawSha256": "b1d9f2120c2fd19b0eb10a4683b61fd4a8c5919cbba34181edefb8251d4a8398",
+        "snapshot": {
+          "status": "active",
+          "revision": "2551299936",
+          "capturedAt": "2026-10-15T04:44:47.393366+00:00",
+          "coverageStart": "1896-04-06",
+          "coverageEnd": "2024-08-11"
+        },
+        "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+        "rightsEvidence": [
+          "https://www.wikidata.org/w/index.php?title=Q132515&oldid=2551299936",
+          "https://www.wikidata.org/wiki/Wikidata:Licensing"
+        ]
+      }
+    ]
   },
   {
     "id": "history:openfootball:worldcup/1950:1e3bbdec0a8df06f",
@@ -3546,7 +3649,9 @@ export const history: readonly MeigenRecord[] = [
     "id": "history:openfootball:worldcup/1950:468f36f1820f07d8",
     "kind": "history",
     "types": [
-      "match-result"
+      "match-result",
+      "competition-end",
+      "competition-boundary"
     ],
     "text": "Uruguay 2–1 Brazil (World Cup 1950, Final Round).",
     "language": "en",
@@ -3554,7 +3659,8 @@ export const history: readonly MeigenRecord[] = [
       "soccer"
     ],
     "tags": [
-      "world-cup"
+      "world-cup",
+      "competition-closing"
     ],
     "date": "1950-07-16",
     "monthDay": "07-16",
@@ -3577,6 +3683,12 @@ export const history: readonly MeigenRecord[] = [
         "kind": "competition",
         "role": "part-of",
         "label": "World Cup 1950"
+      },
+      {
+        "id": "wikidata:Q132515",
+        "kind": "event",
+        "role": "subject",
+        "label": "1950 FIFA World Cup"
       }
     ],
     "source": {
@@ -3599,7 +3711,30 @@ export const history: readonly MeigenRecord[] = [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1950/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
       ]
-    }
+    },
+    "additionalSources": [
+      {
+        "sourceId": "wikidata",
+        "key": "Q132515@2551299936:Q132515$1c4d351c-4871-32ae-d0ba-00f4d980b44b",
+        "url": "https://www.wikidata.org/w/index.php?title=Q132515&oldid=2551299936",
+        "title": "1950 FIFA World Cup",
+        "licence": "CC0-1.0",
+        "rightsStatus": "cc0",
+        "rawSha256": "b1d9f2120c2fd19b0eb10a4683b61fd4a8c5919cbba34181edefb8251d4a8398",
+        "snapshot": {
+          "status": "active",
+          "revision": "2551299936",
+          "capturedAt": "2026-10-15T04:44:47.393366+00:00",
+          "coverageStart": "1896-04-06",
+          "coverageEnd": "2024-08-11"
+        },
+        "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+        "rightsEvidence": [
+          "https://www.wikidata.org/w/index.php?title=Q132515&oldid=2551299936",
+          "https://www.wikidata.org/wiki/Wikidata:Licensing"
+        ]
+      }
+    ]
   },
   {
     "id": "history:openfootball:worldcup/1950:52f5a6a5b70e0c55",
@@ -5847,15 +5982,18 @@ export const history: readonly MeigenRecord[] = [
     "id": "history:openfootball:worldcup/1954:f06b522cc5b24d2e",
     "kind": "history",
     "types": [
-      "match-result"
+      "match-result",
+      "championship-win"
     ],
-    "text": "Hungary 2–3 West Germany (World Cup 1954, Final).",
+    "text": "West Germany won the 1954 World Cup, beating Hungary 3–2.",
     "language": "en",
     "sports": [
       "soccer"
     ],
     "tags": [
-      "world-cup"
+      "world-cup",
+      "final",
+      "championship"
     ],
     "date": "1954-07-04",
     "monthDay": "07-04",
@@ -6260,15 +6398,18 @@ export const history: readonly MeigenRecord[] = [
     "id": "history:openfootball:worldcup/1958:20552cf114cc6a7b",
     "kind": "history",
     "types": [
-      "match-result"
+      "match-result",
+      "championship-win"
     ],
-    "text": "Sweden 2–5 Brazil (World Cup 1958, Final).",
+    "text": "Brazil won the 1958 World Cup, beating Sweden 5–2.",
     "language": "en",
     "sports": [
       "soccer"
     ],
     "tags": [
-      "world-cup"
+      "world-cup",
+      "final",
+      "championship"
     ],
     "date": "1958-06-29",
     "monthDay": "06-29",
@@ -9328,15 +9469,18 @@ export const history: readonly MeigenRecord[] = [
     "id": "history:openfootball:worldcup/1962:9a9ec683b389233c",
     "kind": "history",
     "types": [
-      "match-result"
+      "match-result",
+      "championship-win"
     ],
-    "text": "Brazil 3–1 Czechoslovakia (World Cup 1962, Final).",
+    "text": "Brazil won the 1962 World Cup, beating Czechoslovakia 3–1.",
     "language": "en",
     "sports": [
       "soccer"
     ],
     "tags": [
-      "world-cup"
+      "world-cup",
+      "final",
+      "championship"
     ],
     "date": "1962-06-17",
     "monthDay": "06-17",
@@ -10213,15 +10357,21 @@ export const history: readonly MeigenRecord[] = [
     "id": "history:openfootball:worldcup/1966:19e2aa5bc01ebc99",
     "kind": "history",
     "types": [
-      "match-result"
+      "match-result",
+      "competition-end",
+      "competition-boundary",
+      "championship-win"
     ],
-    "text": "England 4–2 West Germany (World Cup 1966, Final; after extra time).",
+    "text": "England won the 1966 World Cup, beating West Germany 4–2 after extra time.",
     "language": "en",
     "sports": [
       "soccer"
     ],
     "tags": [
-      "world-cup"
+      "world-cup",
+      "final",
+      "championship",
+      "competition-closing"
     ],
     "date": "1966-07-30",
     "monthDay": "07-30",
@@ -10244,6 +10394,12 @@ export const history: readonly MeigenRecord[] = [
         "kind": "competition",
         "role": "part-of",
         "label": "World Cup 1966"
+      },
+      {
+        "id": "wikidata:Q134202",
+        "kind": "event",
+        "role": "subject",
+        "label": "1966 FIFA World Cup"
       }
     ],
     "source": {
@@ -10266,13 +10422,38 @@ export const history: readonly MeigenRecord[] = [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1966/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
       ]
-    }
+    },
+    "additionalSources": [
+      {
+        "sourceId": "wikidata",
+        "key": "Q134202@2538798550:Q134202$1767b966-43b5-526e-27eb-3fe539a93494",
+        "url": "https://www.wikidata.org/w/index.php?title=Q134202&oldid=2538798550",
+        "title": "1966 FIFA World Cup",
+        "licence": "CC0-1.0",
+        "rightsStatus": "cc0",
+        "rawSha256": "a887eeff841de4f5c720d51f6506539f1eb22cb6181f9c64f4befe4e9e290a7e",
+        "snapshot": {
+          "status": "active",
+          "revision": "2538798550",
+          "capturedAt": "2026-10-15T04:44:48.974929+00:00",
+          "coverageStart": "1896-04-06",
+          "coverageEnd": "2024-08-11"
+        },
+        "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+        "rightsEvidence": [
+          "https://www.wikidata.org/w/index.php?title=Q134202&oldid=2538798550",
+          "https://www.wikidata.org/wiki/Wikidata:Licensing"
+        ]
+      }
+    ]
   },
   {
     "id": "history:openfootball:worldcup/1966:2b3fd9774e5edfc4",
     "kind": "history",
     "types": [
-      "match-result"
+      "match-result",
+      "competition-start",
+      "competition-boundary"
     ],
     "text": "England 0–0 Uruguay (World Cup 1966, Matchday 1).",
     "language": "en",
@@ -10303,6 +10484,12 @@ export const history: readonly MeigenRecord[] = [
         "kind": "competition",
         "role": "part-of",
         "label": "World Cup 1966"
+      },
+      {
+        "id": "wikidata:Q134202",
+        "kind": "event",
+        "role": "subject",
+        "label": "1966 FIFA World Cup"
       }
     ],
     "source": {
@@ -10325,7 +10512,30 @@ export const history: readonly MeigenRecord[] = [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1966/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
       ]
-    }
+    },
+    "additionalSources": [
+      {
+        "sourceId": "wikidata",
+        "key": "Q134202@2538798550:Q134202$cd6c350a-49c1-8d89-a4df-3ee8581c8db6",
+        "url": "https://www.wikidata.org/w/index.php?title=Q134202&oldid=2538798550",
+        "title": "1966 FIFA World Cup",
+        "licence": "CC0-1.0",
+        "rightsStatus": "cc0",
+        "rawSha256": "a887eeff841de4f5c720d51f6506539f1eb22cb6181f9c64f4befe4e9e290a7e",
+        "snapshot": {
+          "status": "active",
+          "revision": "2538798550",
+          "capturedAt": "2026-10-15T04:44:48.974929+00:00",
+          "coverageStart": "1896-04-06",
+          "coverageEnd": "2024-08-11"
+        },
+        "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+        "rightsEvidence": [
+          "https://www.wikidata.org/w/index.php?title=Q134202&oldid=2538798550",
+          "https://www.wikidata.org/wiki/Wikidata:Licensing"
+        ]
+      }
+    ]
   },
   {
     "id": "history:openfootball:worldcup/1966:2e613e95b037ca76",
@@ -13340,15 +13550,18 @@ export const history: readonly MeigenRecord[] = [
     "id": "history:openfootball:worldcup/1970:c3b72ce222a47bc0",
     "kind": "history",
     "types": [
-      "match-result"
+      "match-result",
+      "championship-win"
     ],
-    "text": "Brazil 4–1 Italy (World Cup 1970, Final).",
+    "text": "Brazil won the 1970 World Cup, beating Italy 4–1.",
     "language": "en",
     "sports": [
       "soccer"
     ],
     "tags": [
-      "world-cup"
+      "world-cup",
+      "final",
+      "championship"
     ],
     "date": "1970-06-21",
     "monthDay": "06-21",
@@ -14107,15 +14320,18 @@ export const history: readonly MeigenRecord[] = [
     "id": "history:openfootball:worldcup/1974:3f694c03dd646572",
     "kind": "history",
     "types": [
-      "match-result"
+      "match-result",
+      "championship-win"
     ],
-    "text": "Netherlands 1–2 West Germany (World Cup 1974, Final).",
+    "text": "West Germany won the 1974 World Cup, beating Netherlands 2–1.",
     "language": "en",
     "sports": [
       "soccer"
     ],
     "tags": [
-      "world-cup"
+      "world-cup",
+      "final",
+      "championship"
     ],
     "date": "1974-07-07",
     "monthDay": "07-07",
@@ -18060,15 +18276,18 @@ export const history: readonly MeigenRecord[] = [
     "id": "history:openfootball:worldcup/1978:eeb7019023d36d3b",
     "kind": "history",
     "types": [
-      "match-result"
+      "match-result",
+      "championship-win"
     ],
-    "text": "Netherlands 1–3 Argentina (World Cup 1978, Final; after extra time).",
+    "text": "Argentina won the 1978 World Cup, beating Netherlands 3–1 after extra time.",
     "language": "en",
     "sports": [
       "soccer"
     ],
     "tags": [
-      "world-cup"
+      "world-cup",
+      "final",
+      "championship"
     ],
     "date": "1978-06-25",
     "monthDay": "06-25",
@@ -19122,15 +19341,18 @@ export const history: readonly MeigenRecord[] = [
     "id": "history:openfootball:worldcup/1982:4a2567b70ca89214",
     "kind": "history",
     "types": [
-      "match-result"
+      "match-result",
+      "championship-win"
     ],
-    "text": "Italy 3–1 West Germany (World Cup 1982, Final).",
+    "text": "Italy won the 1982 World Cup, beating West Germany 3–1.",
     "language": "en",
     "sports": [
       "soccer"
     ],
     "tags": [
-      "world-cup"
+      "world-cup",
+      "final",
+      "championship"
     ],
     "date": "1982-07-11",
     "monthDay": "07-11",
@@ -21482,15 +21704,21 @@ export const history: readonly MeigenRecord[] = [
     "id": "history:openfootball:worldcup/1986:1a01fefe82b12c63",
     "kind": "history",
     "types": [
-      "match-result"
+      "match-result",
+      "competition-end",
+      "competition-boundary",
+      "championship-win"
     ],
-    "text": "Argentina 3–2 West Germany (World Cup 1986, Final).",
+    "text": "Argentina won the 1986 World Cup, beating West Germany 3–2.",
     "language": "en",
     "sports": [
       "soccer"
     ],
     "tags": [
-      "world-cup"
+      "world-cup",
+      "final",
+      "championship",
+      "competition-closing"
     ],
     "date": "1986-06-29",
     "monthDay": "06-29",
@@ -21513,6 +21741,12 @@ export const history: readonly MeigenRecord[] = [
         "kind": "competition",
         "role": "part-of",
         "label": "World Cup 1986"
+      },
+      {
+        "id": "wikidata:Q46938",
+        "kind": "event",
+        "role": "subject",
+        "label": "1986 FIFA World Cup"
       }
     ],
     "source": {
@@ -21535,7 +21769,30 @@ export const history: readonly MeigenRecord[] = [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
       ]
-    }
+    },
+    "additionalSources": [
+      {
+        "sourceId": "wikidata",
+        "key": "Q46938@2529549333:Q46938$d1e70d0d-4994-8605-79ae-04c92fe78c4a",
+        "url": "https://www.wikidata.org/w/index.php?title=Q46938&oldid=2529549333",
+        "title": "1986 FIFA World Cup",
+        "licence": "CC0-1.0",
+        "rightsStatus": "cc0",
+        "rawSha256": "e3b67ca78ecadc953cdacd666113adaececb467443d449a1a76b72d0fe7178cc",
+        "snapshot": {
+          "status": "active",
+          "revision": "2529549333",
+          "capturedAt": "2026-10-15T04:44:56.492977+00:00",
+          "coverageStart": "1896-04-06",
+          "coverageEnd": "2024-08-11"
+        },
+        "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+        "rightsEvidence": [
+          "https://www.wikidata.org/w/index.php?title=Q46938&oldid=2529549333",
+          "https://www.wikidata.org/wiki/Wikidata:Licensing"
+        ]
+      }
+    ]
   },
   {
     "id": "history:openfootball:worldcup/1986:260ebb94c213d19e",
@@ -21895,7 +22152,9 @@ export const history: readonly MeigenRecord[] = [
     "id": "history:openfootball:worldcup/1986:31473e81c1ce3318",
     "kind": "history",
     "types": [
-      "match-result"
+      "match-result",
+      "competition-start",
+      "competition-boundary"
     ],
     "text": "Bulgaria 1–1 Italy (World Cup 1986, Matchday 1).",
     "language": "en",
@@ -21926,6 +22185,12 @@ export const history: readonly MeigenRecord[] = [
         "kind": "competition",
         "role": "part-of",
         "label": "World Cup 1986"
+      },
+      {
+        "id": "wikidata:Q46938",
+        "kind": "event",
+        "role": "subject",
+        "label": "1986 FIFA World Cup"
       }
     ],
     "source": {
@@ -21948,7 +22213,30 @@ export const history: readonly MeigenRecord[] = [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/1986/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
       ]
-    }
+    },
+    "additionalSources": [
+      {
+        "sourceId": "wikidata",
+        "key": "Q46938@2529549333:Q46938$cdef884d-4691-8dc0-bf35-4b153bb69926",
+        "url": "https://www.wikidata.org/w/index.php?title=Q46938&oldid=2529549333",
+        "title": "1986 FIFA World Cup",
+        "licence": "CC0-1.0",
+        "rightsStatus": "cc0",
+        "rawSha256": "e3b67ca78ecadc953cdacd666113adaececb467443d449a1a76b72d0fe7178cc",
+        "snapshot": {
+          "status": "active",
+          "revision": "2529549333",
+          "capturedAt": "2026-10-15T04:44:56.492977+00:00",
+          "coverageStart": "1896-04-06",
+          "coverageEnd": "2024-08-11"
+        },
+        "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+        "rightsEvidence": [
+          "https://www.wikidata.org/w/index.php?title=Q46938&oldid=2529549333",
+          "https://www.wikidata.org/wiki/Wikidata:Licensing"
+        ]
+      }
+    ]
   },
   {
     "id": "history:openfootball:worldcup/1986:36da9a7f90e195f8",
@@ -24904,15 +25192,18 @@ export const history: readonly MeigenRecord[] = [
     "id": "history:openfootball:worldcup/1990:27bc781631f3ff87",
     "kind": "history",
     "types": [
-      "match-result"
+      "match-result",
+      "championship-win"
     ],
-    "text": "West Germany 1–0 Argentina (World Cup 1990, Final).",
+    "text": "West Germany won the 1990 World Cup, beating Argentina 1–0.",
     "language": "en",
     "sports": [
       "soccer"
     ],
     "tags": [
-      "world-cup"
+      "world-cup",
+      "final",
+      "championship"
     ],
     "date": "1990-07-08",
     "monthDay": "07-08",
@@ -27795,15 +28086,18 @@ export const history: readonly MeigenRecord[] = [
     "id": "history:openfootball:worldcup/1994:1166026a5c65dbc4",
     "kind": "history",
     "types": [
-      "match-result"
+      "match-result",
+      "championship-win"
     ],
-    "text": "Brazil 0–0 Italy (World Cup 1994, Final; after extra time; penalties 3–2).",
+    "text": "Brazil won the 1994 World Cup, beating Italy 3–2 on penalties after a 0–0 draw.",
     "language": "en",
     "sports": [
       "soccer"
     ],
     "tags": [
-      "world-cup"
+      "world-cup",
+      "final",
+      "championship"
     ],
     "date": "1994-07-17",
     "monthDay": "07-17",
@@ -32810,15 +33104,18 @@ export const history: readonly MeigenRecord[] = [
     "id": "history:openfootball:worldcup/1998:9f0e8753808b6dfa",
     "kind": "history",
     "types": [
-      "match-result"
+      "match-result",
+      "championship-win"
     ],
-    "text": "Brazil 0–3 France (World Cup 1998, Final).",
+    "text": "France won the 1998 World Cup, beating Brazil 3–0.",
     "language": "en",
     "sports": [
       "soccer"
     ],
     "tags": [
-      "world-cup"
+      "world-cup",
+      "final",
+      "championship"
     ],
     "date": "1998-07-12",
     "monthDay": "07-12",
@@ -34226,15 +34523,18 @@ export const history: readonly MeigenRecord[] = [
     "id": "history:openfootball:worldcup/2002:08334a8a47a4218f",
     "kind": "history",
     "types": [
-      "match-result"
+      "match-result",
+      "championship-win"
     ],
-    "text": "Germany 0–2 Brazil (World Cup 2002, Final).",
+    "text": "Brazil won the 2002 World Cup, beating Germany 2–0.",
     "language": "en",
     "sports": [
       "soccer"
     ],
     "tags": [
-      "world-cup"
+      "world-cup",
+      "final",
+      "championship"
     ],
     "date": "2002-06-30",
     "monthDay": "06-30",
@@ -39595,15 +39895,18 @@ export const history: readonly MeigenRecord[] = [
     "id": "history:openfootball:worldcup/2006:6fa6a6bdf25a13ad",
     "kind": "history",
     "types": [
-      "match-result"
+      "match-result",
+      "championship-win"
     ],
-    "text": "Italy 1–1 France (World Cup 2006, Final; after extra time; penalties 5–3).",
+    "text": "Italy won the 2006 World Cup, beating France 5–3 on penalties after a 1–1 draw.",
     "language": "en",
     "sports": [
       "soccer"
     ],
     "tags": [
-      "world-cup"
+      "world-cup",
+      "final",
+      "championship"
     ],
     "date": "2006-07-09",
     "monthDay": "07-09",
@@ -42545,15 +42848,18 @@ export const history: readonly MeigenRecord[] = [
     "id": "history:openfootball:worldcup/2010:2ff461e134dc54d6",
     "kind": "history",
     "types": [
-      "match-result"
+      "match-result",
+      "championship-win"
     ],
-    "text": "Netherlands 0–1 Spain (World Cup 2010, Final; after extra time).",
+    "text": "Spain won the 2010 World Cup, beating Netherlands 1–0 after extra time.",
     "language": "en",
     "sports": [
       "soccer"
     ],
     "tags": [
-      "world-cup"
+      "world-cup",
+      "final",
+      "championship"
     ],
     "date": "2010-07-11",
     "monthDay": "07-11",
@@ -45908,15 +46214,18 @@ export const history: readonly MeigenRecord[] = [
     "id": "history:openfootball:worldcup/2014:15f55d5acc174cd3",
     "kind": "history",
     "types": [
-      "match-result"
+      "match-result",
+      "championship-win"
     ],
-    "text": "Germany 1–0 Argentina (World Cup 2014, Final; after extra time).",
+    "text": "Germany won the 2014 World Cup, beating Argentina 1–0 after extra time.",
     "language": "en",
     "sports": [
       "soccer"
     ],
     "tags": [
-      "world-cup"
+      "world-cup",
+      "final",
+      "championship"
     ],
     "date": "2014-07-13",
     "monthDay": "07-13",
@@ -49979,15 +50288,18 @@ export const history: readonly MeigenRecord[] = [
     "id": "history:openfootball:worldcup/2018:22969defb5b49595",
     "kind": "history",
     "types": [
-      "match-result"
+      "match-result",
+      "championship-win"
     ],
-    "text": "France 4–2 Croatia (World Cup 2018, Final).",
+    "text": "France won the 2018 World Cup, beating Croatia 4–2.",
     "language": "en",
     "sports": [
       "soccer"
     ],
     "tags": [
-      "world-cup"
+      "world-cup",
+      "final",
+      "championship"
     ],
     "date": "2018-07-15",
     "monthDay": "07-15",
@@ -54935,15 +55247,21 @@ export const history: readonly MeigenRecord[] = [
     "id": "history:openfootball:worldcup/2022:7f3bdc077b3db398",
     "kind": "history",
     "types": [
-      "match-result"
+      "match-result",
+      "competition-end",
+      "competition-boundary",
+      "championship-win"
     ],
-    "text": "Argentina 3–3 France (World Cup 2022, Final; after extra time; penalties 4–2).",
+    "text": "Argentina won the 2022 World Cup, beating France 4–2 on penalties after a 3–3 draw.",
     "language": "en",
     "sports": [
       "soccer"
     ],
     "tags": [
-      "world-cup"
+      "world-cup",
+      "final",
+      "championship",
+      "competition-closing"
     ],
     "date": "2022-12-18",
     "monthDay": "12-18",
@@ -54965,6 +55283,12 @@ export const history: readonly MeigenRecord[] = [
         "id": "wikidata:Q284163",
         "kind": "competition",
         "role": "part-of",
+        "label": "2022 FIFA World Cup"
+      },
+      {
+        "id": "wikidata:Q284163",
+        "kind": "event",
+        "role": "subject",
         "label": "2022 FIFA World Cup"
       }
     ],
@@ -54988,7 +55312,30 @@ export const history: readonly MeigenRecord[] = [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
       ]
-    }
+    },
+    "additionalSources": [
+      {
+        "sourceId": "wikidata",
+        "key": "Q284163@2547887431:Q284163$5b79d2ff-4c71-cfc3-0497-c9ecb711d8a0",
+        "url": "https://www.wikidata.org/w/index.php?title=Q284163&oldid=2547887431",
+        "title": "2022 FIFA World Cup",
+        "licence": "CC0-1.0",
+        "rightsStatus": "cc0",
+        "rawSha256": "70bcfc41d3e14e6085398b78d0ff1173ddf8ccb4e6e7eceff45e451c029f9307",
+        "snapshot": {
+          "status": "active",
+          "revision": "2547887431",
+          "capturedAt": "2026-10-15T04:45:07.089139+00:00",
+          "coverageStart": "1896-04-06",
+          "coverageEnd": "2024-08-11"
+        },
+        "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+        "rightsEvidence": [
+          "https://www.wikidata.org/w/index.php?title=Q284163&oldid=2547887431",
+          "https://www.wikidata.org/wiki/Wikidata:Licensing"
+        ]
+      }
+    ]
   },
   {
     "id": "history:openfootball:worldcup/2022:7f6ab4dbcdc6dfa7",
@@ -55289,7 +55636,9 @@ export const history: readonly MeigenRecord[] = [
     "id": "history:openfootball:worldcup/2022:8cf27076a0146d18",
     "kind": "history",
     "types": [
-      "match-result"
+      "match-result",
+      "competition-start",
+      "competition-boundary"
     ],
     "text": "Qatar 0–2 Ecuador (World Cup 2022, Matchday 1).",
     "language": "en",
@@ -55320,6 +55669,12 @@ export const history: readonly MeigenRecord[] = [
         "kind": "competition",
         "role": "part-of",
         "label": "2022 FIFA World Cup"
+      },
+      {
+        "id": "wikidata:Q284163",
+        "kind": "event",
+        "role": "subject",
+        "label": "2022 FIFA World Cup"
       }
     ],
     "source": {
@@ -55342,7 +55697,30 @@ export const history: readonly MeigenRecord[] = [
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/2022/worldcup.json",
         "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"
       ]
-    }
+    },
+    "additionalSources": [
+      {
+        "sourceId": "wikidata",
+        "key": "Q284163@2547887431:Q284163$e52e5b7c-4159-3a16-95eb-366ee6bdacea",
+        "url": "https://www.wikidata.org/w/index.php?title=Q284163&oldid=2547887431",
+        "title": "2022 FIFA World Cup",
+        "licence": "CC0-1.0",
+        "rightsStatus": "cc0",
+        "rawSha256": "70bcfc41d3e14e6085398b78d0ff1173ddf8ccb4e6e7eceff45e451c029f9307",
+        "snapshot": {
+          "status": "active",
+          "revision": "2547887431",
+          "capturedAt": "2026-10-15T04:45:07.089139+00:00",
+          "coverageStart": "1896-04-06",
+          "coverageEnd": "2024-08-11"
+        },
+        "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
+        "rightsEvidence": [
+          "https://www.wikidata.org/w/index.php?title=Q284163&oldid=2547887431",
+          "https://www.wikidata.org/wiki/Wikidata:Licensing"
+        ]
+      }
+    ]
   },
   {
     "id": "history:openfootball:worldcup/2022:8da2b91cc59e7573",
@@ -57249,112 +57627,6 @@ export const history: readonly MeigenRecord[] = [
     }
   },
   {
-    "id": "history:wikidata:Q132515:P580",
-    "kind": "history",
-    "types": [
-      "competition-start",
-      "competition-boundary"
-    ],
-    "text": "1950 FIFA World Cup began.",
-    "language": "en",
-    "sports": [
-      "soccer"
-    ],
-    "tags": [],
-    "date": "1950-06-24",
-    "monthDay": "06-24",
-    "dateRole": "start",
-    "speaker": null,
-    "entities": [
-      {
-        "id": "sport:soccer",
-        "kind": "sport",
-        "role": "subject",
-        "label": "soccer"
-      },
-      {
-        "id": "wikidata:Q132515",
-        "kind": "event",
-        "role": "subject",
-        "label": "1950 FIFA World Cup"
-      }
-    ],
-    "source": {
-      "sourceId": "wikidata",
-      "key": "Q132515@2551299936:Q132515$6fa58dff-4bbb-be52-a86e-7d1ab0cd5f40",
-      "url": "https://www.wikidata.org/w/index.php?title=Q132515&oldid=2551299936",
-      "title": "1950 FIFA World Cup",
-      "licence": "CC0-1.0",
-      "rightsStatus": "cc0",
-      "rawSha256": "b1d9f2120c2fd19b0eb10a4683b61fd4a8c5919cbba34181edefb8251d4a8398",
-      "snapshot": {
-        "status": "active",
-        "revision": "2551299936",
-        "capturedAt": "2026-10-15T04:44:47.393366+00:00",
-        "coverageStart": "1896-04-06",
-        "coverageEnd": "2024-08-11"
-      },
-      "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
-      "rightsEvidence": [
-        "https://www.wikidata.org/w/index.php?title=Q132515&oldid=2551299936",
-        "https://www.wikidata.org/wiki/Wikidata:Licensing"
-      ]
-    }
-  },
-  {
-    "id": "history:wikidata:Q132515:P582",
-    "kind": "history",
-    "types": [
-      "competition-end",
-      "competition-boundary"
-    ],
-    "text": "1950 FIFA World Cup ended.",
-    "language": "en",
-    "sports": [
-      "soccer"
-    ],
-    "tags": [],
-    "date": "1950-07-16",
-    "monthDay": "07-16",
-    "dateRole": "end",
-    "speaker": null,
-    "entities": [
-      {
-        "id": "sport:soccer",
-        "kind": "sport",
-        "role": "subject",
-        "label": "soccer"
-      },
-      {
-        "id": "wikidata:Q132515",
-        "kind": "event",
-        "role": "subject",
-        "label": "1950 FIFA World Cup"
-      }
-    ],
-    "source": {
-      "sourceId": "wikidata",
-      "key": "Q132515@2551299936:Q132515$1c4d351c-4871-32ae-d0ba-00f4d980b44b",
-      "url": "https://www.wikidata.org/w/index.php?title=Q132515&oldid=2551299936",
-      "title": "1950 FIFA World Cup",
-      "licence": "CC0-1.0",
-      "rightsStatus": "cc0",
-      "rawSha256": "b1d9f2120c2fd19b0eb10a4683b61fd4a8c5919cbba34181edefb8251d4a8398",
-      "snapshot": {
-        "status": "active",
-        "revision": "2551299936",
-        "capturedAt": "2026-10-15T04:44:47.393366+00:00",
-        "coverageStart": "1896-04-06",
-        "coverageEnd": "2024-08-11"
-      },
-      "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
-      "rightsEvidence": [
-        "https://www.wikidata.org/w/index.php?title=Q132515&oldid=2551299936",
-        "https://www.wikidata.org/wiki/Wikidata:Licensing"
-      ]
-    }
-  },
-  {
     "id": "history:wikidata:Q1341797:P580",
     "kind": "history",
     "types": [
@@ -57456,112 +57728,6 @@ export const history: readonly MeigenRecord[] = [
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q1341797&oldid=2502899039",
-        "https://www.wikidata.org/wiki/Wikidata:Licensing"
-      ]
-    }
-  },
-  {
-    "id": "history:wikidata:Q134202:P580",
-    "kind": "history",
-    "types": [
-      "competition-start",
-      "competition-boundary"
-    ],
-    "text": "1966 FIFA World Cup began.",
-    "language": "en",
-    "sports": [
-      "soccer"
-    ],
-    "tags": [],
-    "date": "1966-07-11",
-    "monthDay": "07-11",
-    "dateRole": "start",
-    "speaker": null,
-    "entities": [
-      {
-        "id": "sport:soccer",
-        "kind": "sport",
-        "role": "subject",
-        "label": "soccer"
-      },
-      {
-        "id": "wikidata:Q134202",
-        "kind": "event",
-        "role": "subject",
-        "label": "1966 FIFA World Cup"
-      }
-    ],
-    "source": {
-      "sourceId": "wikidata",
-      "key": "Q134202@2538798550:Q134202$cd6c350a-49c1-8d89-a4df-3ee8581c8db6",
-      "url": "https://www.wikidata.org/w/index.php?title=Q134202&oldid=2538798550",
-      "title": "1966 FIFA World Cup",
-      "licence": "CC0-1.0",
-      "rightsStatus": "cc0",
-      "rawSha256": "a887eeff841de4f5c720d51f6506539f1eb22cb6181f9c64f4befe4e9e290a7e",
-      "snapshot": {
-        "status": "active",
-        "revision": "2538798550",
-        "capturedAt": "2026-10-15T04:44:48.974929+00:00",
-        "coverageStart": "1896-04-06",
-        "coverageEnd": "2024-08-11"
-      },
-      "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
-      "rightsEvidence": [
-        "https://www.wikidata.org/w/index.php?title=Q134202&oldid=2538798550",
-        "https://www.wikidata.org/wiki/Wikidata:Licensing"
-      ]
-    }
-  },
-  {
-    "id": "history:wikidata:Q134202:P582",
-    "kind": "history",
-    "types": [
-      "competition-end",
-      "competition-boundary"
-    ],
-    "text": "1966 FIFA World Cup ended.",
-    "language": "en",
-    "sports": [
-      "soccer"
-    ],
-    "tags": [],
-    "date": "1966-07-30",
-    "monthDay": "07-30",
-    "dateRole": "end",
-    "speaker": null,
-    "entities": [
-      {
-        "id": "sport:soccer",
-        "kind": "sport",
-        "role": "subject",
-        "label": "soccer"
-      },
-      {
-        "id": "wikidata:Q134202",
-        "kind": "event",
-        "role": "subject",
-        "label": "1966 FIFA World Cup"
-      }
-    ],
-    "source": {
-      "sourceId": "wikidata",
-      "key": "Q134202@2538798550:Q134202$1767b966-43b5-526e-27eb-3fe539a93494",
-      "url": "https://www.wikidata.org/w/index.php?title=Q134202&oldid=2538798550",
-      "title": "1966 FIFA World Cup",
-      "licence": "CC0-1.0",
-      "rightsStatus": "cc0",
-      "rawSha256": "a887eeff841de4f5c720d51f6506539f1eb22cb6181f9c64f4befe4e9e290a7e",
-      "snapshot": {
-        "status": "active",
-        "revision": "2538798550",
-        "capturedAt": "2026-10-15T04:44:48.974929+00:00",
-        "coverageStart": "1896-04-06",
-        "coverageEnd": "2024-08-11"
-      },
-      "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
-      "rightsEvidence": [
-        "https://www.wikidata.org/w/index.php?title=Q134202&oldid=2538798550",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
       ]
     }
@@ -57889,112 +58055,6 @@ export const history: readonly MeigenRecord[] = [
     }
   },
   {
-    "id": "history:wikidata:Q284163:P580",
-    "kind": "history",
-    "types": [
-      "competition-start",
-      "competition-boundary"
-    ],
-    "text": "2022 FIFA World Cup began.",
-    "language": "en",
-    "sports": [
-      "soccer"
-    ],
-    "tags": [],
-    "date": "2022-11-20",
-    "monthDay": "11-20",
-    "dateRole": "start",
-    "speaker": null,
-    "entities": [
-      {
-        "id": "sport:soccer",
-        "kind": "sport",
-        "role": "subject",
-        "label": "soccer"
-      },
-      {
-        "id": "wikidata:Q284163",
-        "kind": "event",
-        "role": "subject",
-        "label": "2022 FIFA World Cup"
-      }
-    ],
-    "source": {
-      "sourceId": "wikidata",
-      "key": "Q284163@2547887431:Q284163$e52e5b7c-4159-3a16-95eb-366ee6bdacea",
-      "url": "https://www.wikidata.org/w/index.php?title=Q284163&oldid=2547887431",
-      "title": "2022 FIFA World Cup",
-      "licence": "CC0-1.0",
-      "rightsStatus": "cc0",
-      "rawSha256": "70bcfc41d3e14e6085398b78d0ff1173ddf8ccb4e6e7eceff45e451c029f9307",
-      "snapshot": {
-        "status": "active",
-        "revision": "2547887431",
-        "capturedAt": "2026-10-15T04:45:07.089139+00:00",
-        "coverageStart": "1896-04-06",
-        "coverageEnd": "2024-08-11"
-      },
-      "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
-      "rightsEvidence": [
-        "https://www.wikidata.org/w/index.php?title=Q284163&oldid=2547887431",
-        "https://www.wikidata.org/wiki/Wikidata:Licensing"
-      ]
-    }
-  },
-  {
-    "id": "history:wikidata:Q284163:P582",
-    "kind": "history",
-    "types": [
-      "competition-end",
-      "competition-boundary"
-    ],
-    "text": "2022 FIFA World Cup ended.",
-    "language": "en",
-    "sports": [
-      "soccer"
-    ],
-    "tags": [],
-    "date": "2022-12-18",
-    "monthDay": "12-18",
-    "dateRole": "end",
-    "speaker": null,
-    "entities": [
-      {
-        "id": "sport:soccer",
-        "kind": "sport",
-        "role": "subject",
-        "label": "soccer"
-      },
-      {
-        "id": "wikidata:Q284163",
-        "kind": "event",
-        "role": "subject",
-        "label": "2022 FIFA World Cup"
-      }
-    ],
-    "source": {
-      "sourceId": "wikidata",
-      "key": "Q284163@2547887431:Q284163$5b79d2ff-4c71-cfc3-0497-c9ecb711d8a0",
-      "url": "https://www.wikidata.org/w/index.php?title=Q284163&oldid=2547887431",
-      "title": "2022 FIFA World Cup",
-      "licence": "CC0-1.0",
-      "rightsStatus": "cc0",
-      "rawSha256": "70bcfc41d3e14e6085398b78d0ff1173ddf8ccb4e6e7eceff45e451c029f9307",
-      "snapshot": {
-        "status": "active",
-        "revision": "2547887431",
-        "capturedAt": "2026-10-15T04:45:07.089139+00:00",
-        "coverageStart": "1896-04-06",
-        "coverageEnd": "2024-08-11"
-      },
-      "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
-      "rightsEvidence": [
-        "https://www.wikidata.org/w/index.php?title=Q284163&oldid=2547887431",
-        "https://www.wikidata.org/wiki/Wikidata:Licensing"
-      ]
-    }
-  },
-  {
     "id": "history:wikidata:Q287405:P585",
     "kind": "history",
     "types": [
@@ -58151,112 +58211,6 @@ export const history: readonly MeigenRecord[] = [
     }
   },
   {
-    "id": "history:wikidata:Q46938:P580",
-    "kind": "history",
-    "types": [
-      "competition-start",
-      "competition-boundary"
-    ],
-    "text": "1986 FIFA World Cup began.",
-    "language": "en",
-    "sports": [
-      "soccer"
-    ],
-    "tags": [],
-    "date": "1986-05-31",
-    "monthDay": "05-31",
-    "dateRole": "start",
-    "speaker": null,
-    "entities": [
-      {
-        "id": "sport:soccer",
-        "kind": "sport",
-        "role": "subject",
-        "label": "soccer"
-      },
-      {
-        "id": "wikidata:Q46938",
-        "kind": "event",
-        "role": "subject",
-        "label": "1986 FIFA World Cup"
-      }
-    ],
-    "source": {
-      "sourceId": "wikidata",
-      "key": "Q46938@2529549333:Q46938$cdef884d-4691-8dc0-bf35-4b153bb69926",
-      "url": "https://www.wikidata.org/w/index.php?title=Q46938&oldid=2529549333",
-      "title": "1986 FIFA World Cup",
-      "licence": "CC0-1.0",
-      "rightsStatus": "cc0",
-      "rawSha256": "e3b67ca78ecadc953cdacd666113adaececb467443d449a1a76b72d0fe7178cc",
-      "snapshot": {
-        "status": "active",
-        "revision": "2529549333",
-        "capturedAt": "2026-10-15T04:44:56.492977+00:00",
-        "coverageStart": "1896-04-06",
-        "coverageEnd": "2024-08-11"
-      },
-      "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
-      "rightsEvidence": [
-        "https://www.wikidata.org/w/index.php?title=Q46938&oldid=2529549333",
-        "https://www.wikidata.org/wiki/Wikidata:Licensing"
-      ]
-    }
-  },
-  {
-    "id": "history:wikidata:Q46938:P582",
-    "kind": "history",
-    "types": [
-      "competition-end",
-      "competition-boundary"
-    ],
-    "text": "1986 FIFA World Cup ended.",
-    "language": "en",
-    "sports": [
-      "soccer"
-    ],
-    "tags": [],
-    "date": "1986-06-29",
-    "monthDay": "06-29",
-    "dateRole": "end",
-    "speaker": null,
-    "entities": [
-      {
-        "id": "sport:soccer",
-        "kind": "sport",
-        "role": "subject",
-        "label": "soccer"
-      },
-      {
-        "id": "wikidata:Q46938",
-        "kind": "event",
-        "role": "subject",
-        "label": "1986 FIFA World Cup"
-      }
-    ],
-    "source": {
-      "sourceId": "wikidata",
-      "key": "Q46938@2529549333:Q46938$d1e70d0d-4994-8605-79ae-04c92fe78c4a",
-      "url": "https://www.wikidata.org/w/index.php?title=Q46938&oldid=2529549333",
-      "title": "1986 FIFA World Cup",
-      "licence": "CC0-1.0",
-      "rightsStatus": "cc0",
-      "rawSha256": "e3b67ca78ecadc953cdacd666113adaececb467443d449a1a76b72d0fe7178cc",
-      "snapshot": {
-        "status": "active",
-        "revision": "2529549333",
-        "capturedAt": "2026-10-15T04:44:56.492977+00:00",
-        "coverageStart": "1896-04-06",
-        "coverageEnd": "2024-08-11"
-      },
-      "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
-      "rightsEvidence": [
-        "https://www.wikidata.org/w/index.php?title=Q46938&oldid=2529549333",
-        "https://www.wikidata.org/wiki/Wikidata:Licensing"
-      ]
-    }
-  },
-  {
     "id": "history:wikidata:Q476709:P582",
     "kind": "history",
     "types": [
@@ -58305,112 +58259,6 @@ export const history: readonly MeigenRecord[] = [
       "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
       "rightsEvidence": [
         "https://www.wikidata.org/w/index.php?title=Q476709&oldid=2517937377",
-        "https://www.wikidata.org/wiki/Wikidata:Licensing"
-      ]
-    }
-  },
-  {
-    "id": "history:wikidata:Q48432:P580",
-    "kind": "history",
-    "types": [
-      "competition-start",
-      "competition-boundary"
-    ],
-    "text": "1930 FIFA World Cup began.",
-    "language": "en",
-    "sports": [
-      "soccer"
-    ],
-    "tags": [],
-    "date": "1930-07-13",
-    "monthDay": "07-13",
-    "dateRole": "start",
-    "speaker": null,
-    "entities": [
-      {
-        "id": "sport:soccer",
-        "kind": "sport",
-        "role": "subject",
-        "label": "soccer"
-      },
-      {
-        "id": "wikidata:Q48432",
-        "kind": "event",
-        "role": "subject",
-        "label": "1930 FIFA World Cup"
-      }
-    ],
-    "source": {
-      "sourceId": "wikidata",
-      "key": "Q48432@2555055860:Q48432$9fe4f17e-420d-bcff-b314-949b794b2792",
-      "url": "https://www.wikidata.org/w/index.php?title=Q48432&oldid=2555055860",
-      "title": "1930 FIFA World Cup",
-      "licence": "CC0-1.0",
-      "rightsStatus": "cc0",
-      "rawSha256": "1ddb9c9ba2ee83556a6b971be93d567ab72b23e4f7e6c6eda52ea3493ebf45ee",
-      "snapshot": {
-        "status": "active",
-        "revision": "2555055860",
-        "capturedAt": "2026-10-15T04:44:45.572377+00:00",
-        "coverageStart": "1896-04-06",
-        "coverageEnd": "2024-08-11"
-      },
-      "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
-      "rightsEvidence": [
-        "https://www.wikidata.org/w/index.php?title=Q48432&oldid=2555055860",
-        "https://www.wikidata.org/wiki/Wikidata:Licensing"
-      ]
-    }
-  },
-  {
-    "id": "history:wikidata:Q48432:P582",
-    "kind": "history",
-    "types": [
-      "competition-end",
-      "competition-boundary"
-    ],
-    "text": "1930 FIFA World Cup ended.",
-    "language": "en",
-    "sports": [
-      "soccer"
-    ],
-    "tags": [],
-    "date": "1930-07-30",
-    "monthDay": "07-30",
-    "dateRole": "end",
-    "speaker": null,
-    "entities": [
-      {
-        "id": "sport:soccer",
-        "kind": "sport",
-        "role": "subject",
-        "label": "soccer"
-      },
-      {
-        "id": "wikidata:Q48432",
-        "kind": "event",
-        "role": "subject",
-        "label": "1930 FIFA World Cup"
-      }
-    ],
-    "source": {
-      "sourceId": "wikidata",
-      "key": "Q48432@2555055860:Q48432$99bb2ae4-43a7-84de-6e57-c3a59f2a8c6f",
-      "url": "https://www.wikidata.org/w/index.php?title=Q48432&oldid=2555055860",
-      "title": "1930 FIFA World Cup",
-      "licence": "CC0-1.0",
-      "rightsStatus": "cc0",
-      "rawSha256": "1ddb9c9ba2ee83556a6b971be93d567ab72b23e4f7e6c6eda52ea3493ebf45ee",
-      "snapshot": {
-        "status": "active",
-        "revision": "2555055860",
-        "capturedAt": "2026-10-15T04:44:45.572377+00:00",
-        "coverageStart": "1896-04-06",
-        "coverageEnd": "2024-08-11"
-      },
-      "attribution": "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates.",
-      "rightsEvidence": [
-        "https://www.wikidata.org/w/index.php?title=Q48432&oldid=2555055860",
         "https://www.wikidata.org/wiki/Wikidata:Licensing"
       ]
     }

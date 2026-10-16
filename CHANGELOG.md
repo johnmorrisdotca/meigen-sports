@@ -4,6 +4,17 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-10-16
+
+Not published to npm yet. First publication waits on this set.
+
+- Merge same-event history facts (a World Cup final and that edition's "ended" row) into one record; extra sources stay as `additionalSources`; tags include final, championship and competition-closing.
+- Rewrite World Cup final captions to name the winner and the result; keep generic began/ended only when no richer match exists that day.
+- Death templates name club, position and honour when sourced (“Howie Morenz, the Montreal Canadiens centre…”); skip missing fields.
+- Convert drops deaths before 1850 and people with no sport, league, roster, priority-athlete QID or sitelinks (Myong-won Kim 1602).
+- Featured lists rank priority athletes first among equals; `featuredReasons` includes `record`.
+- Demo today/random/favourites panels render from templates.
+
 ## [0.2.0] - 2026-10-16
 
 First npm publication.

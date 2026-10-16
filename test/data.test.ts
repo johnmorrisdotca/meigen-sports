@@ -12,8 +12,8 @@ test("reviewed real source counts and honest calendar coverage", () => {
   assert.equal(quotes.filter((r) => r.source.sourceId === "gitenberg").length, 22);
   assert.equal(quotes.filter((r) => r.source.sourceId === "wikiquote").length, 19);
   assert.equal(quotes.filter((r) => r.types.includes("famous-quotes")).length, 19);
-  assert.equal(history.length, 1062);
-  assert.equal(history.filter((r) => r.source.sourceId === "wikidata").length, 98);
+  assert.equal(history.length, 1052);
+  assert.equal(history.filter((r) => r.source.sourceId === "wikidata").length, 88);
   assert.equal(history.filter((r) => r.source.sourceId === "openfootball").length, 964);
   assert.equal(new Set(history.map((r) => r.monthDay)).size, 142);
   assert.equal(new Set(history.map((r) => r.date?.slice(5, 7))).size, 12);
@@ -54,7 +54,7 @@ test("source lifecycle and record types are independent of publication rights", 
   assert.equal(records.every((r) => r.source.snapshot?.capturedAt && r.source.snapshot.revision), true);
   const old = { ...history[0]!, source: { ...history[0]!.source, snapshot: { ...history[0]!.source.snapshot!, status: "discontinued" as const } } };
   assert.doesNotThrow(() => validateRecords([old]));
-  assert.equal(history.some((r) => r.types.includes("championship-win")), false);
+  assert.equal(history.some((r) => r.types.includes("championship-win")), true);
   assert.equal(history.filter((r) => ["start", "end"].includes(r.dateRole ?? "")).every((r) => r.types.includes("competition-boundary")), true);
 });
 
@@ -78,7 +78,7 @@ test("generated source and shard bytes are deterministic and current", () => {
   const forward = buildFiles(records);
   const reversed = buildFiles([...records].reverse());
   assert.deepEqual(forward, reversed);
-  assert.deepEqual(generate(true), { records: 1103, files: 1458 });
+  assert.deepEqual(generate(true), { records: 1093, files: 1458, merged: 10 });
   const manifest = JSON.parse(forward.get("manifest.json")!) as FeedManifest;
   assert.equal(manifest.missingDays.length, 224);
   assert.equal(manifest.coveredDays, 142);

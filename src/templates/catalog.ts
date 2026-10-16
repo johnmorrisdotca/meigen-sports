@@ -68,14 +68,24 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
     pattern: "{name}は今日{yearsAgo}歳になる。",
   },
   {
+    id: "death-context", type: "death", locale: "en", gate: "deceased", role: "default",
+    needs: ["name", "year", "dayPrecision", "clubPosition"],
+    pattern: "{name}, the {clubPosition}{honourAnd}, died on this day in {year}{aged}.",
+  },
+  {
     id: "death-on-this-day", type: "death", locale: "en", gate: "deceased", role: "default",
     needs: ["name", "year", "dayPrecision"],
     pattern: "{name} died on this day in {year}{age}{extra}.",
   },
   {
+    id: "death-context", type: "death", locale: "ja", gate: "deceased", role: "default",
+    needs: ["name", "year", "dayPrecision", "clubPosition"],
+    pattern: "{name}（{clubPosition}{honourAnd}）が{year}年のこの日に{agedJa}死去した。",
+  },
+  {
     id: "death-on-this-day", type: "death", locale: "ja", gate: "deceased", role: "default",
     needs: ["name", "year", "dayPrecision"],
-    pattern: "{name}が{year}年のこの日に死去した{age}{extra}。",
+    pattern: "{name}が{year}年のこの日に{age}死去した{extra}。",
   },
   {
     id: "game-beat", type: "game", locale: "en", gate: "neutral", role: "default", when: "decisive",
@@ -98,12 +108,22 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
     pattern: "{home}と{away}は{homeScore}対{awayScore}で引き分けた{gameNo}{venue}{ot}{stage}{ctx}。",
   },
   {
-    id: "final-beat", type: "final", locale: "en", gate: "neutral", role: "default", when: "decisive",
+    id: "final-won", type: "final", locale: "en", gate: "neutral", role: "default", when: "decisive",
+    needs: ["winner", "loser", "winScore", "loseScore", "year", "league"],
+    pattern: "{winner} won the {year} {league}{finalRound}, beating {loser} {winScore}–{loseScore}{ot}{venue}.",
+  },
+  {
+    id: "final-beat", type: "final", locale: "en", gate: "neutral", role: "variant", when: "decisive",
     needs: ["winner", "loser", "winScore", "loseScore"],
     pattern: "{winner} beat {loser} {winScore}–{loseScore}{gameNo}{venue}{ot}{stage}{ctx}{series}.",
   },
   {
-    id: "final-beat", type: "final", locale: "ja", gate: "neutral", role: "default", when: "decisive",
+    id: "final-won", type: "final", locale: "ja", gate: "neutral", role: "default", when: "decisive",
+    needs: ["winner", "loser", "winScore", "loseScore", "year", "league"],
+    pattern: "{winner}が{year}年{league}{finalRound}で{loser}に{winScore}対{loseScore}で勝った{ot}{venue}。",
+  },
+  {
+    id: "final-beat", type: "final", locale: "ja", gate: "neutral", role: "variant", when: "decisive",
     needs: ["winner", "loser", "winScore", "loseScore"],
     pattern: "{winner}が{loser}に{winScore}対{loseScore}で勝利した{gameNo}{venue}{ot}{stage}{ctx}。",
   },

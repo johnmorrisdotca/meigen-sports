@@ -1,4 +1,4 @@
-import { factsFor, historyOnDate, quoteForDate, rankFeed, tagsOf } from "../src/index.ts";
+import { factsFor, historyOnDate, quoteForDate, rankFeed, render as renderFact, tagsOf } from "../src/index.ts";
 import { quotes } from "../src/data/quotes.ts";
 import { history } from "../src/data/history.ts";
 import { loadDay, loadFactDay, loadFactShard, loadShard } from "../src/load.ts";
@@ -78,10 +78,13 @@ function factCredit(record: OnThisDayRecord) {
 }
 function drawFacts(box: HTMLElement, records: readonly OnThisDayRecord[]) {
   box.replaceChildren();
-  const ja = familyLang.lang === "ja";
+  const locale = familyLang.lang === "ja" ? "ja" : "en";
+  const asOf = date.value;
   for (const fact of records) {
     const article = document.createElement("article"); article.className = "record";
-    const p = document.createElement("p"); p.textContent = (ja && fact.textJa) || fact.text || "";
+    const p = document.createElement("p");
+    const drawn = renderFact(fact, { wording: "fixed", locale, asOf });
+    p.textContent = drawn?.text || (locale === "ja" && fact.textJa) || fact.text || "";
     const tags = document.createElement("p"); tags.className = "credit"; tags.textContent = tagsOf(fact).join(" · ");
     article.append(p, tags, factCredit(fact)); box.append(article);
   }

@@ -15,6 +15,8 @@ export interface MeigenRecord {
  readonly types: readonly string[]; readonly sports: readonly string[]; readonly tags: readonly string[];
  readonly date: string | null; readonly monthDay: string | null; readonly dateRole: string | null;
  readonly speaker: string | null; readonly entities: readonly EntityRef[]; readonly source: Citation;
+ /** Extra citations when several sources describe the same event. The keeper keeps `source`. */
+ readonly additionalSources?: readonly Citation[];
 }
 /** Match only known stable IDs; a caller supplies its own reviewed site-to-source identity mapping. */
 export interface FeedContext {

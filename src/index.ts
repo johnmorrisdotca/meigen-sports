@@ -14,6 +14,8 @@ export type {
   TemplateRole, TemplateType, Wording,
 } from "./templates/index.ts";
 export { calendarDayInZone, factsFor, randomFacts, rankFeed, tagsOf, today, uniqueRecordIds, withCaptions } from "./facts.ts";
+export { finalCaptionFromMatch, mergeHistoryEvents, uniqueHistoryIds } from "./mergeEvents.ts";
+export type { MergeReport } from "./mergeEvents.ts";
 import { isDate, monthDayOf } from "./dates.ts";
 
 /** Filter records by explicit context. Multiple filters intersect; values inside a filter match any.

@@ -42,11 +42,11 @@ import { historyOnDate, quoteForDate } from "@johnmorrisdotca/meigen-sports";
 import history from "@johnmorrisdotca/meigen-sports/history";
 import quotes from "@johnmorrisdotca/meigen-sports/quotes";
 
-historyOnDate(history, "2022-11-20", { sports: ["soccer"] }).length; // 2
+historyOnDate(history, "2022-11-20", { sports: ["soccer"] }).length; // 1
 quoteForDate(quotes, "2026-10-14")?.speaker; // "James Dwight"
 ```
 
-The bundled dataset begins with 41 quotations (22 Gutenberg excerpts and 19 Wikiquote sports lines tagged `famous-quotes`) and 1062 dated facts. Facts cover 142 of 366 calendar month-days. This is a sourced starting collection with many coverage gaps, not a complete daily almanac. Quotes have unknown utterance dates and are never assigned invented anniversaries.
+The bundled dataset begins with 41 quotations (22 Gutenberg excerpts and 19 Wikiquote sports lines tagged `famous-quotes`) and 1052 dated facts (10 same-event rows merged). Facts cover 142 of 366 calendar month-days. This is a sourced starting collection with many coverage gaps, not a complete daily almanac. Quotes have unknown utterance dates and are never assigned invented anniversaries.
 
 ## Who it is for
 
@@ -59,7 +59,7 @@ Use Meigen Sports in a site, app or research tool that needs cited historical sp
 - Sport, entity, source, kind, type, language and text filters.
 - Versioned static JSON shards for calendar days, sports and stable entities, validated by an explicit loader.
 - Source rights and provenance travel with each row. The package's MIT code licence does not relicense its data. Source lifecycle and usage notes ship in `data-sources/sources.json` and `data-sources/README.md`.
-- Initial coverage includes all 964 matches from 22 FIFA World Cup editions (1930–2022), plus 98 exact-day Wikidata facts. The included sample does not contain collected player milestones or world records.
+- Initial coverage includes all 964 matches from 22 FIFA World Cup editions (1930–2022), plus 88 published Wikidata event facts (10 World Cup start/end rows merged into the same-day match). The included sample does not contain collected player milestones or world records.
 
 ## Use it in your project
 
@@ -96,7 +96,7 @@ The snippets under **In 30 seconds** and **Use it in your project** are run by `
 
 ## API
 
-The root export provides `isDate`, `monthDayOf`, `selectRecords`, `historyOnDate`, `quoteForDate`, `EXTRACT_CATEGORIES`, `FACT_CATEGORIES`, on-this-day helpers (`factsFor`, `today`, `calendarDayInZone`, `rankFeed`, `randomFacts`, `tagsOf`, `uniqueRecordIds`, `withCaptions`, `captionFromFact`, `isRichFact`), caption templates (`render`, `templatesFor`, `TEMPLATES`), the core record and feed types, on-this-day consume types (`OnThisDayRecord`, `TeamRef`, `PersonRef`), and `SCHEMA_VERSION` and `VERSION`.
+The root export provides `isDate`, `monthDayOf`, `selectRecords`, `historyOnDate`, `quoteForDate`, `EXTRACT_CATEGORIES`, `FACT_CATEGORIES`, on-this-day helpers (`factsFor`, `today`, `calendarDayInZone`, `rankFeed`, `randomFacts`, `tagsOf`, `uniqueRecordIds`, `withCaptions`, `captionFromFact`, `isRichFact`), caption templates (`render`, `templatesFor`, `TEMPLATES`), same-event merge (`mergeHistoryEvents`, `finalCaptionFromMatch`, `uniqueHistoryIds`), the core record and feed types, on-this-day consume types (`OnThisDayRecord`, `TeamRef`, `PersonRef`), and `SCHEMA_VERSION` and `VERSION`.
 
 | Import | Contents |
 | --- | --- |
@@ -114,7 +114,7 @@ Each `MeigenRecord` has a `kind` (`quote` or `history`), exact text, source cita
 
 ## Limits
 
-The current feed is sparse: 224 calendar month-days have no history facts. Source coverage and eligible dates are recorded in [data-sources/coverage.json](./data-sources/coverage.json). The collection contains historical book excerpts, Wikiquote sports quotations (CC BY-SA 4.0), 98 Wikidata event facts and 964 openfootball World Cup match results. It makes no comprehensive player, franchise or world-record claims.
+The current feed is sparse: 224 calendar month-days have no history facts. Source coverage and eligible dates are recorded in [data-sources/coverage.json](./data-sources/coverage.json). The collection contains historical book excerpts, Wikiquote sports quotations (CC BY-SA 4.0), 88 published Wikidata event facts and 964 openfootball World Cup match results. It makes no comprehensive player, franchise or world-record claims.
 
 The current API uses exact dates and captions, stable entity references, tags and one primary citation per record. It does not yet expose the planned multi-source record progression, all source evidence, or automatic population from the existing sports database. A year or month alone is not converted into a day. A season total is not treated as evidence for the game where a milestone was reached.
 

@@ -2,6 +2,7 @@
 """Build public on-this-day fact shards from joined DS1 extracts. Does not connect to DS1."""
 from __future__ import annotations
 
+import csv
 import hashlib
 import json
 import os
@@ -18,6 +19,7 @@ EXTRACT = Path(os.environ.get(
 ))
 OUT = ROOT / "data/v1/0.1.0/facts"
 VERSION = "0.1.0"
+ERA_START = 1850
 BLOCKED = {"nhl_api", "spx_database", "spx_files", "spxn_database"}
 LEAGUE = {
     "nhl": "NHL", "nba": "NBA", "mlb": "MLB", "nfl": "NFL", "cfl": "CFL", "mls": "MLS",
@@ -197,6 +199,13 @@ def caption_game(r, ja: bool) -> str | None:
     ws, ls = (hs, aws) if home_won else (aws, hs)
     winner_season = (r.get("home") or {}).get("teamSeasonId") if home_won else (r.get("away") or {}).get("teamSeasonId")
     series = series_en(r, winner_season)
+    stage = str(r.get("stage") or r.get("roundLabel") or "")
+    is_final = r.get("category") == "championship-final" or stage.lower() == "final"
+    if is_final and year and league:
+        round_en = f" {stage.replace('_', ' ')}" if stage and stage != "regular" else ""
+        if ja:
+            return f"{winner}が{year}年{league}{stage.replace('_', ' ') if stage else ''}で{loser}に{ws}対{ls}で勝った{ot_ja(r)}{venue_ja(r)}。"
+        return f"{winner} won the {year} {league}{round_en}, beating {loser} {ws}–{ls}{ot_en(r)}{venue_en(r)}."
     if ja:
         return f"{winner}が{loser}に{ws}対{ls}で勝利した{extra_ja}{f'（{ctx}）' if ctx else ''}。"
     return f"{winner} beat {loser} {ws}–{ls}{extra_en}{f' ({ctx})' if ctx else ''}{series}."
@@ -225,6 +234,19 @@ def caption_person(r, ja: bool, died: bool) -> str | None:
     if r.get("ageYears") is not None:
         age = f"{r['ageYears']}歳で" if ja else f" at age {r['ageYears']}"
     if died:
+        club = next((n for n in (r.get("clubNames") or []) if n), None) or (r.get("clubName") or "").strip()
+        position = (r.get("position") or "").strip()
+        club_pos = " ".join(x for x in (club, position) if x)
+        honour = (r.get("highlight") or "").strip()
+        if club_pos:
+            honour_en = f" and {honour}" if honour else ""
+            honour_ja = f"、{honour}" if honour else ""
+            aged_en = f", aged {r['ageYears']}" if r.get("ageYears") is not None else ""
+            aged_ja = f"{r['ageYears']}歳で" if r.get("ageYears") is not None else ""
+            return (
+                f"{name}（{club_pos}{honour_ja}）が{year}年のこの日に死去した{aged_ja}。" if ja
+                else f"{name}, the {club_pos}{honour_en}, died on this day in {year}{aged_en}."
+            )
         return (
             f"{name}が{year}年のこの日に死去した{age}{extra}。" if ja
             else f"{name} died on this day in {year}{age}{extra}."
@@ -408,6 +430,8 @@ SOCCER_FEATURE_STAGES = {"final", "semi", "quarter", "conference_final", "champi
 def featured_reasons(row: dict) -> list[str]:
     """A game is featured only for these sourced reasons. Regular-season results are not listed on their own."""
     reasons: list[str] = []
+    if row.get("record") or "sport-record" in (row.get("tags") or []):
+        reasons.append("record")
     hs, aws = row.get("homeScore"), row.get("awayScore")
     if hs is None or aws is None:
         return reasons
@@ -486,6 +510,7 @@ def finalize(row: dict) -> dict | None:
         "clubNames", "clubName", "bornYear", "ageYears", "highlight", "draftYear", "round",
         "overallPick", "awardName", "awardKind", "winnerName", "birthDate", "deathDate", "birthPlace", "livingStatus",
         "announcedDate", "awardDate", "ratifiedDate", "featuredReasons", "record",
+        "sitelinks", "priorityAthlete", "nationality",
     ):
         if row.get(key) not in (None, [], ""):
             out[key] = row[key]
@@ -534,10 +559,54 @@ def pick_varied(records: list[dict], n: int) -> list[dict]:
     return pick_ranked(records, n)
 
 
+def load_priority_qids() -> set[str]:
+    path = ROOT / "data-sources/priority-athletes.csv"
+    qids: set[str] = set()
+    if not path.exists():
+        return qids
+    with path.open(newline="", encoding="utf-8") as fh:
+        for row in csv.DictReader(fh):
+            qid = (row.get("qid") or "").strip()
+            if qid.startswith("Q"):
+                qids.add(qid)
+    return qids
+
+
+PRIORITY_QIDS = load_priority_qids()
+
+
+def is_sport_person(row: dict) -> bool:
+    """Publish deaths/birthdays of sourced athletes from 1850 on. Drop 1602-era non-athletes."""
+    year = year_of(row)
+    if year:
+        try:
+            if int(year) < ERA_START:
+                return False
+        except ValueError:
+            return False
+    person = row.get("person") or {}
+    if row.get("sport") or row.get("league") or person.get("leagueCodes") or person.get("franchiseIds"):
+        return True
+    qid = person.get("qid")
+    if qid and qid in PRIORITY_QIDS:
+        return True
+    if (row.get("sitelinks") or 0) >= 20:
+        return True
+    return False
+
+
+def fame(row: dict) -> int:
+    if row.get("priorityAthlete"):
+        return 2
+    if (row.get("sitelinks") or 0) >= 20:
+        return 1
+    return 0
+
+
 def significance(row: dict) -> int:
     tags = set(tag_set(row))
     score = 0
-    if "sport-record" in tags or "career-stat-milestone" in tags:
+    if "sport-record" in tags or "career-stat-milestone" in tags or "record" in (row.get("featuredReasons") or []):
         score += 95
     if "championship-win" in tags or row.get("category") == "championship-final":
         score += 90
@@ -579,8 +648,63 @@ def team_keys(row: dict) -> list[str]:
     return keys
 
 
+def event_merge_key(row: dict) -> str | None:
+    date = row.get("eventDate")
+    if not date:
+        return None
+    if row.get("gameId") is not None:
+        return f"game:{row['gameId']}"
+    if row.get("soccerMatchId") is not None:
+        return f"soccer:{row['soccerMatchId']}"
+    person = row.get("person") or {}
+    ident = person.get("personId") if person.get("personId") is not None else person.get("qid")
+    cat = row.get("category")
+    if ident and cat in {"player-death", "player-birthday", "award", "draft"}:
+        return f"{cat}:{ident}:{date}"
+    home = (row.get("home") or {}).get("name")
+    away = (row.get("away") or {}).get("name")
+    if home and away and cat in {"game-on-day", "championship-final", "soccer-on-day"}:
+        teams = "|".join(sorted(n.lower() for n in (home, away) if n))
+        comp = row.get("competition") or row.get("league") or ""
+        return f"{date}|{comp}|{teams}"
+    return None
+
+
+def merge_same_event(chosen: dict[str, dict]) -> tuple[dict[str, dict], int]:
+    """One fact, many tags. Same game, soccer match, person-day, or teams+date+competition."""
+    groups: dict[str, list[dict]] = defaultdict(list)
+    for rec in chosen.values():
+        key = event_merge_key(rec)
+        if key:
+            groups[key].append(rec)
+    merged = 0
+    out = dict(chosen)
+    for rows in groups.values():
+        if len(rows) < 2:
+            continue
+        rows.sort(key=lambda r: (-significance(r), r["recordId"]))
+        keeper = dict(rows[0])
+        tags = list(keeper.get("tags") or [])
+        reasons = list(keeper.get("featuredReasons") or [])
+        for extra in rows[1:]:
+            for tag in extra.get("tags") or []:
+                if tag not in tags:
+                    tags.append(tag)
+            for reason in extra.get("featuredReasons") or []:
+                if reason not in reasons:
+                    reasons.append(reason)
+            out.pop(extra["recordId"], None)
+            merged += 1
+        keeper["tags"] = tags
+        if reasons:
+            keeper["featuredReasons"] = reasons
+        out.pop(rows[0]["recordId"], None)
+        out[keeper["recordId"]] = keeper
+    return out, merged
+
+
 def pick_ranked(records: list[dict], n: int, max_per: int = 2) -> list[dict]:
-    ordered = sorted(records, key=lambda r: (-significance(r), r.get("eventDate") or "", r["recordId"]))
+    ordered = sorted(records, key=lambda r: (-significance(r), -fame(r), r.get("eventDate") or "", r["recordId"]))
 
     def run(relax_people: bool, relax_tags: bool) -> list[dict]:
         picked, seen = [], set()
@@ -731,6 +855,11 @@ def main() -> int:
             rec["deathDate"] = drow["eventDate"]
         if pid in awards_by_person:
             rec["highlight"] = f"Winner of the {awards_by_person[pid]}"
+        qid = person.get("qid")
+        if qid and qid in PRIORITY_QIDS:
+            rec["priorityAthlete"] = True
+        if not is_sport_person(rec):
+            continue
         chosen[row["recordId"]] = rec
     for row in deaths:
         person = row.get("person") or {}
@@ -751,6 +880,11 @@ def main() -> int:
             rec["derivedInputs"] = ["birthDate", "eventDate"]
         if pid in awards_by_person:
             rec["highlight"] = f"Winner of the {awards_by_person[pid]}"
+        qid = person.get("qid")
+        if qid and qid in PRIORITY_QIDS:
+            rec["priorityAthlete"] = True
+        if not is_sport_person(rec):
+            continue
         chosen[row["recordId"]] = rec
     for row in awards:
         if not row.get("eventDate") or not (row.get("winnerName") or (row.get("person") or {}).get("name")) or not row.get("awardName"):
@@ -791,6 +925,9 @@ def main() -> int:
             facts.append(done)
         else:
             dropped += 1
+    by_id = {row["recordId"]: row for row in facts}
+    by_id, merged_events = merge_same_event(by_id)
+    facts = list(by_id.values())
 
     if OUT.exists():
         for old in OUT.rglob("*.json"):
@@ -844,6 +981,10 @@ def main() -> int:
     for day in calendar:
         rows = list({r["recordId"]: r for r in by_day.get(day, [])}.values())
         feed = pick_ranked(rows, 12)
+        feed_ids = [r["recordId"] for r in feed]
+        if len(feed_ids) != len(set(feed_ids)):
+            print(f"duplicate fact id in days/{day}.json", file=sys.stderr)
+            return 1
         if len(feed) < 3:
             days_lt3.append(day)
         write_shard(f"days/{day}.json", feed, files)
@@ -908,6 +1049,7 @@ def main() -> int:
         "missingDays": [d for d in calendar if d not in by_day],
         "categories": {k: len({r["recordId"] for r in v}) for k, v in sorted(by_cat.items())},
         "uniqueRecords": len({r["recordId"] for r in facts}),
+        "mergedSameEvent": merged_events,
         "daysWithFewerThan3": days_lt3,
         "featuredMargin": FEATURE_MARGIN,
         "extractOnDisk": {
@@ -924,6 +1066,7 @@ def main() -> int:
     summary = {
         "records": len(facts), "droppedThin": dropped, "coveredDays": len(covered),
         "daysWithFewerThan3": len(days_lt3), "uniqueRecords": len({r["recordId"] for r in facts}),
+        "mergedSameEvent": merged_events,
         "oct16": len(by_day.get("10-16") or []),
         "files": len(files) + 1, "categories": manifest["categories"],
         "bytes": sum(m["bytes"] for m in files.values()) + len(man_body.encode()),

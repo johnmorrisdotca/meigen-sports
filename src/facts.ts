@@ -140,10 +140,16 @@ export function uniqueRecordIds(records: readonly OnThisDayRecord[]): boolean {
   return new Set(ids).size === ids.length;
 }
 
+function fame(record: OnThisDayRecord): number {
+  if (record.priorityAthlete) return 2;
+  if ((record.sitelinks ?? 0) >= 20) return 1;
+  return 0;
+}
+
 function significance(record: OnThisDayRecord): number {
   const tags = new Set(tagsOf(record));
   let score = 0;
-  if (tags.has("sport-record") || tags.has("career-stat-milestone")) score += 95;
+  if (tags.has("sport-record") || tags.has("career-stat-milestone") || record.featuredReasons?.includes("record")) score += 95;
   if (tags.has("championship-win") || record.category === "championship-final") score += 90;
   if (tags.has("series-clinch") || tags.has("historic-cup-series")) score += 80;
   if (tags.has("overtime-result")) score += 70;
@@ -181,6 +187,8 @@ export function rankFeed(records: readonly OnThisDayRecord[], n: number, maxPer 
   const ordered = records.slice().sort((a, b) => {
     const diff = significance(b) - significance(a);
     if (diff !== 0) return diff;
+    const byFame = fame(b) - fame(a);
+    if (byFame !== 0) return byFame;
     return `${a.eventDate ?? ""}\t${a.recordId}`.localeCompare(`${b.eventDate ?? ""}\t${b.recordId}`);
   });
   const pick = (relaxPeople: boolean, relaxTags: boolean): OnThisDayRecord[] => {
