@@ -15,6 +15,6 @@ Full Gutenberg producer credits are collected in [LICENSES/GUTENBERG-CREDITS.md]
 ## Factual data
 
 - **Wikidata contributors:** structured event statements are labelled CC0-1.0 under Wikidata's data terms. Captions in this package are original wording based on those statements; no Wikipedia article prose is included. Each item revision and statement identifier is retained in its citation.
-- **openfootball contributors:** all 64 results in the 2022 World Cup source file are included under its CC0-1.0 dedication. The source commit and original dedication are recorded in [LICENSES/OPENFOOTBALL-CC0.txt](./LICENSES/OPENFOOTBALL-CC0.txt).
+- **openfootball contributors:** all 964 results in the 22 FIFA World Cup edition files (1930–2022) are included under its CC0-1.0 dedication. The source commit and original dedication are recorded in [LICENSES/OPENFOOTBALL-CC0.txt](./LICENSES/OPENFOOTBALL-CC0.txt).
 
 These notices describe the included seed only. They do not grant rights to future sources, uncollected records or third-party material beyond the terms of those sources. The archive, curation and public release workflow is not yet complete; see [docs/RESUME.md](./docs/RESUME.md).

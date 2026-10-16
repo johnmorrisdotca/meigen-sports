@@ -1,6 +1,6 @@
 # Reviewed source data
 
-The initial dataset contains **22 historical quotation excerpts and 162 calendar facts**. It covers **99 of 366 month-days**, with **267 gaps**. All 12 months occur, but the collection is not a comprehensive year-round feed. English source text stays English; documentation and interface translations do not imply translated quotations.
+The dataset contains **22 historical quotation excerpts and 1062 calendar facts**. It covers **142 of 366 month-days**, with **224 gaps**. All 12 months occur, but the collection is not a comprehensive year-round feed. English source text stays English; documentation and interface translations do not imply translated quotations.
 
 `seed/quotes.json` and `seed/history.json` contain selected source records and provenance, not original downloaded books or whole Wikidata responses. `sources.json` records the five accepted book/data sources. Source rights are independent of the MIT code licence; see [historical text and factual data credits](../LICENSES/GUTENBERG-CREDITS.md) and the original licences under `LICENSES/`.
 
@@ -22,7 +22,7 @@ Entity shards are `entities/<base64url-UTF8-ID>.json`: unpadded RFC 4648 base64u
 
 - Ten continuous excerpts from James Dwight's *Lawn-tennis* (1886), eight from Walter Camp's *American Football* (1891), and four from the 1904 edition of Ernest Myers's Pindar translation (first published 1874). Author, translator, original section, exact source lines and edition are explicit. These are historical source-verified excerpts, not a claim to contain famous modern catchphrases. Unknown utterance dates stay null.
 - 98 exact-day facts from Wikidata sporting events. Nondeprecated, unambiguous Gregorian day statements only; an event-period start/end is not automatically an opening/closing ceremony.
-- All 64 matches in openfootball's 2022 World Cup file. Regulation, extra-time and shootout scores remain distinct. Team labels do not establish authoritative team IDs.
+- All 964 matches in openfootball's 22 World Cup edition files (1930–2022). Regulation, extra-time and shootout scores remain distinct. Team labels do not establish authoritative team IDs. The 2022 file was already in the seed; the other 21 editions came from the existing local archive, not a new download.
 
 `coverage.json` lists covered and missing month-days. `seed-exclusions.json` retains the misleading generic Battle of the Sexes event and two NBA Finals entities that were excluded instead of assigning unsupported dates. No birthdays or debuts have been invented. An earliest archived appearance must be labelled as such unless independently proven to be a career debut.
 

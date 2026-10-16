@@ -69,13 +69,14 @@ export function convertSeed(): { quotes: MeigenRecord[]; history: MeigenRecord[]
     const entities: EntityRef[] = r.sports.map((sport) => ({ id: `sport:${sport}`, kind: "sport", role: "subject", label: sport }));
     entities.push({ id: r.event_id ?? r.external_id, kind: "event", role: "subject", ...(r.event_label ? { label: r.event_label } : {}) });
     if (r.competition === "World Cup 2022") entities.push({ id: "wikidata:Q284163", kind: "competition", role: "part-of", label: "2022 FIFA World Cup" });
+    else if (r.competition?.startsWith("World Cup ")) entities.push({ id: `openfootball:worldcup:${r.competition.slice(10)}`, kind: "competition", role: "part-of", label: r.competition });
     return {
       id: r.id, kind: "history", types: [r.date_semantics === "start" ? "competition-start" : r.date_semantics === "end" ? "competition-end" : r.date_semantics === "match-date-as-published" ? "match-result" : "event-date", ...(["start", "end"].includes(r.date_semantics) ? ["competition-boundary"] : [])], text: r.text, language: r.language, sports: r.sports, tags: r.tags ?? [],
       date: r.date, monthDay: r.month_day, dateRole: r.date_semantics, speaker: null, entities,
       source: {
         sourceId: r.source_id, key: r.source_key, url: r.source_url, title: r.source_title,
         licence: r.licence, rightsStatus: r.rights_status, rawSha256: r.raw_sha256, snapshot: sourceSnapshot(r, "history"),
-        attribution: r.source_id === "wikidata" ? "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates." : "openfootball contributors; 2022 World Cup data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
+        attribution: r.source_id === "wikidata" ? "Wikidata contributors; CC0 structured event facts. Original factual caption; event-period dates are not necessarily ceremony dates." : "openfootball contributors; FIFA World Cup match data, CC0. Original match-result caption; regulation, extra-time and shootout results remain distinct.",
         rightsEvidence: [r.source_url, r.source_id === "wikidata" ? "https://www.wikidata.org/wiki/Wikidata:Licensing" : "https://github.com/openfootball/worldcup.json/blob/516d3825c3bd23fdc298c4014e84bde78f2d4965/LICENSE.md"],
       },
     };

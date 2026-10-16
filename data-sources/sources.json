@@ -136,8 +136,8 @@
     ],
     "data_licence": "CC0-1.0 explicitly in repository data licence.",
     "code_licence": "Repository dedicated CC0; no program code imported.",
-    "acquisition": "Pinned commit 516d3825c3bd23fdc298c4014e84bde78f2d4965, 2022/worldcup.json plus LICENSE.md and README.md. No key, scraping, remote calls by consumers, or third-party score API.",
-    "collection_recipe": "All 64 2022 tournament matches with dates, round, team labels and scores; immutable source path and JSON pointer, sha256. Maintain full-time, extra-time and penalty scores separately. Source has mixed score arrays/objects, normalize both. Do not assign timezone to naive times; this seed uses dates only.",
+    "acquisition": "Pinned commit 516d3825c3bd23fdc298c4014e84bde78f2d4965. The 2022 edition was in the first seed; editions 1930–2018 were added from the existing local archive of the same commit (hash-verified against its download manifest and Dropbox copy). LICENSE.md and README.md retained. No key, scraping, remote calls by consumers, or third-party score API.",
+    "collection_recipe": "All 964 matches across 22 FIFA World Cup editions (1930–2022) with dates, round, team labels and scores; immutable source path and JSON pointer, sha256. Maintain full-time, extra-time and penalty scores separately. Source has mixed score arrays/objects, normalize both. Do not assign timezone to naive times; this seed uses dates only.",
     "exclusions": [
       "No player/club identity join on a name.",
       "No photos, logos or article text.",
@@ -146,14 +146,14 @@
     "sourceId": "openfootball",
     "snapshot": {
       "status": "snapshot",
-      "capturedAt": "2026-10-15T04:46:05.395655+00:00",
-      "coverageStart": "2022-11-20",
+      "capturedAt": "2026-10-15T23:53:55.818331+00:00",
+      "coverageStart": "1930-07-13",
       "coverageEnd": "2022-12-18",
       "revision": "516d3825c3bd23fdc298c4014e84bde78f2d4965"
     },
     "lastUpdated": null,
     "lastUpdatedNote": "Per-record upstream revisions and capture times are retained; no unsupported project-wide update time is asserted.",
-    "lifecycleEvidence": "Pinned 2022 World Cup corpus, not a claim that its upstream repository is discontinued.",
+    "lifecycleEvidence": "Pinned 1930–2022 World Cup corpus, not a claim that its upstream repository is discontinued.",
     "lifecyclePolicy": "Historical snapshot or discontinued status never by itself makes rights-cleared history unusable. Consumer source filtering is independent of record type; rights and publication review are separate."
   }
 ]

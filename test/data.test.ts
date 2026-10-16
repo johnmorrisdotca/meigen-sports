@@ -9,10 +9,10 @@ const records = [...quotes, ...history];
 
 test("reviewed real source counts and honest calendar coverage", () => {
   assert.equal(quotes.length, 22);
-  assert.equal(history.length, 162);
+  assert.equal(history.length, 1062);
   assert.equal(history.filter((r) => r.source.sourceId === "wikidata").length, 98);
-  assert.equal(history.filter((r) => r.source.sourceId === "openfootball").length, 64);
-  assert.equal(new Set(history.map((r) => r.monthDay)).size, 99);
+  assert.equal(history.filter((r) => r.source.sourceId === "openfootball").length, 964);
+  assert.equal(new Set(history.map((r) => r.monthDay)).size, 142);
   assert.equal(new Set(history.map((r) => r.date?.slice(5, 7))).size, 12);
   assert.equal(quotes.every((r) => r.date === null && r.monthDay === null), true);
   assert.equal(history.some((r) => r.source.key.startsWith("Q1187909@")), false);
@@ -67,10 +67,10 @@ test("generated source and shard bytes are deterministic and current", () => {
   const forward = buildFiles(records);
   const reversed = buildFiles([...records].reverse());
   assert.deepEqual(forward, reversed);
-  assert.deepEqual(generate(true), { records: 184, files: 516 });
+  assert.deepEqual(generate(true), { records: 1084, files: 1437 });
   const manifest = JSON.parse(forward.get("manifest.json")!) as FeedManifest;
-  assert.equal(manifest.missingDays.length, 267);
-  assert.equal(manifest.coveredDays, 99);
+  assert.equal(manifest.missingDays.length, 224);
+  assert.equal(manifest.coveredDays, 142);
   assert.equal(manifest.missingDays.includes("02-29"), true);
   assert.equal(manifest.files["days/02-29.json"]?.records, 0);
   assert.equal(forward.has("days/02-29.json"), true);

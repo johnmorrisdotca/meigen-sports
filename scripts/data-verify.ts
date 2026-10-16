@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { digest } from "./data.ts";
+import { normalizeScore, type MatchScore } from "./worldcup-archive.ts";
 
 const ROOT = fileURLToPath(new URL("../", import.meta.url));
 interface QuoteSource { text: string; source_title: string; raw_sha256: string; raw_encoding: string; raw_line_start: number; raw_line_end: number }
@@ -37,12 +38,15 @@ export function verifyOriginals(rawRoot: string): { quotes: number; history: num
       const value = claim?.mainsnak.datavalue?.value;
       if (!claim || claim.rank === "deprecated" || !value || value.precision !== 11 || value.before || value.after || !value.calendarmodel.endsWith("/Q1985727") || value.time.slice(1, 11) !== record.date || !record.source_key.includes(`@${entity?.lastrevid}:`)) throw new Error("History date differs from original statement/revision");
     } else if (record.source_id === "openfootball") {
-      const original = JSON.parse(bytes("openfootball-2022-worldcup.json", record.raw_sha256).toString("utf8")) as { matches: { date: string; team1: string; team2: string; score: unknown }[] };
+      const year = record.source_key.match(/:(\d{4})\/worldcup\.json#/)?.[1] ?? "2022";
+      if (!/^\d{4}$/.test(year)) throw new Error("Unreviewed factual source");
+      const original = JSON.parse(bytes(`openfootball-${year}-worldcup.json`, record.raw_sha256).toString("utf8")) as { matches: { date: string; team1: string; team2: string; score: MatchScore }[] };
       const pointer = record.source_json_pointer?.match(/^\/matches\/(\d+)$/);
       const match = pointer ? original.matches[Number(pointer[1])] : undefined;
       if (!match) throw new Error("Missing original match");
-      const score = Array.isArray(match.score) ? { ft: match.score } : match.score;
-      if (match.date !== record.date || JSON.stringify([match.team1, match.team2]) !== JSON.stringify(record.teams) || JSON.stringify(score) !== JSON.stringify(record.score)) throw new Error("Match fact differs from original source");
+      const score = normalizeScore(match.score);
+      const published = normalizeScore(record.score as MatchScore);
+      if (match.date !== record.date || JSON.stringify([match.team1, match.team2]) !== JSON.stringify(record.teams) || JSON.stringify(score) !== JSON.stringify(published)) throw new Error("Match fact differs from original source");
     } else throw new Error("Unreviewed factual source");
   }
   return { quotes: quotes.length, history: history.length, sourceFiles: files.size };

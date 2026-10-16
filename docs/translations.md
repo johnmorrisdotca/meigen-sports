@@ -4,7 +4,7 @@ This table records English source copy and the meaning checked in the Japanese v
 
 | English page | Japanese page | Back-translation checked | Review note |
 | --- | --- | --- | --- |
-| [Data pipeline](data-pipeline.md) | [データパイプライン](data-pipeline.ja.md) | DS1 archive → existing Turso curation → reviewed static files; credentials and destructive/automatic actions are not implied | Human review still required before public release |
+| [Data pipeline](data-pipeline.md) | [データパイプライン](data-pipeline.ja.md) | 22 quotations and 1062 dated facts cover 142 of 366 days, with 224 uncollected; DS1 archive → existing Turso curation → reviewed static files | Count sentence updated 2026-10-16; human review still required before public release |
 | [History model](history-model.md) | [履歴モデル](history-model.ja.md) | Player milestones preserve scope and former holders; record claims need authority, conditions and evidence | Examples are explicitly not claims about seed data |
 
 The Japanese pages are paired to the English originals at the top. Review again whenever either source page changes.

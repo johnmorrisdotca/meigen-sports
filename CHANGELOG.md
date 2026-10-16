@@ -4,6 +4,7 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## Unreleased
 
+- Add 900 already-archived FIFA World Cup match results (1930–2018) to the dated seed.
 - Document the source-verified seed dataset, public API and current coverage limits.
 - Add source-specific data notices and preserve the included texts' original rights notices.
 - Replace copied tournament-bracket contribution guidance with sports-history package rules.
