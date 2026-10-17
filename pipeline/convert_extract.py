@@ -1117,7 +1117,7 @@ def main() -> int:
         "extractOnDisk": {
             "game-on-day": 392898, "championship-final": 1867, "soccer-on-day": 10423,
             "player-birthday": 20532, "player-death": 4028, "award": 5181,
-            "franchise-event": 1116, "venue-opening": 203, "draft": len(drafts),
+            "franchise-event": 1207, "venue-opening": 203, "draft": len(drafts),
         },
         "files": files,
         "teams": len(teams_index),

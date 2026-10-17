@@ -20,7 +20,7 @@
 | --- | --- | --- | --- |
 | `championship-win` | 優勝 | 決勝 1,867 件 | `extract_finals.sql` を再実行（シリーズ、延長、会場） |
 | `scoring-performance` | 決勝点の得点者 | 選手単位の得点なし | 予定。シーズンの GWG 合計は得点者ではありません |
-| `player-birthday`、`age-at-event` | 誕生日と年齢 | 誕生日 20,440、死去 3,999 | 誕生日・死去の SQL を再実行 |
+| `player-birthday`、`age-at-event` | 誕生日と年齢 | 誕生日 20,532、死去 4,028 | 誕生日・死去の SQL を再実行 |
 | `career-stat-milestone`、`sport-record` | 通算の節目。保持者の交代（Gretzky の次に Ovechkin） | 到達日のある行なし | 予定。保持者ごとに事実を残す |
 | `winning-streak`、`result-streak` | 連勝と連敗 | 並んだ試合はある | 予定。欠けることのない並びが必要 |
 | `combat-sport-result` | ボクシングの王者と在位 | コアにない | 予定 |
@@ -46,10 +46,10 @@
 | `first-recorded-game` | 収録範囲での初試合・初勝利 | 欠けることのない並び | 予定 | 0 |
 | `franchise-founded` | 独立した創設日 | 初試合では足りない | 予定 | 0 |
 | `franchise-folded` | 独立した消滅 | 最終試合では足りない | 予定 | 0 |
-| `franchise-identity-change` | 日付のある改名・移転（1月1日ではない） | フランチャイズ抽出 | 収録 | 1,116（公開は一部） |
+| `franchise-identity-change` | 日付のある改名・移転（1月1日ではない） | フランチャイズ抽出 | 収録 | 1,207（公開は一部） |
 | `venue-history` | 開場、改名、初の行事 | 会場抽出 | 収録 | 203 |
-| `player-birthday` | 確認した誕生日と人物 ID | 誕生日候補 | 収録 | 20,440 |
-| `age-at-event` | 誕生日と出来事日から出した年齢 | 死去と誕生日の結合 | 一部 | 死去 3,999 |
+| `player-birthday` | 確認した誕生日と人物 ID | 誕生日候補 | 収録 | 20,532 |
+| `age-at-event` | 誕生日と出来事日から出した年齢 | 死去と誕生日の結合 | 一部 | 死去 4,028 |
 | `player-career-boundary` | デビューまたは最後に確認した出場 | 欠けることのない出場 | 予定 | 0 |
 | `player-retirement` | 日付のある引退。最終試合ではない | 取引 | 予定 | 0 |
 | `draft-selection` | 年、巡、順位、クラブ、人物 | `core.draft_pick` / 収穫 | 一部 | 0（SQL は修正済み、未再実行） |

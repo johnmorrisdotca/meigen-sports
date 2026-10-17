@@ -20,7 +20,7 @@ Public feeds still drop `nhl_api` and “Owned by SPX”. Allowed licences: CC0,
 | --- | --- | --- | --- |
 | `championship-win` | Championship winners | `core.game` finals, `extract_finals` 1,867 | rerun `extract_finals.sql` (series + OT + venue) |
 | `scoring-performance` | Game-winning scorers | no participant-level goals | planned; a season GWG total is not a scorer |
-| `player-birthday`, `age-at-event` | Birthdays and ages | birthdays 20,440; deaths 3,999 | rerun birthday/death SQL (position, clubs) |
+| `player-birthday`, `age-at-event` | Birthdays and ages | birthdays 20,532; deaths 4,028 | rerun birthday/death SQL (position, clubs) |
 | `career-stat-milestone`, `sport-record` | Career milestones; successive holders (Gretzky then Ovechkin) | no dated crossing events | planned; keep each holder as its own fact |
 | `winning-streak`, `result-streak` | Winning and losing streaks | ordered games exist | planned; needs complete ordered results |
 | `combat-sport-result` | Boxing champions and title reigns | not in DS1 core | planned; needs sanctioning lineage |
@@ -46,10 +46,10 @@ Status: **collected** = convert can attach this tag from extracts already on dis
 | `first-recorded-game` | First recorded game or win in coverage | complete ordered results | planned | 0 |
 | `franchise-founded` | Independent founding date | not first recorded game | planned | 0 |
 | `franchise-folded` | Independent dissolution | not last recorded game | planned | 0 |
-| `franchise-identity-change` | Dated rename or move (not 1 January) | `extract_franchise_events` | collected | 1,116 (subset published) |
+| `franchise-identity-change` | Dated rename or move (not 1 January) | `extract_franchise_events` | collected | 1,207 (subset published) |
 | `venue-history` | Opening, rename or first event | `extract_venue_openings` | collected | 203 |
-| `player-birthday` | Verified birth date and person id | birthday candidates | collected | 20,440 |
-| `age-at-event` | Age from birth date and event date | death + birthday join | partly | deaths 3,999 |
+| `player-birthday` | Verified birth date and person id | birthday candidates | collected | 20,532 |
+| `age-at-event` | Age from birth date and event date | death + birthday join | partly | deaths 4,028 |
 | `player-career-boundary` | Debut or last known appearance | complete appearances | planned | 0 |
 | `player-retirement` | Dated retirement, not last game | transactions | planned | 0 |
 | `draft-selection` | Draft year, round, pick, club, person | `core.draft_pick` / harvest | partly | 0 (SQL fixed, not rerun) |

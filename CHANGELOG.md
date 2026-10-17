@@ -4,6 +4,12 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+## [0.3.3] - 2026-10-17
+
+Not published to npm. Pages deploy from main.
+
+- Rebuild on-this-day shards from the 6565b0d extracts (person_sport 970 to 3055). 29,961 facts; all 366 days have at least three feed-ready rows. Kim Q704476 stays unpublished. Gould and Paz stay dropped (no club or position). League Park names its clubs.
+
 ## [0.3.2] - 2026-10-17
 
 Not published to npm. Pages deploy from main.
