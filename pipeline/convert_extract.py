@@ -32,6 +32,33 @@ LEAGUE = {
     "wc": "World Cup", "wwc": "Women's World Cup", "afl": "AFL", "aafc": "AAFC",
     "nha": "NHA", "pcha": "PCHA", "wchl": "WCHL", "wha": "WHA",
 }
+CHAMPIONSHIP_TITLE = {
+    "mlb": "World Series", "nhl": "Stanley Cup", "nba": "NBA Finals", "cfl": "Grey Cup",
+    "wc": "World Cup", "wwc": "Women's World Cup", "afl": "AFL Championship",
+    "aafc": "AAFC Championship", "nha": "NHA Championship", "pcha": "PCHA Championship",
+    "wchl": "WCHL Championship", "wha": "Avco World Trophy", "mls": "MLS Cup",
+}
+CHAMPIONSHIP_TITLE_JA = {
+    "World Series": "ワールドシリーズ", "Stanley Cup": "スタンレー・カップ",
+    "NBA Finals": "NBAファイナル", "NFL Championship": "NFL選手権",
+    "Super Bowl": "スーパーボウル", "Grey Cup": "グレイ・カップ",
+    "World Cup": "ワールドカップ", "Women's World Cup": "女子ワールドカップ",
+    "AFL Championship": "AFL選手権", "AAFC Championship": "AAFC選手権",
+    "NHA Championship": "NHA選手権", "PCHA Championship": "PCHA選手権",
+    "WCHL Championship": "WCHL選手権", "Avco World Trophy": "AVCOトロフィー",
+    "MLS Cup": "MLSカップ",
+}
+GENERIC_ROUND = {"", "final", "championship", "championship-final", "regular", "playoffs", "championship_final"}
+PROVINCE_PREFIX = (
+    "Newfoundland and Labrador", "Prince Edward Island", "British Columbia",
+    "Alberta", "Ontario", "Quebec", "Manitoba", "Saskatchewan",
+    "Nova Scotia", "New Brunswick", "Newfoundland",
+)
+YEAR_SPAN = re.compile(r"\s*\((\d{4})(?:[–-](\d{4}))?\)$")
+CAREER_HIGHLIGHT = re.compile(
+    r"cup|championship|finals|world series|grey cup|super bowl|all-time|leading|record|champion",
+    re.I,
+)
 CREDIT = {
     "retrosheet": ("https://www.retrosheet.org/", "The information used here was obtained free of charge from and is copyrighted by Retrosheet. Interested parties may contact Retrosheet at www.retrosheet.org."),
     "wikidata": ("https://www.wikidata.org/", "Wikidata contributors, CC0."),
@@ -105,6 +132,54 @@ def team(obj) -> dict | None:
 def league_label(record: dict) -> str:
     code = record.get("league") or record.get("competition") or ""
     return LEAGUE.get(code, code.upper() if code else "")
+
+
+def strip_club_years(name: str) -> str:
+    return YEAR_SPAN.sub("", name).strip()
+
+
+def is_province_club(name: str) -> bool:
+    bare = strip_club_years(name)
+    return any(bare == prefix or bare.startswith(f"{prefix} ") for prefix in PROVINCE_PREFIX)
+
+
+def public_club_name(names, fallback: str = "") -> str:  # noqa: ANN001
+    cleaned = [n.strip() for n in (names or []) if n and n.strip()]
+    if not cleaned:
+        return strip_club_years(fallback)
+
+    def span(name: str) -> int:
+        match = YEAR_SPAN.search(name)
+        if not match:
+            return 0
+        start = int(match.group(1))
+        end = int(match.group(2) or match.group(1))
+        return end - start
+
+    ranked = sorted(
+        cleaned,
+        key=lambda name: (is_province_club(name), -span(name), strip_club_years(name)),
+    )
+    return strip_club_years(ranked[0])
+
+
+def championship_title(record: dict, ja: bool = False) -> str:
+    labeled = str(record.get("roundLabel") or record.get("stage") or record.get("phase") or "").strip().replace("_", " ")
+    if labeled and labeled.lower() not in GENERIC_ROUND:
+        title = labeled
+    else:
+        code = (record.get("league") or record.get("competition") or "").lower()
+        if code == "nfl":
+            year = record.get("seasonStartYear")
+            if year is None:
+                event = record.get("eventDate") or ""
+                year = int(event[:4]) if re.match(r"^\d{4}-", event) else None
+            title = "Super Bowl" if year is not None and year >= 1966 else "NFL Championship"
+        else:
+            title = CHAMPIONSHIP_TITLE.get(code, "")
+    if not title:
+        return ""
+    return CHAMPIONSHIP_TITLE_JA.get(title, title) if ja else title
 
 
 def year_of(record: dict) -> str | None:
@@ -207,11 +282,11 @@ def caption_game(r, ja: bool) -> str | None:
     series = series_en(r, winner_season)
     stage = str(r.get("stage") or r.get("roundLabel") or "")
     is_final = r.get("category") == "championship-final" or stage.lower() == "final"
-    if is_final and year and league:
-        round_en = f" {stage.replace('_', ' ')}" if stage and stage != "regular" else ""
+    title = championship_title(r, ja)
+    if is_final and year and title:
         if ja:
-            return f"{winner}が{year}年{league}{stage.replace('_', ' ') if stage else ''}で{loser}に{ws}対{ls}で勝った{ot_ja(r)}{venue_ja(r)}。"
-        return f"{winner} won the {year} {league}{round_en}, beating {loser} {ws}–{ls}{ot_en(r)}{venue_en(r)}."
+            return f"{winner}が{year}年の{title}で{loser}に{ws}対{ls}で勝った{ot_ja(r)}{venue_ja(r)}。"
+        return f"{winner} won the {year} {title}, beating {loser} {ws}–{ls}{ot_en(r)}{venue_en(r)}."
     if ja:
         return f"{winner}が{loser}に{ws}対{ls}で勝利した{extra_ja}{f'（{ctx}）' if ctx else ''}。"
     return f"{winner} beat {loser} {ws}–{ls}{extra_en}{f' ({ctx})' if ctx else ''}{series}."
@@ -243,9 +318,12 @@ def honour_of(r) -> str:  # noqa: ANN001
 
 
 def who_of(r) -> tuple[str, str]:  # noqa: ANN001
-    club = next((n for n in (r.get("clubNames") or []) if n), None) or (r.get("clubName") or "").strip()
+    club = public_club_name(r.get("clubNames"), r.get("clubName") or "")
     position = (r.get("position") or "").strip()
-    return " ".join(x for x in (club, position) if x), honour_of(r)
+    honour = honour_of(r)
+    if honour and CAREER_HIGHLIGHT.search(honour):
+        return "", honour
+    return " ".join(x for x in (club, position) if x), "" if club else honour
 
 
 def caption_person(r, ja: bool, died: bool) -> str | None:

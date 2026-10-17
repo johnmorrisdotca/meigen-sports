@@ -1,4 +1,3 @@
-import { tagsOf } from "../src/facts.ts";
 import { isRichFact } from "../src/sentences.ts";
 import type { OnThisDayRecord } from "../src/schema.ts";
 import type { MeigenRecord } from "../src/types.ts";
@@ -32,20 +31,30 @@ export function pickVaried(records: readonly MeigenRecord[], count: number, maxP
   return picked;
 }
 
-/** Facts variety: each recordId once; max `maxPer` per history tag and per competition. */
+/** Facts variety: each recordId once; max `maxPer` per extract category and per competition, then relax to fill. */
 export function pickVariedFacts(records: readonly OnThisDayRecord[], count: number, maxPer = 2): OnThisDayRecord[] {
-  const picked: OnThisDayRecord[] = [];
-  const byTag = new Map<string, number>();
-  const byCompetition = new Map<string, number>();
-  for (const record of records) {
-    if (picked.length >= count) break;
-    if (!isRichFact(record)) continue;
-    const tags = tagsOf(record);
-    const competition = record.competition ?? record.league ?? record.category;
-    if (tags.some((tag) => (byTag.get(tag) ?? 0) >= maxPer) || (byCompetition.get(competition) ?? 0) >= maxPer) continue;
-    picked.push(record);
-    for (const tag of tags) byTag.set(tag, (byTag.get(tag) ?? 0) + 1);
-    byCompetition.set(competition, (byCompetition.get(competition) ?? 0) + 1);
-  }
-  return picked;
+  const rich = records.filter(isRichFact);
+  const pick = (relaxCompetition: boolean, relaxCategory: boolean): OnThisDayRecord[] => {
+    const picked: OnThisDayRecord[] = [];
+    const seen = new Set<string>();
+    const byCategory = new Map<string, number>();
+    const byCompetition = new Map<string, number>();
+    for (const record of rich) {
+      if (picked.length >= count) break;
+      if (seen.has(record.recordId)) continue;
+      const competition = record.competition ?? record.league ?? record.category;
+      if (!relaxCategory && (byCategory.get(record.category) ?? 0) >= maxPer) continue;
+      if (!relaxCompetition && (byCompetition.get(competition) ?? 0) >= maxPer) continue;
+      picked.push(record);
+      seen.add(record.recordId);
+      byCategory.set(record.category, (byCategory.get(record.category) ?? 0) + 1);
+      byCompetition.set(competition, (byCompetition.get(competition) ?? 0) + 1);
+    }
+    return picked;
+  };
+  const first = pick(false, false);
+  if (first.length >= Math.min(count, rich.length)) return first;
+  const second = pick(true, false);
+  if (second.length >= Math.min(count, rich.length)) return second;
+  return pick(true, true);
 }

@@ -8,6 +8,16 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
     pattern: "{name}{whoClause} was born on this day in {year}{diedParen}.",
   },
   {
+    id: "birthday-of", type: "birthday", locale: "en", gate: "neutral", role: "variant",
+    needs: ["name", "dayPrecision", "who"],
+    pattern: "Today is the birthday of {name}{whoAfter}.",
+  },
+  {
+    id: "birthday-in-year", type: "birthday", locale: "en", gate: "neutral", role: "variant",
+    needs: ["name", "year", "dayPrecision", "who"],
+    pattern: "{name}{whoClause} was born in {year}.",
+  },
+  {
     id: "birthday-years-ago", type: "birthday", locale: "en", gate: "neutral", role: "variant",
     needs: ["name", "yearsAgoToday", "who"],
     pattern: "{name}{whoClause} was born {yearsAgo} years ago today.",
@@ -41,6 +51,16 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
     id: "birthday-on-this-day", type: "birthday", locale: "ja", gate: "neutral", role: "default",
     needs: ["name", "year", "dayPrecision", "who"],
     pattern: "{name}{whoClause}は{year}年のこの日に生まれた{diedParenJa}。",
+  },
+  {
+    id: "birthday-of", type: "birthday", locale: "ja", gate: "neutral", role: "variant",
+    needs: ["name", "dayPrecision", "who"],
+    pattern: "今日は{name}{whoClause}の誕生日。",
+  },
+  {
+    id: "birthday-in-year", type: "birthday", locale: "ja", gate: "neutral", role: "variant",
+    needs: ["name", "year", "dayPrecision", "who"],
+    pattern: "{name}{whoClause}は{year}年生まれ。",
   },
   {
     id: "birthday-years-ago", type: "birthday", locale: "ja", gate: "neutral", role: "variant",
@@ -83,6 +103,16 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
     pattern: "{winner} beat {loser} {winScore}–{loseScore}{gameNo}{venue}{ot}{stage}{ctx}.",
   },
   {
+    id: "game-defeated", type: "game", locale: "en", gate: "neutral", role: "variant", when: "decisive",
+    needs: ["winner", "loser", "winScore", "loseScore"],
+    pattern: "The {winner} defeated the {loser} {winScore}–{loseScore}{gameNo}{venue}{ot}{stage}{ctx}.",
+  },
+  {
+    id: "game-dominated", type: "game", locale: "en", gate: "neutral", role: "variant", when: "lopsided",
+    needs: ["winner", "loser", "winScore", "loseScore"],
+    pattern: "The {winner} dominated the {loser} {winScore}–{loseScore}{gameNo}{venue}{ot}{stage}{ctx}.",
+  },
+  {
     id: "game-tie", type: "game", locale: "en", gate: "neutral", role: "default", when: "tie",
     needs: ["home", "away", "homeScore", "awayScore"],
     pattern: "{home} tied {away} {homeScore}–{awayScore}{gameNo}{venue}{ot}{stage}{ctx}.",
@@ -93,29 +123,59 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
     pattern: "{winner}が{loser}に{winScore}対{loseScore}で勝利した{gameNo}{venue}{ot}{stage}{ctx}。",
   },
   {
+    id: "game-defeated", type: "game", locale: "ja", gate: "neutral", role: "variant", when: "decisive",
+    needs: ["winner", "loser", "winScore", "loseScore"],
+    pattern: "{winner}が{loser}を{winScore}対{loseScore}で破った{gameNo}{venue}{ot}{stage}{ctx}。",
+  },
+  {
+    id: "game-dominated", type: "game", locale: "ja", gate: "neutral", role: "variant", when: "lopsided",
+    needs: ["winner", "loser", "winScore", "loseScore"],
+    pattern: "{winner}が{loser}を{winScore}対{loseScore}で圧倒した{gameNo}{venue}{ot}{stage}{ctx}。",
+  },
+  {
     id: "game-tie", type: "game", locale: "ja", gate: "neutral", role: "default", when: "tie",
     needs: ["home", "away", "homeScore", "awayScore"],
     pattern: "{home}と{away}は{homeScore}対{awayScore}で引き分けた{gameNo}{venue}{ot}{stage}{ctx}。",
   },
   {
     id: "final-won", type: "final", locale: "en", gate: "neutral", role: "default", when: "decisive",
-    needs: ["winner", "loser", "winScore", "loseScore", "year", "league"],
-    pattern: "{winner} won the {year} {league}{finalRound}, beating {loser} {winScore}–{loseScore}{ot}{venue}.",
+    needs: ["winner", "loser", "winScore", "loseScore", "year", "title"],
+    pattern: "{winner} won the {year} {title}, beating {loser} {winScore}–{loseScore}{ot}{venue}.",
   },
   {
-    id: "final-beat", type: "final", locale: "en", gate: "neutral", role: "variant", when: "decisive",
-    needs: ["winner", "loser", "winScore", "loseScore"],
-    pattern: "{winner} beat {loser} {winScore}–{loseScore}{gameNo}{venue}{ot}{stage}{ctx}{series}.",
+    id: "final-to-win", type: "final", locale: "en", gate: "neutral", role: "variant", when: "decisive",
+    needs: ["winner", "loser", "winScore", "loseScore", "year", "title"],
+    pattern: "{winner} beat {loser} {winScore}–{loseScore}{ot}{venue} to win the {year} {title}.",
+  },
+  {
+    id: "final-captured", type: "final", locale: "en", gate: "neutral", role: "variant", when: "decisive",
+    needs: ["winner", "loser", "winScore", "loseScore", "year", "title"],
+    pattern: "The {winner} captured the {year} {title}, defeating the {loser} {winScore}–{loseScore}{ot}{venue}.",
+  },
+  {
+    id: "final-dominated", type: "final", locale: "en", gate: "neutral", role: "variant", when: "lopsided",
+    needs: ["winner", "loser", "winScore", "loseScore", "year", "title"],
+    pattern: "{winner} dominated {loser} {winScore}–{loseScore}{ot}{venue} to win the {year} {title}.",
   },
   {
     id: "final-won", type: "final", locale: "ja", gate: "neutral", role: "default", when: "decisive",
-    needs: ["winner", "loser", "winScore", "loseScore", "year", "league"],
-    pattern: "{winner}が{year}年{league}{finalRound}で{loser}に{winScore}対{loseScore}で勝った{ot}{venue}。",
+    needs: ["winner", "loser", "winScore", "loseScore", "year", "title"],
+    pattern: "{winner}が{year}年の{title}で{loser}に{winScore}対{loseScore}で勝った{ot}{venue}。",
   },
   {
-    id: "final-beat", type: "final", locale: "ja", gate: "neutral", role: "variant", when: "decisive",
-    needs: ["winner", "loser", "winScore", "loseScore"],
-    pattern: "{winner}が{loser}に{winScore}対{loseScore}で勝利した{gameNo}{venue}{ot}{stage}{ctx}。",
+    id: "final-to-win", type: "final", locale: "ja", gate: "neutral", role: "variant", when: "decisive",
+    needs: ["winner", "loser", "winScore", "loseScore", "year", "title"],
+    pattern: "{winner}が{loser}に{winScore}対{loseScore}で勝ち、{year}年の{title}を制した{ot}{venue}。",
+  },
+  {
+    id: "final-captured", type: "final", locale: "ja", gate: "neutral", role: "variant", when: "decisive",
+    needs: ["winner", "loser", "winScore", "loseScore", "year", "title"],
+    pattern: "{winner}が{year}年の{title}を獲得し、{loser}に{winScore}対{loseScore}で勝った{ot}{venue}。",
+  },
+  {
+    id: "final-dominated", type: "final", locale: "ja", gate: "neutral", role: "variant", when: "lopsided",
+    needs: ["winner", "loser", "winScore", "loseScore", "year", "title"],
+    pattern: "{winner}が{loser}を{winScore}対{loseScore}で圧倒し、{year}年の{title}を制した{ot}{venue}。",
   },
   {
     id: "award-won", type: "award", locale: "en", gate: "neutral", role: "default",

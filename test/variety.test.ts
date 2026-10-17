@@ -35,23 +35,25 @@ test("variety never takes more than two from the same category or competition", 
   assert.equal(picked.filter((r) => competitionOf(r) === "world-cup").length, 2);
 });
 
-test("facts variety keeps one recordId and caps two per tag", () => {
+test("facts variety keeps one recordId and caps two per category before relaxing", () => {
   const source = { sourceId: "wikidata", licence: "CC0 1.0", attribution: "Wikidata contributors, CC0.", url: "https://www.wikidata.org/" };
-  const fact = (id: string, tags: string[], competition: string): OnThisDayRecord => ({
-    recordId: id, category: "game-on-day", tags, basis: "source", eventDate: "2000-01-01", datePrecision: "day",
+  const fact = (id: string, category: OnThisDayRecord["category"], competition: string): OnThisDayRecord => ({
+    recordId: id, category, tags: ["match-result"], basis: "source", eventDate: "2000-01-01", datePrecision: "day",
     sport: "ice-hockey", competition, league: competition, source,
     homeScore: 5, awayScore: 3,
     home: { name: "Home", franchiseId: 1, teamSeasonId: 1, soccerTeamId: null, countryCode: "CA", fifaCode: null, flagCode: "CA" },
     away: { name: "Away", franchiseId: 2, teamSeasonId: 2, soccerTeamId: null, countryCode: "US", fifaCode: null, flagCode: "US" },
   });
-  const picked = pickVariedFacts([
-    fact("a", ["championship-win", "overtime-result"], "nhl"),
-    fact("b", ["championship-win"], "nba"),
-    fact("c", ["championship-win"], "mlb"),
-    fact("d", ["match-result"], "cfl"),
-  ], 10);
-  assert.equal(new Set(picked.map((r) => r.recordId)).size, picked.length);
-  assert.equal(picked.filter((r) => r.tags.includes("championship-win")).length, 2);
+  const first = pickVariedFacts([
+    fact("a", "championship-final", "nhl"),
+    fact("b", "championship-final", "nba"),
+    fact("c", "championship-final", "mlb"),
+    fact("d", "game-on-day", "cfl"),
+    fact("e", "game-on-day", "nfl"),
+  ], 4);
+  assert.equal(new Set(first.map((r) => r.recordId)).size, first.length);
+  assert.equal(first.filter((r) => r.category === "championship-final").length, 2);
+  assert.equal(first.filter((r) => r.category === "game-on-day").length, 2);
 });
 
 test("the starter seed can still fill ten mixed demo records", () => {

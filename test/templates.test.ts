@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { captionFromFact } from "../src/sentences.ts";
-import { render, TEMPLATES } from "../src/templates/index.ts";
+import { championshipTitle, isLopsided, publicClubName, render, TEMPLATES, templatesFor } from "../src/templates/index.ts";
 import type { OnThisDayRecord } from "../src/schema.ts";
 
 const source = { sourceId: "wikidata", licence: "CC0 1.0", attribution: "Wikidata contributors, CC0.", url: "https://www.wikidata.org/" };
@@ -148,14 +148,79 @@ test("a name-and-year venue or franchise is dropped", () => {
   );
 });
 
-test("a championship final names the winner and the result", () => {
-  const final: OnThisDayRecord = {
+function team(name: string, franchiseId: number): OnThisDayRecord["home"] {
+  return { name, franchiseId, teamSeasonId: franchiseId * 10, soccerTeamId: null, countryCode: "US", fifaCode: null, flagCode: "US" };
+}
+
+test("a championship final names the title, not the league code", () => {
+  const nhl: OnThisDayRecord = {
     recordId: "f1", category: "championship-final", tags: ["championship-win", "match-result"],
     basis: "source", eventDate: "1975-05-10", datePrecision: "day", sport: "ice-hockey",
     competition: "nhl", league: "nhl", homeScore: 5, awayScore: 3, stage: "final",
-    home: { name: "Montreal Canadiens", franchiseId: 10, teamSeasonId: 100, soccerTeamId: null, countryCode: "CA", fifaCode: null, flagCode: "CA" },
-    away: { name: "Boston Bruins", franchiseId: 11, teamSeasonId: 101, soccerTeamId: null, countryCode: "US", fifaCode: null, flagCode: "US" },
-    source,
+    home: team("Montreal Canadiens", 10), away: team("Boston Bruins", 11), source,
   };
-  assert.equal(captionFromFact(final), "Montreal Canadiens won the 1975 NHL final, beating Boston Bruins 5–3.");
+  assert.equal(captionFromFact(nhl), "Montreal Canadiens won the 1975 Stanley Cup, beating Boston Bruins 5–3.");
+  assert.equal(championshipTitle(nhl), "Stanley Cup");
+  const mlb: OnThisDayRecord = {
+    ...nhl, recordId: "f2", eventDate: "1934-10-09", sport: "baseball", competition: "mlb", league: "mlb",
+    homeScore: 11, awayScore: 0, home: team("St. Louis Cardinals", 20), away: team("Detroit Tigers", 21),
+  };
+  assert.equal(captionFromFact(mlb), "St. Louis Cardinals won the 1934 World Series, beating Detroit Tigers 11–0.");
+  assert.equal(/the 1934 MLB/.test(captionFromFact(mlb) ?? ""), false);
+  const nfl: OnThisDayRecord = {
+    ...nhl, recordId: "f3", eventDate: "1940-12-08", sport: "american-football", competition: "nfl", league: "nfl",
+    homeScore: 73, awayScore: 0, home: team("Chicago Bears", 30), away: team("Washington Redskins", 31),
+  };
+  assert.equal(captionFromFact(nfl), "Chicago Bears won the 1940 NFL Championship, beating Washington Redskins 73–0.");
+  assert.equal(championshipTitle({ ...nfl, seasonStartYear: 1966, eventDate: "1967-01-15" }), "Super Bowl");
+  const mls: OnThisDayRecord = {
+    ...nhl, recordId: "f4", category: "soccer-on-day", eventDate: "2005-11-13",
+    sport: "soccer", competition: "mls", league: "mls", stage: "final", homeScore: 1, awayScore: 0,
+    home: team("Los Angeles Galaxy", 40), away: team("New England Revolution", 41),
+  };
+  assert.equal(captionFromFact(mls), "Los Angeles Galaxy won the 2005 MLS Cup, beating New England Revolution 1–0.");
+});
+
+test("each fact kind has at least three sentence patterns", () => {
+  const decisive = (type: "game" | "final") => templatesFor(type, "en").filter((row) => row.when !== "tie");
+  assert.ok(decisive("game").length >= 3);
+  assert.ok(decisive("final").length >= 3);
+  assert.ok(templatesFor("birthday", "en").filter((row) => row.gate === "neutral").length >= 3);
+});
+
+test("a lopsided shutout can say dominated; a 2–1 soccer win cannot", () => {
+  const football: OnThisDayRecord = {
+    recordId: "g1", category: "game-on-day", tags: ["match-result", "shutout"],
+    basis: "source", eventDate: "1940-12-08", datePrecision: "day", sport: "american-football",
+    competition: "nfl", league: "nfl", homeScore: 73, awayScore: 0,
+    home: team("Chicago Bears", 30), away: team("Washington Redskins", 31), source,
+  };
+  const soccer: OnThisDayRecord = {
+    ...football, recordId: "g2", sport: "soccer", competition: "wc", league: "wc",
+    homeScore: 2, awayScore: 1, home: team("Argentina", 1), away: team("France", 2),
+  };
+  assert.equal(isLopsided(football), true);
+  assert.equal(isLopsided(soccer), false);
+  const dominated = render(football, { templateId: "game-dominated" });
+  assert.equal(dominated?.text, "The Chicago Bears dominated the Washington Redskins 73–0 (NFL, 1940).");
+  assert.equal(render(soccer, { templateId: "game-dominated" }), null);
+  const defeated = render(soccer, { templateId: "game-defeated" });
+  assert.equal(defeated?.text, "The Argentina defeated the France 2–1 (World Cup, 1940).");
+});
+
+test("Gretzky bios use Edmonton Oilers, never Alberta Oilers", () => {
+  assert.equal(publicClubName(["Alberta Oilers", "Edmonton Oilers (1978–1987)", "Los Angeles Kings (1988–1995)"]), "Edmonton Oilers");
+  const mixed = gretzky({
+    clubNames: ["Alberta Oilers", "Edmonton Oilers (1978–1987)"],
+    highlight: "Winner of the Ted Lindsay Award",
+  });
+  const text = captionFromFact(mixed);
+  assert.match(text ?? "", /Edmonton Oilers/);
+  assert.equal(/Alberta Oilers/.test(text ?? ""), false);
+  assert.equal(/Ted Lindsay/.test(text ?? ""), false);
+  const career = captionFromFact(gretzky({ highlight: "four-time Stanley Cup champion" }));
+  assert.equal(career, "Wayne Gretzky, four-time Stanley Cup champion, was born on this day in 1961.");
+  const birthdayOf = render(gretzky(), { templateId: "birthday-of" });
+  assert.equal(birthdayOf?.text, "Today is the birthday of Wayne Gretzky, the Edmonton Oilers centre.");
+  assert.equal(/Alberta|\.,/.test(birthdayOf?.text ?? ""), false);
 });

@@ -1,5 +1,7 @@
 import type { OnThisDayRecord, TeamRef } from "../schema.ts";
 import { TEMPLATES } from "./catalog.ts";
+import { isCareerHighlight, publicClubName } from "./clubs.ts";
+import { championshipTitle, isLopsided } from "./titles.ts";
 import type {
   RenderedSentence, RenderOptions, SentenceTemplate, TemplateLocale, TemplateType,
 } from "./types.ts";
@@ -42,8 +44,11 @@ function factType(record: OnThisDayRecord): TemplateType | null {
     case "game-on-day":
     case "soccer-on-day":
     case "upset":
-    case "comeback":
+    case "comeback": {
+      const stage = (record.stage ?? record.roundLabel ?? "").toLowerCase();
+      if (stage === "final" || stage === "championship") return "final";
       return "game";
+    }
     case "award":
     case "milestone":
       return "award";
@@ -113,15 +118,19 @@ function fieldsOf(record: OnThisDayRecord, locale: TemplateLocale, asOf?: string
   const extraBits = [record.position, clubs].filter((v): v is string => Boolean(v && v.trim()));
   const extra = extraBits.length ? (ja ? `（${extraBits.join("、")}）` : ` (${extraBits.join(", ")})`) : "";
   const age = record.ageYears != null ? (ja ? `${record.ageYears}歳で` : ` at age ${record.ageYears}`) : "";
-  const club = (record.clubNames?.find((n) => n.trim()) ?? record.clubName ?? "").trim();
+  const club = publicClubName(record.clubNames, record.clubName ?? "");
   const position = record.position?.trim() ?? "";
   const clubPosition = [club, position].filter(Boolean).join(" ");
   const honour = record.highlight?.trim() ?? "";
   const honourAnd = honour ? (ja ? `、${honour}` : ` and ${honour}`) : "";
-  const whoCore = clubPosition || honour;
+  const birthday = record.category === "player-birthday";
+  const career = birthday && honour && isCareerHighlight(honour);
+  const whoCore = career ? honour : (clubPosition || honour);
   const who = whoCore ? "who" : "";
   const whoClause = !whoCore ? ""
-    : ja ? `（${[clubPosition, honour].filter(Boolean).join("、")}）`
+    : ja ? `（${career ? honour : birthday ? (clubPosition || honour) : [clubPosition, honour].filter(Boolean).join("、")}）`
+    : career ? `, ${honour},`
+    : birthday && clubPosition ? `, the ${clubPosition},`
     : clubPosition && honour ? `, the ${clubPosition} and ${honour},`
     : clubPosition ? `, the ${clubPosition},`
     : `, ${honour},`;
@@ -157,10 +166,11 @@ function fieldsOf(record: OnThisDayRecord, locale: TemplateLocale, asOf?: string
     awayScore: aws == null ? "" : String(aws),
     winner, loser, winScore, loseScore, ctx, ot, stage, venue, gameNo, series,
     extra, age, aged, agedJa, clubs, clubPosition, honourAnd,
-    who, whoClause, diedParen, diedParenJa, homeClause, finalClause,
+    who, whoClause, whoAfter: whoClause.replace(/,$/, ""), diedParen, diedParenJa, homeClause, finalClause,
     venueContext, franchiseContext, leagueIdentity,
     highlight: record.highlight?.trim() ?? "",
     nationality: record.nationality?.trim() ?? "",
+    title: championshipTitle(record, locale),
     finalRound,
     birthPlace: record.birthPlace?.trim() ?? "",
     deathYear,
@@ -199,6 +209,7 @@ function eligible(template: SentenceTemplate, record: OnThisDayRecord, fields: R
   const tie = hs != null && aws != null && hs === aws;
   if (template.when === "tie" && !tie) return false;
   if (template.when === "decisive" && (hs == null || aws == null || tie)) return false;
+  if (template.when === "lopsided" && !isLopsided(record)) return false;
   if (record.category === "franchise-event" && /^\d{4}-01-01$/.test(record.eventDate ?? "")) return false;
   for (const need of template.needs) {
     if (!fields[need]) return false;

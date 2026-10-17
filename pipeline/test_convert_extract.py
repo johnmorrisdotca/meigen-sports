@@ -52,6 +52,28 @@ class ConvertExtractTests(unittest.TestCase):
         row = {"record": {"metric": "goals", "scope": "NHL", "holderName": "Wayne Gretzky", "value": 894, "unit": "goals", "event": "set"}}
         self.assertIn("record", convert.featured_reasons(row))
 
+    def test_championship_title_is_not_the_league_code(self):
+        mlb = {
+            "category": "championship-final", "eventDate": "1934-10-09", "league": "mlb",
+            "homeScore": 11, "awayScore": 0, "stage": "final",
+            "home": {"name": "St. Louis Cardinals"}, "away": {"name": "Detroit Tigers"},
+        }
+        nfl = {
+            "category": "championship-final", "eventDate": "1940-12-08", "league": "nfl",
+            "homeScore": 73, "awayScore": 0, "stage": "final",
+            "home": {"name": "Chicago Bears"}, "away": {"name": "Washington Redskins"},
+        }
+        self.assertEqual(convert.caption_game(mlb, False), "St. Louis Cardinals won the 1934 World Series, beating Detroit Tigers 11–0.")
+        self.assertEqual(convert.caption_game(nfl, False), "Chicago Bears won the 1940 NFL Championship, beating Washington Redskins 73–0.")
+        self.assertNotIn("the 1934 MLB", convert.caption_game(mlb, False))
+
+    def test_public_club_name_prefers_edmonton_over_alberta(self):
+        self.assertEqual(
+            convert.public_club_name(["Alberta Oilers", "Edmonton Oilers (1978–1987)"]),
+            "Edmonton Oilers",
+        )
+        self.assertTrue(convert.is_province_club("Alberta Oilers"))
+
     def test_same_game_rows_merge_to_one_id(self):
         a = {"recordId": "spx:game:1", "category": "game-on-day", "eventDate": "2022-12-18", "gameId": 1, "tags": ["match-result"]}
         b = {"recordId": "spx:final:1", "category": "championship-final", "eventDate": "2022-12-18", "gameId": 1, "tags": ["championship-win"]}

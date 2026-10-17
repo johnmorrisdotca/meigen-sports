@@ -15,7 +15,7 @@ export interface SentenceTemplate {
   readonly role: TemplateRole;
   readonly needs: readonly string[];
   readonly pattern: string;
-  readonly when?: "tie" | "decisive";
+  readonly when?: "tie" | "decisive" | "lopsided";
 }
 
 export interface RenderOptions {

@@ -37,6 +37,8 @@ Missing `birthPlace`, `highlight`, day precision, or `asOf` skips the template t
 Neutral (default, correct either way):
 
 - `birthday-on-this-day`: “Wayne Gretzky, the Edmonton Oilers centre, was born on this day in 1961.”
+- `birthday-of`: “Today is the birthday of Wayne Gretzky, the Edmonton Oilers centre.”
+- `birthday-in-year`: “Wayne Gretzky, the Edmonton Oilers centre, was born in 1961.”
 - `birthday-years-ago`: “Wayne Gretzky, the Edmonton Oilers centre, was born 65 years ago today.”
 - `birthday-place`: “On this day in 1961, Wayne Gretzky was born in Brantford, Ontario.”
 - `birthday-years-ago-highlight`: “65 years ago today: Wayne Gretzky, four-time Stanley Cup champion, was born.”
@@ -62,13 +64,29 @@ No name-and-year death template. If those fields are missing, skip the fact rath
 
 Venue openings need a city, home club or hosted final. Franchise identity changes need a league and/or city. Skip the clause you cannot source; skip the fact if none remain.
 
+## Games
+
+A regular result uses at least three patterns. `varied` / `seeded` pick among those that are eligible:
+
+- `game-beat`: “Pittsburgh Pirates beat Brooklyn Superbas 10–0 (MLB, 1900).”
+- `game-defeated`: “The Pittsburgh Pirates defeated the Brooklyn Superbas 10–0 (MLB, 1900).”
+- `game-dominated` (lopsided only): “The Chicago Bears dominated the Washington Redskins 73–0 (NFL, 1940).”
+
+Lopsided means a shutout plus a large margin for that sport (football 21, baseball 8, hockey 5, soccer 4). A 2–1 soccer win is never “dominated”. Basketball uses a 25-point margin and does not require a shutout.
+
 ## Finals
 
-A decisive championship final names the winner and the result when year and league are sourced:
+A decisive championship final names the **title**, never the league code alone (“the 1934 MLB”):
 
-- `final-won`: “Montreal Canadiens won the 1975 NHL final, beating Boston Bruins 5–3.”
+- MLB → World Series; NHL → Stanley Cup; NBA → NBA Finals; CFL → Grey Cup; NFL before 1966 → NFL Championship, 1966 on → Super Bowl.
+- `final-won`: “Montreal Canadiens won the 1975 Stanley Cup, beating Boston Bruins 5–3.”
+- `final-to-win`: “St. Louis Cardinals beat Detroit Tigers 11–0 to win the 1934 World Series.”
+- `final-captured`: “The Chicago Bears captured the 1940 NFL Championship, defeating the Washington Redskins 73–0.”
+- `final-dominated` when the score is lopsided.
 
 A World Cup match caption in the bundled history feed is rewritten the same way from its own published score line (“Argentina won the 2022 World Cup, beating France 4–2 on penalties after a 3–3 draw.”). Venue is included only when the fact holds it.
+
+Person bios use the franchise’s public name (Edmonton Oilers, never Alberta Oilers when both are listed). A championship or record highlight is the who-clause; a random award is not stacked onto a club name.
 
 Generic “X began/ended” history rows are published only when no richer match exists for that competition edition and date.
 

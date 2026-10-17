@@ -4,6 +4,15 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+## [0.3.4] - 2026-10-17
+
+Not published to npm. Pages deploy from main.
+
+- Championship sentences name the title (World Series, Stanley Cup, NFL Championship / Super Bowl), not “the 1934 MLB”.
+- Regular games and finals each have three or more templates; a lopsided shutout may say “dominated”.
+- Birthday bios prefer the public franchise name (Edmonton Oilers, not Alberta Oilers) and a career highlight over a stacked award.
+- Demo: form fields match the Find control; Reload shuffles a new mix with varied wording (no two-record tag-cap stall).
+
 ## [0.3.3] - 2026-10-17
 
 Not published to npm. Pages deploy from main.

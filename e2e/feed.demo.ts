@@ -17,6 +17,8 @@ for (const language of ["en", "ja"]) {
   await expect(page.locator("#today-heading")).not.toHaveText("");
   await expect(page.locator("#today-facts .record")).toHaveCount(3);
   await expect(page.locator("#random-facts .record")).toHaveCount(10);
+  await page.locator("#random-reload").click();
+  await expect(page.locator("#random-facts .record")).toHaveCount(10);
   await expect(page.locator("#quote blockquote")).toBeVisible();
   await expect(page.locator("#history")).toContainText("2022");
   const quote = await page.locator("#quote blockquote").textContent();

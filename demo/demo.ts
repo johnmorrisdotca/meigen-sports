@@ -76,14 +76,19 @@ function factCredit(record: OnThisDayRecord) {
   }
   return p;
 }
-function drawFacts(box: HTMLElement, records: readonly OnThisDayRecord[]) {
+let wordingSeed = 0;
+function nextSeed(): string {
+  return `demo:${Date.now()}:${++wordingSeed}:${Math.random()}`;
+}
+function drawFacts(box: HTMLElement, records: readonly OnThisDayRecord[], wording: "fixed" | "varied" = "varied") {
   box.replaceChildren();
   const locale = familyLang.lang === "ja" ? "ja" : "en";
   const asOf = date.value;
+  const seed = nextSeed();
   for (const fact of records) {
     const article = document.createElement("article"); article.className = "record";
     const p = document.createElement("p");
-    const drawn = renderFact(fact, { wording: "fixed", locale, asOf });
+    const drawn = renderFact(fact, { wording, seed: `${seed}:${fact.recordId}`, locale, asOf });
     if (!drawn?.text) continue;
     p.textContent = drawn.text;
     const tags = document.createElement("p"); tags.className = "credit"; tags.textContent = tagsOf(fact).join(" · ");
@@ -171,7 +176,7 @@ async function renderFavourites() {
   else if (favSport.value) path = `feeds/sports/${favSport.value}.json`;
   try {
     const shard = await loadFactShard(path, localFeed());
-    const rows = pickVariedFacts(factsFor(shard.records, filters), 20);
+    const rows = pickVariedFacts(shuffle(factsFor(shard.records, filters)), 20);
     drawFacts(favBox, rows);
     favStatus.textContent = rows.length ? `${rows.length} ${familyLang.word("results")}` : familyLang.word("favEmpty");
   } catch {
@@ -221,6 +226,7 @@ async function renderShowcase() {
   }
 }
 document.querySelector("#fav-find")!.addEventListener("click", () => { void renderFavourites(); });
+document.querySelector("#random-reload")!.addEventListener("click", () => { void renderRandom(); });
 window.addEventListener("meigen-language", () => { void render(); void renderRandom(); void renderShowcase(); });
 void render();
 void renderRandom();
