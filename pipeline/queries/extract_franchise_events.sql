@@ -1,6 +1,6 @@
 -- Exact-day franchise identity and league-membership bounds (lower(valid_during)).
--- Context: league, city (identity.location), what the identity is (full_name).
--- psql -v ON_ERROR_STOP=1 -v after_date='0001-01-01' -v after_id=0 -v page_limit=500 -f pipeline/queries/extract_franchise_events.sql
+-- Context: league, city (identity.location), club name from identity.full_name.
+-- psql -v ON_ERROR_STOP=1 -v after_date='0001-01-01' -v after_id=0 -v page_limit=2000 -f pipeline/queries/extract_franchise_events.sql
 begin read only;
 set local statement_timeout = '8s';
 with events as (
@@ -13,7 +13,8 @@ with events as (
             and fl.valid_during @> lower(i.valid_during)
           order by lower(fl.valid_during)
           limit 1) as league_code,
-         src.code, src.licence, src.attribution
+         src.code, src.licence, src.attribution,
+         i.full_name as club_name
   from core.franchise_identity i
   left join meta.source src on src.source_id = i.source_id
   where lower(i.valid_during) is not null
@@ -28,7 +29,13 @@ with events as (
           order by lower(i.valid_during)
           limit 1),
          fl.league_code,
-         src.code, src.licence, src.attribution
+         src.code, src.licence, src.attribution,
+         (select i.full_name
+          from core.franchise_identity i
+          where i.franchise_id = fl.franchise_id
+            and i.valid_during @> lower(fl.valid_during)
+          order by lower(i.valid_during)
+          limit 1) as club_name
   from core.franchise_league fl
   left join meta.source src on src.source_id = fl.source_id
   where lower(fl.valid_during) is not null
@@ -51,7 +58,11 @@ select jsonb_build_object(
       'eventDate', event_date,
       'franchiseId', franchise_id,
       'label', label,
-      'clubName', label,
+      'clubName', club_name,
+      'clubNames', case
+        when club_name is not null then to_jsonb(ARRAY[club_name])
+        else '[]'::jsonb
+      end,
       'league', league_code,
       'venueCity', city,
       'sourceId', code,

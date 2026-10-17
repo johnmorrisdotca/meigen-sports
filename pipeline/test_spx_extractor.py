@@ -51,12 +51,22 @@ class ExtractorSqlTests(unittest.TestCase):
         self.assertIn("'personid'", body)
         self.assertIn("'qid'", body)
         self.assertNotIn("after_qid", body)
+        self.assertIn("core.person_sport", body)
+        self.assertIn("ref.league", body)
+        self.assertIn("l.sport_code", body)
+        self.assertNotIn("'ice hockey'", body)
+        self.assertNotIn("'ice_hockey'", body)
 
     def test_deaths_use_harvest_p570_without_roster_filter(self):
         body = self.assert_read_only("extract_deaths.sql")
         self.assertIn("legacy_wikidata_harvest.claim", body)
         self.assertIn("c.prop = 'p570'", body)
         self.assertNotIn("where exists ( select 1 from core.roster_stint", body)
+        self.assertIn("core.person_sport", body)
+        self.assertIn("ref.league", body)
+        self.assertIn("l.sport_code", body)
+        self.assertNotIn("'ice hockey'", body)
+        self.assertNotIn("'ice_hockey'", body)
 
     def test_drafts_page_core_draft_pick_at_year_precision(self):
         body = self.assert_read_only("extract_drafts.sql")
@@ -71,6 +81,14 @@ class ExtractorSqlTests(unittest.TestCase):
         self.assertIn("core.venue_final_game", body)
         self.assertIn("count(distinct g.game_date)", body)
         self.assertIn("after_id", body)
+
+    def test_franchise_events_emit_club_names(self):
+        body = self.assert_read_only("extract_franchise_events.sql")
+        self.assertIn("'clubnames'", body)
+        self.assertIn("i.full_name", body)
+        self.assertIn("core.franchise_identity", body)
+        self.assertIn("after_id", body)
+        self.assertNotIn("after_qid", body)
 
 
 if __name__ == "__main__":

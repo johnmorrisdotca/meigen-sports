@@ -43,11 +43,6 @@ sided as (
          w.award_count, w.championships, w.person_award, w.championship_name
   from page p
   left join lateral (
-    select (array_agg(ps.sport_code order by ps.sport_code))[1] as sport
-    from core.person_sport ps
-    where ps.person_id = p.person_id
-  ) sp on true
-  left join lateral (
     select array_agg(distinct se.league_code order by se.league_code) as league_codes,
            array_agg(distinct ts.franchise_id order by ts.franchise_id) as franchise_ids,
            array_agg(distinct ts.team_season_id order by ts.team_season_id) as team_season_ids
@@ -56,6 +51,17 @@ sided as (
     join core.season se on se.season_id = ts.season_id
     where rs.person_id = p.person_id
   ) t on true
+  left join lateral (
+    -- Known sports only: core.person_sport, else ref.league.sport_code for roster leagues.
+    select coalesce(
+      (select (array_agg(ps.sport_code order by ps.sport_code))[1]
+       from core.person_sport ps
+       where ps.person_id = p.person_id),
+      (select (array_agg(l.sport_code order by l.sport_code))[1]
+       from unnest(coalesce(t.league_codes, '{}'::text[])) as lc(code)
+       join ref.league l on l.league_code = lc.code)
+    ) as sport
+  ) sp on true
   left join lateral (
     select array_agg(c.club order by c.club) as club_names
     from (
