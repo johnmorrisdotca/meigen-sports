@@ -52,14 +52,43 @@ sided as (
     where rs.person_id = p.person_id
   ) t on true
   left join lateral (
-    -- Known sports only: core.person_sport, else ref.league.sport_code for roster leagues.
+    -- Known sports only: core.person_sport, else roster league, else mapped P641/P106.
+    -- Map matches pipeline/ds1-people/wikidata_p641_sport.csv (existing sport codes only).
     select coalesce(
       (select (array_agg(ps.sport_code order by ps.sport_code))[1]
        from core.person_sport ps
        where ps.person_id = p.person_id),
       (select (array_agg(l.sport_code order by l.sport_code))[1]
        from unnest(coalesce(t.league_codes, '{}'::text[])) as lc(code)
-       join ref.league l on l.league_code = lc.code)
+       join ref.league l on l.league_code = lc.code),
+      (select (array_agg(m.sport_code order by m.sport_code))[1]
+       from (
+         select c.value_qid
+           from legacy_wikidata_harvest.claim c
+          where c.qid = p.qid and c.prop in ('P641', 'P106')
+            and c.value_qid is not null
+            and coalesce(c.rank, 'normal') <> 'deprecated'
+         union
+         select c.value_qid
+           from legacy_people.claim c
+          where c.qid = p.qid and c.prop in ('P641', 'P106')
+            and c.value_qid is not null
+            and coalesce(c.rank, 'normal') <> 'deprecated'
+       ) claims
+       join (values
+         ('Q41466', 'hockey'),
+         ('Q11774891', 'hockey'),
+         ('Q5372', 'basketball'),
+         ('Q3665646', 'basketball'),
+         ('Q5369', 'baseball'),
+         ('Q10871364', 'baseball'),
+         ('Q41323', 'american_football'),
+         ('Q19204627', 'american_football'),
+         ('Q248534', 'canadian_football'),
+         ('Q19841381', 'canadian_football'),
+         ('Q2736', 'soccer'),
+         ('Q937857', 'soccer')
+       ) as m(qid, sport_code) on m.qid = claims.value_qid)
     ) as sport
   ) sp on true
   left join lateral (

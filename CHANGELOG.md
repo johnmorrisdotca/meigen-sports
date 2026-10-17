@@ -4,6 +4,13 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+## [0.3.2] - 2026-10-17
+
+Not published to npm. Pages deploy from main.
+
+- Rebuild on-this-day shards from the 478cc33 extracts (sport from league, club names on births/deaths/venues/franchises). 29,167 facts; all 366 days have at least three feed-ready rows. Kim Q704476 stays unpublished.
+- People pipeline maps Wikidata P641 (and known P106 occupations) onto existing sport codes for `core.person_sport`; extract SQL uses the same map when person_sport and roster league are empty.
+
 ## [0.3.1] - 2026-10-16
 
 Not published to npm (0.3.0 still waits on 2FA). Pages deploy from main.

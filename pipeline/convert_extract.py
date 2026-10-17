@@ -1116,7 +1116,7 @@ def main() -> int:
         "featuredMargin": FEATURE_MARGIN,
         "extractOnDisk": {
             "game-on-day": 392898, "championship-final": 1867, "soccer-on-day": 10423,
-            "player-birthday": 20440, "player-death": 3999, "award": 5181,
+            "player-birthday": 20532, "player-death": 4028, "award": 5181,
             "franchise-event": 1116, "venue-opening": 203, "draft": len(drafts),
         },
         "files": files,
