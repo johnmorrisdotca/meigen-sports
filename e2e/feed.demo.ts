@@ -17,8 +17,14 @@ for (const language of ["en", "ja"]) {
   await expect(page.locator("#today-heading")).not.toHaveText("");
   await expect(page.locator("#today-facts .record")).toHaveCount(3);
   await expect(page.locator("#random-facts .record")).toHaveCount(10);
-  await page.locator("#random-reload").click();
-  await expect(page.locator("#random-facts .record")).toHaveCount(10);
+  const before = await page.locator("#random-facts").innerText();
+  let changed = false;
+  for (let i = 0; i < 5 && !changed; i++) {
+    await page.locator("#random-reload").click();
+    await expect(page.locator("#random-facts .record")).toHaveCount(10);
+    changed = (await page.locator("#random-facts").innerText()) !== before;
+  }
+  expect(changed).toBe(true);
   await expect(page.locator("#quote blockquote")).toBeVisible();
   await expect(page.locator("#history")).toContainText("2022");
   const quote = await page.locator("#quote blockquote").textContent();
