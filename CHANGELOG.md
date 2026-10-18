@@ -12,6 +12,7 @@ Not published to npm. Pages deploy from main.
 - Regular games and finals each have three or more templates; a lopsided shutout may say “dominated”.
 - Birthday bios prefer the public franchise name (Edmonton Oilers, not Alberta Oilers) and a career highlight over a stacked award.
 - Demo: form fields match the Find control; Reload shuffles a new mix with varied wording (no two-record tag-cap stall).
+- Demo test: Reload must change the shuffled facts.
 
 ## [0.3.3] - 2026-10-17
 
