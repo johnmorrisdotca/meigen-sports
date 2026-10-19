@@ -4,6 +4,16 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-10-19
+
+- One build ships both places. `data/v1/latest.json` now names the package version, the data folder and a SHA-256 of the facts manifest (`build`); the bundled offline set records the same build. `scripts/check-build.ts` fails when the bundled data and the data Pages serves are different builds, in CI, in the Pages workflow (before publishing, and against the live site after it) and in the Release workflow; the packed-package check does the same for the installed package.
+- New `@johnmorrisdotca/meigen-sports/offline`: `offline` is the best three to five facts for every one of the 366 calendar days (1,472 facts, chosen by significance and fame and varied by kind, sport, person and club) and `OFFLINE_BUILD` names the build they came from, so `today(offline, timeZone, nowIso)` always works with no network. The package is 0.9 MB packed (was 0.7 MB). The README says what is bundled, what loads from Pages, and that Pages must be reachable for the rest.
+- The demo reads the full Pages feeds through the package's own loaders and fetches only what each view needs: today's day shard, one random file of the 100 that hold every fact, a team's or a player's feed, one feed per filter. When the feeds cannot be reached it shows the bundled offline set and says so on the page.
+- Golden facts: `test/golden/golden-facts.json` lists 246 famous facts checked at Wikidata and English Wikipedia (146 the data must hold, 100 known gaps), with 15 never-rules; the suite runs in `pnpm check`, on the built site and in the Release workflow, and fails the release on any miss. See `docs/golden-facts.md`.
+- Data fixes the golden facts found, rebuilt from the same extracts: only the last game of a World Series or NBA Finals "won the title" (the earlier games of the series were each worded as winning it); seven NBA seasons whose extract named a first-round or conference series as the final no longer name any title game, checked against Wikipedia (`pipeline/golden/finals-check.json`); a person's sport is the sport of his league (Michael Jordan was baseball, Jackie Robinson football, 139 CFL players American football); World Cup finals level after extra time say they went to penalties instead of "tied"; franchise identities dated only on a placeholder day (January 1, March 1, July 1: 367 of 486) are dropped. 29,594 facts remain, still on all 366 days.
+- The Python converter's checked-in shards had drifted from its own wording (12,493 captions); they are rebuilt from it.
+- A site that cached the 0.4.0 Pages feeds should refresh them: the title sentences and sports in them were wrong.
+
 ## [0.4.0] - 2026-10-19
 
 - Sentence patterns for every kind of statement: fifteen kinds, at least three patterns per kind and language (`TEMPLATE_TYPES`), fragments such as “in overtime” and “aged 34” moved out of code into `src/templates/phrases.ts`, World Cup matches and finals, competition starts and ends and dated events worded by `renderHistory`, and “the” no longer put before national sides or soccer clubs.
