@@ -465,8 +465,7 @@ def sport_slug(value: str | None) -> str | None:
         "hockey": "ice-hockey", "ice_hockey": "ice-hockey",
         "american_football": "american-football", "canadian_football": "canadian-football",
         "para_ice_hockey": "para-ice-hockey", "para_athletics": "para-athletics",
-        "para_swimming": "para-swimming", "women_soccer": "women-soccer",
-        "women_basketball": "women-basketball", "women_ice_hockey": "women-ice-hockey",
+        "para_swimming": "para-swimming",
         "motor_racing": "motor-racing", "formula_one": "formula-one",
         "stock_car_racing": "stock-car-racing", "motorcycle_racing": "motorcycle-racing",
         "sports_car_racing": "sports-car-racing", "horse_racing": "horse-racing",
@@ -904,7 +903,7 @@ def main() -> int:
     franchise = [r for r in load_records("extract_franchise_events.json") if allowed(r)]
     drafts = [r for r in load_records("extract_drafts.json") if allowed(r)]
     names = name_map(games + finals + franchise)
-    for extra in ("extract_wikidata_women.json", "extract_wikidata_para.json", "extract_wikidata_famous.json"):
+    for extra in ("extract_wikidata_para.json", "extract_wikidata_famous.json"):
         for row in load_records(extra):
             if not allowed(row):
                 continue
@@ -1154,7 +1153,7 @@ def main() -> int:
         write_shard(f"feeds/players/{bucket}.json", pick_ranked(uniq, 40), files)
     write_shard("sample.json", pick_varied(shuffle(facts, "meigen-sample-0.1.0"), 400) or facts[:400], files)
     famous_rank: dict[str, int] = {}
-    for extra in ("extract_wikidata_famous.json", "extract_wikidata_women.json", "extract_wikidata_para.json"):
+    for extra in ("extract_wikidata_famous.json", "extract_wikidata_para.json"):
         for row in load_records(extra):
             qid = ((row.get("person") or {}).get("qid"))
             sits = row.get("sitelinks") or 0

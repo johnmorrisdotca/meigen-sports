@@ -44,9 +44,9 @@ MEDAL = {
 SPORT_QID = {
     "Q847": "tennis", "Q2736": "soccer", "Q5372": "basketball", "Q41466": "ice_hockey",
     "Q542": "athletics", "Q32112": "boxing", "Q5377": "golf", "Q5375": "cricket",
-    "Q6927": "baseball", "Q41323": "american_football", "Q154763": "canadian_football",
-    "Q5369": "motor_racing", "Q1968": "formula_one", "Q3609": "formula_one",
-    "Q221934": "motorcycle_racing", "Q114466": "mma", "Q31920": "swimming",
+    "Q41323": "american_football", 
+    "Q5369": "baseball", "Q1968": "formula_one", "Q3609": "formula_one",
+    "Q17163326": "motorcycle_racing", "Q114466": "mma", "Q31920": "swimming",
     "Q53121": "cycling", "Q5378": "rugby", "Q1128216": "wheelchair_basketball",
 }
 

@@ -15,7 +15,7 @@ OUT_JSON = ROOT / "data-sources/coverage-matrix.json"
 
 SPORTS = [
     "ice-hockey", "baseball", "basketball", "american-football", "canadian-football",
-    "soccer", "women-soccer", "women-basketball", "women-ice-hockey",
+    "soccer",
     "tennis", "golf", "boxing", "mma", "athletics", "swimming",
     "formula-one", "stock-car-racing", "motorcycle-racing", "sports-car-racing", "motor-racing",
     "olympics", "paralympics", "para-ice-hockey", "para-athletics", "para-swimming",
@@ -37,19 +37,13 @@ SOURCES = [
     {"sport": "boxing", "source": "Wikidata", "licence": "CC0 1.0",
      "gives": "boxers, awards, birthdays", "skipped": None},
     {"sport": "golf", "source": "Wikidata", "licence": "CC0 1.0",
-     "gives": "golfers, majors awards, birthdays (men and women)", "skipped": None},
+     "gives": "golfers, majors awards, birthdays ", "skipped": None},
     {"sport": "tennis", "source": "Wikidata", "licence": "CC0 1.0",
-     "gives": "players, majors awards, birthdays (men and women)", "skipped": None},
+     "gives": "players, majors awards, birthdays ", "skipped": None},
     {"sport": "athletics", "source": "Wikidata", "licence": "CC0 1.0",
      "gives": "athletes, awards, Olympics-adjacent people, birthdays", "skipped": None},
     {"sport": "swimming", "source": "Wikidata", "licence": "CC0 1.0",
      "gives": "swimmers, awards, birthdays", "skipped": None},
-    {"sport": "women-soccer", "source": "openfootball WWC + Wikidata", "licence": "CC0 1.0",
-     "gives": "WWC matches already in extract_soccer; players and awards from Wikidata", "skipped": None},
-    {"sport": "women-basketball", "source": "Wikidata (league membership, P641 basketball)", "licence": "CC0 1.0",
-     "gives": "WNBA-adjacent players, awards, birthdays", "skipped": "WNBA.com terms are not an open dataset."},
-    {"sport": "women-ice-hockey", "source": "Wikidata (league membership, P641 ice hockey)", "licence": "CC0 1.0",
-     "gives": "PWHL-adjacent players, awards, birthdays", "skipped": "PWHL official site is not an open dataset."},
     {"sport": "cycling", "source": "Wikidata", "licence": "CC0 1.0",
      "gives": "riders, grand-tour-adjacent awards, birthdays", "skipped": None},
     {"sport": "rugby", "source": "Wikidata", "licence": "CC0 1.0",
@@ -83,8 +77,7 @@ def sport_slug(value: str | None) -> str:
         "hockey": "ice-hockey", "ice_hockey": "ice-hockey",
         "american_football": "american-football", "canadian_football": "canadian-football",
         "para_ice_hockey": "para-ice-hockey", "para_athletics": "para-athletics",
-        "para_swimming": "para-swimming", "women_soccer": "women-soccer",
-        "women_basketball": "women-basketball", "women_ice_hockey": "women-ice-hockey",
+        "para_swimming": "para-swimming",
         "motor_racing": "motor-racing", "formula_one": "formula-one",
         "stock_car_racing": "stock-car-racing", "motorcycle_racing": "motorcycle-racing",
         "sports_car_racing": "sports-car-racing", "horse_racing": "horse-racing",
@@ -134,8 +127,6 @@ def identity_linked(row: dict) -> bool:
 
 
 def row_sport(row: dict) -> str:
-    if row.get("league") in {"wwc"}:
-        return "women-soccer"
     return sport_slug(row.get("sport"))
 
 
@@ -151,7 +142,6 @@ def main() -> int:
         ("extract_venue_openings.json", "venue-history"),
         ("extract_drafts.json", "draft-selection"),
         ("extract_nhl_career_records.json", "sport-record"),
-        ("extract_wikidata_women.json", "player-birthday"),
         ("extract_wikidata_para.json", "player-birthday"),
         ("extract_wikidata_famous.json", "player-birthday"),
     ]
@@ -253,18 +243,17 @@ def main() -> int:
         "",
         f"Grid has {len(rows)} sport×decade×tag rows; table shows {len(shown)} nonempty cells. Full grid: [coverage-matrix.json](../data-sources/coverage-matrix.json).",
         "",
-        "Women's and para-sport must have downloaded Wikidata rows; the fetch script exits non-zero if those extracts are empty.",
+        "Para-sport must have downloaded Wikidata rows; the fetch script exits non-zero if that extract is empty. People are never selected by sex or gender.",
         "",
     ]
     OUT_MD.write_text("\n".join(lines), encoding="utf-8")
-    women_n = sum(r["downloaded"] for r in rows if r["sport"] == "women-soccer")
     para_n = sum(r["downloaded"] for r in rows if r["sport"].startswith("para"))
     print(json.dumps({
-        "rows": len(rows), "factsReady": facts_n, "womenDownloaded": women_n,
+        "rows": len(rows), "factsReady": facts_n,
         "paraDownloaded": para_n, "md": str(OUT_MD),
     }, indent=2))
-    if women_n == 0 or para_n == 0:
-        print("coverage: women's or para-sport extracts are empty", file=__import__("sys").stderr)
+    if para_n == 0:
+        print("coverage: para-sport extracts are empty", file=__import__("sys").stderr)
         return 1
     return 0
 

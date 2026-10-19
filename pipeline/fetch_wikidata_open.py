@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""Download Wikidata CC0 athlete facts (women's sports, Paralympics, famous by sitelinks).
+"""Download Wikidata CC0 athlete facts (Paralympics, famous by sitelinks).
+
+People are selected by sport and fame (sitelink count) only. Never by sex or gender (P21): AGENTS.md section 3.
 
 Writes raw SPARQL JSON and convert-shaped extracts. Does not contact DS1 or production.
 Respects a 2s gap. User-Agent names this package. Never ESPN / Sports Reference / NHL.
@@ -33,20 +35,16 @@ SPORTS = {
     "boxing": ("Q32112", "boxing"),
     "golf": ("Q5377", "golf"),
     "cricket": ("Q5375", "cricket"),
-    "baseball": ("Q6927", "baseball"),
+    "baseball": ("Q5369", "baseball"),
     "american-football": ("Q41323", "american_football"),
-    "canadian-football": ("Q154763", "canadian_football"),
-    "motor-racing": ("Q5369", "motor_racing"),
     "formula-one": ("Q1968", "formula_one"),
-    "stock-car-racing": ("Q1526664", "stock_car_racing"),
-    "motorcycle-racing": ("Q221934", "motorcycle_racing"),
-    "sports-car-racing": ("Q1192395", "sports_car_racing"),
+    "motorcycle-racing": ("Q17163326", "motorcycle_racing"),
     "mma": ("Q114466", "mma"),
     "swimming": ("Q31920", "swimming"),
     "cycling": ("Q53121", "cycling"),
     "rugby": ("Q5378", "rugby"),
-    "horse-racing": ("Q187917", "horse_racing"),
-    "alpine-skiing": ("Q186157", "alpine_skiing"),
+    "horse-racing": ("Q187916", "horse_racing"),
+    "alpine-skiing": ("Q186222", "alpine_skiing"),
 }
 
 PARA_SPORTS = {
@@ -55,9 +53,6 @@ PARA_SPORTS = {
     "para-swimming": ("Q1187472", "para_swimming"),
     "wheelchair-basketball": ("Q1128216", "wheelchair_basketball"),
 }
-
-WOMEN = "wd:Q6581072"
-
 
 def sparql(query: str) -> dict:
     body = urllib.parse.urlencode({"query": query, "format": "json"}).encode()
@@ -183,14 +178,12 @@ def parse_bindings(data: dict, sport: str, league: str | None, into: dict) -> No
             into.setdefault("awards", []).append(award_row(qid, name, award, award_day, sport))
 
 
-def query_sport(sport_qid: str, female: bool, limit: int) -> str:
-    sex = f"?person wdt:P21 {WOMEN}." if female else ""
+def query_sport(sport_qid: str, limit: int) -> str:
     return f"""
 SELECT ?person ?personLabel ?dob ?dod ?sitelinks ?placeLabel WHERE {{
   ?person wdt:P31 wd:Q5;
           wdt:P641 wd:{sport_qid};
           wdt:P569 ?dob.
-  {sex}
   ?person wikibase:sitelinks ?sitelinks.
   OPTIONAL {{ ?person wdt:P570 ?dod. }}
   OPTIONAL {{ ?person wdt:P19 ?place. }}
@@ -253,15 +246,13 @@ LIMIT {limit}
 """
 
 
-def query_award(sport_qid: str, female: bool, limit: int) -> str:
-    sex = f"?person wdt:P21 {WOMEN}." if female else ""
+def query_award(sport_qid: str, limit: int) -> str:
     return f"""
 SELECT ?person ?personLabel ?dob ?awardLabel ?awardDate ?sitelinks WHERE {{
   ?person wdt:P31 wd:Q5;
           wdt:P641 wd:{sport_qid};
           wdt:P569 ?dob;
           p:P166 ?st.
-  {sex}
   ?st ps:P166 ?award.
   OPTIONAL {{ ?st pq:P585 ?awardDate. }}
   ?person wikibase:sitelinks ?sitelinks.
@@ -322,7 +313,6 @@ def write_extract(name: str, records: list[dict]) -> None:
 
 
 def main() -> int:
-    women: dict[str, list] = {"birthdays": [], "deaths": [], "awards": []}
     para: dict[str, list] = {"birthdays": [], "deaths": [], "awards": []}
     famous: dict[str, list] = {"birthdays": [], "deaths": [], "awards": []}
 
@@ -333,26 +323,14 @@ def main() -> int:
     parse_bindings(data, "paralympics", None, para)
 
     for slug, (qid, sport) in SPORTS.items():
-        women_sport = {
-            "soccer": "women-soccer",
-            "basketball": "women-basketball",
-            "ice_hockey": "women-ice-hockey",
-            "tennis": "tennis",
-            "golf": "golf",
-        }.get(sport, sport)
-        data = run_named(f"women-{slug}", query_sport(qid, True, 120))
-        parse_bindings(data, women_sport, "wwc" if slug == "soccer" else None, women)
-        data = run_named(f"women-award-{slug}", query_award(qid, True, 80))
-        parse_bindings(data, women_sport, None, women)
-        data = run_named(f"famous-{slug}", query_sport(qid, False, 80))
+        data = run_named(f"famous-{slug}", query_sport(qid, 80))
+        parse_bindings(data, sport, None, famous)
+        data = run_named(f"award-{slug}", query_award(qid, 80))
         parse_bindings(data, sport, None, famous)
 
     data = run_named("olympic-summer-games", query_olympic(200))
     parse_bindings(data, "olympics", None, famous)
 
-    wb = uniq(women["birthdays"])
-    wd = uniq(women["deaths"])
-    wa = uniq(women["awards"])
     pb = uniq(para["birthdays"])
     pd = uniq(para["deaths"])
     pa = uniq(para["awards"])
@@ -362,23 +340,19 @@ def main() -> int:
     fd = uniq(famous["deaths"])
     fa = uniq(famous["awards"])
 
-    write_extract("extract_wikidata_women", wb + wd + wa)
     write_extract("extract_wikidata_para", pb + pd + pa)
     write_extract("extract_wikidata_famous", fb + fd + fa)
     holes = []
-    if not wb:
-        holes.append("women birthdays")
     if not pb:
         holes.append("para birthdays")
     if len(fb) < 500:
         holes.append(f"famous birthdays {len(fb)}/500")
     print(json.dumps({
-        "womenBirthdays": len(wb), "womenDeaths": len(wd), "womenAwards": len(wa),
         "paraBirthdays": len(pb), "paraDeaths": len(pd), "paraAwards": len(pa),
         "famousBirthdays": len(fb), "famousDeaths": len(fd), "famousAwards": len(fa),
         "rawDir": str(RAW), "extractDir": str(EXTRACT), "holes": holes,
     }, indent=2))
-    return 0 if wb and pb else 1
+    return 0 if pb else 1
 
 
 if __name__ == "__main__":
