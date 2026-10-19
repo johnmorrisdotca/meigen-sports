@@ -220,7 +220,7 @@ test("Gretzky bios use Edmonton Oilers, never Alberta Oilers", () => {
   assert.equal(/Alberta Oilers/.test(text ?? ""), false);
   assert.equal(/Ted Lindsay/.test(text ?? ""), false);
   const career = captionFromFact(gretzky({ highlight: "four-time Stanley Cup champion" }));
-  assert.equal(career, "Wayne Gretzky, four-time Stanley Cup champion, was born on this day in 1961.");
+  assert.equal(career, "Wayne Gretzky, the Edmonton Oilers centre and four-time Stanley Cup champion, was born on this day in 1961.");
   const birthdayOf = render(gretzky(), { templateId: "birthday-of" });
   assert.equal(birthdayOf?.text, "Today is the birthday of Wayne Gretzky, the Edmonton Oilers centre.");
   assert.equal(/Alberta|\.,/.test(birthdayOf?.text ?? ""), false);

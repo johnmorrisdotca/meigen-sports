@@ -158,8 +158,9 @@ function fieldsOf(record: OnThisDayRecord, locale: TemplateLocale, asOf: string 
   let whoClause = "";
   if (whoCore) {
     if (ja) {
-      whoClause = say("whoParen", career ? honour : birthday ? (clubPosition || honour) : [clubPosition, honour].filter(Boolean).join(say("join")));
-    } else if (career) whoClause = say("whoPlain", honour);
+      whoClause = say("whoParen", career ? [clubPosition, honour].filter(Boolean).join(say("join")) : birthday ? (clubPosition || honour) : [clubPosition, honour].filter(Boolean).join(say("join")));
+    } else if (career && clubPosition) whoClause = say("whoTheAnd", clubPosition, honour);
+    else if (career) whoClause = say("whoPlain", honour);
     else if (birthday && clubPosition) whoClause = say("whoThe", clubPosition);
     else if (clubPosition && honour) whoClause = say("whoTheAnd", clubPosition, honour);
     else if (clubPosition) whoClause = say("whoThe", clubPosition);
