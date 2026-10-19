@@ -1,8 +1,11 @@
 export { TEMPLATES } from "./catalog.ts";
-export { render, templatesFor } from "./render.ts";
+export { render, renderHistory, templatesFor } from "./render.ts";
+export { renderRun } from "./run.ts";
+export { FRAGMENTS } from "./phrases.ts";
 export { publicClubName, isProvinceClub, stripClubYears } from "./clubs.ts";
 export { championshipTitle, isLopsided } from "./titles.ts";
+export { TEMPLATE_TYPES } from "./types.ts";
 export type {
-  RenderedSentence, RenderOptions, SentenceTemplate, TemplateGate, TemplateLocale,
+  RenderedSentence, RenderOptions, RunOptions, RunSentence, SentenceTemplate, TemplateGate, TemplateLocale,
   TemplateRole, TemplateType, Wording,
 } from "./types.ts";

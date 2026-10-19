@@ -8,9 +8,9 @@ export { EXTRACT_CATEGORIES, FACT_CATEGORIES } from "./schema.ts";
 export { SCHEMA_VERSION, VERSION } from "./version.ts";
 export { isDate, monthDayOf } from "./dates.ts";
 export { captionFromFact, isRichFact } from "./sentences.ts";
-export { render, templatesFor, TEMPLATES } from "./templates/index.ts";
+export { render, renderHistory, renderRun, templatesFor, TEMPLATES, TEMPLATE_TYPES } from "./templates/index.ts";
 export type {
-  RenderedSentence, RenderOptions, SentenceTemplate, TemplateGate, TemplateLocale,
+  RenderedSentence, RenderOptions, RunOptions, RunSentence, SentenceTemplate, TemplateGate, TemplateLocale,
   TemplateRole, TemplateType, Wording,
 } from "./templates/index.ts";
 export { calendarDayInZone, factsFor, randomFacts, rankFeed, tagsOf, today, uniqueRecordIds, withCaptions } from "./facts.ts";

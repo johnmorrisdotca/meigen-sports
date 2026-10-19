@@ -205,7 +205,8 @@ test("a lopsided shutout can say dominated; a 2–1 soccer win cannot", () => {
   assert.equal(dominated?.text, "The Chicago Bears dominated the Washington Redskins 73–0 (NFL, 1940).");
   assert.equal(render(soccer, { templateId: "game-dominated" }), null);
   const defeated = render(soccer, { templateId: "game-defeated" });
-  assert.equal(defeated?.text, "The Argentina defeated the France 2–1 (World Cup, 1940).");
+  assert.equal(defeated?.text, "Argentina defeated France 2–1 (World Cup, 1940).");
+  assert.equal(render(football, { templateId: "game-defeated" })?.text, "The Chicago Bears defeated the Washington Redskins 73–0 (NFL, 1940).");
 });
 
 test("Gretzky bios use Edmonton Oilers, never Alberta Oilers", () => {

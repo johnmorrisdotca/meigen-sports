@@ -1,0 +1,88 @@
+import type { TemplateLocale } from "./types.ts";
+
+/**
+ * Sentence fragments the templates slot in (`{ot}`, `{gameNo}`, `{homeClause}` ...).
+ * Nothing in `render.ts` writes English or Japanese words of its own: every phrase that reaches a
+ * reader is a row here or a row in `catalog.ts`. A fragment may list several alternates; the first
+ * is the default (`wording: "fixed"`), the others are chosen by seed for `seeded` / `varied`.
+ * `{0}`, `{1}` ... are filled from the arguments.
+ */
+export type FragmentId =
+  | "context" | "overtime" | "shootout" | "stage" | "venueAt" | "venueCityAt" | "gameNumber" | "seriesWin"
+  | "aged" | "diedParen" | "previousHolder" | "overallPick" | "clubBy" | "cityIn" | "homeOf"
+  | "hosted" | "extraTime" | "penaltiesAfterDraw" | "penaltiesAfterExtraTime" | "penaltyShootout"
+  | "roundPart" | "articleCap" | "article" | "join" | "whoPlain" | "whoThe" | "whoTheAnd" | "whoParen" | "result"
+  | "recordSet" | "recordHeld" | "recordEqualled" | "recordSurpassed" | "recordSetBy" | "recordHeldBy" | "recordEqualledBy" | "recordBrokenBy";
+
+type Table = Record<FragmentId, { readonly en: readonly string[]; readonly ja: readonly string[] }>;
+
+export const FRAGMENTS: Table = {
+  context: { en: [" ({0})"], ja: ["（{0}）"] },
+  overtime: { en: [" in overtime", " after overtime"], ja: ["（延長）"] },
+  extraTime: { en: [" after extra time", " in extra time"], ja: ["（延長）"] },
+  shootout: { en: [" in a shootout", " after a shootout"], ja: ["（PK戦）"] },
+  stage: { en: [", {0}"], ja: ["、{0}"] },
+  venueAt: { en: [" at {0}"], ja: ["（{0}）"] },
+  venueCityAt: { en: [" at {0}, {1}"], ja: ["（{0}、{1}）"] },
+  gameNumber: { en: [" in Game {0}"], ja: ["第{0}戦"] },
+  seriesWin: { en: [" to win the{0} {1}"], ja: ["。シリーズ{1}で{0}を制した"] },
+  aged: { en: [", aged {0}", " at the age of {0}"], ja: ["{0}歳で"] },
+  diedParen: { en: [" (died {0})"], ja: ["（{0}年死去）"] },
+  previousHolder: { en: [" Previous holder: {0}.", " The previous holder was {0}."], ja: ["。それ以前は{0}"] },
+  overallPick: { en: [" No. {0} overall", " as the No. {0} pick"], ja: ["全体{0}位"] },
+  clubBy: { en: [" by the {0}"], ja: ["、{0}"] },
+  cityIn: { en: [" in {0}"], ja: ["（{0}）"] },
+  homeOf: { en: ["; home of the {0}", ", the home of the {0}"], ja: ["。{0}の本拠地"] },
+  hosted: { en: ["; it hosted {0}"], ja: ["。{0}を開催"] },
+  penaltiesAfterDraw: { en: [" on penalties after a {0} draw"], ja: ["（PK戦、{0}の引き分け後）"] },
+  penaltiesAfterExtraTime: { en: [" on penalties after extra time"], ja: ["（延長の後、PK戦）"] },
+  penaltyShootout: { en: [" on penalties"], ja: ["（PK戦）"] },
+  roundPart: { en: [", {0}"], ja: ["（{0}）"] },
+  articleCap: { en: ["The "], ja: [""] },
+  article: { en: ["the "], ja: [""] },
+  join: { en: [", "], ja: ["、"] },
+  whoPlain: { en: [", {0},"], ja: ["（{0}）"] },
+  whoThe: { en: [", the {0},"], ja: ["（{0}）"] },
+  whoTheAnd: { en: [", the {0} and {1},"], ja: ["（{0}、{1}）"] },
+  whoParen: { en: [" ({0})"], ja: ["（{0}）"] },
+  result: { en: ["{0}\u2013{1}"], ja: ["{0}対{1}"] },
+  recordSet: { en: ["set"], ja: [""] },
+  recordHeld: { en: ["held"], ja: [""] },
+  recordEqualled: { en: ["equalled"], ja: [""] },
+  recordSurpassed: { en: ["surpassed"], ja: [""] },
+  recordSetBy: { en: ["set by"], ja: [""] },
+  recordHeldBy: { en: ["held by"], ja: [""] },
+  recordEqualledBy: { en: ["equalled by"], ja: [""] },
+  recordBrokenBy: { en: ["broken by"], ja: [""] },
+};
+
+/**
+ * Alternates for a sport that does not play "overtime". Index 0 stays " in overtime" so a published default sentence
+ * never changes; `seeded` and `varied` wording may pick the sport's own word.
+ */
+export const OVERTIME_BY_SPORT: Readonly<Record<string, { readonly en: readonly string[]; readonly ja: readonly string[] }>> = {
+  soccer: { en: [" in overtime", " after extra time", " in extra time"], ja: ["（延長）"] },
+  baseball: { en: [" in overtime", " in extra innings", " after extra innings"], ja: ["（延長）"] },
+  softball: { en: [" in overtime", " in extra innings", " after extra innings"], ja: ["（延長）"] },
+};
+
+/** Fill `{0}`, `{1}` in a fragment. A missing argument becomes the empty string, never "undefined". */
+export function fill(format: string, args: readonly string[]): string {
+  return format.replace(/\{(\d)\}/g, (_, index: string) => args[Number(index)] ?? "");
+}
+
+/**
+ * One fragment, filled. `choose` returns an index in `[0, count)`; the caller supplies it so the library never
+ * reads the clock or a random number. `fixed` wording passes `() => 0`.
+ */
+export function phrase(
+  id: FragmentId,
+  locale: TemplateLocale,
+  args: readonly string[],
+  choose: (count: number) => number,
+  override?: { readonly en: readonly string[]; readonly ja: readonly string[] },
+): string {
+  const options = (override ?? FRAGMENTS[id])[locale];
+  const format = options[choose(options.length) % options.length] ?? options[0] ?? "";
+  return fill(format, args);
+}

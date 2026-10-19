@@ -1,6 +1,5 @@
+import { renderCaption } from "./templates/render.ts";
 import type { Citation, EntityRef, MeigenRecord } from "./types.ts";
-
-const DASH = "\u2013";
 
 export interface MergeReport {
   readonly before: number;
@@ -80,36 +79,14 @@ export function isFinalMatch(record: MeigenRecord): boolean {
 }
 
 /**
- * Winner-and-result wording for a World Cup final caption.
+ * Winner-and-result wording for a World Cup final caption, from the `world-cup-final` patterns (`fixed` wording).
  * Skips venue, host, and any other field the caption does not hold.
  */
 export function finalCaptionFromMatch(text: string): string | null {
   const parsed = parseMatchCaption(text);
   if (!parsed || !isFinalRound(parsed.round)) return null;
-  let winner = parsed.team1;
-  let loser = parsed.team2;
-  if (parsed.penalties) {
-    const [left, right] = parsed.penalties;
-    if (left === right) return null;
-    winner = left > right ? parsed.team1 : parsed.team2;
-    loser = winner === parsed.team1 ? parsed.team2 : parsed.team1;
-    const pw = Math.max(left, right);
-    const pl = Math.min(left, right);
-    const draw = `${parsed.score1}${DASH}${parsed.score2}`;
-    if (parsed.score1 === parsed.score2) {
-      return `${winner} won the ${parsed.year} World Cup, beating ${loser} ${pw}${DASH}${pl} on penalties after a ${draw} draw.`;
-    }
-    return `${winner} won the ${parsed.year} World Cup, beating ${loser} ${pw}${DASH}${pl} on penalties after extra time.`;
-  }
-  if (parsed.score1 === parsed.score2) return null;
-  winner = parsed.score1 > parsed.score2 ? parsed.team1 : parsed.team2;
-  loser = winner === parsed.team1 ? parsed.team2 : parsed.team1;
-  const win = Math.max(parsed.score1, parsed.score2);
-  const lose = Math.min(parsed.score1, parsed.score2);
-  if (parsed.extraTime) {
-    return `${winner} won the ${parsed.year} World Cup, beating ${loser} ${win}${DASH}${lose} after extra time.`;
-  }
-  return `${winner} won the ${parsed.year} World Cup, beating ${loser} ${win}${DASH}${lose}.`;
+  const sentence = renderCaption(text, { wording: "fixed", locale: "en" });
+  return sentence?.type === "world-cup-final" ? sentence.text : null;
 }
 
 function worldCupYear(record: MeigenRecord): string | null {

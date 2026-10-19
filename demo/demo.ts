@@ -1,4 +1,4 @@
-import { factsFor, historyOnDate, quoteForDate, rankFeed, render as renderFact, tagsOf } from "../src/index.ts";
+import { factsFor, historyOnDate, quoteForDate, rankFeed, renderRun, tagsOf } from "../src/index.ts";
 import { quotes } from "../src/data/quotes.ts";
 import { history } from "../src/data/history.ts";
 import { loadDay, loadFactDay, loadFactShard, loadShard } from "../src/load.ts";
@@ -59,9 +59,11 @@ function credit(record: MeigenRecord) {
 }
 function drawRecords(box: HTMLElement, records: readonly MeigenRecord[]) {
   box.replaceChildren();
+  const locale = familyLang.lang === "ja" ? "ja" : "en";
+  const worded = new Map(renderRun(records.filter((row) => row.kind === "history"), { seed: nextSeed(), locale }).map((row) => [row.recordId, row.text]));
   for (const fact of records) {
     const article = document.createElement("article"); article.className = "record";
-    const p = document.createElement("p"); p.textContent = fact.text;
+    const p = document.createElement("p"); p.textContent = worded.get(fact.id) ?? fact.text;
     article.append(p, credit(fact)); box.append(article);
   }
 }
@@ -80,17 +82,17 @@ let wordingSeed = 0;
 function nextSeed(): string {
   return `demo:${Date.now()}:${++wordingSeed}:${Math.random()}`;
 }
-function drawFacts(box: HTMLElement, records: readonly OnThisDayRecord[], wording: "fixed" | "varied" = "varied") {
+function drawFacts(box: HTMLElement, records: readonly OnThisDayRecord[]) {
   box.replaceChildren();
   const locale = familyLang.lang === "ja" ? "ja" : "en";
-  const asOf = date.value;
-  const seed = nextSeed();
+  // One run per list: neighbours never share a template or an outline.
+  const worded = new Map(renderRun(records, { seed: nextSeed(), locale, asOf: date.value }).map((row) => [row.recordId, row.text]));
   for (const fact of records) {
+    const text = worded.get(fact.recordId);
+    if (!text) continue;
     const article = document.createElement("article"); article.className = "record";
     const p = document.createElement("p");
-    const drawn = renderFact(fact, { wording, seed: `${seed}:${fact.recordId}`, locale, asOf });
-    if (!drawn?.text) continue;
-    p.textContent = drawn.text;
+    p.textContent = text;
     const tags = document.createElement("p"); tags.className = "credit"; tags.textContent = tagsOf(fact).join(" · ");
     article.append(p, tags, factCredit(fact)); box.append(article);
   }
