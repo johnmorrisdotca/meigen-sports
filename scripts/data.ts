@@ -3,6 +3,8 @@ import { mkdirSync, readFileSync, writeFileSync, existsSync, unlinkSync } from "
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { mergeHistoryEvents } from "../src/mergeEvents.ts";
+import { buildOffline } from "./offline.ts";
+import type { OfflineBuild } from "./offline.ts";
 import type { Citation, EntityRef, FeedManifest, FeedShard, MeigenRecord } from "../src/types.ts";
 
 export const DATA_VERSION = "0.1.0";
@@ -146,9 +148,21 @@ export function validateRecords(records: readonly MeigenRecord[]): void {
 /** File names encode source IDs reversibly; IDs are never treated as path fragments. */
 export const entityFile = (id: string): string => `entities/${Buffer.from(id, "utf8").toString("base64url")}.json`;
 
-/** The one file a reader needs to find the current data: version and the manifests, relative to `data/v1/`. */
-export function latestPointer(dataVersion = DATA_VERSION): { schemaVersion: 1; dataVersion: string; manifest: string; factsManifest: string; days: string; factDays: string } {
-  return { schemaVersion: 1, dataVersion, manifest: `${dataVersion}/manifest.json`, factsManifest: `${dataVersion}/facts/manifest.json`, days: `${dataVersion}/days/{MM-DD}.json`, factDays: `${dataVersion}/facts/days/{MM-DD}.json` };
+/** What names one build of the data: the package version, the data folder and the SHA-256 of the facts manifest.
+ * The bundled offline set and the GitHub Pages feeds both carry it, and `scripts/check-build.ts` fails when they differ. */
+export interface LatestPointer {
+  schemaVersion: 1; dataVersion: string; package: string; build: string; manifest: string; factsManifest: string;
+  offline: string; offlineRecords: number; factRecords: number; days: string; factDays: string;
+}
+
+/** The one file a reader needs to find the current data: version, build and the manifests, relative to `data/v1/`. */
+export function latestPointer(build: OfflineBuild, packageVersion: string): LatestPointer {
+  const dataVersion = build.dataVersion;
+  return {
+    schemaVersion: 1, dataVersion, package: packageVersion, build: build.factsManifestSha256, manifest: `${dataVersion}/manifest.json`,
+    factsManifest: `${dataVersion}/facts/manifest.json`, offline: `${dataVersion}/offline.json`, offlineRecords: build.records, factRecords: build.factsRecords,
+    days: `${dataVersion}/days/{MM-DD}.json`, factDays: `${dataVersion}/facts/days/{MM-DD}.json`,
+  };
 }
 
 /** Deterministic, clock-free output for offline npm data and static Pages shards. */
@@ -179,7 +193,11 @@ export function generate(check = false): { records: number; files: number; merge
   const files = buildFiles([...quotes, ...history]);
   const outputs = new Map<string, string>();
   for (const [name, contents] of files) outputs.set(`data/v1/${DATA_VERSION}/${name}`, contents);
-  outputs.set("data/v1/latest.json", format(latestPointer()));
+  const offline = buildOffline(DATA_VERSION);
+  const packageVersion = (json("package.json") as { version: string }).version;
+  outputs.set("data/v1/latest.json", format(latestPointer(offline.build, packageVersion)));
+  outputs.set(`data/v1/${DATA_VERSION}/offline.json`, format({ schemaVersion: 1, dataVersion: DATA_VERSION, build: offline.build, records: offline.records }));
+  outputs.set("src/data/offline.ts", `// Built by scripts/offline.ts from the on-this-day facts under data/v1/${DATA_VERSION}/facts. Do not edit by hand.\nimport type { OnThisDayRecord } from "../schema.ts";\n\n/** The facts dataset this set was chosen from: \`factsManifestSha256\` must equal the one on GitHub Pages (scripts/check-build.ts). */\nexport const OFFLINE_BUILD = ${JSON.stringify(offline.build)} as const;\n\n/** The best three to five facts for every calendar day, oldest first within a day. */\nexport const offline: readonly OnThisDayRecord[] = [\n${offline.records.map((r) => JSON.stringify(r)).join(",\n")},\n];\nexport default offline;\n`);
   for (const [name, rows] of [["quotes", quotes], ["history", history]] as const) outputs.set(`src/data/${name}.ts`, `// Built by scripts/data.ts from reviewed source records. Data rights: LICENSES/ and data-sources/.\nimport type { MeigenRecord } from "../types.ts";\n\nexport const ${name}: readonly MeigenRecord[] = ${JSON.stringify(rows, null, 2)};\nexport default ${name};\n`);
   const oldManifest = resolve(ROOT, `data/v1/${DATA_VERSION}/manifest.json`);
   if (existsSync(oldManifest)) {

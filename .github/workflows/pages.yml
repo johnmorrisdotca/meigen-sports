@@ -28,9 +28,13 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm check
       - run: pnpm site
+      - name: The bundled offline data and the data about to be published are one build
+        run: node scripts/check-build.ts site
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
         with:
           path: site
       - id: deployment
         uses: actions/deploy-pages@v5
+      - name: The live Pages site serves that same build
+        run: node scripts/check-build.ts site --live "${{ steps.deployment.outputs.page_url }}" --wait 180

@@ -82,7 +82,7 @@ test("generated source and shard bytes are deterministic and current", () => {
   const forward = buildFiles(records);
   const reversed = buildFiles([...records].reverse());
   assert.deepEqual(forward, reversed);
-  assert.deepEqual(generate(true), { records: 1082, files: 1446, merged: 10 });
+  assert.deepEqual(generate(true), { records: 1082, files: 1448, merged: 10 });
   const manifest = JSON.parse(forward.get("manifest.json")!) as FeedManifest;
   assert.equal(manifest.missingDays.length, 224);
   assert.equal(manifest.coveredDays, 142);

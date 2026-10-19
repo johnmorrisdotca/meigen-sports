@@ -51,6 +51,11 @@
       "import": "./dist/data/quotes.js",
       "default": "./dist/data/quotes.js"
     },
+    "./offline": {
+      "types": "./dist/data/offline.d.ts",
+      "import": "./dist/data/offline.js",
+      "default": "./dist/data/offline.js"
+    },
     "./history": {
       "types": "./dist/data/history.d.ts",
       "import": "./dist/data/history.js",

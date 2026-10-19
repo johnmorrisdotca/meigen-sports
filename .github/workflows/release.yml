@@ -28,6 +28,10 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm check
       - run: pnpm build
+      - name: The bundled offline data and the Pages data are one build, built here and live
+        run: |
+          pnpm site
+          node scripts/check-build.ts site --live https://johnmorrisdotca.github.io/meigen-sports/ --wait 420
       - name: The package as npm packs it installs, imports and runs
         run: node scripts/check-package.ts
       - name: The tag is the version in package.json

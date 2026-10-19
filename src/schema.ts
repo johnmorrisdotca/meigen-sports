@@ -152,6 +152,10 @@ export interface OnThisDayRecord {
   readonly bornYear?: number | null;
   readonly ageYears?: number | null;
   readonly highlight?: string | null;
+  /** Titles the person won, as a count, with the title's name (`championshipName`) and the best individual award (`personAward`). */
+  readonly championships?: number;
+  readonly championshipName?: string | null;
+  readonly personAward?: string | null;
   readonly draftYear?: number | null;
   readonly round?: number | null;
   readonly overallPick?: number | null;
