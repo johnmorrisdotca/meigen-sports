@@ -49,4 +49,5 @@ Copyrighted editorial sites are not sources of wording. Quotes are ingested only
 | Famous quotations (Wikiquote) | 8 | none (utterance dates unknown) | CC BY-SA 4.0; words justified per row |
 | Wikidata exact-day events | 98 | in the 142-day union | CC0 1.0 |
 | openfootball World Cup matches | 964 | in the 142-day union | CC0 1.0 |
-| Combined history | 1052 | 142 of 366 | 10 same-event rows merged |
+| Combined history (bundled `all.json`) | 1052 | 142 of 366 | 10 same-event rows merged |
+| On-this-day facts (`facts/`) | 29,961 | 366 of 366 | see `facts/manifest.json` |

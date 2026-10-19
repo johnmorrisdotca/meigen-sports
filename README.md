@@ -46,7 +46,7 @@ historyOnDate(history, "2022-11-20", { sports: ["soccer"] }).length; // 1
 quoteForDate(quotes, "2026-10-14")?.speaker; // "James Dwight"
 ```
 
-The bundled dataset begins with 30 quotations (22 Gutenberg excerpts and 8 Wikiquote sports lines tagged `famous-quotes`) and 1052 dated facts (10 same-event rows merged). Facts cover 142 of 366 calendar month-days. This is a sourced starting collection with many coverage gaps, not a complete daily almanac. Quotes have unknown utterance dates and are never assigned invented anniversaries.
+The bundled dataset begins with 30 quotations (22 Gutenberg excerpts and 8 Wikiquote sports lines tagged `famous-quotes`) and 1052 dated history rows (10 same-event rows merged) in `all.json`; they cover 142 of 366 calendar month-days. The on-this-day fact feeds under `data/v1/0.1.0/facts/` are separate and larger: 29,961 facts that cover all 366 days (`facts/manifest.json`). `data/v1/latest.json` names the current data version and its manifests. This is a sourced starting collection with many coverage gaps, not a complete daily almanac. Quotes have unknown utterance dates and are never assigned invented anniversaries.
 
 ## Who it is for
 
