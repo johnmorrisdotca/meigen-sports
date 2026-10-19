@@ -32,6 +32,14 @@ LEAGUE = {
     "wc": "World Cup", "wwc": "Women's World Cup", "afl": "AFL", "aafc": "AAFC",
     "nha": "NHA", "pcha": "PCHA", "wchl": "WCHL", "wha": "WHA",
 }
+# The sport a league is played in. A person's sport can come from a Wikidata statement about another sport
+# (Michael Jordan baseball, Jackie Robinson football); a fact about a league club is about that league's sport.
+LEAGUE_SPORT = {
+    "mlb": "baseball", "nba": "basketball", "wnba": "basketball", "nhl": "ice-hockey", "nha": "ice-hockey",
+    "pcha": "ice-hockey", "wchl": "ice-hockey", "wha": "ice-hockey", "nfl": "american-football",
+    "afl": "american-football", "aafc": "american-football", "cfl": "canadian-football",
+    "mls": "soccer", "wc": "soccer", "wwc": "soccer",
+}
 CHAMPIONSHIP_TITLE = {
     "mlb": "World Series", "nhl": "Stanley Cup", "nba": "NBA Finals", "cfl": "Grey Cup",
     "wc": "World Cup", "wwc": "Women's World Cup", "afl": "AFL Championship",
@@ -604,7 +612,7 @@ def finalize(row: dict) -> dict | None:
         "basis": basis,
         "eventDate": row.get("eventDate"),
         "datePrecision": row.get("datePrecision") or "day",
-        "sport": sport_slug(row.get("sport")) or row.get("sport"),
+        "sport": LEAGUE_SPORT.get(str(row.get("league") or "").lower()) or sport_slug(row.get("sport")) or row.get("sport"),
         "competition": row.get("competition") or row.get("league"),
         "league": row.get("league"),
         "source": source,
@@ -934,11 +942,25 @@ def main() -> int:
         rec["featuredReasons"] = reasons
         rec["basis"] = "source"
         chosen[row["recordId"]] = rec
+    # The extract lists every game of each final round. Only the last game of a round is the one that
+    # won the title; the earlier games are playoff games of that round and must not say "won the title".
+    clinchers: dict[tuple, str] = {}
     for row in finals:
         if not ((row.get("home") or {}).get("name") and row.get("homeScore") is not None):
             continue
-        rec = {**row, "category": "championship-final"}
-        rec["featuredReasons"] = featured_reasons(rec) or ["final"]
+        key = (row.get("league"), row.get("seasonStartYear"))
+        order = (row.get("eventDate") or "", row.get("gameId") or 0)
+        if key not in clinchers or order > clinchers[key][0]:
+            clinchers[key] = (order, row["recordId"])
+    for row in finals:
+        if not ((row.get("home") or {}).get("name") and row.get("homeScore") is not None):
+            continue
+        if clinchers[(row.get("league"), row.get("seasonStartYear"))][1] == row["recordId"]:
+            rec = {**row, "category": "championship-final"}
+            rec["featuredReasons"] = featured_reasons(rec) or ["final"]
+        else:
+            rec = {**row, "category": "game-on-day"}
+            rec["featuredReasons"] = featured_reasons(rec) or ["final-series"]
         rec["basis"] = "source"
         gid = row.get("gameId")
         if gid is not None:
