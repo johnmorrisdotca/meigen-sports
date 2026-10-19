@@ -7,6 +7,7 @@ import hashlib
 import json
 import os
 import re
+import subprocess
 import sys
 from collections import defaultdict
 from datetime import date, timedelta
@@ -27,11 +28,6 @@ NUMBER_WORD = {
     1: "one", 2: "two", 3: "three", 4: "four", 5: "five",
     6: "six", 7: "seven", 8: "eight", 9: "nine", 10: "ten",
 }
-LEAGUE = {
-    "nhl": "NHL", "nba": "NBA", "mlb": "MLB", "nfl": "NFL", "cfl": "CFL", "mls": "MLS",
-    "wc": "World Cup", "wwc": "Women's World Cup", "afl": "AFL", "aafc": "AAFC",
-    "nha": "NHA", "pcha": "PCHA", "wchl": "WCHL", "wha": "WHA",
-}
 # The sport a league is played in. A person's sport can come from a Wikidata statement about another sport
 # (Michael Jordan baseball, Jackie Robinson football); a fact about a league club is about that league's sport.
 LEAGUE_SPORT = {
@@ -40,33 +36,6 @@ LEAGUE_SPORT = {
     "afl": "american-football", "aafc": "american-football", "cfl": "canadian-football",
     "mls": "soccer", "wc": "soccer", "wwc": "soccer",
 }
-CHAMPIONSHIP_TITLE = {
-    "mlb": "World Series", "nhl": "Stanley Cup", "nba": "NBA Finals", "cfl": "Grey Cup",
-    "wc": "World Cup", "wwc": "Women's World Cup", "afl": "AFL Championship",
-    "aafc": "AAFC Championship", "nha": "NHA Championship", "pcha": "PCHA Championship",
-    "wchl": "WCHL Championship", "wha": "Avco World Trophy", "mls": "MLS Cup",
-}
-CHAMPIONSHIP_TITLE_JA = {
-    "World Series": "ワールドシリーズ", "Stanley Cup": "スタンレー・カップ",
-    "NBA Finals": "NBAファイナル", "NFL Championship": "NFL選手権",
-    "Super Bowl": "スーパーボウル", "Grey Cup": "グレイ・カップ",
-    "World Cup": "ワールドカップ", "Women's World Cup": "女子ワールドカップ",
-    "AFL Championship": "AFL選手権", "AAFC Championship": "AAFC選手権",
-    "NHA Championship": "NHA選手権", "PCHA Championship": "PCHA選手権",
-    "WCHL Championship": "WCHL選手権", "Avco World Trophy": "AVCOトロフィー",
-    "MLS Cup": "MLSカップ",
-}
-GENERIC_ROUND = {"", "final", "championship", "championship-final", "regular", "playoffs", "championship_final"}
-PROVINCE_PREFIX = (
-    "Newfoundland and Labrador", "Prince Edward Island", "British Columbia",
-    "Alberta", "Ontario", "Quebec", "Manitoba", "Saskatchewan",
-    "Nova Scotia", "New Brunswick", "Newfoundland",
-)
-YEAR_SPAN = re.compile(r"\s*\((\d{4})(?:[–-](\d{4}))?\)$")
-CAREER_HIGHLIGHT = re.compile(
-    r"cup|championship|finals|world series|grey cup|super bowl|all-time|leading|record|champion",
-    re.I,
-)
 CREDIT = {
     "retrosheet": ("https://www.retrosheet.org/", "The information used here was obtained free of charge from and is copyrighted by Retrosheet. Interested parties may contact Retrosheet at www.retrosheet.org."),
     "wikidata": ("https://www.wikidata.org/", "Wikidata contributors, CC0."),
@@ -137,59 +106,6 @@ def team(obj) -> dict | None:
     }
 
 
-def league_label(record: dict) -> str:
-    code = record.get("league") or record.get("competition") or ""
-    return LEAGUE.get(code, code.upper() if code else "")
-
-
-def strip_club_years(name: str) -> str:
-    return YEAR_SPAN.sub("", name).strip()
-
-
-def is_province_club(name: str) -> bool:
-    bare = strip_club_years(name)
-    return any(bare == prefix or bare.startswith(f"{prefix} ") for prefix in PROVINCE_PREFIX)
-
-
-def public_club_name(names, fallback: str = "") -> str:  # noqa: ANN001
-    cleaned = [n.strip() for n in (names or []) if n and n.strip()]
-    if not cleaned:
-        return strip_club_years(fallback)
-
-    def span(name: str) -> int:
-        match = YEAR_SPAN.search(name)
-        if not match:
-            return 0
-        start = int(match.group(1))
-        end = int(match.group(2) or match.group(1))
-        return end - start
-
-    ranked = sorted(
-        cleaned,
-        key=lambda name: (is_province_club(name), -span(name), strip_club_years(name)),
-    )
-    return strip_club_years(ranked[0])
-
-
-def championship_title(record: dict, ja: bool = False) -> str:
-    labeled = str(record.get("roundLabel") or record.get("stage") or record.get("phase") or "").strip().replace("_", " ")
-    if labeled and labeled.lower() not in GENERIC_ROUND:
-        title = labeled
-    else:
-        code = (record.get("league") or record.get("competition") or "").lower()
-        if code == "nfl":
-            year = record.get("seasonStartYear")
-            if year is None:
-                event = record.get("eventDate") or ""
-                year = int(event[:4]) if re.match(r"^\d{4}-", event) else None
-            title = "Super Bowl" if year is not None and year >= 1966 else "NFL Championship"
-        else:
-            title = CHAMPIONSHIP_TITLE.get(code, "")
-    if not title:
-        return ""
-    return CHAMPIONSHIP_TITLE_JA.get(title, title) if ja else title
-
-
 def year_of(record: dict) -> str | None:
     event = record.get("eventDate") or ""
     if re.match(r"^\d{4}-", event):
@@ -198,116 +114,6 @@ def year_of(record: dict) -> str | None:
         if record.get(key):
             return str(record[key])
     return None
-
-
-def ot_en(r):  # noqa: ANN001
-    if r.get("decidedByShootout"):
-        return " in a shootout"
-    if r.get("wentToOvertime"):
-        return " in overtime"
-    return ""
-
-
-def ot_ja(r):  # noqa: ANN001
-    if r.get("decidedByShootout"):
-        return "（PK戦）"
-    if r.get("wentToOvertime"):
-        return "（延長）"
-    return ""
-
-
-def venue_en(r):  # noqa: ANN001
-    if not r.get("venueName"):
-        return ""
-    if r.get("venueCity"):
-        return f" at {r['venueName']}, {r['venueCity']}"
-    return f" at {r['venueName']}"
-
-
-def venue_ja(r):  # noqa: ANN001
-    if not r.get("venueName"):
-        return ""
-    if r.get("venueCity"):
-        return f"（{r['venueName']}、{r['venueCity']}）"
-    return f"（{r['venueName']}）"
-
-
-def game_number_en(r):  # noqa: ANN001
-    n = r.get("seriesGameNumber")
-    return f" in Game {n}" if n else ""
-
-
-def game_number_ja(r):  # noqa: ANN001
-    n = r.get("seriesGameNumber")
-    return f"第{n}戦" if n else ""
-
-
-def stage_en(r):  # noqa: ANN001
-    stage = r.get("stage") or r.get("phase") or r.get("roundLabel")
-    if not stage or stage == "regular":
-        return ""
-    return f", {stage.replace('_', ' ')}"
-
-
-def stage_ja(r):  # noqa: ANN001
-    stage = r.get("stage") or r.get("phase") or r.get("roundLabel")
-    if not stage or stage == "regular":
-        return ""
-    return f"、{stage.replace('_', ' ')}"
-
-
-def series_en(r, winner_season):  # noqa: ANN001
-    best, high, low, series_winner = r.get("seriesBestOf"), r.get("seriesHigherWins"), r.get("seriesLowerWins"), r.get("seriesWinnerTeamSeasonId")
-    if None in (best, high, low, series_winner, winner_season):
-        return ""
-    need = best // 2 + 1
-    if high < need and low < need:
-        return ""
-    if series_winner != winner_season:
-        return ""
-    series = f"{max(high, low)}–{min(high, low)}"
-    round_label = f" {r['roundLabel']}" if r.get("roundLabel") else ""
-    return f" to win the{round_label} {series}"
-
-
-def caption_game(r, ja: bool) -> str | None:
-    home, away = (r.get("home") or {}).get("name"), (r.get("away") or {}).get("name")
-    hs, aws = r.get("homeScore"), r.get("awayScore")
-    if not home or not away or hs is None or aws is None:
-        return None
-    year, league = year_of(r), league_label(r)
-    ctx = ", ".join(x for x in (league, year) if x)
-    extra_en = f"{game_number_en(r)}{venue_en(r)}{ot_en(r)}{stage_en(r)}"
-    extra_ja = f"{game_number_ja(r)}{venue_ja(r)}{ot_ja(r)}{stage_ja(r)}"
-    if hs == aws and r.get("category") == "soccer-on-day" and str(r.get("stage") or "").lower() == "final" and not ja:
-        title = championship_title(r)
-        return f"{home} and {away} drew {hs}–{aws} in the {year} {title} final, which went to penalties."
-    if hs == aws:
-        if ja:
-            return f"{home}と{away}は{hs}対{aws}で引き分けた{extra_ja}{f'（{ctx}）' if ctx else ''}。"
-        return f"{home} tied {away} {hs}–{aws}{extra_en}{f' ({ctx})' if ctx else ''}."
-    home_won = hs > aws
-    winner, loser = (home, away) if home_won else (away, home)
-    ws, ls = (hs, aws) if home_won else (aws, hs)
-    winner_season = (r.get("home") or {}).get("teamSeasonId") if home_won else (r.get("away") or {}).get("teamSeasonId")
-    series = series_en(r, winner_season)
-    stage = str(r.get("stage") or r.get("roundLabel") or "")
-    is_final = r.get("category") == "championship-final" or stage.lower() == "final"
-    title = championship_title(r, ja)
-    if is_final and year and title:
-        if ja:
-            return f"{winner}が{year}年の{title}で{loser}に{ws}対{ls}で勝った{ot_ja(r)}{venue_ja(r)}。"
-        return f"{winner} won the {year} {title}, beating {loser} {ws}–{ls}{ot_en(r)}{venue_en(r)}."
-    if ja:
-        return f"{winner}が{loser}に{ws}対{ls}で勝利した{extra_ja}{f'（{ctx}）' if ctx else ''}。"
-    return f"{winner} beat {loser} {ws}–{ls}{extra_en}{f' ({ctx})' if ctx else ''}{series}."
-
-
-def clubs_of(r) -> str:  # noqa: ANN001
-    names = [n for n in (r.get("clubNames") or []) if n]
-    if names:
-        return ", ".join(names)
-    return (r.get("clubName") or "").strip()
 
 
 def honour_of(r) -> str:  # noqa: ANN001
@@ -326,147 +132,6 @@ def honour_of(r) -> str:  # noqa: ANN001
         return f"{NUMBER_WORD.get(n, str(n))}-time {cup} winner"
     award = (r.get("personAward") or r.get("awardName") or "").strip()
     return f"{award} winner" if award else ""
-
-
-def who_of(r) -> tuple[str, str]:  # noqa: ANN001
-    club = public_club_name(r.get("clubNames"), r.get("clubName") or "")
-    position = (r.get("position") or "").strip()
-    honour = honour_of(r)
-    if honour and CAREER_HIGHLIGHT.search(honour):
-        return "", honour
-    return " ".join(x for x in (club, position) if x), "" if club else honour
-
-
-def caption_person(r, ja: bool, died: bool) -> str | None:
-    name = ((r.get("person") or {}).get("name") or "").strip()
-    year = year_of(r)
-    club_pos, honour = who_of(r)
-    if not name or not year or not (club_pos or honour):
-        return None
-    if ja:
-        inner = "、".join(x for x in (club_pos, honour) if x)
-        clause = f"（{inner}）" if inner else ""
-    elif club_pos and honour:
-        clause = f", the {club_pos} and {honour},"
-    elif club_pos:
-        clause = f", the {club_pos},"
-    else:
-        clause = f", {honour},"
-    if died:
-        aged_en = f", aged {r['ageYears']}" if r.get("ageYears") is not None else ""
-        aged_ja = f"{r['ageYears']}歳で" if r.get("ageYears") is not None else ""
-        return (
-            f"{name}{clause}が{year}年のこの日に{aged_ja}死去した。" if ja
-            else f"{name}{clause} died on this day in {year}{aged_en}."
-        )
-    death = r.get("deathDate") or ""
-    death_year = death[:4] if len(death) >= 4 and death[:4].isdigit() else None
-    if r.get("livingStatus") == "deceased" and death_year:
-        return (
-            f"{name}{clause}は{year}年のこの日に生まれた（{death_year}年死去）。" if ja
-            else f"{name}{clause} was born on this day in {year} (died {death_year})."
-        )
-    return (
-        f"{name}{clause}は{year}年のこの日に生まれた。" if ja
-        else f"{name}{clause} was born on this day in {year}."
-    )
-
-
-def caption_award(r, ja: bool) -> str | None:
-    winner = (r.get("winnerName") or (r.get("person") or {}).get("name") or "").strip()
-    award = (r.get("awardName") or "").strip()
-    year = year_of(r)
-    if not winner or not award or not year:
-        return None
-    ctx = ", ".join(x for x in (league_label(r), year) if x)
-    if ja:
-        return f"{winner}が{award}を受賞した{f'（{ctx}）' if ctx else ''}。"
-    return f"{winner} won the {award}{f' ({ctx})' if ctx else ''}."
-
-
-def caption_venue(r, ja: bool) -> str | None:
-    name = (r.get("venueName") or r.get("displayName") or "").strip()
-    year = year_of(r)
-    city = (r.get("venueCity") or "").strip()
-    clubs = clubs_of(r)
-    famous = (r.get("highlight") or "").strip()
-    if not name or not year or not (city or clubs or famous):
-        return None
-    if ja:
-        city_bit = f"（{city}）" if city else ""
-        home_bit = f"。{clubs}の本拠地" if clubs else ""
-        final_bit = f"。{famous}を開催" if famous else ""
-        return f"{name}が{year}年に開場した{city_bit}{home_bit}{final_bit}。"
-    city_bit = f" in {city}" if city else ""
-    home_bit = f"; home of the {clubs}" if clubs else ""
-    final_bit = f"; it hosted {famous}" if famous else ""
-    return f"{name}{city_bit} opened in {year}{home_bit}{final_bit}."
-
-
-def caption_franchise(r, ja: bool) -> str | None:
-    label = (r.get("clubName") or r.get("label") or "").strip()
-    year = year_of(r)
-    if not label or not year or (r.get("eventDate") or "").endswith("-01-01"):
-        return None
-    league_code = (r.get("league") or "").strip()
-    league = LEAGUE.get(league_code, league_code.upper() if league_code else "")
-    city = (r.get("venueCity") or "").strip()
-    if not league and not city:
-        return None
-    if ja:
-        city_bit = f"（{city}）" if city else ""
-        return f"{label}のこの{league}名義が{year}年に始まる{city_bit}。"
-    city_bit = f" in {city}" if city else ""
-    league_bit = f"{league} " if league else ""
-    return f"{label} began this {league_bit}identity in {year}{city_bit}."
-
-
-def captions(r) -> tuple[str, str] | None:
-    cat = r.get("category")
-    if cat in {"game-on-day", "championship-final", "soccer-on-day"}:
-        en, ja = caption_game(r, False), caption_game(r, True)
-    elif cat == "player-birthday":
-        en, ja = caption_person(r, False, False), caption_person(r, True, False)
-    elif cat == "player-death":
-        en, ja = caption_person(r, False, True), caption_person(r, True, True)
-    elif r.get("record"):
-        rec = r["record"]
-        holder, metric, value, unit = rec.get("holderName"), rec.get("metric"), rec.get("value"), rec.get("unit") or ""
-        scope = rec.get("scope") or ""
-        prev = rec.get("previousHolderName")
-        if not holder or not metric or value is None:
-            return None
-        prev_en = f" Previous holder: {prev}." if prev else ""
-        prev_ja = f"。それ以前は{prev}" if prev else ""
-        event = rec.get("event") or "set"
-        return (
-            f"{holder} {event} the {scope} {metric} record at {value} {unit}.{prev_en}".replace("  ", " "),
-            f"{holder}の{scope} {metric}は{value}{unit}{prev_ja}。",
-        )
-    elif cat == "award":
-        en, ja = caption_award(r, False), caption_award(r, True)
-    elif cat == "venue-opening":
-        en, ja = caption_venue(r, False), caption_venue(r, True)
-    elif cat == "franchise-event":
-        en, ja = caption_franchise(r, False), caption_franchise(r, True)
-    elif cat == "draft":
-        name = ((r.get("person") or {}).get("name") or "").strip()
-        year, league = r.get("draftYear"), league_label(r)
-        if not name or not year or not league:
-            return None
-        pick_en = f" No. {r['overallPick']} overall" if r.get("overallPick") is not None else ""
-        pick_ja = f"全体{r['overallPick']}位" if r.get("overallPick") is not None else ""
-        club_en = f" by the {r['clubName']}" if r.get("clubName") else ""
-        club_ja = f"、{r['clubName']}" if r.get("clubName") else ""
-        return (
-            f"{name} was drafted in the {year} {league} draft{pick_en}{club_en}.",
-            f"{name}が{year}年の{league}ドラフト{pick_ja}{club_ja}で指名された。",
-        )
-    else:
-        return None
-    if not en:
-        return None
-    return en, ja or en
 
 
 def sport_slug(value: str | None) -> str | None:
@@ -600,10 +265,7 @@ def tag_set(row: dict) -> list[str]:
 
 
 def finalize(row: dict) -> dict | None:
-    caps = captions(row)
-    if not caps:
-        return None
-    text, text_ja = caps
+    """The fact as a shard row, without its sentence: the sentences are written by the library (see add_captions)."""
     source = source_of(row)
     if not source["url"]:
         return None
@@ -619,8 +281,6 @@ def finalize(row: dict) -> dict | None:
         "competition": row.get("competition") or row.get("league"),
         "league": row.get("league"),
         "source": source,
-        "text": text,
-        "textJa": text_ja,
     }
     if basis == "derived":
         if not row.get("derivedRule") or not row.get("derivedInputs"):
@@ -645,6 +305,29 @@ def finalize(row: dict) -> dict | None:
     if out.get("away"):
         out["away"] = team(out["away"])
     return out
+
+
+def add_captions(rows: list[dict]) -> list[dict]:
+    """Say each fact with the library's own templates (scripts/caption-batch.ts): one source of wording, not a second copy here.
+
+    A fact the templates cannot say from the fields it holds is dropped, as a fact without a sentence always was."""
+    done = subprocess.run(
+        ["node", str(ROOT / "scripts/caption-batch.ts")], input=json.dumps(rows, ensure_ascii=False),
+        capture_output=True, text=True, check=False, cwd=ROOT,
+    )
+    if done.returncode != 0:
+        raise SystemExit(f"caption-batch failed: {done.stderr}")
+    said = json.loads(done.stdout)
+    kept = []
+    for row in rows:
+        words = said.get(row["recordId"])
+        if not words or not words.get("text"):
+            continue
+        row["text"] = words["text"]
+        if words.get("textJa"):
+            row["textJa"] = words["textJa"]
+        kept.append(row)
+    return kept
 
 
 def name_map(rows: list[dict]) -> dict[int, str]:
@@ -946,7 +629,7 @@ def main() -> int:
         rec["basis"] = "source"
         chosen[row["recordId"]] = rec
     # The extract lists every game of each final round. Only the last game of a round is the one that
-    # won the title; the earlier games are playoff games of that round and must not say "won the title".
+    # the title; the earlier games are playoff games of that round and must not be called the title game.
     # pipeline/golden/finals-check.json holds what English Wikipedia says about each MLB and NBA title series; a season
     # where the extract's last game is not that series' last game (seven NBA seasons) names no title game at all.
     checks = json.loads((ROOT / "pipeline/golden/finals-check.json").read_text(encoding="utf-8"))["seasons"]
@@ -1087,14 +770,9 @@ def main() -> int:
             continue
         chosen[rec["recordId"]] = rec
 
-    facts = []
-    dropped = 0
-    for row in chosen.values():
-        done = finalize(row)
-        if done:
-            facts.append(done)
-        else:
-            dropped += 1
+    shaped = [done for done in (finalize(row) for row in chosen.values()) if done]
+    facts = add_captions(shaped)
+    dropped = len(chosen) - len(facts)
     by_id = {row["recordId"]: row for row in facts}
     by_id, merged_events = merge_same_event(by_id)
     facts = list(by_id.values())

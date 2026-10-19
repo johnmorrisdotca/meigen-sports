@@ -312,6 +312,37 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
     needs: ["winner", "loser", "winScore", "loseScore", "year", "title"],
     pattern: "{year}年の{title}は{winner}が制し、{loser}に{winScore}対{loseScore}で勝った{ot}{venue}。",
   },
+  // A soccer final level at full time is decided on penalties; the stored result does not say who won them, so none of these names a winner.
+  {
+    id: "final-tie-penalties", type: "final", locale: "en", gate: "neutral", role: "default", when: "tie",
+    needs: ["home", "away", "homeScore", "awayScore", "year", "title"],
+    pattern: "{home} and {away} drew {homeScore}–{awayScore} in the {year} {title} final, which went to penalties.",
+  },
+  {
+    id: "final-tie-level", type: "final", locale: "en", gate: "neutral", role: "variant", when: "tie",
+    needs: ["home", "away", "homeScore", "awayScore", "year", "title"],
+    pattern: "The {year} {title} final ended {homeScore}–{awayScore} between {home} and {away}, and went to penalties.",
+  },
+  {
+    id: "final-tie-decided", type: "final", locale: "en", gate: "neutral", role: "variant", when: "tie",
+    needs: ["home", "away", "homeScore", "awayScore", "year", "title"],
+    pattern: "{home} and {away} were level at {homeScore}–{awayScore} in the {year} {title} final, and the title was decided on penalties.",
+  },
+  {
+    id: "final-tie-penalties", type: "final", locale: "ja", gate: "neutral", role: "default", when: "tie",
+    needs: ["home", "away", "homeScore", "awayScore", "year", "title"],
+    pattern: "{home}と{away}は{year}年の{title}決勝で{homeScore}対{awayScore}で引き分け、PK戦に進んだ。",
+  },
+  {
+    id: "final-tie-level", type: "final", locale: "ja", gate: "neutral", role: "variant", when: "tie",
+    needs: ["home", "away", "homeScore", "awayScore", "year", "title"],
+    pattern: "{year}年の{title}決勝は{home}と{away}が{homeScore}対{awayScore}で並び、PK戦で決着した。",
+  },
+  {
+    id: "final-tie-decided", type: "final", locale: "ja", gate: "neutral", role: "variant", when: "tie",
+    needs: ["home", "away", "homeScore", "awayScore", "year", "title"],
+    pattern: "{home}対{away}の{year}年{title}決勝は{homeScore}対{awayScore}の引き分けで、PK戦に持ち込まれた。",
+  },
   // awards
   {
     id: "award-went-to", type: "award", locale: "en", gate: "neutral", role: "variant",

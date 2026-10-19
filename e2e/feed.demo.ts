@@ -66,6 +66,7 @@ test("a team feed and a player feed are fetched for their own view only", async 
   await expect(page.locator("#feed-note")).toHaveText("");
 });
 test("when the feeds cannot be reached the bundled offline set is shown, and the page says so", async ({ page }) => {
+  const latest = await (await page.request.get("/data/v1/latest.json")).json();
   await page.route(/\/data\/v1\/.+\/facts\//, (route) => route.abort());
   await page.route(`${PAGES}/**`, (route) => route.abort());
   const errors: string[] = [];
@@ -74,7 +75,7 @@ test("when the feeds cannot be reached the bundled offline set is shown, and the
   await expect(page.locator("#today-facts .record")).toHaveCount(3);
   await expect(page.locator("#random-facts .record")).toHaveCount(10);
   await expect(page.locator("#feed-note")).toContainText("bundled offline set");
-  await expect(page.locator("#feed-note")).toContainText("1472");
+  await expect(page.locator("#feed-note")).toContainText(String(latest.offlineRecords));
   await page.getByRole("button", { name: "日本語", exact: true }).click();
   await expect(page.locator("#feed-note")).toContainText("オフライン版");
   expect(errors).toEqual([]);

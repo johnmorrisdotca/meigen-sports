@@ -116,6 +116,10 @@ function clubArticles(record: OnThisDayRecord, say: (id: FragmentId, ...args: st
   return none ? { theW: "", theL: "" } : { theW: say("articleCap"), theL: say("article") };
 }
 
+function isPersonDay(record: OnThisDayRecord): boolean {
+  return record.category === "player-birthday" || record.category === "player-death";
+}
+
 function fieldsOf(record: OnThisDayRecord, locale: TemplateLocale, asOf: string | undefined, choose: Chooser): Record<string, string> {
   const ja = locale === "ja";
   const say = (id: FragmentId, ...args: string[]): string => phrase(id, locale, args, choose(id));
@@ -193,7 +197,8 @@ function fieldsOf(record: OnThisDayRecord, locale: TemplateLocale, asOf: string 
     birthPlace: record.birthPlace?.trim() ?? "",
     deathYear,
     yearsAgo, yearsAgoToday: yearsAgo,
-    dayPrecision: record.datePrecision === "day" && record.eventDate && !/-01-01$/.test(record.eventDate) ? "day" : "",
+    // January 1 is where a source puts an identity or an award it dates only by year; a person's birth or death on it is real.
+    dayPrecision: record.datePrecision === "day" && record.eventDate && (isPersonDay(record) || !/-01-01$/.test(record.eventDate)) ? "day" : "",
     winnerName: (record.winnerName?.trim() || name),
     award: record.awardName?.trim() ?? "",
     holderName: rec?.holderName ?? "",
@@ -298,7 +303,8 @@ function eligible(template: SentenceTemplate, subject: Subject, type: TemplateTy
 
 function apply(template: SentenceTemplate, fields: Record<string, string>): string {
   const filled = template.pattern.replace(/\{([a-zA-Z0-9]+)\}/g, (_, key: string) => fields[key] ?? "");
-  return filled.replace(/[ \t]{2,}/g, " ").replace(" .", ".").replace(" 。", "。").trim();
+  // A stray space before a full stop goes; a name such as "Colt .45's" keeps its own.
+  return filled.replace(/[ \t]{2,}/g, " ").replace(/ \.(?=$|\s)/g, ".").replace(/ 。/g, "。").trim();
 }
 
 function pickFixed(rows: readonly SentenceTemplate[]): SentenceTemplate | undefined {
