@@ -65,6 +65,7 @@
   },
   "files": [
     "dist",
+    "data/v1/latest.json",
     "data/v1/0.1.0/all.json",
     "data/v1/0.1.0/history.json",
     "data/v1/0.1.0/quotes.json",

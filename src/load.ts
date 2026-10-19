@@ -145,17 +145,17 @@ export function loadFactDay(date: string, options: LoadOptions): Promise<FactSha
 
 export function loadLeague(league: string, options: LoadOptions): Promise<FactShard> {
   if (!/^[a-z0-9-]+$/.test(league)) throw new RangeError("Invalid league code");
-  return loadFactShard(`leagues/${league}.json`, options);
+  return loadFactShard(`feeds/leagues/${league}.json`, options);
 }
 
 export function loadTeamFacts(franchiseId: number, options: LoadOptions): Promise<FactShard> {
   if (!Number.isInteger(franchiseId) || franchiseId < 1) throw new RangeError("Invalid franchise id");
-  return loadFactShard(`teams/f-${franchiseId}.json`, options);
+  return loadFactShard(`feeds/teams/f-${franchiseId}.json`, options);
 }
 
 export function loadPlayerBucket(personId: number, options: LoadOptions): Promise<FactShard> {
   if (!Number.isInteger(personId) || personId < 1) throw new RangeError("Invalid person id");
-  return loadFactShard(`players/${String(personId % 100).padStart(2, "0")}.json`, options);
+  return loadFactShard(`feeds/players/${String(personId % 100).padStart(2, "0")}.json`, options);
 }
 
 export function loadFactCategory(category: string, options: LoadOptions): Promise<FactShard> {

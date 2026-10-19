@@ -146,6 +146,11 @@ export function validateRecords(records: readonly MeigenRecord[]): void {
 /** File names encode source IDs reversibly; IDs are never treated as path fragments. */
 export const entityFile = (id: string): string => `entities/${Buffer.from(id, "utf8").toString("base64url")}.json`;
 
+/** The one file a reader needs to find the current data: version and the manifests, relative to `data/v1/`. */
+export function latestPointer(dataVersion = DATA_VERSION): { schemaVersion: 1; dataVersion: string; manifest: string; factsManifest: string; days: string; factDays: string } {
+  return { schemaVersion: 1, dataVersion, manifest: `${dataVersion}/manifest.json`, factsManifest: `${dataVersion}/facts/manifest.json`, days: `${dataVersion}/days/{MM-DD}.json`, factDays: `${dataVersion}/facts/days/{MM-DD}.json` };
+}
+
 /** Deterministic, clock-free output for offline npm data and static Pages shards. */
 export function buildFiles(records: readonly MeigenRecord[], dataVersion = DATA_VERSION): Map<string, string> {
   validateRecords(records);
@@ -174,6 +179,7 @@ export function generate(check = false): { records: number; files: number; merge
   const files = buildFiles([...quotes, ...history]);
   const outputs = new Map<string, string>();
   for (const [name, contents] of files) outputs.set(`data/v1/${DATA_VERSION}/${name}`, contents);
+  outputs.set("data/v1/latest.json", format(latestPointer()));
   for (const [name, rows] of [["quotes", quotes], ["history", history]] as const) outputs.set(`src/data/${name}.ts`, `// Built by scripts/data.ts from reviewed source records. Data rights: LICENSES/ and data-sources/.\nimport type { MeigenRecord } from "../types.ts";\n\nexport const ${name}: readonly MeigenRecord[] = ${JSON.stringify(rows, null, 2)};\nexport default ${name};\n`);
   const oldManifest = resolve(ROOT, `data/v1/${DATA_VERSION}/manifest.json`);
   if (existsSync(oldManifest)) {
