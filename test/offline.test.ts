@@ -70,6 +70,13 @@ test("the offline set, the data version and the package version name one build",
   assert.equal(latest.dataVersion, OFFLINE_BUILD.dataVersion);
 });
 
+test("the README states the counts of the build it ships with", () => {
+  const latest = JSON.parse(readFileSync("data/v1/latest.json", "utf8")) as { offlineRecords: number; factRecords: number };
+  const readme = readFileSync("README.md", "utf8");
+  assert.ok(readme.includes(`**${latest.offlineRecords.toLocaleString("en-US")} facts**`), "the README's offline count is out of date");
+  assert.ok(readme.includes(`**${latest.factRecords.toLocaleString("en-US")} facts**`), "the README's full count is out of date");
+});
+
 function checkBuild(site: string): { status: number | null; stderr: string } {
   const r = spawnSync(process.execPath, ["scripts/check-build.ts", site], { encoding: "utf8" });
   return { status: r.status, stderr: r.stderr };

@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en"><head><!--family:head--><link rel="stylesheet" href="family.css"><link rel="stylesheet" href="site.css"></head>
 <body><main><!--family:header--><!--family:unreviewed-->
+<p id="feed-note" class="status" role="status" aria-live="polite"></p>
 <section class="panel today-panel"><h2 id="today-heading"></h2><p data-say="todayIntro"></p><p id="today-status" class="status" role="status" aria-live="polite"></p><div id="today-facts"></div></section>
 <section class="panel random-panel"><h2 data-say="randomHeading"></h2><p data-say="randomIntro"></p>
 <div class="fam-row random-actions"><p id="random-status" class="status" role="status" aria-live="polite"></p><button type="button" id="random-reload" data-say="randomReload"></button></div>
@@ -24,7 +25,7 @@
 <section class="controls panel" aria-label="Feed context">
 <div class="fam-row" data-help-en="Choose the date to look up. Quotes are a repeatable daily selection, not an anniversary claim." data-help-ja="日付を選びます。引用は日付に応じて選びますが、その日に語られたという意味ではありません。"><label><span data-say="date"></span><input id="date" type="date" value="2026-12-18"></label></div>
 <div class="fam-row" data-help-en="Match a sport without mixing in unrelated records." data-help-ja="競技に合う記録だけを表示します。"><label><span data-say="sport"></span><select id="sport"><option value="" data-say="allSports"></option></select></label></div>
-<div class="fam-row" data-help-en="Use bundled records or fetch cacheable public JSON files. Neither option queries a database." data-help-ja="同梱データか公開JSONファイルを使います。データベースへの問い合わせはありません。"><label><span data-say="mode"></span><select id="mode"><option value="bundled" data-say="bundled"></option><option value="static" data-say="staticFiles"></option></select></label></div>
+<div class="fam-row" data-help-en="Use bundled records or fetch cacheable public JSON files. Neither option queries a database." data-help-ja="同梱データか公開JSONファイルを使います。データベースへの問い合わせはありません。"><label><span data-say="mode"></span><select id="mode"><option value="static" data-say="staticFiles"></option><option value="bundled" data-say="bundled"></option></select></label></div>
 <button id="find" data-say="find"></button>
 <details class="feed-filters"><summary data-say="advancedFilters"></summary><div class="filter-grid">
 <div class="fam-row"><label><span data-say="includeSource"></span><select id="include-source"><option value="" data-say="allSources"></option><option value="gitenberg">Gutenberg historical books</option><option value="wikidata">Wikidata</option><option value="openfootball">openfootball</option></select></label></div>
@@ -34,10 +35,10 @@
 </div></details></section>
 <p id="status" class="status" role="status" aria-live="polite"></p>
 <section class="results"><div class="panel quote-panel"><h2 data-say="quoteHeading"></h2><div id="quote"></div></div><div class="panel history-panel"><h2 data-say="historyHeading"></h2><div id="history"></div></div></section>
-<section class="panel"><h2 data-say="useHeading"></h2><p data-say="useText"></p><pre><code>import { quoteForDate, historyOnDate } from '@johnmorrisdotca/meigen-sports';
+<section class="panel"><h2 data-say="useHeading"></h2><p data-say="useText"></p><pre><code>import { quoteForDate, today } from '@johnmorrisdotca/meigen-sports';
 import { quotes } from '@johnmorrisdotca/meigen-sports/quotes';
-import { history } from '@johnmorrisdotca/meigen-sports/history';
+import { offline } from '@johnmorrisdotca/meigen-sports/offline';
 
 quoteForDate(quotes, '2026-12-18');
-historyOnDate(history, '2026-12-18');</code></pre><p><a href="data/v1/0.1.0/manifest.json" data-say="manifest"></a> · <a href="data/v1/0.1.0/all.json" data-say="download"></a> · <a href="sources.html" data-say="sources"></a></p></section>
+today(offline, 'America/Vancouver', new Date().toISOString());</code></pre><p><a href="data/v1/0.1.0/manifest.json" data-say="manifest"></a> · <a href="data/v1/0.1.0/offline.json" data-say="download"></a> · <a href="sources.html" data-say="sources"></a></p></section>
 <!--family:footer--></main><!--family:scripts demo.js--></body></html>

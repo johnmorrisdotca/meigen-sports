@@ -46,7 +46,19 @@ historyOnDate(history, "2022-11-20", { sports: ["soccer"] }).length; // 1
 quoteForDate(quotes, "2026-10-14")?.speaker; // "James Dwight"
 ```
 
-The bundled dataset begins with 30 quotations (22 Gutenberg excerpts and 8 Wikiquote sports lines tagged `famous-quotes`) and 1052 dated history rows (10 same-event rows merged) in `all.json`; they cover 142 of 366 calendar month-days. The on-this-day fact feeds under `data/v1/0.1.0/facts/` are separate and larger: 29,961 facts that cover all 366 days (`facts/manifest.json`). `data/v1/latest.json` names the current data version and its manifests. This is a sourced starting collection with many coverage gaps, not a complete daily almanac. Quotes have unknown utterance dates and are never assigned invented anniversaries.
+## What is bundled and what loads from Pages
+
+One build ships both places. The package and the GitHub Pages site are made from the same facts, and `node scripts/check-build.ts` fails a release when they are not the same build (it compares the package version, the data folder and a SHA-256 of the facts manifest).
+
+| | In the npm package, works offline | On GitHub Pages, needs a network |
+| --- | --- | --- |
+| On-this-day facts | **1,472 facts**: the best three to five for each of the 366 calendar days, chosen by significance and fame and varied by kind, sport, person and club (`@johnmorrisdotca/meigen-sports/offline`) | **29,594 facts** on all 366 days, in static JSON under `data/v1/0.1.0/facts/` (days, teams, players, leagues, sports, tags, 100 `store/` files that together hold every fact), read through the `load*` functions |
+| Quotations | 30 (22 Gutenberg excerpts, 8 Wikiquote sports lines tagged `famous-quotes`) | the same 30 in `quotes.json` |
+| History starter | 1,052 dated rows on 142 days (`@johnmorrisdotca/meigen-sports/history`; World Cup matches and Wikidata events), kept for compatibility | `all.json`, `days/`, `sports/`, `entities/` |
+
+`today(offline, timeZone, nowIso)` always answers from the package. **The rest of the facts are not in the package: Pages must be reachable for them** (the package is about 0.9 MB packed; the full facts are about 55 MB). A site should load the feeds and fall back to the offline set when they cannot be reached, and say that it did; the demo does exactly that. `data/v1/latest.json` names the current build (`package`, `build`, `offlineRecords`, `factRecords`) and its manifests, so a site can check that the feeds it reads are the build its package was made with.
+
+This is a sourced collection with coverage gaps, not a complete daily almanac. `test/golden/golden-facts.json` lists 246 famous, source-checked facts the data must hold (and those it is known not to hold yet), with rules for what must never appear; see [docs/golden-facts.md](./docs/golden-facts.md). Quotes have unknown utterance dates and are never assigned invented anniversaries.
 
 ## Who it is for
 
@@ -102,7 +114,8 @@ The root export provides `isDate`, `monthDayOf`, `selectRecords`, `historyOnDate
 | --- | --- |
 | `@johnmorrisdotca/meigen-sports` | Date helpers, deterministic selectors and public types |
 | `@johnmorrisdotca/meigen-sports/quotes` | Bundled quotation records |
-| `@johnmorrisdotca/meigen-sports/history` | Bundled dated history records |
+| `@johnmorrisdotca/meigen-sports/history` | Bundled dated history records (the starter) |
+| `@johnmorrisdotca/meigen-sports/offline` | `offline`, the best three to five facts for every calendar day, and `OFFLINE_BUILD`, the build they were chosen from |
 | `@johnmorrisdotca/meigen-sports/load` | `loadShard`, `loadDay`, `loadSport`, `loadEntity` and loader types |
 | `@johnmorrisdotca/meigen-sports/categories` | `HISTORY_TYPES` and its evidence/readiness descriptions |
 

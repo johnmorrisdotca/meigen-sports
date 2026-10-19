@@ -1,15 +1,18 @@
-import { factsFor, historyOnDate, quoteForDate, rankFeed, renderRun, tagsOf } from "../src/index.ts";
+import { factsFor, quoteForDate, rankFeed, renderRun, tagsOf } from "../src/index.ts";
 import { quotes } from "../src/data/quotes.ts";
-import { history } from "../src/data/history.ts";
-import { loadDay, loadFactDay, loadFactShard, loadShard } from "../src/load.ts";
+import { OFFLINE_BUILD, offline } from "../src/data/offline.ts";
+import { loadFactDay, loadFactShard, loadShard } from "../src/load.ts";
 import type { FactFilters, OnThisDayRecord } from "../src/schema.ts";
-import { pickVaried, pickVariedFacts } from "./variety.ts";
+import { pickVariedFacts } from "./variety.ts";
 import type { MeigenRecord } from "../src/types.ts";
 interface Language { lang: "en" | "ja"; word: (key: string) => string }
 declare const familyLang: Language;
 const DATA_VERSION = "0.1.0";
 const TODAY_COUNT = 3;
 const RANDOM_COUNT = 10;
+const FIND_COUNT = 8;
+// The full set is stored in 100 files by record id, so any one of them is a uniform 1% sample of every fact.
+const STORE_FILES = 100;
 const FAV_TAGS = [
   "championship-win", "match-result", "overtime-result", "shutout", "historic-cup-series",
   "series-start", "series-clinch", "player-birthday", "age-at-event", "award-honour",
@@ -42,7 +45,14 @@ const favBox = document.querySelector<HTMLElement>("#fav-facts")!;
 const favStatus = document.querySelector<HTMLElement>("#fav-status")!;
 const showcaseBox = document.querySelector<HTMLElement>("#showcase-facts")!;
 const showcaseStatus = document.querySelector<HTMLElement>("#showcase-status")!;
-const slugs = [...new Set([...quotes, ...history].flatMap((r) => r.sports))].sort();
+const slugs = [...new Set([...quotes.flatMap((r) => r.sports), ...offline.flatMap((r) => (r.sport ? [r.sport] : []))])].sort();
+const feedNote = document.querySelector<HTMLElement>("#feed-note")!;
+// A view that could not reach the Pages feeds shows the bundled offline set and says so.
+const offlineViews = new Set<string>();
+function noteFeeds(view: string, fellBack: boolean) {
+  if (fellBack) offlineViews.add(view); else offlineViews.delete(view);
+  feedNote.textContent = offlineViews.size ? familyLang.word("offlineNotice").replace("{n}", String(offline.length)) : "";
+}
 for (const slug of slugs) {
   const option = document.createElement("option"); option.value = slug; sport.append(option);
   favSport.append(option.cloneNode(true) as HTMLOptionElement);
@@ -56,16 +66,6 @@ function credit(record: MeigenRecord) {
   const p = document.createElement("p"); p.className = "credit";
   const link = document.createElement("a"); link.href = record.source.url; link.target = "_blank"; link.rel = "noreferrer noopener"; link.textContent = record.source.title;
   p.append(`${record.speaker ?? record.date ?? ""} · `, link, ` · ${record.source.licence}`); return p;
-}
-function drawRecords(box: HTMLElement, records: readonly MeigenRecord[]) {
-  box.replaceChildren();
-  const locale = familyLang.lang === "ja" ? "ja" : "en";
-  const worded = new Map(renderRun(records.filter((row) => row.kind === "history"), { seed: nextSeed(), locale }).map((row) => [row.recordId, row.text]));
-  for (const fact of records) {
-    const article = document.createElement("article"); article.className = "record";
-    const p = document.createElement("p"); p.textContent = worded.get(fact.id) ?? fact.text;
-    article.append(p, credit(fact)); box.append(article);
-  }
 }
 function factCredit(record: OnThisDayRecord) {
   const p = document.createElement("p"); p.className = "credit";
@@ -114,47 +114,33 @@ async function renderToday() {
   const locale = familyLang.lang === "ja" ? "ja" : "en";
   todayHeading.textContent = new Intl.DateTimeFormat(locale, { month: "long", day: "numeric" }).format(now);
   const day = monthDayLocal(now);
+  let facts: OnThisDayRecord[] = [];
   try {
-    const shard = await loadFactDay(`${now.getFullYear()}-${day}`, localFeed());
-    const facts = rankFeed(shard.records, TODAY_COUNT);
-    if (facts.length) {
-      drawFacts(todayBox, facts);
-      todayStatus.textContent = facts.length < TODAY_COUNT
-        ? familyLang.word("todayFew")
-        : `${facts.length} ${familyLang.word("results")}`;
-      return;
-    }
-  } catch { /* fall back to bundled seed */ }
-  const facts = pickVaried(historyOnDate(history, day), TODAY_COUNT);
-  drawRecords(todayBox, facts);
-  todayStatus.textContent = facts.length < TODAY_COUNT
-    ? familyLang.word("todayFew")
-    : `${facts.length} ${familyLang.word("results")}`;
+    // One request: today's day shard from the Pages feeds.
+    facts = rankFeed((await loadFactDay(`${now.getFullYear()}-${day}`, localFeed())).records, TODAY_COUNT);
+    noteFeeds("today", false);
+  } catch { noteFeeds("today", true); }
+  if (!facts.length) facts = rankFeed(factsFor(offline, { date: day }), TODAY_COUNT);
+  drawFacts(todayBox, facts);
+  todayStatus.textContent = facts.length < TODAY_COUNT ? familyLang.word("todayFew") : `${facts.length} ${familyLang.word("results")}`;
 }
 let randomGeneration = 0;
 async function renderRandom() {
   const ownGeneration = ++randomGeneration;
+  let picked: OnThisDayRecord[] = [];
   try {
-    const shard = await loadFactShard("sample.json", localFeed());
+    // One request: a random one of the 100 files that together hold every fact.
+    const file = String(Math.floor(Math.random() * STORE_FILES)).padStart(2, "0");
+    const shard = await loadFactShard(`store/${file}.json`, localFeed());
     if (ownGeneration !== randomGeneration) return;
-    const picked = pickVariedFacts(shuffle(shard.records), RANDOM_COUNT);
-    if (picked.length) {
-      drawFacts(randomBox, picked);
-      randomStatus.textContent = `${picked.length} ${familyLang.word("results")}`;
-      return;
-    }
-  } catch { /* fall back to bundled seed */ }
-  try {
-    const shard = await loadShard("all.json", localFeed());
-    if (ownGeneration !== randomGeneration) return;
-    const picked = pickVaried(shuffle(shard.records), RANDOM_COUNT);
-    drawRecords(randomBox, picked);
-    randomStatus.textContent = `${picked.length} ${familyLang.word("results")}`;
-  } catch {
-    if (ownGeneration !== randomGeneration) return;
-    randomBox.replaceChildren();
-    randomStatus.textContent = familyLang.word("randomError");
-  }
+    picked = pickVariedFacts(shuffle(shard.records), RANDOM_COUNT);
+    noteFeeds("random", false);
+  } catch { noteFeeds("random", true); }
+  if (ownGeneration !== randomGeneration) return;
+  if (!picked.length) picked = pickVariedFacts(shuffle(offline), RANDOM_COUNT);
+  if (!picked.length) { randomBox.replaceChildren(); randomStatus.textContent = familyLang.word("randomError"); return; }
+  drawFacts(randomBox, picked);
+  randomStatus.textContent = `${picked.length} ${familyLang.word("results")}`;
 }
 async function renderFavourites() {
   const teamId = Number(favTeam.value);
@@ -170,21 +156,24 @@ async function renderFavourites() {
     ...(Number.isInteger(teamId) && teamId > 0 ? { team: { franchiseId: teamId } } : {}),
     ...(Number.isInteger(playerId) && playerId > 0 ? { player: { personId: playerId } } : {}),
   };
-  let path = "sample.json";
+  // The smallest feed that can hold the answer: a team's, a player's bucket, a tag's, a league's or a sport's.
+  let path: string | null = null;
   if (Number.isInteger(teamId) && teamId > 0) path = `feeds/teams/f-${teamId}.json`;
   else if (Number.isInteger(playerId) && playerId > 0) path = `feeds/players/${String(playerId % 100).padStart(2, "0")}.json`;
   else if (favCategory.value) path = `feeds/tags/${favCategory.value}.json`;
   else if (favLeague.value.trim()) path = `feeds/leagues/${favLeague.value.trim()}.json`;
   else if (favSport.value) path = `feeds/sports/${favSport.value}.json`;
+  let rows: OnThisDayRecord[] = [];
+  let reached = false;
   try {
-    const shard = await loadFactShard(path, localFeed());
-    const rows = pickVariedFacts(shuffle(factsFor(shard.records, filters)), 20);
-    drawFacts(favBox, rows);
-    favStatus.textContent = rows.length ? `${rows.length} ${familyLang.word("results")}` : familyLang.word("favEmpty");
-  } catch {
-    favBox.replaceChildren();
-    favStatus.textContent = familyLang.word("favEmpty");
-  }
+    const shard = await loadFactShard(path ?? `store/${String(Math.floor(Math.random() * STORE_FILES)).padStart(2, "0")}.json`, localFeed());
+    rows = pickVariedFacts(shuffle(factsFor(shard.records, filters)), 20);
+    reached = true;
+  } catch { /* offline set below */ }
+  noteFeeds("favourites", !reached);
+  if (!reached) rows = pickVariedFacts(shuffle(factsFor(offline, filters)), 20);
+  drawFacts(favBox, rows);
+  favStatus.textContent = rows.length ? `${rows.length} ${familyLang.word("results")}` : familyLang.word("favEmpty");
 }
 let generation = 0;
 async function render() {
@@ -200,16 +189,24 @@ async function render() {
       ...(includeType.value ? { types: [includeType.value] } : {}),
       ...(excludeType.value ? { excludeTypes: [excludeType.value] } : {}),
     };
-    let quoteRecords: readonly MeigenRecord[] = quotes, historyRecords: readonly MeigenRecord[] = history;
+    // The quotation comes from the bundled quotations, or from quotes.json when the Pages feeds are chosen.
+    let quoteRecords: readonly MeigenRecord[] = quotes;
+    let dayFacts: readonly OnThisDayRecord[] = [];
+    let fellBack = mode.value === "bundled";
     if (mode.value === "static") {
-      [quoteRecords, historyRecords] = await Promise.all([loadShard("quotes.json", localFeed()).then((r) => r.records), loadDay(date.value, localFeed()).then((r) => r.records)]);
+      try {
+        const [quoteShard, factShard] = await Promise.all([loadShard("quotes.json", localFeed()), loadFactDay(date.value, localFeed())]);
+        quoteRecords = quoteShard.records; dayFacts = factShard.records;
+      } catch { fellBack = true; }
     }
+    if (fellBack) dayFacts = factsFor(offline, { date: date.value });
+    if (mode.value === "static") noteFeeds("find", fellBack);
     if (generation !== ownGeneration) return;
-    const q = quoteForDate(quoteRecords, date.value, context), facts = historyOnDate(historyRecords, date.value, context);
-    quoteBox.replaceChildren(); historyBox.replaceChildren();
+    const q = quoteForDate(quoteRecords, date.value, context);
+    const facts = rankFeed(sport.value ? factsFor(dayFacts, { sport: sport.value }) : dayFacts, FIND_COUNT);
+    quoteBox.replaceChildren();
     if (q) { const block = document.createElement("blockquote"); block.textContent = q.text; quoteBox.append(block, credit(q)); } else quoteBox.textContent = familyLang.word("emptyQuote");
-    if (!facts.length) historyBox.textContent = familyLang.word("emptyHistory");
-    for (const fact of facts) { const article = document.createElement("article"); article.className = "record"; const p = document.createElement("p"); p.textContent = fact.text; article.append(p, credit(fact)); historyBox.append(article); }
+    if (facts.length) drawFacts(historyBox, facts); else { historyBox.replaceChildren(); historyBox.textContent = familyLang.word("emptyHistory"); }
     status.textContent = `${facts.length + (q ? 1 : 0)} ${familyLang.word("results")}`;
   } catch { if (generation === ownGeneration) status.textContent = familyLang.word("error"); }
 }
@@ -222,14 +219,18 @@ async function renderShowcase() {
     showcaseStatus.textContent = shard.records.length
       ? `${shard.records.length} ${familyLang.word("results")}`
       : familyLang.word("favEmpty");
+    noteFeeds("showcase", false);
   } catch {
+    // The showcase is a Pages-only feed; the offline set has no equivalent, so say so rather than show nothing.
     showcaseBox.replaceChildren();
     showcaseStatus.textContent = familyLang.word("favEmpty");
+    noteFeeds("showcase", true);
   }
 }
 document.querySelector("#fav-find")!.addEventListener("click", () => { void renderFavourites(); });
 document.querySelector("#random-reload")!.addEventListener("click", () => { void renderRandom(); });
 window.addEventListener("meigen-language", () => { void render(); void renderRandom(); void renderShowcase(); });
+void OFFLINE_BUILD;
 void render();
 void renderRandom();
 void renderShowcase();
