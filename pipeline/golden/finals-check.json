@@ -1,0 +1,1615 @@
+{
+ "schemaVersion": 1,
+ "checkedOn": "2026-10-19",
+ "source": "English Wikipedia infoboxes (CC BY-SA 4.0), fetched by pipeline/golden/check_finals.py",
+ "seasons": {
+  "mlb:1903": {
+   "wikipedia": "1903 World Series",
+   "endDate": "1903-10-13",
+   "winner": "Boston Americans",
+   "gameDate": "1903-10-13",
+   "gameWinner": "Boston Americans",
+   "agrees": true
+  },
+  "mlb:1905": {
+   "wikipedia": "1905 World Series",
+   "endDate": "1905-10-14",
+   "winner": "New York Giants",
+   "gameDate": "1905-10-14",
+   "gameWinner": "New York Giants",
+   "agrees": true
+  },
+  "mlb:1906": {
+   "wikipedia": "1906 World Series",
+   "endDate": "1906-10-14",
+   "winner": "Chicago White Sox",
+   "gameDate": "1906-10-14",
+   "gameWinner": "Chicago White Sox",
+   "agrees": true
+  },
+  "mlb:1907": {
+   "wikipedia": "1907 World Series",
+   "endDate": "1907-10-12",
+   "winner": "Chicago Cubs",
+   "gameDate": "1907-10-12",
+   "gameWinner": "Chicago Cubs",
+   "agrees": true
+  },
+  "mlb:1908": {
+   "wikipedia": "1908 World Series",
+   "endDate": "1908-10-14",
+   "winner": "Chicago Cubs",
+   "gameDate": "1908-10-14",
+   "gameWinner": "Chicago Cubs",
+   "agrees": true
+  },
+  "mlb:1909": {
+   "wikipedia": "1909 World Series",
+   "endDate": "1909-10-16",
+   "winner": "Pittsburgh Pirates",
+   "gameDate": "1909-10-16",
+   "gameWinner": "Pittsburgh Pirates",
+   "agrees": true
+  },
+  "mlb:1910": {
+   "wikipedia": "1910 World Series",
+   "endDate": "1910-10-23",
+   "winner": "Philadelphia Athletics",
+   "gameDate": "1910-10-23",
+   "gameWinner": "Philadelphia Athletics",
+   "agrees": true
+  },
+  "mlb:1911": {
+   "wikipedia": "1911 World Series",
+   "endDate": "1911-10-26",
+   "winner": "Philadelphia Athletics",
+   "gameDate": "1911-10-26",
+   "gameWinner": "Philadelphia Athletics",
+   "agrees": true
+  },
+  "mlb:1912": {
+   "wikipedia": "1912 World Series",
+   "endDate": "1912-10-16",
+   "winner": "Boston Red Sox",
+   "gameDate": "1912-10-16",
+   "gameWinner": "Boston Red Sox",
+   "agrees": true
+  },
+  "mlb:1913": {
+   "wikipedia": "1913 World Series",
+   "endDate": "1913-10-11",
+   "winner": "Philadelphia Athletics",
+   "gameDate": "1913-10-11",
+   "gameWinner": "Philadelphia Athletics",
+   "agrees": true
+  },
+  "mlb:1914": {
+   "wikipedia": "1914 World Series",
+   "endDate": "1914-10-13",
+   "winner": "Boston Braves",
+   "gameDate": "1914-10-13",
+   "gameWinner": "Boston Braves",
+   "agrees": true
+  },
+  "mlb:1915": {
+   "wikipedia": "1915 World Series",
+   "endDate": "1915-10-13",
+   "winner": "Boston Red Sox",
+   "gameDate": "1915-10-13",
+   "gameWinner": "Boston Red Sox",
+   "agrees": true
+  },
+  "mlb:1916": {
+   "wikipedia": "1916 World Series",
+   "endDate": "1916-10-12",
+   "winner": "Boston Red Sox",
+   "gameDate": "1916-10-12",
+   "gameWinner": "Boston Red Sox",
+   "agrees": true
+  },
+  "mlb:1917": {
+   "wikipedia": "1917 World Series",
+   "endDate": "1917-10-15",
+   "winner": "Chicago White Sox",
+   "gameDate": "1917-10-15",
+   "gameWinner": "Chicago White Sox",
+   "agrees": true
+  },
+  "mlb:1918": {
+   "wikipedia": "1918 World Series",
+   "endDate": "1918-09-11",
+   "winner": "Boston Red Sox",
+   "gameDate": "1918-09-11",
+   "gameWinner": "Boston Red Sox",
+   "agrees": true
+  },
+  "mlb:1919": {
+   "wikipedia": "1919 World Series",
+   "endDate": "1919-10-09",
+   "winner": "Cincinnati Reds",
+   "gameDate": "1919-10-09",
+   "gameWinner": "Cincinnati Reds",
+   "agrees": true
+  },
+  "mlb:1920": {
+   "wikipedia": "1920 World Series",
+   "endDate": "1920-10-12",
+   "winner": "Cleveland Indians",
+   "gameDate": "1920-10-12",
+   "gameWinner": "Cleveland Indians",
+   "agrees": true
+  },
+  "mlb:1921": {
+   "wikipedia": "1921 World Series",
+   "endDate": "1921-10-13",
+   "winner": "New York Giants",
+   "gameDate": "1921-10-13",
+   "gameWinner": "New York Giants",
+   "agrees": true
+  },
+  "mlb:1922": {
+   "wikipedia": "1922 World Series",
+   "endDate": "1922-10-08",
+   "winner": "New York Giants",
+   "gameDate": "1922-10-08",
+   "gameWinner": "New York Giants",
+   "agrees": true
+  },
+  "mlb:1923": {
+   "wikipedia": "1923 World Series",
+   "endDate": "1923-10-15",
+   "winner": "New York Yankees",
+   "gameDate": "1923-10-15",
+   "gameWinner": "New York Yankees",
+   "agrees": true
+  },
+  "mlb:1924": {
+   "wikipedia": "1924 World Series",
+   "endDate": "1924-10-10",
+   "winner": "Washington Senators",
+   "gameDate": "1924-10-10",
+   "gameWinner": "Washington Senators",
+   "agrees": true
+  },
+  "mlb:1925": {
+   "wikipedia": "1925 World Series",
+   "endDate": "1925-10-15",
+   "winner": "Pittsburgh Pirates",
+   "gameDate": "1925-10-15",
+   "gameWinner": "Pittsburgh Pirates",
+   "agrees": true
+  },
+  "mlb:1926": {
+   "wikipedia": "1926 World Series",
+   "endDate": "1926-10-10",
+   "winner": "St. Louis Cardinals",
+   "gameDate": "1926-10-10",
+   "gameWinner": "St. Louis Cardinals",
+   "agrees": true
+  },
+  "mlb:1927": {
+   "wikipedia": "1927 World Series",
+   "endDate": "1927-10-08",
+   "winner": "New York Yankees",
+   "gameDate": "1927-10-08",
+   "gameWinner": "New York Yankees",
+   "agrees": true
+  },
+  "mlb:1928": {
+   "wikipedia": "1928 World Series",
+   "endDate": "1928-10-09",
+   "winner": "New York Yankees",
+   "gameDate": "1928-10-09",
+   "gameWinner": "New York Yankees",
+   "agrees": true
+  },
+  "mlb:1929": {
+   "wikipedia": "1929 World Series",
+   "endDate": "1929-10-14",
+   "winner": "Philadelphia Athletics",
+   "gameDate": "1929-10-14",
+   "gameWinner": "Philadelphia Athletics",
+   "agrees": true
+  },
+  "mlb:1930": {
+   "wikipedia": "1930 World Series",
+   "endDate": "1930-10-08",
+   "winner": "Philadelphia Athletics",
+   "gameDate": "1930-10-08",
+   "gameWinner": "Philadelphia Athletics",
+   "agrees": true
+  },
+  "mlb:1931": {
+   "wikipedia": "1931 World Series",
+   "endDate": "1931-10-10",
+   "winner": "St. Louis Cardinals",
+   "gameDate": "1931-10-10",
+   "gameWinner": "St. Louis Cardinals",
+   "agrees": true
+  },
+  "mlb:1932": {
+   "wikipedia": "1932 World Series",
+   "endDate": "1932-10-02",
+   "winner": "New York Yankees",
+   "gameDate": "1932-10-02",
+   "gameWinner": "New York Yankees",
+   "agrees": true
+  },
+  "mlb:1933": {
+   "wikipedia": "1933 World Series",
+   "endDate": "1933-10-07",
+   "winner": "New York Giants",
+   "gameDate": "1933-10-07",
+   "gameWinner": "New York Giants",
+   "agrees": true
+  },
+  "mlb:1934": {
+   "wikipedia": "1934 World Series",
+   "endDate": "1934-10-09",
+   "winner": "St. Louis Cardinals",
+   "gameDate": "1934-10-09",
+   "gameWinner": "St. Louis Cardinals",
+   "agrees": true
+  },
+  "mlb:1935": {
+   "wikipedia": "1935 World Series",
+   "endDate": "1935-10-07",
+   "winner": "Detroit Tigers",
+   "gameDate": "1935-10-07",
+   "gameWinner": "Detroit Tigers",
+   "agrees": true
+  },
+  "mlb:1936": {
+   "wikipedia": "1936 World Series",
+   "endDate": "1936-10-06",
+   "winner": "New York Yankees",
+   "gameDate": "1936-10-06",
+   "gameWinner": "New York Yankees",
+   "agrees": true
+  },
+  "mlb:1937": {
+   "wikipedia": "1937 World Series",
+   "endDate": "1937-10-10",
+   "winner": "New York Yankees",
+   "gameDate": "1937-10-10",
+   "gameWinner": "New York Yankees",
+   "agrees": true
+  },
+  "mlb:1938": {
+   "wikipedia": "1938 World Series",
+   "endDate": "1938-10-09",
+   "winner": "New York Yankees",
+   "gameDate": "1938-10-09",
+   "gameWinner": "New York Yankees",
+   "agrees": true
+  },
+  "mlb:1939": {
+   "wikipedia": "1939 World Series",
+   "endDate": "1939-10-08",
+   "winner": "New York Yankees",
+   "gameDate": "1939-10-08",
+   "gameWinner": "New York Yankees",
+   "agrees": true
+  },
+  "mlb:1940": {
+   "wikipedia": "1940 World Series",
+   "endDate": "1940-10-08",
+   "winner": "Cincinnati Reds",
+   "gameDate": "1940-10-08",
+   "gameWinner": "Cincinnati Reds",
+   "agrees": true
+  },
+  "mlb:1941": {
+   "wikipedia": "1941 World Series",
+   "endDate": "1941-10-06",
+   "winner": "New York Yankees",
+   "gameDate": "1941-10-06",
+   "gameWinner": "New York Yankees",
+   "agrees": true
+  },
+  "mlb:1942": {
+   "wikipedia": "1942 World Series",
+   "endDate": "1942-10-05",
+   "winner": "St. Louis Cardinals",
+   "gameDate": "1942-10-05",
+   "gameWinner": "St. Louis Cardinals",
+   "agrees": true
+  },
+  "mlb:1943": {
+   "wikipedia": "1943 World Series",
+   "endDate": "1943-10-11",
+   "winner": "New York Yankees",
+   "gameDate": "1943-10-11",
+   "gameWinner": "New York Yankees",
+   "agrees": true
+  },
+  "mlb:1944": {
+   "wikipedia": "1944 World Series",
+   "endDate": "1944-10-09",
+   "winner": "St. Louis Cardinals",
+   "gameDate": "1944-10-09",
+   "gameWinner": "St. Louis Cardinals",
+   "agrees": true
+  },
+  "mlb:1945": {
+   "wikipedia": "1945 World Series",
+   "endDate": "1945-10-10",
+   "winner": "Detroit Tigers",
+   "gameDate": "1945-10-10",
+   "gameWinner": "Detroit Tigers",
+   "agrees": true
+  },
+  "mlb:1946": {
+   "wikipedia": "1946 World Series",
+   "endDate": "1946-10-15",
+   "winner": "St. Louis Cardinals",
+   "gameDate": "1946-10-15",
+   "gameWinner": "St. Louis Cardinals",
+   "agrees": true
+  },
+  "mlb:1947": {
+   "wikipedia": "1947 World Series",
+   "endDate": "1947-10-06",
+   "winner": "New York Yankees",
+   "gameDate": "1947-10-06",
+   "gameWinner": "New York Yankees",
+   "agrees": true
+  },
+  "mlb:1948": {
+   "wikipedia": "1948 World Series",
+   "endDate": "1948-10-11",
+   "winner": "Cleveland Indians",
+   "gameDate": "1948-10-11",
+   "gameWinner": "Cleveland Indians",
+   "agrees": true
+  },
+  "mlb:1949": {
+   "wikipedia": "1949 World Series",
+   "endDate": "1949-10-09",
+   "winner": "New York Yankees",
+   "gameDate": "1949-10-09",
+   "gameWinner": "New York Yankees",
+   "agrees": true
+  },
+  "mlb:1950": {
+   "wikipedia": "1950 World Series",
+   "endDate": "1950-10-07",
+   "winner": "New York Yankees",
+   "gameDate": "1950-10-07",
+   "gameWinner": "New York Yankees",
+   "agrees": true
+  },
+  "mlb:1951": {
+   "wikipedia": "1951 World Series",
+   "endDate": "1951-10-10",
+   "winner": "New York Yankees",
+   "gameDate": "1951-10-10",
+   "gameWinner": "New York Yankees",
+   "agrees": true
+  },
+  "mlb:1952": {
+   "wikipedia": "1952 World Series",
+   "endDate": "1952-10-07",
+   "winner": "New York Yankees",
+   "gameDate": "1952-10-07",
+   "gameWinner": "New York Yankees",
+   "agrees": true
+  },
+  "mlb:1953": {
+   "wikipedia": "1953 World Series",
+   "endDate": "1953-10-05",
+   "winner": "New York Yankees",
+   "gameDate": "1953-10-05",
+   "gameWinner": "New York Yankees",
+   "agrees": true
+  },
+  "mlb:1954": {
+   "wikipedia": "1954 World Series",
+   "endDate": "1954-10-02",
+   "winner": "New York Giants",
+   "gameDate": "1954-10-02",
+   "gameWinner": "New York Giants",
+   "agrees": true
+  },
+  "mlb:1955": {
+   "wikipedia": "1955 World Series",
+   "endDate": "1955-10-04",
+   "winner": "Brooklyn Dodgers",
+   "gameDate": "1955-10-04",
+   "gameWinner": "Brooklyn Dodgers",
+   "agrees": true
+  },
+  "mlb:1956": {
+   "wikipedia": "1956 World Series",
+   "endDate": "1956-10-10",
+   "winner": "New York Yankees",
+   "gameDate": "1956-10-10",
+   "gameWinner": "New York Yankees",
+   "agrees": true
+  },
+  "mlb:1957": {
+   "wikipedia": "1957 World Series",
+   "endDate": "1957-10-10",
+   "winner": "Milwaukee Braves",
+   "gameDate": "1957-10-10",
+   "gameWinner": "Milwaukee Braves",
+   "agrees": true
+  },
+  "mlb:1958": {
+   "wikipedia": "1958 World Series",
+   "endDate": "1958-10-09",
+   "winner": "New York Yankees",
+   "gameDate": "1958-10-09",
+   "gameWinner": "New York Yankees",
+   "agrees": true
+  },
+  "mlb:1959": {
+   "wikipedia": "1959 World Series",
+   "endDate": "1959-10-08",
+   "winner": "Los Angeles Dodgers",
+   "gameDate": "1959-10-08",
+   "gameWinner": "Los Angeles Dodgers",
+   "agrees": true
+  },
+  "mlb:1960": {
+   "wikipedia": "1960 World Series",
+   "endDate": "1960-10-13",
+   "winner": "Pittsburgh Pirates",
+   "gameDate": "1960-10-13",
+   "gameWinner": "Pittsburgh Pirates",
+   "agrees": true
+  },
+  "mlb:1961": {
+   "wikipedia": "1961 World Series",
+   "endDate": "1961-10-09",
+   "winner": "New York Yankees",
+   "gameDate": "1961-10-09",
+   "gameWinner": "New York Yankees",
+   "agrees": true
+  },
+  "mlb:1962": {
+   "wikipedia": "1962 World Series",
+   "endDate": "1962-10-16",
+   "winner": "New York Yankees",
+   "gameDate": "1962-10-16",
+   "gameWinner": "New York Yankees",
+   "agrees": true
+  },
+  "mlb:1963": {
+   "wikipedia": "1963 World Series",
+   "endDate": "1963-10-06",
+   "winner": "Los Angeles Dodgers",
+   "gameDate": "1963-10-06",
+   "gameWinner": "Los Angeles Dodgers",
+   "agrees": true
+  },
+  "mlb:1964": {
+   "wikipedia": "1964 World Series",
+   "endDate": "1964-10-15",
+   "winner": "St. Louis Cardinals",
+   "gameDate": "1964-10-15",
+   "gameWinner": "St. Louis Cardinals",
+   "agrees": true
+  },
+  "mlb:1965": {
+   "wikipedia": "1965 World Series",
+   "endDate": "1965-10-14",
+   "winner": "Los Angeles Dodgers",
+   "gameDate": "1965-10-14",
+   "gameWinner": "Los Angeles Dodgers",
+   "agrees": true
+  },
+  "mlb:1966": {
+   "wikipedia": "1966 World Series",
+   "endDate": "1966-10-09",
+   "winner": "Baltimore Orioles",
+   "gameDate": "1966-10-09",
+   "gameWinner": "Baltimore Orioles",
+   "agrees": true
+  },
+  "mlb:1967": {
+   "wikipedia": "1967 World Series",
+   "endDate": "1967-10-12",
+   "winner": "St. Louis Cardinals",
+   "gameDate": "1967-10-12",
+   "gameWinner": "St. Louis Cardinals",
+   "agrees": true
+  },
+  "mlb:1968": {
+   "wikipedia": "1968 World Series",
+   "endDate": "1968-10-10",
+   "winner": "Detroit Tigers",
+   "gameDate": "1968-10-10",
+   "gameWinner": "Detroit Tigers",
+   "agrees": true
+  },
+  "mlb:1969": {
+   "wikipedia": "1969 World Series",
+   "endDate": "1969-10-16",
+   "winner": "New York Mets",
+   "gameDate": "1969-10-16",
+   "gameWinner": "New York Mets",
+   "agrees": true
+  },
+  "mlb:1970": {
+   "wikipedia": "1970 World Series",
+   "endDate": "1970-10-15",
+   "winner": "Baltimore Orioles",
+   "gameDate": "1970-10-15",
+   "gameWinner": "Baltimore Orioles",
+   "agrees": true
+  },
+  "mlb:1971": {
+   "wikipedia": "1971 World Series",
+   "endDate": "1971-10-17",
+   "winner": "Pittsburgh Pirates",
+   "gameDate": "1971-10-17",
+   "gameWinner": "Pittsburgh Pirates",
+   "agrees": true
+  },
+  "mlb:1972": {
+   "wikipedia": "1972 World Series",
+   "endDate": "1972-10-22",
+   "winner": "Oakland Athletics",
+   "gameDate": "1972-10-22",
+   "gameWinner": "Oakland Athletics",
+   "agrees": true
+  },
+  "mlb:1973": {
+   "wikipedia": "1973 World Series",
+   "endDate": "1973-10-21",
+   "winner": "Oakland Athletics",
+   "gameDate": "1973-10-21",
+   "gameWinner": "Oakland Athletics",
+   "agrees": true
+  },
+  "mlb:1974": {
+   "wikipedia": "1974 World Series",
+   "endDate": "1974-10-17",
+   "winner": "Oakland Athletics",
+   "gameDate": "1974-10-17",
+   "gameWinner": "Oakland Athletics",
+   "agrees": true
+  },
+  "mlb:1975": {
+   "wikipedia": "1975 World Series",
+   "endDate": "1975-10-22",
+   "winner": "Cincinnati Reds",
+   "gameDate": "1975-10-22",
+   "gameWinner": "Cincinnati Reds",
+   "agrees": true
+  },
+  "mlb:1976": {
+   "wikipedia": "1976 World Series",
+   "endDate": "1976-10-21",
+   "winner": "Cincinnati Reds",
+   "gameDate": "1976-10-21",
+   "gameWinner": "Cincinnati Reds",
+   "agrees": true
+  },
+  "mlb:1977": {
+   "wikipedia": "1977 World Series",
+   "endDate": "1977-10-18",
+   "winner": "New York Yankees",
+   "gameDate": "1977-10-18",
+   "gameWinner": "New York Yankees",
+   "agrees": true
+  },
+  "mlb:1978": {
+   "wikipedia": "1978 World Series",
+   "endDate": "1978-10-17",
+   "winner": "New York Yankees",
+   "gameDate": "1978-10-17",
+   "gameWinner": "New York Yankees",
+   "agrees": true
+  },
+  "mlb:1979": {
+   "wikipedia": "1979 World Series",
+   "endDate": "1979-10-17",
+   "winner": "Pittsburgh Pirates",
+   "gameDate": "1979-10-17",
+   "gameWinner": "Pittsburgh Pirates",
+   "agrees": true
+  },
+  "mlb:1980": {
+   "wikipedia": "1980 World Series",
+   "endDate": "1980-10-21",
+   "winner": "Philadelphia Phillies",
+   "gameDate": "1980-10-21",
+   "gameWinner": "Philadelphia Phillies",
+   "agrees": true
+  },
+  "mlb:1981": {
+   "wikipedia": "1981 World Series",
+   "endDate": "1981-10-28",
+   "winner": "Los Angeles Dodgers",
+   "gameDate": "1981-10-28",
+   "gameWinner": "Los Angeles Dodgers",
+   "agrees": true
+  },
+  "mlb:1982": {
+   "wikipedia": "1982 World Series",
+   "endDate": "1982-10-20",
+   "winner": "St. Louis Cardinals",
+   "gameDate": "1982-10-20",
+   "gameWinner": "St. Louis Cardinals",
+   "agrees": true
+  },
+  "mlb:1983": {
+   "wikipedia": "1983 World Series",
+   "endDate": "1983-10-16",
+   "winner": "Baltimore Orioles",
+   "gameDate": "1983-10-16",
+   "gameWinner": "Baltimore Orioles",
+   "agrees": true
+  },
+  "mlb:1984": {
+   "wikipedia": "1984 World Series",
+   "endDate": "1984-10-14",
+   "winner": "Detroit Tigers",
+   "gameDate": "1984-10-14",
+   "gameWinner": "Detroit Tigers",
+   "agrees": true
+  },
+  "mlb:1985": {
+   "wikipedia": "1985 World Series",
+   "endDate": "1985-10-27",
+   "winner": "Kansas City Royals",
+   "gameDate": "1985-10-27",
+   "gameWinner": "Kansas City Royals",
+   "agrees": true
+  },
+  "mlb:1986": {
+   "wikipedia": "1986 World Series",
+   "endDate": "1986-10-27",
+   "winner": "New York Mets",
+   "gameDate": "1986-10-27",
+   "gameWinner": "New York Mets",
+   "agrees": true
+  },
+  "mlb:1987": {
+   "wikipedia": "1987 World Series",
+   "endDate": "1987-10-25",
+   "winner": "Minnesota Twins",
+   "gameDate": "1987-10-25",
+   "gameWinner": "Minnesota Twins",
+   "agrees": true
+  },
+  "mlb:1988": {
+   "wikipedia": "1988 World Series",
+   "endDate": "1988-10-20",
+   "winner": "Los Angeles Dodgers",
+   "gameDate": "1988-10-20",
+   "gameWinner": "Los Angeles Dodgers",
+   "agrees": true
+  },
+  "mlb:1989": {
+   "wikipedia": "1989 World Series",
+   "endDate": "1989-10-28",
+   "winner": "Oakland Athletics",
+   "gameDate": "1989-10-28",
+   "gameWinner": "Oakland Athletics",
+   "agrees": true
+  },
+  "mlb:1990": {
+   "wikipedia": "1990 World Series",
+   "endDate": "1990-10-20",
+   "winner": "Cincinnati Reds",
+   "gameDate": "1990-10-20",
+   "gameWinner": "Cincinnati Reds",
+   "agrees": true
+  },
+  "mlb:1991": {
+   "wikipedia": "1991 World Series",
+   "endDate": "1991-10-27",
+   "winner": "Minnesota Twins",
+   "gameDate": "1991-10-27",
+   "gameWinner": "Minnesota Twins",
+   "agrees": true
+  },
+  "mlb:1992": {
+   "wikipedia": "1992 World Series",
+   "endDate": "1992-10-24",
+   "winner": "Toronto Blue Jays",
+   "gameDate": "1992-10-24",
+   "gameWinner": "Toronto Blue Jays",
+   "agrees": true
+  },
+  "mlb:1993": {
+   "wikipedia": "1993 World Series",
+   "endDate": "1993-10-23",
+   "winner": "Toronto Blue Jays",
+   "gameDate": "1993-10-23",
+   "gameWinner": "Toronto Blue Jays",
+   "agrees": true
+  },
+  "mlb:1995": {
+   "wikipedia": "1995 World Series",
+   "endDate": "1995-10-28",
+   "winner": "Atlanta Braves",
+   "gameDate": "1995-10-28",
+   "gameWinner": "Atlanta Braves",
+   "agrees": true
+  },
+  "mlb:1996": {
+   "wikipedia": "1996 World Series",
+   "endDate": "1996-10-26",
+   "winner": "New York Yankees",
+   "gameDate": "1996-10-26",
+   "gameWinner": "New York Yankees",
+   "agrees": true
+  },
+  "mlb:1997": {
+   "wikipedia": "1997 World Series",
+   "endDate": "1997-10-26",
+   "winner": "Florida Marlins",
+   "gameDate": "1997-10-26",
+   "gameWinner": "Florida Marlins",
+   "agrees": true
+  },
+  "mlb:1998": {
+   "wikipedia": "1998 World Series",
+   "endDate": "1998-10-21",
+   "winner": "New York Yankees",
+   "gameDate": "1998-10-21",
+   "gameWinner": "New York Yankees",
+   "agrees": true
+  },
+  "mlb:1999": {
+   "wikipedia": "1999 World Series",
+   "endDate": "1999-10-27",
+   "winner": "New York Yankees",
+   "gameDate": "1999-10-27",
+   "gameWinner": "New York Yankees",
+   "agrees": true
+  },
+  "mlb:2000": {
+   "wikipedia": "2000 World Series",
+   "endDate": "2000-10-26",
+   "winner": "New York Yankees",
+   "gameDate": "2000-10-26",
+   "gameWinner": "New York Yankees",
+   "agrees": true
+  },
+  "mlb:2001": {
+   "wikipedia": "2001 World Series",
+   "endDate": "2001-11-04",
+   "winner": "Arizona Diamondbacks",
+   "gameDate": "2001-11-04",
+   "gameWinner": "Arizona Diamondbacks",
+   "agrees": true
+  },
+  "mlb:2002": {
+   "wikipedia": "2002 World Series",
+   "endDate": "2002-10-27",
+   "winner": "Anaheim Angels",
+   "gameDate": "2002-10-27",
+   "gameWinner": "Anaheim Angels",
+   "agrees": true
+  },
+  "mlb:2003": {
+   "wikipedia": "2003 World Series",
+   "endDate": "2003-10-25",
+   "winner": "Florida Marlins",
+   "gameDate": "2003-10-25",
+   "gameWinner": "Florida Marlins",
+   "agrees": true
+  },
+  "mlb:2004": {
+   "wikipedia": "2004 World Series",
+   "endDate": "2004-10-27",
+   "winner": "Boston Red Sox",
+   "gameDate": "2004-10-27",
+   "gameWinner": "Boston Red Sox",
+   "agrees": true
+  },
+  "mlb:2005": {
+   "wikipedia": "2005 World Series",
+   "endDate": "2005-10-26",
+   "winner": "Chicago White Sox",
+   "gameDate": "2005-10-26",
+   "gameWinner": "Chicago White Sox",
+   "agrees": true
+  },
+  "mlb:2006": {
+   "wikipedia": "2006 World Series",
+   "endDate": "2006-10-27",
+   "winner": "St. Louis Cardinals",
+   "gameDate": "2006-10-27",
+   "gameWinner": "St. Louis Cardinals",
+   "agrees": true
+  },
+  "mlb:2007": {
+   "wikipedia": "2007 World Series",
+   "endDate": "2007-10-28",
+   "winner": "Boston Red Sox",
+   "gameDate": "2007-10-28",
+   "gameWinner": "Boston Red Sox",
+   "agrees": true
+  },
+  "mlb:2008": {
+   "wikipedia": "2008 World Series",
+   "endDate": "2008-10-29",
+   "winner": "Philadelphia Phillies",
+   "gameDate": "2008-10-29",
+   "gameWinner": "Philadelphia Phillies",
+   "agrees": true
+  },
+  "mlb:2009": {
+   "wikipedia": "2009 World Series",
+   "endDate": "2009-11-04",
+   "winner": "New York Yankees&nbsp;",
+   "gameDate": "2009-11-04",
+   "gameWinner": "New York Yankees",
+   "agrees": true
+  },
+  "mlb:2010": {
+   "wikipedia": "2010 World Series",
+   "endDate": "2010-11-01",
+   "winner": "San Francisco Giants",
+   "gameDate": "2010-11-01",
+   "gameWinner": "San Francisco Giants",
+   "agrees": true
+  },
+  "mlb:2011": {
+   "wikipedia": "2011 World Series",
+   "endDate": "2011-10-28",
+   "winner": "St. Louis Cardinals",
+   "gameDate": "2011-10-28",
+   "gameWinner": "St. Louis Cardinals",
+   "agrees": true
+  },
+  "mlb:2012": {
+   "wikipedia": "2012 World Series",
+   "endDate": "2012-10-28",
+   "winner": "San Francisco Giants",
+   "gameDate": "2012-10-28",
+   "gameWinner": "San Francisco Giants",
+   "agrees": true
+  },
+  "mlb:2013": {
+   "wikipedia": "2013 World Series",
+   "endDate": "2013-10-30",
+   "winner": "Boston Red Sox",
+   "gameDate": "2013-10-30",
+   "gameWinner": "Boston Red Sox",
+   "agrees": true
+  },
+  "mlb:2014": {
+   "wikipedia": "2014 World Series",
+   "endDate": "2014-10-29",
+   "winner": "San Francisco Giants",
+   "gameDate": "2014-10-29",
+   "gameWinner": "San Francisco Giants",
+   "agrees": true
+  },
+  "mlb:2015": {
+   "wikipedia": "2015 World Series",
+   "endDate": "2015-11-01",
+   "winner": "Kansas City Royals",
+   "gameDate": "2015-11-01",
+   "gameWinner": "Kansas City Royals",
+   "agrees": true
+  },
+  "mlb:2016": {
+   "wikipedia": "2016 World Series",
+   "endDate": "2016-11-02",
+   "winner": "Chicago Cubs",
+   "gameDate": "2016-11-02",
+   "gameWinner": "Chicago Cubs",
+   "agrees": true
+  },
+  "mlb:2017": {
+   "wikipedia": "2017 World Series",
+   "endDate": "2017-11-01",
+   "winner": "Houston Astros",
+   "gameDate": "2017-11-01",
+   "gameWinner": "Houston Astros",
+   "agrees": true
+  },
+  "mlb:2018": {
+   "wikipedia": "2018 World Series",
+   "endDate": "2018-10-28",
+   "winner": "Boston Red Sox",
+   "gameDate": "2018-10-28",
+   "gameWinner": "Boston Red Sox",
+   "agrees": true
+  },
+  "mlb:2019": {
+   "wikipedia": "2019 World Series",
+   "endDate": "2019-10-30",
+   "winner": "Washington Nationals",
+   "gameDate": "2019-10-30",
+   "gameWinner": "Washington Nationals",
+   "agrees": true
+  },
+  "mlb:2020": {
+   "wikipedia": "2020 World Series",
+   "endDate": "2020-10-27",
+   "winner": "Los Angeles Dodgers",
+   "gameDate": "2020-10-27",
+   "gameWinner": "Los Angeles Dodgers",
+   "agrees": true
+  },
+  "mlb:2021": {
+   "wikipedia": "2021 World Series",
+   "endDate": "2021-11-02",
+   "winner": "Atlanta Braves",
+   "gameDate": "2021-11-02",
+   "gameWinner": "Atlanta Braves",
+   "agrees": true
+  },
+  "mlb:2022": {
+   "wikipedia": "2022 World Series",
+   "endDate": "2022-11-05",
+   "winner": "Houston Astros",
+   "gameDate": "2022-11-05",
+   "gameWinner": "Houston Astros",
+   "agrees": true
+  },
+  "mlb:2023": {
+   "wikipedia": "2023 World Series",
+   "endDate": "2023-11-01",
+   "winner": "Texas Rangers",
+   "gameDate": "2023-11-01",
+   "gameWinner": "Texas Rangers",
+   "agrees": true
+  },
+  "mlb:2024": {
+   "wikipedia": "2024 World Series",
+   "endDate": "2024-10-30",
+   "winner": "Los Angeles Dodgers",
+   "gameDate": "2024-10-30",
+   "gameWinner": "Los Angeles Dodgers",
+   "agrees": true
+  },
+  "mlb:2025": {
+   "wikipedia": "2025 World Series",
+   "endDate": "2025-11-01",
+   "winner": "Los Angeles Dodgers",
+   "gameDate": "2025-11-01",
+   "gameWinner": "Los Angeles Dodgers",
+   "agrees": true
+  },
+  "nba:1946": {
+   "wikipedia": "1947 NBA Finals",
+   "endDate": "1947-04-22",
+   "winner": "Philadelphia Warriors",
+   "gameDate": "1947-04-22",
+   "gameWinner": "Philadelphia Warriors",
+   "agrees": true
+  },
+  "nba:1947": {
+   "wikipedia": "1948 NBA Finals",
+   "endDate": "1948-04-21",
+   "winner": "Baltimore Bullets",
+   "gameDate": "1948-04-21",
+   "gameWinner": "Baltimore Bullets",
+   "agrees": true
+  },
+  "nba:1948": {
+   "wikipedia": "1949 NBA Finals",
+   "endDate": "1949-04-13",
+   "winner": "Minneapolis Lakers",
+   "gameDate": "1949-04-13",
+   "gameWinner": "Minneapolis Lakers",
+   "agrees": true
+  },
+  "nba:1949": {
+   "wikipedia": "1950 NBA Finals",
+   "endDate": "1950-04-23",
+   "winner": "Minneapolis Lakers",
+   "gameDate": "1950-04-23",
+   "gameWinner": "Minneapolis Lakers",
+   "agrees": true
+  },
+  "nba:1950": {
+   "wikipedia": "1951 NBA Finals",
+   "endDate": "1951-04-21",
+   "winner": "Rochester Royals",
+   "gameDate": "1951-04-21",
+   "gameWinner": "Rochester Royals",
+   "agrees": true
+  },
+  "nba:1951": {
+   "wikipedia": "1952 NBA Finals",
+   "endDate": "1952-04-25",
+   "winner": "Minneapolis Lakers",
+   "gameDate": "1952-04-25",
+   "gameWinner": "Minneapolis Lakers",
+   "agrees": true
+  },
+  "nba:1952": {
+   "wikipedia": "1953 NBA Finals",
+   "endDate": "1953-04-10",
+   "winner": "Minneapolis Lakers",
+   "gameDate": "1953-04-10",
+   "gameWinner": "Minneapolis Lakers",
+   "agrees": true
+  },
+  "nba:1953": {
+   "wikipedia": "1954 NBA Finals",
+   "endDate": "1954-04-12",
+   "winner": "Minneapolis Lakers",
+   "gameDate": "1954-04-12",
+   "gameWinner": "Minneapolis Lakers",
+   "agrees": true
+  },
+  "nba:1954": {
+   "wikipedia": "1955 NBA Finals",
+   "endDate": "1955-04-10",
+   "winner": "Syracuse Nationals",
+   "gameDate": "1955-04-10",
+   "gameWinner": "Syracuse Nationals",
+   "agrees": true
+  },
+  "nba:1955": {
+   "wikipedia": "1956 NBA Finals",
+   "endDate": "1956-04-07",
+   "winner": "Philadelphia Warriors",
+   "gameDate": "1956-04-07",
+   "gameWinner": "Philadelphia Warriors",
+   "agrees": true
+  },
+  "nba:1956": {
+   "wikipedia": "1957 NBA Finals",
+   "endDate": "1957-04-13",
+   "winner": "Boston Celtics",
+   "gameDate": "1957-04-13",
+   "gameWinner": "Boston Celtics",
+   "agrees": true
+  },
+  "nba:1957": {
+   "wikipedia": "1958 NBA Finals",
+   "endDate": "1958-04-12",
+   "winner": "St. Louis Hawks",
+   "gameDate": "1958-04-12",
+   "gameWinner": "St. Louis Hawks",
+   "agrees": true
+  },
+  "nba:1958": {
+   "wikipedia": "1959 NBA Finals",
+   "endDate": "1959-04-09",
+   "winner": "Boston Celtics",
+   "gameDate": "1959-04-09",
+   "gameWinner": "Boston Celtics",
+   "agrees": true
+  },
+  "nba:1959": {
+   "wikipedia": "1960 NBA Finals",
+   "endDate": "1960-04-09",
+   "winner": "Boston Celtics",
+   "gameDate": "1960-04-09",
+   "gameWinner": "Boston Celtics",
+   "agrees": true
+  },
+  "nba:1960": {
+   "wikipedia": "1961 NBA Finals",
+   "endDate": "1961-04-11",
+   "winner": "Boston Celtics",
+   "gameDate": "1961-04-11",
+   "gameWinner": "Boston Celtics",
+   "agrees": true
+  },
+  "nba:1961": {
+   "wikipedia": "1962 NBA Finals",
+   "endDate": "1962-04-18",
+   "winner": "Boston Celtics",
+   "gameDate": "1962-04-18",
+   "gameWinner": "Boston Celtics",
+   "agrees": true
+  },
+  "nba:1962": {
+   "wikipedia": "1963 NBA Finals",
+   "endDate": "1963-04-24",
+   "winner": "Boston Celtics",
+   "gameDate": "1963-04-24",
+   "gameWinner": "Boston Celtics",
+   "agrees": true
+  },
+  "nba:1963": {
+   "wikipedia": "1964 NBA Finals",
+   "endDate": "1964-04-26",
+   "winner": "Boston Celtics",
+   "gameDate": "1964-04-26",
+   "gameWinner": "Boston Celtics",
+   "agrees": true
+  },
+  "nba:1964": {
+   "wikipedia": "1965 NBA Finals",
+   "endDate": "1965-04-25",
+   "winner": "Boston Celtics",
+   "gameDate": "1965-04-25",
+   "gameWinner": "Boston Celtics",
+   "agrees": true
+  },
+  "nba:1965": {
+   "wikipedia": "1966 NBA Finals",
+   "endDate": "1966-04-28",
+   "winner": "Boston Celtics",
+   "gameDate": "1966-04-28",
+   "gameWinner": "Boston Celtics",
+   "agrees": true
+  },
+  "nba:1966": {
+   "wikipedia": "1967 NBA Finals",
+   "endDate": "1967-04-24",
+   "winner": "Philadelphia 76ers",
+   "gameDate": "1967-04-24",
+   "gameWinner": "Philadelphia 76ers",
+   "agrees": true
+  },
+  "nba:1967": {
+   "wikipedia": "1968 NBA Finals",
+   "endDate": "1968-05-02",
+   "winner": "Boston Celtics",
+   "gameDate": "1968-05-02",
+   "gameWinner": "Boston Celtics",
+   "agrees": true
+  },
+  "nba:1968": {
+   "wikipedia": "1969 NBA Finals",
+   "endDate": "1969-05-05",
+   "winner": "Boston Celtics",
+   "gameDate": "1969-05-05",
+   "gameWinner": "Boston Celtics",
+   "agrees": true
+  },
+  "nba:1969": {
+   "wikipedia": "1970 NBA Finals",
+   "endDate": "1970-05-08",
+   "winner": "New York Knicks",
+   "gameDate": "1970-05-08",
+   "gameWinner": "New York Knicks",
+   "agrees": true
+  },
+  "nba:1970": {
+   "wikipedia": "1971 NBA Finals",
+   "endDate": "1971-04-30",
+   "winner": "Milwaukee Bucks",
+   "gameDate": "1971-04-30",
+   "gameWinner": "Milwaukee Bucks",
+   "agrees": true
+  },
+  "nba:1971": {
+   "wikipedia": "1972 NBA Finals",
+   "endDate": "1972-05-07",
+   "winner": "Los Angeles Lakers",
+   "gameDate": "1972-05-07",
+   "gameWinner": "Los Angeles Lakers",
+   "agrees": true
+  },
+  "nba:1972": {
+   "wikipedia": "1973 NBA Finals",
+   "endDate": "1973-05-10",
+   "winner": "New York Knicks",
+   "gameDate": "1973-05-10",
+   "gameWinner": "New York Knicks",
+   "agrees": true
+  },
+  "nba:1973": {
+   "wikipedia": "1974 NBA Finals",
+   "endDate": "1974-05-12",
+   "winner": "Boston Celtics",
+   "gameDate": "1974-05-12",
+   "gameWinner": "Boston Celtics",
+   "agrees": true
+  },
+  "nba:1974": {
+   "wikipedia": "1975 NBA Finals",
+   "endDate": "1975-05-25",
+   "winner": "Golden State Warriors",
+   "gameDate": "1975-05-25",
+   "gameWinner": "Golden State Warriors",
+   "agrees": true
+  },
+  "nba:1975": {
+   "wikipedia": "1976 NBA Finals",
+   "endDate": "1976-06-06",
+   "winner": "Boston Celtics",
+   "gameDate": "1976-06-06",
+   "gameWinner": "Boston Celtics",
+   "agrees": true
+  },
+  "nba:1976": {
+   "wikipedia": "1977 NBA Finals",
+   "endDate": "1977-06-05",
+   "winner": "Portland Trail Blazers",
+   "gameDate": "1977-06-05",
+   "gameWinner": "Portland Trail Blazers",
+   "agrees": true
+  },
+  "nba:1977": {
+   "wikipedia": "1978 NBA Finals",
+   "endDate": "1978-06-07",
+   "winner": "Washington Bullets",
+   "gameDate": "1978-05-17",
+   "gameWinner": "Seattle SuperSonics",
+   "agrees": false
+  },
+  "nba:1978": {
+   "wikipedia": "1979 NBA Finals",
+   "endDate": "1979-06-01",
+   "winner": "Seattle SuperSonics",
+   "gameDate": "1979-06-01",
+   "gameWinner": "Seattle SuperSonics",
+   "agrees": true
+  },
+  "nba:1979": {
+   "wikipedia": "1980 NBA Finals",
+   "endDate": "1980-05-16",
+   "winner": "Los Angeles Lakers",
+   "gameDate": "1980-05-16",
+   "gameWinner": "Los Angeles Lakers",
+   "agrees": true
+  },
+  "nba:1980": {
+   "wikipedia": "1981 NBA Finals",
+   "endDate": "1981-05-14",
+   "winner": "Boston Celtics",
+   "gameDate": "1981-05-14",
+   "gameWinner": "Boston Celtics",
+   "agrees": true
+  },
+  "nba:1981": {
+   "wikipedia": "1982 NBA Finals",
+   "endDate": "1982-06-08",
+   "winner": "Los Angeles Lakers",
+   "gameDate": "1982-06-08",
+   "gameWinner": "Los Angeles Lakers",
+   "agrees": true
+  },
+  "nba:1982": {
+   "wikipedia": "1983 NBA Finals",
+   "endDate": "1983-05-31",
+   "winner": "Philadelphia 76ers",
+   "gameDate": "1983-05-31",
+   "gameWinner": "Philadelphia 76ers",
+   "agrees": true
+  },
+  "nba:1983": {
+   "wikipedia": "1984 NBA Finals",
+   "endDate": "1984-06-12",
+   "winner": "Boston Celtics",
+   "gameDate": "1984-05-10",
+   "gameWinner": "Phoenix Suns",
+   "agrees": false
+  },
+  "nba:1984": {
+   "wikipedia": "1985 NBA Finals",
+   "endDate": "1985-06-09",
+   "winner": "Los Angeles Lakers",
+   "gameDate": "1985-06-09",
+   "gameWinner": "Los Angeles Lakers",
+   "agrees": true
+  },
+  "nba:1985": {
+   "wikipedia": "1986 NBA Finals",
+   "endDate": "1986-06-08",
+   "winner": "Boston Celtics",
+   "gameDate": "1986-05-08",
+   "gameWinner": "Los Angeles Lakers",
+   "agrees": false
+  },
+  "nba:1986": {
+   "wikipedia": "1987 NBA Finals",
+   "endDate": "1987-06-14",
+   "winner": "Los Angeles Lakers",
+   "gameDate": "1987-06-14",
+   "gameWinner": "Los Angeles Lakers",
+   "agrees": true
+  },
+  "nba:1987": {
+   "wikipedia": "1988 NBA Finals",
+   "endDate": "1988-06-21",
+   "winner": "Los Angeles Lakers",
+   "gameDate": "1988-05-07",
+   "gameWinner": "Denver Nuggets",
+   "agrees": false
+  },
+  "nba:1988": {
+   "wikipedia": "1989 NBA Finals",
+   "endDate": "1989-06-13",
+   "winner": "Detroit Pistons",
+   "gameDate": "1989-05-28",
+   "gameWinner": "Los Angeles Lakers",
+   "agrees": false
+  },
+  "nba:1989": {
+   "wikipedia": "1990 NBA Finals",
+   "endDate": "1990-06-14",
+   "winner": "Detroit Pistons",
+   "gameDate": "1990-06-14",
+   "gameWinner": "Detroit Pistons",
+   "agrees": true
+  },
+  "nba:1990": {
+   "wikipedia": "1991 NBA Finals",
+   "endDate": "1991-06-12",
+   "winner": "Chicago Bulls",
+   "gameDate": "1991-06-12",
+   "gameWinner": "Chicago Bulls",
+   "agrees": true
+  },
+  "nba:1991": {
+   "wikipedia": "1992 NBA Finals",
+   "endDate": "1992-06-14",
+   "winner": "Chicago Bulls",
+   "gameDate": "1992-06-14",
+   "gameWinner": "Chicago Bulls",
+   "agrees": true
+  },
+  "nba:1992": {
+   "wikipedia": "1993 NBA Finals",
+   "endDate": "1993-06-20",
+   "winner": "Chicago Bulls",
+   "gameDate": "1993-05-08",
+   "gameWinner": "Houston Rockets",
+   "agrees": false
+  },
+  "nba:1993": {
+   "wikipedia": "1994 NBA Finals",
+   "endDate": "1994-06-22",
+   "winner": "Houston Rockets",
+   "gameDate": "1994-05-21",
+   "gameWinner": "Utah Jazz",
+   "agrees": false
+  },
+  "nba:1994": {
+   "wikipedia": "1995 NBA Finals",
+   "endDate": "1995-06-14",
+   "winner": "Houston Rockets",
+   "gameDate": "1995-06-14",
+   "gameWinner": "Houston Rockets",
+   "agrees": true
+  },
+  "nba:1995": {
+   "wikipedia": "1996 NBA Finals",
+   "endDate": "1996-06-16",
+   "winner": "Chicago Bulls",
+   "gameDate": "1996-06-16",
+   "gameWinner": "Chicago Bulls",
+   "agrees": true
+  },
+  "nba:1996": {
+   "wikipedia": "1997 NBA Finals",
+   "endDate": "1997-06-13",
+   "winner": "Chicago Bulls",
+   "gameDate": "1997-06-13",
+   "gameWinner": "Chicago Bulls",
+   "agrees": true
+  },
+  "nba:1997": {
+   "wikipedia": "1998 NBA Finals",
+   "endDate": "1998-06-14",
+   "winner": "Chicago Bulls",
+   "gameDate": "1998-06-14",
+   "gameWinner": "Chicago Bulls",
+   "agrees": true
+  },
+  "nba:1998": {
+   "wikipedia": "1999 NBA Finals",
+   "endDate": "1999-06-25",
+   "winner": "San Antonio Spurs",
+   "gameDate": "1999-06-25",
+   "gameWinner": "San Antonio Spurs",
+   "agrees": true
+  },
+  "nba:1999": {
+   "wikipedia": "2000 NBA Finals",
+   "endDate": "2000-06-19",
+   "winner": "Los Angeles Lakers",
+   "gameDate": "2000-06-19",
+   "gameWinner": "Los Angeles Lakers",
+   "agrees": true
+  },
+  "nba:2000": {
+   "wikipedia": "2001 NBA Finals",
+   "endDate": "2001-06-15",
+   "winner": "Los Angeles Lakers",
+   "gameDate": "2001-06-15",
+   "gameWinner": "Los Angeles Lakers",
+   "agrees": true
+  },
+  "nba:2001": {
+   "wikipedia": "2002 NBA Finals",
+   "endDate": "2002-06-12",
+   "winner": "Los Angeles Lakers",
+   "gameDate": "2002-06-12",
+   "gameWinner": "Los Angeles Lakers",
+   "agrees": true
+  },
+  "nba:2002": {
+   "wikipedia": "2003 NBA Finals",
+   "endDate": "2003-06-15",
+   "winner": "San Antonio Spurs",
+   "gameDate": "2003-06-15",
+   "gameWinner": "San Antonio Spurs",
+   "agrees": true
+  },
+  "nba:2003": {
+   "wikipedia": "2004 NBA Finals",
+   "endDate": "2004-06-15",
+   "winner": "Detroit Pistons",
+   "gameDate": "2004-06-15",
+   "gameWinner": "Detroit Pistons",
+   "agrees": true
+  },
+  "nba:2004": {
+   "wikipedia": "2005 NBA Finals",
+   "endDate": "2005-06-23",
+   "winner": "San Antonio Spurs",
+   "gameDate": "2005-06-23",
+   "gameWinner": "San Antonio Spurs",
+   "agrees": true
+  },
+  "nba:2005": {
+   "wikipedia": "2006 NBA Finals",
+   "endDate": "2006-06-20",
+   "winner": "Miami Heat",
+   "gameDate": "2006-06-20",
+   "gameWinner": "Miami Heat",
+   "agrees": true
+  },
+  "nba:2006": {
+   "wikipedia": "2007 NBA Finals",
+   "endDate": "2007-06-14",
+   "winner": "San Antonio Spurs",
+   "gameDate": "2007-06-14",
+   "gameWinner": "San Antonio Spurs",
+   "agrees": true
+  },
+  "nba:2007": {
+   "wikipedia": "2008 NBA Finals",
+   "endDate": "2008-06-17",
+   "winner": "Boston Celtics",
+   "gameDate": "2008-06-17",
+   "gameWinner": "Boston Celtics",
+   "agrees": true
+  },
+  "nba:2008": {
+   "wikipedia": "2009 NBA Finals",
+   "endDate": "2009-06-14",
+   "winner": "Los Angeles Lakers",
+   "gameDate": "2009-06-14",
+   "gameWinner": "Los Angeles Lakers",
+   "agrees": true
+  },
+  "nba:2009": {
+   "wikipedia": "2010 NBA Finals",
+   "endDate": "2010-06-17",
+   "winner": "Los Angeles Lakers",
+   "gameDate": "2010-06-17",
+   "gameWinner": "Los Angeles Lakers",
+   "agrees": true
+  },
+  "nba:2010": {
+   "wikipedia": "2011 NBA Finals",
+   "endDate": "2011-06-12",
+   "winner": "Dallas Mavericks",
+   "gameDate": "2011-06-12",
+   "gameWinner": "Dallas Mavericks",
+   "agrees": true
+  },
+  "nba:2011": {
+   "wikipedia": "2012 NBA Finals",
+   "endDate": "2012-06-21",
+   "winner": "Miami Heat",
+   "gameDate": "2012-06-21",
+   "gameWinner": "Miami Heat",
+   "agrees": true
+  },
+  "nba:2012": {
+   "wikipedia": "2013 NBA Finals",
+   "endDate": "2013-06-20",
+   "winner": "Miami Heat",
+   "gameDate": "2013-06-20",
+   "gameWinner": "Miami Heat",
+   "agrees": true
+  },
+  "nba:2013": {
+   "wikipedia": "2014 NBA Finals",
+   "endDate": "2014-06-15",
+   "winner": "San Antonio Spurs",
+   "gameDate": "2014-06-15",
+   "gameWinner": "San Antonio Spurs",
+   "agrees": true
+  },
+  "nba:2014": {
+   "wikipedia": "2015 NBA Finals",
+   "endDate": "2015-06-16",
+   "winner": "Golden State Warriors",
+   "gameDate": "2015-06-16",
+   "gameWinner": "Golden State Warriors",
+   "agrees": true
+  },
+  "nba:2015": {
+   "wikipedia": "2016 NBA Finals",
+   "endDate": "2016-06-19",
+   "winner": "Cleveland Cavaliers",
+   "gameDate": "2016-06-19",
+   "gameWinner": "Cleveland Cavaliers",
+   "agrees": true
+  },
+  "nba:2016": {
+   "wikipedia": "2017 NBA Finals",
+   "endDate": "2017-06-12",
+   "winner": "Golden State Warriors",
+   "gameDate": "2017-06-12",
+   "gameWinner": "Golden State Warriors",
+   "agrees": true
+  },
+  "nba:2017": {
+   "wikipedia": "2018 NBA Finals",
+   "endDate": "2018-06-08",
+   "winner": "Golden State Warriors",
+   "gameDate": "2018-06-08",
+   "gameWinner": "Golden State Warriors",
+   "agrees": true
+  },
+  "nba:2018": {
+   "wikipedia": "2019 NBA Finals",
+   "endDate": "2019-06-13",
+   "winner": "Toronto Raptors",
+   "gameDate": "2019-06-13",
+   "gameWinner": "Toronto Raptors",
+   "agrees": true
+  },
+  "nba:2019": {
+   "wikipedia": "2020 NBA Finals",
+   "endDate": "2020-10-11",
+   "winner": "Los Angeles Lakers",
+   "gameDate": "2020-10-11",
+   "gameWinner": "Los Angeles Lakers",
+   "agrees": true
+  },
+  "nba:2020": {
+   "wikipedia": "2021 NBA Finals",
+   "endDate": "2021-07-20",
+   "winner": "Milwaukee Bucks",
+   "gameDate": "2021-07-20",
+   "gameWinner": "Milwaukee Bucks",
+   "agrees": true
+  },
+  "nba:2021": {
+   "wikipedia": "2022 NBA Finals",
+   "endDate": "2022-06-16",
+   "winner": "Golden State Warriors",
+   "gameDate": "2022-06-16",
+   "gameWinner": "Golden State Warriors",
+   "agrees": true
+  },
+  "nba:2022": {
+   "wikipedia": "2023 NBA Finals",
+   "endDate": "2023-06-12",
+   "winner": "Denver Nuggets",
+   "gameDate": "2023-06-12",
+   "gameWinner": "Denver Nuggets",
+   "agrees": true
+  },
+  "nba:2023": {
+   "wikipedia": "2024 NBA Finals",
+   "endDate": "2024-06-17",
+   "winner": "Boston Celtics",
+   "gameDate": "2024-06-17",
+   "gameWinner": "Boston Celtics",
+   "agrees": true
+  },
+  "nba:2024": {
+   "wikipedia": "2025 NBA Finals",
+   "endDate": "2025-06-22",
+   "winner": "Oklahoma City Thunder",
+   "gameDate": "2025-06-22",
+   "gameWinner": "Oklahoma City Thunder",
+   "agrees": true
+  },
+  "nba:2025": {
+   "wikipedia": "2026 NBA Finals",
+   "endDate": "2026-06-13",
+   "winner": "New York Knicks",
+   "gameDate": "2026-06-13",
+   "gameWinner": "New York Knicks",
+   "agrees": true
+  }
+ }
+}

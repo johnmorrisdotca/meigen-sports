@@ -100,6 +100,7 @@
     "test": "node --test test/*.test.ts",
     "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm build && node scripts/check-package.ts",
     "test:package": "pnpm build && node scripts/check-package.ts",
+    "test:golden": "node scripts/check-golden.ts",
     "test:readme": "pnpm build && node scripts/check-readme-examples.mjs",
     "test:demo": "pnpm site && playwright test",
     "prepublishOnly": "pnpm check",

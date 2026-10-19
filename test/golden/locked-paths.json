@@ -1,0 +1,595 @@
+{
+ "birth-Q119775": [
+  "player"
+ ],
+ "birth-Q1251736": [],
+ "birth-Q126710": [],
+ "birth-Q134183": [
+  "offline",
+  "team",
+  "player"
+ ],
+ "birth-Q169452": [
+  "offline",
+  "day",
+  "team",
+  "player"
+ ],
+ "birth-Q172478": [
+  "offline",
+  "player"
+ ],
+ "birth-Q17717": [
+  "offline",
+  "team",
+  "player"
+ ],
+ "birth-Q179051": [
+  "offline",
+  "day",
+  "team",
+  "player"
+ ],
+ "birth-Q182455": [
+  "offline",
+  "day",
+  "team",
+  "player"
+ ],
+ "birth-Q190094": [],
+ "birth-Q190152": [
+  "offline",
+  "team",
+  "player"
+ ],
+ "birth-Q192955": [],
+ "birth-Q193020": [
+  "offline",
+  "team",
+  "player"
+ ],
+ "birth-Q195367": [
+  "player"
+ ],
+ "birth-Q19667998": [],
+ "birth-Q209518": [
+  "offline",
+  "day",
+  "team",
+  "player"
+ ],
+ "birth-Q213812": [
+  "offline",
+  "day",
+  "player"
+ ],
+ "birth-Q215777": [
+  "offline",
+  "day",
+  "player"
+ ],
+ "birth-Q221048": [
+  "offline",
+  "day",
+  "player"
+ ],
+ "birth-Q242185": [
+  "offline",
+  "day",
+  "team",
+  "player"
+ ],
+ "birth-Q25369": [
+  "offline",
+  "team",
+  "player"
+ ],
+ "birth-Q273256": [
+  "offline",
+  "day",
+  "team",
+  "player"
+ ],
+ "birth-Q2806736": [
+  "team"
+ ],
+ "birth-Q295345": [
+  "offline",
+  "day",
+  "team",
+  "player"
+ ],
+ "birth-Q29545": [
+  "offline",
+  "team",
+  "player"
+ ],
+ "birth-Q297142": [
+  "offline",
+  "day",
+  "player"
+ ],
+ "birth-Q3090378": [],
+ "birth-Q311195": [
+  "offline",
+  "player"
+ ],
+ "birth-Q311280": [
+  "offline",
+  "day",
+  "team",
+  "player"
+ ],
+ "birth-Q311374": [
+  "offline",
+  "team",
+  "player"
+ ],
+ "birth-Q313381": [
+  "offline",
+  "day",
+  "team",
+  "player"
+ ],
+ "birth-Q314185": [
+  "player"
+ ],
+ "birth-Q314712": [
+  "offline",
+  "day",
+  "player"
+ ],
+ "birth-Q316249": [
+  "offline",
+  "team",
+  "player"
+ ],
+ "birth-Q319247": [
+  "offline",
+  "day",
+  "team",
+  "player"
+ ],
+ "birth-Q325138": [
+  "offline",
+  "day",
+  "team",
+  "player"
+ ],
+ "birth-Q345004": [
+  "offline",
+  "day",
+  "player"
+ ],
+ "birth-Q348011": [
+  "offline",
+  "team",
+  "player"
+ ],
+ "birth-Q348017": [
+  "offline",
+  "day",
+  "team",
+  "player"
+ ],
+ "birth-Q353511": [
+  "offline"
+ ],
+ "birth-Q357444": [
+  "offline",
+  "player"
+ ],
+ "birth-Q357465": [
+  "offline",
+  "day",
+  "player"
+ ],
+ "birth-Q358519": [
+  "offline",
+  "day",
+  "team",
+  "player"
+ ],
+ "birth-Q36159": [
+  "offline",
+  "day",
+  "team",
+  "player"
+ ],
+ "birth-Q41421": [
+  "offline",
+  "day",
+  "team",
+  "player"
+ ],
+ "birth-Q4391858": [
+  "offline",
+  "player"
+ ],
+ "birth-Q440256": [
+  "offline",
+  "day",
+  "player"
+ ],
+ "birth-Q440395": [
+  "offline",
+  "team"
+ ],
+ "birth-Q44068": [
+  "offline",
+  "team",
+  "player"
+ ],
+ "birth-Q456688": [
+  "offline",
+  "day",
+  "team",
+  "player"
+ ],
+ "birth-Q456779": [
+  "offline",
+  "team",
+  "player"
+ ],
+ "birth-Q505423": [
+  "offline",
+  "team",
+  "player"
+ ],
+ "birth-Q505479": [
+  "offline",
+  "day",
+  "team",
+  "player"
+ ],
+ "birth-Q520254": [
+  "player"
+ ],
+ "birth-Q5212802": [
+  "offline"
+ ],
+ "birth-Q536900": [
+  "day",
+  "player"
+ ],
+ "birth-Q552828": [
+  "offline",
+  "day",
+  "player"
+ ],
+ "birth-Q553249": [
+  "offline",
+  "team",
+  "player"
+ ],
+ "birth-Q561852": [
+  "offline",
+  "day",
+  "player"
+ ],
+ "birth-Q616056": [
+  "team"
+ ],
+ "birth-Q6266374": [
+  "player"
+ ],
+ "birth-Q684020": [
+  "offline",
+  "day",
+  "player"
+ ],
+ "birth-Q6848465": [
+  "team"
+ ],
+ "birth-Q715566": [
+  "offline",
+  "team"
+ ],
+ "birth-Q722059": [
+  "offline",
+  "player"
+ ],
+ "birth-Q7381158": [
+  "player"
+ ],
+ "birth-Q7539": [
+  "offline",
+  "day",
+  "team",
+  "player"
+ ],
+ "cfl-1970": [
+  "offline",
+  "day",
+  "team"
+ ],
+ "cfl-1972": [
+  "offline",
+  "day",
+  "team"
+ ],
+ "cfl-2015": [
+  "team"
+ ],
+ "death-Q172478": [
+  "offline",
+  "player"
+ ],
+ "death-Q182455": [
+  "offline",
+  "team",
+  "player"
+ ],
+ "death-Q213812": [
+  "offline",
+  "day",
+  "player"
+ ],
+ "death-Q215777": [
+  "offline",
+  "day",
+  "player"
+ ],
+ "death-Q221048": [
+  "offline",
+  "day",
+  "player"
+ ],
+ "death-Q242185": [
+  "offline",
+  "day",
+  "team",
+  "player"
+ ],
+ "death-Q25369": [
+  "offline",
+  "day",
+  "team",
+  "player"
+ ],
+ "death-Q297142": [
+  "offline",
+  "day",
+  "player"
+ ],
+ "death-Q311195": [
+  "player"
+ ],
+ "death-Q314185": [
+  "player"
+ ],
+ "death-Q325138": [
+  "offline",
+  "day",
+  "team",
+  "player"
+ ],
+ "death-Q345004": [
+  "offline",
+  "day",
+  "player"
+ ],
+ "death-Q357444": [
+  "offline",
+  "player"
+ ],
+ "death-Q358519": [
+  "offline",
+  "day",
+  "team",
+  "player"
+ ],
+ "death-Q456688": [
+  "offline",
+  "day",
+  "team",
+  "player"
+ ],
+ "death-Q505479": [
+  "offline",
+  "day",
+  "team",
+  "player"
+ ],
+ "death-Q520254": [
+  "player"
+ ],
+ "death-Q552828": [
+  "offline",
+  "player"
+ ],
+ "death-Q553249": [
+  "offline",
+  "day",
+  "team",
+  "player"
+ ],
+ "death-Q561852": [
+  "offline",
+  "player"
+ ],
+ "death-Q6266374": [
+  "player"
+ ],
+ "death-Q684020": [
+  "offline",
+  "day",
+  "player"
+ ],
+ "death-Q722059": [
+  "offline",
+  "day",
+  "player"
+ ],
+ "mlb-1903": [
+  "offline",
+  "day",
+  "team"
+ ],
+ "mlb-1927": [],
+ "mlb-1955": [
+  "offline",
+  "day",
+  "team"
+ ],
+ "mlb-1960": [
+  "day"
+ ],
+ "mlb-1972": [],
+ "mlb-1986": [
+  "day"
+ ],
+ "mlb-2001": [
+  "offline",
+  "day",
+  "team"
+ ],
+ "mlb-2016": [
+  "offline",
+  "day"
+ ],
+ "nba-1966": [
+  "offline",
+  "day",
+  "team"
+ ],
+ "nba-1969": [
+  "offline",
+  "day",
+  "team"
+ ],
+ "nba-1980": [
+  "offline",
+  "day",
+  "team"
+ ],
+ "nba-1998": [
+  "team"
+ ],
+ "nba-2016": [
+  "team"
+ ],
+ "nfl-1932": [
+  "offline",
+  "day",
+  "team"
+ ],
+ "nfl-1967": [
+  "day",
+  "team"
+ ],
+ "nfl-sb14": [
+  "day"
+ ],
+ "nfl-sb20": [
+  "day"
+ ],
+ "nfl-sb23": [
+  "day"
+ ],
+ "nfl-sb25": [
+  "offline",
+  "day"
+ ],
+ "venue-fenway": [],
+ "venue-forum": [],
+ "venue-garden": [],
+ "venue-lambeau": [],
+ "venue-molson": [
+  "offline"
+ ],
+ "venue-msg": [
+  "offline"
+ ],
+ "venue-polo": [
+  "offline"
+ ],
+ "venue-soldier": [],
+ "venue-winnipeg": [
+  "offline"
+ ],
+ "venue-wrigley": [
+  "offline"
+ ],
+ "venue-yankee": [
+  "offline"
+ ],
+ "wc-1930": [
+  "offline"
+ ],
+ "wc-1954": [
+  "offline"
+ ],
+ "wc-1966": [
+  "offline"
+ ],
+ "wc-1970": [
+  "offline",
+  "day"
+ ],
+ "wc-1974": [
+  "offline",
+  "day"
+ ],
+ "wc-1986": [
+  "offline",
+  "day"
+ ],
+ "wc-1998": [
+  "offline",
+  "day"
+ ],
+ "wc-2002": [
+  "day"
+ ],
+ "wc-2006": [
+  "offline",
+  "day"
+ ],
+ "wc-2010": [
+  "offline",
+  "day"
+ ],
+ "wc-2014": [
+  "offline",
+  "day"
+ ],
+ "wc-2014-sf": [],
+ "wc-2018": [
+  "offline"
+ ],
+ "wc-2022": [
+  "offline",
+  "day"
+ ],
+ "wc-2026": [
+  "offline",
+  "day"
+ ],
+ "wwc-1991": [
+  "offline",
+  "day"
+ ],
+ "wwc-1995": [
+  "offline",
+  "day"
+ ],
+ "wwc-1999": [
+  "offline",
+  "day"
+ ],
+ "wwc-2003": [
+  "offline"
+ ],
+ "wwc-2007": [
+  "offline",
+  "day"
+ ],
+ "wwc-2011": [
+  "offline"
+ ],
+ "wwc-2015": [],
+ "wwc-2019": [
+  "day"
+ ]
+}

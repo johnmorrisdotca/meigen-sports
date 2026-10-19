@@ -1,0 +1,1715 @@
+{
+  "about": "Choices only: who and what the golden facts cover. Every date, name and winner in test/golden/golden-facts.json is fetched from Wikidata or checked against English Wikipedia by build_golden.py, never typed from memory.",
+  "people": [
+    {
+      "qid": "Q209518",
+      "sport": "ice-hockey",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q316249",
+      "sport": "ice-hockey",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q358519",
+      "sport": "ice-hockey",
+      "kinds": [
+        "birth",
+        "death"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q348017",
+      "sport": "ice-hockey",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q325138",
+      "sport": "ice-hockey",
+      "kinds": [
+        "birth",
+        "death"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q505479",
+      "sport": "ice-hockey",
+      "kinds": [
+        "birth",
+        "death"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q520254",
+      "sport": "ice-hockey",
+      "kinds": [
+        "birth",
+        "death"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q456688",
+      "sport": "ice-hockey",
+      "kinds": [
+        "birth",
+        "death"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q319247",
+      "sport": "ice-hockey",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q440395",
+      "sport": "ice-hockey",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q295345",
+      "sport": "ice-hockey",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q357465",
+      "sport": "ice-hockey",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q2806736",
+      "sport": "ice-hockey",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q456779",
+      "sport": "ice-hockey",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q553249",
+      "sport": "ice-hockey",
+      "kinds": [
+        "birth",
+        "death"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q715566",
+      "sport": "ice-hockey",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q311280",
+      "sport": "ice-hockey",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q213812",
+      "sport": "baseball",
+      "kinds": [
+        "birth",
+        "death"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q357444",
+      "sport": "baseball",
+      "kinds": [
+        "birth",
+        "death"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q215777",
+      "sport": "baseball",
+      "kinds": [
+        "birth",
+        "death"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q561852",
+      "sport": "baseball",
+      "kinds": [
+        "birth",
+        "death"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q345004",
+      "sport": "baseball",
+      "kinds": [
+        "birth",
+        "death"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q172478",
+      "sport": "baseball",
+      "kinds": [
+        "birth",
+        "death"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q297142",
+      "sport": "baseball",
+      "kinds": [
+        "birth",
+        "death"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q552828",
+      "sport": "baseball",
+      "kinds": [
+        "birth",
+        "death"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q440256",
+      "sport": "baseball",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q684020",
+      "sport": "baseball",
+      "kinds": [
+        "birth",
+        "death"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q353511",
+      "sport": "baseball",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q314712",
+      "sport": "baseball",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q536900",
+      "sport": "baseball",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q3090378",
+      "sport": "baseball",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q4391858",
+      "sport": "baseball",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q722059",
+      "sport": "baseball",
+      "kinds": [
+        "birth",
+        "death"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q221048",
+      "sport": "baseball",
+      "kinds": [
+        "birth",
+        "death"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q41421",
+      "sport": "basketball",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q36159",
+      "sport": "basketball",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q25369",
+      "sport": "basketball",
+      "kinds": [
+        "birth",
+        "death"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q134183",
+      "sport": "basketball",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q190152",
+      "sport": "basketball",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q179051",
+      "sport": "basketball",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q182455",
+      "sport": "basketball",
+      "kinds": [
+        "birth",
+        "death"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q242185",
+      "sport": "basketball",
+      "kinds": [
+        "birth",
+        "death"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q169452",
+      "sport": "basketball",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q193020",
+      "sport": "basketball",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q29545",
+      "sport": "basketball",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q44068",
+      "sport": "basketball",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q273256",
+      "sport": "basketball",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q17717",
+      "sport": "basketball",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q311195",
+      "sport": "basketball",
+      "kinds": [
+        "birth",
+        "death"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q314185",
+      "sport": "basketball",
+      "kinds": [
+        "birth",
+        "death"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q190094",
+      "sport": "basketball",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q192955",
+      "sport": "basketball",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q313381",
+      "sport": "american-football",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q7539",
+      "sport": "american-football",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q348011",
+      "sport": "american-football",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q505423",
+      "sport": "american-football",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q195367",
+      "sport": "american-football",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q19667998",
+      "sport": "american-football",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q1251736",
+      "sport": "canadian-football",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q616056",
+      "sport": "canadian-football",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q126710",
+      "sport": "american-football",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q7381158",
+      "sport": "canadian-football",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q5212802",
+      "sport": "canadian-football",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q6848465",
+      "sport": "canadian-football",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q6266374",
+      "sport": "canadian-football",
+      "kinds": [
+        "birth",
+        "death"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q119775",
+      "sport": "canadian-football",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "star"
+    },
+    {
+      "qid": "Q311374",
+      "sport": "ice-hockey",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon"
+    }
+  ],
+  "events": [
+    {
+      "id": "mlb-1903",
+      "kind": "final",
+      "sport": "baseball",
+      "league": "mlb",
+      "wikipedia": "1903 World Series",
+      "fame": "icon"
+    },
+    {
+      "id": "mlb-1927",
+      "kind": "final",
+      "sport": "baseball",
+      "league": "mlb",
+      "wikipedia": "1927 World Series",
+      "fame": "star"
+    },
+    {
+      "id": "mlb-1955",
+      "kind": "final",
+      "sport": "baseball",
+      "league": "mlb",
+      "wikipedia": "1955 World Series",
+      "fame": "star"
+    },
+    {
+      "id": "mlb-1960",
+      "kind": "final",
+      "sport": "baseball",
+      "league": "mlb",
+      "wikipedia": "1960 World Series",
+      "fame": "icon"
+    },
+    {
+      "id": "mlb-1972",
+      "kind": "final",
+      "sport": "baseball",
+      "league": "mlb",
+      "wikipedia": "1972 World Series",
+      "fame": "star"
+    },
+    {
+      "id": "mlb-1986",
+      "kind": "final",
+      "sport": "baseball",
+      "league": "mlb",
+      "wikipedia": "1986 World Series",
+      "fame": "star"
+    },
+    {
+      "id": "mlb-2001",
+      "kind": "final",
+      "sport": "baseball",
+      "league": "mlb",
+      "wikipedia": "2001 World Series",
+      "fame": "star"
+    },
+    {
+      "id": "mlb-2016",
+      "kind": "final",
+      "sport": "baseball",
+      "league": "mlb",
+      "wikipedia": "2016 World Series",
+      "fame": "icon"
+    },
+    {
+      "id": "nba-1980",
+      "kind": "final",
+      "sport": "basketball",
+      "league": "nba",
+      "wikipedia": "1980 NBA Finals",
+      "fame": "icon"
+    },
+    {
+      "id": "nba-1998",
+      "kind": "final",
+      "sport": "basketball",
+      "league": "nba",
+      "wikipedia": "1998 NBA Finals",
+      "fame": "icon"
+    },
+    {
+      "id": "nba-1969",
+      "kind": "final",
+      "sport": "basketball",
+      "league": "nba",
+      "wikipedia": "1969 NBA Finals",
+      "fame": "star"
+    },
+    {
+      "id": "nba-2016",
+      "kind": "final",
+      "sport": "basketball",
+      "league": "nba",
+      "wikipedia": "2016 NBA Finals",
+      "fame": "icon"
+    },
+    {
+      "id": "nba-1966",
+      "kind": "final",
+      "sport": "basketball",
+      "league": "nba",
+      "wikipedia": "1966 NBA Finals",
+      "fame": "star"
+    },
+    {
+      "id": "cfl-2015",
+      "kind": "final",
+      "sport": "canadian-football",
+      "league": "cfl",
+      "wikipedia": "103rd Grey Cup",
+      "fame": "star"
+    },
+    {
+      "id": "cfl-1970",
+      "kind": "final",
+      "sport": "canadian-football",
+      "league": "cfl",
+      "wikipedia": "58th Grey Cup",
+      "fame": "star"
+    },
+    {
+      "id": "cfl-1972",
+      "kind": "final",
+      "sport": "canadian-football",
+      "league": "cfl",
+      "wikipedia": "60th Grey Cup",
+      "fame": "star"
+    },
+    {
+      "id": "nfl-1967",
+      "kind": "final",
+      "sport": "american-football",
+      "league": "nfl",
+      "wikipedia": "1967 NFL Championship Game",
+      "fame": "icon"
+    },
+    {
+      "id": "nfl-1932",
+      "kind": "final",
+      "sport": "american-football",
+      "league": "nfl",
+      "wikipedia": "1932 NFL Playoff Game",
+      "fame": "star"
+    },
+    {
+      "id": "nfl-sb14",
+      "kind": "award",
+      "sport": "american-football",
+      "league": "nfl",
+      "wikipedia": "Super Bowl XIV",
+      "fame": "star"
+    },
+    {
+      "id": "nfl-sb20",
+      "kind": "award",
+      "sport": "american-football",
+      "league": "nfl",
+      "wikipedia": "Super Bowl XX",
+      "fame": "star"
+    },
+    {
+      "id": "nfl-sb25",
+      "kind": "award",
+      "sport": "american-football",
+      "league": "nfl",
+      "wikipedia": "Super Bowl XXV",
+      "fame": "star"
+    },
+    {
+      "id": "nfl-sb23",
+      "kind": "award",
+      "sport": "american-football",
+      "league": "nfl",
+      "wikipedia": "Super Bowl XXIII",
+      "fame": "star"
+    },
+    {
+      "id": "wc-1930",
+      "kind": "match",
+      "sport": "soccer",
+      "league": "wc",
+      "wikipedia": "1930 FIFA World Cup final",
+      "fame": "icon"
+    },
+    {
+      "id": "wc-1954",
+      "kind": "match",
+      "sport": "soccer",
+      "league": "wc",
+      "wikipedia": "1954 FIFA World Cup final",
+      "fame": "star"
+    },
+    {
+      "id": "wc-1966",
+      "kind": "match",
+      "sport": "soccer",
+      "league": "wc",
+      "wikipedia": "1966 FIFA World Cup final",
+      "fame": "icon"
+    },
+    {
+      "id": "wc-1970",
+      "kind": "match",
+      "sport": "soccer",
+      "league": "wc",
+      "wikipedia": "1970 FIFA World Cup final",
+      "fame": "icon"
+    },
+    {
+      "id": "wc-1974",
+      "kind": "match",
+      "sport": "soccer",
+      "league": "wc",
+      "wikipedia": "1974 FIFA World Cup final",
+      "fame": "star"
+    },
+    {
+      "id": "wc-1986",
+      "kind": "match",
+      "sport": "soccer",
+      "league": "wc",
+      "wikipedia": "1986 FIFA World Cup final",
+      "fame": "icon"
+    },
+    {
+      "id": "wc-1998",
+      "kind": "match",
+      "sport": "soccer",
+      "league": "wc",
+      "wikipedia": "1998 FIFA World Cup final",
+      "fame": "star"
+    },
+    {
+      "id": "wc-2002",
+      "kind": "match",
+      "sport": "soccer",
+      "league": "wc",
+      "wikipedia": "2002 FIFA World Cup final",
+      "fame": "star"
+    },
+    {
+      "id": "wc-2006",
+      "kind": "match",
+      "sport": "soccer",
+      "league": "wc",
+      "wikipedia": "2006 FIFA World Cup final",
+      "fame": "icon"
+    },
+    {
+      "id": "wc-2010",
+      "kind": "match",
+      "sport": "soccer",
+      "league": "wc",
+      "wikipedia": "2010 FIFA World Cup final",
+      "fame": "star"
+    },
+    {
+      "id": "wc-2014",
+      "kind": "match",
+      "sport": "soccer",
+      "league": "wc",
+      "wikipedia": "2014 FIFA World Cup final",
+      "fame": "star"
+    },
+    {
+      "id": "wc-2014-sf",
+      "kind": "match",
+      "sport": "soccer",
+      "league": "wc",
+      "wikipedia": "Brazil v Germany (2014 FIFA World Cup)",
+      "fame": "icon"
+    },
+    {
+      "id": "wc-2018",
+      "kind": "match",
+      "sport": "soccer",
+      "league": "wc",
+      "wikipedia": "2018 FIFA World Cup final",
+      "fame": "star"
+    },
+    {
+      "id": "wc-2022",
+      "kind": "match",
+      "sport": "soccer",
+      "league": "wc",
+      "wikipedia": "2022 FIFA World Cup final",
+      "fame": "icon"
+    },
+    {
+      "id": "wc-2026",
+      "kind": "match",
+      "sport": "soccer",
+      "league": "wc",
+      "wikipedia": "2026 FIFA World Cup final",
+      "fame": "star"
+    },
+    {
+      "id": "wwc-1991",
+      "kind": "match",
+      "sport": "soccer",
+      "league": "wwc",
+      "wikipedia": "1991 FIFA Women's World Cup final",
+      "fame": "icon",
+      "women": true
+    },
+    {
+      "id": "wwc-1995",
+      "kind": "match",
+      "sport": "soccer",
+      "league": "wwc",
+      "wikipedia": "1995 FIFA Women's World Cup final",
+      "fame": "star",
+      "women": true
+    },
+    {
+      "id": "wwc-1999",
+      "kind": "match",
+      "sport": "soccer",
+      "league": "wwc",
+      "wikipedia": "1999 FIFA Women's World Cup final",
+      "fame": "icon",
+      "women": true
+    },
+    {
+      "id": "wwc-2003",
+      "kind": "match",
+      "sport": "soccer",
+      "league": "wwc",
+      "wikipedia": "2003 FIFA Women's World Cup final",
+      "fame": "star",
+      "women": true
+    },
+    {
+      "id": "wwc-2007",
+      "kind": "match",
+      "sport": "soccer",
+      "league": "wwc",
+      "wikipedia": "2007 FIFA Women's World Cup final",
+      "fame": "star",
+      "women": true
+    },
+    {
+      "id": "wwc-2011",
+      "kind": "match",
+      "sport": "soccer",
+      "league": "wwc",
+      "wikipedia": "2011 FIFA Women's World Cup final",
+      "fame": "star",
+      "women": true
+    },
+    {
+      "id": "wwc-2015",
+      "kind": "match",
+      "sport": "soccer",
+      "league": "wwc",
+      "wikipedia": "2015 FIFA Women's World Cup final",
+      "fame": "icon",
+      "women": true
+    },
+    {
+      "id": "wwc-2019",
+      "kind": "match",
+      "sport": "soccer",
+      "league": "wwc",
+      "wikipedia": "2019 FIFA Women's World Cup final",
+      "fame": "star",
+      "women": true
+    },
+    {
+      "id": "venue-fenway",
+      "kind": "venue",
+      "sport": "baseball",
+      "league": "mlb",
+      "qid": "Q49136",
+      "fame": "icon"
+    },
+    {
+      "id": "venue-wrigley",
+      "kind": "venue",
+      "sport": "baseball",
+      "league": "mlb",
+      "qid": "Q1052807",
+      "fame": "icon"
+    },
+    {
+      "id": "venue-yankee",
+      "kind": "venue",
+      "sport": "baseball",
+      "league": "mlb",
+      "qid": "Q675214",
+      "fame": "icon"
+    },
+    {
+      "id": "venue-msg",
+      "kind": "venue",
+      "sport": "basketball",
+      "league": "nba",
+      "qid": "Q6728098",
+      "fame": "star"
+    },
+    {
+      "id": "venue-forum",
+      "kind": "venue",
+      "sport": "ice-hockey",
+      "league": "nhl",
+      "qid": "Q367272",
+      "fame": "star"
+    },
+    {
+      "id": "venue-garden",
+      "kind": "venue",
+      "sport": "ice-hockey",
+      "league": "nhl",
+      "qid": "Q894567",
+      "fame": "star"
+    },
+    {
+      "id": "venue-lambeau",
+      "kind": "venue",
+      "sport": "american-football",
+      "league": "nfl",
+      "qid": "Q860790",
+      "fame": "icon"
+    },
+    {
+      "id": "venue-soldier",
+      "kind": "venue",
+      "sport": "american-football",
+      "league": "nfl",
+      "qid": "Q1132413",
+      "fame": "star"
+    },
+    {
+      "id": "venue-polo",
+      "kind": "venue",
+      "sport": "baseball",
+      "league": "mlb",
+      "qid": "Q1276360",
+      "fame": "star"
+    },
+    {
+      "id": "venue-molson",
+      "kind": "venue",
+      "sport": "canadian-football",
+      "league": "cfl",
+      "qid": "Q732147",
+      "fame": "star"
+    },
+    {
+      "id": "venue-winnipeg",
+      "kind": "venue",
+      "sport": "canadian-football",
+      "league": "cfl",
+      "qid": "Q3378622",
+      "fame": "star"
+    }
+  ],
+  "gaps": {
+    "note": "Famous people and events the dataset claims to cover (or that a reader will expect) but does not hold yet, each verified at source. The suite lists them and fails when one appears, so it is moved to the must list.",
+    "people": [
+      {
+        "name": "Cy Young",
+        "sport": "baseball",
+        "league": "mlb",
+        "kinds": [
+          "birth"
+        ]
+      },
+      {
+        "name": "Honus Wagner",
+        "sport": "baseball",
+        "league": "mlb",
+        "kinds": [
+          "birth"
+        ]
+      },
+      {
+        "name": "Satchel Paige",
+        "sport": "baseball",
+        "league": "mlb",
+        "kinds": [
+          "birth"
+        ]
+      },
+      {
+        "name": "Stephen Curry",
+        "sport": "basketball",
+        "league": "nba",
+        "kinds": [
+          "birth"
+        ]
+      },
+      {
+        "name": "Jim Brown",
+        "sport": "american-football",
+        "league": "nfl",
+        "kinds": [
+          "birth"
+        ]
+      },
+      {
+        "name": "Barry Sanders",
+        "sport": "american-football",
+        "league": "nfl",
+        "kinds": [
+          "birth"
+        ]
+      },
+      {
+        "name": "John Elway",
+        "sport": "american-football",
+        "league": "nfl",
+        "kinds": [
+          "birth"
+        ]
+      },
+      {
+        "name": "Emmitt Smith",
+        "sport": "american-football",
+        "league": "nfl",
+        "kinds": [
+          "birth"
+        ]
+      },
+      {
+        "name": "Joe Namath",
+        "sport": "american-football",
+        "league": "nfl",
+        "kinds": [
+          "birth"
+        ]
+      },
+      {
+        "name": "Johnny Unitas",
+        "sport": "american-football",
+        "league": "nfl",
+        "kinds": [
+          "birth"
+        ]
+      },
+      {
+        "name": "Patrick Roy",
+        "sport": "ice-hockey",
+        "league": "nhl",
+        "kinds": [
+          "birth"
+        ]
+      },
+      {
+        "name": "Red Grange",
+        "sport": "american-football",
+        "league": "nfl",
+        "kinds": [
+          "birth"
+        ]
+      },
+      {
+        "name": "Sue Bird",
+        "sport": "basketball",
+        "league": "wnba",
+        "kinds": [
+          "birth"
+        ],
+        "women": true
+      },
+      {
+        "name": "Lisa Leslie",
+        "sport": "basketball",
+        "league": "wnba",
+        "kinds": [
+          "birth"
+        ],
+        "women": true
+      },
+      {
+        "name": "Diana Taurasi",
+        "sport": "basketball",
+        "league": "wnba",
+        "kinds": [
+          "birth"
+        ],
+        "women": true
+      },
+      {
+        "name": "Sheryl Swoopes",
+        "sport": "basketball",
+        "league": "wnba",
+        "kinds": [
+          "birth"
+        ],
+        "women": true
+      },
+      {
+        "name": "Mia Hamm",
+        "sport": "soccer",
+        "league": "wwc",
+        "kinds": [
+          "birth"
+        ],
+        "women": true
+      },
+      {
+        "name": "Pelé",
+        "sport": "soccer",
+        "league": "wc",
+        "kinds": [
+          "birth",
+          "death"
+        ]
+      },
+      {
+        "name": "Diego Maradona",
+        "sport": "soccer",
+        "league": "wc",
+        "kinds": [
+          "birth",
+          "death"
+        ]
+      },
+      {
+        "name": "Lionel Messi",
+        "sport": "soccer",
+        "league": "wc",
+        "kinds": [
+          "birth"
+        ]
+      },
+      {
+        "name": "Serena Williams",
+        "sport": "tennis",
+        "kinds": [
+          "birth"
+        ],
+        "women": true
+      },
+      {
+        "name": "Roger Federer",
+        "sport": "tennis",
+        "kinds": [
+          "birth"
+        ]
+      },
+      {
+        "name": "Billie Jean King",
+        "sport": "tennis",
+        "kinds": [
+          "birth"
+        ],
+        "women": true
+      },
+      {
+        "name": "Martina Navratilova",
+        "sport": "tennis",
+        "kinds": [
+          "birth"
+        ],
+        "women": true
+      },
+      {
+        "name": "Rafael Nadal",
+        "sport": "tennis",
+        "kinds": [
+          "birth"
+        ]
+      },
+      {
+        "name": "Arthur Ashe",
+        "sport": "tennis",
+        "kinds": [
+          "birth",
+          "death"
+        ]
+      },
+      {
+        "name": "Tiger Woods",
+        "sport": "golf",
+        "kinds": [
+          "birth"
+        ]
+      },
+      {
+        "name": "Jack Nicklaus",
+        "sport": "golf",
+        "kinds": [
+          "birth"
+        ]
+      },
+      {
+        "name": "Arnold Palmer",
+        "sport": "golf",
+        "kinds": [
+          "birth",
+          "death"
+        ]
+      },
+      {
+        "name": "Annika Sörenstam",
+        "sport": "golf",
+        "kinds": [
+          "birth"
+        ],
+        "women": true
+      },
+      {
+        "name": "Babe Didrikson Zaharias",
+        "sport": "golf",
+        "kinds": [
+          "birth",
+          "death"
+        ],
+        "women": true,
+        "wikipedia": "Babe Didrikson Zaharias"
+      },
+      {
+        "name": "Muhammad Ali",
+        "sport": "boxing",
+        "kinds": [
+          "birth",
+          "death"
+        ]
+      },
+      {
+        "name": "Mike Tyson",
+        "sport": "boxing",
+        "kinds": [
+          "birth"
+        ]
+      },
+      {
+        "name": "Joe Louis",
+        "sport": "boxing",
+        "kinds": [
+          "birth"
+        ]
+      },
+      {
+        "name": "Laila Ali",
+        "sport": "boxing",
+        "kinds": [
+          "birth"
+        ],
+        "women": true
+      },
+      {
+        "name": "Ronda Rousey",
+        "sport": "mma",
+        "kinds": [
+          "birth"
+        ],
+        "women": true
+      },
+      {
+        "name": "Usain Bolt",
+        "sport": "athletics",
+        "kinds": [
+          "birth"
+        ]
+      },
+      {
+        "name": "Jesse Owens",
+        "sport": "athletics",
+        "kinds": [
+          "birth",
+          "death"
+        ]
+      },
+      {
+        "name": "Florence Griffith Joyner",
+        "sport": "athletics",
+        "kinds": [
+          "birth",
+          "death"
+        ],
+        "women": true
+      },
+      {
+        "name": "Jackie Joyner-Kersee",
+        "sport": "athletics",
+        "kinds": [
+          "birth"
+        ],
+        "women": true
+      },
+      {
+        "name": "Wilma Rudolph",
+        "sport": "athletics",
+        "kinds": [
+          "birth",
+          "death"
+        ],
+        "women": true
+      },
+      {
+        "name": "Carl Lewis",
+        "sport": "athletics",
+        "kinds": [
+          "birth"
+        ]
+      },
+      {
+        "name": "Michael Phelps",
+        "sport": "swimming",
+        "kinds": [
+          "birth"
+        ]
+      },
+      {
+        "name": "Katie Ledecky",
+        "sport": "swimming",
+        "kinds": [
+          "birth"
+        ],
+        "women": true
+      },
+      {
+        "name": "Mark Spitz",
+        "sport": "swimming",
+        "kinds": [
+          "birth"
+        ]
+      },
+      {
+        "name": "Johnny Weissmuller",
+        "sport": "swimming",
+        "kinds": [
+          "birth",
+          "death"
+        ]
+      },
+      {
+        "name": "Ayrton Senna",
+        "sport": "motor-racing",
+        "kinds": [
+          "birth",
+          "death"
+        ]
+      },
+      {
+        "name": "Michael Schumacher",
+        "sport": "motor-racing",
+        "kinds": [
+          "birth"
+        ]
+      },
+      {
+        "name": "Lewis Hamilton",
+        "sport": "motor-racing",
+        "kinds": [
+          "birth"
+        ]
+      },
+      {
+        "name": "Mario Andretti",
+        "sport": "motor-racing",
+        "kinds": [
+          "birth"
+        ]
+      },
+      {
+        "name": "Danica Patrick",
+        "sport": "motor-racing",
+        "kinds": [
+          "birth"
+        ],
+        "women": true
+      },
+      {
+        "name": "Simone Biles",
+        "sport": "olympics",
+        "kinds": [
+          "birth"
+        ],
+        "women": true
+      },
+      {
+        "name": "Nadia Comăneci",
+        "sport": "olympics",
+        "kinds": [
+          "birth"
+        ],
+        "women": true
+      },
+      {
+        "name": "Eric Liddell",
+        "sport": "olympics",
+        "kinds": [
+          "birth",
+          "death"
+        ]
+      },
+      {
+        "name": "Pierre de Coubertin",
+        "sport": "olympics",
+        "kinds": [
+          "birth",
+          "death"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "id": "gap-ruth-60",
+        "kind": "record",
+        "sport": "baseball",
+        "wikipedia": "1927 New York Yankees season",
+        "needle": "September 30, 1927",
+        "date": "1927-09-30"
+      },
+      {
+        "id": "gap-maris-61",
+        "kind": "record",
+        "sport": "baseball",
+        "wikipedia": "Roger Maris",
+        "needle": "October 1, 1961",
+        "date": "1961-10-01"
+      },
+      {
+        "id": "gap-aaron-715",
+        "kind": "record",
+        "sport": "baseball",
+        "wikipedia": "Hank Aaron",
+        "needle": "April 8, 1974",
+        "date": "1974-04-08"
+      },
+      {
+        "id": "gap-bonds-756",
+        "kind": "record",
+        "sport": "baseball",
+        "wikipedia": "2007 San Francisco Giants season",
+        "needle": "August 7, 2007",
+        "date": "2007-08-07"
+      },
+      {
+        "id": "gap-ripken",
+        "kind": "record",
+        "sport": "baseball",
+        "wikipedia": "Cal Ripken Jr.",
+        "needle": "September 6, 1995",
+        "date": "1995-09-06"
+      },
+      {
+        "id": "gap-robinson-debut",
+        "kind": "first",
+        "sport": "baseball",
+        "wikipedia": "Jackie Robinson",
+        "needle": "April 15, 1947",
+        "date": "1947-04-15"
+      },
+      {
+        "id": "gap-gretzky-802",
+        "kind": "record",
+        "sport": "ice-hockey",
+        "wikipedia": "1993–94 Los Angeles Kings season",
+        "needle": "March 23, 1994",
+        "date": "1994-03-23"
+      },
+      {
+        "id": "gap-ovechkin-895",
+        "kind": "record",
+        "sport": "ice-hockey",
+        "wikipedia": "Alex Ovechkin",
+        "needle": "April 6, 2025",
+        "date": "2025-04-06"
+      },
+      {
+        "id": "gap-wilt-100",
+        "kind": "record",
+        "sport": "basketball",
+        "wikipedia": "Wilt Chamberlain",
+        "needle": "March 2, 1962",
+        "date": "1962-03-02"
+      },
+      {
+        "id": "gap-kareem-record",
+        "kind": "record",
+        "sport": "basketball",
+        "wikipedia": "Kareem Abdul-Jabbar",
+        "needle": "April 5, 1984",
+        "date": "1984-04-05"
+      },
+      {
+        "id": "gap-lebron-record",
+        "kind": "record",
+        "sport": "basketball",
+        "wikipedia": "2022–23 Los Angeles Lakers season",
+        "needle": "February 7, 2023",
+        "date": "2023-02-07"
+      },
+      {
+        "id": "gap-draft-1984",
+        "kind": "draft",
+        "sport": "basketball",
+        "wikipedia": "1984 NBA draft",
+        "wikidata": true
+      },
+      {
+        "id": "gap-draft-2003",
+        "kind": "draft",
+        "sport": "basketball",
+        "wikipedia": "2003 NBA draft",
+        "wikidata": true
+      },
+      {
+        "id": "gap-draft-1979-nhl",
+        "kind": "draft",
+        "sport": "ice-hockey",
+        "wikipedia": "1979 NHL entry draft",
+        "wikidata": true
+      },
+      {
+        "id": "gap-draft-2010-nfl",
+        "kind": "draft",
+        "sport": "american-football",
+        "wikipedia": "2010 NFL draft",
+        "wikidata": true
+      },
+      {
+        "id": "gap-pele-1000",
+        "kind": "record",
+        "sport": "soccer",
+        "wikipedia": "Pelé",
+        "needle": "19 November 1969",
+        "date": "1969-11-19"
+      },
+      {
+        "id": "gap-hand-of-god",
+        "kind": "first",
+        "sport": "soccer",
+        "wikipedia": "Argentina v England (1986 FIFA World Cup)",
+        "wikidata": true
+      },
+      {
+        "id": "gap-miracle",
+        "kind": "final",
+        "sport": "ice-hockey",
+        "wikipedia": "Miracle on Ice",
+        "wikidata": true
+      },
+      {
+        "id": "gap-bannister",
+        "kind": "record",
+        "sport": "athletics",
+        "wikipedia": "Roger Bannister",
+        "needle": "6 May 1954",
+        "date": "1954-05-06"
+      },
+      {
+        "id": "gap-owens-1936",
+        "kind": "final",
+        "sport": "athletics",
+        "wikipedia": "Jesse Owens",
+        "needle": "1936",
+        "date": "1936-08-03",
+        "datePartial": true
+      },
+      {
+        "id": "gap-thrilla",
+        "kind": "final",
+        "sport": "boxing",
+        "wikipedia": "Thrilla in Manila",
+        "wikidata": true
+      },
+      {
+        "id": "gap-rumble",
+        "kind": "final",
+        "sport": "boxing",
+        "wikipedia": "The Rumble in the Jungle",
+        "wikidata": true
+      },
+      {
+        "id": "gap-battle-sexes",
+        "kind": "final",
+        "sport": "tennis",
+        "wikipedia": "Battle of the Sexes (tennis)",
+        "wikidata": true,
+        "women": true
+      },
+      {
+        "id": "gap-secretariat",
+        "kind": "record",
+        "sport": "horse-racing",
+        "wikipedia": "1973 Belmont Stakes",
+        "needle": "June 9, 1973",
+        "date": "1973-06-09"
+      },
+      {
+        "id": "gap-comaneci-10",
+        "kind": "record",
+        "sport": "olympics",
+        "wikipedia": "Nadia Comăneci",
+        "needle": "July 18, 1976",
+        "date": "1976-07-18",
+        "women": true
+      },
+      {
+        "id": "gap-1980-olympics",
+        "kind": "final",
+        "sport": "olympics",
+        "wikipedia": "1980 Winter Olympics",
+        "wikidata": true
+      },
+      {
+        "id": "gap-senna-imola",
+        "kind": "death",
+        "sport": "motor-racing",
+        "wikipedia": "Ayrton Senna",
+        "needle": "1 May 1994",
+        "date": "1994-05-01"
+      },
+      {
+        "id": "gap-2012-london",
+        "kind": "final",
+        "sport": "olympics",
+        "wikipedia": "2012 Summer Olympics",
+        "wikidata": true
+      },
+      {
+        "id": "gap-paralympics-2012",
+        "kind": "final",
+        "sport": "paralympics",
+        "wikipedia": "2012 Summer Paralympics",
+        "wikidata": true,
+        "para": true
+      },
+      {
+        "id": "gap-nba-1993",
+        "kind": "final",
+        "sport": "basketball",
+        "league": "nba",
+        "wikipedia": "1993 NBA Finals",
+        "wikidata": true
+      },
+      {
+        "id": "gap-nfl-sb13",
+        "kind": "award",
+        "sport": "american-football",
+        "league": "nfl",
+        "wikipedia": "Super Bowl XIII",
+        "wikidata": true
+      },
+      {
+        "id": "gap-wc-1950",
+        "kind": "match",
+        "sport": "soccer",
+        "league": "wc",
+        "wikipedia": "Maracanazo",
+        "wikidata": true
+      }
+    ]
+  }
+}

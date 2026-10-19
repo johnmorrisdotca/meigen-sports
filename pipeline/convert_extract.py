@@ -279,6 +279,9 @@ def caption_game(r, ja: bool) -> str | None:
     ctx = ", ".join(x for x in (league, year) if x)
     extra_en = f"{game_number_en(r)}{venue_en(r)}{ot_en(r)}{stage_en(r)}"
     extra_ja = f"{game_number_ja(r)}{venue_ja(r)}{ot_ja(r)}{stage_ja(r)}"
+    if hs == aws and r.get("category") == "soccer-on-day" and str(r.get("stage") or "").lower() == "final" and not ja:
+        title = championship_title(r)
+        return f"{home} and {away} drew {hs}–{aws} in the {year} {title} final, which went to penalties."
     if hs == aws:
         if ja:
             return f"{home}と{away}は{hs}対{aws}で引き分けた{extra_ja}{f'（{ctx}）' if ctx else ''}。"
@@ -944,6 +947,9 @@ def main() -> int:
         chosen[row["recordId"]] = rec
     # The extract lists every game of each final round. Only the last game of a round is the one that
     # won the title; the earlier games are playoff games of that round and must not say "won the title".
+    # pipeline/golden/finals-check.json holds what English Wikipedia says about each MLB and NBA title series; a season
+    # where the extract's last game is not that series' last game (seven NBA seasons) names no title game at all.
+    checks = json.loads((ROOT / "pipeline/golden/finals-check.json").read_text(encoding="utf-8"))["seasons"]
     clinchers: dict[tuple, str] = {}
     for row in finals:
         if not ((row.get("home") or {}).get("name") and row.get("homeScore") is not None):
@@ -955,12 +961,16 @@ def main() -> int:
     for row in finals:
         if not ((row.get("home") or {}).get("name") and row.get("homeScore") is not None):
             continue
-        if clinchers[(row.get("league"), row.get("seasonStartYear"))][1] == row["recordId"]:
+        check = checks.get(f"{row.get('league')}:{row.get('seasonStartYear')}")
+        if check and not check["agrees"]:
+            rec = {**row, "category": "game-on-day"}
+            rec["featuredReasons"] = featured_reasons(rec) or ["playoffs"]
+        elif clinchers[(row.get("league"), row.get("seasonStartYear"))][1] == row["recordId"]:
             rec = {**row, "category": "championship-final"}
             rec["featuredReasons"] = featured_reasons(rec) or ["final"]
         else:
             rec = {**row, "category": "game-on-day"}
-            rec["featuredReasons"] = featured_reasons(rec) or ["final-series"]
+            rec["featuredReasons"] = featured_reasons(rec) or ["playoffs"]
         rec["basis"] = "source"
         gid = row.get("gameId")
         if gid is not None:
@@ -1054,7 +1064,8 @@ def main() -> int:
     for row in franchise:
         if row.get("category") != "rename-or-move":
             continue
-        if (row.get("eventDate") or "").endswith("-01-01"):
+        # Jan 1, Mar 1 and Jul 1 are where the source puts an identity it dates only by year or season: no real day.
+        if (row.get("eventDate") or "").endswith(("-01-01", "-03-01", "-07-01")):
             continue
         label = (row.get("label") or "").strip()
         if not label or label.lower() in {"mlb", "nhl", "nba", "nfl", "cfl"}:

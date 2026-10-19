@@ -1,0 +1,5450 @@
+{
+ "schemaVersion": 1,
+ "checkedOn": "2026-10-19",
+ "sources": "Wikidata (CC0) and English Wikipedia (CC BY-SA 4.0), fetched by pipeline/golden/build_golden.py",
+ "must": [
+  {
+   "id": "venue-soldier",
+   "kind": "venue",
+   "sport": "american-football",
+   "league": "nfl",
+   "fame": "star",
+   "label": "Soldier Field opened",
+   "date": "1924-10-09",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "venue-opening",
+    "qid": "Q1132413"
+   },
+   "source": {
+    "wikidata": "Q1132413",
+    "property": "P571",
+    "wikipedia": "Soldier Field",
+    "verifiedBy": "wikidata + wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "nfl-1932",
+   "kind": "final",
+   "sport": "american-football",
+   "league": "nfl",
+   "fame": "star",
+   "label": "1932 NFL Playoff Game",
+   "date": "1932-12-18",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "championship-final",
+    "league": "nfl",
+    "winner": "Chicago Bears"
+   },
+   "source": {
+    "wikidata": "Q4563052",
+    "property": "P582/P585",
+    "wikipedia": "1932 NFL Playoff Game",
+    "verifiedBy": "wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q348011",
+   "kind": "birth",
+   "sport": "american-football",
+   "league": null,
+   "fame": "icon",
+   "label": "Joe Montana born",
+   "date": "1956-06-11",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q348011"
+   },
+   "source": {
+    "wikidata": "Q348011",
+    "property": "P569",
+    "wikipedia": "Joe Montana",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q126710",
+   "kind": "birth",
+   "sport": "american-football",
+   "league": null,
+   "fame": "star",
+   "label": "Warren Moon born",
+   "date": "1956-11-18",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q126710"
+   },
+   "source": {
+    "wikidata": "Q126710",
+    "property": "P569",
+    "wikipedia": "Warren Moon",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "venue-lambeau",
+   "kind": "venue",
+   "sport": "american-football",
+   "league": "nfl",
+   "fame": "icon",
+   "label": "Lambeau Field opened",
+   "date": "1957-09-29",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "venue-opening",
+    "qid": "Q860790"
+   },
+   "source": {
+    "wikidata": "Q860790",
+    "property": "P571",
+    "wikipedia": "Lambeau Field",
+    "verifiedBy": "wikidata + wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q195367",
+   "kind": "birth",
+   "sport": "american-football",
+   "league": null,
+   "fame": "star",
+   "label": "Dan Marino born",
+   "date": "1961-09-15",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q195367"
+   },
+   "source": {
+    "wikidata": "Q195367",
+    "property": "P569",
+    "wikipedia": "Dan Marino",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q505423",
+   "kind": "birth",
+   "sport": "american-football",
+   "league": null,
+   "fame": "icon",
+   "label": "Jerry Rice born",
+   "date": "1962-10-13",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q505423"
+   },
+   "source": {
+    "wikidata": "Q505423",
+    "property": "P569",
+    "wikipedia": "Jerry Rice",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "nfl-1967",
+   "kind": "final",
+   "sport": "american-football",
+   "league": "nfl",
+   "fame": "icon",
+   "label": "1967 NFL Championship Game",
+   "date": "1967-12-31",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "championship-final",
+    "league": "nfl",
+    "winner": "Green Bay Packers"
+   },
+   "source": {
+    "wikidata": "Q746614",
+    "property": "P582/P585",
+    "wikipedia": "1967 NFL Championship Game",
+    "verifiedBy": "wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q7539",
+   "kind": "birth",
+   "sport": "american-football",
+   "league": null,
+   "fame": "icon",
+   "label": "Peyton Manning born",
+   "date": "1976-03-24",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q7539"
+   },
+   "source": {
+    "wikidata": "Q7539",
+    "property": "P569",
+    "wikipedia": "Peyton Manning",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q313381",
+   "kind": "birth",
+   "sport": "american-football",
+   "league": null,
+   "fame": "icon",
+   "label": "Tom Brady born",
+   "date": "1977-08-03",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q313381"
+   },
+   "source": {
+    "wikidata": "Q313381",
+    "property": "P569",
+    "wikipedia": "Tom Brady",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "nfl-sb14",
+   "kind": "award",
+   "sport": "american-football",
+   "league": "nfl",
+   "fame": "star",
+   "label": "Super Bowl XIV",
+   "date": "1980-01-20",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "award",
+    "league": "nfl",
+    "winner": "Pittsburgh Steelers"
+   },
+   "source": {
+    "wikidata": "Q585801",
+    "property": "P582/P585",
+    "wikipedia": "Super Bowl XIV",
+    "verifiedBy": "wikidata + wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "nfl-sb20",
+   "kind": "award",
+   "sport": "american-football",
+   "league": "nfl",
+   "fame": "star",
+   "label": "Super Bowl XX",
+   "date": "1986-01-26",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "award",
+    "league": "nfl",
+    "winner": "Chicago Bears"
+   },
+   "source": {
+    "wikidata": "Q1073454",
+    "property": "P582/P585",
+    "wikipedia": "Super Bowl XX",
+    "verifiedBy": "wikidata + wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "nfl-sb23",
+   "kind": "award",
+   "sport": "american-football",
+   "league": "nfl",
+   "fame": "star",
+   "label": "Super Bowl XXIII",
+   "date": "1989-01-22",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "award",
+    "league": "nfl",
+    "winner": "San Francisco 49ers"
+   },
+   "source": {
+    "wikidata": "Q1307150",
+    "property": "P582/P585",
+    "wikipedia": "Super Bowl XXIII",
+    "verifiedBy": "wikidata + wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "nfl-sb25",
+   "kind": "award",
+   "sport": "american-football",
+   "league": "nfl",
+   "fame": "star",
+   "label": "Super Bowl XXV",
+   "date": "1991-01-27",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "award",
+    "league": "nfl",
+    "winner": "New York Giants"
+   },
+   "source": {
+    "wikidata": "Q1512351",
+    "property": "P582/P585",
+    "wikipedia": "Super Bowl XXV",
+    "verifiedBy": "wikidata + wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q19667998",
+   "kind": "birth",
+   "sport": "american-football",
+   "league": null,
+   "fame": "star",
+   "label": "Patrick Mahomes born",
+   "date": "1995-09-17",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q19667998"
+   },
+   "source": {
+    "wikidata": "Q19667998",
+    "property": "P569",
+    "wikipedia": "Patrick Mahomes",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q552828",
+   "kind": "birth",
+   "sport": "baseball",
+   "league": null,
+   "fame": "icon",
+   "label": "Ty Cobb born",
+   "date": "1886-12-18",
+   "era": "pre-1920",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q552828"
+   },
+   "source": {
+    "wikidata": "Q552828",
+    "property": "P569",
+    "wikipedia": "Ty Cobb",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q722059",
+   "kind": "birth",
+   "sport": "baseball",
+   "league": null,
+   "fame": "star",
+   "label": "Walter Johnson born",
+   "date": "1887-11-06",
+   "era": "pre-1920",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q722059"
+   },
+   "source": {
+    "wikidata": "Q722059",
+    "property": "P569",
+    "wikipedia": "Walter Johnson",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "venue-polo",
+   "kind": "venue",
+   "sport": "baseball",
+   "league": "mlb",
+   "fame": "star",
+   "label": "Polo Grounds opened",
+   "date": "1890-04-19",
+   "era": "pre-1920",
+   "women": false,
+   "match": {
+    "category": "venue-opening",
+    "qid": "Q1276360"
+   },
+   "source": {
+    "wikidata": "Q1276360",
+    "property": "P571",
+    "wikipedia": "Polo Grounds",
+    "verifiedBy": "wikidata + wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q213812",
+   "kind": "birth",
+   "sport": "baseball",
+   "league": null,
+   "fame": "icon",
+   "label": "Babe Ruth born",
+   "date": "1895-02-06",
+   "era": "pre-1920",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q213812"
+   },
+   "source": {
+    "wikidata": "Q213812",
+    "property": "P569",
+    "wikipedia": "Babe Ruth",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q357444",
+   "kind": "birth",
+   "sport": "baseball",
+   "league": null,
+   "fame": "icon",
+   "label": "Lou Gehrig born",
+   "date": "1903-06-19",
+   "era": "pre-1920",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q357444"
+   },
+   "source": {
+    "wikidata": "Q357444",
+    "property": "P569",
+    "wikipedia": "Lou Gehrig",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "mlb-1903",
+   "kind": "final",
+   "sport": "baseball",
+   "league": "mlb",
+   "fame": "icon",
+   "label": "1903 World Series",
+   "date": "1903-10-13",
+   "era": "pre-1920",
+   "women": false,
+   "match": {
+    "category": "championship-final",
+    "league": "mlb",
+    "winner": "Boston Americans"
+   },
+   "source": {
+    "wikidata": "Q1568891",
+    "property": "P582/P585",
+    "wikipedia": "1903 World Series",
+    "verifiedBy": "wikidata + wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "venue-fenway",
+   "kind": "venue",
+   "sport": "baseball",
+   "league": "mlb",
+   "fame": "icon",
+   "label": "Fenway Park opened",
+   "date": "1912-04-20",
+   "era": "pre-1920",
+   "women": false,
+   "match": {
+    "category": "venue-opening",
+    "qid": "Q49136"
+   },
+   "source": {
+    "wikidata": "Q49136",
+    "property": "P571",
+    "wikipedia": "Fenway Park",
+    "verifiedBy": "wikidata + wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "venue-wrigley",
+   "kind": "venue",
+   "sport": "baseball",
+   "league": "mlb",
+   "fame": "icon",
+   "label": "Wrigley Field opened",
+   "date": "1914-04-23",
+   "era": "pre-1920",
+   "women": false,
+   "match": {
+    "category": "venue-opening",
+    "qid": "Q1052807"
+   },
+   "source": {
+    "wikidata": "Q1052807",
+    "property": "P571",
+    "wikipedia": "Wrigley Field",
+    "verifiedBy": "wikidata + wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q297142",
+   "kind": "birth",
+   "sport": "baseball",
+   "league": null,
+   "fame": "icon",
+   "label": "Joe DiMaggio born",
+   "date": "1914-11-25",
+   "era": "pre-1920",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q297142"
+   },
+   "source": {
+    "wikidata": "Q297142",
+    "property": "P569",
+    "wikipedia": "Joe DiMaggio",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q172478",
+   "kind": "birth",
+   "sport": "baseball",
+   "league": null,
+   "fame": "icon",
+   "label": "Ted Williams born",
+   "date": "1918-08-30",
+   "era": "pre-1920",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q172478"
+   },
+   "source": {
+    "wikidata": "Q172478",
+    "property": "P569",
+    "wikipedia": "Ted Williams",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q221048",
+   "kind": "birth",
+   "sport": "baseball",
+   "league": null,
+   "fame": "icon",
+   "label": "Jackie Robinson born",
+   "date": "1919-01-31",
+   "era": "pre-1920",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q221048"
+   },
+   "source": {
+    "wikidata": "Q221048",
+    "property": "P569",
+    "wikipedia": "Jackie Robinson",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "venue-yankee",
+   "kind": "venue",
+   "sport": "baseball",
+   "league": "mlb",
+   "fame": "icon",
+   "label": "Yankee Stadium opened",
+   "date": "1923-04-18",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "venue-opening",
+    "qid": "Q675214"
+   },
+   "source": {
+    "wikidata": "Q675214",
+    "property": "P571",
+    "wikipedia": "Yankee Stadium (1923)",
+    "verifiedBy": "wikidata + wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "mlb-1927",
+   "kind": "final",
+   "sport": "baseball",
+   "league": "mlb",
+   "fame": "star",
+   "label": "1927 World Series",
+   "date": "1927-10-08",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "championship-final",
+    "league": "mlb",
+    "winner": "New York Yankees"
+   },
+   "source": {
+    "wikidata": "Q4562126",
+    "property": "P582/P585",
+    "wikipedia": "1927 World Series",
+    "verifiedBy": "wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q561852",
+   "kind": "birth",
+   "sport": "baseball",
+   "league": null,
+   "fame": "icon",
+   "label": "Willie Mays born",
+   "date": "1931-05-06",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q561852"
+   },
+   "source": {
+    "wikidata": "Q561852",
+    "property": "P569",
+    "wikipedia": "Willie Mays",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q345004",
+   "kind": "birth",
+   "sport": "baseball",
+   "league": null,
+   "fame": "icon",
+   "label": "Mickey Mantle born",
+   "date": "1931-10-20",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q345004"
+   },
+   "source": {
+    "wikidata": "Q345004",
+    "property": "P569",
+    "wikipedia": "Mickey Mantle",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q215777",
+   "kind": "birth",
+   "sport": "baseball",
+   "league": null,
+   "fame": "icon",
+   "label": "Hank Aaron born",
+   "date": "1934-02-05",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q215777"
+   },
+   "source": {
+    "wikidata": "Q215777",
+    "property": "P569",
+    "wikipedia": "Hank Aaron",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q684020",
+   "kind": "birth",
+   "sport": "baseball",
+   "league": null,
+   "fame": "icon",
+   "label": "Roberto Clemente born",
+   "date": "1934-08-18",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q684020"
+   },
+   "source": {
+    "wikidata": "Q684020",
+    "property": "P569",
+    "wikipedia": "Roberto Clemente",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q440256",
+   "kind": "birth",
+   "sport": "baseball",
+   "league": null,
+   "fame": "star",
+   "label": "Sandy Koufax born",
+   "date": "1935-12-30",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q440256"
+   },
+   "source": {
+    "wikidata": "Q440256",
+    "property": "P569",
+    "wikipedia": "Sandy Koufax",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "death-Q357444",
+   "kind": "death",
+   "sport": "baseball",
+   "league": null,
+   "fame": "icon",
+   "label": "Lou Gehrig died",
+   "date": "1941-06-02",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-death",
+    "qid": "Q357444"
+   },
+   "source": {
+    "wikidata": "Q357444",
+    "property": "P570",
+    "wikipedia": "Lou Gehrig",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "death-Q722059",
+   "kind": "death",
+   "sport": "baseball",
+   "league": null,
+   "fame": "star",
+   "label": "Walter Johnson died",
+   "date": "1946-12-10",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-death",
+    "qid": "Q722059"
+   },
+   "source": {
+    "wikidata": "Q722059",
+    "property": "P570",
+    "wikipedia": "Walter Johnson",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "death-Q213812",
+   "kind": "death",
+   "sport": "baseball",
+   "league": null,
+   "fame": "icon",
+   "label": "Babe Ruth died",
+   "date": "1948-08-16",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-death",
+    "qid": "Q213812"
+   },
+   "source": {
+    "wikidata": "Q213812",
+    "property": "P570",
+    "wikipedia": "Babe Ruth",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "mlb-1955",
+   "kind": "final",
+   "sport": "baseball",
+   "league": "mlb",
+   "fame": "star",
+   "label": "1955 World Series",
+   "date": "1955-10-04",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "championship-final",
+    "league": "mlb",
+    "winner": "Brooklyn Dodgers"
+   },
+   "source": {
+    "wikidata": "Q2364101",
+    "property": "P582/P585",
+    "wikipedia": "1955 World Series",
+    "verifiedBy": "wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "mlb-1960",
+   "kind": "final",
+   "sport": "baseball",
+   "league": "mlb",
+   "fame": "icon",
+   "label": "1960 World Series",
+   "date": "1960-10-13",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "championship-final",
+    "league": "mlb",
+    "winner": "Pittsburgh Pirates"
+   },
+   "source": {
+    "wikidata": "Q869082",
+    "property": "P582/P585",
+    "wikipedia": "1960 World Series",
+    "verifiedBy": "wikidata + wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "death-Q552828",
+   "kind": "death",
+   "sport": "baseball",
+   "league": null,
+   "fame": "icon",
+   "label": "Ty Cobb died",
+   "date": "1961-07-17",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-death",
+    "qid": "Q552828"
+   },
+   "source": {
+    "wikidata": "Q552828",
+    "property": "P570",
+    "wikipedia": "Ty Cobb",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q314712",
+   "kind": "birth",
+   "sport": "baseball",
+   "league": null,
+   "fame": "star",
+   "label": "Barry Bonds born",
+   "date": "1964-07-24",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q314712"
+   },
+   "source": {
+    "wikidata": "Q314712",
+    "property": "P569",
+    "wikipedia": "Barry Bonds",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q536900",
+   "kind": "birth",
+   "sport": "baseball",
+   "league": null,
+   "fame": "star",
+   "label": "Ken Griffey Jr. born",
+   "date": "1969-11-21",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q536900"
+   },
+   "source": {
+    "wikidata": "Q536900",
+    "property": "P569",
+    "wikipedia": "Ken Griffey Jr.",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "mlb-1972",
+   "kind": "final",
+   "sport": "baseball",
+   "league": "mlb",
+   "fame": "star",
+   "label": "1972 World Series",
+   "date": "1972-10-22",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "championship-final",
+    "league": "mlb",
+    "winner": "Oakland Athletics"
+   },
+   "source": {
+    "wikidata": "Q1984700",
+    "property": "P582/P585",
+    "wikipedia": "1972 World Series",
+    "verifiedBy": "wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "death-Q221048",
+   "kind": "death",
+   "sport": "baseball",
+   "league": null,
+   "fame": "icon",
+   "label": "Jackie Robinson died",
+   "date": "1972-10-24",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-death",
+    "qid": "Q221048"
+   },
+   "source": {
+    "wikidata": "Q221048",
+    "property": "P570",
+    "wikipedia": "Jackie Robinson",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "death-Q684020",
+   "kind": "death",
+   "sport": "baseball",
+   "league": null,
+   "fame": "icon",
+   "label": "Roberto Clemente died",
+   "date": "1972-12-31",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-death",
+    "qid": "Q684020"
+   },
+   "source": {
+    "wikidata": "Q684020",
+    "property": "P570",
+    "wikipedia": "Roberto Clemente",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q353511",
+   "kind": "birth",
+   "sport": "baseball",
+   "league": null,
+   "fame": "star",
+   "label": "Derek Jeter born",
+   "date": "1974-06-26",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q353511"
+   },
+   "source": {
+    "wikidata": "Q353511",
+    "property": "P569",
+    "wikipedia": "Derek Jeter",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "mlb-1986",
+   "kind": "final",
+   "sport": "baseball",
+   "league": "mlb",
+   "fame": "star",
+   "label": "1986 World Series",
+   "date": "1986-10-27",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "championship-final",
+    "league": "mlb",
+    "winner": "New York Mets"
+   },
+   "source": {
+    "wikidata": "Q1568875",
+    "property": "P582/P585",
+    "wikipedia": "1986 World Series",
+    "verifiedBy": "wikidata + wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q3090378",
+   "kind": "birth",
+   "sport": "baseball",
+   "league": null,
+   "fame": "star",
+   "label": "Mike Trout born",
+   "date": "1991-08-07",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q3090378"
+   },
+   "source": {
+    "wikidata": "Q3090378",
+    "property": "P569",
+    "wikipedia": "Mike Trout",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q4391858",
+   "kind": "birth",
+   "sport": "baseball",
+   "league": null,
+   "fame": "star",
+   "label": "Shohei Ohtani born",
+   "date": "1994-07-05",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q4391858"
+   },
+   "source": {
+    "wikidata": "Q4391858",
+    "property": "P569",
+    "wikipedia": "Shohei Ohtani",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "death-Q345004",
+   "kind": "death",
+   "sport": "baseball",
+   "league": null,
+   "fame": "icon",
+   "label": "Mickey Mantle died",
+   "date": "1995-08-13",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-death",
+    "qid": "Q345004"
+   },
+   "source": {
+    "wikidata": "Q345004",
+    "property": "P570",
+    "wikipedia": "Mickey Mantle",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "death-Q297142",
+   "kind": "death",
+   "sport": "baseball",
+   "league": null,
+   "fame": "icon",
+   "label": "Joe DiMaggio died",
+   "date": "1999-03-08",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-death",
+    "qid": "Q297142"
+   },
+   "source": {
+    "wikidata": "Q297142",
+    "property": "P570",
+    "wikipedia": "Joe DiMaggio",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "mlb-2001",
+   "kind": "final",
+   "sport": "baseball",
+   "league": "mlb",
+   "fame": "star",
+   "label": "2001 World Series",
+   "date": "2001-11-04",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "championship-final",
+    "league": "mlb",
+    "winner": "Arizona Diamondbacks"
+   },
+   "source": {
+    "wikidata": "Q1207242",
+    "property": "P582/P585",
+    "wikipedia": "2001 World Series",
+    "verifiedBy": "wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "death-Q172478",
+   "kind": "death",
+   "sport": "baseball",
+   "league": null,
+   "fame": "icon",
+   "label": "Ted Williams died",
+   "date": "2002-07-05",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-death",
+    "qid": "Q172478"
+   },
+   "source": {
+    "wikidata": "Q172478",
+    "property": "P570",
+    "wikipedia": "Ted Williams",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "mlb-2016",
+   "kind": "final",
+   "sport": "baseball",
+   "league": "mlb",
+   "fame": "icon",
+   "label": "2016 World Series",
+   "date": "2016-11-02",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "championship-final",
+    "league": "mlb",
+    "winner": "Chicago Cubs"
+   },
+   "source": {
+    "wikidata": "Q24906838",
+    "property": "P582/P585",
+    "wikipedia": "2016 World Series",
+    "verifiedBy": "wikidata + wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "death-Q215777",
+   "kind": "death",
+   "sport": "baseball",
+   "league": null,
+   "fame": "icon",
+   "label": "Hank Aaron died",
+   "date": "2021-01-22",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-death",
+    "qid": "Q215777"
+   },
+   "source": {
+    "wikidata": "Q215777",
+    "property": "P570",
+    "wikipedia": "Hank Aaron",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "death-Q561852",
+   "kind": "death",
+   "sport": "baseball",
+   "league": null,
+   "fame": "icon",
+   "label": "Willie Mays died",
+   "date": "2024-06-18",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-death",
+    "qid": "Q561852"
+   },
+   "source": {
+    "wikidata": "Q561852",
+    "property": "P570",
+    "wikipedia": "Willie Mays",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q314185",
+   "kind": "birth",
+   "sport": "basketball",
+   "league": null,
+   "fame": "star",
+   "label": "George Mikan born",
+   "date": "1924-06-18",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q314185"
+   },
+   "source": {
+    "wikidata": "Q314185",
+    "property": "P569",
+    "wikipedia": "George Mikan",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "venue-msg",
+   "kind": "venue",
+   "sport": "basketball",
+   "league": "nba",
+   "fame": "star",
+   "label": "Madison Square Garden opened",
+   "date": "1925-12-15",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "venue-opening",
+    "qid": "Q6728098"
+   },
+   "source": {
+    "wikidata": "Q6728098",
+    "property": "P571",
+    "wikipedia": "Madison Square Garden (1925)",
+    "verifiedBy": "wikidata + wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q242185",
+   "kind": "birth",
+   "sport": "basketball",
+   "league": null,
+   "fame": "icon",
+   "label": "Bill Russell born",
+   "date": "1934-02-12",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q242185"
+   },
+   "source": {
+    "wikidata": "Q242185",
+    "property": "P569",
+    "wikipedia": "Bill Russell",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q182455",
+   "kind": "birth",
+   "sport": "basketball",
+   "league": null,
+   "fame": "icon",
+   "label": "Wilt Chamberlain born",
+   "date": "1936-08-21",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q182455"
+   },
+   "source": {
+    "wikidata": "Q182455",
+    "property": "P569",
+    "wikipedia": "Wilt Chamberlain",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q311195",
+   "kind": "birth",
+   "sport": "basketball",
+   "league": null,
+   "fame": "star",
+   "label": "Jerry West born",
+   "date": "1938-05-28",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q311195"
+   },
+   "source": {
+    "wikidata": "Q311195",
+    "property": "P569",
+    "wikipedia": "Jerry West",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q17717",
+   "kind": "birth",
+   "sport": "basketball",
+   "league": null,
+   "fame": "star",
+   "label": "Oscar Robertson born",
+   "date": "1938-11-24",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q17717"
+   },
+   "source": {
+    "wikidata": "Q17717",
+    "property": "P569",
+    "wikipedia": "Oscar Robertson",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q179051",
+   "kind": "birth",
+   "sport": "basketball",
+   "league": null,
+   "fame": "icon",
+   "label": "Kareem Abdul-Jabbar born",
+   "date": "1947-04-16",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q179051"
+   },
+   "source": {
+    "wikidata": "Q179051",
+    "property": "P569",
+    "wikipedia": "Kareem Abdul-Jabbar",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q190152",
+   "kind": "birth",
+   "sport": "basketball",
+   "league": null,
+   "fame": "icon",
+   "label": "Larry Bird born",
+   "date": "1956-12-07",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q190152"
+   },
+   "source": {
+    "wikidata": "Q190152",
+    "property": "P569",
+    "wikipedia": "Larry Bird",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q134183",
+   "kind": "birth",
+   "sport": "basketball",
+   "league": null,
+   "fame": "icon",
+   "label": "Magic Johnson born",
+   "date": "1959-08-14",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q134183"
+   },
+   "source": {
+    "wikidata": "Q134183",
+    "property": "P569",
+    "wikipedia": "Magic Johnson",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q273256",
+   "kind": "birth",
+   "sport": "basketball",
+   "league": null,
+   "fame": "star",
+   "label": "Hakeem Olajuwon born",
+   "date": "1963-01-21",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q273256"
+   },
+   "source": {
+    "wikidata": "Q273256",
+    "property": "P569",
+    "wikipedia": "Hakeem Olajuwon",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q41421",
+   "kind": "birth",
+   "sport": "basketball",
+   "league": null,
+   "fame": "icon",
+   "label": "Michael Jordan born",
+   "date": "1963-02-17",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q41421"
+   },
+   "source": {
+    "wikidata": "Q41421",
+    "property": "P569",
+    "wikipedia": "Michael Jordan",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "nba-1966",
+   "kind": "final",
+   "sport": "basketball",
+   "league": "nba",
+   "fame": "star",
+   "label": "1966 NBA World Championship Series",
+   "date": "1966-04-28",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "championship-final",
+    "league": "nba",
+    "winner": "Boston Celtics"
+   },
+   "source": {
+    "wikidata": "Q3072466",
+    "property": "P582/P585",
+    "wikipedia": "1966 NBA Finals",
+    "verifiedBy": "wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "nba-1969",
+   "kind": "final",
+   "sport": "basketball",
+   "league": "nba",
+   "fame": "star",
+   "label": "1969 NBA World Championship Series",
+   "date": "1969-05-05",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "championship-final",
+    "league": "nba",
+    "winner": "Boston Celtics"
+   },
+   "source": {
+    "wikidata": "Q3072470",
+    "property": "P582/P585",
+    "wikipedia": "1969 NBA Finals",
+    "verifiedBy": "wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q169452",
+   "kind": "birth",
+   "sport": "basketball",
+   "league": null,
+   "fame": "star",
+   "label": "Shaquille O'Neal born",
+   "date": "1972-03-06",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q169452"
+   },
+   "source": {
+    "wikidata": "Q169452",
+    "property": "P569",
+    "wikipedia": "Shaquille O'Neal",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q192955",
+   "kind": "birth",
+   "sport": "basketball",
+   "league": null,
+   "fame": "star",
+   "label": "Steve Nash born",
+   "date": "1974-02-07",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q192955"
+   },
+   "source": {
+    "wikidata": "Q192955",
+    "property": "P569",
+    "wikipedia": "Steve Nash",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q190094",
+   "kind": "birth",
+   "sport": "basketball",
+   "league": null,
+   "fame": "star",
+   "label": "Allen Iverson born",
+   "date": "1975-06-07",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q190094"
+   },
+   "source": {
+    "wikidata": "Q190094",
+    "property": "P569",
+    "wikipedia": "Allen Iverson",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q193020",
+   "kind": "birth",
+   "sport": "basketball",
+   "league": null,
+   "fame": "star",
+   "label": "Tim Duncan born",
+   "date": "1976-04-25",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q193020"
+   },
+   "source": {
+    "wikidata": "Q193020",
+    "property": "P569",
+    "wikipedia": "Tim Duncan",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q44068",
+   "kind": "birth",
+   "sport": "basketball",
+   "league": null,
+   "fame": "star",
+   "label": "Dirk Nowitzki born",
+   "date": "1978-06-19",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q44068"
+   },
+   "source": {
+    "wikidata": "Q44068",
+    "property": "P569",
+    "wikipedia": "Dirk Nowitzki",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q25369",
+   "kind": "birth",
+   "sport": "basketball",
+   "league": null,
+   "fame": "icon",
+   "label": "Kobe Bryant born",
+   "date": "1978-08-23",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q25369"
+   },
+   "source": {
+    "wikidata": "Q25369",
+    "property": "P569",
+    "wikipedia": "Kobe Bryant",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "nba-1980",
+   "kind": "final",
+   "sport": "basketball",
+   "league": "nba",
+   "fame": "icon",
+   "label": "1980 NBA World Championship Series",
+   "date": "1980-05-16",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "championship-final",
+    "league": "nba",
+    "winner": "Los Angeles Lakers"
+   },
+   "source": {
+    "wikidata": "Q4579314",
+    "property": "P582/P585",
+    "wikipedia": "1980 NBA Finals",
+    "verifiedBy": "wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q36159",
+   "kind": "birth",
+   "sport": "basketball",
+   "league": null,
+   "fame": "icon",
+   "label": "LeBron James born",
+   "date": "1984-12-30",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q36159"
+   },
+   "source": {
+    "wikidata": "Q36159",
+    "property": "P569",
+    "wikipedia": "LeBron James",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q29545",
+   "kind": "birth",
+   "sport": "basketball",
+   "league": null,
+   "fame": "star",
+   "label": "Kevin Durant born",
+   "date": "1988-09-29",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q29545"
+   },
+   "source": {
+    "wikidata": "Q29545",
+    "property": "P569",
+    "wikipedia": "Kevin Durant",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "nba-1998",
+   "kind": "final",
+   "sport": "basketball",
+   "league": "nba",
+   "fame": "icon",
+   "label": "1998 NBA Finals",
+   "date": "1998-06-14",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "championship-final",
+    "league": "nba",
+    "winner": "Chicago Bulls"
+   },
+   "source": {
+    "wikidata": "Q4593827",
+    "property": "P582/P585",
+    "wikipedia": "1998 NBA Finals",
+    "verifiedBy": "wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "death-Q182455",
+   "kind": "death",
+   "sport": "basketball",
+   "league": null,
+   "fame": "icon",
+   "label": "Wilt Chamberlain died",
+   "date": "1999-10-12",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-death",
+    "qid": "Q182455"
+   },
+   "source": {
+    "wikidata": "Q182455",
+    "property": "P570",
+    "wikipedia": "Wilt Chamberlain",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "death-Q314185",
+   "kind": "death",
+   "sport": "basketball",
+   "league": null,
+   "fame": "star",
+   "label": "George Mikan died",
+   "date": "2005-06-01",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-death",
+    "qid": "Q314185"
+   },
+   "source": {
+    "wikidata": "Q314185",
+    "property": "P570",
+    "wikipedia": "George Mikan",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "nba-2016",
+   "kind": "final",
+   "sport": "basketball",
+   "league": "nba",
+   "fame": "icon",
+   "label": "2016 NBA Finals",
+   "date": "2016-06-19",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "championship-final",
+    "league": "nba",
+    "winner": "Cleveland Cavaliers"
+   },
+   "source": {
+    "wikidata": "Q24264147",
+    "property": "P582/P585",
+    "wikipedia": "2016 NBA Finals",
+    "verifiedBy": "wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "death-Q25369",
+   "kind": "death",
+   "sport": "basketball",
+   "league": null,
+   "fame": "icon",
+   "label": "Kobe Bryant died",
+   "date": "2020-01-26",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-death",
+    "qid": "Q25369"
+   },
+   "source": {
+    "wikidata": "Q25369",
+    "property": "P570",
+    "wikipedia": "Kobe Bryant",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "death-Q242185",
+   "kind": "death",
+   "sport": "basketball",
+   "league": null,
+   "fame": "icon",
+   "label": "Bill Russell died",
+   "date": "2022-07-31",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-death",
+    "qid": "Q242185"
+   },
+   "source": {
+    "wikidata": "Q242185",
+    "property": "P570",
+    "wikipedia": "Bill Russell",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "death-Q311195",
+   "kind": "death",
+   "sport": "basketball",
+   "league": null,
+   "fame": "star",
+   "label": "Jerry West died",
+   "date": "2024-06-12",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-death",
+    "qid": "Q311195"
+   },
+   "source": {
+    "wikidata": "Q311195",
+    "property": "P570",
+    "wikipedia": "Jerry West",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "venue-molson",
+   "kind": "venue",
+   "sport": "canadian-football",
+   "league": "cfl",
+   "fame": "star",
+   "label": "Percival Molson Memorial Stadium opened",
+   "date": "1915-10-22",
+   "era": "pre-1920",
+   "women": false,
+   "match": {
+    "category": "venue-opening",
+    "qid": "Q732147"
+   },
+   "source": {
+    "wikidata": "Q732147",
+    "property": "P571",
+    "wikipedia": "Percival Molson Memorial Stadium",
+    "verifiedBy": "wikidata + wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q119775",
+   "kind": "birth",
+   "sport": "canadian-football",
+   "league": null,
+   "fame": "star",
+   "label": "Norman Kwong born",
+   "date": "1929-10-24",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q119775"
+   },
+   "source": {
+    "wikidata": "Q119775",
+    "property": "P569",
+    "wikipedia": "Norman Kwong",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q6266374",
+   "kind": "birth",
+   "sport": "canadian-football",
+   "league": null,
+   "fame": "star",
+   "label": "Johnny Bright born",
+   "date": "1930-06-11",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q6266374"
+   },
+   "source": {
+    "wikidata": "Q6266374",
+    "property": "P569",
+    "wikipedia": "Johnny Bright",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q7381158",
+   "kind": "birth",
+   "sport": "canadian-football",
+   "league": null,
+   "fame": "star",
+   "label": "Russ Jackson born",
+   "date": "1936-07-28",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q7381158"
+   },
+   "source": {
+    "wikidata": "Q7381158",
+    "property": "P569",
+    "wikipedia": "Russ Jackson",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "venue-winnipeg",
+   "kind": "venue",
+   "sport": "canadian-football",
+   "league": "cfl",
+   "fame": "star",
+   "label": "Winnipeg Stadium opened",
+   "date": "1953-08-14",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "venue-opening",
+    "qid": "Q3378622"
+   },
+   "source": {
+    "wikidata": "Q3378622",
+    "property": "P571",
+    "wikipedia": "Winnipeg Stadium",
+    "verifiedBy": "wikidata + wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q1251736",
+   "kind": "birth",
+   "sport": "canadian-football",
+   "league": null,
+   "fame": "star",
+   "label": "Doug Flutie born",
+   "date": "1962-10-23",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q1251736"
+   },
+   "source": {
+    "wikidata": "Q1251736",
+    "property": "P569",
+    "wikipedia": "Doug Flutie",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q5212802",
+   "kind": "birth",
+   "sport": "canadian-football",
+   "league": null,
+   "fame": "star",
+   "label": "Damon Allen born",
+   "date": "1963-07-29",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q5212802"
+   },
+   "source": {
+    "wikidata": "Q5212802",
+    "property": "P569",
+    "wikipedia": "Damon Allen",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q6848465",
+   "kind": "birth",
+   "sport": "canadian-football",
+   "league": null,
+   "fame": "star",
+   "label": "Mike Pringle born",
+   "date": "1967-10-01",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q6848465"
+   },
+   "source": {
+    "wikidata": "Q6848465",
+    "property": "P569",
+    "wikipedia": "Mike Pringle (gridiron football)",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "cfl-1970",
+   "kind": "final",
+   "sport": "canadian-football",
+   "league": "cfl",
+   "fame": "star",
+   "label": "58th Grey Cup",
+   "date": "1970-11-28",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "championship-final",
+    "league": "cfl",
+    "winner": "Montreal Alouettes"
+   },
+   "source": {
+    "wikidata": "Q4640920",
+    "property": "P582/P585",
+    "wikipedia": "58th Grey Cup",
+    "verifiedBy": "wikidata + wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q616056",
+   "kind": "birth",
+   "sport": "canadian-football",
+   "league": null,
+   "fame": "star",
+   "label": "Anthony Calvillo born",
+   "date": "1972-08-23",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q616056"
+   },
+   "source": {
+    "wikidata": "Q616056",
+    "property": "P569",
+    "wikipedia": "Anthony Calvillo",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "cfl-1972",
+   "kind": "final",
+   "sport": "canadian-football",
+   "league": "cfl",
+   "fame": "star",
+   "label": "60th Grey Cup",
+   "date": "1972-12-03",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "championship-final",
+    "league": "cfl",
+    "winner": "Hamilton Tiger-Cats"
+   },
+   "source": {
+    "wikidata": "Q4641708",
+    "property": "P582/P585",
+    "wikipedia": "60th Grey Cup",
+    "verifiedBy": "wikidata + wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "death-Q6266374",
+   "kind": "death",
+   "sport": "canadian-football",
+   "league": null,
+   "fame": "star",
+   "label": "Johnny Bright died",
+   "date": "1983-12-14",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-death",
+    "qid": "Q6266374"
+   },
+   "source": {
+    "wikidata": "Q6266374",
+    "property": "P570",
+    "wikipedia": "Johnny Bright",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "cfl-2015",
+   "kind": "final",
+   "sport": "canadian-football",
+   "league": "cfl",
+   "fame": "star",
+   "label": "103rd Grey Cup",
+   "date": "2015-11-29",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "championship-final",
+    "league": "cfl",
+    "winner": "Edmonton Eskimos"
+   },
+   "source": {
+    "wikidata": "Q17006840",
+    "property": "P582/P585",
+    "wikipedia": "103rd Grey Cup",
+    "verifiedBy": "wikidata + wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q325138",
+   "kind": "birth",
+   "sport": "ice-hockey",
+   "league": null,
+   "fame": "icon",
+   "label": "Maurice Richard born",
+   "date": "1921-08-04",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q325138"
+   },
+   "source": {
+    "wikidata": "Q325138",
+    "property": "P569",
+    "wikipedia": "Maurice Richard",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "venue-forum",
+   "kind": "venue",
+   "sport": "ice-hockey",
+   "league": "nhl",
+   "fame": "star",
+   "label": "Montreal Forum opened",
+   "date": "1924-11-29",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "venue-opening",
+    "qid": "Q367272"
+   },
+   "source": {
+    "wikidata": "Q367272",
+    "property": "P571",
+    "wikipedia": "Montreal Forum",
+    "verifiedBy": "wikidata + wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q358519",
+   "kind": "birth",
+   "sport": "ice-hockey",
+   "league": null,
+   "fame": "icon",
+   "label": "Gordie Howe born",
+   "date": "1928-03-31",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q358519"
+   },
+   "source": {
+    "wikidata": "Q358519",
+    "property": "P569",
+    "wikipedia": "Gordie Howe",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "venue-garden",
+   "kind": "venue",
+   "sport": "ice-hockey",
+   "league": "nhl",
+   "fame": "star",
+   "label": "Boston Garden opened",
+   "date": "1928-11-17",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "venue-opening",
+    "qid": "Q894567"
+   },
+   "source": {
+    "wikidata": "Q894567",
+    "property": "P571",
+    "wikipedia": "Boston Garden",
+    "verifiedBy": "wikidata + wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q520254",
+   "kind": "birth",
+   "sport": "ice-hockey",
+   "league": null,
+   "fame": "star",
+   "label": "Terry Sawchuk born",
+   "date": "1929-12-28",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q520254"
+   },
+   "source": {
+    "wikidata": "Q520254",
+    "property": "P569",
+    "wikipedia": "Terry Sawchuk",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q505479",
+   "kind": "birth",
+   "sport": "ice-hockey",
+   "league": null,
+   "fame": "icon",
+   "label": "Jean Béliveau born",
+   "date": "1931-08-31",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q505479"
+   },
+   "source": {
+    "wikidata": "Q505479",
+    "property": "P569",
+    "wikipedia": "Jean Béliveau",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q456688",
+   "kind": "birth",
+   "sport": "ice-hockey",
+   "league": null,
+   "fame": "star",
+   "label": "Bobby Hull born",
+   "date": "1939-01-03",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q456688"
+   },
+   "source": {
+    "wikidata": "Q456688",
+    "property": "P569",
+    "wikipedia": "Bobby Hull",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q456779",
+   "kind": "birth",
+   "sport": "ice-hockey",
+   "league": null,
+   "fame": "star",
+   "label": "Phil Esposito born",
+   "date": "1942-02-20",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q456779"
+   },
+   "source": {
+    "wikidata": "Q456779",
+    "property": "P569",
+    "wikipedia": "Phil Esposito",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q348017",
+   "kind": "birth",
+   "sport": "ice-hockey",
+   "league": null,
+   "fame": "icon",
+   "label": "Bobby Orr born",
+   "date": "1948-03-20",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q348017"
+   },
+   "source": {
+    "wikidata": "Q348017",
+    "property": "P569",
+    "wikipedia": "Bobby Orr",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q553249",
+   "kind": "birth",
+   "sport": "ice-hockey",
+   "league": null,
+   "fame": "star",
+   "label": "Guy Lafleur born",
+   "date": "1951-09-20",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q553249"
+   },
+   "source": {
+    "wikidata": "Q553249",
+    "property": "P569",
+    "wikipedia": "Guy Lafleur",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q715566",
+   "kind": "birth",
+   "sport": "ice-hockey",
+   "league": null,
+   "fame": "star",
+   "label": "Ray Bourque born",
+   "date": "1960-12-28",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q715566"
+   },
+   "source": {
+    "wikidata": "Q715566",
+    "property": "P569",
+    "wikipedia": "Ray Bourque",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q319247",
+   "kind": "birth",
+   "sport": "ice-hockey",
+   "league": null,
+   "fame": "star",
+   "label": "Mark Messier born",
+   "date": "1961-01-18",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q319247"
+   },
+   "source": {
+    "wikidata": "Q319247",
+    "property": "P569",
+    "wikipedia": "Mark Messier",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q209518",
+   "kind": "birth",
+   "sport": "ice-hockey",
+   "league": null,
+   "fame": "icon",
+   "label": "Wayne Gretzky born",
+   "date": "1961-01-26",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q209518"
+   },
+   "source": {
+    "wikidata": "Q209518",
+    "property": "P569",
+    "wikipedia": "Wayne Gretzky",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q440395",
+   "kind": "birth",
+   "sport": "ice-hockey",
+   "league": null,
+   "fame": "star",
+   "label": "Steve Yzerman born",
+   "date": "1965-05-09",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q440395"
+   },
+   "source": {
+    "wikidata": "Q440395",
+    "property": "P569",
+    "wikipedia": "Steve Yzerman",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q316249",
+   "kind": "birth",
+   "sport": "ice-hockey",
+   "league": null,
+   "fame": "icon",
+   "label": "Mario Lemieux born",
+   "date": "1965-10-05",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q316249"
+   },
+   "source": {
+    "wikidata": "Q316249",
+    "property": "P569",
+    "wikipedia": "Mario Lemieux",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "death-Q520254",
+   "kind": "death",
+   "sport": "ice-hockey",
+   "league": null,
+   "fame": "star",
+   "label": "Terry Sawchuk died",
+   "date": "1970-05-31",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-death",
+    "qid": "Q520254"
+   },
+   "source": {
+    "wikidata": "Q520254",
+    "property": "P570",
+    "wikipedia": "Terry Sawchuk",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q295345",
+   "kind": "birth",
+   "sport": "ice-hockey",
+   "league": null,
+   "fame": "star",
+   "label": "Jaromír Jágr born",
+   "date": "1972-02-15",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q295345"
+   },
+   "source": {
+    "wikidata": "Q295345",
+    "property": "P569",
+    "wikipedia": "Jaromír Jágr",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q357465",
+   "kind": "birth",
+   "sport": "ice-hockey",
+   "league": null,
+   "fame": "star",
+   "label": "Martin Brodeur born",
+   "date": "1972-05-06",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q357465"
+   },
+   "source": {
+    "wikidata": "Q357465",
+    "property": "P569",
+    "wikipedia": "Martin Brodeur",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q311374",
+   "kind": "birth",
+   "sport": "ice-hockey",
+   "league": null,
+   "fame": "icon",
+   "label": "Alexander Ovechkin born",
+   "date": "1985-09-17",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q311374"
+   },
+   "source": {
+    "wikidata": "Q311374",
+    "property": "P569",
+    "wikipedia": "Alexander Ovechkin",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q311280",
+   "kind": "birth",
+   "sport": "ice-hockey",
+   "league": null,
+   "fame": "icon",
+   "label": "Sidney Crosby born",
+   "date": "1987-08-07",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q311280"
+   },
+   "source": {
+    "wikidata": "Q311280",
+    "property": "P569",
+    "wikipedia": "Sidney Crosby",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q2806736",
+   "kind": "birth",
+   "sport": "ice-hockey",
+   "league": null,
+   "fame": "star",
+   "label": "Connor McDavid born",
+   "date": "1997-01-13",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q2806736"
+   },
+   "source": {
+    "wikidata": "Q2806736",
+    "property": "P569",
+    "wikipedia": "Connor McDavid",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "death-Q325138",
+   "kind": "death",
+   "sport": "ice-hockey",
+   "league": null,
+   "fame": "icon",
+   "label": "Maurice Richard died",
+   "date": "2000-05-27",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-death",
+    "qid": "Q325138"
+   },
+   "source": {
+    "wikidata": "Q325138",
+    "property": "P570",
+    "wikipedia": "Maurice Richard",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "death-Q505479",
+   "kind": "death",
+   "sport": "ice-hockey",
+   "league": null,
+   "fame": "icon",
+   "label": "Jean Béliveau died",
+   "date": "2014-12-02",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-death",
+    "qid": "Q505479"
+   },
+   "source": {
+    "wikidata": "Q505479",
+    "property": "P570",
+    "wikipedia": "Jean Béliveau",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "death-Q358519",
+   "kind": "death",
+   "sport": "ice-hockey",
+   "league": null,
+   "fame": "icon",
+   "label": "Gordie Howe died",
+   "date": "2016-06-10",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-death",
+    "qid": "Q358519"
+   },
+   "source": {
+    "wikidata": "Q358519",
+    "property": "P570",
+    "wikipedia": "Gordie Howe",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "death-Q553249",
+   "kind": "death",
+   "sport": "ice-hockey",
+   "league": null,
+   "fame": "star",
+   "label": "Guy Lafleur died",
+   "date": "2022-04-22",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-death",
+    "qid": "Q553249"
+   },
+   "source": {
+    "wikidata": "Q553249",
+    "property": "P570",
+    "wikipedia": "Guy Lafleur",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "death-Q456688",
+   "kind": "death",
+   "sport": "ice-hockey",
+   "league": null,
+   "fame": "star",
+   "label": "Bobby Hull died",
+   "date": "2023-01-30",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-death",
+    "qid": "Q456688"
+   },
+   "source": {
+    "wikidata": "Q456688",
+    "property": "P570",
+    "wikipedia": "Bobby Hull",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "wc-1930",
+   "kind": "match",
+   "sport": "soccer",
+   "league": "wc",
+   "fame": "icon",
+   "label": "1930 FIFA World Cup Final",
+   "date": "1930-07-30",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "soccer-on-day",
+    "league": "wc",
+    "winner": "Uruguay"
+   },
+   "source": {
+    "wikidata": "Q63843",
+    "property": "P582/P585",
+    "wikipedia": "1930 FIFA World Cup final",
+    "verifiedBy": "wikidata + wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "wc-1954",
+   "kind": "match",
+   "sport": "soccer",
+   "league": "wc",
+   "fame": "star",
+   "label": "1954 FIFA World Cup Final",
+   "date": "1954-07-04",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "soccer-on-day",
+    "league": "wc",
+    "winner": "West Germany"
+   },
+   "source": {
+    "wikidata": "Q665946",
+    "property": "P582/P585",
+    "wikipedia": "1954 FIFA World Cup final",
+    "verifiedBy": "wikidata + wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "wc-1966",
+   "kind": "match",
+   "sport": "soccer",
+   "league": "wc",
+   "fame": "icon",
+   "label": "1966 FIFA World Cup Final",
+   "date": "1966-07-30",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "soccer-on-day",
+    "league": "wc",
+    "winner": "England"
+   },
+   "source": {
+    "wikidata": "Q1065912",
+    "property": "P582/P585",
+    "wikipedia": "1966 FIFA World Cup final",
+    "verifiedBy": "wikidata + wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "wc-1970",
+   "kind": "match",
+   "sport": "soccer",
+   "league": "wc",
+   "fame": "icon",
+   "label": "1970 FIFA World Cup Final",
+   "date": "1970-06-21",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "soccer-on-day",
+    "league": "wc",
+    "winner": "Brazil"
+   },
+   "source": {
+    "wikidata": "Q1069912",
+    "property": "P582/P585",
+    "wikipedia": "1970 FIFA World Cup final",
+    "verifiedBy": "wikidata + wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "wc-1974",
+   "kind": "match",
+   "sport": "soccer",
+   "league": "wc",
+   "fame": "star",
+   "label": "1974 FIFA World Cup Final",
+   "date": "1974-07-07",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "soccer-on-day",
+    "league": "wc",
+    "winner": "West Germany"
+   },
+   "source": {
+    "wikidata": "Q945970",
+    "property": "P582/P585",
+    "wikipedia": "1974 FIFA World Cup final",
+    "verifiedBy": "wikidata + wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "wc-1986",
+   "kind": "match",
+   "sport": "soccer",
+   "league": "wc",
+   "fame": "icon",
+   "label": "1986 FIFA World Cup Final",
+   "date": "1986-06-29",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "soccer-on-day",
+    "league": "wc",
+    "winner": "Argentina"
+   },
+   "source": {
+    "wikidata": "Q610156",
+    "property": "P582/P585",
+    "wikipedia": "1986 FIFA World Cup final",
+    "verifiedBy": "wikidata + wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "wwc-1991",
+   "kind": "match",
+   "sport": "soccer",
+   "league": "wwc",
+   "fame": "icon",
+   "label": "1991 FIFA Women's World Cup Final",
+   "date": "1991-11-30",
+   "era": "1970-",
+   "women": true,
+   "match": {
+    "category": "soccer-on-day",
+    "league": "wwc",
+    "winner": "United States"
+   },
+   "source": {
+    "wikidata": "Q4586836",
+    "property": "P582/P585",
+    "wikipedia": "1991 FIFA Women's World Cup final",
+    "verifiedBy": "wikidata + wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "wwc-1995",
+   "kind": "match",
+   "sport": "soccer",
+   "league": "wwc",
+   "fame": "star",
+   "label": "1995 FIFA Women's World Cup Final",
+   "date": "1995-06-18",
+   "era": "1970-",
+   "women": true,
+   "match": {
+    "category": "soccer-on-day",
+    "league": "wwc",
+    "winner": "Norway"
+   },
+   "source": {
+    "wikidata": "Q4590331",
+    "property": "P582/P585",
+    "wikipedia": "1995 FIFA Women's World Cup final",
+    "verifiedBy": "wikidata + wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "wc-1998",
+   "kind": "match",
+   "sport": "soccer",
+   "league": "wc",
+   "fame": "star",
+   "label": "1998 FIFA World Cup Final",
+   "date": "1998-07-12",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "soccer-on-day",
+    "league": "wc",
+    "winner": "France"
+   },
+   "source": {
+    "wikidata": "Q585295",
+    "property": "P582/P585",
+    "wikipedia": "1998 FIFA World Cup final",
+    "verifiedBy": "wikidata + wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "wwc-1999",
+   "kind": "match",
+   "sport": "soccer",
+   "league": "wwc",
+   "fame": "icon",
+   "label": "1999 FIFA Women's World Cup Final",
+   "date": "1999-07-10",
+   "era": "1970-",
+   "women": true,
+   "match": {
+    "category": "soccer-on-day",
+    "league": "wwc",
+    "winner": "United States"
+   },
+   "source": {
+    "wikidata": "Q4594673",
+    "property": "P582/P585",
+    "wikipedia": "1999 FIFA Women's World Cup final",
+    "verifiedBy": "wikidata + wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "wc-2002",
+   "kind": "match",
+   "sport": "soccer",
+   "league": "wc",
+   "fame": "star",
+   "label": "2002 FIFA World Cup Final",
+   "date": "2002-06-30",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "soccer-on-day",
+    "league": "wc",
+    "winner": "Brazil"
+   },
+   "source": {
+    "wikidata": "Q715021",
+    "property": "P582/P585",
+    "wikipedia": "2002 FIFA World Cup final",
+    "verifiedBy": "wikidata + wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "wwc-2003",
+   "kind": "match",
+   "sport": "soccer",
+   "league": "wwc",
+   "fame": "star",
+   "label": "2003 FIFA Women's World Cup Final",
+   "date": "2003-10-12",
+   "era": "1970-",
+   "women": true,
+   "match": {
+    "category": "soccer-on-day",
+    "league": "wwc",
+    "winner": "Germany"
+   },
+   "source": {
+    "wikidata": "Q4601340",
+    "property": "P582/P585",
+    "wikipedia": "2003 FIFA Women's World Cup final",
+    "verifiedBy": "wikidata + wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "wc-2006",
+   "kind": "match",
+   "sport": "soccer",
+   "league": "wc",
+   "fame": "icon",
+   "label": "2006 FIFA World Cup Final",
+   "date": "2006-07-09",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "soccer-on-day",
+    "league": "wc",
+    "winner": "Italy"
+   },
+   "source": {
+    "wikidata": "Q268567",
+    "property": "P582/P585",
+    "wikipedia": "2006 FIFA World Cup final",
+    "verifiedBy": "wikidata + wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "wwc-2007",
+   "kind": "match",
+   "sport": "soccer",
+   "league": "wwc",
+   "fame": "star",
+   "label": "2007 FIFA Women's World Cup Final",
+   "date": "2007-09-30",
+   "era": "1970-",
+   "women": true,
+   "match": {
+    "category": "soccer-on-day",
+    "league": "wwc",
+    "winner": "Germany"
+   },
+   "source": {
+    "wikidata": "Q4608452",
+    "property": "P582/P585",
+    "wikipedia": "2007 FIFA Women's World Cup final",
+    "verifiedBy": "wikidata + wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "wc-2010",
+   "kind": "match",
+   "sport": "soccer",
+   "league": "wc",
+   "fame": "star",
+   "label": "2010 FIFA World Cup Final",
+   "date": "2010-07-11",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "soccer-on-day",
+    "league": "wc",
+    "winner": "Spain"
+   },
+   "source": {
+    "wikidata": "Q208401",
+    "property": "P582/P585",
+    "wikipedia": "2010 FIFA World Cup final",
+    "verifiedBy": "wikidata + wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "wwc-2011",
+   "kind": "match",
+   "sport": "soccer",
+   "league": "wwc",
+   "fame": "star",
+   "label": "2011 FIFA Women's World Cup Final",
+   "date": "2011-07-17",
+   "era": "1970-",
+   "women": true,
+   "match": {
+    "category": "soccer-on-day",
+    "league": "wwc",
+    "winner": "Japan"
+   },
+   "source": {
+    "wikidata": "Q4621100",
+    "property": "P582/P585",
+    "wikipedia": "2011 FIFA Women's World Cup final",
+    "verifiedBy": "wikidata + wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "wc-2014-sf",
+   "kind": "match",
+   "sport": "soccer",
+   "league": "wc",
+   "fame": "icon",
+   "label": "Brazil v Germany (2014 FIFA World Cup)",
+   "date": "2014-07-08",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "soccer-on-day",
+    "league": "wc",
+    "winner": "Germany"
+   },
+   "source": {
+    "wikidata": "Q17329128",
+    "property": "P582/P585",
+    "wikipedia": "Brazil v Germany (2014 FIFA World Cup)",
+    "verifiedBy": "wikidata + wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "wc-2014",
+   "kind": "match",
+   "sport": "soccer",
+   "league": "wc",
+   "fame": "star",
+   "label": "2014 FIFA World Cup Final",
+   "date": "2014-07-13",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "soccer-on-day",
+    "league": "wc",
+    "winner": "Germany"
+   },
+   "source": {
+    "wikidata": "Q15926885",
+    "property": "P582/P585",
+    "wikipedia": "2014 FIFA World Cup final",
+    "verifiedBy": "wikidata + wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "wwc-2015",
+   "kind": "match",
+   "sport": "soccer",
+   "league": "wwc",
+   "fame": "icon",
+   "label": "2015 FIFA Women's World Cup Final",
+   "date": "2015-07-05",
+   "era": "1970-",
+   "women": true,
+   "match": {
+    "category": "soccer-on-day",
+    "league": "wwc",
+    "winner": "United States"
+   },
+   "source": {
+    "wikidata": "Q20640427",
+    "property": "P582/P585",
+    "wikipedia": "2015 FIFA Women's World Cup final",
+    "verifiedBy": "wikidata + wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "wc-2018",
+   "kind": "match",
+   "sport": "soccer",
+   "league": "wc",
+   "fame": "star",
+   "label": "2018 FIFA World Cup Final",
+   "date": "2018-07-15",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "soccer-on-day",
+    "league": "wc",
+    "winner": "France"
+   },
+   "source": {
+    "wikidata": "Q31043671",
+    "property": "P582/P585",
+    "wikipedia": "2018 FIFA World Cup final",
+    "verifiedBy": "wikidata + wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "wwc-2019",
+   "kind": "match",
+   "sport": "soccer",
+   "league": "wwc",
+   "fame": "star",
+   "label": "2019 FIFA Women's World Cup Final",
+   "date": "2019-07-07",
+   "era": "1970-",
+   "women": true,
+   "match": {
+    "category": "soccer-on-day",
+    "league": "wwc",
+    "winner": "United States"
+   },
+   "source": {
+    "wikidata": "Q64831570",
+    "property": "P582/P585",
+    "wikipedia": "2019 FIFA Women's World Cup final",
+    "verifiedBy": "wikidata + wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "wc-2022",
+   "kind": "match",
+   "sport": "soccer",
+   "league": "wc",
+   "fame": "icon",
+   "label": "2022 FIFA World Cup Final",
+   "date": "2022-12-18",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "soccer-on-day",
+    "league": "wc",
+    "winner": "Argentina"
+   },
+   "source": {
+    "wikidata": "Q55620455",
+    "property": "P582/P585",
+    "wikipedia": "2022 FIFA World Cup final",
+    "verifiedBy": "wikidata + wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "wc-2026",
+   "kind": "match",
+   "sport": "soccer",
+   "league": "wc",
+   "fame": "star",
+   "label": "2026 FIFA World Cup final",
+   "date": "2026-07-19",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "soccer-on-day",
+    "league": "wc",
+    "winner": "Spain"
+   },
+   "source": {
+    "wikidata": "Q55640701",
+    "property": "P582/P585",
+    "wikipedia": "2026 FIFA World Cup final",
+    "verifiedBy": "wikidata + wikipedia infobox",
+    "checkedOn": "2026-10-19"
+   }
+  }
+ ],
+ "gaps": [
+  {
+   "id": "birth-Q1399654",
+   "kind": "birth",
+   "sport": "american-football",
+   "league": "nfl",
+   "fame": "icon",
+   "label": "Red Grange born",
+   "date": "1903-06-13",
+   "era": "pre-1920",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q1399654"
+   },
+   "source": {
+    "wikidata": "Q1399654",
+    "property": "P569",
+    "wikipedia": "Red Grange",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q716029",
+   "kind": "birth",
+   "sport": "american-football",
+   "league": "nfl",
+   "fame": "icon",
+   "label": "Johnny Unitas born",
+   "date": "1933-05-07",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q716029"
+   },
+   "source": {
+    "wikidata": "Q716029",
+    "property": "P569",
+    "wikipedia": "Johnny Unitas",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q927916",
+   "kind": "birth",
+   "sport": "american-football",
+   "league": "nfl",
+   "fame": "icon",
+   "label": "Jim Brown born",
+   "date": "1936-02-17",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q927916"
+   },
+   "source": {
+    "wikidata": "Q927916",
+    "property": "P569",
+    "wikipedia": "Jim Brown",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q720558",
+   "kind": "birth",
+   "sport": "american-football",
+   "league": "nfl",
+   "fame": "icon",
+   "label": "Joe Namath born",
+   "date": "1943-05-31",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q720558"
+   },
+   "source": {
+    "wikidata": "Q720558",
+    "property": "P569",
+    "wikipedia": "Joe Namath",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q432931",
+   "kind": "birth",
+   "sport": "american-football",
+   "league": "nfl",
+   "fame": "icon",
+   "label": "John Elway born",
+   "date": "1960-06-28",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q432931"
+   },
+   "source": {
+    "wikidata": "Q432931",
+    "property": "P569",
+    "wikipedia": "John Elway",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q809097",
+   "kind": "birth",
+   "sport": "american-football",
+   "league": "nfl",
+   "fame": "icon",
+   "label": "Barry Sanders born",
+   "date": "1968-07-16",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q809097"
+   },
+   "source": {
+    "wikidata": "Q809097",
+    "property": "P569",
+    "wikipedia": "Barry Sanders",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q1338802",
+   "kind": "birth",
+   "sport": "american-football",
+   "league": "nfl",
+   "fame": "icon",
+   "label": "Emmitt Smith born",
+   "date": "1969-05-15",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q1338802"
+   },
+   "source": {
+    "wikidata": "Q1338802",
+    "property": "P569",
+    "wikipedia": "Emmitt Smith",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "gap-nfl-sb13",
+   "kind": "award",
+   "sport": "american-football",
+   "league": "nfl",
+   "fame": "icon",
+   "label": "Super Bowl XIII",
+   "date": "1979-01-21",
+   "era": "1970-",
+   "women": false,
+   "para": false,
+   "reason": "its sport or event is not in the dataset yet",
+   "source": {
+    "wikidata": "Q632786",
+    "wikipedia": "Super Bowl XIII",
+    "verifiedBy": "wikidata + wikipedia article",
+    "checkedOn": "2026-10-19"
+   },
+   "match": {
+    "category": "award",
+    "league": "nfl"
+   }
+  },
+  {
+   "id": "gap-draft-2010-nfl",
+   "kind": "draft",
+   "sport": "american-football",
+   "league": null,
+   "fame": "icon",
+   "label": "2010 NFL draft",
+   "date": "2010-04-24",
+   "era": "1970-",
+   "women": false,
+   "para": false,
+   "reason": "the dataset holds no records, draft picks or firsts for this kind of fact yet",
+   "source": {
+    "wikidata": "Q3714949",
+    "wikipedia": "2010 NFL draft",
+    "verifiedBy": "wikidata + wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q52651",
+   "kind": "birth",
+   "sport": "athletics",
+   "league": null,
+   "fame": "icon",
+   "label": "Jesse Owens born",
+   "date": "1913-09-12",
+   "era": "pre-1920",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q52651"
+   },
+   "source": {
+    "wikidata": "Q52651",
+    "property": "P569",
+    "wikipedia": "Jesse Owens",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "gap-owens-1936",
+   "kind": "final",
+   "sport": "athletics",
+   "league": null,
+   "fame": "icon",
+   "label": "Jesse Owens",
+   "date": "1936-08-03",
+   "era": "1920-1969",
+   "women": false,
+   "para": false,
+   "reason": "its sport or event is not in the dataset yet",
+   "source": {
+    "wikidata": "Q52651",
+    "wikipedia": "Jesse Owens",
+    "verifiedBy": "wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q31083",
+   "kind": "birth",
+   "sport": "athletics",
+   "league": null,
+   "fame": "icon",
+   "label": "Wilma Rudolph born",
+   "date": "1940-06-23",
+   "era": "1920-1969",
+   "women": true,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q31083"
+   },
+   "source": {
+    "wikidata": "Q31083",
+    "property": "P569",
+    "wikipedia": "Wilma Rudolph",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "gap-bannister",
+   "kind": "record",
+   "sport": "athletics",
+   "league": null,
+   "fame": "icon",
+   "label": "Roger Bannister",
+   "date": "1954-05-06",
+   "era": "1920-1969",
+   "women": false,
+   "para": false,
+   "reason": "the dataset holds no records, draft picks or firsts for this kind of fact yet",
+   "source": {
+    "wikidata": "Q319351",
+    "wikipedia": "Roger Bannister",
+    "verifiedBy": "wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q31082",
+   "kind": "birth",
+   "sport": "athletics",
+   "league": null,
+   "fame": "icon",
+   "label": "Florence Griffith Joyner born",
+   "date": "1959-12-21",
+   "era": "1920-1969",
+   "women": true,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q31082"
+   },
+   "source": {
+    "wikidata": "Q31082",
+    "property": "P569",
+    "wikipedia": "Florence Griffith Joyner",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q131237",
+   "kind": "birth",
+   "sport": "athletics",
+   "league": null,
+   "fame": "icon",
+   "label": "Carl Lewis born",
+   "date": "1961-07-01",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q131237"
+   },
+   "source": {
+    "wikidata": "Q131237",
+    "property": "P569",
+    "wikipedia": "Carl Lewis",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q209390",
+   "kind": "birth",
+   "sport": "athletics",
+   "league": null,
+   "fame": "icon",
+   "label": "Jackie Joyner-Kersee born",
+   "date": "1962-03-03",
+   "era": "1920-1969",
+   "women": true,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q209390"
+   },
+   "source": {
+    "wikidata": "Q209390",
+    "property": "P569",
+    "wikipedia": "Jackie Joyner-Kersee",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "death-Q52651",
+   "kind": "death",
+   "sport": "athletics",
+   "league": null,
+   "fame": "icon",
+   "label": "Jesse Owens died",
+   "date": "1980-03-31",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-death",
+    "qid": "Q52651"
+   },
+   "source": {
+    "wikidata": "Q52651",
+    "property": "P570",
+    "wikipedia": "Jesse Owens",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q1189",
+   "kind": "birth",
+   "sport": "athletics",
+   "league": null,
+   "fame": "icon",
+   "label": "Usain Bolt born",
+   "date": "1986-08-21",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q1189"
+   },
+   "source": {
+    "wikidata": "Q1189",
+    "property": "P569",
+    "wikipedia": "Usain Bolt",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "death-Q31083",
+   "kind": "death",
+   "sport": "athletics",
+   "league": null,
+   "fame": "icon",
+   "label": "Wilma Rudolph died",
+   "date": "1994-11-12",
+   "era": "1970-",
+   "women": true,
+   "match": {
+    "category": "player-death",
+    "qid": "Q31083"
+   },
+   "source": {
+    "wikidata": "Q31083",
+    "property": "P570",
+    "wikipedia": "Wilma Rudolph",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "death-Q31082",
+   "kind": "death",
+   "sport": "athletics",
+   "league": null,
+   "fame": "icon",
+   "label": "Florence Griffith Joyner died",
+   "date": "1998-09-21",
+   "era": "1970-",
+   "women": true,
+   "match": {
+    "category": "player-death",
+    "qid": "Q31082"
+   },
+   "source": {
+    "wikidata": "Q31082",
+    "property": "P570",
+    "wikipedia": "Florence Griffith Joyner",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q362264",
+   "kind": "birth",
+   "sport": "baseball",
+   "league": "mlb",
+   "fame": "icon",
+   "label": "Cy Young born",
+   "date": "1867-03-29",
+   "era": "pre-1920",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q362264"
+   },
+   "source": {
+    "wikidata": "Q362264",
+    "property": "P569",
+    "wikipedia": "Cy Young",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q1316903",
+   "kind": "birth",
+   "sport": "baseball",
+   "league": "mlb",
+   "fame": "icon",
+   "label": "Honus Wagner born",
+   "date": "1874-02-24",
+   "era": "pre-1920",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q1316903"
+   },
+   "source": {
+    "wikidata": "Q1316903",
+    "property": "P569",
+    "wikipedia": "Honus Wagner",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q555730",
+   "kind": "birth",
+   "sport": "baseball",
+   "league": "mlb",
+   "fame": "icon",
+   "label": "Satchel Paige born",
+   "date": "1906-07-07",
+   "era": "pre-1920",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q555730"
+   },
+   "source": {
+    "wikidata": "Q555730",
+    "property": "P569",
+    "wikipedia": "Satchel Paige",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "gap-ruth-60",
+   "kind": "record",
+   "sport": "baseball",
+   "league": null,
+   "fame": "icon",
+   "label": "1927 New York Yankees season",
+   "date": "1927-09-30",
+   "era": "1920-1969",
+   "women": false,
+   "para": false,
+   "reason": "the dataset holds no records, draft picks or firsts for this kind of fact yet",
+   "source": {
+    "wikidata": "Q4562088",
+    "wikipedia": "1927 New York Yankees season",
+    "verifiedBy": "wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "gap-robinson-debut",
+   "kind": "first",
+   "sport": "baseball",
+   "league": null,
+   "fame": "icon",
+   "label": "Jackie Robinson",
+   "date": "1947-04-15",
+   "era": "1920-1969",
+   "women": false,
+   "para": false,
+   "reason": "the dataset holds no records, draft picks or firsts for this kind of fact yet",
+   "source": {
+    "wikidata": "Q221048",
+    "wikipedia": "Jackie Robinson",
+    "verifiedBy": "wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "gap-maris-61",
+   "kind": "record",
+   "sport": "baseball",
+   "league": null,
+   "fame": "icon",
+   "label": "Roger Maris",
+   "date": "1961-10-01",
+   "era": "1920-1969",
+   "women": false,
+   "para": false,
+   "reason": "the dataset holds no records, draft picks or firsts for this kind of fact yet",
+   "source": {
+    "wikidata": "Q741023",
+    "wikipedia": "Roger Maris",
+    "verifiedBy": "wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "gap-aaron-715",
+   "kind": "record",
+   "sport": "baseball",
+   "league": null,
+   "fame": "icon",
+   "label": "Hank Aaron",
+   "date": "1974-04-08",
+   "era": "1970-",
+   "women": false,
+   "para": false,
+   "reason": "the dataset holds no records, draft picks or firsts for this kind of fact yet",
+   "source": {
+    "wikidata": "Q215777",
+    "wikipedia": "Hank Aaron",
+    "verifiedBy": "wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "gap-ripken",
+   "kind": "record",
+   "sport": "baseball",
+   "league": null,
+   "fame": "icon",
+   "label": "Cal Ripken Jr.",
+   "date": "1995-09-06",
+   "era": "1970-",
+   "women": false,
+   "para": false,
+   "reason": "the dataset holds no records, draft picks or firsts for this kind of fact yet",
+   "source": {
+    "wikidata": "Q731168",
+    "wikipedia": "Cal Ripken Jr.",
+    "verifiedBy": "wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "gap-bonds-756",
+   "kind": "record",
+   "sport": "baseball",
+   "league": null,
+   "fame": "icon",
+   "label": "2007 San Francisco Giants season",
+   "date": "2007-08-07",
+   "era": "1970-",
+   "women": false,
+   "para": false,
+   "reason": "the dataset holds no records, draft picks or firsts for this kind of fact yet",
+   "source": {
+    "wikidata": "Q4609228",
+    "wikipedia": "2007 San Francisco Giants season",
+    "verifiedBy": "wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "gap-wilt-100",
+   "kind": "record",
+   "sport": "basketball",
+   "league": null,
+   "fame": "icon",
+   "label": "Wilt Chamberlain",
+   "date": "1962-03-02",
+   "era": "1920-1969",
+   "women": false,
+   "para": false,
+   "reason": "the dataset holds no records, draft picks or firsts for this kind of fact yet",
+   "source": {
+    "wikidata": "Q182455",
+    "wikipedia": "Wilt Chamberlain",
+    "verifiedBy": "wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q270683",
+   "kind": "birth",
+   "sport": "basketball",
+   "league": "wnba",
+   "fame": "icon",
+   "label": "Sheryl Swoopes born",
+   "date": "1971-03-25",
+   "era": "1970-",
+   "women": true,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q270683"
+   },
+   "source": {
+    "wikidata": "Q270683",
+    "property": "P569",
+    "wikipedia": "Sheryl Swoopes",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q257980",
+   "kind": "birth",
+   "sport": "basketball",
+   "league": "wnba",
+   "fame": "icon",
+   "label": "Lisa Leslie born",
+   "date": "1972-07-07",
+   "era": "1970-",
+   "women": true,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q257980"
+   },
+   "source": {
+    "wikidata": "Q257980",
+    "property": "P569",
+    "wikipedia": "Lisa Leslie",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q240672",
+   "kind": "birth",
+   "sport": "basketball",
+   "league": "wnba",
+   "fame": "icon",
+   "label": "Sue Bird born",
+   "date": "1980-10-16",
+   "era": "1970-",
+   "women": true,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q240672"
+   },
+   "source": {
+    "wikidata": "Q240672",
+    "property": "P569",
+    "wikipedia": "Sue Bird",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q240726",
+   "kind": "birth",
+   "sport": "basketball",
+   "league": "wnba",
+   "fame": "icon",
+   "label": "Diana Taurasi born",
+   "date": "1982-06-11",
+   "era": "1970-",
+   "women": true,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q240726"
+   },
+   "source": {
+    "wikidata": "Q240726",
+    "property": "P569",
+    "wikipedia": "Diana Taurasi",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "gap-kareem-record",
+   "kind": "record",
+   "sport": "basketball",
+   "league": null,
+   "fame": "icon",
+   "label": "Kareem Abdul-Jabbar",
+   "date": "1984-04-05",
+   "era": "1970-",
+   "women": false,
+   "para": false,
+   "reason": "the dataset holds no records, draft picks or firsts for this kind of fact yet",
+   "source": {
+    "wikidata": "Q179051",
+    "wikipedia": "Kareem Abdul-Jabbar",
+    "verifiedBy": "wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "gap-draft-1984",
+   "kind": "draft",
+   "sport": "basketball",
+   "league": null,
+   "fame": "icon",
+   "label": "1984 NBA draft",
+   "date": "1984-06-19",
+   "era": "1970-",
+   "women": false,
+   "para": false,
+   "reason": "the dataset holds no records, draft picks or firsts for this kind of fact yet",
+   "source": {
+    "wikidata": "Q1537366",
+    "wikipedia": "1984 NBA draft",
+    "verifiedBy": "wikidata + wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q352159",
+   "kind": "birth",
+   "sport": "basketball",
+   "league": "nba",
+   "fame": "icon",
+   "label": "Stephen Curry born",
+   "date": "1988-03-14",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q352159"
+   },
+   "source": {
+    "wikidata": "Q352159",
+    "property": "P569",
+    "wikipedia": "Stephen Curry",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "gap-nba-1993",
+   "kind": "final",
+   "sport": "basketball",
+   "league": "nba",
+   "fame": "icon",
+   "label": "1993 NBA Finals",
+   "date": "1993-06-20",
+   "era": "1970-",
+   "women": false,
+   "para": false,
+   "reason": "its sport or event is not in the dataset yet",
+   "source": {
+    "wikidata": "Q4588662",
+    "wikipedia": "1993 NBA Finals",
+    "verifiedBy": "wikidata + wikipedia article",
+    "checkedOn": "2026-10-19"
+   },
+   "match": {
+    "category": "championship-final",
+    "league": "nba"
+   }
+  },
+  {
+   "id": "gap-draft-2003",
+   "kind": "draft",
+   "sport": "basketball",
+   "league": null,
+   "fame": "icon",
+   "label": "2003 NBA draft",
+   "date": "2003-06-26",
+   "era": "1970-",
+   "women": false,
+   "para": false,
+   "reason": "the dataset holds no records, draft picks or firsts for this kind of fact yet",
+   "source": {
+    "wikidata": "Q1352101",
+    "wikipedia": "2003 NBA draft",
+    "verifiedBy": "wikidata + wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "gap-lebron-record",
+   "kind": "record",
+   "sport": "basketball",
+   "league": null,
+   "fame": "icon",
+   "label": "2022–23 Los Angeles Lakers season",
+   "date": "2023-02-07",
+   "era": "1970-",
+   "women": false,
+   "para": false,
+   "reason": "the dataset holds no records, draft picks or firsts for this kind of fact yet",
+   "source": {
+    "wikidata": "Q112175460",
+    "wikipedia": "2022–23 Los Angeles Lakers season",
+    "verifiedBy": "wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q273206",
+   "kind": "birth",
+   "sport": "boxing",
+   "league": null,
+   "fame": "icon",
+   "label": "Joe Louis born",
+   "date": "1914-05-13",
+   "era": "pre-1920",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q273206"
+   },
+   "source": {
+    "wikidata": "Q273206",
+    "property": "P569",
+    "wikipedia": "Joe Louis",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q36107",
+   "kind": "birth",
+   "sport": "boxing",
+   "league": null,
+   "fame": "icon",
+   "label": "Muhammad Ali born",
+   "date": "1942-01-17",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q36107"
+   },
+   "source": {
+    "wikidata": "Q36107",
+    "property": "P569",
+    "wikipedia": "Muhammad Ali",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q79031",
+   "kind": "birth",
+   "sport": "boxing",
+   "league": null,
+   "fame": "icon",
+   "label": "Mike Tyson born",
+   "date": "1966-06-30",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q79031"
+   },
+   "source": {
+    "wikidata": "Q79031",
+    "property": "P569",
+    "wikipedia": "Mike Tyson",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "gap-rumble",
+   "kind": "final",
+   "sport": "boxing",
+   "league": null,
+   "fame": "icon",
+   "label": "The Rumble in the Jungle",
+   "date": "1974-10-30",
+   "era": "1970-",
+   "women": false,
+   "para": false,
+   "reason": "its sport or event is not in the dataset yet",
+   "source": {
+    "wikidata": "Q939560",
+    "wikipedia": "The Rumble in the Jungle",
+    "verifiedBy": "wikidata + wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "gap-thrilla",
+   "kind": "final",
+   "sport": "boxing",
+   "league": null,
+   "fame": "icon",
+   "label": "Thrilla in Manila",
+   "date": "1975-10-01",
+   "era": "1970-",
+   "women": false,
+   "para": false,
+   "reason": "its sport or event is not in the dataset yet",
+   "source": {
+    "wikidata": "Q1271324",
+    "wikipedia": "Thrilla in Manila",
+    "verifiedBy": "wikidata + wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q255099",
+   "kind": "birth",
+   "sport": "boxing",
+   "league": null,
+   "fame": "icon",
+   "label": "Laila Ali born",
+   "date": "1977-12-30",
+   "era": "1970-",
+   "women": true,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q255099"
+   },
+   "source": {
+    "wikidata": "Q255099",
+    "property": "P569",
+    "wikipedia": "Laila Ali",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "death-Q36107",
+   "kind": "death",
+   "sport": "boxing",
+   "league": null,
+   "fame": "icon",
+   "label": "Muhammad Ali died",
+   "date": "2016-06-03",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-death",
+    "qid": "Q36107"
+   },
+   "source": {
+    "wikidata": "Q36107",
+    "property": "P570",
+    "wikipedia": "Muhammad Ali",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q231983",
+   "kind": "birth",
+   "sport": "golf",
+   "league": null,
+   "fame": "icon",
+   "label": "Babe Didrikson Zaharias born",
+   "date": "1911-06-26",
+   "era": "pre-1920",
+   "women": true,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q231983"
+   },
+   "source": {
+    "wikidata": "Q231983",
+    "property": "P569",
+    "wikipedia": "Babe Didrikson Zaharias",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q9434",
+   "kind": "birth",
+   "sport": "golf",
+   "league": null,
+   "fame": "icon",
+   "label": "Arnold Palmer born",
+   "date": "1929-09-10",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q9434"
+   },
+   "source": {
+    "wikidata": "Q9434",
+    "property": "P569",
+    "wikipedia": "Arnold Palmer",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q9424",
+   "kind": "birth",
+   "sport": "golf",
+   "league": null,
+   "fame": "icon",
+   "label": "Jack Nicklaus born",
+   "date": "1940-01-21",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q9424"
+   },
+   "source": {
+    "wikidata": "Q9424",
+    "property": "P569",
+    "wikipedia": "Jack Nicklaus",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "death-Q231983",
+   "kind": "death",
+   "sport": "golf",
+   "league": null,
+   "fame": "icon",
+   "label": "Babe Didrikson Zaharias died",
+   "date": "1956-09-27",
+   "era": "1920-1969",
+   "women": true,
+   "match": {
+    "category": "player-death",
+    "qid": "Q231983"
+   },
+   "source": {
+    "wikidata": "Q231983",
+    "property": "P570",
+    "wikipedia": "Babe Didrikson Zaharias",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q232711",
+   "kind": "birth",
+   "sport": "golf",
+   "league": null,
+   "fame": "icon",
+   "label": "Annika Sörenstam born",
+   "date": "1970-10-09",
+   "era": "1970-",
+   "women": true,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q232711"
+   },
+   "source": {
+    "wikidata": "Q232711",
+    "property": "P569",
+    "wikipedia": "Annika Sörenstam",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q10993",
+   "kind": "birth",
+   "sport": "golf",
+   "league": null,
+   "fame": "icon",
+   "label": "Tiger Woods born",
+   "date": "1975-12-30",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q10993"
+   },
+   "source": {
+    "wikidata": "Q10993",
+    "property": "P569",
+    "wikipedia": "Tiger Woods",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "death-Q9434",
+   "kind": "death",
+   "sport": "golf",
+   "league": null,
+   "fame": "icon",
+   "label": "Arnold Palmer died",
+   "date": "2016-09-25",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-death",
+    "qid": "Q9434"
+   },
+   "source": {
+    "wikidata": "Q9434",
+    "property": "P570",
+    "wikipedia": "Arnold Palmer",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "gap-secretariat",
+   "kind": "record",
+   "sport": "horse-racing",
+   "league": null,
+   "fame": "icon",
+   "label": "1973 Belmont Stakes",
+   "date": "1973-06-09",
+   "era": "1970-",
+   "women": false,
+   "para": false,
+   "reason": "the dataset holds no records, draft picks or firsts for this kind of fact yet",
+   "source": {
+    "wikidata": "Q4575470",
+    "wikipedia": "1973 Belmont Stakes",
+    "verifiedBy": "wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q357502",
+   "kind": "birth",
+   "sport": "ice-hockey",
+   "league": "nhl",
+   "fame": "icon",
+   "label": "Patrick Roy born",
+   "date": "1965-10-05",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q357502"
+   },
+   "source": {
+    "wikidata": "Q357502",
+    "property": "P569",
+    "wikipedia": "Patrick Roy",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "gap-draft-1979-nhl",
+   "kind": "draft",
+   "sport": "ice-hockey",
+   "league": null,
+   "fame": "icon",
+   "label": "1979 NHL entry draft",
+   "date": "1979-08-09",
+   "era": "1970-",
+   "women": false,
+   "para": false,
+   "reason": "the dataset holds no records, draft picks or firsts for this kind of fact yet",
+   "source": {
+    "wikidata": "Q747206",
+    "wikipedia": "1979 NHL entry draft",
+    "verifiedBy": "wikidata + wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "gap-miracle",
+   "kind": "final",
+   "sport": "ice-hockey",
+   "league": null,
+   "fame": "icon",
+   "label": "Miracle on Ice",
+   "date": "1980-02-22",
+   "era": "1970-",
+   "women": false,
+   "para": false,
+   "reason": "its sport or event is not in the dataset yet",
+   "source": {
+    "wikidata": "Q287405",
+    "wikipedia": "Miracle on Ice",
+    "verifiedBy": "wikidata + wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "gap-gretzky-802",
+   "kind": "record",
+   "sport": "ice-hockey",
+   "league": null,
+   "fame": "icon",
+   "label": "1993–94 Los Angeles Kings season",
+   "date": "1994-03-23",
+   "era": "1970-",
+   "women": false,
+   "para": false,
+   "reason": "the dataset holds no records, draft picks or firsts for this kind of fact yet",
+   "source": {
+    "wikidata": "Q4589067",
+    "wikipedia": "1993–94 Los Angeles Kings season",
+    "verifiedBy": "wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "gap-ovechkin-895",
+   "kind": "record",
+   "sport": "ice-hockey",
+   "league": null,
+   "fame": "icon",
+   "label": "Alex Ovechkin",
+   "date": "2025-04-06",
+   "era": "1970-",
+   "women": false,
+   "para": false,
+   "reason": "the dataset holds no records, draft picks or firsts for this kind of fact yet",
+   "source": {
+    "wikidata": "Q311374",
+    "wikipedia": "Alex Ovechkin",
+    "verifiedBy": "wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q242201",
+   "kind": "birth",
+   "sport": "mma",
+   "league": null,
+   "fame": "icon",
+   "label": "Ronda Rousey born",
+   "date": "1987-02-01",
+   "era": "1970-",
+   "women": true,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q242201"
+   },
+   "source": {
+    "wikidata": "Q242201",
+    "property": "P569",
+    "wikipedia": "Ronda Rousey",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q171312",
+   "kind": "birth",
+   "sport": "motor-racing",
+   "league": null,
+   "fame": "icon",
+   "label": "Mario Andretti born",
+   "date": "1940-02-28",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q171312"
+   },
+   "source": {
+    "wikidata": "Q171312",
+    "property": "P569",
+    "wikipedia": "Mario Andretti",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q10490",
+   "kind": "birth",
+   "sport": "motor-racing",
+   "league": null,
+   "fame": "icon",
+   "label": "Ayrton Senna born",
+   "date": "1960-03-21",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q10490"
+   },
+   "source": {
+    "wikidata": "Q10490",
+    "property": "P569",
+    "wikipedia": "Ayrton Senna",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q9671",
+   "kind": "birth",
+   "sport": "motor-racing",
+   "league": null,
+   "fame": "icon",
+   "label": "Michael Schumacher born",
+   "date": "1969-01-03",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q9671"
+   },
+   "source": {
+    "wikidata": "Q9671",
+    "property": "P569",
+    "wikipedia": "Michael Schumacher",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q213448",
+   "kind": "birth",
+   "sport": "motor-racing",
+   "league": null,
+   "fame": "icon",
+   "label": "Danica Patrick born",
+   "date": "1982-03-25",
+   "era": "1970-",
+   "women": true,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q213448"
+   },
+   "source": {
+    "wikidata": "Q213448",
+    "property": "P569",
+    "wikipedia": "Danica Patrick",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q9673",
+   "kind": "birth",
+   "sport": "motor-racing",
+   "league": null,
+   "fame": "icon",
+   "label": "Lewis Hamilton born",
+   "date": "1985-01-07",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q9673"
+   },
+   "source": {
+    "wikidata": "Q9673",
+    "property": "P569",
+    "wikipedia": "Lewis Hamilton",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "death-Q10490",
+   "kind": "death",
+   "sport": "motor-racing",
+   "league": null,
+   "fame": "icon",
+   "label": "Ayrton Senna died",
+   "date": "1994-05-01",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-death",
+    "qid": "Q10490"
+   },
+   "source": {
+    "wikidata": "Q10490",
+    "property": "P570",
+    "wikipedia": "Ayrton Senna",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "gap-senna-imola",
+   "kind": "death",
+   "sport": "motor-racing",
+   "league": null,
+   "fame": "icon",
+   "label": "Ayrton Senna",
+   "date": "1994-05-01",
+   "era": "1970-",
+   "women": false,
+   "para": false,
+   "reason": "its sport or event is not in the dataset yet",
+   "source": {
+    "wikidata": "Q10490",
+    "wikipedia": "Ayrton Senna",
+    "verifiedBy": "wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q82984",
+   "kind": "birth",
+   "sport": "olympics",
+   "league": null,
+   "fame": "icon",
+   "label": "Pierre de Coubertin born",
+   "date": "1863-01-01",
+   "era": "pre-1920",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q82984"
+   },
+   "source": {
+    "wikidata": "Q82984",
+    "property": "P569",
+    "wikipedia": "Pierre de Coubertin",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q317422",
+   "kind": "birth",
+   "sport": "olympics",
+   "league": null,
+   "fame": "icon",
+   "label": "Eric Liddell born",
+   "date": "1902-01-16",
+   "era": "pre-1920",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q317422"
+   },
+   "source": {
+    "wikidata": "Q317422",
+    "property": "P569",
+    "wikipedia": "Eric Liddell",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "death-Q82984",
+   "kind": "death",
+   "sport": "olympics",
+   "league": null,
+   "fame": "icon",
+   "label": "Pierre de Coubertin died",
+   "date": "1937-09-02",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-death",
+    "qid": "Q82984"
+   },
+   "source": {
+    "wikidata": "Q82984",
+    "property": "P570",
+    "wikipedia": "Pierre de Coubertin",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "death-Q317422",
+   "kind": "death",
+   "sport": "olympics",
+   "league": null,
+   "fame": "icon",
+   "label": "Eric Liddell died",
+   "date": "1945-02-21",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-death",
+    "qid": "Q317422"
+   },
+   "source": {
+    "wikidata": "Q317422",
+    "property": "P570",
+    "wikipedia": "Eric Liddell",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q33228",
+   "kind": "birth",
+   "sport": "olympics",
+   "league": null,
+   "fame": "icon",
+   "label": "Nadia Comăneci born",
+   "date": "1961-11-12",
+   "era": "1920-1969",
+   "women": true,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q33228"
+   },
+   "source": {
+    "wikidata": "Q33228",
+    "property": "P569",
+    "wikipedia": "Nadia Comăneci",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "gap-comaneci-10",
+   "kind": "record",
+   "sport": "olympics",
+   "league": null,
+   "fame": "icon",
+   "label": "Nadia Comăneci",
+   "date": "1976-07-18",
+   "era": "1970-",
+   "women": true,
+   "para": false,
+   "reason": "the dataset holds no records, draft picks or firsts for this kind of fact yet",
+   "source": {
+    "wikidata": "Q33228",
+    "wikipedia": "Nadia Comăneci",
+    "verifiedBy": "wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "gap-1980-olympics",
+   "kind": "final",
+   "sport": "olympics",
+   "league": null,
+   "fame": "icon",
+   "label": "1980 Winter Olympics",
+   "date": "1980-02-23",
+   "era": "1970-",
+   "women": false,
+   "para": false,
+   "reason": "its sport or event is not in the dataset yet",
+   "source": {
+    "wikidata": "Q9652",
+    "wikipedia": "1980 Winter Olympics",
+    "verifiedBy": "wikidata + wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q7520267",
+   "kind": "birth",
+   "sport": "olympics",
+   "league": null,
+   "fame": "icon",
+   "label": "Simone Biles born",
+   "date": "1997-03-14",
+   "era": "1970-",
+   "women": true,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q7520267"
+   },
+   "source": {
+    "wikidata": "Q7520267",
+    "property": "P569",
+    "wikipedia": "Simone Biles",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "gap-2012-london",
+   "kind": "final",
+   "sport": "olympics",
+   "league": null,
+   "fame": "icon",
+   "label": "2012 Summer Olympics",
+   "date": "2012-08-12",
+   "era": "1970-",
+   "women": false,
+   "para": false,
+   "reason": "its sport or event is not in the dataset yet",
+   "source": {
+    "wikidata": "Q8577",
+    "wikipedia": "2012 Summer Olympics",
+    "verifiedBy": "wikidata + wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "gap-paralympics-2012",
+   "kind": "final",
+   "sport": "paralympics",
+   "league": null,
+   "fame": "icon",
+   "label": "2012 Summer Paralympics",
+   "date": "2012-09-09",
+   "era": "1970-",
+   "women": false,
+   "para": true,
+   "reason": "its sport or event is not in the dataset yet",
+   "source": {
+    "wikidata": "Q182798",
+    "wikipedia": "2012 Summer Paralympics",
+    "verifiedBy": "wikidata + wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q12897",
+   "kind": "birth",
+   "sport": "soccer",
+   "league": "wc",
+   "fame": "icon",
+   "label": "Pelé born",
+   "date": "1940-10-23",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q12897"
+   },
+   "source": {
+    "wikidata": "Q12897",
+    "property": "P569",
+    "wikipedia": "Pelé",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "gap-wc-1950",
+   "kind": "match",
+   "sport": "soccer",
+   "league": "wc",
+   "fame": "icon",
+   "label": "Maracanazo",
+   "date": "1950-07-16",
+   "era": "1920-1969",
+   "women": false,
+   "para": false,
+   "reason": "its sport or event is not in the dataset yet",
+   "source": {
+    "wikidata": "Q754483",
+    "wikipedia": "Maracanazo",
+    "verifiedBy": "wikidata + wikipedia article",
+    "checkedOn": "2026-10-19"
+   },
+   "match": {
+    "category": "soccer-on-day",
+    "league": "wc"
+   }
+  },
+  {
+   "id": "birth-Q17515",
+   "kind": "birth",
+   "sport": "soccer",
+   "league": "wc",
+   "fame": "icon",
+   "label": "Diego Maradona born",
+   "date": "1960-10-30",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q17515"
+   },
+   "source": {
+    "wikidata": "Q17515",
+    "property": "P569",
+    "wikipedia": "Diego Maradona",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "gap-pele-1000",
+   "kind": "record",
+   "sport": "soccer",
+   "league": null,
+   "fame": "icon",
+   "label": "Pelé",
+   "date": "1969-11-19",
+   "era": "1920-1969",
+   "women": false,
+   "para": false,
+   "reason": "the dataset holds no records, draft picks or firsts for this kind of fact yet",
+   "source": {
+    "wikidata": "Q12897",
+    "wikipedia": "Pelé",
+    "verifiedBy": "wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q222086",
+   "kind": "birth",
+   "sport": "soccer",
+   "league": "wwc",
+   "fame": "icon",
+   "label": "Mia Hamm born",
+   "date": "1972-03-17",
+   "era": "1970-",
+   "women": true,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q222086"
+   },
+   "source": {
+    "wikidata": "Q222086",
+    "property": "P569",
+    "wikipedia": "Mia Hamm",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "gap-hand-of-god",
+   "kind": "first",
+   "sport": "soccer",
+   "league": null,
+   "fame": "icon",
+   "label": "Argentina v England (1986 FIFA World Cup)",
+   "date": "1986-06-22",
+   "era": "1970-",
+   "women": false,
+   "para": false,
+   "reason": "the dataset holds no records, draft picks or firsts for this kind of fact yet",
+   "source": {
+    "wikidata": "Q4493724",
+    "wikipedia": "Argentina v England (1986 FIFA World Cup)",
+    "verifiedBy": "wikidata + wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q615",
+   "kind": "birth",
+   "sport": "soccer",
+   "league": "wc",
+   "fame": "icon",
+   "label": "Lionel Messi born",
+   "date": "1987-06-24",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q615"
+   },
+   "source": {
+    "wikidata": "Q615",
+    "property": "P569",
+    "wikipedia": "Lionel Messi",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "death-Q17515",
+   "kind": "death",
+   "sport": "soccer",
+   "league": "wc",
+   "fame": "icon",
+   "label": "Diego Maradona died",
+   "date": "2020-11-25",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-death",
+    "qid": "Q17515"
+   },
+   "source": {
+    "wikidata": "Q17515",
+    "property": "P570",
+    "wikipedia": "Diego Maradona",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "death-Q12897",
+   "kind": "death",
+   "sport": "soccer",
+   "league": "wc",
+   "fame": "icon",
+   "label": "Pelé died",
+   "date": "2022-12-29",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-death",
+    "qid": "Q12897"
+   },
+   "source": {
+    "wikidata": "Q12897",
+    "property": "P570",
+    "wikipedia": "Pelé",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q151284",
+   "kind": "birth",
+   "sport": "swimming",
+   "league": null,
+   "fame": "icon",
+   "label": "Johnny Weissmuller born",
+   "date": "1904-06-02",
+   "era": "pre-1920",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q151284"
+   },
+   "source": {
+    "wikidata": "Q151284",
+    "property": "P569",
+    "wikipedia": "Johnny Weissmuller",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q180748",
+   "kind": "birth",
+   "sport": "swimming",
+   "league": null,
+   "fame": "icon",
+   "label": "Mark Spitz born",
+   "date": "1950-02-10",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q180748"
+   },
+   "source": {
+    "wikidata": "Q180748",
+    "property": "P569",
+    "wikipedia": "Mark Spitz",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "death-Q151284",
+   "kind": "death",
+   "sport": "swimming",
+   "league": null,
+   "fame": "icon",
+   "label": "Johnny Weissmuller died",
+   "date": "1984-01-20",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-death",
+    "qid": "Q151284"
+   },
+   "source": {
+    "wikidata": "Q151284",
+    "property": "P570",
+    "wikipedia": "Johnny Weissmuller",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q39562",
+   "kind": "birth",
+   "sport": "swimming",
+   "league": null,
+   "fame": "icon",
+   "label": "Michael Phelps born",
+   "date": "1985-06-30",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q39562"
+   },
+   "source": {
+    "wikidata": "Q39562",
+    "property": "P569",
+    "wikipedia": "Michael Phelps",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q137374",
+   "kind": "birth",
+   "sport": "swimming",
+   "league": null,
+   "fame": "icon",
+   "label": "Katie Ledecky born",
+   "date": "1997-03-17",
+   "era": "1970-",
+   "women": true,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q137374"
+   },
+   "source": {
+    "wikidata": "Q137374",
+    "property": "P569",
+    "wikipedia": "Katie Ledecky",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q53325",
+   "kind": "birth",
+   "sport": "tennis",
+   "league": null,
+   "fame": "icon",
+   "label": "Arthur Ashe born",
+   "date": "1943-07-10",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q53325"
+   },
+   "source": {
+    "wikidata": "Q53325",
+    "property": "P569",
+    "wikipedia": "Arthur Ashe",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q54527",
+   "kind": "birth",
+   "sport": "tennis",
+   "league": null,
+   "fame": "icon",
+   "label": "Billie Jean King born",
+   "date": "1943-11-22",
+   "era": "1920-1969",
+   "women": true,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q54527"
+   },
+   "source": {
+    "wikidata": "Q54527",
+    "property": "P569",
+    "wikipedia": "Billie Jean King",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q54545",
+   "kind": "birth",
+   "sport": "tennis",
+   "league": null,
+   "fame": "icon",
+   "label": "Martina Navratilova born",
+   "date": "1956-10-18",
+   "era": "1920-1969",
+   "women": true,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q54545"
+   },
+   "source": {
+    "wikidata": "Q54545",
+    "property": "P569",
+    "wikipedia": "Martina Navratilova",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "gap-battle-sexes",
+   "kind": "final",
+   "sport": "tennis",
+   "league": null,
+   "fame": "icon",
+   "label": "Battle of the Sexes (tennis)",
+   "date": "1973-05-13",
+   "era": "1970-",
+   "women": true,
+   "para": false,
+   "reason": "its sport or event is not in the dataset yet",
+   "source": {
+    "wikidata": "Q1187909",
+    "wikipedia": "Battle of the Sexes (tennis)",
+    "verifiedBy": "wikidata + wikipedia article",
+    "checkedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "birth-Q1426",
+   "kind": "birth",
+   "sport": "tennis",
+   "league": null,
+   "fame": "icon",
+   "label": "Roger Federer born",
+   "date": "1981-08-08",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q1426"
+   },
+   "source": {
+    "wikidata": "Q1426",
+    "property": "P569",
+    "wikipedia": "Roger Federer",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q11459",
+   "kind": "birth",
+   "sport": "tennis",
+   "league": null,
+   "fame": "icon",
+   "label": "Serena Williams born",
+   "date": "1981-09-26",
+   "era": "1970-",
+   "women": true,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q11459"
+   },
+   "source": {
+    "wikidata": "Q11459",
+    "property": "P569",
+    "wikipedia": "Serena Williams",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "birth-Q10132",
+   "kind": "birth",
+   "sport": "tennis",
+   "league": null,
+   "fame": "icon",
+   "label": "Rafael Nadal born",
+   "date": "1986-06-03",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q10132"
+   },
+   "source": {
+    "wikidata": "Q10132",
+    "property": "P569",
+    "wikipedia": "Rafael Nadal",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  },
+  {
+   "id": "death-Q53325",
+   "kind": "death",
+   "sport": "tennis",
+   "league": null,
+   "fame": "icon",
+   "label": "Arthur Ashe died",
+   "date": "1993-02-06",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-death",
+    "qid": "Q53325"
+   },
+   "source": {
+    "wikidata": "Q53325",
+    "property": "P570",
+    "wikipedia": "Arthur Ashe",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-19"
+   },
+   "reason": "not in the published dataset yet"
+  }
+ ]
+}

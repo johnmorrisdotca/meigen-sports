@@ -20,6 +20,8 @@ jobs:
       - run: pnpm check
       - name: The bundled offline data and the Pages data are one build
         run: pnpm site && node scripts/check-build.ts site
+      - name: The golden facts hold in the data Pages serves
+        run: node scripts/check-golden.ts site/data/v1/0.1.0/facts
   demo:
     runs-on: ubuntu-latest
     steps:
