@@ -29,6 +29,8 @@ from wikimedia import ENWIKI, WIKIDATA, Client  # noqa: E402
 ROOT = HERE.parent.parent
 RAW = Path(os.environ.get("MEIGEN_PEOPLE_RAW", str(ROOT / "data-sources/raw/people")))
 OUT = Path(os.environ.get("MEIGEN_PEOPLE_WORK", str(ROOT / "data-sources/raw/people-work")))
+# Pages of Wikidata search results read per cell and item. 1 = the 50 best-linked people (the 2,000 list); raise it for the wider top tier
+PAGES = int(os.environ.get("MEIGEN_SEARCH_PAGES", "1"))
 LINK = r"\[\[([^\]|#]+)(?:#[^\]|]*)?(?:\|[^\]]*)?\]\]"
 # {{flagIOCmedalist|[[Name]]|NOC|Games}} and {{Flag IOC 2 medalist|[[Name]]|NOC|Games}}: one person, one medal
 SINGLE = re.compile(r"\{\{\s*[Ff]lag\s*IOC\s*(?:2\s*)?medalist\s*\|\s*" + LINK + r"\s*\|\s*([A-Z]{3})")
@@ -156,10 +158,16 @@ def cells(client: Client) -> None:
                 for citizenship in [country_qid, *extra]:
                     for sport_qid in sport_qids:
                         query = f"haswbstatement:P31=Q5 haswbstatement:P27={citizenship} haswbstatement:P641={sport_qid}"
-                        data = client.get(WIKIDATA, action="query", list="search", srsearch=query, srnamespace="0", srlimit=cfg.SEARCH_LIMIT if tier == 1 else 25, srprop="")
-                        total += int(data["query"].get("searchinfo", {}).get("totalhits", 0))
-                        for hit in data["query"]["search"]:
-                            seen.add(hit["title"])
+                        limit = cfg.SEARCH_LIMIT if tier == 1 else 25
+                        for page in range(PAGES):
+                            offset = {"sroffset": page * limit} if page else {}
+                            data = client.get(WIKIDATA, action="query", list="search", srsearch=query, srnamespace="0", srlimit=limit, srprop="", **offset)
+                            hits = data["query"]["search"]
+                            if page == 0:
+                                total += int(data["query"].get("searchinfo", {}).get("totalhits", 0))
+                            seen.update(hit["title"] for hit in hits)
+                            if len(hits) < limit:
+                                break
                 for rank, qid in enumerate(sorted(seen, key=lambda q: int(q[1:]))):
                     writer.writerow([code, slug, rank, qid, total])
             fh.flush()
