@@ -1,0 +1,235 @@
+#!/usr/bin/env python3
+"""Fetch the evidence the people list is chosen from. Read-only on Wikimedia; never touches DS1 or production.
+
+  python3 -I pipeline/people/fetch_people.py verify      # every country and sport item has the label we think
+  python3 -I pipeline/people/fetch_people.py medals      # Wikipedia "List of Olympic medalists in ..." -> medals per person
+  python3 -I pipeline/people/fetch_people.py cells       # Wikidata search per (country, sport): P27 and P641
+  python3 -I pipeline/people/fetch_people.py entities    # labels and sitelink counts for every candidate
+  python3 -I pipeline/people/fetch_people.py claims      # birth and death dates for the chosen people only
+  python3 -I pipeline/people/fetch_people.py all
+
+Every response is kept under MEIGEN_PEOPLE_RAW (default data-sources/raw/people/, git-ignored); a rerun reads those
+files and makes no request. One request at a time, 1.1 s apart, a User-Agent that names the project. The coordinating
+session archives the raw folder to DS1 and Dropbox before any load.
+"""
+from __future__ import annotations
+
+import csv
+import json
+import os
+import re
+import sys
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))
+import people_config as cfg  # noqa: E402
+from wikimedia import ENWIKI, WIKIDATA, Client  # noqa: E402
+
+ROOT = HERE.parent.parent
+RAW = Path(os.environ.get("MEIGEN_PEOPLE_RAW", str(ROOT / "data-sources/raw/people")))
+OUT = Path(os.environ.get("MEIGEN_PEOPLE_WORK", str(ROOT / "data-sources/raw/people-work")))
+LINK = r"\[\[([^\]|#]+)(?:#[^\]|]*)?(?:\|[^\]]*)?\]\]"
+# {{flagIOCmedalist|[[Name]]|NOC|Games}} and {{Flag IOC 2 medalist|[[Name]]|NOC|Games}}: one person, one medal
+SINGLE = re.compile(r"\{\{\s*[Ff]lag\s*IOC\s*(?:2\s*)?medalist\s*\|\s*" + LINK + r"\s*\|\s*([A-Z]{3})")
+# {{FlagIOC|NOC|Games}}<br />[[A]]<br />[[B]]: a relay or team, one medal each
+TEAM = re.compile(r"\{\{\s*[Ff]lag\s*IOC\s*\|\s*([A-Z]{3})\s*\|[^}]*\}\}((?:\s*<br\s*/?>\s*\[\[[^\]]+\]\]\*?)+)")
+# | {{flagicon|NOC}} [[A]] / [[B]]: a table cell (figure skating); the first such cell of a row is the host city and is skipped
+CELL = re.compile(r"\{\{\s*flagicon\s*\|\s*([A-Z]{3})\s*\}\}([^\n]*)")
+def chunks(items: list, size: int):
+    for i in range(0, len(items), size):
+        yield items[i:i + size]
+
+
+def verify(client: Client) -> None:
+    ids = sorted({c[1] for c in cfg.COUNTRIES} | {q for c in cfg.COUNTRIES for q in c[5]} | {q for s in cfg.SPORTS for q in s[2]})
+    labels: dict[str, str] = {}
+    for part in chunks(ids, 50):
+        data = client.get(WIKIDATA, action="wbgetentities", ids="|".join(part), props="labels", languages="en")
+        for qid, ent in data["entities"].items():
+            labels[qid] = (ent.get("labels") or {}).get("en", {}).get("value", "")
+    bad = []
+    def same(expected: str, actual: str) -> bool:
+        e, a = expected.lower(), actual.lower()
+        return bool(a) and (e in a or a in e)
+
+    for code, qid, name, *_ in cfg.COUNTRIES:
+        if not same(name, labels.get(qid, "")):
+            bad.append(f"{code} {qid} is '{labels.get(qid)}', expected {name}")
+    for slug, label, qids, _pages in cfg.SPORTS:
+        for qid in qids:
+            # the second and later items of a sport are narrower kinds of it (freestyle wrestling, short-track speed skating)
+            if qid == qids[0] and not same(label, labels.get(qid, "")):
+                bad.append(f"{slug} {qid} is '{labels.get(qid)}', expected {label}")
+    OUT.mkdir(parents=True, exist_ok=True)
+    (OUT / "labels-verified.json").write_text(json.dumps(labels, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+    for line in bad:
+        print("verify:", line)
+    print(f"verify: {len(labels)} items read; {len(bad)} problems. Read labels-verified.json: a wrong item (an earlier script used Q6927 for baseball, which is '20th century') shows there.")
+
+
+def medal_rows(text: str) -> list[tuple[str, str]]:
+    """(article title, NOC) for every medal in one page of wikitext. All colours; a team medal counts for each named person."""
+    found: list[tuple[str, str]] = []
+    for target, noc in SINGLE.findall(text):
+        found.append((target.strip(), noc))
+    for noc, names in TEAM.findall(text):
+        for target in re.findall(LINK, names):
+            found.append((target.strip(), noc))
+    for row in re.split(r"\n\|-", text):
+        cells = CELL.findall(row)
+        if "Olympics|" in row or "Olympics]]" in row:
+            pass
+        for noc, rest in cells[1:] if len(cells) > 1 else []:
+            for target in re.findall(LINK, rest):
+                found.append((target.strip(), noc))
+    return found
+
+
+def page_text(client: Client, title: str) -> tuple[str, int] | None:
+    data = client.get(ENWIKI, action="query", prop="revisions", rvprop="content|ids", rvslots="main", titles=title)
+    for entry in data["query"]["pages"]:
+        if "missing" in entry or "revisions" not in entry:
+            return None
+        return entry["revisions"][0]["slots"]["main"]["content"], entry["revisions"][0]["revid"]
+    return None
+
+
+def medals(client: Client) -> None:
+    noc_to_country = {noc: c[0] for c in cfg.COUNTRIES for noc in c[6]}
+    rows: dict[tuple[str, str, str], int] = {}
+    OUT.mkdir(parents=True, exist_ok=True)
+    log = (OUT / "medal-pages.txt").open("w", encoding="utf-8")
+    for slug, _label, _qids, pages in cfg.SPORTS:
+        for page in pages:
+            title = f"List of Olympic medalists in {page}"
+            got = page_text(client, title)
+            if not got:
+                print("medals: missing page", title)
+                continue
+            text, revid = got
+            if text.lstrip().upper().startswith("#REDIRECT"):
+                print("medals: redirect, skipped", title)
+                continue
+            texts = [(title, text, revid)]
+            # athletics keeps each event in its own template, transcluded into the list
+            for name in sorted(set(re.findall(r"\{\{(Olympic medalists in [^}|]+)\}\}", text))):
+                sub = page_text(client, "Template:" + name)
+                if sub:
+                    texts.append(("Template:" + name, sub[0], sub[1]))
+            for source_title, body, source_rev in texts:
+                log.write(f"{source_title}\trevision {source_rev}\n")
+                for target, noc in medal_rows(body):
+                    if noc in noc_to_country:
+                        key = (target.replace("_", " "), noc, slug)
+                        rows[key] = rows.get(key, 0) + 1
+    log.close()
+    # article title -> Wikidata item
+    titles = sorted({k[0] for k in rows})
+    qid_of: dict[str, str] = {}
+    for part in chunks(titles, 50):
+        data = client.get(ENWIKI, action="query", prop="pageprops", ppprop="wikibase_item", redirects="1", titles="|".join(part))
+        redirect = {r["from"]: r["to"] for r in data["query"].get("redirects", [])}
+        normal = {r["from"]: r["to"] for r in data["query"].get("normalized", [])}
+        by_title = {p["title"]: (p.get("pageprops") or {}).get("wikibase_item", "") for p in data["query"]["pages"]}
+        for original in part:
+            step = normal.get(original, original)
+            qid_of[original] = by_title.get(redirect.get(step, step), "")
+    with (OUT / "medals.csv").open("w", encoding="utf-8", newline="") as fh:
+        writer = csv.writer(fh)
+        writer.writerow(["qid", "title", "noc", "sport", "medals"])
+        for (title, noc, slug), count in sorted(rows.items()):
+            if qid_of.get(title):
+                writer.writerow([qid_of[title], title, noc, slug, count])
+    print(f"medals: {len(rows)} (person, NOC, sport) rows from the lists; {sum(1 for t in titles if qid_of.get(t))} of {len(titles)} titles resolved to an item")
+
+
+def cells(client: Client) -> None:
+    OUT.mkdir(parents=True, exist_ok=True)
+    with (OUT / "cells.csv").open("w", encoding="utf-8", newline="") as fh:
+        writer = csv.writer(fh)
+        writer.writerow(["country", "sport", "rank", "qid", "total_hits"])
+        for code, country_qid, _name, tier, _quota, extra, _noc in cfg.COUNTRIES:
+            for slug, _label, sport_qids, _pages in cfg.SPORTS:
+                seen: set[str] = set()
+                total = 0
+                for citizenship in [country_qid, *extra]:
+                    for sport_qid in sport_qids:
+                        query = f"haswbstatement:P31=Q5 haswbstatement:P27={citizenship} haswbstatement:P641={sport_qid}"
+                        data = client.get(WIKIDATA, action="query", list="search", srsearch=query, srnamespace="0", srlimit=cfg.SEARCH_LIMIT if tier == 1 else 25, srprop="")
+                        total += int(data["query"].get("searchinfo", {}).get("totalhits", 0))
+                        for hit in data["query"]["search"]:
+                            seen.add(hit["title"])
+                for rank, qid in enumerate(sorted(seen, key=lambda q: int(q[1:]))):
+                    writer.writerow([code, slug, rank, qid, total])
+            fh.flush()
+            print(f"cells: {code} done", flush=True)
+
+
+def entities(client: Client) -> None:
+    wanted: set[str] = set()
+    with (OUT / "cells.csv").open(encoding="utf-8") as fh:
+        wanted.update(row["qid"] for row in csv.DictReader(fh))
+    with (OUT / "medals.csv").open(encoding="utf-8") as fh:
+        wanted.update(row["qid"] for row in csv.DictReader(fh))
+    priority = ROOT / "data-sources/priority-athletes.csv"
+    with priority.open(encoding="utf-8") as fh:
+        wanted.update(row["qid"] for row in csv.DictReader(fh) if row.get("qid"))
+    ids = sorted(wanted, key=lambda q: int(q[1:]))
+    out = OUT / "entities.csv"
+    with out.open("w", encoding="utf-8", newline="") as fh:
+        writer = csv.writer(fh)
+        writer.writerow(["qid", "label", "sitelinks", "enwiki"])
+        for part in chunks(ids, 50):
+            data = client.get(WIKIDATA, action="wbgetentities", ids="|".join(part), props="labels|sitelinks", languages="en")
+            for qid, ent in data["entities"].items():
+                if "missing" in ent:
+                    continue
+                links = ent.get("sitelinks") or {}
+                wikis = [k for k in links if k.endswith("wiki") and k not in ("commonswiki", "specieswiki", "wikidatawiki", "metawiki", "mediawikiwiki")]
+                writer.writerow([qid, (ent.get("labels") or {}).get("en", {}).get("value", ""), len(wikis), (links.get("enwiki") or {}).get("title", "")])
+    print(f"entities: {len(ids)} items")
+
+
+def claims(client: Client) -> None:
+    """Citizenship (P27), sport (P641) and birth and death dates (P569, P570) for the people already chosen."""
+    chosen = OUT / "chosen-qids.txt"
+    ids = [line.strip() for line in chosen.read_text(encoding="utf-8").splitlines() if line.strip()]
+    out = OUT / "claims.csv"
+    with out.open("w", encoding="utf-8", newline="") as fh:
+        writer = csv.writer(fh)
+        writer.writerow(["qid", "prop", "value", "precision"])
+        for part in chunks(sorted(ids, key=lambda q: int(q[1:])), 50):
+            data = client.get(WIKIDATA, action="wbgetentities", ids="|".join(part), props="claims")
+            for qid, ent in data["entities"].items():
+                for prop in ("P27", "P641", "P569", "P570"):
+                    for st in (ent.get("claims") or {}).get(prop, []):
+                        snak = st.get("mainsnak") or {}
+                        value = (snak.get("datavalue") or {}).get("value")
+                        if st.get("rank") == "deprecated" or not value:
+                            continue
+                        if prop in ("P27", "P641"):
+                            writer.writerow([qid, prop, value.get("id", ""), ""])
+                        else:
+                            writer.writerow([qid, prop, str(value.get("time", ""))[1:11], value.get("precision", "")])
+    print(f"claims: {len(ids)} people")
+
+
+STEPS = {"verify": verify, "medals": medals, "cells": cells, "entities": entities, "claims": claims}
+
+
+def main(argv: list[str]) -> int:
+    step = argv[1] if len(argv) > 1 else ""
+    if step not in {*STEPS, "all"}:
+        print(__doc__)
+        return 2
+    client = Client(RAW)
+    OUT.mkdir(parents=True, exist_ok=True)
+    for name in (["verify", "medals", "cells", "entities"] if step == "all" else [step]):
+        STEPS[name](client)
+    print(f"requests made {client.requests}, answered from files {client.cached}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main(sys.argv))
