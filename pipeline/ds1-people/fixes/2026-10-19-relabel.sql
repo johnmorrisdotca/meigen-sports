@@ -39,8 +39,8 @@ update core.person_sport ps
 select 'after' as step, sport, count(*) from legacy_wikidata_meigen.athlete
  where sport in ('baseball', 'swimming', 'athletics', 'multi_sport') group by sport order by 3 desc;
 
--- NOTE: two spx-stats seed rows are real motor racing under motor_racing (Q221934-style items). If a person is a driver, not a
--- baseball player, move the row back: update ... set sport = 'motor_racing' where qid in (...). Find them first:
---   select qid, label from legacy_wikidata_meigen.athlete where sport = 'baseball' and batch in ('motor-racing','baseball')
---     and birth_on > date '1930-01-01' order by sitelinks desc limit 20;
--- core.person_sport rows written by 217 from the harvest (source p641-map) use the corrected map already.
+-- NOTE: the spx-stats seed has 251 motor_racing rows, this repo's athletes.csv 249 (all baseball by their own P641 item Q5369).
+-- Look at the 2 others before running: select qid, label from legacy_wikidata_meigen.athlete where sport = 'motor_racing' and qid not in
+-- (the 249 in pipeline/ds1-people/athletes.csv that carry sport baseball). Keep any real driver as motor_racing: remove it from sport_fix's effect
+-- by deleting it from the table above, or move it back with an update afterwards.
+-- core.person_sport rows written by 217 from the harvest (source p641-map) already use the corrected map.
