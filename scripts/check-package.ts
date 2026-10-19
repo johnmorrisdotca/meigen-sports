@@ -1,4 +1,4 @@
-import { createHash } from "node:crypto";
+import { manifestDigest } from "./offline.ts";
 import { spawnSync } from "node:child_process";
 import { mkdtempSync, readFileSync, writeFileSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
@@ -7,7 +7,7 @@ import process from "node:process";
 const root = process.cwd();
 const latest = JSON.parse(readFileSync("data/v1/latest.json", "utf8")) as { dataVersion: string };
 const factsManifest = readFileSync(`data/v1/${latest.dataVersion}/facts/manifest.json`);
-const factsSha = createHash("sha256").update(factsManifest).digest("hex");
+const factsSha = manifestDigest(factsManifest);
 const factsRecords = (JSON.parse(factsManifest.toString("utf8")) as { records: number }).records;
 const scratch = mkdtempSync(join(tmpdir(), "meigen-package-"));
 const pkg = JSON.parse(readFileSync("package.json", "utf8")) as { name: string; exports: Record<string, string | { import: string }> };

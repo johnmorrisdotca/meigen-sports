@@ -1,9 +1,9 @@
-import { createHash } from "node:crypto";
 import { existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import process from "node:process";
 import { OFFLINE_BUILD, offline } from "../src/data/offline.ts";
 import { VERSION } from "../src/version.ts";
+import { manifestDigest } from "./offline.ts";
 
 /**
  * One build ships both places. This fails when the bundled offline set and the data GitHub Pages serves
@@ -20,7 +20,6 @@ const positional = args.filter((arg, i) => !arg.startsWith("--") && !(i > 0 && a
 const site = resolve(positional[0] ?? "site");
 
 interface Latest { dataVersion: string; package: string; build: string; offlineRecords: number; factRecords: number; offline: string; factsManifest: string }
-const sha = (bytes: Uint8Array | string): string => createHash("sha256").update(bytes).digest("hex");
 const problems: string[] = [];
 const expect = (ok: boolean, message: string): void => { if (!ok) problems.push(message); };
 
@@ -48,7 +47,7 @@ function compareToBundle(label: string, latest: Latest, factsManifestSha256: str
 }
 
 const local = readLocal();
-compareToBundle(`built site (${site})`, local.latest, sha(local.factsManifest));
+compareToBundle(`built site (${site})`, local.latest, manifestDigest(local.factsManifest));
 expect(local.offlineFile.records.length === offline.length && local.offlineFile.records.every((r, i) => r.recordId === offline[i]!.recordId), "built site offline.json is not the bundled offline set");
 expect(JSON.stringify(local.offlineFile.build) === JSON.stringify(OFFLINE_BUILD), "built site offline.json names another build than the package");
 expect(offline.length === OFFLINE_BUILD.records, `the package lists ${OFFLINE_BUILD.records} offline facts but holds ${offline.length}`);

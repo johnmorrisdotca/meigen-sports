@@ -29,6 +29,11 @@ export interface OfflineBuild {
 
 const digest = (value: string | Uint8Array): string => createHash("sha256").update(value).digest("hex");
 
+/** SHA-256 of the facts manifest with Windows line endings read as Unix ones, so a checkout on any system names the same build. */
+export function manifestDigest(bytes: Uint8Array): string {
+  return digest(Buffer.from(Buffer.from(bytes).toString("utf8").replaceAll("\r\n", "\n")));
+}
+
 function loadFacts(dataVersion: string): { records: OnThisDayRecord[]; manifest: string } {
   const dir = resolve(ROOT, `data/v1/${dataVersion}/facts`);
   const manifest = readFileSync(resolve(dir, "manifest.json"));
@@ -37,7 +42,7 @@ function loadFacts(dataVersion: string): { records: OnThisDayRecord[]; manifest:
     const shard = JSON.parse(readFileSync(resolve(dir, "store", name), "utf8")) as { records: OnThisDayRecord[] };
     records.push(...shard.records);
   }
-  return { records, manifest: digest(manifest) };
+  return { records, manifest: manifestDigest(manifest) };
 }
 
 /** How much a fact is worth showing on its day: finals, famous people and playoff drama above routine results. */
