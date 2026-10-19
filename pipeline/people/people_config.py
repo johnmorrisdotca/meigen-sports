@@ -27,7 +27,7 @@ COUNTRIES = [
     ("KR", "Q884", "South Korea", 1, 40, [], ["KOR"]),
     ("RU", "Q159", "Russia", 1, 40, ["Q15180"], ["RUS", "URS", "EUN", "ROC", "OAR"]),
     ("ES", "Q29", "Spain", 1, 40, [], ["ESP"]),
-    ("NL", "Q55", "Netherlands", 1, 40, [], ["NED"]),
+    ("NL", "Q55", "Netherlands", 1, 40, ["Q29999"], ["NED"]),
     ("JM", "Q766", "Jamaica", 2, 12, [], ["JAM"]),
     ("CU", "Q241", "Cuba", 2, 12, [], ["CUB"]),
     ("KE", "Q114", "Kenya", 2, 10, [], ["KEN"]),
@@ -53,7 +53,7 @@ COUNTRIES = [
     ("RO", "Q218", "Romania", 2, 10, [], ["ROU"]),
     ("BG", "Q219", "Bulgaria", 2, 8, [], ["BUL"]),
     ("BE", "Q31", "Belgium", 2, 10, [], ["BEL"]),
-    ("DK", "Q35", "Denmark", 2, 10, [], ["DEN"]),
+    ("DK", "Q35", "Denmark", 2, 10, ["Q756617"], ["DEN"]),
     ("AT", "Q40", "Austria", 2, 10, [], ["AUT"]),
     ("HR", "Q224", "Croatia", 2, 8, ["Q36704"], ["CRO"]),
     ("RS", "Q403", "Serbia", 2, 8, ["Q36704"], ["SRB", "YUG"]),
@@ -107,3 +107,9 @@ SPORTS = [
 ]
 
 SPORT_ORDER = [row[0] for row in SPORTS]
+
+# Honour lists read from English Wikipedia (wikitext). Members that are human athletes join before the country rounds, tier H.
+# id, article, section heading of the table, sport, how many to take (table order). The first link of each table row is the person.
+HONOUR_LISTS = [
+    ("nba50", "50 Greatest Players in NBA History", "===List===", "basketball", 50),
+]

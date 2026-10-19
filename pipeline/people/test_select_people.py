@@ -30,7 +30,7 @@ class Fixture:
         self.priority: list[list] = []
         self.n = 1000
 
-    def person(self, label: str, links: int, country: str, sport: str, *, medals: int = 0, enwiki: bool = True, human: bool = True, cit: str | None = None) -> str:
+    def person(self, label: str, links: int, country: str, sport: str, *, medals: int = 0, enwiki: bool = True, human: bool = True, cit: str | None = None, job: str = "Q2066131") -> str:
         self.n += 1
         qid = f"Q{self.n}"
         self.entities.append([qid, label, links, label if enwiki else ""])
@@ -38,6 +38,7 @@ class Fixture:
         if medals:
             self.medals.append([qid, label, cfg.COUNTRIES[[c[0] for c in cfg.COUNTRIES].index(country)][6][0], sport, medals])
         self.claims.append([qid, "P31", "Q5" if human else "Q515", ""])
+        self.claims.append([qid, "P106", job, ""])
         self.claims.append([qid, "P27", cit or [c[1] for c in cfg.COUNTRIES if c[0] == country][0], ""])
         return qid
 
@@ -47,6 +48,7 @@ class Fixture:
         write(w / "cells.csv", ["country", "sport", "rank", "qid", "total_hits"], self.cells)
         write(w / "medals.csv", ["qid", "title", "noc", "sport", "medals"], self.medals)
         write(w / "claims.csv", ["qid", "prop", "value", "precision"], self.claims)
+        write(w / "occupations.csv", ["qid", "label"], [["Q2066131", "athlete"], ["Q36180", "writer"], ["Q33999", "actor"]])
         write(w / "priority.csv", ["name", "sport", "qid", "priority", "notes"], self.priority)
         return sp.Evidence(w, w / "priority.csv")
 
@@ -95,6 +97,27 @@ class SelectTests(unittest.TestCase):
         people, rejected = sp.select(self.fx.evidence(), target=1)
         self.assertEqual([p["qid"] for p in people], [good])
         self.assertEqual(rejected[0]["qid"], bad)
+
+    def test_a_writer_who_runs_is_not_listed_on_fame_alone(self) -> None:
+        writer = self.fx.person("Novelist", 99, "JP", "athletics", job="Q36180")
+        runner = self.fx.person("Runner", 25, "JP", "athletics")
+        people, rejected = sp.select(self.fx.evidence(), target=1)
+        self.assertEqual([p["qid"] for p in people], [runner])
+        self.assertEqual(rejected[0]["qid"], writer)
+
+    def test_an_athlete_who_is_also_an_actor_is_left_out_unless_a_medallist(self) -> None:
+        self.fx.claims.append(["Q9999", "P106", "Q33999", ""])
+        both = self.fx.person("Actor and runner", 90, "JP", "athletics")
+        self.fx.claims.append([both, "P106", "Q33999", ""])
+        runner = self.fx.person("Runner", 25, "JP", "athletics")
+        people, rejected = sp.select(self.fx.evidence(), target=1)
+        self.assertEqual([p["qid"] for p in people], [runner])
+        self.assertIn("actor", rejected[0]["reason"])
+
+    def test_a_medallist_needs_no_occupation(self) -> None:
+        medallist = self.fx.person("Medallist", 5, "JP", "athletics", medals=1, job="Q36180")
+        people, _ = sp.select(self.fx.evidence(), target=1)
+        self.assertEqual([p["qid"] for p in people], [medallist])
 
     def test_wrong_citizenship_is_rejected(self) -> None:
         wrong = self.fx.person("Elsewhere", 90, "CA", "judo", cit="Q30")

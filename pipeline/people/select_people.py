@@ -11,7 +11,8 @@ THE RULE (docs/people.md says the same in words)
    - Wikidata search with citizenship (P27) = the country (or one of its earlier states) and sport (P641) = the sport;
    - Olympic medallists of that country (its NOC codes) in that sport, read from English Wikipedia's "List of Olympic medalists in ...".
 3. Tiers. A: at least one medal entry in the list. B: an English Wikipedia article in at least 20 languages (sitelinks).
-   C: at least 8 languages, used only while a cell holds fewer than 3 people. Everyone needs an English Wikipedia article.
+   C: at least 8 languages, used only while a cell holds fewer than 3 people. H: a member of an honour list in people_config.HONOUR_LISTS
+   (the NBA's 50 Greatest Players), taken before the country rounds. Everyone needs an English Wikipedia article.
 4. Score inside a cell: sitelinks + 10 * min(medal entries, 5). Ties: lower QID number first.
 5. Order of choosing: the 1,000 people already listed count first. Then each country gets a quota of new people (people_config.py).
    Inside a country, round 1 takes the best unlisted person of every sport that has fewer than 1 listed, round 2 sports with fewer than 2, and so on,
@@ -26,6 +27,7 @@ from __future__ import annotations
 
 import csv
 import os
+import re
 import sys
 from collections import defaultdict
 from pathlib import Path
@@ -41,6 +43,21 @@ OUT = ROOT / "data-sources/people.csv"
 OUT_ATHLETES = ROOT / "pipeline/ds1-people/people-2000-athlete-rows.csv"
 OUT_REJECTED = ROOT / "data-sources/people-rejected.csv"
 OUT_COVERAGE = ROOT / "data-sources/people-coverage.csv"
+
+# An occupation that names an athlete. A person whose only link to a sport is the sport property (a novelist who runs marathons)
+# is not listed on language count alone; an Olympic medal entry (tier A) needs no occupation.
+ATHLETIC = re.compile(
+    r"(player|athlet|sportsperson|sportsman|sportswoman|sprinter|runner|swimmer|boxer|jockey|racing driver|racer|skater|skier|gymnast|judoka|karateka|"
+    r"wrestler|cyclist|fencer|rower|diver|golfer|archer|jumper|thrower|hurdler|lifter|triathlete|canoeist|kayaker|sailor|snowboarder|biathlete|"
+    r"bobsledder|climber|martial artist|taekwondo|rikishi|sumo|footballer|pitcher|goaltender|goalkeeper|pentathlete|decathlete|heptathlete|"
+    r"driver|cricketer|batter|rugby|volleyball|handball|softball|mixed martial|fighter|shooter|equestrian|rider|surfer|skateboarder)", re.I)
+
+# An occupation that marks a career outside sport. Without a medal entry, a person who has one is left out: language count alone
+# would rank an actor, a politician or a novelist who once played a sport above the athletes of that sport.
+OUTSIDE_SPORT = re.compile(
+    r"(actor|actress|politician|singer|songwriter|writer|novelist|poet|model|monarch|head of state|head of government|presenter|director|screenwriter|"
+    r"musician|composer|businessperson|entrepreneur|military|physician|physicist|chemist|philosopher|engineer|journalist|lawyer|diplomat|"
+    r"teacher|scientist|aristocrat|nobleman|noble|royal|economist|banker|spy|criminal|murderer|war criminal|physician|academic|historian)", re.I)
 
 COLUMNS = ["qid", "name", "sport", "country", "priority", "tier", "sitelinks", "olympic_medals", "enwiki_title", "birth_on", "death_on", "source"]
 COUNTRY = {c[0]: c for c in cfg.COUNTRIES}
@@ -79,21 +96,44 @@ class Evidence:
         self.claims: dict[str, dict[str, list[str]]] = defaultdict(lambda: defaultdict(list))
         for r in read_csv(work / "claims.csv"):
             self.claims[r["qid"]][r["prop"]].append(r["value"] + ("|" + r["precision"] if r["precision"] else ""))
+        self.occupation_label = {r["qid"]: r["label"] for r in read_csv(work / "occupations.csv")}
+        self.read: set[str] = set()   # items whose claims were fetched, even when they had none we use
+        marker = work / "claims-read.txt"
+        if marker.exists():
+            for line in marker.read_text(encoding="utf-8").splitlines():
+                self.read.update(q for q in line.split(",") if q)
+        self.lists: dict[str, list[str]] = defaultdict(list)
+        for r in sorted(read_csv(work / "honour-lists.csv"), key=lambda r: (r["list"], int(r["order"]))):
+            self.lists[r["list"]].append(r["qid"])
         self.priority = read_csv(priority)
 
     def claimed(self, qid: str) -> bool:
-        return qid in self.claims
+        return qid in self.claims or qid in self.read
 
     def citizenships(self, qid: str) -> set[str]:
-        return {v for v in self.claims[qid].get("P27", [])}
+        return {v for v in self.claims.get(qid, {}).get("P27", [])}
 
     def is_human(self, qid: str) -> bool | None:
         if not self.claimed(qid):
             return None
         return "Q5" in self.claims[qid].get("P31", [])
 
+    def is_athlete(self, qid: str) -> bool | None:
+        """True when an occupation (P106) names an athletic one; None until the claims are read."""
+        if not self.claimed(qid):
+            return None
+        return any(ATHLETIC.search(self.occupation_label.get(v, "")) for v in self.claims.get(qid, {}).get("P106", []))
+
+    def outside_sport(self, qid: str) -> str:
+        """The first occupation that marks a career outside sport, or empty."""
+        for v in self.claims.get(qid, {}).get("P106", []):
+            label = self.occupation_label.get(v, "")
+            if OUTSIDE_SPORT.search(label):
+                return label
+        return ""
+
     def day(self, qid: str, prop: str) -> str:
-        for value in self.claims[qid].get(prop, []):
+        for value in self.claims.get(qid, {}).get(prop, []):
             day, _, prec = value.partition("|")
             if prec == "11" and len(day) == 10:
                 return day
@@ -161,6 +201,27 @@ def select(ev: Evidence, target: int = cfg.TARGET_TOTAL) -> tuple[list[dict], li
             taken.add(qid)
         counts[(country, sport)] += 1
 
+    # honour lists first: their members join before the country rounds, in table order, as tier H
+    for list_id, _page, _heading, sport, limit in cfg.HONOUR_LISTS:
+        taken_here = 0
+        for qid in ev.lists.get(list_id, []):
+            if taken_here >= limit or qid in taken or qid not in ev.entities or not usable(ev, qid):
+                continue
+            if ev.is_human(qid) is False or ev.is_athlete(qid) is False:
+                rejected.append({"qid": qid, "country": "", "sport": sport, "reason": f"in {list_id} but not a human athlete"})
+                continue
+            country = country_of_existing(ev, qid)
+            ent = ev.entities[qid]
+            people.append({
+                "qid": qid, "name": ent["label"], "sport": sport, "country": country, "priority": 2, "tier": "H",
+                "sitelinks": ent["sitelinks"], "olympic_medals": "", "enwiki_title": ent["enwiki"],
+                "birth_on": ev.day(qid, "P569"), "death_on": ev.day(qid, "P570"),
+                "source": f"{list_id} (English Wikipedia: {_page}); https://www.wikidata.org/wiki/{qid}",
+            })
+            taken.add(qid)
+            counts[(country, sport)] += 1
+            taken_here += 1
+
     need = target - len(people)
     if need <= 0:
         return people, rejected
@@ -185,6 +246,14 @@ def select(ev: Evidence, target: int = cfg.TARGET_TOTAL) -> tuple[list[dict], li
             human = ev.is_human(qid)
             if human is False:
                 rejected.append({"qid": qid, "country": country, "sport": sport, "reason": "not a human (P31 is not Q5)"})
+                taken.add(qid)
+                continue
+            if human and tier != "A" and ev.is_athlete(qid) is False:
+                rejected.append({"qid": qid, "country": country, "sport": sport, "reason": "no athletic occupation (P106)"})
+                taken.add(qid)
+                continue
+            if human and tier != "A" and ev.outside_sport(qid):
+                rejected.append({"qid": qid, "country": country, "sport": sport, "reason": f"known outside sport ({ev.outside_sport(qid)})"})
                 taken.add(qid)
                 continue
             if human and ev.citizenships(qid) and not (ev.citizenships(qid) & CITIZENSHIPS[country]):

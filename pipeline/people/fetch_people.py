@@ -146,6 +146,56 @@ def medals(client: Client) -> None:
     print(f"medals: {len(rows)} (person, NOC, sport) rows from the lists; {sum(1 for t in titles if qid_of.get(t))} of {len(titles)} titles resolved to an item")
 
 
+def lists(client: Client) -> None:
+    """Members of the honour lists (people_config.HONOUR_LISTS): linked article -> Wikidata item, in page order."""
+    OUT.mkdir(parents=True, exist_ok=True)
+    out = OUT / "honour-lists.csv"
+    with out.open("w", encoding="utf-8", newline="") as fh, (OUT / "medal-pages.txt").open("a", encoding="utf-8") as log:
+        writer = csv.writer(fh)
+        writer.writerow(["list", "order", "title", "qid"])
+        for list_id, page, heading, _sport, _limit in cfg.HONOUR_LISTS:
+            got = page_text(client, page)
+            if not got:
+                print("lists: missing page", page)
+                continue
+            text, revid = got
+            log.write(f"{page}\trevision {revid}\n")
+            start = text.find(heading)
+            section = text[start:] if start >= 0 else text
+            end = re.search(r"\n==[^=]", section[len(heading):])
+            if end:
+                section = section[: len(heading) + end.start()]
+            table = section.find('class="wikitable sortable"')
+            if table >= 0:   # the sortable table only, to its closing |}
+                section = section[table:]
+                section = section[: section.find("\n|}")] if "\n|}" in section else section
+            titles: list[str] = []
+            for row in re.split(r"\n\|-", section):
+                cell = re.search(r"\{\{\s*sortname\s*\|([^|}]*)\|([^|}]*)", row)
+                links = re.findall(LINK, row)
+                target = f"{cell.group(1).strip()} {cell.group(2).strip()}".strip() if cell else (links[0].strip().replace("_", " ") if links else "")
+                if target and target not in titles and ":" not in target:
+                    titles.append(target)
+            qid_of = resolve_titles(client, titles)
+            for order, title in enumerate(titles):
+                if qid_of.get(title):
+                    writer.writerow([list_id, order, title, qid_of[title]])
+    print("lists: done")
+
+
+def resolve_titles(client: Client, titles: list[str]) -> dict[str, str]:
+    qid_of: dict[str, str] = {}
+    for part in chunks(titles, 50):
+        data = client.get(ENWIKI, action="query", prop="pageprops", ppprop="wikibase_item", redirects="1", titles="|".join(part))
+        redirect = {r["from"]: r["to"] for r in data["query"].get("redirects", [])}
+        normal = {r["from"]: r["to"] for r in data["query"].get("normalized", [])}
+        by_title = {p["title"]: (p.get("pageprops") or {}).get("wikibase_item", "") for p in data["query"]["pages"]}
+        for original in part:
+            step = normal.get(original, original)
+            qid_of[original] = by_title.get(redirect.get(step, step), "")
+    return qid_of
+
+
 def cells(client: Client) -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     with (OUT / "cells.csv").open("w", encoding="utf-8", newline="") as fh:
@@ -175,6 +225,7 @@ def cells(client: Client) -> None:
 
 
 def entities(client: Client) -> None:
+    """Label, language-edition count and English article for every candidate. Only items not read yet are fetched."""
     wanted: set[str] = set()
     with (OUT / "cells.csv").open(encoding="utf-8") as fh:
         wanted.update(row["qid"] for row in csv.DictReader(fh))
@@ -183,47 +234,100 @@ def entities(client: Client) -> None:
     priority = ROOT / "data-sources/priority-athletes.csv"
     with priority.open(encoding="utf-8") as fh:
         wanted.update(row["qid"] for row in csv.DictReader(fh) if row.get("qid"))
-    ids = sorted(wanted, key=lambda q: int(q[1:]))
+    if (OUT / "honour-lists.csv").exists():
+        with (OUT / "honour-lists.csv").open(encoding="utf-8") as fh:
+            wanted.update(row["qid"] for row in csv.DictReader(fh))
     out = OUT / "entities.csv"
+    rows: dict[str, list[str]] = {}
+    if out.exists():
+        with out.open(encoding="utf-8", newline="") as fh:
+            for row in csv.reader(fh):
+                if row and row[0] != "qid":
+                    rows[row[0]] = row
+    todo = sorted(wanted - set(rows), key=lambda q: int(q[1:]))
+    for part in chunks(todo, 50):
+        data = client.get(WIKIDATA, action="wbgetentities", ids="|".join(part), props="labels|sitelinks", languages="en")
+        for qid, ent in data["entities"].items():
+            if "missing" in ent:
+                rows[qid] = [qid, "", "0", ""]
+                continue
+            links = ent.get("sitelinks") or {}
+            wikis = [k for k in links if k.endswith("wiki") and k not in ("commonswiki", "specieswiki", "wikidatawiki", "metawiki", "mediawikiwiki")]
+            rows[qid] = [qid, (ent.get("labels") or {}).get("en", {}).get("value", ""), str(len(wikis)), (links.get("enwiki") or {}).get("title", "")]
     with out.open("w", encoding="utf-8", newline="") as fh:
         writer = csv.writer(fh)
         writer.writerow(["qid", "label", "sitelinks", "enwiki"])
-        for part in chunks(ids, 50):
-            data = client.get(WIKIDATA, action="wbgetentities", ids="|".join(part), props="labels|sitelinks", languages="en")
-            for qid, ent in data["entities"].items():
-                if "missing" in ent:
-                    continue
-                links = ent.get("sitelinks") or {}
-                wikis = [k for k in links if k.endswith("wiki") and k not in ("commonswiki", "specieswiki", "wikidatawiki", "metawiki", "mediawikiwiki")]
-                writer.writerow([qid, (ent.get("labels") or {}).get("en", {}).get("value", ""), len(wikis), (links.get("enwiki") or {}).get("title", "")])
-    print(f"entities: {len(ids)} items")
+        writer.writerows(rows[q] for q in sorted(rows, key=lambda q: int(q[1:])))
+    print(f"entities: {len(rows)} items, {len(todo)} read now")
 
 
 def claims(client: Client) -> None:
-    """Instance (P31, to check the item is a human), citizenship (P27), sport (P641) and birth and death dates (P569, P570) for the people chosen."""
+    """Instance (P31, to check the item is a human), citizenship (P27), occupation (P106, to check an athlete), sport (P641) and birth and death dates (P569, P570) for the people chosen.
+
+    Only people not read yet are fetched; claims.csv keeps everything read so far, so a person dropped and later chosen again costs nothing."""
     chosen = OUT / "chosen-qids.txt"
     ids = [line.strip() for line in chosen.read_text(encoding="utf-8").splitlines() if line.strip()]
     out = OUT / "claims.csv"
+    have: set[str] = set()
+    kept: list[list[str]] = []
+    if out.exists():
+        with out.open(encoding="utf-8", newline="") as fh:
+            for row in csv.reader(fh):
+                if row and row[0] != "qid":
+                    kept.append(row)
+                    have.add(row[0])
+        for row in csv.reader((OUT / "claims-read.txt").open(encoding="utf-8")) if (OUT / "claims-read.txt").exists() else []:
+            have.update(row)
+    todo = [q for q in ids if q not in have]
+    read_now: list[str] = []
     with out.open("w", encoding="utf-8", newline="") as fh:
         writer = csv.writer(fh)
         writer.writerow(["qid", "prop", "value", "precision"])
-        for part in chunks(sorted(ids, key=lambda q: int(q[1:])), 50):
+        writer.writerows(kept)
+        for part in chunks(sorted(todo, key=lambda q: int(q[1:])), 50):
             data = client.get(WIKIDATA, action="wbgetentities", ids="|".join(part), props="claims")
             for qid, ent in data["entities"].items():
-                for prop in ("P31", "P27", "P641", "P569", "P570"):
+                read_now.append(qid)
+                for prop in ("P31", "P27", "P106", "P641", "P569", "P570"):
                     for st in (ent.get("claims") or {}).get(prop, []):
                         snak = st.get("mainsnak") or {}
                         value = (snak.get("datavalue") or {}).get("value")
                         if st.get("rank") == "deprecated" or not value:
                             continue
-                        if prop in ("P31", "P27", "P641"):
+                        if prop in ("P31", "P27", "P106", "P641"):
                             writer.writerow([qid, prop, value.get("id", ""), ""])
                         else:
                             writer.writerow([qid, prop, str(value.get("time", ""))[1:11], value.get("precision", "")])
-    print(f"claims: {len(ids)} people")
+    # an item with no claims at all would be fetched again forever; remember that it was read
+    with (OUT / "claims-read.txt").open("a", encoding="utf-8") as fh:
+        fh.write(",".join(read_now) + "\n")
+    print(f"claims: {len(todo)} people read now, {len(have)} already")
+    occupations(client)
 
 
-STEPS = {"verify": verify, "medals": medals, "cells": cells, "entities": entities, "claims": claims}
+def occupations(client: Client) -> None:
+    """English labels of every occupation (P106) seen in claims.csv, so the rule can ask whether a person is an athlete."""
+    seen: set[str] = set()
+    with (OUT / "claims.csv").open(encoding="utf-8", newline="") as fh:
+        seen.update(row["value"] for row in csv.DictReader(fh) if row["prop"] == "P106")
+    out = OUT / "occupations.csv"
+    known: dict[str, str] = {}
+    if out.exists():
+        with out.open(encoding="utf-8", newline="") as fh:
+            known = {row["qid"]: row["label"] for row in csv.DictReader(fh)}
+    todo = sorted(seen - set(known), key=lambda q: int(q[1:]))
+    for part in chunks(todo, 50):
+        data = client.get(WIKIDATA, action="wbgetentities", ids="|".join(part), props="labels", languages="en")
+        for qid, ent in data["entities"].items():
+            known[qid] = (ent.get("labels") or {}).get("en", {}).get("value", "")
+    with out.open("w", encoding="utf-8", newline="") as fh:
+        writer = csv.writer(fh)
+        writer.writerow(["qid", "label"])
+        writer.writerows((q, known[q]) for q in sorted(known, key=lambda q: int(q[1:])))
+    print(f"occupations: {len(known)} labels, {len(todo)} read now")
+
+
+STEPS = {"verify": verify, "medals": medals, "cells": cells, "entities": entities, "claims": claims, "occupations": occupations, "lists": lists}
 
 
 def main(argv: list[str]) -> int:
