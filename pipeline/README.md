@@ -31,7 +31,7 @@ pnpm data:facts
 
 Writes `data/v1/0.1.0/facts/`. One `recordId` per fact; `tags` are the 46 history identifiers and are not exclusive. Category shards copy the same fact into every matching tag file. Indexes hold ids only; `store/` holds each full record once.
 
-## Wikidata open fetch (para, famous)
+## Wikidata open fetch (famous)
 
 Does not contact DS1. SPARQL only, 2 s gap, User-Agent `MeigenSports/0.1.0`. Writes gitignored raw JSON under `data-sources/raw/wikidata/` and convert-shaped extracts under `MEIGEN_EXTRACT_DIR` (default `~/Projects/backups/spx-stats/meigen-extract/`). The coordinating session archives those files to DS1/Dropbox.
 
@@ -41,7 +41,7 @@ python3 -I pipeline/convert_extract.py
 python3 -I pipeline/coverage_matrix.py
 ```
 
-Famous = sitelink rank, top 500, by sport only. People are never selected by sex or gender. An empty para extract fails the fetch and the coverage script.
+Famous = sitelink rank, top 500, by sport only. People are never selected by sex or gender. There are no para-sport batches: nobody is labelled para or given an impairment class.
 
 ## Credentials
 

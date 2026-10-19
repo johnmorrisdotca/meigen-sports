@@ -15,6 +15,6 @@
 - **rights-cleared** — CC0 / CC BY-SA 4.0 / CC BY 4.0 / Retrosheet
 - **feed-ready** — 公開できる事実
 
-掲載した競技は、件数が 0 でも行を残します。マスが 0 なのは穴です。女子とパラスポーツは Wikidata（CC0）の実データが必要です。
+掲載した競技は、件数が 0 でも行を残します。マスが 0 なのは穴です。性別やパラの印では選びません。
 
 F1 の Jolpica は CC BY-NC-SA 4.0（非営利）なので公開事実には使いません。NASCAR や UFC などの公式 API も使いません。控えは Wikidata です。出典表は英語の [coverage.md](coverage.md) にあります。

@@ -31,3 +31,12 @@ English Wikiquote sports pages are CC BY-SA 4.0. Fetch the official API, pin tit
 Cycling, rugby, cricket, horse racing, alpine skiing: Wikidata CC0. Esports: no verified open structured dump yet; the matrix row stays a hole.
 
 The coverage script writes the same table into [coverage.md](coverage.md) and `data-sources/coverage-matrix.json` (`sources`).
+
+## What was dropped, and why
+
+People are chosen by sport and honours, the same way for everyone. Three things from earlier versions are gone from the pipeline:
+
+- **Selection by sex or gender.** The Wikidata fetch used to add `P21` (sex or gender) to its query and tagged the rows `women-<sport>`. No query uses `P21` now, no row carries a `women-` label (1,158 rows of `athletes.csv` were relabelled with the plain sport), and the policy forbids collecting sex or gender.
+- **The para-* batches.** The fetch used to download `para-ice-hockey`, `para-athletics`, `para-swimming` and a Paralympic-games batch, and rows carried a `para-` label. A para label, and any impairment class or classification code, is health data, so none is recorded and nobody is selected by a para flag (149 rows were relabelled). A sport that is a sport in its own right, such as wheelchair basketball, sitting volleyball or wheelchair tennis, is just a sport code. A Paralympic or Olympic medal is just an honour, listed in the same way.
+- **Wrong sport items.** Several sport items in the old fetch scripts were not the sports they were named after (Q5369 is baseball, not motor racing; Q6927 is the 20th century; the items for alpine skiing, horse racing, motorcycle racing and Canadian football pointed at a file extension, a village, a song and a film). 249 baseball players had been labelled `motor_racing`. Every id in `pipeline/people/people_config.py` is now read back from Wikidata and compared with its name (`fetch_people.py verify`).
+

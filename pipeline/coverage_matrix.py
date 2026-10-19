@@ -18,7 +18,7 @@ SPORTS = [
     "soccer",
     "tennis", "golf", "boxing", "mma", "athletics", "swimming",
     "formula-one", "stock-car-racing", "motorcycle-racing", "sports-car-racing", "motor-racing",
-    "olympics", "paralympics", "para-ice-hockey", "para-athletics", "para-swimming",
+    "olympics",
     "cycling", "rugby", "cricket", "horse-racing", "alpine-skiing", "esports",
 ]
 
@@ -56,12 +56,6 @@ SOURCES = [
      "gives": "skiers, awards, birthdays", "skipped": None},
     {"sport": "esports", "source": "(none yet)", "licence": None,
      "gives": None, "skipped": "No verified open licence for a structured esports results dump; row stays a hole."},
-    {"sport": "para-ice-hockey", "source": "Wikidata", "licence": "CC0 1.0",
-     "gives": "athletes, birthdays, deaths", "skipped": None},
-    {"sport": "para-athletics", "source": "Wikidata", "licence": "CC0 1.0",
-     "gives": "athletes, Paralympic participants, birthdays", "skipped": None},
-    {"sport": "para-swimming", "source": "Wikidata", "licence": "CC0 1.0",
-     "gives": "athletes, birthdays", "skipped": None},
 ]
 DECADES = list(range(1870, 2030, 10))
 TAGS = [
@@ -76,8 +70,6 @@ def sport_slug(value: str | None) -> str:
     mapped = {
         "hockey": "ice-hockey", "ice_hockey": "ice-hockey",
         "american_football": "american-football", "canadian_football": "canadian-football",
-        "para_ice_hockey": "para-ice-hockey", "para_athletics": "para-athletics",
-        "para_swimming": "para-swimming",
         "motor_racing": "motor-racing", "formula_one": "formula-one",
         "stock_car_racing": "stock-car-racing", "motorcycle_racing": "motorcycle-racing",
         "sports_car_racing": "sports-car-racing", "horse_racing": "horse-racing",
@@ -142,7 +134,6 @@ def main() -> int:
         ("extract_venue_openings.json", "venue-history"),
         ("extract_drafts.json", "draft-selection"),
         ("extract_nhl_career_records.json", "sport-record"),
-        ("extract_wikidata_para.json", "player-birthday"),
         ("extract_wikidata_famous.json", "player-birthday"),
     ]
     downloaded: dict[tuple, int] = defaultdict(int)
@@ -243,18 +234,14 @@ def main() -> int:
         "",
         f"Grid has {len(rows)} sport×decade×tag rows; table shows {len(shown)} nonempty cells. Full grid: [coverage-matrix.json](../data-sources/coverage-matrix.json).",
         "",
-        "Para-sport must have downloaded Wikidata rows; the fetch script exits non-zero if that extract is empty. People are never selected by sex or gender.",
+        "People are never selected or labelled by sex, gender, para status or impairment.",
         "",
     ]
     OUT_MD.write_text("\n".join(lines), encoding="utf-8")
-    para_n = sum(r["downloaded"] for r in rows if r["sport"].startswith("para"))
     print(json.dumps({
         "rows": len(rows), "factsReady": facts_n,
-        "paraDownloaded": para_n, "md": str(OUT_MD),
+        "md": str(OUT_MD),
     }, indent=2))
-    if para_n == 0:
-        print("coverage: para-sport extracts are empty", file=__import__("sys").stderr)
-        return 1
     return 0
 
 

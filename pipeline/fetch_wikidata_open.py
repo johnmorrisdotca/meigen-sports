@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-"""Download Wikidata CC0 athlete facts (Paralympics, famous by sitelinks).
+"""Download Wikidata CC0 athlete facts (famous by sitelinks).
 
+No para-sport batches: nobody is labelled para or given an impairment class (health data). A sport that is a sport in its own right is a plain sport code.
 People are selected by sport and fame (sitelink count) only. Never by sex or gender (P21): AGENTS.md section 3.
 
 Writes raw SPARQL JSON and convert-shaped extracts. Does not contact DS1 or production.
@@ -45,13 +46,6 @@ SPORTS = {
     "rugby": ("Q5378", "rugby"),
     "horse-racing": ("Q187916", "horse_racing"),
     "alpine-skiing": ("Q186222", "alpine_skiing"),
-}
-
-PARA_SPORTS = {
-    "para-ice-hockey": ("Q182327", "para_ice_hockey"),
-    "para-athletics": ("Q2261416", "para_athletics"),
-    "para-swimming": ("Q1187472", "para_swimming"),
-    "wheelchair-basketball": ("Q1128216", "wheelchair_basketball"),
 }
 
 def sparql(query: str) -> dict:
@@ -195,23 +189,6 @@ LIMIT {limit}
 """
 
 
-def query_para(sport_qid: str, limit: int) -> str:
-    return f"""
-SELECT ?person ?personLabel ?dob ?dod ?sitelinks ?placeLabel WHERE {{
-  ?person wdt:P31 wd:Q5;
-          wdt:P641 wd:{sport_qid};
-          wdt:P569 ?dob.
-  ?person wikibase:sitelinks ?sitelinks.
-  OPTIONAL {{ ?person wdt:P570 ?dod. }}
-  OPTIONAL {{ ?person wdt:P19 ?place. }}
-  SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
-  FILTER (DATATYPE(?dob) = xsd:dateTime)
-}}
-ORDER BY DESC(?sitelinks)
-LIMIT {limit}
-"""
-
-
 def query_olympic(limit: int) -> str:
     return f"""
 SELECT ?person ?personLabel ?dob ?dod ?sitelinks WHERE {{
@@ -219,23 +196,6 @@ SELECT ?person ?personLabel ?dob ?dod ?sitelinks WHERE {{
           wdt:P1344 ?games;
           wdt:P569 ?dob.
   ?games wdt:P31/wdt:P279* wd:Q159821.
-  ?person wikibase:sitelinks ?sitelinks.
-  OPTIONAL {{ ?person wdt:P570 ?dod. }}
-  SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
-  FILTER (DATATYPE(?dob) = xsd:dateTime)
-}}
-ORDER BY DESC(?sitelinks)
-LIMIT {limit}
-"""
-
-
-def query_paralympic(limit: int) -> str:
-    return f"""
-SELECT ?person ?personLabel ?dob ?dod ?sitelinks WHERE {{
-  ?person wdt:P31 wd:Q5;
-          wdt:P1344 ?games;
-          wdt:P569 ?dob.
-  ?games wdt:P31/wdt:P279* wd:Q82414.
   ?person wikibase:sitelinks ?sitelinks.
   OPTIONAL {{ ?person wdt:P570 ?dod. }}
   SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
@@ -313,14 +273,7 @@ def write_extract(name: str, records: list[dict]) -> None:
 
 
 def main() -> int:
-    para: dict[str, list] = {"birthdays": [], "deaths": [], "awards": []}
     famous: dict[str, list] = {"birthdays": [], "deaths": [], "awards": []}
-
-    for slug, (qid, sport) in PARA_SPORTS.items():
-        data = run_named(f"para-{slug}", query_para(qid, 150))
-        parse_bindings(data, sport, None, para)
-    data = run_named("para-summer-games", query_paralympic(200))
-    parse_bindings(data, "paralympics", None, para)
 
     for slug, (qid, sport) in SPORTS.items():
         data = run_named(f"famous-{slug}", query_sport(qid, 80))
@@ -331,28 +284,21 @@ def main() -> int:
     data = run_named("olympic-summer-games", query_olympic(200))
     parse_bindings(data, "olympics", None, famous)
 
-    pb = uniq(para["birthdays"])
-    pd = uniq(para["deaths"])
-    pa = uniq(para["awards"])
     fb = uniq(famous["birthdays"])
     fb.sort(key=lambda r: -(r.get("sitelinks") or 0))
     fb = fb[:500]
     fd = uniq(famous["deaths"])
     fa = uniq(famous["awards"])
 
-    write_extract("extract_wikidata_para", pb + pd + pa)
     write_extract("extract_wikidata_famous", fb + fd + fa)
     holes = []
-    if not pb:
-        holes.append("para birthdays")
     if len(fb) < 500:
         holes.append(f"famous birthdays {len(fb)}/500")
     print(json.dumps({
-        "paraBirthdays": len(pb), "paraDeaths": len(pd), "paraAwards": len(pa),
         "famousBirthdays": len(fb), "famousDeaths": len(fd), "famousAwards": len(fa),
         "rawDir": str(RAW), "extractDir": str(EXTRACT), "holes": holes,
     }, indent=2))
-    return 0 if pb else 1
+    return 0 if famous["birthdays"] else 1
 
 
 if __name__ == "__main__":

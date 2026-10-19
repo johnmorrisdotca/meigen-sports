@@ -66,6 +66,29 @@
 
 選手の紹介は公開されているクラブ名を使います（Alberta Oilers ではなく Edmonton Oilers）。賞の名前をクラブ名に重ねません。
 
+## パッケージが言うすべての文
+
+種類は15あり、どれも英語と日本語で3つ以上の型を持ちます（`TEMPLATE_TYPES`）。`test/patterns.test.ts` は、足りない種類、決して使えない型、同じ型の重複があると失敗します。
+
+- `birthday` 誕生日、`death` 死去、`game` 通常の試合、`final` 決勝、`record` 記録、`award` 賞、`draft` 指名、`venue` 会場、`franchise` クラブの名義、`first` 初めて
+- `world-cup-match` ワールドカップの試合、`world-cup-final` ワールドカップ決勝、`competition-start` 大会の開幕、`competition-end` 大会の閉幕、`event-date` 日付のある出来事
+
+チームスポーツのクラブには英語で冠詞を付けます。代表チームとサッカーのクラブには付けません。日本語に冠詞はありません。
+
+### 言葉の置き場
+
+`render.ts`、`run.ts`、`mergeEvents.ts` には文言を書きません。文の形は `src/templates/catalog.ts` の行、そこに差し込む部品（「（延長）」「34歳で」「。…の本拠地」など）は `src/templates/phrases.ts` の行です。部品には言い換えを並べられ、`fixed` は常に最初のものを使うので、公開済みの既定の一文は動きません。三つのファイルに文の言葉が混ざると、テストが失敗します。
+
+### 履歴の行
+
+同梱の履歴の行は、他のコードが読み戻す「データのラベル」として、決まった形の一文（`Brazil 3–1 Chile (World Cup 1950, Group 1).`）を持ちます。`renderHistory(record, options)` はその一文を欄に戻し、上の型で言い直します。引用と未知の一文は `null` を返し、呼び出し側が元の文を使います。
+
+## 並びの中で隣と重ならない
+
+`renderRun(records, { seed, locale, asOf })` は並びを順に言い直します。直前の2つと同じ型は使わず、直前と輪郭（欄を空にした型、`shapeOf`）が違い、最初の文字列（`leadOf`）も違う型を選びます。型が足りなければこの順に条件をゆるめ、隣の文が同じ文字列になることはありません。結果は事実、種、言語、`asOf` だけで決まります。デモの一覧はこれで描きます。
+
+未解決: 公開する事実の一文（`text`、`textJa`）は、いまも `pipeline/convert_extract.py` が自前の文言で書いています。標本5,493件のうち `render` と一致するのは221件で、日本語の区切り文字が違い、決勝に「AFL」と「AFL Championship」の差があり、試合にはシリーズの句が加わります。この文言を型に移し、公開データの一文も型から作るのは 0.5.0 の作業です。
+
 ## 型を足す
 
 `src/templates/catalog.ts` に行を足し、`test/templates.test.ts` で存命・死去・不明と欠けた欄を試します。日本語の文は `locale: "ja"` の行だけに書きます。
