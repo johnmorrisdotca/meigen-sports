@@ -4,6 +4,20 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-10-19
+
+Not tagged yet: Mac Studio tags after review.
+
+- Sentence patterns for every kind of statement: fifteen kinds, at least three patterns per kind and language (`TEMPLATE_TYPES`), fragments such as “in overtime” and “aged 34” moved out of code into `src/templates/phrases.ts`, World Cup matches and finals, competition starts and ends and dated events worded by `renderHistory`, and “the” no longer put before national sides or soccer clubs.
+- `renderRun(records, { seed })` words a list so that neighbouring sentences never share a template, an outline or an opening word; the demo draws every list with it. Tests cover runs of one kind, mixed runs and the real facts.
+- Fix: `loadLeague`, `loadTeamFacts` and `loadPlayerBucket` now read `facts/feeds/...` (the old paths gave 404 on Pages); a test fetches each from the committed files.
+- `data/v1/latest.json` names the current data version and its manifests.
+- README and data docs tell the 1,052 bundled history rows from the 29,961 on-this-day facts.
+- People list from 1,000 to 2,000 by country and sport (`data-sources/people.csv`), chosen by a stated rule from Wikidata (CC0) and English Wikipedia's Olympic medallist lists (CC BY-SA), keyed on Wikidata ids; see `docs/people.md`. Fetch and selection scripts in `pipeline/people/`.
+- Pipeline fixes: no query selects people by sex or gender and no row carries a `women-` label; the para-* batches and `para` labels are gone (health data; a sport such as wheelchair basketball is a plain sport code); several Wikidata sport items were wrong (baseball had been read as motor racing: 249 rows relabelled) and `fetch_people.py verify` now checks every id against its name.
+- Recovered what was lost in the `initial` worktree: coverage matrix script and notes, open-source notes, the list fetchers, the bio hand-off SQL and seeds, the 3,703-row athletes list, and extractor SQL kept under `pipeline/queries/pending/`. The coverage matrix is rebuilt.
+- `docs/status.md` records what is done, half-done, lost and left.
+
 ## [0.3.4] - 2026-10-17
 
 Not published to npm. Pages deploy from main.
