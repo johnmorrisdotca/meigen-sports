@@ -192,7 +192,7 @@ def entities(client: Client) -> None:
 
 
 def claims(client: Client) -> None:
-    """Citizenship (P27), sport (P641) and birth and death dates (P569, P570) for the people already chosen."""
+    """Instance (P31, to check the item is a human), citizenship (P27), sport (P641) and birth and death dates (P569, P570) for the people chosen."""
     chosen = OUT / "chosen-qids.txt"
     ids = [line.strip() for line in chosen.read_text(encoding="utf-8").splitlines() if line.strip()]
     out = OUT / "claims.csv"
@@ -202,13 +202,13 @@ def claims(client: Client) -> None:
         for part in chunks(sorted(ids, key=lambda q: int(q[1:])), 50):
             data = client.get(WIKIDATA, action="wbgetentities", ids="|".join(part), props="claims")
             for qid, ent in data["entities"].items():
-                for prop in ("P27", "P641", "P569", "P570"):
+                for prop in ("P31", "P27", "P641", "P569", "P570"):
                     for st in (ent.get("claims") or {}).get(prop, []):
                         snak = st.get("mainsnak") or {}
                         value = (snak.get("datavalue") or {}).get("value")
                         if st.get("rank") == "deprecated" or not value:
                             continue
-                        if prop in ("P27", "P641"):
+                        if prop in ("P31", "P27", "P641"):
                             writer.writerow([qid, prop, value.get("id", ""), ""])
                         else:
                             writer.writerow([qid, prop, str(value.get("time", ""))[1:11], value.get("precision", "")])
