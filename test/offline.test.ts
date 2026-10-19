@@ -93,7 +93,7 @@ test("check-build passes for matching Pages data and fails for another package, 
     }
     writeFileSync(join(site, "data/v1/latest.json"), JSON.stringify(latest));
     const manifest = readFileSync(`${dataDir}/facts/manifest.json`, "utf8");
-    writeFileSync(join(site, `data/v1/${OFFLINE_BUILD.dataVersion}/facts/manifest.json`), manifest.replace('"records": 29961', '"records": 29962'));
+    writeFileSync(join(site, `data/v1/${OFFLINE_BUILD.dataVersion}/facts/manifest.json`), `${manifest} `);
     assert.match(checkBuild(site).stderr, /facts manifest hashes to/);
   } finally { rmSync(site, { recursive: true, force: true }); }
 });
