@@ -6,8 +6,6 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [0.4.0] - 2026-10-19
 
-Not tagged yet: Mac Studio tags after review.
-
 - Sentence patterns for every kind of statement: fifteen kinds, at least three patterns per kind and language (`TEMPLATE_TYPES`), fragments such as “in overtime” and “aged 34” moved out of code into `src/templates/phrases.ts`, World Cup matches and finals, competition starts and ends and dated events worded by `renderHistory`, and “the” no longer put before national sides or soccer clubs.
 - `renderRun(records, { seed })` words a list so that neighbouring sentences never share a template, an outline or an opening word; the demo draws every list with it. Tests cover runs of one kind, mixed runs and the real facts.
 - Fix: `loadLeague`, `loadTeamFacts` and `loadPlayerBucket` now read `facts/feeds/...` (the old paths gave 404 on Pages); a test fetches each from the committed files.
