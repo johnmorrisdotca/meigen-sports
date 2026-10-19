@@ -929,7 +929,7 @@ Q1757800,Trischa Zorn,swimming,1964-06-01,11,,,,24,entitydata
 Q17593751,Jørgen Hviid,ice_hockey,1916-09-01,11,2001-09-05,11,,4,entitydata
 Q175941,Bill Christian,ice_hockey,,,,,,17,entitydata
 Q17612713,Larissa Pacheco,mma,1994-09-07,11,,,Belém,8,mma
-Q1763188,Jessica Long,paralympics,1992-02-29,11,,,,21,entitydata
+Q1763188,Jessica Long,multi_sport,1992-02-29,11,,,,21,entitydata
 Q17708794,Chelsea Gray,basketball,1992-10-08,11,,,Hayward,19,basketball
 Q17717,Oscar Robertson,basketball,1938-11-24,11,,,,46,entitydata
 Q17747951,Asisat Oshoala,soccer,1994-10-09,11,,,,34,entitydata
@@ -960,7 +960,7 @@ Q1809425,Charles McMurtrie,rugby,1878-05-01,11,1951-08-09,11,Orange,10,famous-ru
 Q1809461,Patrick McCue,rugby,1883-06-24,11,1962-09-10,11,Petersham,10,famous-rugby
 Q1809480,Thomas Griffen,rugby,1884-02-19,11,1950-12-19,11,Sydney,10,famous-rugby
 Q1809494,Malcolm McArthur,rugby,1882-07-30,11,1961-11-06,11,Melbourne,11,famous-rugby
-Q1811943,Lee Pearson,paralympics,1974-02-04,11,,,,13,entitydata
+Q1811943,Lee Pearson,multi_sport,1974-02-04,11,,,,13,entitydata
 Q18121626,Yui Hasegawa,soccer,1997-01-29,11,,,,46,entitydata
 Q18127761,Brian Sandy,cycling,1932-11-24,11,,,Taunton,5,famous-cycling
 Q18129054,Emilio Vidal,cycling,1929-04-02,11,,,,4,famous-cycling
@@ -1679,7 +1679,7 @@ Q276310,Duncan Edwards,soccer,1936-10-01,11,1958-02-21,11,,46,entitydata
 Q276481,Cassie Campbell,ice_hockey,1973-11-22,11,,,,12,entitydata
 Q27656316,Harrie Lavreysen,olympics,1997-03-14,11,,,,29,entitydata
 Q276617,Gunilla Andersson,ice_hockey,1975-04-26,11,,,Skutskär,16,ice-hockey
-Q27805688,Margaret Harriman,paralympics,1928-00-00,9,2003-09-20,11,,15,entitydata
+Q27805688,Margaret Harriman,multi_sport,1928-00-00,9,2003-09-20,11,,15,entitydata
 Q27835263,Cortney Casey,mma,1987-05-05,11,,,Mesa,7,mma
 Q27862071,Amber Leibrock,mma,1988-02-08,11,,,Hayward,7,mma
 Q27864193,Minori Yamamoto,rugby,1996-12-09,11,,,,3,rugby
@@ -1988,7 +1988,7 @@ Q3228666,Learie Constantine,cricket,1901-09-21,11,1971-07-01,11,,12,entitydata
 Q3229664,Lisa Sthalekar,cricket,1979-08-13,11,,,,10,entitydata
 Q3234,Jochen Rindt,formula_one,1942-04-18,11,1970-09-05,11,,51,entitydata
 Q3237270,Lew Jenkins,boxing,1916-12-04,11,1981-10-30,11,,8,entitydata
-Q324199,Franz Nietlispach,paralympics,1958-04-02,11,,,,7,entitydata
+Q324199,Franz Nietlispach,multi_sport,1958-04-02,11,,,,7,entitydata
 Q3242787,Rin Nakai,mma,1986-10-22,11,,,Matsuyama,8,mma
 Q324363,Joe Primeau,ice_hockey,1906-01-29,11,1989-05-14,11,,8,entitydata
 Q324379,Earl Seibert,ice_hockey,1911-12-07,11,1990-05-12,11,,6,entitydata
@@ -2033,7 +2033,7 @@ Q328951,Mary Kom,boxing,1982-03-01,11,,,Manipur,52,boxing
 Q3293104,Marilynn Smith,golf,1929-04-13,11,2019-04-09,11,Topeka,8,golf
 Q3294120,Mark Johnson,boxing,1971-08-13,11,,,,8,entitydata
 Q3296125,Mary Abbott,golf,1850-10-17,11,1904-02-06,11,Salem,10,golf
-Q3299692,Matt Cowdrey,paralympics,1988-12-22,11,,,,11,entitydata
+Q3299692,Matt Cowdrey,multi_sport,1988-12-22,11,,,,11,entitydata
 Q330224,George Eastman,rugby,1942-08-16,11,2026-05-20,11,Genoa,13,famous-rugby
 Q3303271,Phat Wilson,ice_hockey,1895-12-29,11,1970-07-26,11,,4,entitydata
 Q3303789,Meaghan Mikkelson Reid,ice_hockey,1985-01-04,11,,,Regina,13,ice-hockey
@@ -2074,7 +2074,7 @@ Q336274,Rachael Heyhoe Flint,cricket,1939-06-11,11,2017-01-18,11,,15,entitydata
 Q336274,Rachael Heyhoe Flint,golf,1939-06-11,11,2017-01-18,11,,15,entitydata
 Q3364998,Saija Sirviö,ice_hockey,1982-12-29,11,,,Oulu,11,ice-hockey
 Q3365287,Michelle Karvinen,ice_hockey,1990-03-27,11,,,Rødovre,12,ice-hockey
-Q336543,Tanni Grey-Thompson,paralympics,1969-07-26,11,,,,21,entitydata
+Q336543,Tanni Grey-Thompson,multi_sport,1969-07-26,11,,,,21,entitydata
 Q3376388,Pete Latzo,boxing,1902-08-01,11,1968-07-07,11,,10,entitydata
 Q33783,Nedo Nadi,olympics,1894-06-09,11,1940-01-29,11,,31,entitydata
 Q33835139,Kaylee McKeown,swimming,2001-07-12,11,,,,31,entitydata
@@ -2534,11 +2534,11 @@ Q456736,Georges Vézina,ice_hockey,1887-01-21,11,,,,21,entitydata
 Q456766,Paul Arizin,basketball,1928-04-09,11,2006-12-12,11,,31,entitydata
 Q456776,Wes Unseld,basketball,1946-03-14,11,2020-06-02,11,,30,entitydata
 Q457099,Genzebe Dibaba,athletics,1991-02-08,11,,,Bekoji,40,athletics
-Q457113,Chantal Petitclerc,paralympics,1969-12-15,11,,,,17,entitydata
+Q457113,Chantal Petitclerc,multi_sport,1969-12-15,11,,,,17,entitydata
 Q457459,Nadezhda Khnykina-Dvalishvili,athletics,,,,,,17,entitydata
 Q457475,Gaëtane Thiney,soccer,1985-10-28,11,,,,27,entitydata
 Q457797,Georg Lammers,athletics,1905-04-14,11,1987-03-17,11,,15,entitydata
-Q4579448,Ragnhild Myklebust,paralympics,1943-12-13,11,,,,13,entitydata
+Q4579448,Ragnhild Myklebust,multi_sport,1943-12-13,11,,,,13,entitydata
 Q458102,Liselotte Neumann,golf,1966-05-20,11,,,Finspång,8,golf
 Q458121,Alistair Overeem,mma,1980-05-17,11,,,Hounslow,28,famous-mma
 Q458149,Tony Canadeo,american_football,1919-05-05,11,2003-11-29,11,,8,entitydata
@@ -2740,7 +2740,7 @@ Q503310,Max Decugis,tennis,1882-09-24,11,1978-09-06,11,,26,entitydata
 Q503457,Bob Brown,american_football,1941-12-08,11,2023-06-16,11,,6,entitydata
 Q503606,Rosey Brown,american_football,1932-10-20,11,2004-06-09,11,,8,entitydata
 Q504025,Bill Bradley,basketball,1943-07-28,11,,,,32,entitydata
-Q50422768,John Morgan,paralympics,,,,,,4,entitydata
+Q50422768,John Morgan,multi_sport,,,,,,4,entitydata
 Q504237,Harry Carson,american_football,1953-11-26,11,,,,8,entitydata
 Q50425487,Sabrina Ionescu,basketball,1997-12-06,11,,,Walnut Creek,25,basketball
 Q5045341,Carolyn Crudgington,baseball,1968-08-18,11,,,Brisbane,5,baseball
@@ -2751,7 +2751,7 @@ Q505289,Bob Hayes,american_football,1942-12-20,11,2002-09-18,11,,25,entitydata
 Q505289,Bob Hayes,athletics,1942-12-20,11,2002-09-18,11,,25,entitydata
 Q505336,Bill Sharman,basketball,1926-05-25,11,2013-10-25,11,,25,entitydata
 Q5053363,Cathryn Fitzpatrick,cricket,1968-03-04,11,,,,7,entitydata
-Q5053615,Cato Zahl Pedersen,paralympics,1959-01-12,11,,,,5,entitydata
+Q5053615,Cato Zahl Pedersen,multi_sport,1959-01-12,11,,,,5,entitydata
 Q5053946,Catrin Edwards,rugby,1980-09-15,11,,,Carmarthen,3,rugby
 Q505500,Ed Macauley,basketball,1928-03-22,11,2011-11-08,11,,19,entitydata
 Q505524,Peter Bondra,ice_hockey,1968-02-07,11,,,,22,entitydata
@@ -2976,7 +2976,7 @@ Q56016,Katharine Hepburn,tennis,1907-05-12,11,2003-06-29,11,Hartford,130,famous-
 Q560267,Anna Chakvetadze,tennis,1987-03-05,11,,,Moscow,44,tennis
 Q560409,Thomas Hearns,boxing,1958-10-18,11,,,,23,entitydata
 Q560421,Marvelous Marvin Hagler,boxing,1954-05-23,11,2021-03-13,11,,29,entitydata
-Q56044028,Timothy McIsaac,paralympics,1959-01-10,11,,,,3,entitydata
+Q56044028,Timothy McIsaac,multi_sport,1959-01-10,11,,,,3,entitydata
 Q56044048,Danika Brace,american_football,1988-01-01,9,,,,1,american-football
 Q560461,Jersey Joe Walcott,boxing,1914-01-31,11,1994-02-25,11,,22,entitydata
 Q560607,Emil Andres,formula_one,1911-07-22,11,1999-07-20,11,,11,entitydata
@@ -3217,8 +3217,8 @@ Q6595604,Avi Lehrman,wheelchair_basketball,1966-10-12,11,,,,2,wheelchair_basketb
 Q66087756,Esther Henseleit,golf,1999-01-14,11,,,Varel,12,golf
 Q66241169,Jude Bellingham,soccer,2003-06-29,11,,,,80,entitydata
 Q6630903,Liran Hendel,wheelchair_basketball,1973-08-02,11,,,,2,wheelchair_basketball
-Q66466870,Rolf Heinzmann,paralympics,,,,,,3,entitydata
-Q665587,Heinz Frei,paralympics,1958-01-28,11,,,,11,entitydata
+Q66466870,Rolf Heinzmann,multi_sport,,,,,,3,entitydata
+Q665587,Heinz Frei,multi_sport,1958-01-28,11,,,,11,entitydata
 Q665684,Josef Hügi,soccer,1930-01-23,11,1995-04-16,11,,24,entitydata
 Q6660174,Liz Heaston,american_football,1977-01-01,9,,,Richland,6,american-football
 Q6667325,Dotan Meishar,wheelchair_basketball,1969-04-05,11,,,Degania Bet,2,wheelchair_basketball
@@ -3226,7 +3226,7 @@ Q66749009,Bree Mellberg,wheelchair_basketball,1990-04-14,11,,,,2,wheelchair_bask
 Q6677733,Israel Globus,wheelchair_basketball,1943-01-01,9,1992-01-01,9,,3,wheelchair_basketball
 Q6681055,Lori Dupuis,ice_hockey,1972-11-14,11,,,Cornwall,13,ice-hockey
 Q6687857,Louis Muhlinghaus,soccer,1870-01-01,9,,,,6,entitydata
-Q66968,Gerd Schönfelder,paralympics,1970-09-02,11,,,,12,entitydata
+Q66968,Gerd Schönfelder,multi_sport,1970-09-02,11,,,,12,entitydata
 Q6698219,Lucy Bronze,soccer,1991-10-28,11,,,,38,entitydata
 Q66982192,Marina Rodriguez,mma,1987-04-29,11,,,Bagé,8,mma
 Q669946,Sheila Cornell-Douty,baseball,1962-02-26,11,,,Encino,8,baseball
@@ -3241,7 +3241,7 @@ Q675284,Hans Cattini,ice_hockey,1914-01-24,11,1987-04-02,11,,14,entitydata
 Q6759330,Margaret Danhauser,baseball,1921-06-09,11,1987-01-06,11,Racine,3,baseball
 Q6760807,Marguerite Pearson,baseball,1932-09-06,11,2005-01-04,11,Pittsburgh,4,baseball
 Q6761562,Maria Sakkari,tennis,1995-07-25,11,,,Athens,39,tennis
-Q6761573,Maria Scutti,paralympics,1928-08-00,10,2005-00-00,9,,8,entitydata
+Q6761573,Maria Scutti,multi_sport,1928-08-00,10,2005-00-00,9,,8,entitydata
 Q6763557,Marilyn Jenkins,baseball,1934-09-18,11,2020-02-07,11,Grand Rapids,3,baseball
 Q6766105,Marizanne Kapp,cricket,1990-01-04,11,,,Gqeberha,21,cricket
 Q6780368,Mary Moore,baseball,1922-03-06,11,1962-07-12,11,Lemon Grove,3,baseball
@@ -3267,7 +3267,7 @@ Q684492,Walter Bucher,cycling,1926-06-08,11,2025-03-06,11,Zurich,13,famous-cycli
 Q6846173,Mike Buckna,ice_hockey,1913-09-05,11,1996-01-06,11,,4,entitydata
 Q68462628,Shafali Verma,cricket,2004-01-28,11,,,Rohtak,17,cricket
 Q685026,Tom Jager,swimming,1964-10-06,11,,,,21,entitydata
-Q6854233,Joseph Wengier,paralympics,1954-01-24,11,,,,3,entitydata
+Q6854233,Joseph Wengier,multi_sport,1954-01-24,11,,,,3,entitydata
 Q6861496,Arieh Rubin,wheelchair_basketball,1952-01-01,9,,,Libya,2,wheelchair_basketball
 Q68641,Tobias Arlt,olympics,1987-06-02,11,,,,28,entitydata
 Q686726,Humberto González,boxing,1966-03-25,11,,,,10,entitydata
@@ -3430,12 +3430,12 @@ Q742271,Malcolm Whitman,tennis,1877-03-15,11,1932-12-28,11,,16,entitydata
 Q7422757,Sarah Schkeeper,american_football,1981-03-29,11,,,Livingston,0,american-football
 Q7422824,Sarah Thomas,american_football,1973-09-21,11,,,Pascagoula,7,american-football
 Q7422869,Sarah Vinci,wheelchair_basketball,1991-12-04,11,,,Perth,8,wheelchair_basketball
-Q7422904,Sarah Will,paralympics,1965-00-00,9,,,,8,entitydata
+Q7422904,Sarah Will,multi_sport,1965-00-00,9,,,,8,entitydata
 Q742548,Rob Blake,ice_hockey,1969-12-10,11,,,,21,entitydata
 Q743209,Malcolm Marshall,cricket,1958-04-18,11,1999-11-04,11,,15,entitydata
 Q74375,Sandra Gal,golf,1985-05-09,11,,,Düsseldorf,9,golf
 Q743755,Thomas Jefferson,athletics,1962-06-08,11,,,,12,entitydata
-Q74386,Frank Höfle,paralympics,1967-11-22,11,,,,8,entitydata
+Q74386,Frank Höfle,multi_sport,1967-11-22,11,,,,8,entitydata
 Q744314,Megu Hirose,baseball,1981-04-23,11,,,Amagasaki,9,baseball
 Q7460129,Shabnim Ismail,cricket,1988-10-05,11,,,Cape Town,14,cricket
 Q746320,Kim In-kyung,golf,1988-06-13,11,,,South Korea,8,golf
@@ -3475,8 +3475,8 @@ Q770789,Johanna Konta,tennis,1991-05-17,11,,,Sydney,39,tennis
 Q77102,Max Schmeling,boxing,1905-09-28,11,2005-02-02,11,,45,entitydata
 Q77167,Julia Görges,tennis,1988-11-02,11,,,Bad Oldesloe,38,tennis
 Q77178,Angelique Kerber,tennis,1988-01-18,11,,,Bremen,72,famous-tennis
-Q772005,Jonas Jacobsson,paralympics,1965-06-23,11,,,,14,entitydata
-Q77285264,Magdalena Tjernberg,paralympics,1970-06-03,11,,,,4,entitydata
+Q772005,Jonas Jacobsson,multi_sport,1965-06-23,11,,,,14,entitydata
+Q77285264,Magdalena Tjernberg,multi_sport,1970-06-03,11,,,,4,entitydata
 Q773871,Ken Kavanagh,formula_one,1923-12-12,11,2019-11-26,11,Melbourne,22,famous-formula-one
 Q777362,Randy Turpin,boxing,1928-06-07,11,1966-05-17,11,,13,entitydata
 Q777468,Aurèle Joliat,ice_hockey,1901-08-29,11,1986-06-02,11,,13,entitydata
@@ -3501,7 +3501,7 @@ Q78502,Gerhard Berger,formula_one,1959-08-27,11,,,,44,entitydata
 Q78535734,Olga Carmona,soccer,2000-06-12,11,,,,32,entitydata
 Q78593,Hans Binder,formula_one,1948-06-12,11,,,,22,entitydata
 Q7878239,Ujwala Nikam,cricket,1958-06-19,11,,,Pune,15,cricket
-Q7900514,Uri Bergman,paralympics,1953-01-01,9,,,,5,entitydata
+Q7900514,Uri Bergman,multi_sport,1953-01-01,9,,,,5,entitydata
 Q7900914,Urooj Mumtaz,cricket,1985-10-01,11,,,Karachi,13,cricket
 Q79031,Mike Tyson,boxing,1966-06-30,11,,,,110,entitydata
 Q79231,Alberto Del Rio,mma,1977-05-25,11,,,San Luis Potosí,37,famous-mma
