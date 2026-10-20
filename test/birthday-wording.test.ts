@@ -6,7 +6,7 @@ import { render } from "../src/templates/index.ts";
 const base: OnThisDayRecord = {
   recordId: "birth", category: "player-birthday", tags: ["player-birthday"], basis: "source", eventDate: "1961-01-26", datePrecision: "day", birthDate: "1961-01-26",
   sport: "ice-hockey", competition: "nhl", league: "nhl", source: { sourceId: "wikidata", licence: "CC0 1.0", attribution: "Wikidata contributors, CC0.", url: null },
-  person: { personId: 1, qid: "Q209518", name: "Wayne Gretzky", leagueCodes: ["nhl"], franchiseIds: [], teamSeasonIds: [] }, clubNames: ["Edmonton Oilers"], position: "centre",
+  person: { personId: 1, qid: "Q209518", name: "Wayne Gretzky", leagueCodes: ["nhl"], franchiseIds: [], teamSeasonIds: [] }, clubNames: ["Edmonton Oilers"], position: "C",
 };
 const people = {
   unknown: { ...base },
@@ -47,8 +47,8 @@ test("the age is said as years ago today, not as an age, whether the person is l
     const ago = render(record, { wording: "seeded", seed: "x", templateId: "birthday-years-ago", asOf: "2026-01-26" });
     assert.equal(ago?.text.includes("was born 65 years ago today"), true, status);
   }
-  assert.equal(render(people.unknown, { wording: "fixed" })?.text, "Wayne Gretzky, the Edmonton Oilers centre, was born on this day in 1961.");
-  assert.equal(render(people.deceased, { wording: "fixed" })?.text, "Wayne Gretzky, the Edmonton Oilers centre, was born on this day in 1961 (died 2020).");
+  assert.equal(render(people.unknown, { wording: "fixed" })?.text, "Wayne Gretzky, the Edmonton Oilers center, was born on this day in 1961.");
+  assert.equal(render(people.deceased, { wording: "fixed" })?.text, "Wayne Gretzky, the Edmonton Oilers center, was born on this day in 1961 (died 2020).");
 });
 
 test("the three wording modes: fixed never moves, seeded repeats for a seed, varied needs one", () => {

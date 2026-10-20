@@ -126,6 +126,58 @@ class ConvertExtractTests(unittest.TestCase):
         for bad in ("Norwegian female cross-country skier", "Dutch wheelchair tennis player", "Born 1990, Australian sportswoman", "American Paralympic swimmer", "", None):
             self.assertIsNone(convert.short_description(bad), bad)
 
+    # ---- a final decided over several games says the series, counted from the round's own games ----
+
+    @staticmethod
+    def _game(day, gid, away, away_score, home, home_score):
+        team = lambda f: {"name": f"Club {f}", "franchiseId": f}  # noqa: E731
+        return {"eventDate": day, "gameId": gid, "away": team(away), "awayScore": away_score, "home": team(home), "homeScore": home_score}
+
+    def _series(self, results):
+        """results: (winner franchise, loser franchise) per game, in order; the winner scores 2 and the loser 1; a pair of equal ids is a tie."""
+        games = []
+        for n, (w, l) in enumerate(results, start=1):
+            games.append(self._game(f"1990-10-{10 + n:02d}", 100 + n, l, 1, w, 2) if w != l else self._game(f"1990-10-{10 + n:02d}", 100 + n, 1, 1, 2, 1))
+        return games
+
+    def test_a_sweep_is_four_to_nothing_in_four_games(self):
+        tally = convert.series_tally(self._series([(1, 2)] * 4), "mlb", 1990)
+        self.assertEqual(tally, {"seriesWinnerWins": 4, "seriesLoserWins": 0, "seriesGames": 4})
+
+    def test_a_seven_game_series_counts_each_side(self):
+        tally = convert.series_tally(self._series([(2, 1), (1, 2), (2, 1), (1, 2), (2, 1), (1, 2), (1, 2)]), "nba", 1990)
+        self.assertEqual(tally, {"seriesWinnerWins": 4, "seriesLoserWins": 3, "seriesGames": 7})
+
+    def test_a_tied_game_is_played_but_not_won(self):
+        # 1912: Game 2 was tied, so Game 8 decided a series won 4-3.
+        tally = convert.series_tally(self._series([(1, 2), (1, 1), (2, 1), (1, 2), (2, 1), (1, 2), (2, 1), (1, 2)]), "mlb", 1912)
+        self.assertEqual(tally, {"seriesWinnerWins": 4, "seriesLoserWins": 3, "seriesGames": 8})
+
+    def test_the_best_of_nine_years_need_five_wins(self):
+        self.assertEqual(convert.series_wins_needed("mlb", 1919), 5)
+        self.assertEqual(convert.series_wins_needed("mlb", 1922), 4)
+        self.assertEqual(convert.series_tally(self._series([(1, 2)] * 4), "mlb", 1919), None)
+        self.assertEqual(convert.series_tally(self._series([(1, 2)] * 5), "mlb", 1919)["seriesWinnerWins"], 5)
+
+    def test_a_series_that_does_not_add_up_states_no_tally(self):
+        # An extra game (the 2008 duplicate of a suspended game), a missing game, a third club and one game alone: never a guessed tally.
+        self.assertIsNone(convert.series_tally(self._series([(1, 2)] * 5 + [(2, 1)]), "mlb", 2008))
+        self.assertIsNone(convert.series_tally(self._series([(1, 2)] * 3), "mlb", 1990))
+        self.assertIsNone(convert.series_tally(self._series([(1, 2), (1, 3), (1, 2), (1, 2)]), "mlb", 1990))
+        self.assertIsNone(convert.series_tally(self._series([(1, 2)]), "mlb", 1990))
+        self.assertIsNone(convert.series_tally(self._series([(1, 2)] * 4), "nhl", 1990), "a league whose format is not held here has no tally")
+
+    def test_the_series_winner_is_the_winner_of_the_last_game(self):
+        tally = convert.series_tally(self._series([(1, 2)] * 3 + [(2, 1)] * 4), "mlb", 1990)
+        self.assertEqual(tally, {"seriesWinnerWins": 4, "seriesLoserWins": 3, "seriesGames": 7})
+
+    def test_final_context_keeps_only_well_formed_fields(self):
+        ok = convert.final_context_fields({"venueName": " Riverfront Stadium ", "venueCity": "Cincinnati",
+                                           "winnerRecord": {"wins": 91, "losses": 71, "ties": None, "extra": 1}, "winnerTitleNumber": 5})
+        self.assertEqual(ok, {"venueName": "Riverfront Stadium", "venueCity": "Cincinnati", "winnerRecord": {"wins": 91, "losses": 71}, "winnerTitleNumber": 5})
+        self.assertEqual(convert.final_context_fields({"venueName": "", "winnerRecord": {"wins": "91", "losses": 71}, "winnerTitleNumber": 0}), {})
+        self.assertEqual(convert.final_context_fields({}), {})
+
 
 if __name__ == "__main__":
     unittest.main()

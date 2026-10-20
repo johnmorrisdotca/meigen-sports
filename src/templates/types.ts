@@ -16,7 +16,7 @@ export interface SentenceTemplate {
   readonly role: TemplateRole;
   readonly needs: readonly string[];
   readonly pattern: string;
-  readonly when?: "tie" | "decisive" | "lopsided";
+  readonly when?: "tie" | "decisive" | "lopsided" | "series";
 }
 
 /** Every statement type the package says, in one list. A test holds each type to at least three patterns per language. */

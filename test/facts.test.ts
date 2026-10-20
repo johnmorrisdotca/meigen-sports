@@ -83,16 +83,16 @@ test("birthday captions are anniversaries and never say turns", () => {
     recordId: "b1", category: "player-birthday", tags: ["player-birthday"], basis: "source",
     eventDate: "1961-01-26", datePrecision: "day", sport: "ice-hockey", competition: "nhl", league: "nhl",
     person: { personId: 1866, qid: "Q209518", name: "Wayne Gretzky", leagueCodes: ["nhl"], franchiseIds: [12], teamSeasonIds: [] },
-    clubNames: ["Edmonton Oilers"], position: "centre",
+    clubNames: ["Edmonton Oilers"], position: "C",
     livingStatus: "unknown", source,
   };
   const text = captionFromFact(row);
-  assert.equal(text, "Wayne Gretzky, the Edmonton Oilers centre, was born on this day in 1961.");
+  assert.equal(text, "Wayne Gretzky, the Edmonton Oilers center, was born on this day in 1961.");
   assert.equal(/turns|would have turned|celebrates/i.test(text ?? ""), false);
   const dead: OnThisDayRecord = {
     ...row, recordId: "b2", livingStatus: "deceased", deathDate: "1948-08-16",
     person: { personId: 1, qid: "Q1", name: "Babe Ruth", leagueCodes: ["mlb"], franchiseIds: [20], teamSeasonIds: [] },
-    clubNames: ["New York Yankees"], position: "outfielder",
+    clubNames: ["New York Yankees"], position: "OF", sport: "baseball",
     eventDate: "1895-02-06",
   };
   const deadText = captionFromFact(dead);
@@ -116,7 +116,7 @@ test("rankFeed prefers a priority athlete among equal deaths", () => {
     recordId: "u", category: "player-death", tags: ["age-at-event"], basis: "source",
     eventDate: "1937-03-08", datePrecision: "day", sport: "ice-hockey", competition: "nhl", league: "nhl",
     person: { personId: 9, qid: "Q9", name: "Unknown Skater", leagueCodes: ["nhl"], franchiseIds: [10], teamSeasonIds: [] },
-    clubNames: ["Montreal Canadiens"], position: "forward",
+    clubNames: ["Montreal Canadiens"], position: "F",
     source,
   };
   const famous: OnThisDayRecord = {

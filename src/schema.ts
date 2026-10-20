@@ -94,6 +94,14 @@ export interface ExtractSource {
  * identifiers; they are not exclusive. One fact is stored once and may carry several tags
  * (championship-win and overtime-result on the same recordId).
  */
+/** A club's regular-season record. `ties` and `otLosses` are present only where the league had them that season. */
+export interface WinnerRecord {
+  readonly wins: number;
+  readonly losses: number;
+  readonly ties?: number | null;
+  readonly otLosses?: number | null;
+}
+
 export interface OnThisDayRecord {
   readonly recordId: string;
   readonly category: FactCategory;
@@ -145,6 +153,14 @@ export interface OnThisDayRecord {
   readonly seriesHigherWins?: number | null;
   readonly seriesLowerWins?: number | null;
   readonly seriesWinnerTeamSeasonId?: number | null;
+  /** A final decided over several games: games the title winner and the loser won, counted from the final round's own games (never guessed), and every game played (a tied game counts here). */
+  readonly seriesWinnerWins?: number | null;
+  readonly seriesLoserWins?: number | null;
+  readonly seriesGames?: number | null;
+  /** The title winner's regular season as its league writes it: wins, losses, and ties or overtime losses where the league has them. */
+  readonly winnerRecord?: WinnerRecord | null;
+  /** This was the winner franchise's Nth title, counted in the archive. Present only when the archive's list of that league's champions is complete. */
+  readonly winnerTitleNumber?: number | null;
   readonly person?: PersonRef;
   readonly position?: string | null;
   readonly clubNames?: readonly string[];

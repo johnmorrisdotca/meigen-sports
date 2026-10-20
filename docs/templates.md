@@ -36,10 +36,10 @@ Missing `birthPlace`, `highlight`, day precision, or `asOf` skips the template t
 
 Neutral (default, correct either way):
 
-- `birthday-on-this-day`: “Wayne Gretzky, the Edmonton Oilers centre, was born on this day in 1961.”
-- `birthday-of`: “Today is the birthday of Wayne Gretzky, the Edmonton Oilers centre.”
-- `birthday-in-year`: “Wayne Gretzky, the Edmonton Oilers centre, was born in 1961.”
-- `birthday-years-ago`: “Wayne Gretzky, the Edmonton Oilers centre, was born 65 years ago today.”
+- `birthday-on-this-day`: “Wayne Gretzky, the Edmonton Oilers center, was born on this day in 1961.”
+- `birthday-of`: “Today is the birthday of Wayne Gretzky, the Edmonton Oilers center.”
+- `birthday-in-year`: “Wayne Gretzky, the Edmonton Oilers center, was born in 1961.”
+- `birthday-years-ago`: “Wayne Gretzky, the Edmonton Oilers center, was born 65 years ago today.”
 - `birthday-place`: “On this day in 1961, Wayne Gretzky was born in Brantford, Ontario.”
 - `birthday-years-ago-highlight`: “65 years ago today: Wayne Gretzky, four-time Stanley Cup champion, was born.”
 
@@ -54,11 +54,22 @@ Living confirmed by a source:
 
 Never: “would have turned”. Never “turns N” unless `livingStatus` is `living`. Unknown is not living.
 
+## Positions
+
+A sentence never shows a position code. The record keeps the code (`"position": "CF"`); the sentence spells it out through one table, `src/templates/positions.ts`, picked by the record's `sport` and then the code, because a code means different things in different sports (C is a catcher in baseball and a center in hockey, basketball and football). The spelling is the usual North American one for all five leagues, so “center” and “defenseman”.
+
+- Baseball: P pitcher, C catcher, 1B first baseman, 2B second baseman, 3B third baseman, SS shortstop, LF left fielder, CF center fielder, RF right fielder, OF outfielder, IF infielder, DH designated hitter (and SP, RP, CL, LHP, RHP).
+- Basketball: PG point guard, SG shooting guard, SF small forward, PF power forward, C center, F forward, G guard.
+- Hockey: C center, LW left wing, RW right wing, F forward, D defenseman, G goaltender.
+- Football (American and Canadian): QB quarterback, RB running back, FB fullback, WR wide receiver, TE tight end, OL offensive lineman, T offensive tackle, G offensive guard, C center, DL defensive lineman, DE defensive end, DT defensive tackle, NT nose tackle, LB linebacker, CB cornerback, S safety, DB defensive back, K kicker, P punter.
+
+“Wayne Gretzky, the Edmonton Oilers center, was born on this day in 1961.” A code the sport's table does not hold is left out of the sentence, never printed and never guessed. `test/positions-series.test.ts` fails if a published sentence holds a bare code or a code of the data has no row.
+
 ## Death wording
 
 Default when club, position or honour is sourced:
 
-- `death-context`: “Howie Morenz, the Montreal Canadiens centre and three-time Stanley Cup winner, died on this day in 1937, aged 34.”
+- `death-context`: “Howie Morenz, the Montreal Canadiens center and three-time Stanley Cup winner, died on this day in 1937, aged 34.”
 
 No name-and-year death template. If those fields are missing, skip the fact rather than publishing “Howie Morenz died on this day in 1937.” `who` / `whoClause` carry the club, position and honour. `aged` is omitted when `ageYears` is missing. Never guess a club, honour, or age.
 
@@ -83,6 +94,15 @@ A decisive championship final names the **title**, never the league code alone (
 - `final-to-win`: “St. Louis Cardinals beat Detroit Tigers 11–0 to win the 1934 World Series.”
 - `final-captured`: “The Chicago Bears captured the 1940 NFL Championship, defeating the Washington Redskins 73–0.”
 - `final-dominated` when the score is lopsided.
+
+A final decided over several games (the World Series and the NBA Finals) says the series result, never the last game's score as if it were the title. The tally is counted from the final round's own games, and kept only when it agrees with the league's format (four wins; five in the best-of-nine World Series of 1903 and 1919–21). A season whose games do not add up (the archive holds a duplicate game for 2008) is not worded as a title at all.
+
+- `final-series-won`: “Cincinnati Reds won the 1990 World Series, sweeping the Oakland Athletics 4–0 with a 2–1 win in Game 4.”
+- `final-series-to-win`: “Cincinnati Reds beat the Oakland Athletics 4–0 to win the 1990 World Series with a 2–1 win in Game 4.”
+- `final-series-went-to`: “The 1990 World Series went to Cincinnati Reds, who swept the Oakland Athletics 4–0 with a 2–1 win in Game 4.”
+- A series that went the distance reads “beating the Boston Red Sox 4 games to 3 with a 3–2 win in Game 7”; a tied game counts as played, not won (1912: Game 8, 4 games to 3).
+
+Every final also takes the context the archive holds, each clause only when its field is there: the deciding game's venue (“at Oakland–Alameda County Coliseum, Oakland”), which title it was for the franchise (“It was their 5th title.”, only where the archive's list of that league's champions is complete) and the winner's regular season (“They had finished the regular season 91–71.”, wins, losses, then ties or overtime losses as the league writes them). Fields: `seriesWinnerWins`, `seriesLoserWins`, `seriesGames`, `venueName`, `venueCity`, `winnerTitleNumber`, `winnerRecord`.
 
 A World Cup match caption in the bundled history feed is rewritten the same way from its own published score line (“Argentina won the 2022 World Cup, beating France 4–2 on penalties after a 3–3 draw.”). Venue is included only when the fact holds it.
 

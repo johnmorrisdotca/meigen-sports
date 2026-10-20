@@ -336,6 +336,71 @@ def tag_set(row: dict) -> list[str]:
     return out
 
 
+# A championship decided over several games. The tally is counted from the final round's own games in the extract and kept only when it
+# agrees with the league's format: the series winner has exactly the wins that format needs, the loser fewer, and the games are the two
+# clubs' alone. A series that does not agree (the extract holds an extra or a missing game) states no tally and is not worded as the title.
+SERIES_LEAGUES = {"mlb", "nba"}
+
+
+def series_wins_needed(league: str | None, season: int | None) -> int | None:
+    """Wins that clinch the final round: the best-of-seven World Series and NBA Finals (best of nine in 1903 and 1919-21). None for a league whose format is not held here."""
+    if league == "mlb":
+        return 5 if season in (1903, 1919, 1920, 1921) else 4
+    if league == "nba":
+        return 4
+    return None
+
+
+def series_tally(games: list[dict], league: str | None, season: int | None) -> dict | None:
+    """{seriesWinnerWins, seriesLoserWins, seriesGames} counted from every game of one final round, or None when the count does not agree with the format."""
+    played = sorted(
+        (g for g in games if (g.get("home") or {}).get("name") and (g.get("away") or {}).get("name")
+         and g.get("homeScore") is not None and g.get("awayScore") is not None),
+        key=lambda g: (g.get("eventDate") or "", g.get("gameId") or 0),
+    )
+    need = series_wins_needed(league, season)
+    if need is None or len(played) < need:
+        return None
+    last = played[-1]
+    if last["homeScore"] == last["awayScore"]:
+        return None
+    won, lost = (last["home"], last["away"]) if last["homeScore"] > last["awayScore"] else (last["away"], last["home"])
+    wid, lid = won.get("franchiseId"), lost.get("franchiseId")
+    if wid is None or lid is None or wid == lid:
+        return None
+    wins: dict = defaultdict(int)
+    for g in played:
+        if g["homeScore"] == g["awayScore"]:
+            continue
+        side = g["home"] if g["homeScore"] > g["awayScore"] else g["away"]
+        wins[side.get("franchiseId")] += 1
+    if set(wins) - {wid, lid} or any(
+        g[side].get("franchiseId") not in (wid, lid) for g in played for side in ("home", "away")
+    ):
+        return None
+    if wins[wid] != need or wins[lid] >= need:
+        return None
+    return {"seriesWinnerWins": wins[wid], "seriesLoserWins": wins[lid], "seriesGames": len(played)}
+
+
+def final_context_fields(ctx: dict) -> dict:
+    """The venue, the winner's regular-season record and the title number from extract_final_context.sql, each only when it is well formed.
+    The sentence leaves out a clause whose field is missing, so a malformed value is dropped here rather than guessed."""
+    out: dict = {}
+    for key in ("venueName", "venueCity"):
+        value = ctx.get(key)
+        if isinstance(value, str) and value.strip():
+            out[key] = value.strip()
+    count = lambda v: isinstance(v, int) and not isinstance(v, bool) and v >= 0  # noqa: E731
+    rec = ctx.get("winnerRecord")
+    if isinstance(rec, dict) and count(rec.get("wins")) and count(rec.get("losses")):
+        out["winnerRecord"] = {k: rec[k] for k in ("wins", "losses", "ties", "otLosses") if k in rec and count(rec[k])}
+    number = ctx.get("winnerTitleNumber")
+    if count(number) and number > 0:
+        out["winnerTitleNumber"] = number
+    return out
+
+
 def finalize(row: dict) -> dict | None:
     """The fact as a shard row, without its sentence: the sentences are written by the library (see add_captions)."""
     source = source_of(row)
@@ -369,6 +434,7 @@ def finalize(row: dict) -> dict | None:
         "announcedDate", "awardDate", "ratifiedDate", "featuredReasons", "record",
         "sitelinks", "priorityAthlete", "nationality",
         "championships", "championshipName", "personAward", "awardCount", "hallOfFameYear",
+        "seriesWinnerWins", "seriesLoserWins", "seriesGames", "winnerRecord", "winnerTitleNumber",
     ):
         if row.get(key) not in (None, [], ""):
             out[key] = row[key]
@@ -796,15 +862,31 @@ def main() -> int:
         order = (row.get("eventDate") or "", row.get("gameId") or 0)
         if key not in clinchers or order > clinchers[key][0]:
             clinchers[key] = (order, row["recordId"])
+    rounds: dict[tuple, list] = defaultdict(list)
+    for row in finals:
+        rounds[(row.get("league"), row.get("seasonStartYear"))].append(row)
+    # What the archive holds beyond the game itself, per title game (extract_final_context.sql): the winner's regular-season record, which
+    # title this was for its franchise (only where the archive's list of that league's champions is complete) and the venue's name and city.
+    final_context = {r["gameId"]: r for r in load_records("extract_final_context.json") if r.get("gameId") is not None}
     for row in finals:
         if not ((row.get("home") or {}).get("name") and row.get("homeScore") is not None):
             continue
         check = checks.get(f"{row.get('league')}:{row.get('seasonStartYear')}")
+        key = (row.get("league"), row.get("seasonStartYear"))
+        # The final round of these leagues is a series. Only games of an allowed source are counted, so a season whose games are partly
+        # SPX's own (not published) cannot add up to its format and is not worded as a title either.
+        multi = row.get("league") in SERIES_LEAGUES
+        tally = series_tally(rounds[key], row.get("league"), row.get("seasonStartYear")) if multi else None
         if check and not check["agrees"]:
             rec = {**row, "category": "game-on-day"}
             rec["featuredReasons"] = featured_reasons(rec) or ["playoffs"]
-        elif clinchers[(row.get("league"), row.get("seasonStartYear"))][1] == row["recordId"]:
-            rec = {**row, "category": "championship-final"}
+        elif clinchers[key][1] == row["recordId"] and multi and tally is None:
+            # A series whose games do not add up to its format is not worded as the title: its last game is an ordinary playoff game.
+            rec = {**row, "category": "game-on-day"}
+            rec["featuredReasons"] = featured_reasons(rec) or ["playoffs"]
+        elif clinchers[key][1] == row["recordId"]:
+            rec = {**row, "category": "championship-final", **(tally or {})}
+            rec.update(final_context_fields(final_context.get(row.get("gameId")) or {}))
             rec["featuredReasons"] = featured_reasons(rec) or ["final"]
         else:
             rec = {**row, "category": "game-on-day"}

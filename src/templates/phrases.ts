@@ -8,6 +8,8 @@ import type { TemplateLocale } from "./types.ts";
  * `{0}`, `{1}` ... are filled from the arguments.
  */
 export type FragmentId =
+  | "clubPosition" | "seriesSweepScore" | "seriesGamesScore" | "seriesSweeping" | "seriesBeating" | "seriesSwept" | "seriesBeat"
+  | "clincher" | "titleNumber" | "regularSeason"
   | "context" | "overtime" | "shootout" | "stage" | "venueAt" | "venueCityAt" | "gameNumber" | "seriesWin"
   | "aged" | "diedParen" | "previousHolder" | "overallPick" | "clubBy" | "cityIn" | "homeOf"
   | "hosted" | "extraTime" | "penaltiesAfterDraw" | "penaltiesAfterExtraTime" | "penaltyShootout"
@@ -17,6 +19,16 @@ export type FragmentId =
 type Table = Record<FragmentId, { readonly en: readonly string[]; readonly ja: readonly string[] }>;
 
 export const FRAGMENTS: Table = {
+  clubPosition: { en: ["{0} {1}"], ja: ["{0}の{1}"] },
+  seriesSweepScore: { en: ["{0}\u2013{1}"], ja: ["{0}勝{1}敗"] },
+  seriesGamesScore: { en: ["{0} games to {1}"], ja: ["{0}勝{1}敗"] },
+  seriesSweeping: { en: ["sweeping"], ja: [""] },
+  seriesBeating: { en: ["beating"], ja: [""] },
+  seriesSwept: { en: ["swept"], ja: [""] },
+  seriesBeat: { en: ["beat"], ja: [""] },
+  clincher: { en: [" with a {0}\u2013{1} win in Game {2}"], ja: ["（第{2}戦は{0}対{1}）"] },
+  titleNumber: { en: [" It was their {0} title.", " That made it their {0} title."], ja: ["。通算{0}度目の優勝"] },
+  regularSeason: { en: [" They had finished the regular season {0}.", " Their regular season record was {0}."], ja: ["。レギュラーシーズンの成績は{0}"] },
   context: { en: [" ({0})"], ja: ["（{0}）"] },
   overtime: { en: [" in overtime", " after overtime"], ja: ["（延長）"] },
   extraTime: { en: [" after extra time", " in extra time"], ja: ["（延長）"] },
@@ -65,6 +77,15 @@ export const OVERTIME_BY_SPORT: Readonly<Record<string, { readonly en: readonly 
   baseball: { en: [" in overtime", " in extra innings", " after extra innings"], ja: ["（延長）"] },
   softball: { en: [" in overtime", " in extra innings", " after extra innings"], ja: ["（延長）"] },
 };
+
+/** "1st", "2nd", "5th" in English; the bare number in Japanese, whose sentence adds its own counter. */
+export function ordinal(n: number, locale: TemplateLocale): string {
+  if (locale === "ja") return String(n);
+  const tens = n % 100;
+  const suffix = tens >= 11 && tens <= 13 ? ORDINAL_SUFFIX[0] : (ORDINAL_SUFFIX[n % 10] ?? ORDINAL_SUFFIX[0]);
+  return `${n}${suffix}`;
+}
+const ORDINAL_SUFFIX: readonly string[] = ["th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th"];
 
 /** Fill `{0}`, `{1}` in a fragment. A missing argument becomes the empty string, never "undefined". */
 export function fill(format: string, args: readonly string[]): string {

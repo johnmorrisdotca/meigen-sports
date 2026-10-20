@@ -11,7 +11,7 @@ function gretzky(extra: Partial<OnThisDayRecord> = {}): OnThisDayRecord {
     recordId: "b1", category: "player-birthday", tags: ["player-birthday"], basis: "source",
     eventDate: "1961-01-26", datePrecision: "day", sport: "ice-hockey", competition: "nhl", league: "nhl",
     person: { personId: 1866, qid: "Q209518", name: "Wayne Gretzky", leagueCodes: ["nhl"], franchiseIds: [12], teamSeasonIds: [] },
-    clubNames: ["Edmonton Oilers"], position: "centre",
+    clubNames: ["Edmonton Oilers"], position: "C",
     livingStatus: "unknown", source, ...extra,
   };
 }
@@ -30,10 +30,10 @@ test("turns appears only on living-gated templates", () => {
 
 test("unknown birthday uses the neutral default and never turns", () => {
   const text = captionFromFact(gretzky());
-  assert.equal(text, "Wayne Gretzky, the Edmonton Oilers centre, was born on this day in 1961.");
+  assert.equal(text, "Wayne Gretzky, the Edmonton Oilers center, was born on this day in 1961.");
   assert.equal(/turns|would have turned|celebrates/i.test(text ?? ""), false);
   const ago = render(gretzky(), { wording: "fixed", asOf: "2026-01-26" });
-  assert.equal(ago?.text, "Wayne Gretzky, the Edmonton Oilers centre, was born on this day in 1961.");
+  assert.equal(ago?.text, "Wayne Gretzky, the Edmonton Oilers center, was born on this day in 1961.");
   const turns = render(gretzky(), { wording: "seeded", seed: "x", templateId: "birthday-turns", asOf: "2026-01-26" });
   assert.equal(turns, null);
 });
@@ -42,12 +42,12 @@ test("deceased birthday default names the sourced death year", () => {
   const dead = gretzky({
     livingStatus: "deceased", deathDate: "1948-08-16", eventDate: "1895-02-06",
     person: { personId: 1, qid: "Q1", name: "Babe Ruth", leagueCodes: ["mlb"], franchiseIds: [20], teamSeasonIds: [] },
-    clubNames: ["New York Yankees"], position: "outfielder",
+    clubNames: ["New York Yankees"], position: "OF", sport: "baseball",
   });
   assert.equal(captionFromFact(dead), "Babe Ruth, the New York Yankees outfielder, was born on this day in 1895 (died 1948).");
   assert.equal(/turns|would have turned/i.test(captionFromFact(dead) ?? ""), false);
   const ja = captionFromFact(dead, "ja");
-  assert.equal(ja, "Babe Ruth（New York Yankees outfielder）は1895年のこの日に生まれた（1948年死去）。");
+  assert.equal(ja, "Babe Ruth（New York Yankeesの外野手）は1895年のこの日に生まれた（1948年死去）。");
 });
 
 test("living-only turns template needs sourced living status and asOf on the birthday", () => {
@@ -72,11 +72,11 @@ test("a template that needs a missing field is skipped", () => {
 
 test("years-ago is true whether living or not", () => {
   const ago = render(gretzky(), { templateId: "birthday-years-ago", asOf: "2026-01-26" });
-  assert.equal(ago?.text, "Wayne Gretzky, the Edmonton Oilers centre, was born 65 years ago today.");
+  assert.equal(ago?.text, "Wayne Gretzky, the Edmonton Oilers center, was born 65 years ago today.");
   const deadAgo = render(gretzky({ livingStatus: "deceased", deathDate: "2020-01-01" }), {
     templateId: "birthday-years-ago", asOf: "2026-01-26",
   });
-  assert.equal(deadAgo?.text, "Wayne Gretzky, the Edmonton Oilers centre, was born 65 years ago today.");
+  assert.equal(deadAgo?.text, "Wayne Gretzky, the Edmonton Oilers center, was born 65 years ago today.");
 });
 
 test("fixed is stable and seeded variety is deterministic", () => {
@@ -96,7 +96,7 @@ test("varied wording without a seed is refused", () => {
 });
 
 test("Japanese birthday default uses the same fields", () => {
-  assert.equal(captionFromFact(gretzky(), "ja"), "Wayne Gretzky（Edmonton Oilers centre）は1961年のこの日に生まれた。");
+  assert.equal(captionFromFact(gretzky(), "ja"), "Wayne Gretzky（Edmonton Oilersのセンター）は1961年のこの日に生まれた。");
 });
 
 function morenz(extra: Partial<OnThisDayRecord> = {}): OnThisDayRecord {
@@ -105,7 +105,7 @@ function morenz(extra: Partial<OnThisDayRecord> = {}): OnThisDayRecord {
     eventDate: "1937-03-08", datePrecision: "day", sport: "ice-hockey", competition: "nhl", league: "nhl",
     person: { personId: 2, qid: "Q537941", name: "Howie Morenz", leagueCodes: ["nhl"], franchiseIds: [10], teamSeasonIds: [] },
     livingStatus: "deceased", deathDate: "1937-03-08", ageYears: 34,
-    clubNames: ["Montreal Canadiens"], position: "centre",
+    clubNames: ["Montreal Canadiens"], position: "C",
     highlight: "three-time Stanley Cup winner",
     source, ...extra,
   };
@@ -114,11 +114,11 @@ function morenz(extra: Partial<OnThisDayRecord> = {}): OnThisDayRecord {
 test("a death with club, position and honour names them; missing fields are skipped", () => {
   assert.equal(
     captionFromFact(morenz()),
-    "Howie Morenz, the Montreal Canadiens centre and three-time Stanley Cup winner, died on this day in 1937, aged 34.",
+    "Howie Morenz, the Montreal Canadiens center and three-time Stanley Cup winner, died on this day in 1937, aged 34.",
   );
   assert.equal(
     captionFromFact(morenz(), "ja"),
-    "Howie Morenz（Montreal Canadiens centre、three-time Stanley Cup winner）が1937年のこの日に34歳で死去した。",
+    "Howie Morenz（Montreal Canadiensのセンター、three-time Stanley Cup winner）が1937年のこの日に34歳で死去した。",
   );
   const thin = morenz({ clubNames: [], position: null, highlight: null, ageYears: null });
   assert.equal(captionFromFact(thin), null);
@@ -220,8 +220,8 @@ test("Gretzky bios use Edmonton Oilers, never Alberta Oilers", () => {
   assert.equal(/Alberta Oilers/.test(text ?? ""), false);
   assert.equal(/Ted Lindsay/.test(text ?? ""), false);
   const career = captionFromFact(gretzky({ highlight: "four-time Stanley Cup champion" }));
-  assert.equal(career, "Wayne Gretzky, the Edmonton Oilers centre and four-time Stanley Cup champion, was born on this day in 1961.");
+  assert.equal(career, "Wayne Gretzky, the Edmonton Oilers center and four-time Stanley Cup champion, was born on this day in 1961.");
   const birthdayOf = render(gretzky(), { templateId: "birthday-of" });
-  assert.equal(birthdayOf?.text, "Today is the birthday of Wayne Gretzky, the Edmonton Oilers centre.");
+  assert.equal(birthdayOf?.text, "Today is the birthday of Wayne Gretzky, the Edmonton Oilers center.");
   assert.equal(/Alberta|\.,/.test(birthdayOf?.text ?? ""), false);
 });

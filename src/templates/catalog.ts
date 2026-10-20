@@ -140,42 +140,42 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
   {
     id: "final-won", type: "final", locale: "en", gate: "neutral", role: "default", when: "decisive",
     needs: ["winner", "loser", "winScore", "loseScore", "year", "title"],
-    pattern: "{winner} won the {year} {title}, beating {loser} {winScore}–{loseScore}{ot}{venue}.",
+    pattern: "{winner} won the {year} {title}, beating {loser} {winScore}–{loseScore}{ot}{venue}.{titleNo}{regNote}",
   },
   {
     id: "final-to-win", type: "final", locale: "en", gate: "neutral", role: "variant", when: "decisive",
     needs: ["winner", "loser", "winScore", "loseScore", "year", "title"],
-    pattern: "{winner} beat {loser} {winScore}–{loseScore}{ot}{venue} to win the {year} {title}.",
+    pattern: "{winner} beat {loser} {winScore}–{loseScore}{ot}{venue} to win the {year} {title}.{titleNo}{regNote}",
   },
   {
     id: "final-captured", type: "final", locale: "en", gate: "neutral", role: "variant", when: "decisive",
     needs: ["winner", "loser", "winScore", "loseScore", "year", "title"],
-    pattern: "{theW}{winner} captured the {year} {title}, defeating {theL}{loser} {winScore}–{loseScore}{ot}{venue}.",
+    pattern: "{theW}{winner} captured the {year} {title}, defeating {theL}{loser} {winScore}–{loseScore}{ot}{venue}.{titleNo}{regNote}",
   },
   {
     id: "final-dominated", type: "final", locale: "en", gate: "neutral", role: "variant", when: "lopsided",
     needs: ["winner", "loser", "winScore", "loseScore", "year", "title"],
-    pattern: "{winner} dominated {loser} {winScore}–{loseScore}{ot}{venue} to win the {year} {title}.",
+    pattern: "{winner} dominated {loser} {winScore}–{loseScore}{ot}{venue} to win the {year} {title}.{titleNo}{regNote}",
   },
   {
     id: "final-won", type: "final", locale: "ja", gate: "neutral", role: "default", when: "decisive",
     needs: ["winner", "loser", "winScore", "loseScore", "year", "title"],
-    pattern: "{winner}が{year}年の{title}で{loser}に{winScore}対{loseScore}で勝った{ot}{venue}。",
+    pattern: "{winner}が{year}年の{title}で{loser}に{winScore}対{loseScore}で勝った{ot}{venue}{titleNo}{regNote}。",
   },
   {
     id: "final-to-win", type: "final", locale: "ja", gate: "neutral", role: "variant", when: "decisive",
     needs: ["winner", "loser", "winScore", "loseScore", "year", "title"],
-    pattern: "{winner}が{loser}に{winScore}対{loseScore}で勝ち、{year}年の{title}を制した{ot}{venue}。",
+    pattern: "{winner}が{loser}に{winScore}対{loseScore}で勝ち、{year}年の{title}を制した{ot}{venue}{titleNo}{regNote}。",
   },
   {
     id: "final-captured", type: "final", locale: "ja", gate: "neutral", role: "variant", when: "decisive",
     needs: ["winner", "loser", "winScore", "loseScore", "year", "title"],
-    pattern: "{winner}が{year}年の{title}を獲得し、{loser}に{winScore}対{loseScore}で勝った{ot}{venue}。",
+    pattern: "{winner}が{year}年の{title}を獲得し、{loser}に{winScore}対{loseScore}で勝った{ot}{venue}{titleNo}{regNote}。",
   },
   {
     id: "final-dominated", type: "final", locale: "ja", gate: "neutral", role: "variant", when: "lopsided",
     needs: ["winner", "loser", "winScore", "loseScore", "year", "title"],
-    pattern: "{winner}が{loser}を{winScore}対{loseScore}で圧倒し、{year}年の{title}を制した{ot}{venue}。",
+    pattern: "{winner}が{loser}を{winScore}対{loseScore}で圧倒し、{year}年の{title}を制した{ot}{venue}{titleNo}{regNote}。",
   },
   {
     id: "award-won", type: "award", locale: "en", gate: "neutral", role: "default",
@@ -302,15 +302,46 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
     pattern: "{home}と{away}の一戦は{homeScore}対{awayScore}で引き分けた{gameNo}{venue}{ot}{stage}{ctx}。",
   },
   // finals
+  // A final decided over several games says the series result, never the last game's score as if it were the title.
+  {
+    id: "final-series-won", type: "final", locale: "en", gate: "neutral", role: "default", when: "series",
+    needs: ["winner", "loser", "seriesScore", "seriesBeat", "clincher", "year", "title"],
+    pattern: "{winner} won the {year} {title}, {seriesBeat} {theL}{loser} {seriesScore}{clincher}{ot}{venue}.{titleNo}{regNote}",
+  },
+  {
+    id: "final-series-to-win", type: "final", locale: "en", gate: "neutral", role: "variant", when: "series",
+    needs: ["winner", "loser", "seriesScore", "clincher", "year", "title"],
+    pattern: "{winner} beat {theL}{loser} {seriesScore} to win the {year} {title}{clincher}{ot}{venue}.{titleNo}{regNote}",
+  },
+  {
+    id: "final-series-went-to", type: "final", locale: "en", gate: "neutral", role: "variant", when: "series",
+    needs: ["winner", "loser", "seriesScore", "seriesBeatPast", "clincher", "year", "title"],
+    pattern: "The {year} {title} went to {winner}, who {seriesBeatPast} {theL}{loser} {seriesScore}{clincher}{ot}{venue}.{titleNo}{regNote}",
+  },
+  {
+    id: "final-series-won", type: "final", locale: "ja", gate: "neutral", role: "default", when: "series",
+    needs: ["winner", "loser", "seriesScore", "clincher", "year", "title"],
+    pattern: "{winner}が{year}年の{title}で{loser}に{seriesScore}で勝った{clincher}{ot}{venue}{titleNo}{regNote}。",
+  },
+  {
+    id: "final-series-to-win", type: "final", locale: "ja", gate: "neutral", role: "variant", when: "series",
+    needs: ["winner", "loser", "seriesScore", "clincher", "year", "title"],
+    pattern: "{winner}が{loser}に{seriesScore}で勝ち、{year}年の{title}を制した{clincher}{ot}{venue}{titleNo}{regNote}。",
+  },
+  {
+    id: "final-series-went-to", type: "final", locale: "ja", gate: "neutral", role: "variant", when: "series",
+    needs: ["winner", "loser", "seriesScore", "clincher", "year", "title"],
+    pattern: "{year}年の{title}は{winner}が制し、{loser}に{seriesScore}で勝った{clincher}{ot}{venue}{titleNo}{regNote}。",
+  },
   {
     id: "final-went-to", type: "final", locale: "en", gate: "neutral", role: "variant", when: "decisive",
     needs: ["winner", "loser", "winScore", "loseScore", "year", "title"],
-    pattern: "The {year} {title} went to {winner}, who beat {loser} {winScore}–{loseScore}{ot}{venue}.",
+    pattern: "The {year} {title} went to {winner}, who beat {loser} {winScore}–{loseScore}{ot}{venue}.{titleNo}{regNote}",
   },
   {
     id: "final-went-to", type: "final", locale: "ja", gate: "neutral", role: "variant", when: "decisive",
     needs: ["winner", "loser", "winScore", "loseScore", "year", "title"],
-    pattern: "{year}年の{title}は{winner}が制し、{loser}に{winScore}対{loseScore}で勝った{ot}{venue}。",
+    pattern: "{year}年の{title}は{winner}が制し、{loser}に{winScore}対{loseScore}で勝った{ot}{venue}{titleNo}{regNote}。",
   },
   // A soccer final level at full time is decided on penalties; the stored result does not say who won them, so none of these names a winner.
   {

@@ -21,3 +21,12 @@ python3 -I pipeline/page_extract.py pipeline/queries/extract_person_context.sql
 ```
 
 An individual award is never read through a team-season: the award row carries the winner's team-season, so a team-season match gave every teammate of a Cy Young winner a Cy Young Award. `bash pipeline/test_person_context_sql.sh` checks that on a scratch Postgres (never DS1).
+
+Final context (`extract_final_context.sql`, keyed on `game_id`, output `extract_final_context.json`): for each game of a season's final round (`core.venue_final_game`), the venue's name as of that day and its city, the winner's regular-season record as its league writes it (`core.standing`, only when every source's last regular-season row agrees and covers the whole season) and which title this was for the winner's franchise (`winnerTitleNumber`, counted from the championship rows of `core.award_winner`, only when every season of every league the franchise belonged to, up to that year, has a champion on record or a row in `core.title_not_awarded`). A field the archive cannot state is left out. `titleCountCheck` (never published) says why a count was or was not given. The converter reads it for the last game of each final round, when the file is present:
+
+```sh
+python3 -I pipeline/page_extract.py pipeline/queries/extract_final_context.sql
+python3 -I pipeline/convert_extract.py && pnpm data
+```
+
+`bash pipeline/test_final_context_sql.sh` (`pnpm test:finalcontext`) checks it on a scratch Postgres on port 7403 (never DS1).

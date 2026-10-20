@@ -2,8 +2,9 @@ import type { OnThisDayRecord, TeamRef } from "../schema.ts";
 import type { MeigenRecord } from "../types.ts";
 import { TEMPLATES } from "./catalog.ts";
 import { isCareerHighlight, publicClubName } from "./clubs.ts";
-import { OVERTIME_BY_SPORT, phrase } from "./phrases.ts";
+import { OVERTIME_BY_SPORT, ordinal, phrase } from "./phrases.ts";
 import type { FragmentId } from "./phrases.ts";
+import { positionName } from "./positions.ts";
 import { championshipTitle, isLopsided } from "./titles.ts";
 import type {
   RenderedSentence, RenderOptions, SentenceTemplate, TemplateLocale, TemplateType, Wording,
@@ -107,6 +108,8 @@ export interface Subject {
   readonly tie: boolean;
   readonly decisive: boolean;
   readonly lopsided: boolean;
+  /** A final decided over several games, with the series tally known. */
+  readonly series: boolean;
   readonly blocked: boolean;
 }
 
@@ -118,6 +121,24 @@ function clubArticles(record: OnThisDayRecord, say: (id: FragmentId, ...args: st
 
 function isPersonDay(record: OnThisDayRecord): boolean {
   return record.category === "player-birthday" || record.category === "player-death";
+}
+
+/** The tally of a final that was a series: games won by the title winner and by the loser, and every game played (a tied game counts here, not as a win). Only when the counts agree with one another. */
+function seriesOf(record: OnThisDayRecord): { winnerWins: number; loserWins: number; games: number } | null {
+  const w = record.seriesWinnerWins, l = record.seriesLoserWins;
+  if (w == null || l == null || !Number.isInteger(w) || !Number.isInteger(l) || w <= l || l < 0) return null;
+  const hs = record.homeScore, aws = record.awayScore;
+  if (hs == null || aws == null || hs === aws) return null;
+  const games = record.seriesGames;
+  if (games == null || !Number.isInteger(games) || games < w + l) return null;
+  return { winnerWins: w, loserWins: l, games };
+}
+
+/** A regular-season record as the league writes it: wins, losses, then ties or overtime losses when the record holds them ("91–71", "11–3–0"). */
+function recordLine(r: OnThisDayRecord["winnerRecord"]): string {
+  if (!r || !Number.isInteger(r.wins) || !Number.isInteger(r.losses) || r.wins < 0 || r.losses < 0) return "";
+  const extra = r.otLosses != null ? r.otLosses : r.ties;
+  return [r.wins, r.losses, ...(extra != null && Number.isInteger(extra) && extra >= 0 ? [extra] : [])].join("\u2013");
 }
 
 function fieldsOf(record: OnThisDayRecord, locale: TemplateLocale, asOf: string | undefined, choose: Chooser): Record<string, string> {
@@ -148,8 +169,8 @@ function fieldsOf(record: OnThisDayRecord, locale: TemplateLocale, asOf: string 
   const gameNo = record.seriesGameNumber ? say("gameNumber", String(record.seriesGameNumber)) : "";
   const clubs = (record.clubNames?.filter((n) => n.trim()) ?? []).join(say("join")) || (record.clubName?.trim() ?? "");
   const club = publicClubName(record.clubNames, record.clubName ?? "");
-  const position = record.position?.trim() ?? "";
-  const clubPosition = [club, position].filter(Boolean).join(" ");
+  const position = positionName(record.sport, record.position, locale);
+  const clubPosition = club && position ? say("clubPosition", club, position) : (club || position);
   const honour = record.highlight?.trim() ?? "";
   const birthday = record.category === "player-birthday";
   const career = birthday && honour && isCareerHighlight(honour);
@@ -167,6 +188,15 @@ function fieldsOf(record: OnThisDayRecord, locale: TemplateLocale, asOf: string 
     else whoClause = say("whoPlain", honour);
   }
   const deathYear = deathYearOf(record);
+  const series = seriesOf(record);
+  const sweep = series?.loserWins === 0;
+  const seriesScore = series ? say(sweep ? "seriesSweepScore" : "seriesGamesScore", String(series.winnerWins), String(series.loserWins)) : "";
+  const seriesBeat = series ? say(sweep ? "seriesSweeping" : "seriesBeating") : "";
+  const seriesBeatPast = series ? say(sweep ? "seriesSwept" : "seriesBeat") : "";
+  const clincher = series ? say("clincher", winScore, loseScore, String(series.games)) : "";
+  const titleNo = record.winnerTitleNumber ? say("titleNumber", ordinal(record.winnerTitleNumber, locale)) : "";
+  const seasonRecord = recordLine(record.winnerRecord);
+  const regNote = seasonRecord ? say("regularSeason", seasonRecord) : "";
   const deceased = record.livingStatus === "deceased" && Boolean(deathYear);
   const diedParen = deceased && !ja ? say("diedParen", deathYear) : "";
   const diedParenJa = deceased && ja ? say("diedParen", deathYear) : "";
@@ -191,6 +221,7 @@ function fieldsOf(record: OnThisDayRecord, locale: TemplateLocale, asOf: string 
     homeScore: hs == null ? "" : String(hs),
     awayScore: aws == null ? "" : String(aws),
     winner, loser, winScore, loseScore, theW, theL, ctx, ot, stage, venue, gameNo,
+    seriesScore, seriesBeat, seriesBeatPast, clincher, titleNo, regNote,
     clubs,
     who, whoClause, whoAfter: whoClause.replace(/,$/, ""), diedParen, diedParenJa, homeClause, finalClause,
     venueContext, franchiseContext, leagueIdentity,
@@ -228,7 +259,7 @@ function subjectOfFact(record: OnThisDayRecord, locale: TemplateLocale, asOf: st
     type, recordId: record.recordId, fields: fieldsOf(record, locale, asOf, choose),
     living: record.livingStatus === "living",
     deceasedOk: record.category === "player-death" ? record.livingStatus !== "living" : record.livingStatus === "deceased" && Boolean(deathYear),
-    tie, decisive: hs != null && aws != null && !tie, lopsided: isLopsided(record),
+    tie, decisive: hs != null && aws != null && !tie, lopsided: isLopsided(record), series: seriesOf(record) !== null,
     blocked: record.category === "franchise-event" && /^\d{4}-01-01$/.test(record.eventDate ?? ""),
   };
 }
@@ -242,7 +273,7 @@ const EVENT_LINE = /^(.+) took place\.$/;
 const FINAL_LINE = /^(.+?) won the (\d{4}) World Cup, beating (.+?) (\d+)–(\d+)(?: (after extra time)| (on penalties) after (?:(extra time)|a (\d+)–(\d+) draw))?\.$/;
 
 function historySubject(type: TemplateType, recordId: string, fields: Record<string, string>, decisive: boolean): Subject {
-  return { type, recordId, fields, living: false, deceasedOk: false, tie: !decisive && type === "world-cup-match", decisive, lopsided: false, blocked: false };
+  return { type, recordId, fields, living: false, deceasedOk: false, tie: !decisive && type === "world-cup-match", decisive, lopsided: false, series: false, blocked: false };
 }
 
 function subjectOfHistory(record: MeigenRecord, locale: TemplateLocale, choose: Chooser): Subject | null {
@@ -296,6 +327,9 @@ function eligible(template: SentenceTemplate, subject: Subject, type: TemplateTy
   if (template.when === "tie" && !subject.tie) return false;
   if (template.when === "decisive" && !subject.decisive) return false;
   if (template.when === "lopsided" && !subject.lopsided) return false;
+  // A final won over several games says the series, never the last game's score as if it were the title.
+  if (template.when === "series" && !subject.series) return false;
+  if (subject.series && template.type === "final" && template.when !== "series") return false;
   if (subject.blocked) return false;
   for (const need of template.needs) {
     if (!subject.fields[need]) return false;
