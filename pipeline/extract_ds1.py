@@ -23,6 +23,8 @@ PAGES = [
      "-v after_id=0 -v page_limit=2000"),
     ("award", "pipeline/queries/extract_awards_season.sql",
      "-v after_id=0 -v page_limit=2000"),
+    ("person-context", "pipeline/queries/extract_person_context.sql",
+     "-v after_id=0 -v page_limit=2000"),
     ("franchise-event", "pipeline/queries/extract_franchise_events.sql",
      "-v after_date='0001-01-01' -v after_id=0 -v page_limit=2000"),
     ("venue-opening", "pipeline/queries/extract_venue_openings.sql",

@@ -108,6 +108,7 @@
     "data": "node scripts/data.ts",
     "data:report": "node scripts/data.ts --report",
     "data:check": "node scripts/data.ts --check",
+    "test:extract": "bash pipeline/test_person_context_sql.sh",
     "data:facts": "python3 -I pipeline/convert_extract.py",
     "data:coverage": "python3 -I pipeline/coverage_matrix.py",
     "data:wikidata": "python3 -I pipeline/fetch_wikidata_open.py",

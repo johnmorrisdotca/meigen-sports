@@ -43,13 +43,22 @@ sided as (
          w.award_count, w.championships, w.person_award, w.championship_name
   from page p
   left join lateral (
+    -- The team-seasons a person played in: rosters and statistics both, as api.player_teams counts them. A player with season
+    -- statistics but no roster row (most baseball and hockey players) still has his clubs. Coaches are not players.
+    select coalesce(array_agg(distinct t.team_season_id), '{}'::int[]) as ids
+    from (
+      select rs.team_season_id from core.roster_stint rs where rs.person_id = p.person_id and rs.role = 'player'
+      union
+      select x.team_season_id from core.player_season_stat x where x.person_id = p.person_id
+    ) t
+  ) st on true
+  left join lateral (
     select array_agg(distinct se.league_code order by se.league_code) as league_codes,
            array_agg(distinct ts.franchise_id order by ts.franchise_id) as franchise_ids,
            array_agg(distinct ts.team_season_id order by ts.team_season_id) as team_season_ids
-    from core.roster_stint rs
-    join core.team_season ts on ts.team_season_id = rs.team_season_id
+    from unnest(st.ids) as u(team_season_id)
+    join core.team_season ts on ts.team_season_id = u.team_season_id
     join core.season se on se.season_id = ts.season_id
-    where rs.person_id = p.person_id
   ) t on true
   left join lateral (
     -- Known sports only: core.person_sport, else roster league, else mapped P641/P106.
@@ -98,27 +107,28 @@ sided as (
              case when min(se.start_year) = max(se.start_year)
                then ' (' || min(se.start_year)::text || ')'
                else ' (' || min(se.start_year)::text || '–' || max(se.start_year)::text || ')' end as club
-      from core.roster_stint rs
-      join core.team_season ts on ts.team_season_id = rs.team_season_id
+      from unnest(st.ids) as u(team_season_id)
+      join core.team_season ts on ts.team_season_id = u.team_season_id
       join core.season se on se.season_id = ts.season_id
       join core.franchise_identity i
         on i.franchise_id = ts.franchise_id
        and i.valid_during @> make_date(se.start_year, 7, 1)
-      where rs.person_id = p.person_id and i.full_name is not null
+      where i.full_name is not null
       group by i.full_name
     ) c
   ) clubs on true
   left join lateral (
+    -- An individual award belongs to the person it names (aw.person_id), never to his teammates: an award row carries the winner's
+    -- team-season, so matching on the team-season gave every teammate of a Cy Young winner a Cy Young Award. Only a championship, which
+    -- is the club's, is read through the person's own team-seasons.
     select count(*) filter (where a.kind = 'person_award')::int as award_count,
            count(*) filter (where a.kind = 'championship')::int as championships,
            (array_agg(a.name order by aw.award_winner_id) filter (where a.kind = 'person_award'))[1] as person_award,
            (array_agg(a.name order by aw.award_winner_id) filter (where a.kind = 'championship'))[1] as championship_name
     from core.award_winner aw
     join core.award a on a.award_id = aw.award_id
-    where aw.person_id = p.person_id
-       or aw.team_season_id in (
-         select rs.team_season_id from core.roster_stint rs where rs.person_id = p.person_id
-       )
+    where (a.kind = 'person_award' and aw.person_id = p.person_id)
+       or (a.kind = 'championship' and aw.team_season_id = any (st.ids))
   ) w on true
 )
 select jsonb_build_object(

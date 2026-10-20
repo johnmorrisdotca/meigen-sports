@@ -90,6 +90,25 @@ class ExtractorSqlTests(unittest.TestCase):
         self.assertIn("after_id", body)
         self.assertNotIn("after_qid", body)
 
+    def test_an_award_is_read_through_the_person_never_the_team_season(self):
+        # 0.6.0 matched `aw.person_id = p.person_id or aw.team_season_id in (the person's team-seasons)`: every teammate of a Cy Young winner
+        # got his award. Only a championship, which is the club's, may be read through the person's own team-seasons.
+        for name in ("player-birthday-candidates.sql", "extract_deaths.sql"):
+            body = self.assert_read_only(name)
+            self.assertIn("(a.kind = 'person_award' and aw.person_id = p.person_id)", body, name)
+            self.assertIn("(a.kind = 'championship' and aw.team_season_id = any (st.ids))", body, name)
+            self.assertNotIn("aw.person_id = p.person_id or", body, name)
+            self.assertIn("core.player_season_stat", body, name)
+            self.assertIn("rs.role = 'player'", body, name)
+
+    def test_person_context_reads_hall_of_fame_awards_and_clubs_by_person(self):
+        body = self.assert_read_only("extract_person_context.sql")
+        for needle in ("p.hall_of_fame_year", "core.award_winner", "a.kind = 'person_award'", "w.person_id = p.person_id", "core.roster_stint",
+                       "core.player_season_stat", "rs.role = 'player'", "after_id", "page_limit", "'halloffameyear'", "'awards'", "'clubnames'"):
+            self.assertIn(needle, body)
+        self.assertNotIn("after_date", body)
+        self.assertNotIn("person_award' and w.team_season_id", body)
+
 
 if __name__ == "__main__":
     unittest.main()
