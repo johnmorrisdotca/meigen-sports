@@ -43,6 +43,8 @@ pnpm test:demo      # build the demo and play it in a real browser at a phone's 
 pnpm test:readme    # run the examples of the README and of docs/ against the built package
 pnpm data:report    # show generated seed counts and date coverage
 pnpm data:check     # verify generated data matches its reviewed sources
+pnpm data:days      # facts, sports and kinds per day (October 20 and all 366 days): run before and after a data or ranking change
+pnpm test:extract   # the DS1 person extractors on a scratch Postgres in Docker (port 7402), never DS1
 pnpm screenshots    # the README's pictures, into docs/images
 pnpm dev            # the demo on http://127.0.0.1:7400/
 ```
