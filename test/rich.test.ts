@@ -21,7 +21,7 @@ function held(record: OnThisDayRecord): Set<string> {
   const walk = (value: unknown, key: string): void => {
     if (key === "text" || key === "textJa" || key === "url" || key === "recordId" || key === "attribution") return;
     if (typeof value === "string") for (const t of tokens(value)) out.add(t);
-    else if (typeof value === "number") { out.add(String(value)); out.add(`${value}${["th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th"][value % 10]}`); }
+    else if (typeof value === "number") { out.add(String(value)); out.add(`${value}${value % 100 >= 11 && value % 100 <= 13 ? "th" : ["th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th"][value % 10]}`); }
     else if (Array.isArray(value)) for (const v of value) walk(v, key);
     else if (value && typeof value === "object") for (const [k, v] of Object.entries(value)) walk(v, k);
   };

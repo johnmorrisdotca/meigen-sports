@@ -193,7 +193,8 @@ function fieldsOf(record: OnThisDayRecord, locale: TemplateLocale, asOf: string 
   const seriesScore = series ? say(sweep ? "seriesSweepScore" : "seriesGamesScore", String(series.winnerWins), String(series.loserWins)) : "";
   const seriesBeat = series ? say(sweep ? "seriesSweeping" : "seriesBeating") : "";
   const seriesBeatPast = series ? say(sweep ? "seriesSwept" : "seriesBeat") : "";
-  const clincher = series ? say("clincher", winScore, loseScore, String(series.games)) : "";
+  // English says "an 11–0 win", "an 8–3 win", "an 82–80 win": a number whose first word begins with a vowel sound (eight, eleven, eighteen, eighty-).
+  const clincher = series ? say(/^(8|11|18)(\D|$)|^8\d(\D|$)/.test(winScore) ? "clincherAn" : "clincher", winScore, loseScore, String(series.games)) : "";
   const titleNo = record.winnerTitleNumber ? say("titleNumber", ordinal(record.winnerTitleNumber, locale)) : "";
   const seasonRecord = recordLine(record.winnerRecord);
   const regNote = seasonRecord ? say("regularSeason", seasonRecord) : "";

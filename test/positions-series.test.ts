@@ -108,6 +108,14 @@ test("a series with no tally, or a tally that cannot be, is never worded as a si
   assert.equal(render(final({ homeScore: 2, awayScore: 2 }), { templateId: "final-series-won" }), null, "a tied last game has no series winner");
 });
 
+test("the article follows how the score is said: a 11–0 win is an 11–0 win", () => {
+  assert.match(captionFromFact(final({ homeScore: 0, awayScore: 11, seriesLoserWins: 3, seriesGames: 7 }), "en") ?? "", /with an 11–0 win in Game 7\./);
+  assert.match(captionFromFact(final({ homeScore: 3, awayScore: 8 }), "en") ?? "", /with an 8–3 win/);
+  assert.match(captionFromFact(final({ homeScore: 85, awayScore: 99, sport: "basketball", league: "nba" }), "en") ?? "", /with a 99–85 win/);
+  assert.match(captionFromFact(final({ homeScore: 80, awayScore: 82, sport: "basketball", league: "nba" }), "en") ?? "", /with an 82–80 win/);
+  assert.match(captionFromFact(final({ homeScore: 3, awayScore: 18 }), "en") ?? "", /with an 18–3 win/);
+});
+
 test("a tied game is played but not won: eight games for a series won 4-3", () => {
   assert.match(captionFromFact(final({ seriesLoserWins: 3, seriesGames: 8 }), "en") ?? "", /4 games to 3 with a 2–1 win in Game 8\./);
 });
@@ -127,15 +135,30 @@ test("every title sentence of a series in the data carries a tally that agrees w
     if (!(r.text ?? "").includes(tally)) bad.push(`${r.recordId}: "${tally}" not in ${r.text}`);
     if (!(r.text ?? "").includes(`Game ${games}`)) bad.push(`${r.recordId}: Game ${games} not in ${r.text}`);
     const score = `${Math.max(r.homeScore!, r.awayScore!)}–${Math.min(r.homeScore!, r.awayScore!)}`;
-    if (!(r.text ?? "").includes(`with a ${score} win in Game`)) bad.push(`${r.recordId}: the deciding game's score is not its own clause in ${r.text}`);
-    if (new RegExp(`(beating|beat) (the )?[^.]*? ${score}[ .]`).test((r.text ?? "").replace(`with a ${score} win`, ""))) bad.push(`${r.recordId}: the last game's score stands in for the series: ${r.text}`);
+    if (!new RegExp(`with an? ${score} win in Game`).test(r.text ?? "")) bad.push(`${r.recordId}: the deciding game's score is not its own clause in ${r.text}`);
+    if (new RegExp(`(beating|beat) (the )?[^.]*? ${score}[ .]`).test((r.text ?? "").replace(new RegExp(`with an? ${score} win`), ""))) bad.push(`${r.recordId}: the last game's score stands in for the series: ${r.text}`);
   }
   assert.deepEqual(bad.slice(0, 10), []);
 });
 
 test("Cincinnati Reds, 1990: the series, not the last game", () => {
   const reds = records.find((r) => r.category === "championship-final" && r.league === "mlb" && r.seasonStartYear === 1990)!;
-  assert.equal(reds.text, "Cincinnati Reds won the 1990 World Series, sweeping the Oakland Athletics 4–0 with a 2–1 win in Game 4.");
+  assert.equal(reds.text, "Cincinnati Reds won the 1990 World Series, sweeping the Oakland Athletics 4–0 with a 2–1 win in Game 4 at Oakland Coliseum, Oakland.");
+});
+
+test("the context the archive held is in the facts: every final has its venue, and a title number or record only where DS1 stated one", () => {
+  const finals = records.filter((r) => r.category === "championship-final");
+  assert.ok(finals.length > 300);
+  for (const r of finals) {
+    assert.ok(r.venueName && r.venueCity, `${r.recordId} has no venue`);
+    assert.ok((r.text ?? "").includes(`at ${r.venueName}`), r.recordId);
+    if (r.winnerTitleNumber != null) assert.match(r.text ?? "", /It was their \d+(st|nd|rd|th) title\./, r.recordId);
+    else assert.doesNotMatch(r.text ?? "", /their \d+(st|nd|rd|th) title/, r.recordId);
+    if (r.winnerRecord != null) assert.match(r.text ?? "", /They had finished the regular season \d+–\d+(–\d+)?\./, r.recordId);
+    else assert.doesNotMatch(r.text ?? "", /regular season/, r.recordId);
+  }
+  const bears = finals.find((r) => r.league === "nfl" && r.eventDate === "1986-01-26")!;
+  assert.equal(bears.text, "Chicago Bears won the 1986 Super Bowl, beating New England Patriots 46–10 at Louisiana Superdome, New Orleans. It was their 9th title. They had finished the regular season 15–1–0.");
 });
 
 test("a season whose games do not add up to its series is not worded as a title (2008 holds a duplicate of a suspended game)", () => {

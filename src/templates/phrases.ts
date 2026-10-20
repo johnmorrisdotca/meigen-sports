@@ -9,7 +9,7 @@ import type { TemplateLocale } from "./types.ts";
  */
 export type FragmentId =
   | "clubPosition" | "seriesSweepScore" | "seriesGamesScore" | "seriesSweeping" | "seriesBeating" | "seriesSwept" | "seriesBeat"
-  | "clincher" | "titleNumber" | "regularSeason"
+  | "clincher" | "clincherAn" | "titleNumber" | "regularSeason"
   | "context" | "overtime" | "shootout" | "stage" | "venueAt" | "venueCityAt" | "gameNumber" | "seriesWin"
   | "aged" | "diedParen" | "previousHolder" | "overallPick" | "clubBy" | "cityIn" | "homeOf"
   | "hosted" | "extraTime" | "penaltiesAfterDraw" | "penaltiesAfterExtraTime" | "penaltyShootout"
@@ -27,6 +27,7 @@ export const FRAGMENTS: Table = {
   seriesSwept: { en: ["swept"], ja: [""] },
   seriesBeat: { en: ["beat"], ja: [""] },
   clincher: { en: [" with a {0}\u2013{1} win in Game {2}"], ja: ["（第{2}戦は{0}対{1}）"] },
+  clincherAn: { en: [" with an {0}\u2013{1} win in Game {2}"], ja: ["（第{2}戦は{0}対{1}）"] },
   titleNumber: { en: [" It was their {0} title.", " That made it their {0} title."], ja: ["。通算{0}度目の優勝"] },
   regularSeason: { en: [" They had finished the regular season {0}.", " Their regular season record was {0}."], ja: ["。レギュラーシーズンの成績は{0}"] },
   context: { en: [" ({0})"], ja: ["（{0}）"] },
