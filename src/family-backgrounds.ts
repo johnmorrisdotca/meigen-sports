@@ -8,7 +8,7 @@
 //   backgroundSvg("midnight", { width: 1080, height: 1350, theme: "dark" }) -> { defs, body, ink }
 //
 // `defs` goes inside the drawing's `<defs>`, `body` right after a plain rectangle of `ink.base`, and `ink` says which colours to draw text, lines, boxes and marks in.
-export const FAMILY_BACKGROUNDS_VERSION = "1.0.0";
+export const FAMILY_BACKGROUNDS_VERSION = "1.0.1";
 
 /** The presets, by name. The five that end in a playing surface read as one: pitch (soccer), ice (hockey), hardwood (basketball), infield (baseball) and turf (football). */
 export const BACKGROUND_PRESETS = [
@@ -31,7 +31,7 @@ export interface BackgroundSvgOptions {
   intensity?: number;
   /** Moves the scattered parts (confetti, stars, scratches, contours). Default 1. */
   seed?: number;
-  /** The prefix of the ids the background writes. Default: a hash of its options. */
+  /** The prefix of the ids the background writes. Default: a hash of its options. Only letters, digits, `_` and `-` are kept (every other character becomes `-`), and `bg-` goes in front of one that does not start with a letter; a safe id is used as written. */
   id?: string;
 }
 
@@ -117,6 +117,12 @@ function seeded(seed: number): () => number {
     t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
     return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
   };
+}
+
+/** The caller's id made safe to write into an `id` attribute and a `url(#...)`: letters, digits, `_` and `-`, starting with a letter. An id that is already safe is unchanged. */
+function safeId(id: string): string {
+  const clean = id.replace(/[^\w-]/g, "-");
+  return /^[A-Za-z]/.test(clean) ? clean : `bg-${clean}`;
 }
 
 /** A small stable hash of a string, as base 36. */
@@ -532,7 +538,7 @@ export function backgroundSvg(preset: BackgroundPresetName, options: BackgroundS
   if (given.length === 1 && parseColor(given[0])) palette[1] = toHex(mix(parseColor(given[0])!, dark ? BLACK : WHITE, 0.35));
   const intensity = clamp(options.intensity ?? 0.6, 0, 1);
   const k = intensity / 0.6;
-  const id = options.id ?? `bg${hashOf(JSON.stringify([preset, w, h, dark, given, options.angle, intensity, options.seed]))}`;
+  const id = options.id != null ? safeId(String(options.id)) : `bg${hashOf(JSON.stringify([preset, w, h, dark, given, options.angle, intensity, options.seed]))}`;
   const angle = options.angle ?? def.angle;
   const ground: Ground = { w, h, c: palette, k, rnd: seeded(options.seed ?? 1), id, dark, long: Math.max(w, h), short: Math.min(w, h) };
   const made = def.draw(ground);

@@ -4,6 +4,10 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+## [0.6.4] - 2026-10-20
+
+- Security: the family's shared background module that the package carries (`dist/family-backgrounds.js`, not reachable from the package's exports) now makes the `id` it is given safe before writing it into element ids and `url(#...)`: only letters, digits, `_` and `-` are kept, every other character becomes `-`, and `bg-` goes in front of an id that does not start with a letter. An id that is already safe is unchanged. It is the shared module's version 1.0.1; `test/family-backgrounds.test.ts` pins its version and sha256 and draws every preset with hostile ids. No data or wording changes.
+
 ## [0.6.3] - 2026-10-20
 
 - Wording: positions are spelled out in every sentence, never as codes. "Mickey Mantle, the New York Yankees CF" is "the New York Yankees center fielder", "Juan González, the Texas Rangers DH" is "the Texas Rangers designated hitter", a hockey "LW" is a left wing and a "G" a goaltender. One table, `src/templates/positions.ts`, picked by the record's sport and then its code (C is a catcher in baseball and a center in hockey, basketball and football), in North American spelling ("center", "defenseman"), with the Japanese wording from the same table. A code the sport's table does not hold is left out of the sentence, never printed or guessed. The record keeps the code. 10,155 birthdays and deaths changed; `test/positions-series.test.ts` fails on any bare code in a published sentence and on any code of the data without a row.
