@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "factsReady": 29961,
+  "factsReady": 30480,
   "rows": [
     {
       "sport": "ice-hockey",
@@ -50,7 +50,7 @@
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
-      "feedReady": 0
+      "feedReady": 7
     },
     {
       "sport": "ice-hockey",
@@ -200,7 +200,7 @@
       "archived": 4,
       "identityLinked": 4,
       "rightsCleared": 4,
-      "feedReady": 0
+      "feedReady": 12
     },
     {
       "sport": "ice-hockey",
@@ -350,7 +350,7 @@
       "archived": 8,
       "identityLinked": 8,
       "rightsCleared": 8,
-      "feedReady": 2
+      "feedReady": 14
     },
     {
       "sport": "ice-hockey",
@@ -500,7 +500,7 @@
       "archived": 17,
       "identityLinked": 17,
       "rightsCleared": 17,
-      "feedReady": 17
+      "feedReady": 23
     },
     {
       "sport": "ice-hockey",
@@ -650,7 +650,7 @@
       "archived": 22,
       "identityLinked": 22,
       "rightsCleared": 22,
-      "feedReady": 22
+      "feedReady": 27
     },
     {
       "sport": "ice-hockey",
@@ -660,7 +660,7 @@
       "archived": 2,
       "identityLinked": 2,
       "rightsCleared": 2,
-      "feedReady": 0
+      "feedReady": 3
     },
     {
       "sport": "ice-hockey",
@@ -800,7 +800,7 @@
       "archived": 28,
       "identityLinked": 28,
       "rightsCleared": 28,
-      "feedReady": 28
+      "feedReady": 33
     },
     {
       "sport": "ice-hockey",
@@ -810,7 +810,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 2
     },
     {
       "sport": "ice-hockey",
@@ -950,7 +950,7 @@
       "archived": 34,
       "identityLinked": 34,
       "rightsCleared": 34,
-      "feedReady": 34
+      "feedReady": 41
     },
     {
       "sport": "ice-hockey",
@@ -960,7 +960,7 @@
       "archived": 3,
       "identityLinked": 3,
       "rightsCleared": 3,
-      "feedReady": 3
+      "feedReady": 8
     },
     {
       "sport": "ice-hockey",
@@ -1110,7 +1110,7 @@
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
-      "feedReady": 0
+      "feedReady": 2
     },
     {
       "sport": "ice-hockey",
@@ -1250,7 +1250,7 @@
       "archived": 68,
       "identityLinked": 68,
       "rightsCleared": 68,
-      "feedReady": 68
+      "feedReady": 74
     },
     {
       "sport": "ice-hockey",
@@ -1260,7 +1260,7 @@
       "archived": 5,
       "identityLinked": 5,
       "rightsCleared": 5,
-      "feedReady": 4
+      "feedReady": 9
     },
     {
       "sport": "ice-hockey",
@@ -1400,7 +1400,7 @@
       "archived": 69,
       "identityLinked": 69,
       "rightsCleared": 69,
-      "feedReady": 69
+      "feedReady": 75
     },
     {
       "sport": "ice-hockey",
@@ -1410,7 +1410,7 @@
       "archived": 9,
       "identityLinked": 9,
       "rightsCleared": 9,
-      "feedReady": 4
+      "feedReady": 18
     },
     {
       "sport": "ice-hockey",
@@ -1550,7 +1550,7 @@
       "archived": 55,
       "identityLinked": 55,
       "rightsCleared": 55,
-      "feedReady": 55
+      "feedReady": 62
     },
     {
       "sport": "ice-hockey",
@@ -1560,7 +1560,7 @@
       "archived": 12,
       "identityLinked": 12,
       "rightsCleared": 12,
-      "feedReady": 8
+      "feedReady": 12
     },
     {
       "sport": "ice-hockey",
@@ -1700,7 +1700,7 @@
       "archived": 59,
       "identityLinked": 59,
       "rightsCleared": 59,
-      "feedReady": 59
+      "feedReady": 67
     },
     {
       "sport": "ice-hockey",
@@ -1710,7 +1710,7 @@
       "archived": 17,
       "identityLinked": 17,
       "rightsCleared": 17,
-      "feedReady": 15
+      "feedReady": 21
     },
     {
       "sport": "ice-hockey",
@@ -1850,7 +1850,7 @@
       "archived": 49,
       "identityLinked": 49,
       "rightsCleared": 49,
-      "feedReady": 49
+      "feedReady": 56
     },
     {
       "sport": "ice-hockey",
@@ -1860,7 +1860,7 @@
       "archived": 17,
       "identityLinked": 17,
       "rightsCleared": 17,
-      "feedReady": 17
+      "feedReady": 20
     },
     {
       "sport": "ice-hockey",
@@ -2010,7 +2010,7 @@
       "archived": 13,
       "identityLinked": 13,
       "rightsCleared": 13,
-      "feedReady": 13
+      "feedReady": 18
     },
     {
       "sport": "ice-hockey",
@@ -2160,7 +2160,7 @@
       "archived": 27,
       "identityLinked": 27,
       "rightsCleared": 27,
-      "feedReady": 27
+      "feedReady": 31
     },
     {
       "sport": "ice-hockey",
@@ -2310,7 +2310,7 @@
       "archived": 27,
       "identityLinked": 27,
       "rightsCleared": 27,
-      "feedReady": 27
+      "feedReady": 31
     },
     {
       "sport": "ice-hockey",
@@ -2450,7 +2450,7 @@
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "baseball",
@@ -2480,7 +2480,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 5
     },
     {
       "sport": "baseball",
@@ -2600,7 +2600,7 @@
       "archived": 5,
       "identityLinked": 5,
       "rightsCleared": 5,
-      "feedReady": 2
+      "feedReady": 9
     },
     {
       "sport": "baseball",
@@ -2630,7 +2630,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 12
     },
     {
       "sport": "baseball",
@@ -2750,7 +2750,7 @@
       "archived": 7,
       "identityLinked": 7,
       "rightsCleared": 7,
-      "feedReady": 7
+      "feedReady": 9
     },
     {
       "sport": "baseball",
@@ -2780,7 +2780,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 8
     },
     {
       "sport": "baseball",
@@ -2860,7 +2860,7 @@
       "archived": 36,
       "identityLinked": 36,
       "rightsCleared": 36,
-      "feedReady": 36
+      "feedReady": 6
     },
     {
       "sport": "baseball",
@@ -2900,7 +2900,7 @@
       "archived": 13,
       "identityLinked": 13,
       "rightsCleared": 13,
-      "feedReady": 13
+      "feedReady": 16
     },
     {
       "sport": "baseball",
@@ -2930,7 +2930,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 16
     },
     {
       "sport": "baseball",
@@ -3010,7 +3010,7 @@
       "archived": 58,
       "identityLinked": 58,
       "rightsCleared": 58,
-      "feedReady": 58
+      "feedReady": 10
     },
     {
       "sport": "baseball",
@@ -3050,7 +3050,7 @@
       "archived": 15,
       "identityLinked": 15,
       "rightsCleared": 15,
-      "feedReady": 15
+      "feedReady": 17
     },
     {
       "sport": "baseball",
@@ -3080,7 +3080,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 7
     },
     {
       "sport": "baseball",
@@ -3160,7 +3160,7 @@
       "archived": 60,
       "identityLinked": 60,
       "rightsCleared": 60,
-      "feedReady": 60
+      "feedReady": 10
     },
     {
       "sport": "baseball",
@@ -3200,7 +3200,7 @@
       "archived": 27,
       "identityLinked": 27,
       "rightsCleared": 27,
-      "feedReady": 27
+      "feedReady": 28
     },
     {
       "sport": "baseball",
@@ -3210,7 +3210,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "baseball",
@@ -3310,7 +3310,7 @@
       "archived": 54,
       "identityLinked": 54,
       "rightsCleared": 54,
-      "feedReady": 54
+      "feedReady": 10
     },
     {
       "sport": "baseball",
@@ -3380,7 +3380,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 2
     },
     {
       "sport": "baseball",
@@ -3460,7 +3460,7 @@
       "archived": 60,
       "identityLinked": 60,
       "rightsCleared": 60,
-      "feedReady": 60
+      "feedReady": 10
     },
     {
       "sport": "baseball",
@@ -3510,7 +3510,7 @@
       "archived": 4,
       "identityLinked": 4,
       "rightsCleared": 4,
-      "feedReady": 3
+      "feedReady": 6
     },
     {
       "sport": "baseball",
@@ -3530,7 +3530,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 3
     },
     {
       "sport": "baseball",
@@ -3610,7 +3610,7 @@
       "archived": 61,
       "identityLinked": 61,
       "rightsCleared": 61,
-      "feedReady": 61
+      "feedReady": 10
     },
     {
       "sport": "baseball",
@@ -3650,7 +3650,7 @@
       "archived": 119,
       "identityLinked": 119,
       "rightsCleared": 119,
-      "feedReady": 119
+      "feedReady": 120
     },
     {
       "sport": "baseball",
@@ -3660,7 +3660,7 @@
       "archived": 5,
       "identityLinked": 5,
       "rightsCleared": 5,
-      "feedReady": 2
+      "feedReady": 8
     },
     {
       "sport": "baseball",
@@ -3680,7 +3680,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 6
     },
     {
       "sport": "baseball",
@@ -3760,7 +3760,7 @@
       "archived": 60,
       "identityLinked": 60,
       "rightsCleared": 60,
-      "feedReady": 60
+      "feedReady": 10
     },
     {
       "sport": "baseball",
@@ -3830,7 +3830,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 14
     },
     {
       "sport": "baseball",
@@ -3910,7 +3910,7 @@
       "archived": 61,
       "identityLinked": 61,
       "rightsCleared": 61,
-      "feedReady": 61
+      "feedReady": 10
     },
     {
       "sport": "baseball",
@@ -3960,7 +3960,7 @@
       "archived": 17,
       "identityLinked": 17,
       "rightsCleared": 17,
-      "feedReady": 16
+      "feedReady": 18
     },
     {
       "sport": "baseball",
@@ -3980,7 +3980,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 4
     },
     {
       "sport": "baseball",
@@ -4060,7 +4060,7 @@
       "archived": 59,
       "identityLinked": 59,
       "rightsCleared": 59,
-      "feedReady": 59
+      "feedReady": 10
     },
     {
       "sport": "baseball",
@@ -4110,7 +4110,7 @@
       "archived": 9,
       "identityLinked": 9,
       "rightsCleared": 9,
-      "feedReady": 9
+      "feedReady": 10
     },
     {
       "sport": "baseball",
@@ -4210,7 +4210,7 @@
       "archived": 50,
       "identityLinked": 50,
       "rightsCleared": 50,
-      "feedReady": 50
+      "feedReady": 9
     },
     {
       "sport": "baseball",
@@ -4250,7 +4250,7 @@
       "archived": 136,
       "identityLinked": 136,
       "rightsCleared": 136,
-      "feedReady": 136
+      "feedReady": 137
     },
     {
       "sport": "baseball",
@@ -4260,7 +4260,7 @@
       "archived": 20,
       "identityLinked": 20,
       "rightsCleared": 20,
-      "feedReady": 20
+      "feedReady": 21
     },
     {
       "sport": "baseball",
@@ -4280,7 +4280,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 5
     },
     {
       "sport": "baseball",
@@ -4360,7 +4360,7 @@
       "archived": 54,
       "identityLinked": 54,
       "rightsCleared": 13,
-      "feedReady": 13
+      "feedReady": 3
     },
     {
       "sport": "baseball",
@@ -4410,7 +4410,7 @@
       "archived": 32,
       "identityLinked": 32,
       "rightsCleared": 32,
-      "feedReady": 32
+      "feedReady": 33
     },
     {
       "sport": "baseball",
@@ -4430,7 +4430,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 3
     },
     {
       "sport": "baseball",
@@ -4510,7 +4510,7 @@
       "archived": 60,
       "identityLinked": 60,
       "rightsCleared": 48,
-      "feedReady": 48
+      "feedReady": 8
     },
     {
       "sport": "baseball",
@@ -4560,7 +4560,7 @@
       "archived": 41,
       "identityLinked": 41,
       "rightsCleared": 41,
-      "feedReady": 39
+      "feedReady": 40
     },
     {
       "sport": "baseball",
@@ -4580,7 +4580,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "baseball",
@@ -4660,7 +4660,7 @@
       "archived": 35,
       "identityLinked": 35,
       "rightsCleared": 35,
-      "feedReady": 35
+      "feedReady": 6
     },
     {
       "sport": "baseball",
@@ -4730,7 +4730,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 2
     },
     {
       "sport": "baseball",
@@ -5600,7 +5600,7 @@
       "archived": 386,
       "identityLinked": 386,
       "rightsCleared": 386,
-      "feedReady": 386
+      "feedReady": 387
     },
     {
       "sport": "basketball",
@@ -5860,7 +5860,7 @@
       "archived": 17,
       "identityLinked": 17,
       "rightsCleared": 17,
-      "feedReady": 17
+      "feedReady": 3
     },
     {
       "sport": "basketball",
@@ -5900,7 +5900,7 @@
       "archived": 364,
       "identityLinked": 364,
       "rightsCleared": 364,
-      "feedReady": 364
+      "feedReady": 365
     },
     {
       "sport": "basketball",
@@ -6010,7 +6010,7 @@
       "archived": 61,
       "identityLinked": 61,
       "rightsCleared": 61,
-      "feedReady": 61
+      "feedReady": 10
     },
     {
       "sport": "basketball",
@@ -6160,7 +6160,7 @@
       "archived": 61,
       "identityLinked": 61,
       "rightsCleared": 61,
-      "feedReady": 61
+      "feedReady": 10
     },
     {
       "sport": "basketball",
@@ -6200,7 +6200,7 @@
       "archived": 639,
       "identityLinked": 639,
       "rightsCleared": 639,
-      "feedReady": 639
+      "feedReady": 642
     },
     {
       "sport": "basketball",
@@ -6310,7 +6310,7 @@
       "archived": 55,
       "identityLinked": 55,
       "rightsCleared": 55,
-      "feedReady": 55
+      "feedReady": 9
     },
     {
       "sport": "basketball",
@@ -6350,7 +6350,7 @@
       "archived": 589,
       "identityLinked": 589,
       "rightsCleared": 589,
-      "feedReady": 587
+      "feedReady": 590
     },
     {
       "sport": "basketball",
@@ -6460,7 +6460,7 @@
       "archived": 55,
       "identityLinked": 55,
       "rightsCleared": 55,
-      "feedReady": 55
+      "feedReady": 6
     },
     {
       "sport": "basketball",
@@ -6500,7 +6500,7 @@
       "archived": 717,
       "identityLinked": 717,
       "rightsCleared": 717,
-      "feedReady": 713
+      "feedReady": 719
     },
     {
       "sport": "basketball",
@@ -6510,7 +6510,7 @@
       "archived": 84,
       "identityLinked": 84,
       "rightsCleared": 84,
-      "feedReady": 84
+      "feedReady": 83
     },
     {
       "sport": "basketball",
@@ -6610,7 +6610,7 @@
       "archived": 55,
       "identityLinked": 55,
       "rightsCleared": 55,
-      "feedReady": 55
+      "feedReady": 8
     },
     {
       "sport": "basketball",
@@ -6650,7 +6650,7 @@
       "archived": 875,
       "identityLinked": 875,
       "rightsCleared": 875,
-      "feedReady": 873
+      "feedReady": 875
     },
     {
       "sport": "basketball",
@@ -6760,7 +6760,7 @@
       "archived": 54,
       "identityLinked": 54,
       "rightsCleared": 15,
-      "feedReady": 15
+      "feedReady": 3
     },
     {
       "sport": "basketball",
@@ -6830,7 +6830,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "basketball",
@@ -6910,7 +6910,7 @@
       "archived": 58,
       "identityLinked": 58,
       "rightsCleared": 45,
-      "feedReady": 45
+      "feedReady": 8
     },
     {
       "sport": "basketball",
@@ -6980,7 +6980,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 30
     },
     {
       "sport": "basketball",
@@ -7060,7 +7060,7 @@
       "archived": 40,
       "identityLinked": 40,
       "rightsCleared": 40,
-      "feedReady": 40
+      "feedReady": 7
     },
     {
       "sport": "basketball",
@@ -7110,7 +7110,7 @@
       "archived": 210,
       "identityLinked": 210,
       "rightsCleared": 210,
-      "feedReady": 207
+      "feedReady": 209
     },
     {
       "sport": "basketball",
@@ -7850,7 +7850,7 @@
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
-      "feedReady": 1
+      "feedReady": 0
     },
     {
       "sport": "american-football",
@@ -8000,7 +8000,7 @@
       "archived": 5,
       "identityLinked": 5,
       "rightsCleared": 5,
-      "feedReady": 5
+      "feedReady": 2
     },
     {
       "sport": "american-football",
@@ -8150,7 +8150,7 @@
       "archived": 4,
       "identityLinked": 4,
       "rightsCleared": 4,
-      "feedReady": 4
+      "feedReady": 3
     },
     {
       "sport": "american-football",
@@ -8300,7 +8300,7 @@
       "archived": 17,
       "identityLinked": 17,
       "rightsCleared": 17,
-      "feedReady": 17
+      "feedReady": 9
     },
     {
       "sport": "american-football",
@@ -8450,7 +8450,7 @@
       "archived": 41,
       "identityLinked": 41,
       "rightsCleared": 41,
-      "feedReady": 41
+      "feedReady": 14
     },
     {
       "sport": "american-football",
@@ -8600,7 +8600,7 @@
       "archived": 23,
       "identityLinked": 23,
       "rightsCleared": 23,
-      "feedReady": 23
+      "feedReady": 10
     },
     {
       "sport": "american-football",
@@ -8750,7 +8750,7 @@
       "archived": 45,
       "identityLinked": 45,
       "rightsCleared": 45,
-      "feedReady": 45
+      "feedReady": 22
     },
     {
       "sport": "american-football",
@@ -8760,7 +8760,7 @@
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
-      "feedReady": 1
+      "feedReady": 0
     },
     {
       "sport": "american-football",
@@ -8900,7 +8900,7 @@
       "archived": 52,
       "identityLinked": 52,
       "rightsCleared": 52,
-      "feedReady": 52
+      "feedReady": 18
     },
     {
       "sport": "american-football",
@@ -9050,7 +9050,7 @@
       "archived": 40,
       "identityLinked": 40,
       "rightsCleared": 40,
-      "feedReady": 40
+      "feedReady": 19
     },
     {
       "sport": "american-football",
@@ -9200,7 +9200,7 @@
       "archived": 5,
       "identityLinked": 5,
       "rightsCleared": 5,
-      "feedReady": 5
+      "feedReady": 3
     },
     {
       "sport": "american-football",
@@ -9210,7 +9210,7 @@
       "archived": 8,
       "identityLinked": 8,
       "rightsCleared": 8,
-      "feedReady": 8
+      "feedReady": 5
     },
     {
       "sport": "american-football",
@@ -9360,7 +9360,7 @@
       "archived": 8,
       "identityLinked": 8,
       "rightsCleared": 8,
-      "feedReady": 8
+      "feedReady": 3
     },
     {
       "sport": "american-football",
@@ -9510,7 +9510,7 @@
       "archived": 7,
       "identityLinked": 7,
       "rightsCleared": 7,
-      "feedReady": 7
+      "feedReady": 4
     },
     {
       "sport": "american-football",
@@ -10400,7 +10400,7 @@
       "archived": 2,
       "identityLinked": 2,
       "rightsCleared": 2,
-      "feedReady": 2
+      "feedReady": 3
     },
     {
       "sport": "canadian-football",
@@ -10550,7 +10550,7 @@
       "archived": 16,
       "identityLinked": 16,
       "rightsCleared": 16,
-      "feedReady": 16
+      "feedReady": 19
     },
     {
       "sport": "canadian-football",
@@ -10700,7 +10700,7 @@
       "archived": 154,
       "identityLinked": 154,
       "rightsCleared": 154,
-      "feedReady": 154
+      "feedReady": 161
     },
     {
       "sport": "canadian-football",
@@ -10850,7 +10850,7 @@
       "archived": 430,
       "identityLinked": 430,
       "rightsCleared": 430,
-      "feedReady": 430
+      "feedReady": 456
     },
     {
       "sport": "canadian-football",
@@ -11000,7 +11000,7 @@
       "archived": 523,
       "identityLinked": 523,
       "rightsCleared": 523,
-      "feedReady": 523
+      "feedReady": 538
     },
     {
       "sport": "canadian-football",
@@ -11150,7 +11150,7 @@
       "archived": 571,
       "identityLinked": 571,
       "rightsCleared": 571,
-      "feedReady": 571
+      "feedReady": 593
     },
     {
       "sport": "canadian-football",
@@ -11300,7 +11300,7 @@
       "archived": 1119,
       "identityLinked": 1119,
       "rightsCleared": 1119,
-      "feedReady": 1119
+      "feedReady": 1153
     },
     {
       "sport": "canadian-football",
@@ -11310,7 +11310,7 @@
       "archived": 5,
       "identityLinked": 5,
       "rightsCleared": 5,
-      "feedReady": 4
+      "feedReady": 5
     },
     {
       "sport": "canadian-football",
@@ -11450,7 +11450,7 @@
       "archived": 1124,
       "identityLinked": 1124,
       "rightsCleared": 1124,
-      "feedReady": 1124
+      "feedReady": 1144
     },
     {
       "sport": "canadian-football",
@@ -11600,7 +11600,7 @@
       "archived": 91,
       "identityLinked": 91,
       "rightsCleared": 91,
-      "feedReady": 91
+      "feedReady": 93
     },
     {
       "sport": "canadian-football",
@@ -11610,7 +11610,7 @@
       "archived": 32,
       "identityLinked": 32,
       "rightsCleared": 32,
-      "feedReady": 32
+      "feedReady": 36
     },
     {
       "sport": "canadian-football",
@@ -11760,7 +11760,7 @@
       "archived": 72,
       "identityLinked": 72,
       "rightsCleared": 72,
-      "feedReady": 69
+      "feedReady": 73
     },
     {
       "sport": "canadian-football",
@@ -11910,7 +11910,7 @@
       "archived": 82,
       "identityLinked": 82,
       "rightsCleared": 82,
-      "feedReady": 80
+      "feedReady": 82
     },
     {
       "sport": "canadian-football",
@@ -12800,7 +12800,7 @@
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
-      "feedReady": 0
+      "feedReady": 3
     },
     {
       "sport": "soccer",
@@ -12810,7 +12810,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "soccer",
@@ -12950,7 +12950,7 @@
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "soccer",
@@ -13100,7 +13100,7 @@
       "archived": 6,
       "identityLinked": 6,
       "rightsCleared": 6,
-      "feedReady": 0
+      "feedReady": 6
     },
     {
       "sport": "soccer",
@@ -13400,7 +13400,7 @@
       "archived": 4,
       "identityLinked": 4,
       "rightsCleared": 4,
-      "feedReady": 0
+      "feedReady": 4
     },
     {
       "sport": "soccer",
@@ -13550,7 +13550,7 @@
       "archived": 5,
       "identityLinked": 5,
       "rightsCleared": 5,
-      "feedReady": 0
+      "feedReady": 6
     },
     {
       "sport": "soccer",
@@ -13700,7 +13700,7 @@
       "archived": 7,
       "identityLinked": 7,
       "rightsCleared": 7,
-      "feedReady": 0
+      "feedReady": 8
     },
     {
       "sport": "soccer",
@@ -13710,7 +13710,7 @@
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "soccer",
@@ -13850,7 +13850,7 @@
       "archived": 2,
       "identityLinked": 2,
       "rightsCleared": 2,
-      "feedReady": 0
+      "feedReady": 2
     },
     {
       "sport": "soccer",
@@ -14010,7 +14010,7 @@
       "archived": 2,
       "identityLinked": 2,
       "rightsCleared": 2,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "soccer",
@@ -14160,7 +14160,7 @@
       "archived": 3,
       "identityLinked": 3,
       "rightsCleared": 3,
-      "feedReady": 0
+      "feedReady": 3
     },
     {
       "sport": "soccer",
@@ -14310,7 +14310,7 @@
       "archived": 4,
       "identityLinked": 4,
       "rightsCleared": 4,
-      "feedReady": 0
+      "feedReady": 4
     },
     {
       "sport": "soccer",
@@ -14750,7 +14750,7 @@
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "tennis",
@@ -15200,7 +15200,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "tennis",
@@ -15350,7 +15350,7 @@
       "archived": 2,
       "identityLinked": 2,
       "rightsCleared": 2,
-      "feedReady": 0
+      "feedReady": 2
     },
     {
       "sport": "tennis",
@@ -15360,7 +15360,7 @@
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "tennis",
@@ -15500,7 +15500,7 @@
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
-      "feedReady": 0
+      "feedReady": 2
     },
     {
       "sport": "tennis",
@@ -15650,7 +15650,7 @@
       "archived": 2,
       "identityLinked": 2,
       "rightsCleared": 2,
-      "feedReady": 0
+      "feedReady": 6
     },
     {
       "sport": "tennis",
@@ -15800,7 +15800,7 @@
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "tennis",
@@ -15950,7 +15950,7 @@
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
-      "feedReady": 0
+      "feedReady": 3
     },
     {
       "sport": "tennis",
@@ -16100,7 +16100,7 @@
       "archived": 3,
       "identityLinked": 3,
       "rightsCleared": 3,
-      "feedReady": 0
+      "feedReady": 5
     },
     {
       "sport": "tennis",
@@ -16410,7 +16410,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "tennis",
@@ -17300,7 +17300,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "golf",
@@ -17450,7 +17450,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "golf",
@@ -17600,7 +17600,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "golf",
@@ -17750,7 +17750,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 2
     },
     {
       "sport": "golf",
@@ -17900,7 +17900,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 2
     },
     {
       "sport": "golf",
@@ -18050,7 +18050,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "golf",
@@ -18350,7 +18350,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 2
     },
     {
       "sport": "golf",
@@ -18360,7 +18360,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "golf",
@@ -18500,7 +18500,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "golf",
@@ -18660,7 +18660,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "golf",
@@ -18960,7 +18960,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 2
     },
     {
       "sport": "golf",
@@ -19110,7 +19110,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "golf",
@@ -19850,7 +19850,7 @@
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "boxing",
@@ -20000,7 +20000,7 @@
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "boxing",
@@ -20300,7 +20300,7 @@
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
-      "feedReady": 0
+      "feedReady": 3
     },
     {
       "sport": "boxing",
@@ -20450,7 +20450,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 3
     },
     {
       "sport": "boxing",
@@ -20600,7 +20600,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "boxing",
@@ -20750,7 +20750,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "boxing",
@@ -20910,7 +20910,7 @@
       "archived": 2,
       "identityLinked": 2,
       "rightsCleared": 2,
-      "feedReady": 0
+      "feedReady": 2
     },
     {
       "sport": "boxing",
@@ -21360,7 +21360,7 @@
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
-      "feedReady": 0
+      "feedReady": 2
     },
     {
       "sport": "boxing",
@@ -21510,7 +21510,7 @@
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "boxing",
@@ -23000,7 +23000,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 4
     },
     {
       "sport": "mma",
@@ -23150,7 +23150,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 8
     },
     {
       "sport": "mma",
@@ -23300,7 +23300,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 20
     },
     {
       "sport": "mma",
@@ -23450,7 +23450,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 2
     },
     {
       "sport": "mma",
@@ -24200,7 +24200,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "athletics",
@@ -24350,7 +24350,7 @@
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "athletics",
@@ -24500,7 +24500,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "athletics",
@@ -24645,462 +24645,462 @@
     {
       "sport": "athletics",
       "decade": 1910,
-      "tag": "player-birthday",
-      "downloaded": 1,
-      "archived": 1,
-      "identityLinked": 1,
-      "rightsCleared": 1,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1910,
-      "tag": "age-at-event",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1910,
-      "tag": "award-honour",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1910,
-      "tag": "franchise-identity-change",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1910,
-      "tag": "venue-history",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1910,
-      "tag": "draft-selection",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1910,
-      "tag": "sport-record",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1910,
-      "tag": "career-stat-milestone",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1910,
-      "tag": "winning-streak",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1910,
-      "tag": "combat-sport-result",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1910,
-      "tag": "athletics-performance",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1920,
-      "tag": "championship-win",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1920,
-      "tag": "match-result",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1920,
-      "tag": "overtime-result",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1920,
-      "tag": "shutout",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1920,
-      "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1920,
-      "tag": "age-at-event",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1920,
-      "tag": "award-honour",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1920,
-      "tag": "franchise-identity-change",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1920,
-      "tag": "venue-history",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1920,
-      "tag": "draft-selection",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1920,
-      "tag": "sport-record",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1920,
-      "tag": "career-stat-milestone",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1920,
-      "tag": "winning-streak",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1920,
-      "tag": "combat-sport-result",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1920,
-      "tag": "athletics-performance",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1930,
-      "tag": "championship-win",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1930,
-      "tag": "match-result",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1930,
-      "tag": "overtime-result",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1930,
-      "tag": "shutout",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1930,
-      "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1930,
-      "tag": "age-at-event",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1930,
-      "tag": "award-honour",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1930,
-      "tag": "franchise-identity-change",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1930,
-      "tag": "venue-history",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1930,
-      "tag": "draft-selection",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1930,
-      "tag": "sport-record",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1930,
-      "tag": "career-stat-milestone",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1930,
-      "tag": "winning-streak",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1930,
-      "tag": "combat-sport-result",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1930,
-      "tag": "athletics-performance",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1940,
-      "tag": "championship-win",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1940,
-      "tag": "match-result",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1940,
-      "tag": "overtime-result",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1940,
-      "tag": "shutout",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "athletics",
-      "decade": 1940,
       "tag": "player-birthday",
       "downloaded": 1,
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
+      "feedReady": 3
+    },
+    {
+      "sport": "athletics",
+      "decade": 1910,
+      "tag": "age-at-event",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
       "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1910,
+      "tag": "award-honour",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1910,
+      "tag": "franchise-identity-change",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1910,
+      "tag": "venue-history",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1910,
+      "tag": "draft-selection",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1910,
+      "tag": "sport-record",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1910,
+      "tag": "career-stat-milestone",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1910,
+      "tag": "winning-streak",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1910,
+      "tag": "combat-sport-result",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1910,
+      "tag": "athletics-performance",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1920,
+      "tag": "championship-win",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1920,
+      "tag": "match-result",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1920,
+      "tag": "overtime-result",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1920,
+      "tag": "shutout",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1920,
+      "tag": "player-birthday",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 1
+    },
+    {
+      "sport": "athletics",
+      "decade": 1920,
+      "tag": "age-at-event",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1920,
+      "tag": "award-honour",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1920,
+      "tag": "franchise-identity-change",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1920,
+      "tag": "venue-history",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1920,
+      "tag": "draft-selection",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1920,
+      "tag": "sport-record",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1920,
+      "tag": "career-stat-milestone",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1920,
+      "tag": "winning-streak",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1920,
+      "tag": "combat-sport-result",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1920,
+      "tag": "athletics-performance",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1930,
+      "tag": "championship-win",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1930,
+      "tag": "match-result",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1930,
+      "tag": "overtime-result",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1930,
+      "tag": "shutout",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1930,
+      "tag": "player-birthday",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 1
+    },
+    {
+      "sport": "athletics",
+      "decade": 1930,
+      "tag": "age-at-event",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1930,
+      "tag": "award-honour",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1930,
+      "tag": "franchise-identity-change",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1930,
+      "tag": "venue-history",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1930,
+      "tag": "draft-selection",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1930,
+      "tag": "sport-record",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1930,
+      "tag": "career-stat-milestone",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1930,
+      "tag": "winning-streak",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1930,
+      "tag": "combat-sport-result",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1930,
+      "tag": "athletics-performance",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1940,
+      "tag": "championship-win",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1940,
+      "tag": "match-result",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1940,
+      "tag": "overtime-result",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1940,
+      "tag": "shutout",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "athletics",
+      "decade": 1940,
+      "tag": "player-birthday",
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
+      "feedReady": 5
     },
     {
       "sport": "athletics",
@@ -25250,7 +25250,7 @@
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
-      "feedReady": 0
+      "feedReady": 4
     },
     {
       "sport": "athletics",
@@ -25260,7 +25260,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 2
     },
     {
       "sport": "athletics",
@@ -25400,7 +25400,7 @@
       "archived": 5,
       "identityLinked": 5,
       "rightsCleared": 5,
-      "feedReady": 0
+      "feedReady": 11
     },
     {
       "sport": "athletics",
@@ -25550,7 +25550,7 @@
       "archived": 2,
       "identityLinked": 2,
       "rightsCleared": 2,
-      "feedReady": 0
+      "feedReady": 4
     },
     {
       "sport": "athletics",
@@ -25560,7 +25560,7 @@
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "athletics",
@@ -25700,7 +25700,7 @@
       "archived": 2,
       "identityLinked": 2,
       "rightsCleared": 2,
-      "feedReady": 0
+      "feedReady": 10
     },
     {
       "sport": "athletics",
@@ -25710,7 +25710,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 4
     },
     {
       "sport": "athletics",
@@ -25850,7 +25850,7 @@
       "archived": 2,
       "identityLinked": 2,
       "rightsCleared": 2,
-      "feedReady": 0
+      "feedReady": 6
     },
     {
       "sport": "athletics",
@@ -25860,7 +25860,7 @@
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
-      "feedReady": 0
+      "feedReady": 2
     },
     {
       "sport": "athletics",
@@ -26000,7 +26000,7 @@
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
-      "feedReady": 0
+      "feedReady": 2
     },
     {
       "sport": "athletics",
@@ -26010,7 +26010,7 @@
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
-      "feedReady": 0
+      "feedReady": 4
     },
     {
       "sport": "athletics",
@@ -27350,7 +27350,7 @@
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "swimming",
@@ -27650,7 +27650,7 @@
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "swimming",
@@ -27950,7 +27950,7 @@
       "archived": 2,
       "identityLinked": 2,
       "rightsCleared": 2,
-      "feedReady": 0
+      "feedReady": 2
     },
     {
       "sport": "swimming",
@@ -28100,7 +28100,7 @@
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
-      "feedReady": 0
+      "feedReady": 4
     },
     {
       "sport": "swimming",
@@ -28250,7 +28250,7 @@
       "archived": 2,
       "identityLinked": 2,
       "rightsCleared": 2,
-      "feedReady": 0
+      "feedReady": 3
     },
     {
       "sport": "swimming",
@@ -28400,7 +28400,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 2
     },
     {
       "sport": "swimming",
@@ -29450,7 +29450,7 @@
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "formula-one",
@@ -29750,7 +29750,7 @@
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "formula-one",
@@ -30050,7 +30050,7 @@
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "formula-one",
@@ -30200,7 +30200,7 @@
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
-      "feedReady": 0
+      "feedReady": 2
     },
     {
       "sport": "formula-one",
@@ -30210,7 +30210,7 @@
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "formula-one",
@@ -30500,7 +30500,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 2
     },
     {
       "sport": "formula-one",
@@ -30660,7 +30660,7 @@
       "archived": 2,
       "identityLinked": 2,
       "rightsCleared": 2,
-      "feedReady": 0
+      "feedReady": 2
     },
     {
       "sport": "formula-one",
@@ -32150,7 +32150,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "stock-car-racing",
@@ -34700,7 +34700,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "motorcycle-racing",
@@ -35150,7 +35150,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "motorcycle-racing",
@@ -35450,7 +35450,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "motorcycle-racing",
@@ -44300,7 +44300,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "cycling",
@@ -44600,7 +44600,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "cycling",
@@ -44900,7 +44900,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 2
     },
     {
       "sport": "cycling",
@@ -49100,7 +49100,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "cricket",
@@ -49250,7 +49250,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 3
     },
     {
       "sport": "cricket",
@@ -49400,7 +49400,7 @@
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
-      "feedReady": 0
+      "feedReady": 4
     },
     {
       "sport": "cricket",
@@ -49550,7 +49550,7 @@
       "archived": 2,
       "identityLinked": 2,
       "rightsCleared": 2,
-      "feedReady": 0
+      "feedReady": 7
     },
     {
       "sport": "cricket",
@@ -49700,7 +49700,7 @@
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
-      "feedReady": 0
+      "feedReady": 3
     },
     {
       "sport": "cricket",
@@ -49850,7 +49850,7 @@
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "cricket",
@@ -49860,7 +49860,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "cricket",
@@ -50310,7 +50310,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "cricket",
@@ -51350,7 +51350,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 2
     },
     {
       "sport": "horse-racing",
@@ -51800,7 +51800,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 2
     },
     {
       "sport": "horse-racing",
@@ -51950,7 +51950,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "horse-racing",
@@ -52100,7 +52100,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "horse-racing",
@@ -52410,7 +52410,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "horse-racing",
@@ -52710,7 +52710,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "horse-racing",
@@ -54050,7 +54050,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "alpine-skiing",
@@ -54350,7 +54350,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "alpine-skiing",
@@ -54500,7 +54500,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "alpine-skiing",
@@ -54650,7 +54650,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "alpine-skiing",

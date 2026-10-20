@@ -156,6 +156,10 @@ export interface OnThisDayRecord {
   readonly championships?: number;
   readonly championshipName?: string | null;
   readonly personAward?: string | null;
+  /** How many individual awards the person won himself (never a teammate's, never a club's title). */
+  readonly awardCount?: number;
+  /** The year the person went into the Hall of Fame of his own sport, when the source holds one. */
+  readonly hallOfFameYear?: number | null;
   readonly draftYear?: number | null;
   readonly round?: number | null;
   readonly overallPick?: number | null;

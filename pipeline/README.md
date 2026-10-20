@@ -29,6 +29,8 @@ pnpm data:facts
 # or: python3 -I pipeline/convert_extract.py
 ```
 
+Besides the DS1 extracts the converter reads `data-sources/priority-facts.jsonl` (priority athletes' birthdays and deaths, with the Wikidata descriptions and sitelinks of `pipeline/ds1-people/spx-stats/db/seed/wikidata_meigen_bio.csv`) and, when present, `extract_person_context.json` (clubs, own awards, titles and Hall of Fame years: see [queries/README.md](queries/README.md)). It never takes an award from the birthday or death extracts' own `personAward`, which was read through the team-season: an award is one the person's own rows name.
+
 Writes `data/v1/0.1.0/facts/`. One `recordId` per fact; `tags` are the 46 history identifiers and are not exclusive. Category shards copy the same fact into every matching tag file. Indexes hold ids only; `store/` holds each full record once.
 
 ## Wikidata open fetch (famous)

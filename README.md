@@ -52,7 +52,7 @@ One build ships both places. The package and the GitHub Pages site are made from
 
 | | In the npm package, works offline | On GitHub Pages, needs a network |
 | --- | --- | --- |
-| On-this-day facts | **1,468 facts**: the best three to five for each of the 366 calendar days, chosen by significance and fame and varied by kind, sport, person and club (`@johnmorrisdotca/meigen-sports/offline`) | **29,593 facts** on all 366 days, in static JSON under `data/v1/0.1.0/facts/` (days, teams, players, leagues, sports, tags, 100 `store/` files that together hold every fact), read through the `load*` functions |
+| On-this-day facts | **1,502 facts**: the best three to five for each of the 366 calendar days, chosen by significance and fame and varied by kind, sport, person and club (`@johnmorrisdotca/meigen-sports/offline`) | **30,480 facts** on all 366 days, in static JSON under `data/v1/0.1.0/facts/` (days, teams, players, leagues, sports, tags, 100 `store/` files that together hold every fact), read through the `load*` functions |
 | Quotations | 30 (22 Gutenberg excerpts, 8 Wikiquote sports lines tagged `famous-quotes`) | the same 30 in `quotes.json` |
 | History starter | 1,052 dated rows on 142 days (`@johnmorrisdotca/meigen-sports/history`; World Cup matches and Wikidata events), kept for compatibility | `all.json`, `days/`, `sports/`, `entities/` |
 
@@ -108,7 +108,7 @@ The snippets under **In 30 seconds** and **Use it in your project** are run by `
 
 ## API
 
-The root export provides `isDate`, `monthDayOf`, `selectRecords`, `historyOnDate`, `quoteForDate`, `EXTRACT_CATEGORIES`, `FACT_CATEGORIES`, on-this-day helpers (`factsFor`, `today`, `calendarDayInZone`, `rankFeed`, `rankRecords`, `bestOfDay`, `significance`, `randomFacts`, `tagsOf`, `uniqueRecordIds`, `withCaptions`, `captionFromFact`, `isRichFact`; how lists are ranked and capped: [docs/ranking.md](./docs/ranking.md)), caption templates (`render`, `renderHistory`, `renderRun`, `templatesFor`, `TEMPLATES`, `TEMPLATE_TYPES`; `renderRun` words a list so that neighbours never repeat), same-event merge (`mergeHistoryEvents`, `finalCaptionFromMatch`, `uniqueHistoryIds`), the core record and feed types, on-this-day consume types (`OnThisDayRecord`, `TeamRef`, `PersonRef`), and `SCHEMA_VERSION` and `VERSION`.
+The root export provides `isDate`, `monthDayOf`, `selectRecords`, `historyOnDate`, `quoteForDate`, `EXTRACT_CATEGORIES`, `FACT_CATEGORIES`, on-this-day helpers (`factsFor`, `today`, `calendarDayInZone`, `rankFeed`, `rankRecords`, `rankDay`, `bestOfDay`, `significance`, `randomFacts`, `tagsOf`, `uniqueRecordIds`, `withCaptions`, `captionFromFact`, `isRichFact`; how lists are ranked and capped: [docs/ranking.md](./docs/ranking.md)), caption templates (`render`, `renderHistory`, `renderRun`, `templatesFor`, `TEMPLATES`, `TEMPLATE_TYPES`; `renderRun` words a list so that neighbours never repeat), same-event merge (`mergeHistoryEvents`, `finalCaptionFromMatch`, `uniqueHistoryIds`), the core record and feed types, on-this-day consume types (`OnThisDayRecord`, `TeamRef`, `PersonRef`), and `SCHEMA_VERSION` and `VERSION`.
 
 | Import | Contents |
 | --- | --- |

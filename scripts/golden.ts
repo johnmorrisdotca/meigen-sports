@@ -89,6 +89,12 @@ export function presence(entry: GoldenEntry, record: OnThisDayRecord, facts: Fac
 
 export interface Rule { id: string; says: string; violations: (records: readonly OnThisDayRecord[], asOf: string) => string[] }
 
+/** Awards only one position can win. Each is held to the position(s) its winners play, as DS1 spells them. */
+export const POSITION_AWARDS: { award: RegExp; positions: RegExp }[] = [
+  { award: /Cy Young|Rolaids Relief/i, positions: /^(P|SP|RP|CL|LHP|RHP)$/ },
+  { award: /Vezina/i, positions: /^G$/ },
+];
+
 const clubStartYears = (r: OnThisDayRecord): number[] => (r.clubNames ?? []).flatMap((n) => { const m = n.match(/\((\d{4})/); return m ? [Number(m[1])] : []; });
 
 /** Things that must never appear. Each rule returns the offending record ids, so a failure names them. */
@@ -97,8 +103,13 @@ export const NEVER: Rule[] = [
     violations: (rs) => rs.filter((r) => r.person && r.eventDate && Number(r.eventDate.slice(0, 4)) < 1850).map((r) => r.recordId) },
   { id: "sport-matches-league", says: "a baseball player is never tagged motor racing, and a fact about a league's club carries that league's sport",
     violations: (rs) => rs.filter((r) => r.league && LEAGUE_SPORT[r.league] && r.sport && r.sport !== LEAGUE_SPORT[r.league]).map((r) => `${r.recordId} ${r.league}/${r.sport}`) },
-  { id: "no-motor-racing", says: "no fact is tagged motor racing: the dataset holds no motor-racing facts, so any is a mislabel",
-    violations: (rs) => rs.filter((r) => /motor/.test(r.sport ?? "")).map((r) => r.recordId) },
+  { id: "no-motor-racing", says: "no fact carries the bare label \"motor-racing\": it was the mislabel of a baseball player. A named discipline (formula-one, motorcycle-racing, rallying) is a real sport",
+    violations: (rs) => rs.filter((r) => r.sport === "motor-racing").map((r) => r.recordId) },
+  { id: "award-fits-position", says: "an individual award belongs to the person it names, never to a teammate: a Cy Young Award or a Rolaids Relief Man Award goes only with a pitcher and a Vezina Trophy only with a goaltender (148 non-pitchers once carried a Cy Young Award, read through the team-season of the real winner)",
+    violations: (rs) => rs.filter((r) => {
+      const award = `${r.personAward ?? ""} ${r.highlight ?? ""}`;
+      return !!r.position && POSITION_AWARDS.some((rule) => rule.award.test(award) && !rule.positions.test(r.position!));
+    }).map((r) => `${r.recordId} ${r.position}: ${r.personAward ?? r.highlight}`) },
   { id: "born-before-debut", says: "an athlete is never born after (or within thirteen years of) the first season of a club he is said to have played for",
     violations: (rs) => rs.filter((r) => r.category === "player-birthday" && r.birthDate && clubStartYears(r).some((y) => y < Number(r.birthDate!.slice(0, 4)) + 14)).map((r) => r.recordId) },
   { id: "birth-before-death", says: "a death never precedes the birth, and a stated age is between 0 and 125",

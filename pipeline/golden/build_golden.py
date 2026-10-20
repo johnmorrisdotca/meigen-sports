@@ -216,6 +216,32 @@ def infobox_end_date(title: str) -> str | None:
     return f"{int(year.group(1)):04d}-{MONTHS.index(last[0]) + 1:02d}-{last[1]:02d}"
 
 
+def infobox_person_date(title: str, kind: str) -> str | None:
+    """The birth or death day the English Wikipedia infobox of a person states, as YYYY-MM-DD, or None.
+
+    Reads the infobox field (`birth_date` or `death_date`) as a date template ({{birth date|1863|1|1}}, {{death date and age|1937|9|2|1863|1|1}})
+    or as words (1 January 1863). Used to allow a January 1 only when Wikidata and the infobox name the same day."""
+    data = get(WP, {"action": "parse", "page": title, "prop": "wikitext", "section": 0, "redirects": 1, "format": "json"})
+    fields = infobox_fields(squash((data.get("parse", {}).get("wikitext") or {}).get("*", "")))
+    return parse_infobox_date(fields.get("birth_date" if kind == "birth" else "death_date", ""))
+
+
+def parse_infobox_date(value: str) -> str | None:
+    value = value or ""
+    template = re.search(r"{{\s*(?:birth|death|start|end)[ _]date[^|}]*((?:\|[^|}]*)+)}}", value, re.I)
+    if template:
+        numbers = [a.strip() for a in template.group(1).split("|")[1:] if re.fullmatch(r"\d+", a.strip())]
+        if len(numbers) >= 3:
+            y, m, d = (int(x) for x in numbers[:3])
+            if 1 <= m <= 12 and 1 <= d <= 31:
+                return f"{y:04d}-{m:02d}-{d:02d}"
+    text = squash(re.sub(r"\[\[(?:[^|\]]*\|)?([^\]]*)\]\]", r"\1", re.sub(r"<[^>]*>", " ", value)))
+    for m in re.finditer(rf"\b(\d{{1,2}})\s+({'|'.join(MONTHS)})\s+(\d{{4}})\b|\b({'|'.join(MONTHS)})\s+(\d{{1,2}}),?\s+(\d{{4}})\b", text):
+        d, mon, y = (m.group(1), m.group(2), m.group(3)) if m.group(1) else (m.group(5), m.group(4), m.group(6))
+        return f"{int(y):04d}-{MONTHS.index(mon) + 1:02d}-{int(d):02d}"
+    return None
+
+
 def titles_to_qids(titles: list[str]) -> dict[str, str]:
     out: dict[str, str] = {}
     for i in range(0, len(titles), 50):
@@ -281,12 +307,21 @@ def main() -> int:
                 if not cross:
                     problems.append(f"{name} ({p['qid']}) {kind} {when}: the Wikipedia introduction does not state this date")
                     continue
+                by = "wikidata + wikipedia introduction"
+                if when.endswith("-01-01"):
+                    # A January 1 is where a year-only date is often written down, so it is allowed only when Wikidata (day precision)
+                    # and the Wikipedia infobox name the same day, on top of the introduction stating it.
+                    box = infobox_person_date(title, kind) if title else None
+                    if box != when:
+                        problems.append(f"{name} ({p['qid']}) {kind} {when}: January 1 needs the Wikipedia infobox to say the same day, it says {box}")
+                        continue
+                    by = "wikidata + wikipedia infobox + introduction"
                 entry = {
                     "id": f"{kind}-{p['qid']}", "kind": kind, "sport": p["sport"], "league": p.get("league"), "fame": p.get("fame", "icon"),
                     "label": f"{name} {'born' if kind == 'birth' else 'died'}", "date": when, "era": era_of(int(when[:4])),
                     "women": bool(p.get("women")),
                     "match": {"category": "player-birthday" if kind == "birth" else "player-death", "qid": p["qid"]},
-                    "source": {"wikidata": p["qid"], "property": prop, "wikipedia": title, "verifiedBy": "wikidata + wikipedia introduction", "checkedOn": checked},
+                    "source": {"wikidata": p["qid"], "property": prop, "wikipedia": title, "verifiedBy": by, "checkedOn": checked},
                 }
                 if gap:
                     entry["reason"] = "not in the published dataset yet"
@@ -377,7 +412,7 @@ def main() -> int:
                 continue
             by = "wikidata + wikipedia article"
         gap = {
-            "id": e["id"], "kind": e["kind"], "sport": e["sport"], "league": e.get("league"), "fame": "icon", "label": e["wikipedia"], "date": when,
+            "id": e["id"], "kind": e["kind"], "sport": e["sport"], "league": e.get("league"), "fame": "icon", "label": e.get("label", e["wikipedia"]), "date": when,
             "era": era_of(int(when[:4])), "women": bool(e.get("women")), "para": bool(e.get("para")),
             "reason": "the dataset holds no records, draft picks or firsts for this kind of fact yet" if e["kind"] in ("record", "draft", "first") else "its sport or event is not in the dataset yet",
             "source": {"wikidata": qid, "wikipedia": e["wikipedia"], "verifiedBy": by, "checkedOn": checked},

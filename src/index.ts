@@ -13,7 +13,7 @@ export type {
   RenderedSentence, RenderOptions, RunOptions, RunSentence, SentenceTemplate, TemplateGate, TemplateLocale,
   TemplateRole, TemplateType, Wording,
 } from "./templates/index.ts";
-export { bestOfDay, calendarDayInZone, factsFor, randomFacts, rankFeed, rankRecords, significance, tagsOf, today, uniqueRecordIds, withCaptions } from "./facts.ts";
+export { bestOfDay, calendarDayInZone, factsFor, randomFacts, rankDay, rankFeed, rankRecords, significance, tagsOf, today, uniqueRecordIds, withCaptions } from "./facts.ts";
 export type { RankOptions } from "./facts.ts";
 export { finalCaptionFromMatch, mergeHistoryEvents, uniqueHistoryIds } from "./mergeEvents.ts";
 export type { MergeReport } from "./mergeEvents.ts";

@@ -36,6 +36,56 @@ LEAGUE_SPORT = {
     "afl": "american-football", "aafc": "american-football", "cfl": "canadian-football",
     "mls": "soccer", "wc": "soccer", "wwc": "soccer",
 }
+# The Hall of Fame that goes with each sport (core.person.hall_of_fame_year is the person's own sport's hall: DS1 holds it for the
+# players of these five leagues only). A sport with no entry here says nothing of a hall.
+HALL = {
+    "baseball": "Baseball", "ice-hockey": "Hockey", "basketball": "Basketball",
+    "american-football": "Pro Football", "canadian-football": "Canadian Football",
+}
+# An individual award that only one position can win (a Cy Young Award is a pitcher's). The golden suite holds the published data to it
+# (scripts/golden.ts, rule "award-fits-position"), so an award that was borrowed from a teammate can never ship again.
+AWARD_ORDER = (
+    r"^(Major League Baseball|NBA|AP NFL) Most Valuable Player Award$|Hart Memorial|CFL's Most Outstanding Player Award$",
+    r"Cy Young|Vezina|Norris|Art Ross|Conn Smythe|NBA Finals Most Valuable|World Series Most Valuable|Super Bowl Most Valuable|Grey Cup Most Valuable"
+    r"|Defensive Player of the Year Award$|Offensive Player of the Year|Richard Trophy|Heisman",
+    r"Rookie of the Year|Calder|Selke|Ted Lindsay|Rolaids|Hank Aaron|Most Outstanding|Most Improved|Sixth Man",
+)
+# Wikidata's short description of a person ("American boxer") says what a bare birthday cannot. Gender and para words are never used.
+DESCRIPTION_BLOCKED = re.compile(r"female|male|woman|women|girl|\bman\b|\bpara|disab|blind|deaf|wheelchair|transgender|gay|lesbian|sportswoman", re.I)
+PARA_SPORT = re.compile(r"^(para|deaflympic|wheelchair|goalball|boccia|sitting)[-_]?", re.I)
+NOT_A_SPORT = {"entertainment", "film_stunts", "stunt", "high_wire"}
+
+
+def best_award(awards: list[dict]) -> str | None:
+    """The most notable individual award among one person's own awards: a fixed order of kinds, then the one he won most, then the earliest."""
+    names = [a.get("name") for a in awards if a.get("name")]
+    if not names:
+        return None
+    counts: dict[str, int] = defaultdict(int)
+    first: dict[str, int] = {}
+    for a in awards:
+        name = a.get("name")
+        if not name:
+            continue
+        counts[name] += 1
+        first[name] = min(first.get(name, 9999), a.get("year") or 9999)
+
+    def rank(name: str) -> tuple:
+        tier = next((i for i, pattern in enumerate(AWARD_ORDER) if re.search(pattern, name)), len(AWARD_ORDER))
+        return (tier, -counts[name], first[name], name)
+
+    return min(counts, key=rank)
+
+
+def short_description(text: str | None) -> str | None:
+    """A Wikidata description such as "American boxer (1942-2016)" without its life years, or None when it is not a plain phrase."""
+    d = re.sub(r"\s*\((?:born\s+)?\d{4}(?:\s*[\u2013-]\s*(?:\d{4})?)?\)\s*$", "", text or "").strip()
+    d = re.sub(r"\s*\([A-Za-z][^()\d]*\)", "", d).strip()  # "(MMA)", "(track and field)": a gloss, not part of the phrase
+    if not d or len(d) > 70 or re.search(r"\d|[()]|\bborn\b", d) or DESCRIPTION_BLOCKED.search(d):
+        return None
+    return d
+
+
 CREDIT = {
     "retrosheet": ("https://www.retrosheet.org/", "The information used here was obtained free of charge from and is copyrighted by Retrosheet. Interested parties may contact Retrosheet at www.retrosheet.org."),
     "wikidata": ("https://www.wikidata.org/", "Wikidata contributors, CC0."),
@@ -116,20 +166,42 @@ def year_of(record: dict) -> str | None:
     return None
 
 
-def honour_of(r) -> str:  # noqa: ANN001
-    existing = (r.get("highlight") or "").strip()
-    if existing:
-        return existing
-    n = r.get("championships") or 0
+def title_words(r) -> str:  # noqa: ANN001
+    """"seven-time World Series winner" from the person's club titles, or ""."""
     try:
-        n = int(n)
+        n = int(r.get("championships") or 0)
     except (TypeError, ValueError):
         n = 0
     cup = (r.get("championshipName") or "").strip()
     if n and cup:
-        if n == 1:
-            return f"{cup} winner"
-        return f"{NUMBER_WORD.get(n, str(n))}-time {cup} winner"
+        return f"{cup} winner" if n == 1 else f"{NUMBER_WORD.get(n, str(n))}-time {cup} winner"
+    return ""
+
+
+def hall_words(r) -> str:  # noqa: ANN001
+    """"Baseball Hall of Famer" for a person DS1 gives a hall of fame year, in the hall of his own sport."""
+    hall = HALL.get(r.get("sport") or "")
+    return f"{hall} Hall of Famer" if hall and r.get("hallOfFameYear") else ""
+
+
+def honour_of(r) -> str:  # noqa: ANN001
+    existing = (r.get("highlight") or "").strip()
+    if existing:
+        return existing
+    hall = hall_words(r)
+    n = r.get("championships") or 0
+    cup = (r.get("championshipName") or "").strip()
+    try:
+        n = int(n)
+    except (TypeError, ValueError):
+        n = 0
+    if hall and n and cup:
+        return f"{hall} with {'a' if n == 1 else NUMBER_WORD.get(n, str(n))} {cup} {'title' if n == 1 else 'titles'}"
+    if hall:
+        return hall
+    titles = title_words(r)
+    if titles:
+        return titles
     award = (r.get("personAward") or r.get("awardName") or "").strip()
     return f"{award} winner" if award else ""
 
@@ -296,7 +368,7 @@ def finalize(row: dict) -> dict | None:
         "overallPick", "awardName", "awardKind", "winnerName", "birthDate", "deathDate", "birthPlace", "livingStatus",
         "announcedDate", "awardDate", "ratifiedDate", "featuredReasons", "record",
         "sitelinks", "priorityAthlete", "nationality",
-        "championships", "championshipName", "personAward",
+        "championships", "championshipName", "personAward", "awardCount", "hallOfFameYear",
     ):
         if row.get(key) not in (None, [], ""):
             out[key] = row[key]
@@ -480,7 +552,7 @@ def merge_same_event(chosen: dict[str, dict]) -> tuple[dict[str, dict], int]:
 
 RANK_FIELDS = (
     "recordId", "category", "tags", "eventDate", "competition", "league", "sport", "person", "home", "away", "featuredReasons",
-    "stage", "phase", "priorityAthlete", "personAward", "highlight", "championships", "sitelinks", "record",
+    "stage", "phase", "priorityAthlete", "personAward", "awardCount", "hallOfFameYear", "highlight", "championships", "sitelinks", "record",
 )
 
 
@@ -525,6 +597,137 @@ def shuffle(records: list[dict], seed: str) -> list[dict]:
     return copy
 
 
+def person_record(row: dict, context: dict, awards_by_person: dict, person_awards: dict, names: dict, priority: dict) -> dict:
+    """A birthday or death row with the career context that is really the person's: his clubs (rosters and statistics), his own best award,
+    his club titles and his Hall of Fame year. The extract's own `personAward` is dropped: see main()."""
+    person = dict(row.get("person") or {})
+    pid, qid = person.get("personId"), person.get("qid")
+    ctx = context.get(pid) or {}
+    rec = {k: v for k, v in row.items() if k not in ("personAward", "awardCount")}
+    if ctx:
+        cp = ctx.get("person") or {}
+        for key in ("leagueCodes", "franchiseIds", "teamSeasonIds"):
+            if cp.get(key):
+                person[key] = cp[key]
+        rec["person"] = person
+        for key in ("championships", "championshipName"):
+            rec[key] = ctx.get(key)
+        if ctx.get("clubNames"):
+            rec["clubNames"] = ctx["clubNames"]
+        if ctx.get("hallOfFameYear"):
+            rec["hallOfFameYear"] = ctx["hallOfFameYear"]
+        if not rec.get("league") and len(person.get("leagueCodes") or []) == 1:
+            rec["league"] = person["leagueCodes"][0]
+    extract_clubs = [n for n in (rec.get("clubNames") or []) if n]
+    rec["clubNames"] = extract_clubs or [names[i] for i in (person.get("franchiseIds") or []) if i in names]
+    league = str(rec.get("league") or "").lower()
+    rec["sport"] = LEAGUE_SPORT.get(league) or sport_slug(rec.get("sport")) or rec.get("sport")
+    if rec.get("position") in (None, ""):
+        rec.pop("position", None)
+    award = awards_by_person.get(pid)
+    if award:
+        rec["personAward"] = award
+    own = ctx.get("awardCount") or len(person_awards.get(pid) or [])
+    if own:
+        rec["awardCount"] = own
+    info = priority.get(qid) or {}
+    for key in ("sitelinks", "hallOfFameYear"):
+        if info.get(key) and not rec.get(key):
+            rec[key] = info[key]
+    return rec
+
+
+def give_honour(rec: dict, priority: dict) -> None:
+    """Set `highlight`: the career honour the facts hold, else (for a priority person with no club or position) his Wikidata description."""
+    honour = honour_of(rec)
+    if not honour:
+        info = priority.get((rec.get("person") or {}).get("qid")) or {}
+        if info.get("highlight") and not rec.get("position") and not rec.get("clubNames"):
+            honour = info["highlight"]
+    if honour:
+        rec["highlight"] = honour
+
+
+PRIORITY_SEED = ROOT / "pipeline/ds1-people/spx-stats/db/seed"
+MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
+
+def states_date(text: str, iso: str) -> bool:
+    """Whether a Wikipedia lead says the day in words ("1 January 1863" or "January 1, 1863")."""
+    y, m, d = (int(x) for x in iso.split("-"))
+    flat = re.sub(r"\s+", " ", (text or "").replace("\u00a0", " "))
+    return f"{d} {MONTH_NAMES[m - 1]} {y}" in flat or f"{MONTH_NAMES[m - 1]} {d}, {y}" in flat
+
+
+def priority_rows(taken: dict[tuple[str, str, str], str]) -> list[dict]:
+    """Birthdays and deaths of the priority athletes (data-sources/priority-facts.jsonl, built by pipeline/facts_from_priority.py from Wikidata, CC0),
+    as converter rows. The file's own sentences are not used: the library words every fact. What it adds is people DS1 has no club season for
+    (boxing, tennis, athletics, wrestling, golf, soccer, cricket and the rest) and fame (sitelinks, a Wikidata description, a Hall of Fame year).
+
+    Left out: a fact the extract already holds (same person, kind and day: the DS1 row keeps its clubs), a para or deaflympic sport (John's rule),
+    a sport that is not one (stunts, entertainment), a person with nothing sayable beyond name and year, and a birth or death on 1 January that
+    English Wikipedia's lead does not state in words (Wikidata alone cannot tell a real 1 January from a year-only date written as one)."""
+    path = ROOT / "data-sources/priority-facts.jsonl"
+    if not path.exists():
+        return []
+    def table(name: str) -> dict[str, dict]:
+        file = PRIORITY_SEED / name
+        if not file.exists():
+            return {}
+        with file.open(newline="", encoding="utf-8") as fh:
+            return {r["qid"]: r for r in csv.DictReader(fh)}
+    bios, pages = table("wikidata_meigen_bio.csv"), table("wikidata_meigen_wiki_page.csv")
+    out: list[dict] = []
+    for line in path.read_text(encoding="utf-8").splitlines():
+        r = json.loads(line)
+        cat = r.get("category")
+        if cat not in ("player-birthday", "player-death") or r.get("datePrecision") != "day" or not r.get("eventDate"):
+            continue
+        person = r.get("person") or {}
+        qid, name = person.get("qid"), person.get("name")
+        raw_sport = r.get("sport") or ""
+        if not qid or not name or PARA_SPORT.match(raw_sport) or raw_sport in NOT_A_SPORT:
+            continue
+        day = r["eventDate"]
+        if (cat, qid, day) in taken:
+            continue
+        bio = bios.get(qid, {})
+        if day.endswith("-01-01") and not states_date((pages.get(qid) or {}).get("lead_text", ""), day):
+            continue
+        sport = sport_slug(raw_sport)
+        row = {
+            "recordId": r["recordId"], "category": cat, "eventDate": day, "datePrecision": "day", "sport": sport, "league": None,
+            "competition": None, "person": {"personId": None, "qid": qid, "name": name, "leagueCodes": [], "franchiseIds": [], "teamSeasonIds": []},
+            "sourceId": "wikidata", "licence": "CC0 1.0", "attribution": "Wikidata contributors, CC0.", "sourceUrl": f"https://www.wikidata.org/wiki/{qid}",
+            "priorityAthlete": True, "birthPlace": r.get("birthPlace"),
+        }
+        if bio.get("sitelinks", "").isdigit():
+            row["sitelinks"] = int(bio["sitelinks"])
+        if (bio.get("hof_year") or "").isdigit():
+            row["hallOfFameYear"] = int(bio["hof_year"])
+        description = short_description(bio.get("description_en"))
+        if description:
+            row["highlight"] = description
+        if cat == "player-birthday":
+            row["birthDate"] = day
+            row["deathDate"] = r.get("deathDate")
+            row["livingStatus"] = "deceased" if r.get("deathDate") else "unknown"
+        else:
+            row["deathDate"] = day
+            row["livingStatus"] = "deceased"
+            born = r.get("birthDate")
+            if born and re.match(r"^\d{4}-\d{2}-\d{2}$", born):
+                by, bm, bd = map(int, born.split("-"))
+                dy, dm, dd = map(int, day.split("-"))
+                row.update({
+                    "birthDate": born, "bornYear": by, "ageYears": dy - by - (1 if (dm, dd) < (bm, bd) else 0),
+                    "derivedRule": "Completed years from sourced birthDate to sourced death eventDate (last birthday before death).",
+                    "derivedInputs": ["birthDate", "eventDate"],
+                })
+        out.append(row)
+    return out
+
+
 def main() -> int:
     if not EXTRACT.is_dir():
         print(f"EXTRACT dir missing: {EXTRACT}", file=sys.stderr)
@@ -550,12 +753,20 @@ def main() -> int:
                 deaths.append({**row, "category": "player-death"})
             elif cat in {"award", "wikidata-award"}:
                 awards.append({**row, "category": "award"})
-    awards_by_person: dict[int, str] = {}
+    # Individual awards belong to the person a row names. A person's own awards come from the awards extract (rows that name him) and
+    # from the person-context extract (core.award_winner.person_id), never from the birthday and death extracts' `personAward`: those were
+    # read through the team-season, so every teammate of a Cy Young winner carried a Cy Young Award (148 published facts, 0.6.0).
+    context = {r["person"]["personId"]: r for r in load_records("extract_person_context.json") if (r.get("person") or {}).get("personId")}
+    person_awards: dict[int, list[dict]] = defaultdict(list)
     for row in awards:
         person = row.get("person") or {}
-        pid, aname = person.get("personId"), row.get("awardName")
-        if pid and aname and pid not in awards_by_person:
-            awards_by_person[pid] = aname
+        if person.get("personId") and row.get("awardName") and row.get("awardKind", "person_award") == "person_award":
+            person_awards[person["personId"]].append({"name": row["awardName"], "year": row.get("seasonStartYear")})
+    for pid, ctx in context.items():
+        if ctx.get("awards"):
+            person_awards[pid] = [{"name": a.get("name"), "year": a.get("year")} for a in ctx["awards"]]
+    priority_info = {r["person"]["qid"]: r for r in priority_rows({})}
+    awards_by_person = {pid: best_award(rows) for pid, rows in person_awards.items() if best_award(rows)}
     birth_by_id = {((r.get("person") or {}).get("personId")): r for r in birthdays if (r.get("person") or {}).get("personId")}
     death_by_id = {((r.get("person") or {}).get("personId")): r for r in deaths if (r.get("person") or {}).get("personId")}
     death_by_qid = {((r.get("person") or {}).get("qid")): r for r in deaths if (r.get("person") or {}).get("qid")}
@@ -615,17 +826,10 @@ def main() -> int:
         chosen[row["recordId"]] = rec
     for row in birthdays:
         person = row.get("person") or {}
-        extract_clubs = [n for n in (row.get("clubNames") or []) if n]
-        clubs = extract_clubs or [names[i] for i in (person.get("franchiseIds") or []) if i in names]
         if not person.get("name") or not row.get("eventDate"):
             continue
-        rec = {**row, "category": "player-birthday", "clubNames": clubs,
-               "basis": "source", "birthDate": row.get("eventDate")}
-        if row.get("position"):
-            rec["position"] = row["position"]
-        honour = honour_of(rec)
-        if honour:
-            rec["highlight"] = honour
+        rec = person_record(row, context, awards_by_person, person_awards, names, priority_info)
+        rec.update({"category": "player-birthday", "basis": "source", "birthDate": row.get("eventDate")})
         pid = person.get("personId")
         qid = person.get("qid")
         dead = (pid in death_ids) or (qid in death_by_qid)
@@ -633,9 +837,7 @@ def main() -> int:
         drow = (pid and death_by_id.get(pid)) or (qid and death_by_qid.get(qid)) or None
         if drow and drow.get("eventDate"):
             rec["deathDate"] = drow["eventDate"]
-        if pid in awards_by_person and not rec.get("highlight"):
-            rec["highlight"] = f"{awards_by_person[pid]} winner"
-        qid = person.get("qid")
+        give_honour(rec, priority_info)
         if qid and qid in PRIORITY_QIDS:
             rec["priorityAthlete"] = True
         if not is_sport_person(rec):
@@ -643,17 +845,10 @@ def main() -> int:
         chosen[row["recordId"]] = rec
     for row in deaths:
         person = row.get("person") or {}
-        extract_clubs = [n for n in (row.get("clubNames") or []) if n]
-        clubs = extract_clubs or [names[i] for i in (person.get("franchiseIds") or []) if i in names]
         if not person.get("name") or not row.get("eventDate"):
             continue
-        rec = {**row, "category": "player-death", "clubNames": clubs,
-               "basis": "source", "livingStatus": "deceased"}
-        if row.get("position"):
-            rec["position"] = row["position"]
-        honour = honour_of(rec)
-        if honour:
-            rec["highlight"] = honour
+        rec = person_record(row, context, awards_by_person, person_awards, names, priority_info)
+        rec.update({"category": "player-death", "basis": "source", "livingStatus": "deceased"})
         pid = person.get("personId")
         born = birth_by_id.get(pid)
         if born and born.get("eventDate") and row.get("eventDate"):
@@ -664,14 +859,30 @@ def main() -> int:
             rec["birthDate"] = born["eventDate"]
             rec["derivedRule"] = "Completed years from sourced birthDate to sourced death eventDate (last birthday before death)."
             rec["derivedInputs"] = ["birthDate", "eventDate"]
-        if pid in awards_by_person and not rec.get("highlight"):
-            rec["highlight"] = f"{awards_by_person[pid]} winner"
+        give_honour(rec, priority_info)
         qid = person.get("qid")
         if qid and qid in PRIORITY_QIDS:
             rec["priorityAthlete"] = True
         if not is_sport_person(rec):
             continue
         chosen[row["recordId"]] = rec
+    taken: dict[tuple[str, str, str], str] = {}
+    for rec in chosen.values():
+        q = (rec.get("person") or {}).get("qid")
+        if q and rec.get("category") in ("player-birthday", "player-death"):
+            taken[(rec["category"], q, rec["eventDate"])] = rec["recordId"]
+    priority_added = 0
+    for row in priority_rows(taken):
+        rec = {**row, "basis": "source", "clubNames": []}
+        rec["sport"] = sport_slug(rec.get("sport"))
+        if hall_words(rec):
+            rec["highlight"] = hall_words(rec)
+        if not rec.get("highlight"):
+            continue
+        if not is_sport_person(rec):
+            continue
+        chosen[row["recordId"]] = rec
+        priority_added += 1
     for row in awards:
         if not row.get("eventDate") or not (row.get("winnerName") or (row.get("person") or {}).get("name")) or not row.get("awardName"):
             continue
@@ -714,6 +925,11 @@ def main() -> int:
             continue
         chosen[rec["recordId"]] = rec
 
+    # The bug that gave 148 non-pitchers a Cy Young Award: an award on a fact must be one of that person's own, by the row that names him.
+    for rec in chosen.values():
+        award, pid = rec.get("personAward"), (rec.get("person") or {}).get("personId")
+        if award and award not in {a.get("name") for a in person_awards.get(pid, [])}:
+            raise SystemExit(f"{rec['recordId']}: personAward {award!r} is not one of person {pid}'s own awards")
     shaped = [done for done in (finalize(row) for row in chosen.values()) if done]
     facts = add_captions(shaped)
     dropped = len(chosen) - len(facts)
@@ -783,13 +999,13 @@ def main() -> int:
                       | {f"f:{t['franchiseId']}" for r in rows for t in (r.get("home"), r.get("away")) if t and t.get("franchiseId")})
 
     # Every list is ranked by the library (scripts/rank-batch.ts). A day's list is the mixed kind: at most two facts of a tag and two
-    # of a competition. A feed about one thing (a sport, league, tag, club or a bucket of people) is deeper, with at most eight of
+    # of a competition and three of a sport (`rankDay`). A feed about one thing (a sport, league, tag, club or a bucket of people) is deeper, with at most eight of
     # a tag or competition, and is never capped on what it is about: a tag feed does not cap its tag, a league feed its league,
     # a team feed its club; a player bucket lists each person up to twice and caps nothing else.
     specs: list[dict] = []
     for day in calendar:
         rows = uniq_of(by_day.get(day, []))
-        specs.append({"key": f"day:{day}", "ids": [r["recordId"] for r in rows], "n": 12})
+        specs.append({"key": f"day:{day}", "ids": [r["recordId"] for r in rows], "n": 12, "day": True})
     for sport, rows in by_sport.items():
         rows = uniq_of(rows)
         specs.append({"key": f"sport:{sport}", "ids": [r["recordId"] for r in rows], "n": 40, "options": {"maxPer": 8, "exempt": competitions(rows)}})
@@ -892,6 +1108,7 @@ def main() -> int:
     man_body = json.dumps(manifest, ensure_ascii=False, indent=2) + "\n"
     (OUT / "manifest.json").write_text(man_body, encoding="utf-8")
     summary = {
+        "priorityAdded": priority_added,
         "records": len(facts), "droppedThin": dropped, "coveredDays": len(covered),
         "daysWithFewerThan3": len(days_lt3), "uniqueRecords": len({r["recordId"] for r in facts}),
         "mergedSameEvent": merged_events,

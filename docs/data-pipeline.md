@@ -4,7 +4,7 @@
 
 Meigen Sports keeps original sources on DS1, uses the existing Turso database for curation, and serves reviewed static files through GitHub Pages. An npm installation also has typed offline records. Reading a public quote does not query DS1 or Turso.
 
-The reviewed source inputs have 30 quotations (22 Gutenberg excerpts and 8 Wikiquote sports lines) and 1052 published dated history rows (10 same-event duplicates merged) in the bundled feed. They cover 142 month-days, leaving 224 gaps. The separate on-this-day fact feeds hold 29,593 facts that cover all 366 days. The longer-term feed should draw primarily from SPX's existing historical facts on DS1; source-verified open data supplements those facts. A source's data rights remain distinct from the package's MIT code licence.
+The reviewed source inputs have 30 quotations (22 Gutenberg excerpts and 8 Wikiquote sports lines) and 1052 published dated history rows (10 same-event duplicates merged) in the bundled feed. They cover 142 month-days, leaving 224 gaps. The separate on-this-day fact feeds hold 30,480 facts that cover all 366 days. The longer-term feed should draw primarily from SPX's existing historical facts on DS1; source-verified open data supplements those facts. A source's data rights remain distinct from the package's MIT code licence.
 
 ## 1. Rebuild and verify
 

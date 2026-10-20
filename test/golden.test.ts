@@ -46,6 +46,7 @@ test("every never-rule fires on a bad fact, so a clean pass means something", ()
     "no-person-before-1850": [{ ...base, eventDate: "1602-05-05", person: { qid: "Q1", name: "A", personId: 1, leagueCodes: [], franchiseIds: [], teamSeasonIds: [] } }],
     "sport-matches-league": [{ ...base, sport: "motor-racing" }],
     "no-motor-racing": [{ ...base, sport: "motor-racing", league: null }],
+    "award-fits-position": [{ ...base, position: "CF", personAward: "Cy Young Award" }, { ...base, position: "SS", highlight: "Rolaids Relief Man Award winner" }, { ...base, position: "C", personAward: "Vezina Trophy" }],
     "born-before-debut": [{ ...base, birthDate: "1980-05-05", clubNames: ["Boston Red Sox (1975–1980)"] }],
     "birth-before-death": [{ ...base, birthDate: "1980-05-05", deathDate: "1970-01-01" }],
     "born-year-agrees": [{ ...base, birthDate: "1980-05-05", bornYear: 1981 }],
@@ -62,6 +63,14 @@ test("every never-rule fires on a bad fact, so a clean pass means something", ()
   assert.deepEqual(Object.keys(bad).sort(), NEVER.map((r) => r.id).sort(), "a rule has no bad example");
   for (const rule of NEVER) assert.ok(rule.violations(bad[rule.id]!, "2026-10-19").length > 0, `${rule.id} did not fire`);
   for (const rule of NEVER) assert.deepEqual(rule.violations([{ ...base, text: "A, the C, was born on this day in 1980." }], "2026-10-19"), [], `${rule.id} fired on a clean fact`);
+});
+
+test("an award fits its position: a pitcher's Cy Young, a goaltender's Vezina; an unknown position or another award is not charged", () => {
+  const rule = NEVER.find((r) => r.id === "award-fits-position")!;
+  const fact = { recordId: "x:1", category: "player-birthday", tags: [], basis: "source", eventDate: "1980-05-05", datePrecision: "day", sport: "baseball", competition: null, league: "mlb", source: { sourceId: "wikidata", licence: "CC0 1.0", attribution: "", url: null } } as OnThisDayRecord;
+  assert.deepEqual(rule.violations([{ ...fact, position: "P", personAward: "Cy Young Award" }, { ...fact, recordId: "x:2", position: "RHP", personAward: "Cy Young Award" }, { ...fact, recordId: "x:3", position: "G", personAward: "Vezina Trophy" }], ""), []);
+  assert.deepEqual(rule.violations([{ ...fact, personAward: "Cy Young Award" }, { ...fact, recordId: "x:4", position: "CF", personAward: "Major League Baseball Most Valuable Player Award" }, { ...fact, recordId: "x:5", position: "C", personAward: "James Norris Memorial Trophy" }], ""), []);
+  assert.equal(rule.violations([{ ...fact, position: "CF", personAward: "Cy Young Award" }], "").length, 1);
 });
 
 test("a missing, wrong or lost golden fact is reported", () => {

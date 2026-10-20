@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readdirSync, readFileSync } from "node:fs";
 import test from "node:test";
 import { offline } from "../src/data/offline.ts";
-import { bestOfDay, factsFor, rankRecords, significance, tagsOf } from "../src/facts.ts";
+import { bestOfDay, factsFor, rankDay, rankRecords, significance, tagsOf } from "../src/facts.ts";
 import type { OnThisDayRecord } from "../src/schema.ts";
 
 const root = "data/v1/0.1.0/facts";
@@ -58,4 +58,54 @@ test("a list about one thing does not cap it, and the caps relax only to reach t
   assert.equal(rankRecords(nba, 12, { exempt: ["championship-final", "championship-win", "match-result", "shutout", "competition:nba", ...clubs] }).length, 12);
   assert.ok(rankRecords(nba, 12).length >= 3 && rankRecords(nba, 12).length < 12);
   assert.equal(rankRecords(nba.slice(0, 2), 12).length, 2);
+});
+
+const fact = (id: string, sport: string, over: Partial<OnThisDayRecord> = {}): OnThisDayRecord => ({
+  recordId: id, category: `kind-${id}` as never, tags: [], basis: "source", eventDate: "2000-10-20", datePrecision: "day", sport, competition: `c-${id}`, league: null,
+  source: { sourceId: "wikidata", licence: "CC0 1.0", attribution: "", url: null }, ...over,
+}) as OnThisDayRecord;
+
+test("a day's list takes at most three facts of one sport, and relaxes only to reach the minimum", () => {
+  const baseball = ["a", "b", "c", "d", "e", "f"].map((id, i) => fact(id, "baseball", { homeScore: 9 - i, awayScore: 0 }));
+  const others = [fact("t", "tennis", { homeScore: 1, awayScore: 0 }), fact("s", "soccer", { homeScore: 1, awayScore: 0 })];
+  const list = rankDay([...baseball, ...others], 12);
+  assert.equal(list.filter((r) => r.sport === "baseball").length, 3, "three baseball facts, no more");
+  assert.deepEqual(list.map((r) => r.sport).sort(), ["baseball", "baseball", "baseball", "soccer", "tennis"]);
+  // A quiet day of one sport still reaches the minimum of three: the cap relaxes, in the same steps as the others.
+  assert.equal(rankDay(baseball.slice(0, 5), 12).length, 3, "a day of one sport keeps the cap: three is the minimum, so nothing relaxes");
+  assert.equal(rankDay(baseball.slice(0, 2), 12).length, 2);
+  const oneSportTwoKinds = [...baseball.slice(0, 2), fact("g", "baseball", { category: "kind-a" as never }), fact("h", "baseball", { category: "kind-a" as never })];
+  assert.equal(rankDay(oneSportTwoKinds, 12).length, 3, "the cap is reached at three while the minimum is met");
+  assert.equal(rankRecords(baseball, 12).length, 6, "without the option nothing is capped by sport");
+  // The minimum wins over the cap: two tennis facts and five baseball facts, minimum five, so the sport cap relaxes by one step at a time.
+  const quiet = [...baseball.slice(0, 5), others[0]!];
+  assert.equal(rankRecords(quiet, 12, { maxPerSport: 3, minimum: 5 }).length, 5);
+  assert.equal(rankRecords(quiet, 12, { maxPerSport: 3, minimum: 5 }).filter((r) => r.sport === "baseball").length, 4, "relaxed to four, not to all five");
+});
+
+test("the sport cap is on every day shard and every offline day, whenever the day has the facts to allow it", () => {
+  let capped = 0, over = 0;
+  for (const name of readdirSync(`${root}/days`)) {
+    const bySport = new Map<string, number>();
+    const records = shard(`days/${name}`);
+    for (const r of records) bySport.set(r.sport ?? "", (bySport.get(r.sport ?? "") ?? 0) + 1);
+    capped += 1;
+    const sports = new Set(store.filter((r) => r.eventDate?.slice(5) === name.slice(0, 5)).map((r) => r.sport));
+    if (Math.max(...bySport.values()) > 3 && sports.size >= 3 && records.length >= 6) over += 1;
+  }
+  assert.equal(capped, 366);
+  assert.ok(over <= 6, `${over} days list more than three facts of one sport although the day has other sports`);
+  assert.ok(offline.length >= 3 * 366 - 10);
+});
+
+test("a Hall of Fame year, a long list of own awards and a name on the priority list are fame; a thin priority fill counts for less", () => {
+  const person = (over: Partial<OnThisDayRecord>): OnThisDayRecord => fact("p", "ice-hockey", { category: "player-birthday", ...over });
+  const plain = significance(person({}));
+  assert.equal(significance(person({ hallOfFameYear: 1999 })) - plain, 25);
+  assert.equal(significance(person({ awardCount: 12 })) - plain, 15);
+  assert.equal(significance(person({ awardCount: 5 })) - plain, 8);
+  assert.equal(significance(person({ awardCount: 1 })) - plain, 0);
+  assert.equal(significance(person({ priorityAthlete: true })) - plain, 45);
+  assert.equal(significance(person({ priorityAthlete: true, sitelinks: 6 })) - plain, 20);
+  assert.equal(significance(person({ priorityAthlete: true, sitelinks: 60 })) - plain, 45 + 15);
 });

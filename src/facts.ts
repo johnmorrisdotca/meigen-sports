@@ -154,8 +154,12 @@ export function significance(record: OnThisDayRecord): number {
     case "player-birthday":
     case "player-death": {
       let score = 30;
-      if (record.priorityAthlete) score += 45;
+      // A name on the priority list is famous; a list fill known to have under 20 Wikipedia editions counts for less than a major award.
+      if (record.priorityAthlete) score += record.sitelinks != null && record.sitelinks < 20 ? 20 : 45;
       if (record.personAward) score += 30;
+      if (record.hallOfFameYear) score += 25;
+      // The number of individual awards he won himself: a long list of them is fame that one flagship award is not.
+      score += (record.awardCount ?? 0) >= 10 ? 15 : (record.awardCount ?? 0) >= 5 ? 8 : 0;
       if (record.highlight) score += 10;
       if ((record.championships ?? 0) > 0) score += 10;
       if ((record.sitelinks ?? 0) >= 20) score += 15;
@@ -198,9 +202,14 @@ export interface RankOptions {
   readonly personMax?: number;
   /** The list's fewest facts, when the day or the feed has that many: caps and the one-person rule relax, in that order, to reach it. Default 3. */
   readonly minimum?: number;
-  /** Keys the list is already about (a tag feed's tag, a league feed's league, a team feed's club): they are not counted. */
+  /** Most facts of one sport in the list (no cap when left out). Relaxed together with `maxPer`, so a quiet day still reaches its minimum. */
+  readonly maxPerSport?: number;
+  /** Keys the list is already about (a tag feed's tag, a league feed's league, a team feed's club, `sport:<sport>`): they are not counted. */
   readonly exempt?: readonly string[];
 }
+
+/** How a calendar day's list is chosen: at most three facts of one sport, so a day is not all baseball or all basketball. */
+const DAY_LIST: RankOptions = { maxPerSport: 3 };
 
 /**
  * Rank facts by `significance` and take the first `n` that keep to the caps, with no repeated fact. The same input always gives the
@@ -218,11 +227,15 @@ export function rankRecords(records: readonly OnThisDayRecord[], n: number, opti
     const counts = new Map<string, number>();
     const persons = new Map<string, number>();
     const teams = new Set<string>();
+    // The sport cap loosens by the same steps as the tag and competition caps, and goes with them when they do.
+    const sportCap = options.maxPerSport == null || cap === null ? null : options.maxPerSport + (cap - maxPer);
     for (const record of ordered) {
       if (picked.length >= n) break;
       if (seen.has(record.recordId)) continue;
       const keys = [...tagsOf(record), `competition:${competitionKey(record)}`].filter((key) => !exempt.has(key));
       if (cap !== null && keys.some((key) => (counts.get(key) ?? 0) >= cap)) continue;
+      const sport = record.sport && !exempt.has(`sport:${record.sport}`) ? `sport:${record.sport}` : null;
+      if (sportCap !== null && sport && (counts.get(sport) ?? 0) >= sportCap) continue;
       const person = personKey(record);
       if (people && person && !exempt.has(person) && (persons.get(person) ?? 0) >= personMax) continue;
       const clubs = teamKeys(record).filter((key) => !exempt.has(key));
@@ -230,6 +243,7 @@ export function rankRecords(records: readonly OnThisDayRecord[], n: number, opti
       picked.push(record);
       seen.add(record.recordId);
       for (const key of keys) counts.set(key, (counts.get(key) ?? 0) + 1);
+      if (sport) counts.set(sport, (counts.get(sport) ?? 0) + 1);
       if (person) persons.set(person, (persons.get(person) ?? 0) + 1);
       for (const key of clubs) teams.add(key);
     }
@@ -248,9 +262,14 @@ export function rankFeed(records: readonly OnThisDayRecord[], n: number, options
   return rankRecords(records.filter(isRichFact), n, typeof options === "number" ? { maxPer: options } : options);
 }
 
+/** A calendar day's list: `rankRecords` with at most three facts of one sport. The Pages day shards are `rankDay(facts, 12)`. */
+export function rankDay(records: readonly OnThisDayRecord[], n = 12): OnThisDayRecord[] {
+  return rankRecords(records, n, DAY_LIST);
+}
+
 /** The facts worth keeping for one calendar day when only a few can be kept: the head of that day's ranking, three to five long. */
 export function bestOfDay(records: readonly OnThisDayRecord[]): OnThisDayRecord[] {
-  return rankFeed(records, 5).filter((record, index) => index < 4 || significance(record) >= 85);
+  return rankFeed(records, 5, DAY_LIST).filter((record, index) => index < 4 || significance(record) >= 85);
 }
 
 /**

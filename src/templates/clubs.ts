@@ -49,7 +49,7 @@ export function publicClubName(names: readonly string[] | undefined, fallback = 
   return stripClubYears(ranked[0] ?? fallback);
 }
 
-const CAREER = /cup|championship|finals|world series|grey cup|super bowl|all-time|leading|record|champion/i;
+const CAREER = /cup|championship|finals|world series|grey cup|super bowl|all-time|leading|record|champion|hall of fam/i;
 
 export function isCareerHighlight(highlight: string): boolean {
   return CAREER.test(highlight);

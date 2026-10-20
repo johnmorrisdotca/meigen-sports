@@ -559,6 +559,374 @@
         "birth"
       ],
       "fame": "icon"
+    },
+    {
+      "qid": "Q362264",
+      "sport": "baseball",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon",
+      "league": "mlb"
+    },
+    {
+      "qid": "Q1316903",
+      "sport": "baseball",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon",
+      "league": "mlb"
+    },
+    {
+      "qid": "Q555730",
+      "sport": "baseball",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon",
+      "league": "mlb"
+    },
+    {
+      "qid": "Q352159",
+      "sport": "basketball",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon",
+      "league": "nba"
+    },
+    {
+      "qid": "Q927916",
+      "sport": "american-football",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon",
+      "league": "nfl"
+    },
+    {
+      "qid": "Q809097",
+      "sport": "american-football",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon",
+      "league": "nfl"
+    },
+    {
+      "qid": "Q357502",
+      "sport": "ice-hockey",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon",
+      "league": "nhl"
+    },
+    {
+      "qid": "Q240672",
+      "sport": "basketball",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon",
+      "league": "wnba",
+      "women": true
+    },
+    {
+      "qid": "Q257980",
+      "sport": "basketball",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon",
+      "league": "wnba",
+      "women": true
+    },
+    {
+      "qid": "Q240726",
+      "sport": "basketball",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon",
+      "league": "wnba",
+      "women": true
+    },
+    {
+      "qid": "Q270683",
+      "sport": "basketball",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon",
+      "league": "wnba",
+      "women": true
+    },
+    {
+      "qid": "Q222086",
+      "sport": "soccer",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon",
+      "league": "wwc",
+      "women": true
+    },
+    {
+      "qid": "Q12897",
+      "sport": "soccer",
+      "kinds": [
+        "birth",
+        "death"
+      ],
+      "fame": "icon",
+      "league": "wc"
+    },
+    {
+      "qid": "Q17515",
+      "sport": "soccer",
+      "kinds": [
+        "birth",
+        "death"
+      ],
+      "fame": "icon",
+      "league": "wc"
+    },
+    {
+      "qid": "Q615",
+      "sport": "soccer",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon",
+      "league": "wc"
+    },
+    {
+      "qid": "Q11459",
+      "sport": "tennis",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon",
+      "women": true
+    },
+    {
+      "qid": "Q54527",
+      "sport": "tennis",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon",
+      "women": true
+    },
+    {
+      "qid": "Q54545",
+      "sport": "tennis",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon",
+      "women": true
+    },
+    {
+      "qid": "Q10132",
+      "sport": "tennis",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q10993",
+      "sport": "golf",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q9424",
+      "sport": "golf",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q9434",
+      "sport": "golf",
+      "kinds": [
+        "birth",
+        "death"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q232711",
+      "sport": "golf",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon",
+      "women": true
+    },
+    {
+      "qid": "Q231983",
+      "sport": "athletics",
+      "kinds": [
+        "birth",
+        "death"
+      ],
+      "fame": "icon",
+      "women": true
+    },
+    {
+      "qid": "Q36107",
+      "sport": "boxing",
+      "kinds": [
+        "birth",
+        "death"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q79031",
+      "sport": "boxing",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q273206",
+      "sport": "boxing",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q1189",
+      "sport": "athletics",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q52651",
+      "sport": "athletics",
+      "kinds": [
+        "birth",
+        "death"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q31082",
+      "sport": "athletics",
+      "kinds": [
+        "birth",
+        "death"
+      ],
+      "fame": "icon",
+      "women": true
+    },
+    {
+      "qid": "Q209390",
+      "sport": "athletics",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon",
+      "women": true
+    },
+    {
+      "qid": "Q31083",
+      "sport": "athletics",
+      "kinds": [
+        "birth",
+        "death"
+      ],
+      "fame": "icon",
+      "women": true
+    },
+    {
+      "qid": "Q131237",
+      "sport": "athletics",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q39562",
+      "sport": "swimming",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q137374",
+      "sport": "swimming",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon",
+      "women": true
+    },
+    {
+      "qid": "Q180748",
+      "sport": "swimming",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q10490",
+      "sport": "formula-one",
+      "kinds": [
+        "birth",
+        "death"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q9671",
+      "sport": "formula-one",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q9673",
+      "sport": "formula-one",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon"
+    },
+    {
+      "qid": "Q7520267",
+      "sport": "gymnastics",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon",
+      "women": true
+    },
+    {
+      "qid": "Q33228",
+      "sport": "gymnastics",
+      "kinds": [
+        "birth"
+      ],
+      "fame": "icon",
+      "women": true
     }
   ],
   "events": [
@@ -1023,54 +1391,6 @@
     "note": "Famous people and events the dataset claims to cover (or that a reader will expect) but does not hold yet, each verified at source. The suite lists them and fails when one appears, so it is moved to the must list.",
     "people": [
       {
-        "name": "Cy Young",
-        "sport": "baseball",
-        "league": "mlb",
-        "kinds": [
-          "birth"
-        ]
-      },
-      {
-        "name": "Honus Wagner",
-        "sport": "baseball",
-        "league": "mlb",
-        "kinds": [
-          "birth"
-        ]
-      },
-      {
-        "name": "Satchel Paige",
-        "sport": "baseball",
-        "league": "mlb",
-        "kinds": [
-          "birth"
-        ]
-      },
-      {
-        "name": "Stephen Curry",
-        "sport": "basketball",
-        "league": "nba",
-        "kinds": [
-          "birth"
-        ]
-      },
-      {
-        "name": "Jim Brown",
-        "sport": "american-football",
-        "league": "nfl",
-        "kinds": [
-          "birth"
-        ]
-      },
-      {
-        "name": "Barry Sanders",
-        "sport": "american-football",
-        "league": "nfl",
-        "kinds": [
-          "birth"
-        ]
-      },
-      {
         "name": "John Elway",
         "sport": "american-football",
         "league": "nfl",
@@ -1103,14 +1423,6 @@
         ]
       },
       {
-        "name": "Patrick Roy",
-        "sport": "ice-hockey",
-        "league": "nhl",
-        "kinds": [
-          "birth"
-        ]
-      },
-      {
         "name": "Red Grange",
         "sport": "american-football",
         "league": "nfl",
@@ -1119,109 +1431,7 @@
         ]
       },
       {
-        "name": "Sue Bird",
-        "sport": "basketball",
-        "league": "wnba",
-        "kinds": [
-          "birth"
-        ],
-        "women": true
-      },
-      {
-        "name": "Lisa Leslie",
-        "sport": "basketball",
-        "league": "wnba",
-        "kinds": [
-          "birth"
-        ],
-        "women": true
-      },
-      {
-        "name": "Diana Taurasi",
-        "sport": "basketball",
-        "league": "wnba",
-        "kinds": [
-          "birth"
-        ],
-        "women": true
-      },
-      {
-        "name": "Sheryl Swoopes",
-        "sport": "basketball",
-        "league": "wnba",
-        "kinds": [
-          "birth"
-        ],
-        "women": true
-      },
-      {
-        "name": "Mia Hamm",
-        "sport": "soccer",
-        "league": "wwc",
-        "kinds": [
-          "birth"
-        ],
-        "women": true
-      },
-      {
-        "name": "Pelé",
-        "sport": "soccer",
-        "league": "wc",
-        "kinds": [
-          "birth",
-          "death"
-        ]
-      },
-      {
-        "name": "Diego Maradona",
-        "sport": "soccer",
-        "league": "wc",
-        "kinds": [
-          "birth",
-          "death"
-        ]
-      },
-      {
-        "name": "Lionel Messi",
-        "sport": "soccer",
-        "league": "wc",
-        "kinds": [
-          "birth"
-        ]
-      },
-      {
-        "name": "Serena Williams",
-        "sport": "tennis",
-        "kinds": [
-          "birth"
-        ],
-        "women": true
-      },
-      {
         "name": "Roger Federer",
-        "sport": "tennis",
-        "kinds": [
-          "birth"
-        ]
-      },
-      {
-        "name": "Billie Jean King",
-        "sport": "tennis",
-        "kinds": [
-          "birth"
-        ],
-        "women": true
-      },
-      {
-        "name": "Martina Navratilova",
-        "sport": "tennis",
-        "kinds": [
-          "birth"
-        ],
-        "women": true
-      },
-      {
-        "name": "Rafael Nadal",
         "sport": "tennis",
         "kinds": [
           "birth"
@@ -1233,68 +1443,6 @@
         "kinds": [
           "birth",
           "death"
-        ]
-      },
-      {
-        "name": "Tiger Woods",
-        "sport": "golf",
-        "kinds": [
-          "birth"
-        ]
-      },
-      {
-        "name": "Jack Nicklaus",
-        "sport": "golf",
-        "kinds": [
-          "birth"
-        ]
-      },
-      {
-        "name": "Arnold Palmer",
-        "sport": "golf",
-        "kinds": [
-          "birth",
-          "death"
-        ]
-      },
-      {
-        "name": "Annika Sörenstam",
-        "sport": "golf",
-        "kinds": [
-          "birth"
-        ],
-        "women": true
-      },
-      {
-        "name": "Babe Didrikson Zaharias",
-        "sport": "golf",
-        "kinds": [
-          "birth",
-          "death"
-        ],
-        "women": true,
-        "wikipedia": "Babe Didrikson Zaharias"
-      },
-      {
-        "name": "Muhammad Ali",
-        "sport": "boxing",
-        "kinds": [
-          "birth",
-          "death"
-        ]
-      },
-      {
-        "name": "Mike Tyson",
-        "sport": "boxing",
-        "kinds": [
-          "birth"
-        ]
-      },
-      {
-        "name": "Joe Louis",
-        "sport": "boxing",
-        "kinds": [
-          "birth"
         ]
       },
       {
@@ -1314,103 +1462,11 @@
         "women": true
       },
       {
-        "name": "Usain Bolt",
-        "sport": "athletics",
-        "kinds": [
-          "birth"
-        ]
-      },
-      {
-        "name": "Jesse Owens",
-        "sport": "athletics",
-        "kinds": [
-          "birth",
-          "death"
-        ]
-      },
-      {
-        "name": "Florence Griffith Joyner",
-        "sport": "athletics",
-        "kinds": [
-          "birth",
-          "death"
-        ],
-        "women": true
-      },
-      {
-        "name": "Jackie Joyner-Kersee",
-        "sport": "athletics",
-        "kinds": [
-          "birth"
-        ],
-        "women": true
-      },
-      {
-        "name": "Wilma Rudolph",
-        "sport": "athletics",
-        "kinds": [
-          "birth",
-          "death"
-        ],
-        "women": true
-      },
-      {
-        "name": "Carl Lewis",
-        "sport": "athletics",
-        "kinds": [
-          "birth"
-        ]
-      },
-      {
-        "name": "Michael Phelps",
-        "sport": "swimming",
-        "kinds": [
-          "birth"
-        ]
-      },
-      {
-        "name": "Katie Ledecky",
-        "sport": "swimming",
-        "kinds": [
-          "birth"
-        ],
-        "women": true
-      },
-      {
-        "name": "Mark Spitz",
-        "sport": "swimming",
-        "kinds": [
-          "birth"
-        ]
-      },
-      {
         "name": "Johnny Weissmuller",
         "sport": "swimming",
         "kinds": [
           "birth",
           "death"
-        ]
-      },
-      {
-        "name": "Ayrton Senna",
-        "sport": "motor-racing",
-        "kinds": [
-          "birth",
-          "death"
-        ]
-      },
-      {
-        "name": "Michael Schumacher",
-        "sport": "motor-racing",
-        "kinds": [
-          "birth"
-        ]
-      },
-      {
-        "name": "Lewis Hamilton",
-        "sport": "motor-racing",
-        "kinds": [
-          "birth"
         ]
       },
       {
@@ -1423,22 +1479,6 @@
       {
         "name": "Danica Patrick",
         "sport": "motor-racing",
-        "kinds": [
-          "birth"
-        ],
-        "women": true
-      },
-      {
-        "name": "Simone Biles",
-        "sport": "olympics",
-        "kinds": [
-          "birth"
-        ],
-        "women": true
-      },
-      {
-        "name": "Nadia Comăneci",
-        "sport": "olympics",
         "kinds": [
           "birth"
         ],
@@ -1636,7 +1676,19 @@
         "kind": "final",
         "sport": "tennis",
         "wikipedia": "Battle of the Sexes (tennis)",
-        "wikidata": true,
+        "label": "Battle of the Sexes II (King v Riggs)",
+        "needle": "September 20, 1973",
+        "date": "1973-09-20",
+        "women": true
+      },
+      {
+        "id": "gap-battle-sexes-court",
+        "kind": "final",
+        "sport": "tennis",
+        "wikipedia": "Battle of the Sexes (tennis)",
+        "label": "Battle of the Sexes I (Riggs v Court)",
+        "needle": "May 13, 1973",
+        "date": "1973-05-13",
         "women": true
       },
       {
