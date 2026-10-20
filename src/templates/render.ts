@@ -178,7 +178,8 @@ function fieldsOf(record: OnThisDayRecord, locale: TemplateLocale, asOf: string 
   const cityIn = record.venueCity ? say("cityIn", record.venueCity) : "";
   const homeClause = clubs ? say("homeOf", clubs) : "";
   const finalClause = honour ? say("hosted", honour) : "";
-  const venueContext = (record.venueCity?.trim() || clubs || honour) ? "venue" : "";
+  // A venue named only by its city ("Calihan Hall in Detroit opened in 1952") says nothing a reader can use: a club or an honour is needed.
+  const venueContext = (clubs || honour) ? "venue" : "";
   const leagueIdentity = record.league ? league : "";
   const franchiseContext = (record.league?.trim() || record.venueCity?.trim()) ? "franchise" : "";
   const yearsAgo = yearsAgoToday(record, asOf);

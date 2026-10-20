@@ -140,27 +140,38 @@ export function uniqueRecordIds(records: readonly OnThisDayRecord[]): boolean {
   return new Set(ids).size === ids.length;
 }
 
-function fame(record: OnThisDayRecord): number {
-  if (record.priorityAthlete) return 2;
-  if ((record.sitelinks ?? 0) >= 20) return 1;
-  return 0;
-}
-
-function significance(record: OnThisDayRecord): number {
+/** How much a fact is worth showing: finals, famous people and playoff drama above routine results. A pure function of the fact's fields. */
+export function significance(record: OnThisDayRecord): number {
   const tags = new Set(tagsOf(record));
-  let score = 0;
-  if (tags.has("sport-record") || tags.has("career-stat-milestone") || record.featuredReasons?.includes("record")) score += 95;
-  if (tags.has("championship-win") || record.category === "championship-final") score += 90;
-  if (tags.has("series-clinch") || tags.has("historic-cup-series")) score += 80;
-  if (tags.has("overtime-result")) score += 70;
-  if (tags.has("shutout")) score += 60;
-  if (record.featuredReasons?.includes("big-margin")) score += 50;
-  if (record.category === "award") score += 45;
-  if (record.category === "player-death") score += 40;
-  if (record.category === "venue-opening") score += 35;
-  if (record.category === "franchise-event") score += 30;
-  if (record.category === "player-birthday") score += 15;
-  return score + fame(record) * 20;
+  const reasons = new Set(record.featuredReasons ?? []);
+  if (tags.has("sport-record") || tags.has("career-stat-milestone") || reasons.has("record")) return 100;
+  switch (record.category) {
+    case "championship-final": return 95 + (tags.has("shutout") ? 3 : 0);
+    case "award": return 85;
+    case "soccer-on-day": return 70 + (/^final$/i.test(record.stage ?? "") ? 30 : /semi/i.test(record.stage ?? "") ? 20 : /quarter/i.test(record.stage ?? "") ? 10 : 0);
+    case "venue-opening": return 55;
+    case "franchise-event": return 45;
+    case "player-birthday":
+    case "player-death": {
+      let score = 30;
+      if (record.priorityAthlete) score += 45;
+      if (record.personAward) score += 30;
+      if (record.highlight) score += 10;
+      if ((record.championships ?? 0) > 0) score += 10;
+      if ((record.sitelinks ?? 0) >= 20) score += 15;
+      if (record.category === "player-death") score += 5;
+      return score;
+    }
+    default: {
+      let score = 20;
+      if (record.phase === "playoffs") score += 25;
+      if (tags.has("overtime-result")) score += 15;
+      if (reasons.has("playoff-shutout")) score += 20;
+      else if (tags.has("shutout")) score += 12;
+      if (reasons.has("big-margin")) score += 8;
+      return score;
+    }
+  }
 }
 
 function personKey(record: OnThisDayRecord): string | null {
@@ -179,50 +190,67 @@ function teamKeys(record: OnThisDayRecord): string[] {
   return keys;
 }
 
+/** How a ranked list is chosen. Every cap names what it counts: a tag (`championship-win`), a competition (`competition:nhl`), a person (`p:12`) or a club (`f:3`). */
+export interface RankOptions {
+  /** Most facts of one tag, and of one competition, in the list. Default 2. */
+  readonly maxPer?: number;
+  /** Most facts about one person. Default 1. A club is never listed twice while another choice is left. */
+  readonly personMax?: number;
+  /** The list's fewest facts, when the day or the feed has that many: caps and the one-person rule relax, in that order, to reach it. Default 3. */
+  readonly minimum?: number;
+  /** Keys the list is already about (a tag feed's tag, a league feed's league, a team feed's club): they are not counted. */
+  readonly exempt?: readonly string[];
+}
+
 /**
- * Rank a day's (or team's) facts for a public feed. Unique recordIds.
- * Caps two per tag and per competition. Skips a later fact that repeats a person or team already listed.
+ * Rank facts by `significance` and take the first `n` that keep to the caps, with no repeated fact. The same input always gives the
+ * same list, and a list of `n` is the head of a longer list of the same facts. Facts are used as given: nothing is dropped for wording.
  */
-export function rankFeed(records: readonly OnThisDayRecord[], n: number, maxPer = 2): OnThisDayRecord[] {
-  const ordered = records.filter(isRichFact).slice().sort((a, b) => {
-    const diff = significance(b) - significance(a);
-    if (diff !== 0) return diff;
-    const byFame = fame(b) - fame(a);
-    if (byFame !== 0) return byFame;
-    return `${a.eventDate ?? ""}\t${a.recordId}`.localeCompare(`${b.eventDate ?? ""}\t${b.recordId}`);
-  });
-  const pick = (relaxPeople: boolean, relaxTags: boolean): OnThisDayRecord[] => {
+export function rankRecords(records: readonly OnThisDayRecord[], n: number, options: RankOptions = {}): OnThisDayRecord[] {
+  const maxPer = options.maxPer ?? 2, personMax = options.personMax ?? 1, minimum = options.minimum ?? 3;
+  const exempt = new Set(options.exempt ?? []);
+  // Equal significance: the more recent first (a reader knows the 2022 final better than the 1932 championship), then by id.
+  const ordered = records.map((record) => ({ record, score: significance(record) })).sort((a, b) =>
+    b.score - a.score || `${b.record.eventDate ?? ""}\t${a.record.recordId}`.localeCompare(`${a.record.eventDate ?? ""}\t${b.record.recordId}`)).map((item) => item.record);
+  const pick = (cap: number | null, people: boolean): OnThisDayRecord[] => {
     const picked: OnThisDayRecord[] = [];
     const seen = new Set<string>();
-    const byTag = new Map<string, number>();
-    const byCompetition = new Map<string, number>();
-    const people = new Set<string>();
+    const counts = new Map<string, number>();
+    const persons = new Map<string, number>();
     const teams = new Set<string>();
     for (const record of ordered) {
       if (picked.length >= n) break;
       if (seen.has(record.recordId)) continue;
-      const tags = tagsOf(record);
-      const competition = competitionKey(record);
+      const keys = [...tagsOf(record), `competition:${competitionKey(record)}`].filter((key) => !exempt.has(key));
+      if (cap !== null && keys.some((key) => (counts.get(key) ?? 0) >= cap)) continue;
       const person = personKey(record);
-      const teamIds = teamKeys(record);
-      if (!relaxTags && (tags.some((tag) => (byTag.get(tag) ?? 0) >= maxPer) || (byCompetition.get(competition) ?? 0) >= maxPer)) continue;
-      if (!relaxPeople && person && people.has(person)) continue;
-      if (!relaxPeople && teamIds.some((key) => teams.has(key))) continue;
+      if (people && person && !exempt.has(person) && (persons.get(person) ?? 0) >= personMax) continue;
+      const clubs = teamKeys(record).filter((key) => !exempt.has(key));
+      if (people && clubs.some((key) => teams.has(key))) continue;
       picked.push(record);
       seen.add(record.recordId);
-      for (const tag of tags) byTag.set(tag, (byTag.get(tag) ?? 0) + 1);
-      byCompetition.set(competition, (byCompetition.get(competition) ?? 0) + 1);
-      if (person) people.add(person);
-      for (const key of teamIds) teams.add(key);
+      for (const key of keys) counts.set(key, (counts.get(key) ?? 0) + 1);
+      if (person) persons.set(person, (persons.get(person) ?? 0) + 1);
+      for (const key of clubs) teams.add(key);
     }
     return picked;
   };
-  const poolSize = ordered.length;
-  const first = pick(false, false);
-  if (first.length >= Math.min(3, n, poolSize)) return first;
-  const second = pick(true, false);
-  if (second.length >= Math.min(3, n, poolSize)) return second;
-  return pick(true, true);
+  const want = Math.min(minimum, n, new Set(ordered.map((r) => r.recordId)).size);
+  let list = pick(maxPer, true);
+  if (list.length >= want) return list;
+  list = pick(maxPer, false);
+  for (let cap = maxPer + 1; list.length < want && cap <= maxPer + 4; cap += 1) list = pick(cap, false);
+  return list.length >= want ? list : pick(null, false);
+}
+
+/** `rankRecords` over the facts a default sentence can say (no name-and-year stubs, no Joseon-era general). `options` as a number is `maxPer`. */
+export function rankFeed(records: readonly OnThisDayRecord[], n: number, options: number | RankOptions = {}): OnThisDayRecord[] {
+  return rankRecords(records.filter(isRichFact), n, typeof options === "number" ? { maxPer: options } : options);
+}
+
+/** The facts worth keeping for one calendar day when only a few can be kept: the head of that day's ranking, three to five long. */
+export function bestOfDay(records: readonly OnThisDayRecord[]): OnThisDayRecord[] {
+  return rankFeed(records, 5).filter((record, index) => index < 4 || significance(record) >= 85);
 }
 
 /**

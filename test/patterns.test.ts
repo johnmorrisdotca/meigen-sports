@@ -176,14 +176,14 @@ test("no two adjacent sentences repeat, in a run of one kind of statement", () =
 test("a run over the real facts never repeats a neighbour", () => {
   const records: OnThisDayRecord[] = [];
   const dir = "data/v1/0.1.0/facts/days";
-  for (const name of readdirSync(dir).slice(0, 60)) {
+  for (const name of readdirSync(dir).slice(0, 120)) {
     const shard = JSON.parse(readFileSync(`${dir}/${name}`, "utf8")) as { records: OnThisDayRecord[] };
     records.push(...shard.records.slice(0, 12));
   }
-  assert.ok(records.length > 500);
+  assert.ok(records.length > 600);
   for (const locale of ["en", "ja"] as const) {
     const run = renderRun(records, { seed: "real", locale });
-    assert.ok(run.length > 400);
+    assert.ok(run.length > 500);
     for (let i = 1; i < run.length; i += 1) {
       assert.notEqual(run[i]!.text, run[i - 1]!.text, `#${i}`);
       const prepared = prepare(records.find((r) => r.recordId === run[i]!.recordId)!, locale, "seeded", "real", undefined);

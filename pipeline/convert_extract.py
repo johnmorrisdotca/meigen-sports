@@ -364,10 +364,6 @@ def write_shard(rel: str, records: list[dict], files: dict, allow_empty: bool = 
     files[rel] = {"sha256": hashlib.sha256(body.encode()).hexdigest(), "bytes": len(body.encode()), "records": len(records)}
 
 
-def pick_varied(records: list[dict], n: int) -> list[dict]:
-    return pick_ranked(records, n)
-
-
 def load_priority_qids() -> set[str]:
     path = ROOT / "data-sources/priority-athletes.csv"
     qids: set[str] = set()
@@ -402,36 +398,6 @@ def is_sport_person(row: dict) -> bool:
     if qid and qid in PRIORITY_QIDS:
         return True
     return False
-
-
-def fame(row: dict) -> int:
-    if row.get("priorityAthlete"):
-        return 2
-    if (row.get("sitelinks") or 0) >= 20:
-        return 1
-    return 0
-
-
-def significance(row: dict) -> int:
-    tags = set(tag_set(row))
-    score = 0
-    if "sport-record" in tags or "career-stat-milestone" in tags or "record" in (row.get("featuredReasons") or []):
-        score += 95
-    if "championship-win" in tags or row.get("category") == "championship-final":
-        score += 90
-    if "series-clinch" in tags or "historic-cup-series" in tags:
-        score += 80
-    if "overtime-result" in tags:
-        score += 70
-    if "shutout" in tags:
-        score += 60
-    if "big-margin" in (row.get("featuredReasons") or []):
-        score += 50
-    score += {
-        "award": 45, "player-death": 40, "venue-opening": 35,
-        "franchise-event": 30, "player-birthday": 15,
-    }.get(row.get("category") or "", 0)
-    return score + fame(row) * 20
 
 
 def person_key(row: dict) -> str | None:
@@ -491,7 +457,7 @@ def merge_same_event(chosen: dict[str, dict]) -> tuple[dict[str, dict], int]:
     for rows in groups.values():
         if len(rows) < 2:
             continue
-        rows.sort(key=lambda r: (-significance(r), r["recordId"]))
+        rows.sort(key=lambda r: (r.get("category") != "championship-final", r["recordId"]))
         keeper = dict(rows[0])
         tags = list(keeper.get("tags") or [])
         reasons = list(keeper.get("featuredReasons") or [])
@@ -512,45 +478,23 @@ def merge_same_event(chosen: dict[str, dict]) -> tuple[dict[str, dict], int]:
     return out, merged
 
 
-def pick_ranked(records: list[dict], n: int, max_per: int = 2) -> list[dict]:
-    ordered = sorted(records, key=lambda r: (-significance(r), -fame(r), r.get("eventDate") or "", r["recordId"]))
+RANK_FIELDS = (
+    "recordId", "category", "tags", "eventDate", "competition", "league", "sport", "person", "home", "away", "featuredReasons",
+    "stage", "phase", "priorityAthlete", "personAward", "highlight", "championships", "sitelinks", "record",
+)
 
-    def run(relax_people: bool, relax_tags: bool) -> list[dict]:
-        picked, seen = [], set()
-        by_tag, by_comp = defaultdict(int), defaultdict(int)
-        people, teams = set(), set()
-        for row in ordered:
-            if len(picked) >= n:
-                break
-            rid = row["recordId"]
-            if rid in seen:
-                continue
-            tags = tag_set(row)
-            comp = row.get("competition") or row.get("league") or row.get("category")
-            person, tkeys = person_key(row), team_keys(row)
-            if not relax_tags and (any(by_tag[t] >= max_per for t in tags) or by_comp[comp] >= max_per):
-                continue
-            if not relax_people and person and person in people:
-                continue
-            if not relax_people and any(k in teams for k in tkeys):
-                continue
-            picked.append(row)
-            seen.add(rid)
-            for t in tags:
-                by_tag[t] += 1
-            by_comp[comp] += 1
-            if person:
-                people.add(person)
-            teams.update(tkeys)
-        return picked
 
-    first = run(False, False)
-    if len(first) >= min(n, len(records)):
-        return first
-    second = run(True, False)
-    if len(second) >= min(n, len(records)):
-        return second
-    return run(True, True)
+def rank_lists(facts_by_id: dict, specs: list[dict]) -> dict[str, list[str]]:
+    """Rank every feed with the library's own ranking (scripts/rank-batch.ts): one significance, one set of caps, none here."""
+    used = {rid for spec in specs for rid in spec["ids"]}
+    records = {rid: {k: facts_by_id[rid][k] for k in RANK_FIELDS if k in facts_by_id[rid]} for rid in used}
+    done = subprocess.run(
+        ["node", str(ROOT / "scripts/rank-batch.ts")], input=json.dumps({"records": records, "lists": specs}, ensure_ascii=False),
+        capture_output=True, text=True, check=False, cwd=ROOT,
+    )
+    if done.returncode != 0:
+        raise SystemExit(f"rank-batch failed: {done.stderr}")
+    return json.loads(done.stdout)
 
 
 def write_index(rel: str, ids: list[str], files: dict) -> None:
@@ -825,10 +769,52 @@ def main() -> int:
         by_store[store_bucket(row["recordId"])].append(row)
     for bucket, rows in by_store.items():
         write_shard(f"store/{bucket}.json", list({r["recordId"]: r for r in rows}.values()), files)
+    def uniq_of(rows: list[dict]) -> list[dict]:
+        return list({r["recordId"]: r for r in rows}.values())
+
+    def competitions(rows: list[dict]) -> list[str]:
+        return sorted({f"competition:{r.get('competition') or r.get('league') or r.get('category')}" for r in rows})
+
+    def tags_in(rows: list[dict]) -> list[str]:
+        return sorted({t for r in rows for t in tag_set(r)})
+
+    def clubs_in(rows: list[dict]) -> list[str]:
+        return sorted({f"f:{i}" for r in rows for i in ((r.get("person") or {}).get("franchiseIds") or [])}
+                      | {f"f:{t['franchiseId']}" for r in rows for t in (r.get("home"), r.get("away")) if t and t.get("franchiseId")})
+
+    # Every list is ranked by the library (scripts/rank-batch.ts). A day's list is the mixed kind: at most two facts of a tag and two
+    # of a competition. A feed about one thing (a sport, league, tag, club or a bucket of people) is deeper, with at most eight of
+    # a tag or competition, and is never capped on what it is about: a tag feed does not cap its tag, a league feed its league,
+    # a team feed its club; a player bucket lists each person up to twice and caps nothing else.
+    specs: list[dict] = []
+    for day in calendar:
+        rows = uniq_of(by_day.get(day, []))
+        specs.append({"key": f"day:{day}", "ids": [r["recordId"] for r in rows], "n": 12})
+    for sport, rows in by_sport.items():
+        rows = uniq_of(rows)
+        specs.append({"key": f"sport:{sport}", "ids": [r["recordId"] for r in rows], "n": 40, "options": {"maxPer": 8, "exempt": competitions(rows)}})
+    for league, rows in by_league.items():
+        rows = uniq_of(rows)
+        specs.append({"key": f"league:{league}", "ids": [r["recordId"] for r in rows], "n": 40, "options": {"maxPer": 8, "exempt": competitions(rows)}})
+    for cat, rows in by_cat.items():
+        rows = uniq_of(rows)
+        specs.append({"key": f"tag:{cat}", "ids": [r["recordId"] for r in rows], "n": 40, "options": {"maxPer": 8, "exempt": [cat]}})
+    for fid, rows in by_team.items():
+        rows = uniq_of(rows)
+        specs.append({"key": f"team:{fid}", "ids": [r["recordId"] for r in rows], "n": 40, "options": {"maxPer": 8, "exempt": [f"f:{fid}", *competitions(rows)]}})
+    for bucket, rows in by_player.items():
+        rows = uniq_of(rows)
+        specs.append({"key": f"player:{bucket}", "ids": [r["recordId"] for r in rows], "n": 40, "options": {"personMax": 2, "exempt": [*tags_in(rows), *competitions(rows), *clubs_in(rows)]}})
+    deaths = [r["recordId"] for r in facts if r.get("category") == "player-death"]
+    specs.append({"key": "showcase-deaths", "ids": deaths, "n": 8})
+    specs.append({"key": "sample", "ids": [r["recordId"] for r in shuffle(facts, "meigen-sample-0.1.0")], "n": 400, "options": {"maxPer": 60, "personMax": 1, "minimum": 400}})
+    by_id_all = {r["recordId"]: r for r in facts}
+    ranked = rank_lists(by_id_all, specs)
+    feed_of = lambda key: [by_id_all[rid] for rid in ranked[key]]  # noqa: E731
     days_lt3 = []
     for day in calendar:
-        rows = list({r["recordId"]: r for r in by_day.get(day, [])}.values())
-        feed = pick_ranked(rows, 12)
+        rows = uniq_of(by_day.get(day, []))
+        feed = feed_of(f"day:{day}")
         feed_ids = [r["recordId"] for r in feed]
         if len(feed_ids) != len(set(feed_ids)):
             print(f"duplicate fact id in days/{day}.json", file=sys.stderr)
@@ -838,29 +824,23 @@ def main() -> int:
         write_shard(f"days/{day}.json", feed, files, allow_empty=True)
         write_index(f"indexes/days/{day}.json", [r["recordId"] for r in rows], files)
     for sport, rows in by_sport.items():
-        uniq = list({r["recordId"]: r for r in rows}.values())
-        write_index(f"indexes/sports/{sport}.json", [r["recordId"] for r in uniq], files)
-        write_shard(f"feeds/sports/{sport}.json", pick_ranked(uniq, 40), files)
+        write_index(f"indexes/sports/{sport}.json", [r["recordId"] for r in uniq_of(rows)], files)
+        write_shard(f"feeds/sports/{sport}.json", feed_of(f"sport:{sport}"), files)
     for league, rows in by_league.items():
-        uniq = list({r["recordId"]: r for r in rows}.values())
-        write_index(f"indexes/leagues/{league}.json", [r["recordId"] for r in uniq], files)
-        write_shard(f"feeds/leagues/{league}.json", pick_ranked(uniq, 40), files)
+        write_index(f"indexes/leagues/{league}.json", [r["recordId"] for r in uniq_of(rows)], files)
+        write_shard(f"feeds/leagues/{league}.json", feed_of(f"league:{league}"), files)
     for cat, rows in by_cat.items():
-        uniq = list({r["recordId"]: r for r in rows}.values())
-        write_index(f"indexes/tags/{cat}.json", [r["recordId"] for r in uniq], files)
-        write_shard(f"feeds/tags/{cat}.json", pick_ranked(uniq, 40), files)
+        write_index(f"indexes/tags/{cat}.json", [r["recordId"] for r in uniq_of(rows)], files)
+        write_shard(f"feeds/tags/{cat}.json", feed_of(f"tag:{cat}"), files)
     for fid, rows in by_team.items():
-        uniq = list({r["recordId"]: r for r in rows}.values())
-        write_index(f"indexes/teams/f-{fid}.json", [r["recordId"] for r in uniq], files)
-        write_shard(f"feeds/teams/f-{fid}.json", pick_ranked(uniq, 40), files)
+        write_index(f"indexes/teams/f-{fid}.json", [r["recordId"] for r in uniq_of(rows)], files)
+        write_shard(f"feeds/teams/f-{fid}.json", feed_of(f"team:{fid}"), files)
     for code, rows in by_fifa.items():
-        uniq = list({r["recordId"]: r for r in rows}.values())
-        write_index(f"indexes/teams/fifa-{code}.json", [r["recordId"] for r in uniq], files)
+        write_index(f"indexes/teams/fifa-{code}.json", [r["recordId"] for r in uniq_of(rows)], files)
     for bucket, rows in by_player.items():
-        uniq = list({r["recordId"]: r for r in rows}.values())
-        write_index(f"indexes/players/{bucket}.json", [r["recordId"] for r in uniq], files)
-        write_shard(f"feeds/players/{bucket}.json", pick_ranked(uniq, 40), files)
-    write_shard("sample.json", pick_varied(shuffle(facts, "meigen-sample-0.1.0"), 400) or facts[:400], files)
+        write_index(f"indexes/players/{bucket}.json", [r["recordId"] for r in uniq_of(rows)], files)
+        write_shard(f"feeds/players/{bucket}.json", feed_of(f"player:{bucket}"), files)
+    write_shard("sample.json", feed_of("sample") or facts[:400], files)
     famous_rank: dict[str, int] = {}
     for extra in ("extract_wikidata_famous.json",):
         for row in load_records(extra):
@@ -871,7 +851,7 @@ def main() -> int:
     top_famous = {qid for qid, _ in sorted(famous_rank.items(), key=lambda kv: -kv[1])[:80]}
     showcase = [r for r in facts if (r.get("person") or {}).get("qid") in {"Q209518", "Q311374"}]
     showcase += [r for r in facts if (r.get("person") or {}).get("qid") in top_famous and r.get("category") == "player-birthday"]
-    showcase += pick_ranked([r for r in facts if r.get("category") == "player-death"], 8)
+    showcase += feed_of("showcase-deaths")
     showcase += [r for r in facts if "sport-record" in (r.get("tags") or []) or r.get("record")]
     write_shard("feeds/showcase.json", list({r["recordId"]: r for r in showcase}.values()), files)
     index = {
