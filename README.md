@@ -52,7 +52,7 @@ One build ships both places. The package and the GitHub Pages site are made from
 
 | | In the npm package, works offline | On GitHub Pages, needs a network |
 | --- | --- | --- |
-| On-this-day facts | **1,502 facts**: the best three to five for each of the 366 calendar days, chosen by significance and fame and varied by kind, sport, person and club (`@johnmorrisdotca/meigen-sports/offline`) | **30,480 facts** on all 366 days, in static JSON under `data/v1/0.1.0/facts/` (days, teams, players, leagues, sports, tags, 100 `store/` files that together hold every fact), read through the `load*` functions |
+| On-this-day facts | **1,509 facts**: the best three to five for each of the 366 calendar days, chosen by significance and fame and varied by kind, sport, person and club (`@johnmorrisdotca/meigen-sports/offline`) | **30,480 facts** on all 366 days, in static JSON under `data/v1/0.1.0/facts/` (days, teams, players, leagues, sports, tags, 100 `store/` files that together hold every fact), read through the `load*` functions |
 | Quotations | 30 (22 Gutenberg excerpts, 8 Wikiquote sports lines tagged `famous-quotes`) | the same 30 in `quotes.json` |
 | History starter | 1,052 dated rows on 142 days (`@johnmorrisdotca/meigen-sports/history`; World Cup matches and Wikidata events), kept for compatibility | `all.json`, `days/`, `sports/`, `entities/` |
 

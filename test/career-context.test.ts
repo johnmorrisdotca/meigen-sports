@@ -29,6 +29,19 @@ test("a Hall of Fame year is said as the hall of the person's own sport, with hi
   assert.equal(captionFromFact({ ...base, highlight: "Baseball Hall of Famer with seven World Series titles" }, "en"), "A Player, the New York Yankees CF and Baseball Hall of Famer with seven World Series titles, was born on this day in 1931.");
 });
 
+test("a player with statistics but no roster row has his club, and a Hall of Fame year is said in the hall of his own sport", () => {
+  const birthdays = people.filter((r) => r.category === "player-birthday" && (r.sport === "baseball" || r.sport === "ice-hockey") && !r.priorityAthlete);
+  const noClub = birthdays.filter((r) => !r.clubNames?.length);
+  assert.ok(noClub.length / birthdays.length < 0.03, `${noClub.length} of ${birthdays.length} baseball and hockey birthdays have no club`);
+  const gonzalez = people.find((r) => r.person?.qid === "Q3107002" && r.category === "player-birthday")!;
+  assert.match(gonzalez.text ?? "", /Texas Rangers DH/);
+  const baseball = people.filter((r) => r.hallOfFameYear && r.sport === "baseball");
+  assert.ok(baseball.length >= 20, `${baseball.length} baseball Hall of Famers`);
+  for (const r of baseball) assert.match(r.highlight ?? "", /Baseball Hall of Famer/, r.recordId);
+  const jeter = people.find((r) => r.person?.qid === "Q353511" && r.category === "player-birthday")!;
+  assert.ok((jeter.awardCount ?? 0) >= 10, `Jeter has ${jeter.awardCount} awards`);
+});
+
 test("the facts of other sports are about their own sport, and no para sport is published", () => {
   const sports = new Set(people.map((r) => r.sport));
   for (const sport of ["tennis", "boxing", "athletics", "golf", "cricket", "formula-one", "professional-wrestling"]) assert.ok(sports.has(sport), `no ${sport} people`);

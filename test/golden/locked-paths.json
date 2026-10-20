@@ -12,6 +12,8 @@
   "day"
  ],
  "birth-Q1189": [
+  "offline",
+  "day",
   "player"
  ],
  "birth-Q119775": [],
@@ -138,10 +140,7 @@
   "day",
   "player"
  ],
- "birth-Q231983": [
-  "offline",
-  "day"
- ],
+ "birth-Q231983": [],
  "birth-Q232711": [
   "offline",
   "day"
@@ -205,8 +204,6 @@
   "player"
  ],
  "birth-Q3090378": [
-  "offline",
-  "day",
   "team",
   "player"
  ],
@@ -290,6 +287,8 @@
   "day"
  ],
  "birth-Q353511": [
+  "offline",
+  "day",
   "team",
   "player"
  ],
@@ -301,6 +300,7 @@
  "birth-Q357465": [
   "offline",
   "day",
+  "team",
   "player"
  ],
  "birth-Q357502": [
@@ -365,6 +365,7 @@
   "player"
  ],
  "birth-Q456779": [
+  "team",
   "player"
  ],
  "birth-Q505423": [
@@ -520,6 +521,7 @@
  "death-Q213812": [
   "offline",
   "day",
+  "team",
   "player"
  ],
  "death-Q215777": [
@@ -613,8 +615,6 @@
   "player"
  ],
  "death-Q520254": [
-  "offline",
-  "day",
   "player"
  ],
  "death-Q52651": [
@@ -662,8 +662,6 @@
   "day"
  ],
  "mlb-1903": [
-  "offline",
-  "day",
   "team"
  ],
  "mlb-1927": [],
@@ -671,9 +669,7 @@
   "offline",
   "day"
  ],
- "mlb-1960": [
-  "team"
- ],
+ "mlb-1960": [],
  "mlb-1972": [],
  "mlb-1986": [
   "team"
@@ -738,6 +734,7 @@
   "day"
  ],
  "venue-msg": [
+  "offline",
   "day"
  ],
  "venue-polo": [
