@@ -28,6 +28,7 @@ EVENTS_DAY = 40  # facts in a day's events shard (`events/MM-DD.json`)
 EVENT_CATEGORIES = ("competition-start", "competition-end", "sport-event")
 # The people and the events the facts are about, with their countries and Wikipedia titles (pipeline/wikidata_links.py); empty when that extract is absent.
 LINKS: dict = {"people": {}, "events": {}}
+TROPHIES: dict = json.loads((Path(__file__).resolve().parent.parent / "data-sources/trophies.json").read_text(encoding="utf-8"))
 AWARD_NAMES: dict[str, str] = {}  # award id (`hart-memorial-trophy`) -> the award's name, for the vocabulary's menus
 # The namespaces of a fact's tags that get an index of ids (`indexes/<folder>/<value>.json`); sport, league, team and day have theirs already.
 TAG_INDEXES = (
@@ -514,7 +515,27 @@ def finalize(row: dict) -> dict | None:
     if out.get("away"):
         out["away"] = team(out["away"])
     attach_links(out)
+    hint = trophy_hint(out)
+    if hint:
+        out["trophy"] = hint
     return out
+
+
+def trophy_hint(out: dict) -> str | None:
+    """The emblem that draws the trophy a fact is about (data-sources/trophies.json): the person's best award if dougu has that very trophy, else the title he won, else any
+    award of his it has, else its plain cup; None for a fact about no award and no title. An id with a name is a likeness of that trophy, `trophy:cup` is generic."""
+    awards = TROPHIES["awards"]
+    best = slug_of_name(out["personAward"]) if out.get("personAward") else None
+    if out.get("category") == "award" and out.get("awardName"):
+        best = slug_of_name(out["awardName"])
+    title = slug_of_name(out["championshipName"]) if (out.get("championships") or 0) > 0 and out.get("championshipName") else None
+    ordered = [awards.get(best)] if best else []
+    ordered += [TROPHIES["titles"].get(title)] if title else []
+    ordered += [awards.get(slug) for slug in sorted(out.get("awards") or [])]
+    exact = next((t for t in ordered if t), None)
+    if exact:
+        return exact
+    return TROPHIES["generic"] if (out.get("awards") or title or best) else None
 
 
 def attach_links(out: dict) -> None:
@@ -1436,10 +1457,12 @@ def main() -> int:
     for row in facts:
         if row.get("category") == "award" and row.get("awardName") and slug_of_name(row["awardName"]):
             AWARD_NAMES.setdefault(slug_of_name(row["awardName"]), row["awardName"])
+    vocabulary["trophies"] = {"generic": TROPHIES["generic"], "awards": {s: TROPHIES["awards"].get(s, TROPHIES["generic"]) for s in sorted(vocabulary["awards"])},
+                              "titles": {s: TROPHIES["titles"].get(s, TROPHIES["generic"]) for s in sorted(vocabulary["titles"])}}
     vocabulary["awardNames"] = {slug: AWARD_NAMES[slug] for slug in sorted(vocabulary["awards"]) if slug in AWARD_NAMES}
     vocabulary_body = json.dumps(vocabulary, ensure_ascii=False, separators=(",", ":")) + "\n"
     (OUT / "index/vocabulary.json").write_text(vocabulary_body, encoding="utf-8")
-    files["index/vocabulary.json"] = {"sha256": hashlib.sha256(vocabulary_body.encode()).hexdigest(), "bytes": len(vocabulary_body.encode()), "records": len(vocabulary) - 3}
+    files["index/vocabulary.json"] = {"sha256": hashlib.sha256(vocabulary_body.encode()).hexdigest(), "bytes": len(vocabulary_body.encode()), "records": len(vocabulary) - 4}
     # The clubs alone (a few kilobytes), for a picker that has no use for the 10,000 players of picker.json.
     teams_body = json.dumps({"schemaVersion": 1, "dataVersion": VERSION, "teams": index["teams"]}, ensure_ascii=False, separators=(",", ":")) + "\n"
     (OUT / "index/teams.json").write_text(teams_body, encoding="utf-8")

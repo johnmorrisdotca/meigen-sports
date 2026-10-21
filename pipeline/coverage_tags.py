@@ -121,6 +121,33 @@ def main() -> None:
         "- There is no `city:` or `era:` tag: the archive names a venue's city but holds no id for it, and no era is defined in the data. They would be guesses.",
         "",
     ]
+    trophies = json.loads((ROOT / "data-sources/trophies.json").read_text(encoding="utf-8"))
+    names = vocabulary.get("awardNames", {})
+    section = [
+        "## Trophies",
+        "",
+        "`trophy` is the id of the emblem that draws the trophy a fact is about, from [`data-sources/trophies.json`](../data-sources/trophies.json): an id with a name (`trophy:hart-trophy`) is a close likeness of that very "
+        "trophy in `@johnmorrisdotca/dougu-sports` 0.14.0, `trophy:cup` is its plain cup where it has none. The library holds the id and draws nothing; the demo draws it (`?trophies=1`). "
+        "A person's trophy is his best award if the set has that trophy, else the title he won, else any award of his it has, else the plain cup. Awards and titles by their emblem:",
+        "",
+        "| Award or title | Facts | Emblem |",
+        "| --- | ---: | --- |",
+    ]
+    for slug, count in vocabulary["awards"].items():
+        emblem = trophies["awards"].get(slug)
+        section.append(f"| {names.get(slug, slug)} | {count:,} | " + (f"`{emblem}`" if emblem else "plain cup (no likeness yet)") + " |")
+    for slug, count in vocabulary["titles"].items():
+        emblem = trophies["titles"].get(slug)
+        section.append(f"| title: {slug} | {count:,} | " + (f"`{emblem}`" if emblem else "plain cup (no likeness yet)") + " |")
+    generic = [names.get(slug, slug) for slug in vocabulary["awards"] if slug not in trophies["awards"]]
+    section += [
+        "",
+        f"{len(vocabulary['awards']) - len(generic)} of the {len(vocabulary['awards'])} awards and every title have a likeness. The {len(generic)} awards drawn as the plain cup (the list for dougu-sports): "
+        + "; ".join(generic) + ".",
+        "",
+    ]
+    at = lines.index("## What is never a tag")
+    lines[at:at] = section
     OUT.write_text("\n".join(lines), encoding="utf-8")
     print(f"wrote {OUT}")
 

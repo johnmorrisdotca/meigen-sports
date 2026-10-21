@@ -103,6 +103,66 @@ const handball = await queryFacts({ country: "RO", sport: "handball", decade: "2
 
 `loadCountry("RO", load)` is a country's best forty facts, ranked, in one file. `findPeopleByName("gretz", load)` finds a person by first or last name in one small file, and `loadFactsById` loads the facts of the ids it returns.
 
+## Trophies
+
+`trophy` is the id of the emblem that draws the trophy a fact is about, from [`data-sources/trophies.json`](../data-sources/trophies.json): an id with a name (`trophy:hart-trophy`) is a close likeness of that very trophy in `@johnmorrisdotca/dougu-sports` 0.14.0, `trophy:cup` is its plain cup where it has none. The library holds the id and draws nothing; the demo draws it (`?trophies=1`). A person's trophy is his best award if the set has that trophy, else the title he won, else any award of his it has, else the plain cup. Awards and titles by their emblem:
+
+| Award or title | Facts | Emblem |
+| --- | ---: | --- |
+| Rawlings Gold Glove Award | 497 | `trophy:gold-glove-award` |
+| Silver Slugger Award | 373 | `trophy:silver-slugger-award` |
+| Major League Baseball Most Valuable Player Award | 226 | `trophy:mlb-mvp-award` |
+| Major League Baseball Rookie of the Year Award | 195 | plain cup (no likeness yet) |
+| Calder Memorial Trophy | 123 | `trophy:calder-trophy` |
+| Cy Young Award | 110 | `trophy:cy-young-award` |
+| Hart Memorial Trophy | 91 | `trophy:hart-trophy` |
+| Lady Byng Memorial Trophy | 91 | `trophy:lady-byng-trophy` |
+| NBA Rookie of the Year Award | 87 | plain cup (no likeness yet) |
+| World Series Most Valuable Player Award | 83 | `trophy:world-series-mvp-trophy` |
+| Vezina Trophy | 82 | `trophy:vezina-trophy` |
+| Major League Baseball Manager of the Year Award | 69 | plain cup (no likeness yet) |
+| NBA Coach of the Year Award | 66 | plain cup (no likeness yet) |
+| Bill Masterton Memorial Trophy | 62 | `trophy:masterton-trophy` |
+| Conn Smythe Trophy | 61 | `trophy:conn-smythe-trophy` |
+| Rolaids Relief Man Award | 53 | plain cup (no likeness yet) |
+| Jack Adams Award | 51 | `trophy:jack-adams-trophy` |
+| William M. Jennings Trophy | 49 | `trophy:jennings-trophy` |
+| Bill Russell NBA Finals Most Valuable Player Award | 46 | plain cup (no likeness yet) |
+| NBA Most Valuable Player Award | 44 | plain cup (no likeness yet) |
+| NBA Most Improved Player Award | 43 | plain cup (no likeness yet) |
+| Art Ross Trophy | 41 | `trophy:art-ross-trophy` |
+| NBA Sixth Man of the Year Award | 41 | plain cup (no likeness yet) |
+| James Norris Memorial Trophy | 39 | `trophy:norris-trophy` |
+| King Clancy Memorial Trophy | 37 | `trophy:king-clancy-trophy` |
+| AP NFL Offensive Player of the Year Award | 35 | plain cup (no likeness yet) |
+| Super Bowl Most Valuable Player Award | 34 | plain cup (no likeness yet) |
+| Hank Aaron Award | 33 | plain cup (no likeness yet) |
+| AP NFL Defensive Player of the Year Award | 31 | plain cup (no likeness yet) |
+| Ted Lindsay Award | 31 | `trophy:ted-lindsay-award` |
+| AP NFL Most Valuable Player Award | 30 | plain cup (no likeness yet) |
+| Frank J. Selke Trophy | 29 | `trophy:selke-trophy` |
+| NBA Defensive Player of the Year Award | 29 | plain cup (no likeness yet) |
+| Maurice "Rocket" Richard Trophy | 16 | `trophy:rocket-richard-trophy` |
+| NHL General Manager of the Year Award | 14 | plain cup (no likeness yet) |
+| Grey Cup Most Valuable Player | 12 | plain cup (no likeness yet) |
+| Super Bowl | 10 | `trophy:lombardi-trophy` |
+| Annis Stukus Trophy | 9 | plain cup (no likeness yet) |
+| CFL's Most Outstanding Defensive Player Award | 9 | plain cup (no likeness yet) |
+| CFL's Most Outstanding Player Award | 9 | plain cup (no likeness yet) |
+| CFL's Most Outstanding Rookie Award | 9 | plain cup (no likeness yet) |
+| CFL's Most Outstanding Canadian Award | 8 | plain cup (no likeness yet) |
+| John Agro Special Teams Award | 7 | plain cup (no likeness yet) |
+| CFL's Most Outstanding Lineman Award | 2 | plain cup (no likeness yet) |
+| O'Brien Cup | 2 | `trophy:obrien-cup` |
+| title: grey-cup | 1,610 | `trophy:grey-cup` |
+| title: larry-o-brien-championship-trophy | 918 | `trophy:larry-obrien-trophy` |
+| title: world-series | 564 | `trophy:commissioners-trophy` |
+| title: stanley-cup | 318 | `trophy:stanley-cup` |
+| title: super-bowl | 60 | `trophy:lombardi-trophy` |
+| title: o-brien-cup | 2 | `trophy:obrien-cup` |
+
+21 of the 45 awards and every title have a likeness. The 24 awards drawn as the plain cup (the list for dougu-sports): Major League Baseball Rookie of the Year Award; NBA Rookie of the Year Award; Major League Baseball Manager of the Year Award; NBA Coach of the Year Award; Rolaids Relief Man Award; Bill Russell NBA Finals Most Valuable Player Award; NBA Most Valuable Player Award; NBA Most Improved Player Award; NBA Sixth Man of the Year Award; AP NFL Offensive Player of the Year Award; Super Bowl Most Valuable Player Award; Hank Aaron Award; AP NFL Defensive Player of the Year Award; AP NFL Most Valuable Player Award; NBA Defensive Player of the Year Award; NHL General Manager of the Year Award; Grey Cup Most Valuable Player; Annis Stukus Trophy; CFL's Most Outstanding Defensive Player Award; CFL's Most Outstanding Player Award; CFL's Most Outstanding Rookie Award; CFL's Most Outstanding Canadian Award; John Agro Special Teams Award; CFL's Most Outstanding Lineman Award.
+
 ## What is never a tag
 
 Sex or gender, ethnicity, religion, politics, family and health are not tags, and no field of a fact holds them: the Wikidata dump was filtered before the package saw it, para, wheelchair, deaf and blind sport is left out, and `test/tags.test.ts` fails if a tag's namespace or value says any of those words. A tag for a person's sex would be needed to say a sport is "women's"; the package does not, and a sport is its sport.

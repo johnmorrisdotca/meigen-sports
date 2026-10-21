@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "about": "Which emblem of @johnmorrisdotca/dougu-sports 0.14.0 draws each award and title the facts carry. An id with a name (trophy:hart-trophy) is dougu's close likeness of that very trophy; `generic` is its plain cup, used where dougu has no likeness. The library holds only these ids (strings): drawing them is the consumer's job. A trophy missing here is a ticket for dougu-sports.",
+  "generic": "trophy:cup",
+  "awards": {
+    "rawlings-gold-glove-award": "trophy:gold-glove-award",
+    "silver-slugger-award": "trophy:silver-slugger-award",
+    "major-league-baseball-most-valuable-player-award": "trophy:mlb-mvp-award",
+    "calder-memorial-trophy": "trophy:calder-trophy",
+    "cy-young-award": "trophy:cy-young-award",
+    "hart-memorial-trophy": "trophy:hart-trophy",
+    "lady-byng-memorial-trophy": "trophy:lady-byng-trophy",
+    "world-series-most-valuable-player-award": "trophy:world-series-mvp-trophy",
+    "vezina-trophy": "trophy:vezina-trophy",
+    "bill-masterton-memorial-trophy": "trophy:masterton-trophy",
+    "conn-smythe-trophy": "trophy:conn-smythe-trophy",
+    "jack-adams-award": "trophy:jack-adams-trophy",
+    "william-m-jennings-trophy": "trophy:jennings-trophy",
+    "art-ross-trophy": "trophy:art-ross-trophy",
+    "james-norris-memorial-trophy": "trophy:norris-trophy",
+    "king-clancy-memorial-trophy": "trophy:king-clancy-trophy",
+    "ted-lindsay-award": "trophy:ted-lindsay-award",
+    "frank-j-selke-trophy": "trophy:selke-trophy",
+    "maurice-rocket-richard-trophy": "trophy:rocket-richard-trophy",
+    "super-bowl": "trophy:lombardi-trophy",
+    "o-brien-cup": "trophy:obrien-cup"
+  },
+  "titles": {
+    "stanley-cup": "trophy:stanley-cup",
+    "grey-cup": "trophy:grey-cup",
+    "larry-o-brien-championship-trophy": "trophy:larry-obrien-trophy",
+    "world-series": "trophy:commissioners-trophy",
+    "super-bowl": "trophy:lombardi-trophy",
+    "o-brien-cup": "trophy:obrien-cup"
+  }
+}

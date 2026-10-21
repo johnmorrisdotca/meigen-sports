@@ -287,3 +287,29 @@ test("people are found by name: every person is in the file of his first and of 
   assert.deepEqual(nameLetters("Ōtani Shōhei"), ["o", "s"]);
   assert.deepEqual(nameLetters("日本 太郎"), ["_"]);
 });
+
+test("the trophy of a fact is an emblem of the set that draws it: a likeness of that very trophy, or the plain cup", async () => {
+  const { NAMED_TROPHIES, TROPHY_IDS } = await import("@johnmorrisdotca/dougu-sports/emblems");
+  const named = new Set<string>(NAMED_TROPHIES.map((t) => t.id));
+  const table = JSON.parse(readFileSync("data-sources/trophies.json", "utf8")) as { generic: string; awards: Record<string, string>; titles: Record<string, string> };
+  assert.ok((TROPHY_IDS as readonly string[]).includes(table.generic));
+  for (const id of [...Object.values(table.awards), ...Object.values(table.titles)]) assert.ok(named.has(id), `${id} is not a named trophy of the set`);
+  const vocabulary = JSON.parse(readFileSync(`${root}/index/vocabulary.json`, "utf8")) as { awards: Record<string, number>; titles: Record<string, number>; trophies: { generic: string; awards: Record<string, string>; titles: Record<string, string> } };
+  for (const slug of Object.keys(vocabulary.awards)) assert.equal(vocabulary.trophies.awards[slug], table.awards[slug] ?? table.generic, slug);
+  for (const slug of Object.keys(vocabulary.titles)) assert.equal(vocabulary.trophies.titles[slug], table.titles[slug] ?? table.generic, slug);
+  let exact = 0, generic = 0;
+  for (const r of facts) {
+    if (r.trophy) {
+      assert.ok(r.trophy === table.generic || named.has(r.trophy), `${r.recordId}: ${r.trophy}`);
+      assert.ok(r.awards?.length || r.championships || r.category === "award", `${r.recordId} has a trophy and no award or title`);
+      if (r.trophy === table.generic) generic += 1; else exact += 1;
+    } else assert.ok(!r.awards?.length && !((r.championships ?? 0) > 0 && r.championshipName) && r.category !== "award", `${r.recordId} has awards and no trophy`);
+  }
+  assert.ok(exact > 4000 && generic > 300, `${exact} likenesses, ${generic} plain cups`);
+  const ovechkin = facts.find((r) => r.person?.qid === "Q311374" && r.category === "player-birthday")!;
+  assert.equal(ovechkin.trophy, "trophy:hart-trophy");
+  const gardiner = facts.find((r) => r.person?.qid === "Q860294" && r.category === "player-death")!;
+  assert.equal(gardiner.trophy, "trophy:vezina-trophy");
+  const grey = facts.find((r) => r.championshipName === "Grey Cup" && !r.personAward)!;
+  assert.equal(grey.trophy, "trophy:grey-cup");
+});

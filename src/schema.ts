@@ -148,6 +148,11 @@ export interface OnThisDayRecord {
   readonly hostCountries?: readonly string[];
   /** The individual awards the person won himself, as ids (`hart-memorial-trophy`), from the archive's own awards: the `award:` tags and `honour:award-winner`. */
   readonly awards?: readonly string[];
+  /**
+   * The emblem that draws the trophy the fact is about, as an id of the emblem set `data-sources/trophies.json` names (`trophy:hart-trophy`, a close likeness of that
+   * very trophy; `trophy:cup`, the plain cup, where the set has no likeness). Present for a person with an award or a title, and for an award itself. A string only: drawing it is the consumer's job.
+   */
+  readonly trophy?: string;
   /** The Wikidata item the fact is about: the person, or the event. Absent where the fact has no item (a game) or the archive's person has no Q id. */
   readonly wikidata?: string;
   /** The titles of that item's Wikipedia articles, as Wikidata's sitelinks give them (a title, never an address; `wikipediaUrl` builds one). */
