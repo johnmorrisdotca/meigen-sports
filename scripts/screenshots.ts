@@ -36,6 +36,15 @@ try {
   await page.screenshot({ path: `${output}/${shot.name}.png`, fullPage: false });
   await page.close();
  }
+ // The flag and the trophy beside a fact (`?flags=1&trophies=1`): Wayne Gretzky's facts in the favourites, in English, on a desk.
+ {
+  const page = await browser.newPage({ viewport: { width: 1280, height: 900 }, deviceScaleFactor: 2, reducedMotion: "reduce" });
+  await page.goto(`http://127.0.0.1:${port}/?lang=en&flags=1&trophies=1&country=CA&award=hart-memorial-trophy&decade=1960s`);
+  await page.locator("#fav-facts .record").first().waitFor();
+  await page.locator("#fav-facts [data-testid=flag]").first().evaluate((img: HTMLImageElement) => img.decode());
+  await page.locator("#fav-facts").first().screenshot({ path: `${output}/marks-desktop.png` });
+  await page.close();
+ }
  console.log(`Screenshots written to ${output}`);
 } finally {
  await browser?.close();

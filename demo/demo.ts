@@ -3,6 +3,7 @@ import { quotes } from "../src/data/quotes.ts";
 import { OFFLINE_BUILD, offline } from "../src/data/offline.ts";
 import { loadFactDay, loadFactEventsDay, loadFactPeopleDay, loadFactShard, loadShard } from "../src/load.ts";
 import { startExplore } from "./explore.ts";
+import { flagMark, trophyMark } from "./marks.ts";
 import type { OnThisDayRecord } from "../src/schema.ts";
 import { pickVariedFacts } from "./variety.ts";
 import type { MeigenRecord } from "../src/types.ts";
@@ -94,6 +95,14 @@ function drawFacts(box: HTMLElement, records: readonly OnThisDayRecord[], asOf?:
     const article = document.createElement("article"); article.className = "record";
     if (fact.eventDate) article.dataset.year = fact.eventDate.slice(0, 4);
     const p = document.createElement("p");
+    // The flag of its country (where the data says it is unambiguous) and the trophy it is about: drawn always, shown by the two switches, so a switch redraws nothing.
+    const flag = flagMark(fact, locale), trophy = trophyMark(fact);
+    if (flag || trophy) {
+      const marks = document.createElement("span"); marks.className = "marks";
+      if (flag) { const img = document.createElement("img"); img.className = "mark-flag"; img.src = flag.src; img.alt = flag.name; img.title = flag.name; img.loading = "lazy"; img.dataset.testid = "flag"; img.dataset.code = flag.code; marks.append(img); }
+      if (trophy) { const span = document.createElement("span"); span.className = trophy.exact ? "mark-trophy" : "mark-trophy generic"; span.innerHTML = trophy.svg; span.dataset.testid = "trophy"; span.dataset.id = fact.trophy ?? ""; marks.append(span); }
+      p.append(marks);
+    }
     p.append(text);
     // A small link to the article about its person or event, in the reader's language (English, then Wikidata where there is none); a fact with no item has none.
     const url = wikipediaUrl(fact, locale);
@@ -132,6 +141,21 @@ const todayDots = document.querySelector<HTMLElement>("#today-dots")!;
 const leafMonth = document.querySelector<HTMLElement>("#leaf-month")!;
 const leafDay = document.querySelector<HTMLElement>("#leaf-day")!;
 const leafYear = document.querySelector<HTMLElement>("#leaf-year")!;
+// Flags and trophies beside the facts: two switches on the card, kept in the address (`?flags=1&trophies=1`), clickable while the card turns.
+const optFlags = document.querySelector<HTMLInputElement>("#opt-flags")!;
+const optTrophies = document.querySelector<HTMLInputElement>("#opt-trophies")!;
+optFlags.checked = addressed.get("flags") === "1"; optTrophies.checked = addressed.get("trophies") === "1";
+function applyMarks(keep: boolean) {
+  document.documentElement.dataset.flags = optFlags.checked ? "on" : "off";
+  document.documentElement.dataset.trophies = optTrophies.checked ? "on" : "off";
+  if (!keep) return;
+  const query = new URLSearchParams(location.search);
+  for (const [key, on] of [["flags", optFlags.checked], ["trophies", optTrophies.checked]] as const) { if (on) query.set(key, "1"); else query.delete(key); }
+  try { history.replaceState(null, "", `${location.pathname}${query.size ? `?${query}` : ""}${location.hash}`); } catch { /* the address stays as it is */ }
+}
+applyMarks(false);
+optFlags.addEventListener("change", () => applyMarks(true));
+optTrophies.addEventListener("change", () => applyMarks(true));
 let todayIndex = Math.max(0, Number.parseInt(addressed.get("fact") ?? "0", 10) || 0);
 let todayPlaying = !reducedMotion.matches && !addressed.has("fact") && addressed.get("play") === "1";
 /** True while the mouse is over the card: it plays, and leaving stops it. */

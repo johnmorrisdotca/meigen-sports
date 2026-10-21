@@ -4,7 +4,7 @@ import { extname, resolve, sep } from "node:path";
 import process from "node:process";
 const port = Number(process.env.PORT ?? 7400); if (!Number.isInteger(port) || port < 7400 || port > 7499) throw new Error("Port must be in 7400–7499");
 const root = resolve("site");
-const types: Record<string, string> = { ".html": "text/html; charset=utf-8", ".js": "text/javascript", ".css": "text/css", ".json": "application/json", ".txt": "text/plain" };
+const types: Record<string, string> = { ".html": "text/html; charset=utf-8", ".js": "text/javascript", ".css": "text/css", ".json": "application/json", ".txt": "text/plain", ".svg": "image/svg+xml", ".md": "text/markdown; charset=utf-8" };
 createServer(async (req, res) => {
  try { const path = decodeURIComponent(new URL(req.url ?? "/", "http://localhost").pathname); const file = resolve(root, `.${path === "/" ? "/index.html" : path}`);
  if (!file.startsWith(`${root}${sep}`)) { res.writeHead(403).end(); return; }

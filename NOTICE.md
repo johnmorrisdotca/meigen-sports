@@ -24,3 +24,7 @@ Eight sports quotations are extracted from English Wikiquote athlete, coach and 
 - **openfootball contributors:** all 964 results in the 22 FIFA World Cup edition files (1930–2022) are included under its CC0-1.0 dedication. The source commit and original dedication are recorded in [LICENSES/OPENFOOTBALL-CC0.txt](./LICENSES/OPENFOOTBALL-CC0.txt).
 
 These notices describe the included seed only. They do not grant rights to future sources, uncollected records or third-party material beyond the terms of those sources. The archive, curation and public release workflow is not yet complete; see [docs/RESUME.md](./docs/RESUME.md).
+
+## The demo's flags and trophies
+
+The demo page (not the package) draws a flag and a trophy beside a fact when asked (`?flags=1&trophies=1`). The flags are `@johnmorrisdotca/hata` 1.7.2 (MIT code; each flag's source, author and licence are in that package's manifest and in `flags/NOTICE.md` beside the files on the demo), and the trophies are `@johnmorrisdotca/dougu-sports` 0.14.0 (MIT; drawings made for that package, with no lettering, logo or mark). Both are devDependencies of this repository: the published library imports neither.

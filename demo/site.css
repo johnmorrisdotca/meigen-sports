@@ -40,3 +40,16 @@
 @media(max-width:680px){.filter-grid{grid-template-columns:minmax(0,1fr)}.fav-panel select,.feed-filters select{width:100%}}
 .today-facts .tags{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;padding-bottom:2px}.today-facts .tag{white-space:nowrap;flex:none}
 .fav-panel select,.feed-filters select{width:100%}.filter-grid .fam-row>label{width:100%}
+/* 0.10.0: the flag and the trophy beside a fact, shown by two switches on the card. */
+.marks{display:inline-flex;align-items:center;gap:.5em;margin-right:.6em;vertical-align:middle}
+.mark-flag{height:1.05em;width:auto;max-width:1.9em;border-radius:2px;box-shadow:0 0 0 1px var(--rule);object-fit:contain}
+.mark-trophy{display:inline-flex;width:1.9em;height:1.9em;vertical-align:middle}.mark-trophy svg{width:100%;height:100%}
+.mark-trophy.generic{opacity:.85}
+html:not([data-flags="on"]) .mark-flag{display:none}
+html:not([data-trophies="on"]) .mark-trophy{display:none}
+html:not([data-flags="on"]):not([data-trophies="on"]) .marks{display:none}
+html[data-flags="on"]:not([data-trophies="on"]) .marks:not(:has(.mark-flag)),html[data-trophies="on"]:not([data-flags="on"]) .marks:not(:has(.mark-trophy)){display:none}
+.today-options{display:flex;flex-wrap:wrap;gap:4px 18px;margin-top:8px}
+.today-options label{display:inline-flex;align-items:center;gap:8px;min-height:44px;cursor:pointer}
+.today-options input{width:1.3em;height:1.3em;min-height:0;accent-color:var(--ink)}
+.today-facts .record p:first-child .marks{margin-right:.6em}
