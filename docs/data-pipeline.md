@@ -73,3 +73,7 @@ The initial archive and candidate load **completed on DS1 on 2026-10-15**: 99 ra
 A fixed old edition or historical corpus is a valid snapshot when its rights and provenance are verified. Each citation carries `snapshot.status`, pinned revision and actual capture time; exact history coverage is included when known. An old commit does not prove its source is discontinued, and a working URL does not prove it is maintained. Book publication years do not become invented coverage dates.
 
 Choose source providers independently from history categories: `includeSources` and `excludeSources` use source IDs; `types` and `excludeTypes` choose record types. No library rule automatically drops an inactive source. Source lifecycle, underlying text/data rights and human publication approval remain three separate facts.
+
+## From the README's Architecture section
+
+The package separates TypeScript code, bundled JSON and source material. Raw source bytes are stored in the permanent DS1 archive; the 99 retrievals and 95 unique archive hashes have been verified against stored bytes, and local Dropbox backup copies have been verified. Turso curation and public release remain pending, and remote Dropbox sync is unconfirmed. Public readers use versioned static JSON. See [docs/history-model.md](./docs/history-model.md), [data-sources/README.md](./data-sources/README.md) and [pipeline/README.md](./pipeline/README.md).

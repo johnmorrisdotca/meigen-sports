@@ -4,6 +4,11 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+## [0.6.5] - 2026-10-20
+
+- Docs: the README opens on today in sports history as a calendar card turning from one day to the next, then "The best of it", a picture each: the sentences the facts are worded into, the offline set filling a year, and the feeds by team, player, sport and tag. The four animated webp pictures (`docs/images/hero-today-*`, `sentences-*`, `offline-*`, `feeds-*`, a light and a dark twin each, under 250 kB) are made by `pnpm animations` (`scripts/animations.ts`) from the real fact files with Playwright and `img2webp`. The README is no longer than before: the demo's screenshots went to `docs/demo.md`, and detail went to the pages that already hold its subject (`docs/record-schema.md`, `docs/golden-facts.md`, `docs/status.md`, `docs/data-pipeline.md`, `docs/open-sources.md`, `docs/coverage.md`); nothing was removed.
+- Demo: it opens on a calendar card. Today's date is a leaf, and today's facts go round one at a time by themselves (not for a reader who prefers reduced motion, nor for an address that names a fact, `?fact=2`, or says `play=0`), with Pause, Previous, Next and a dot for each fact. Changing the date, the sport, the source or the language leaves them going round. A phone gets a shorter header, so the card is in the first screen. No change to the package's code beyond its version.
+
 ## [0.6.4] - 2026-10-20
 
 - Security: the family's shared background module that the package carries (`dist/family-backgrounds.js`, not reachable from the package's exports) now makes the `id` it is given safe before writing it into element ids and `url(#...)`: only letters, digits, `_` and `-` are kept, every other character becomes `-`, and `bg-` goes in front of an id that does not start with a letter. An id that is already safe is unchanged. It is the shared module's version 1.0.1; `test/family-backgrounds.test.ts` pins its version and sha256 and draws every preset with hostile ids. No data or wording changes.

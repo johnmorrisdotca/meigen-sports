@@ -19,3 +19,7 @@ Every date, name and winner in the list was fetched from Wikidata (CC0) or read 
 ## Where each fact is served
 
 Each must entry is looked for in five places: the full dataset (`store/`), the bundled offline set, the day shard, a team feed and a player feed. `test/golden/locked-paths.json` records where each is served today as a floor: a later build may serve it in more places, never fewer. `node scripts/check-golden.ts --lock` rewrites the floor after a change that is meant to move facts. The report printed by the test counts the list by sport, era, kind and path, and the suite fails if a sport the data covers has fewer than ten must entries.
+
+## From the README
+
+This is a sourced collection with coverage gaps, not a complete daily almanac. `test/golden/golden-facts.json` lists 246 famous, source-checked facts the data must hold (and those it is known not to hold yet), with rules for what must never appear; see [docs/golden-facts.md](./docs/golden-facts.md). Quotes have unknown utterance dates and are never assigned invented anniversaries.

@@ -189,3 +189,11 @@ import { EXTRACT_CATEGORIES, type OnThisDayRecord, type TeamRef, type PersonRef 
 ```
 
 `OnThisDayRecord` lives next to `MeigenRecord`. The bundled seed still uses `MeigenRecord`. When new game JSON arrives, conversion maps extractor objects onto this type without reading the clock.
+
+## From the README's API section
+
+Each `MeigenRecord` has a `kind` (`quote` or `history`), exact text, source citation, rights status, sport and type tags, entity references, and date fields. A quotation's `date` and `monthDay` are null when its utterance date is not established. Entity labels are not identity keys; use stable `id` values.
+
+`OnThisDayRecord` is the website consume shape for DS1 extracts: games carry `home` / `away` `TeamRef` objects (franchise, team-season, FIFA and ISO/Hata flag codes), people carry `PersonRef` (SPXN person id, Wikidata QID, leagues, team ids), and every row has `recordId`, date precision, extract `category`, non-exclusive `tags`, sport, competition, source, licence and attribution. The bundled seed still uses `MeigenRecord`. See [docs/record-schema.md](./docs/record-schema.md).
+
+`HISTORY_TYPES` lists forty-six **non-exclusive tags** (not exclusive categories). One fact is stored once and may carry several tags. Catalogue: [docs/categories.md](./docs/categories.md). Readiness labels describe implementation capability, not verified live data counts. The richer player and record progression design in [docs/history-model.md](./docs/history-model.md) is planned and is not part of the current `MeigenRecord` API. `EXTRACT_CATEGORIES` is the extract family that produced the row.

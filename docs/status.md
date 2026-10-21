@@ -57,3 +57,13 @@ Written by a subagent of Mac Studio for ticket cmvfh0kqd0000i90665rmo7sw. Branch
 ## Checks run on this branch
 
 `pnpm check` (lint, typecheck, 98 tests, build, package check), `pnpm test:readme`, `pnpm test:demo` (9 browser tests), `python3 -I pipeline/people/test_select_people.py` (16 tests), `python3 -I pipeline/people/select_people.py --check`.
+
+## From the README
+
+This network example is not executed by the README check; it requires the static feed URL to be published.
+
+Static feed publication and release storage setup are still being completed. The repository contains generated JSON and a loader, but this README does not promise that the Pages URL is live or that the source archive and curation workflow has been approved and completed.
+
+## From the README's Browser and runtime support
+
+Any current browser, and Node 22 or later. The package is plain data and functions, so it also runs in Deno, Bun, a worker and an edge function. Static loading accepts a caller-provided `fetch`, so the application controls network policy and caching. CI tests Node 22 and 24 on Linux, macOS and Windows, and the demo in Chromium and WebKit at a phone's width and a desk's.

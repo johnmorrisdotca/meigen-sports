@@ -12,22 +12,48 @@ A typed data package with no runtime dependencies. Read the included data offlin
   <img alt="TypeScript" src="https://img.shields.io/badge/types-TypeScript-3178c6">
 </p>
 
-<p align="center"><a href="https://johnmorrisdotca.github.io/meigen-sports/"><strong>Open the demo →</strong></a> · <a href="./NOTICE.md">Sources</a> · <a href="./docs/record-schema.md">Record schema</a> · <a href="./docs/templates.md">Templates</a> · <a href="./docs/categories.md">History tags</a> · <a href="./docs/history-model.md">History model</a> · <a href="./docs/data-pipeline.md">Pipeline</a></p>
+<p align="center"><a href="https://johnmorrisdotca.github.io/meigen-sports/"><strong>Open the demo →</strong></a> · <a href="./NOTICE.md">Sources</a> · <a href="./docs/record-schema.md">Record schema</a> · <a href="./docs/templates.md">Templates</a> · <a href="./docs/categories.md">History tags</a> · <a href="./docs/history-model.md">History model</a> · <a href="./docs/data-pipeline.md">Pipeline</a> · <a href="./docs/demo.md">The demo in pictures</a></p>
 
 <p align="center">
-<img alt="The Meigen Sports demo on a desk: a date, a sport, a quotation and on-this-day facts." src="docs/images/hero-desktop.png" width="720">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/hero-today-dark.webp">
+<img alt="A calendar card turning from one day of the year to the next, each day with a fact from sports history: a 1967 football final, birthdays of Julius Erving and Katie Ledecky, the 1954 World Cup, Mickey Mantle's birthday, a Grey Cup." src="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/hero-today-light.webp" width="760">
+</picture>
+<br><em>Today in sports history, a day at a time: 30,480 facts on all 366 days, each with its source.</em>
 </p>
 
-<table align="center">
-<tr>
-<td align="center" valign="top">
-<img alt="The demo on a phone, in English." src="docs/images/hero-phone.png" width="190"><br><em>On a phone</em>
-</td>
-<td align="center" valign="top">
-<img alt="The demo on a phone, in Japanese." src="docs/images/hero-phone-ja.png" width="190"><br><em>In Japanese</em>
-</td>
-</tr>
-</table>
+## The best of it
+
+- **Today in sports history**: 30,480 facts on all 366 calendar days, each with a sport, its people and teams, and its source.
+- **Birthdays, deaths and finals as sentences**, with the club and honours, the score and venue, the title and the season's record; neighbours in a list never share a template (`renderRun`).
+
+<p align="center">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/sentences-dark.webp">
+<img alt="Four fact cards one after another, each a sentence with its tag and source: Mickey Mantle's birthday, the 2022 Grey Cup with its score, venue and title count, the 1967 AFL Championship, and Mike Bossy's death." src="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/sentences-light.webp" width="720">
+</picture>
+<br><em>Four of the sentences the facts are worded into.</em>
+</p>
+
+- **An offline set in the package**: 1,509 facts, three to five for every day, so `today()` works with no network ([offline](#what-is-bundled-and-what-loads-from-pages)).
+
+<p align="center">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/offline-dark.webp">
+<img alt="A year as twelve rows of days filling in month by month, each day shaded by how many bundled facts it holds, with a count rising to 1,509 facts." src="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/offline-light.webp" width="720">
+</picture>
+<br><em>The bundled offline set, a month at a time.</em>
+</p>
+
+- **Feeds by team, player, sport and tag**: one small static file each, loaded with `loadFactShard`, so a site fetches only what it shows.
+
+<p align="center">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/feeds-dark.webp">
+<img alt="The four kinds of feed in turn, each with the call that loads it, its fact count and size, and sentences from it: a team, a player, a sport and a tag." src="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/feeds-light.webp" width="720">
+</picture>
+<br><em>One request for each: a team, a player, a sport, a tag.</em>
+</p>
 
 ## In 30 seconds
 
@@ -58,7 +84,7 @@ One build ships both places. The package and the GitHub Pages site are made from
 
 `today(offline, timeZone, nowIso)` always answers from the package. **The rest of the facts are not in the package: Pages must be reachable for them** (the package is about 0.9 MB packed; the full facts are about 55 MB). A site should load the feeds and fall back to the offline set when they cannot be reached, and say that it did; the demo does exactly that. `data/v1/latest.json` names the current build (`package`, `build`, `offlineRecords`, `factRecords`) and its manifests, so a site can check that the feeds it reads are the build its package was made with.
 
-This is a sourced collection with coverage gaps, not a complete daily almanac. `test/golden/golden-facts.json` lists 246 famous, source-checked facts the data must hold (and those it is known not to hold yet), with rules for what must never appear; see [docs/golden-facts.md](./docs/golden-facts.md). Quotes have unknown utterance dates and are never assigned invented anniversaries.
+This is a sourced collection with coverage gaps, not a complete daily almanac: [docs/golden-facts.md](./docs/golden-facts.md) lists the famous facts the data must hold, and those it is known not to hold yet. Quotes have unknown utterance dates and are never assigned invented anniversaries.
 
 ## Who it is for
 
@@ -98,9 +124,7 @@ const day = await loadDay("11-20", {
 day.records.length; // 2
 ```
 
-This network example is not executed by the README check; it requires the static feed URL to be published.
-
-Static feed publication and release storage setup are still being completed. The repository contains generated JSON and a loader, but this README does not promise that the Pages URL is live or that the source archive and curation workflow has been approved and completed.
+The network example is not run by the README check; [docs/status.md](./docs/status.md) says what is published and what is still being completed.
 
 ## Examples
 
@@ -119,17 +143,13 @@ The root export provides `isDate`, `monthDayOf`, `selectRecords`, `historyOnDate
 | `@johnmorrisdotca/meigen-sports/load` | `loadShard`, `loadDay`, `loadSport`, `loadEntity` and loader types |
 | `@johnmorrisdotca/meigen-sports/categories` | `HISTORY_TYPES` and its evidence/readiness descriptions |
 
-Each `MeigenRecord` has a `kind` (`quote` or `history`), exact text, source citation, rights status, sport and type tags, entity references, and date fields. A quotation's `date` and `monthDay` are null when its utterance date is not established. Entity labels are not identity keys; use stable `id` values.
-
-`OnThisDayRecord` is the website consume shape for DS1 extracts: games carry `home` / `away` `TeamRef` objects (franchise, team-season, FIFA and ISO/Hata flag codes), people carry `PersonRef` (SPXN person id, Wikidata QID, leagues, team ids), and every row has `recordId`, date precision, extract `category`, non-exclusive `tags`, sport, competition, source, licence and attribution. The bundled seed still uses `MeigenRecord`. See [docs/record-schema.md](./docs/record-schema.md).
-
-`HISTORY_TYPES` lists forty-six **non-exclusive tags** (not exclusive categories). One fact is stored once and may carry several tags. Catalogue: [docs/categories.md](./docs/categories.md). Readiness labels describe implementation capability, not verified live data counts. The richer player and record progression design in [docs/history-model.md](./docs/history-model.md) is planned and is not part of the current `MeigenRecord` API. `EXTRACT_CATEGORIES` is the extract family that produced the row.
+The shapes of a record (`MeigenRecord`, `OnThisDayRecord`, `PersonRef`, `TeamRef`) and the 46 history tags are in [docs/record-schema.md](./docs/record-schema.md) and [docs/categories.md](./docs/categories.md): one fact is stored once and may carry several tags, and an entity label is never an identity key.
 
 ## Limits
 
 The current feed is sparse: 224 calendar month-days have no history facts. Source coverage and eligible dates are recorded in [data-sources/coverage.json](./data-sources/coverage.json). The collection contains historical book excerpts, Wikiquote sports quotations (CC BY-SA 4.0), 88 published Wikidata event facts and 964 openfootball World Cup match results. It makes no comprehensive player, franchise or world-record claims.
 
-The current API uses exact dates and captions, stable entity references, tags and one primary citation per record. It does not yet expose the planned multi-source record progression, all source evidence, or automatic population from the existing sports database. A year or month alone is not converted into a day. A season total is not treated as evidence for the game where a milestone was reached.
+What the current API does not yet expose (the record progression, all source evidence, automatic population from the sports database) is in [docs/coverage.md](./docs/coverage.md).
 
 ## Theming
 
@@ -141,8 +161,7 @@ Quotations are in a `blockquote`. Each record's source is a real link with its l
 
 ## Browser and runtime support
 
-Any current browser, and Node 22 or later. The package is plain data and functions, so it also runs in Deno, Bun, a worker and an edge function. Static loading accepts a caller-provided `fetch`, so the application controls network policy and caching. CI tests Node 22 and 24 on Linux, macOS and Windows, and the demo in Chromium and WebKit at a phone's width and a desk's.
-
+Any current browser, and Node 22 or later; also Deno, Bun, a worker and an edge function. Static loading takes the caller's `fetch`. [docs/status.md](./docs/status.md) has the CI matrix.
 
 ## Languages
 
@@ -157,7 +176,7 @@ The package data and source quotations are in English. The demo and data/history
 
 ## Architecture
 
-The package separates TypeScript code, bundled JSON and source material. Raw source bytes are stored in the permanent DS1 archive; the 99 retrievals and 95 unique archive hashes have been verified against stored bytes, and local Dropbox backup copies have been verified. Turso curation and public release remain pending, and remote Dropbox sync is unconfirmed. Public readers use versioned static JSON. See [docs/history-model.md](./docs/history-model.md), [data-sources/README.md](./data-sources/README.md) and [pipeline/README.md](./pipeline/README.md).
+The package keeps TypeScript code, bundled JSON and source material apart; raw source bytes live in the permanent archive, and curation and public release are still pending. [docs/data-pipeline.md](./docs/data-pipeline.md) has the whole account.
 
 ## The name
 
@@ -165,7 +184,7 @@ The package separates TypeScript code, bundled JSON and source material. Raw sou
 
 ## Where it comes from
 
-The initial quotations are excerpts from James Dwight's *Lawn-tennis* (1886), Walter Camp's *American Football* (1891) and Pindar's odes in Ernest Myers's 1904 edition, plus 8 sports quotations from English Wikiquote at pinned revisions (page compilation CC BY-SA 4.0; quoted words justified per row; see [docs/famous-quotes.md](./docs/famous-quotes.md)). The dated facts come from exact-day Wikidata statements and all 964 results in openfootball's 22 World Cup edition files (1930–2022). Full source-specific terms, credits and original notices are in [NOTICE.md](./NOTICE.md) and [LICENSES/](./LICENSES/).
+Quotations from three historical books and English Wikiquote, dated facts from Wikidata, openfootball, Wikipedia and other open sources, each with its own licence: [NOTICE.md](./NOTICE.md) and [docs/open-sources.md](./docs/open-sources.md) have every source and its terms.
 
 ## The family
 

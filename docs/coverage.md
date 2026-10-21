@@ -443,3 +443,7 @@ Columns below: **downloaded** (extract on disk), **archived** (same files; archi
 Grid has 5760 sport×decade×tag rows; table shows 400 nonempty cells. Full grid: [coverage-matrix.json](../data-sources/coverage-matrix.json).
 
 People are never selected or labelled by sex, gender, para status or impairment.
+
+## From the README's Limits
+
+The current API uses exact dates and captions, stable entity references, tags and one primary citation per record. It does not yet expose the planned multi-source record progression, all source evidence, or automatic population from the existing sports database. A year or month alone is not converted into a day. A season total is not treated as evidence for the game where a milestone was reached.
