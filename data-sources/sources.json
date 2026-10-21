@@ -32,6 +32,34 @@
     "lifecyclePolicy": "Historical snapshot or discontinued status never by itself makes rights-cleared history unusable. Consumer source filtering is independent of record type; rights and publication review are separate."
   },
   {
+    "id": "wikidata-dump",
+    "status": "eligible-and-seeded",
+    "seed_kind": "facts",
+    "data_licence": "CC0-1.0",
+    "code_licence": "No Wikibase code imported; the dump is read as data.",
+    "primary_urls": [
+      "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "https://dumps.wikimedia.org/wikidatawiki/entities/"
+    ],
+    "acquisition": "The full JSON dump of 2026-10-12 (wikidata-20261012-all.json.gz) was downloaded once and filtered on the NAS by spx-stats' scripts/wikidata_dump/filter.py (sports people, events, items, labels; an allow-list of properties). This package reads those filtered files only: no request to Wikidata or Wikipedia.",
+    "collection_recipe": "People whose first occupation is a sport occupation and whose description does not open with another trade; Gregorian day-precision date of birth or death, from 1850, never January 1; fame is the count of Wikipedia editions, with the best two of each day, sport and kind kept down to ten editions. Q id, sport, nationality code and a phrase built from labels travel with each fact.",
+    "exclusions": [
+      "No sex, gender, ethnicity, religion, politics, family or health statement; no para or wheelchair sport; a description that names a crime is not used.",
+      "No Julian date converted, no January 1, no year-only or month-only date turned into a day.",
+      "No article prose, pictures or external identifiers; no name-only identity join."
+    ],
+    "sourceId": "wikidata",
+    "snapshot": {
+      "status": "snapshot",
+      "revision": "wikidata-20261012-all.json.gz",
+      "capturedAt": "2026-10-12T00:00:00+00:00"
+    },
+    "lastUpdated": null,
+    "lastUpdatedNote": "The dump of 2026-10-12; later changes on Wikidata are not reflected.",
+    "lifecycleEvidence": "https://www.wikidata.org/wiki/Wikidata:Data_access",
+    "lifecyclePolicy": "Historical snapshot or discontinued status never by itself makes rights-cleared history unusable. Consumer source filtering is independent of record type; rights and publication review are separate."
+  },
+  {
     "id": "gitenberg-dwight",
     "status": "eligible-and-seeded",
     "seed_kind": "quote",

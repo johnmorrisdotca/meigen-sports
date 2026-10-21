@@ -1,6 +1,6 @@
 # Reviewed source data
 
-The dataset contains **30 quotations (22 Gutenberg excerpts and 8 Wikiquote sports lines) and 1052 published calendar history rows** (10 same-event duplicates merged) in the bundled `all.json`. The separate on-this-day fact feeds hold 29,961 facts covering all 366 days. It covers **142 of 366 month-days**, with **224 gaps**. All 12 months occur, but the collection is not a comprehensive year-round feed. English source text stays English; documentation and interface translations do not imply translated quotations.
+The dataset contains **30 quotations (22 Gutenberg excerpts and 8 Wikiquote sports lines) and 1052 published calendar history rows** (10 same-event duplicates merged) in the bundled `all.json`. The separate on-this-day fact feeds hold 75,387 facts covering all 366 days. It covers **142 of 366 month-days**, with **224 gaps**. All 12 months occur, but the collection is not a comprehensive year-round feed. English source text stays English; documentation and interface translations do not imply translated quotations.
 
 `seed/quotes.json` and `seed/history.json` contain selected source records and provenance, not original downloaded books or whole Wikidata responses. `sources.json` records the six accepted book/data sources. Source rights are independent of the MIT code licence; see [historical text and factual data credits](../LICENSES/GUTENBERG-CREDITS.md) and the original licences under `LICENSES/`.
 

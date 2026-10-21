@@ -1,16 +1,59 @@
 {
+ "birth-Q10068": [
+  "offline",
+  "day"
+ ],
  "birth-Q10132": [
   "offline",
   "day"
  ],
- "birth-Q10490": [
+ "birth-Q101942": [
+  "offline",
+  "day",
   "player"
+ ],
+ "birth-Q102301": [
+  "offline",
+  "day",
+  "player"
+ ],
+ "birth-Q103756": [
+  "offline",
+  "day"
+ ],
+ "birth-Q10490": [
+  "offline",
+  "day",
+  "player"
+ ],
+ "birth-Q10514": [
+  "offline",
+  "day"
+ ],
+ "birth-Q105542": [
+  "offline",
+  "day"
+ ],
+ "birth-Q106807": [
+  "offline",
+  "day"
  ],
  "birth-Q10993": [],
  "birth-Q11459": [
   "offline",
   "day"
  ],
+ "birth-Q11571": [
+  "offline",
+  "day",
+  "player"
+ ],
+ "birth-Q11662": [
+  "offline",
+  "day",
+  "player"
+ ],
+ "birth-Q11666": [],
  "birth-Q1189": [
   "offline",
   "day",
@@ -46,12 +89,34 @@
   "day",
   "player"
  ],
+ "birth-Q1390341": [
+  "offline",
+  "day"
+ ],
+ "birth-Q139075": [
+  "offline",
+  "day"
+ ],
+ "birth-Q1399654": [],
+ "birth-Q1426": [],
+ "birth-Q142794": [],
+ "birth-Q151284": [],
+ "birth-Q157809": [
+  "offline",
+  "day"
+ ],
+ "birth-Q16849": [],
  "birth-Q169452": [
   "offline",
   "day",
   "team",
   "player"
  ],
+ "birth-Q169814": [
+  "offline",
+  "day"
+ ],
+ "birth-Q171312": [],
  "birth-Q172478": [
   "offline",
   "day",
@@ -84,6 +149,25 @@
   "day",
   "player"
  ],
+ "birth-Q1835": [
+  "offline",
+  "day",
+  "player"
+ ],
+ "birth-Q184556": [
+  "offline",
+  "day"
+ ],
+ "birth-Q185044": [
+  "offline",
+  "day",
+  "player"
+ ],
+ "birth-Q189408": [
+  "offline",
+  "day",
+  "player"
+ ],
  "birth-Q190094": [
   "player"
  ],
@@ -92,6 +176,10 @@
   "day",
   "team",
   "player"
+ ],
+ "birth-Q190782": [
+  "offline",
+  "day"
  ],
  "birth-Q192955": [
   "player"
@@ -110,6 +198,10 @@
   "team",
   "player"
  ],
+ "birth-Q204205": [
+  "offline",
+  "day"
+ ],
  "birth-Q209390": [
   "offline",
   "day"
@@ -120,12 +212,23 @@
   "team",
   "player"
  ],
+ "birth-Q213448": [],
  "birth-Q213812": [
   "offline",
   "day",
   "player"
  ],
+ "birth-Q213854": [
+  "offline",
+  "day"
+ ],
  "birth-Q215777": [
+  "offline",
+  "day",
+  "player"
+ ],
+ "birth-Q217505": [],
+ "birth-Q22102": [
   "offline",
   "day",
   "player"
@@ -135,7 +238,13 @@
   "day",
   "player"
  ],
+ "birth-Q221575": [],
  "birth-Q222086": [
+  "offline",
+  "day",
+  "player"
+ ],
+ "birth-Q229967": [
   "offline",
   "day",
   "player"
@@ -146,8 +255,6 @@
   "day"
  ],
  "birth-Q240672": [
-  "offline",
-  "day",
   "player"
  ],
  "birth-Q240726": [
@@ -158,6 +265,7 @@
   "day",
   "player"
  ],
+ "birth-Q242201": [],
  "birth-Q25369": [
   "offline",
   "day",
@@ -173,7 +281,13 @@
   "day",
   "player"
  ],
+ "birth-Q272190": [
+  "offline",
+  "day"
+ ],
  "birth-Q273206": [
+  "offline",
+  "day",
   "player"
  ],
  "birth-Q273256": [
@@ -186,6 +300,15 @@
   "team",
   "player"
  ],
+ "birth-Q28614": [
+  "offline",
+  "day"
+ ],
+ "birth-Q288656": [
+  "offline",
+  "day"
+ ],
+ "birth-Q295020": [],
  "birth-Q295345": [
   "offline",
   "day",
@@ -213,6 +336,8 @@
   "player"
  ],
  "birth-Q31083": [
+  "offline",
+  "day",
   "player"
  ],
  "birth-Q311195": [
@@ -224,6 +349,12 @@
   "team",
   "player"
  ],
+ "birth-Q311289": [
+  "offline",
+  "day",
+  "player"
+ ],
+ "birth-Q311332": [],
  "birth-Q311374": [
   "offline",
   "day",
@@ -236,6 +367,8 @@
   "team",
   "player"
  ],
+ "birth-Q313385": [],
+ "birth-Q313885": [],
  "birth-Q314185": [],
  "birth-Q314712": [
   "offline",
@@ -249,6 +382,9 @@
   "team",
   "player"
  ],
+ "birth-Q316864": [],
+ "birth-Q317422": [],
+ "birth-Q31919": [],
  "birth-Q319247": [
   "offline",
   "day",
@@ -264,6 +400,10 @@
   "offline",
   "day",
   "player"
+ ],
+ "birth-Q33817": [
+  "offline",
+  "day"
  ],
  "birth-Q345004": [
   "offline",
@@ -286,11 +426,19 @@
   "offline",
   "day"
  ],
+ "birth-Q3526023": [
+  "offline",
+  "day"
+ ],
  "birth-Q353511": [
   "offline",
   "day",
   "team",
   "player"
+ ],
+ "birth-Q353514": [
+  "offline",
+  "day"
  ],
  "birth-Q357444": [
   "offline",
@@ -327,7 +475,17 @@
   "offline",
   "day"
  ],
+ "birth-Q363717": [
+  "offline",
+  "day"
+ ],
+ "birth-Q380267": [],
+ "birth-Q380613": [],
  "birth-Q39562": [
+  "offline",
+  "day"
+ ],
+ "birth-Q41314": [
   "offline",
   "day"
  ],
@@ -337,6 +495,7 @@
   "team",
   "player"
  ],
+ "birth-Q432931": [],
  "birth-Q4391858": [
   "offline",
   "day",
@@ -359,6 +518,11 @@
   "team",
   "player"
  ],
+ "birth-Q44176": [
+  "offline",
+  "day"
+ ],
+ "birth-Q449073": [],
  "birth-Q456688": [
   "offline",
   "day",
@@ -367,6 +531,14 @@
  "birth-Q456779": [
   "team",
   "player"
+ ],
+ "birth-Q459114": [
+  "offline",
+  "day"
+ ],
+ "birth-Q472336": [
+  "offline",
+  "day"
  ],
  "birth-Q505423": [
   "offline",
@@ -378,6 +550,10 @@
   "offline",
   "day",
   "player"
+ ],
+ "birth-Q5162259": [
+  "offline",
+  "day"
  ],
  "birth-Q520254": [
   "player"
@@ -391,6 +567,12 @@
   "offline",
   "day"
  ],
+ "birth-Q52679": [],
+ "birth-Q530": [
+  "offline",
+  "day"
+ ],
+ "birth-Q53325": [],
  "birth-Q536900": [
   "offline",
   "day",
@@ -405,6 +587,7 @@
   "offline",
   "day"
  ],
+ "birth-Q550313": [],
  "birth-Q552828": [
   "offline",
   "day",
@@ -421,6 +604,11 @@
   "day",
   "player"
  ],
+ "birth-Q5812": [],
+ "birth-Q597023": [
+  "offline",
+  "day"
+ ],
  "birth-Q615": [
   "offline",
   "day",
@@ -435,6 +623,7 @@
  "birth-Q6266374": [
   "player"
  ],
+ "birth-Q6319": [],
  "birth-Q684020": [
   "offline",
   "day",
@@ -450,6 +639,8 @@
   "team",
   "player"
  ],
+ "birth-Q716029": [],
+ "birth-Q720558": [],
  "birth-Q722059": [
   "offline",
   "day",
@@ -458,6 +649,10 @@
  "birth-Q7381158": [
   "team",
   "player"
+ ],
+ "birth-Q7407": [
+  "offline",
+  "day"
  ],
  "birth-Q7520267": [
   "offline",
@@ -469,12 +664,24 @@
   "team",
   "player"
  ],
- "birth-Q79031": [],
+ "birth-Q78489": [],
+ "birth-Q7855": [
+  "offline",
+  "day"
+ ],
+ "birth-Q79031": [
+  "offline",
+  "day"
+ ],
  "birth-Q809097": [],
  "birth-Q927916": [],
  "birth-Q9424": [],
  "birth-Q9434": [],
- "birth-Q9671": [],
+ "birth-Q9488": [],
+ "birth-Q9671": [
+  "offline",
+  "day"
+ ],
  "birth-Q9673": [
   "offline",
   "day"
@@ -501,6 +708,17 @@
   "day",
   "player"
  ],
+ "death-Q151284": [],
+ "death-Q164546": [
+  "offline",
+  "day",
+  "player"
+ ],
+ "death-Q17163": [
+  "offline",
+  "day",
+  "player"
+ ],
  "death-Q172478": [
   "offline",
   "day",
@@ -522,6 +740,11 @@
   "offline",
   "day",
   "team",
+  "player"
+ ],
+ "death-Q213919": [
+  "offline",
+  "day",
   "player"
  ],
  "death-Q215777": [
@@ -574,11 +797,16 @@
  "death-Q314185": [
   "player"
  ],
+ "death-Q317422": [],
  "death-Q325138": [
   "offline",
   "day",
   "team",
   "player"
+ ],
+ "death-Q33817": [
+  "offline",
+  "day"
  ],
  "death-Q345004": [
   "offline",
@@ -602,6 +830,19 @@
   "offline",
   "day"
  ],
+ "death-Q363717": [
+  "offline",
+  "day"
+ ],
+ "death-Q380267": [],
+ "death-Q41314": [
+  "offline",
+  "day"
+ ],
+ "death-Q44176": [
+  "offline",
+  "day"
+ ],
  "death-Q456688": [
   "offline",
   "day",
@@ -621,6 +862,10 @@
   "offline",
   "day"
  ],
+ "death-Q53325": [
+  "offline",
+  "day"
+ ],
  "death-Q552828": [
   "offline",
   "day",
@@ -632,6 +877,10 @@
   "day",
   "team",
   "player"
+ ],
+ "death-Q555240": [
+  "offline",
+  "day"
  ],
  "death-Q561852": [
   "offline",
@@ -657,6 +906,7 @@
   "team",
   "player"
  ],
+ "death-Q78489": [],
  "death-Q9434": [
   "offline",
   "day"
@@ -669,7 +919,9 @@
   "offline",
   "day"
  ],
- "mlb-1960": [],
+ "mlb-1960": [
+  "team"
+ ],
  "mlb-1972": [],
  "mlb-1986": [
   "team"

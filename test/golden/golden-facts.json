@@ -4359,9 +4359,7 @@
     "verifiedBy": "wikidata + wikipedia introduction",
     "checkedOn": "2026-10-20"
    }
-  }
- ],
- "gaps": [
+  },
   {
    "id": "birth-Q1399654",
    "kind": "birth",
@@ -4382,8 +4380,7 @@
     "wikipedia": "Red Grange",
     "verifiedBy": "wikidata + wikipedia introduction",
     "checkedOn": "2026-10-20"
-   },
-   "reason": "not in the published dataset yet"
+   }
   },
   {
    "id": "birth-Q716029",
@@ -4405,8 +4402,7 @@
     "wikipedia": "Johnny Unitas",
     "verifiedBy": "wikidata + wikipedia introduction",
     "checkedOn": "2026-10-20"
-   },
-   "reason": "not in the published dataset yet"
+   }
   },
   {
    "id": "birth-Q720558",
@@ -4428,8 +4424,7 @@
     "wikipedia": "Joe Namath",
     "verifiedBy": "wikidata + wikipedia introduction",
     "checkedOn": "2026-10-20"
-   },
-   "reason": "not in the published dataset yet"
+   }
   },
   {
    "id": "birth-Q432931",
@@ -4451,9 +4446,1610 @@
     "wikipedia": "John Elway",
     "verifiedBy": "wikidata + wikipedia introduction",
     "checkedOn": "2026-10-20"
-   },
-   "reason": "not in the published dataset yet"
+   }
   },
+  {
+   "id": "birth-Q242201",
+   "kind": "birth",
+   "sport": "mma",
+   "league": null,
+   "fame": "icon",
+   "label": "Ronda Rousey born",
+   "date": "1987-02-01",
+   "era": "1970-",
+   "women": true,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q242201"
+   },
+   "source": {
+    "wikidata": "Q242201",
+    "property": "P569",
+    "wikipedia": "Ronda Rousey",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q171312",
+   "kind": "birth",
+   "sport": "auto-racing",
+   "league": null,
+   "fame": "icon",
+   "label": "Mario Andretti born",
+   "date": "1940-02-28",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q171312"
+   },
+   "source": {
+    "wikidata": "Q171312",
+    "property": "P569",
+    "wikipedia": "Mario Andretti",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q213448",
+   "kind": "birth",
+   "sport": "auto-racing",
+   "league": null,
+   "fame": "icon",
+   "label": "Danica Patrick born",
+   "date": "1982-03-25",
+   "era": "1970-",
+   "women": true,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q213448"
+   },
+   "source": {
+    "wikidata": "Q213448",
+    "property": "P569",
+    "wikipedia": "Danica Patrick",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q317422",
+   "kind": "birth",
+   "sport": "athletics",
+   "league": null,
+   "fame": "icon",
+   "label": "Eric Liddell born",
+   "date": "1902-01-16",
+   "era": "pre-1920",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q317422"
+   },
+   "source": {
+    "wikidata": "Q317422",
+    "property": "P569",
+    "wikipedia": "Eric Liddell",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "death-Q317422",
+   "kind": "death",
+   "sport": "athletics",
+   "league": null,
+   "fame": "icon",
+   "label": "Eric Liddell died",
+   "date": "1945-02-21",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-death",
+    "qid": "Q317422"
+   },
+   "source": {
+    "wikidata": "Q317422",
+    "property": "P570",
+    "wikipedia": "Eric Liddell",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q151284",
+   "kind": "birth",
+   "sport": "swimming",
+   "league": null,
+   "fame": "icon",
+   "label": "Johnny Weissmuller born",
+   "date": "1904-06-02",
+   "era": "pre-1920",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q151284"
+   },
+   "source": {
+    "wikidata": "Q151284",
+    "property": "P569",
+    "wikipedia": "Johnny Weissmuller",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "death-Q151284",
+   "kind": "death",
+   "sport": "swimming",
+   "league": null,
+   "fame": "icon",
+   "label": "Johnny Weissmuller died",
+   "date": "1984-01-20",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-death",
+    "qid": "Q151284"
+   },
+   "source": {
+    "wikidata": "Q151284",
+    "property": "P570",
+    "wikipedia": "Johnny Weissmuller",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q53325",
+   "kind": "birth",
+   "sport": "tennis",
+   "league": null,
+   "fame": "icon",
+   "label": "Arthur Ashe born",
+   "date": "1943-07-10",
+   "era": "1920-1969",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q53325"
+   },
+   "source": {
+    "wikidata": "Q53325",
+    "property": "P569",
+    "wikipedia": "Arthur Ashe",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q1426",
+   "kind": "birth",
+   "sport": "tennis",
+   "league": null,
+   "fame": "icon",
+   "label": "Roger Federer born",
+   "date": "1981-08-08",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q1426"
+   },
+   "source": {
+    "wikidata": "Q1426",
+    "property": "P569",
+    "wikipedia": "Roger Federer",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "death-Q53325",
+   "kind": "death",
+   "sport": "tennis",
+   "league": null,
+   "fame": "icon",
+   "label": "Arthur Ashe died",
+   "date": "1993-02-06",
+   "era": "1970-",
+   "women": false,
+   "match": {
+    "category": "player-death",
+    "qid": "Q53325"
+   },
+   "source": {
+    "wikidata": "Q53325",
+    "property": "P570",
+    "wikipedia": "Arthur Ashe",
+    "verifiedBy": "wikidata + wikipedia introduction",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q11571",
+   "kind": "birth",
+   "sport": "soccer",
+   "league": null,
+   "fame": "icon",
+   "label": "Cristiano Ronaldo born",
+   "date": "1985-02-05",
+   "era": "1970-",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q11571"
+   },
+   "source": {
+    "wikidata": "Q11571",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q142794",
+   "kind": "birth",
+   "sport": "soccer",
+   "league": null,
+   "fame": "icon",
+   "label": "Neymar born",
+   "date": "1992-02-05",
+   "era": "1970-",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q142794"
+   },
+   "source": {
+    "wikidata": "Q142794",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q1835",
+   "kind": "birth",
+   "sport": "soccer",
+   "league": null,
+   "fame": "icon",
+   "label": "Zinedine Zidane born",
+   "date": "1972-06-23",
+   "era": "1970-",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q1835"
+   },
+   "source": {
+    "wikidata": "Q1835",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "death-Q164546",
+   "kind": "death",
+   "sport": "soccer",
+   "league": null,
+   "fame": "star",
+   "label": "Alfredo Di Stéfano died",
+   "date": "2014-07-07",
+   "era": "1970-",
+   "match": {
+    "category": "player-death",
+    "qid": "Q164546"
+   },
+   "source": {
+    "wikidata": "Q164546",
+    "property": "P570",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "death-Q17163",
+   "kind": "death",
+   "sport": "soccer",
+   "league": null,
+   "fame": "icon",
+   "label": "Johan Cruyff died",
+   "date": "2016-03-24",
+   "era": "1970-",
+   "match": {
+    "category": "player-death",
+    "qid": "Q17163"
+   },
+   "source": {
+    "wikidata": "Q17163",
+    "property": "P570",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q184556",
+   "kind": "birth",
+   "sport": "athletics",
+   "league": null,
+   "fame": "star",
+   "label": "Sergei Bubka born",
+   "date": "1963-12-04",
+   "era": "1920-1969",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q184556"
+   },
+   "source": {
+    "wikidata": "Q184556",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q101942",
+   "kind": "birth",
+   "sport": "athletics",
+   "league": null,
+   "fame": "star",
+   "label": "Paavo Nurmi born",
+   "date": "1897-06-13",
+   "era": "pre-1920",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q101942"
+   },
+   "source": {
+    "wikidata": "Q101942",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q6319",
+   "kind": "birth",
+   "sport": "athletics",
+   "league": null,
+   "fame": "star",
+   "label": "Yelena Isinbayeva born",
+   "date": "1982-06-03",
+   "era": "1970-",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q6319"
+   },
+   "source": {
+    "wikidata": "Q6319",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q103756",
+   "kind": "birth",
+   "sport": "cycling",
+   "league": null,
+   "fame": "star",
+   "label": "Eddy Merckx born",
+   "date": "1945-06-17",
+   "era": "1920-1969",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q103756"
+   },
+   "source": {
+    "wikidata": "Q103756",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q105542",
+   "kind": "birth",
+   "sport": "cycling",
+   "league": null,
+   "fame": "star",
+   "label": "Miguel Induráin born",
+   "date": "1964-07-16",
+   "era": "1920-1969",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q105542"
+   },
+   "source": {
+    "wikidata": "Q105542",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q102301",
+   "kind": "birth",
+   "sport": "boxing",
+   "league": null,
+   "fame": "star",
+   "label": "Joe Frazier born",
+   "date": "1944-01-12",
+   "era": "1920-1969",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q102301"
+   },
+   "source": {
+    "wikidata": "Q102301",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q31919",
+   "kind": "birth",
+   "sport": "boxing",
+   "league": null,
+   "fame": "star",
+   "label": "Vitali Klitschko born",
+   "date": "1971-07-19",
+   "era": "1970-",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q31919"
+   },
+   "source": {
+    "wikidata": "Q31919",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "death-Q213919",
+   "kind": "death",
+   "sport": "boxing",
+   "league": null,
+   "fame": "star",
+   "label": "George Foreman died",
+   "date": "2025-03-21",
+   "era": "1970-",
+   "match": {
+    "category": "player-death",
+    "qid": "Q213919"
+   },
+   "source": {
+    "wikidata": "Q213919",
+    "property": "P570",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q5812",
+   "kind": "birth",
+   "sport": "tennis",
+   "league": null,
+   "fame": "icon",
+   "label": "Novak Djokovic born",
+   "date": "1987-05-22",
+   "era": "1970-",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q5812"
+   },
+   "source": {
+    "wikidata": "Q5812",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q11662",
+   "kind": "birth",
+   "sport": "tennis",
+   "league": null,
+   "fame": "star",
+   "label": "Steffi Graf born",
+   "date": "1969-06-14",
+   "era": "1920-1969",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q11662"
+   },
+   "source": {
+    "wikidata": "Q11662",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q7407",
+   "kind": "birth",
+   "sport": "tennis",
+   "league": null,
+   "fame": "icon",
+   "label": "Andre Agassi born",
+   "date": "1970-04-29",
+   "era": "1970-",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q7407"
+   },
+   "source": {
+    "wikidata": "Q7407",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q11666",
+   "kind": "birth",
+   "sport": "tennis",
+   "league": null,
+   "fame": "icon",
+   "label": "Maria Sharapova born",
+   "date": "1987-04-19",
+   "era": "1970-",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q11666"
+   },
+   "source": {
+    "wikidata": "Q11666",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q10514",
+   "kind": "birth",
+   "sport": "auto-racing",
+   "league": null,
+   "fame": "icon",
+   "label": "Fernando Alonso born",
+   "date": "1981-07-29",
+   "era": "1970-",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q10514"
+   },
+   "source": {
+    "wikidata": "Q10514",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q78489",
+   "kind": "birth",
+   "sport": "auto-racing",
+   "league": null,
+   "fame": "star",
+   "label": "Niki Lauda born",
+   "date": "1949-02-22",
+   "era": "1920-1969",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q78489"
+   },
+   "source": {
+    "wikidata": "Q78489",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "death-Q78489",
+   "kind": "death",
+   "sport": "auto-racing",
+   "league": null,
+   "fame": "star",
+   "label": "Niki Lauda died",
+   "date": "2019-05-20",
+   "era": "1970-",
+   "match": {
+    "category": "player-death",
+    "qid": "Q78489"
+   },
+   "source": {
+    "wikidata": "Q78489",
+    "property": "P570",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q22102",
+   "kind": "birth",
+   "sport": "gymnastics",
+   "league": null,
+   "fame": "star",
+   "label": "Larisa Latynina born",
+   "date": "1934-12-27",
+   "era": "1920-1969",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q22102"
+   },
+   "source": {
+    "wikidata": "Q22102",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q221575",
+   "kind": "birth",
+   "sport": "gymnastics",
+   "league": null,
+   "fame": "star",
+   "label": "Olga Korbut born",
+   "date": "1955-05-16",
+   "era": "1920-1969",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q221575"
+   },
+   "source": {
+    "wikidata": "Q221575",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q185044",
+   "kind": "birth",
+   "sport": "swimming",
+   "league": null,
+   "fame": "star",
+   "label": "Ian Thorpe born",
+   "date": "1982-10-13",
+   "era": "1970-",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q185044"
+   },
+   "source": {
+    "wikidata": "Q185044",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q316864",
+   "kind": "birth",
+   "sport": "ice-hockey",
+   "league": null,
+   "fame": "star",
+   "label": "Vladislav Tretiak born",
+   "date": "1952-04-25",
+   "era": "1920-1969",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q316864"
+   },
+   "source": {
+    "wikidata": "Q316864",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q380267",
+   "kind": "birth",
+   "sport": "ice-hockey",
+   "league": null,
+   "fame": "star",
+   "label": "Valeri Kharlamov born",
+   "date": "1948-01-14",
+   "era": "1920-1969",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q380267"
+   },
+   "source": {
+    "wikidata": "Q380267",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "death-Q380267",
+   "kind": "death",
+   "sport": "ice-hockey",
+   "league": null,
+   "fame": "star",
+   "label": "Valeri Kharlamov died",
+   "date": "1981-08-27",
+   "era": "1970-",
+   "match": {
+    "category": "player-death",
+    "qid": "Q380267"
+   },
+   "source": {
+    "wikidata": "Q380267",
+    "property": "P570",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q28614",
+   "kind": "birth",
+   "sport": "chess",
+   "league": null,
+   "fame": "icon",
+   "label": "Garry Kasparov born",
+   "date": "1963-04-13",
+   "era": "1920-1969",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q28614"
+   },
+   "source": {
+    "wikidata": "Q28614",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q41314",
+   "kind": "birth",
+   "sport": "chess",
+   "league": null,
+   "fame": "icon",
+   "label": "Bobby Fischer born",
+   "date": "1943-03-09",
+   "era": "1920-1969",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q41314"
+   },
+   "source": {
+    "wikidata": "Q41314",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "death-Q41314",
+   "kind": "death",
+   "sport": "chess",
+   "league": null,
+   "fame": "icon",
+   "label": "Bobby Fischer died",
+   "date": "2008-01-17",
+   "era": "1970-",
+   "match": {
+    "category": "player-death",
+    "qid": "Q41314"
+   },
+   "source": {
+    "wikidata": "Q41314",
+    "property": "P570",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q106807",
+   "kind": "birth",
+   "sport": "chess",
+   "league": null,
+   "fame": "icon",
+   "label": "Magnus Carlsen born",
+   "date": "1990-11-30",
+   "era": "1970-",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q106807"
+   },
+   "source": {
+    "wikidata": "Q106807",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q229967",
+   "kind": "birth",
+   "sport": "fencing",
+   "league": null,
+   "fame": "star",
+   "label": "Valentina Vezzali born",
+   "date": "1974-02-14",
+   "era": "1970-",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q229967"
+   },
+   "source": {
+    "wikidata": "Q229967",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q9488",
+   "kind": "birth",
+   "sport": "cricket",
+   "league": null,
+   "fame": "star",
+   "label": "Sachin Tendulkar born",
+   "date": "1973-04-24",
+   "era": "1970-",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q9488"
+   },
+   "source": {
+    "wikidata": "Q9488",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q213854",
+   "kind": "birth",
+   "sport": "cricket",
+   "league": null,
+   "fame": "star",
+   "label": "Virat Kohli born",
+   "date": "1988-11-05",
+   "era": "1970-",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q213854"
+   },
+   "source": {
+    "wikidata": "Q213854",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "death-Q555240",
+   "kind": "death",
+   "sport": "cricket",
+   "league": null,
+   "fame": "star",
+   "label": "Shane Warne died",
+   "date": "2022-03-04",
+   "era": "1970-",
+   "match": {
+    "category": "player-death",
+    "qid": "Q555240"
+   },
+   "source": {
+    "wikidata": "Q555240",
+    "property": "P570",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q157809",
+   "kind": "birth",
+   "sport": "handball",
+   "league": null,
+   "fame": "star",
+   "label": "Nikola Karabatić born",
+   "date": "1984-04-11",
+   "era": "1970-",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q157809"
+   },
+   "source": {
+    "wikidata": "Q157809",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q472336",
+   "kind": "birth",
+   "sport": "volleyball",
+   "league": null,
+   "fame": "star",
+   "label": "Karch Kiraly born",
+   "date": "1960-11-03",
+   "era": "1920-1969",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q472336"
+   },
+   "source": {
+    "wikidata": "Q472336",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q217505",
+   "kind": "birth",
+   "sport": "cross-country-skiing",
+   "league": null,
+   "fame": "star",
+   "label": "Bjørn Dæhlie born",
+   "date": "1967-06-19",
+   "era": "1920-1969",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q217505"
+   },
+   "source": {
+    "wikidata": "Q217505",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q44176",
+   "kind": "birth",
+   "sport": "professional-wrestling",
+   "league": null,
+   "fame": "star",
+   "label": "Hulk Hogan born",
+   "date": "1953-08-11",
+   "era": "1920-1969",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q44176"
+   },
+   "source": {
+    "wikidata": "Q44176",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "death-Q44176",
+   "kind": "death",
+   "sport": "professional-wrestling",
+   "league": null,
+   "fame": "star",
+   "label": "Hulk Hogan died",
+   "date": "2025-07-24",
+   "era": "1970-",
+   "match": {
+    "category": "player-death",
+    "qid": "Q44176"
+   },
+   "source": {
+    "wikidata": "Q44176",
+    "property": "P570",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q10068",
+   "kind": "birth",
+   "sport": "alpine-skiing",
+   "league": null,
+   "fame": "star",
+   "label": "Lindsey Vonn born",
+   "date": "1984-10-18",
+   "era": "1970-",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q10068"
+   },
+   "source": {
+    "wikidata": "Q10068",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q530",
+   "kind": "birth",
+   "sport": "alpine-skiing",
+   "league": null,
+   "fame": "star",
+   "label": "Ingemar Stenmark born",
+   "date": "1956-03-18",
+   "era": "1920-1969",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q530"
+   },
+   "source": {
+    "wikidata": "Q530",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q139075",
+   "kind": "birth",
+   "sport": "alpine-skiing",
+   "league": null,
+   "fame": "star",
+   "label": "Mikaela Shiffrin born",
+   "date": "1995-03-13",
+   "era": "1970-",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q139075"
+   },
+   "source": {
+    "wikidata": "Q139075",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q204205",
+   "kind": "birth",
+   "sport": "figure-skating",
+   "league": null,
+   "fame": "star",
+   "label": "Sonja Henie born",
+   "date": "1912-04-08",
+   "era": "pre-1920",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q204205"
+   },
+   "source": {
+    "wikidata": "Q204205",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q597023",
+   "kind": "birth",
+   "sport": "figure-skating",
+   "league": null,
+   "fame": "star",
+   "label": "Yuzuru Hanyū born",
+   "date": "1994-12-07",
+   "era": "1970-",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q597023"
+   },
+   "source": {
+    "wikidata": "Q597023",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q353514",
+   "kind": "birth",
+   "sport": "judo",
+   "league": null,
+   "fame": "star",
+   "label": "Teddy Riner born",
+   "date": "1989-04-07",
+   "era": "1970-",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q353514"
+   },
+   "source": {
+    "wikidata": "Q353514",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q311289",
+   "kind": "birth",
+   "sport": "speed-skating",
+   "league": null,
+   "fame": "star",
+   "label": "Eric Heiden born",
+   "date": "1958-06-14",
+   "era": "1920-1969",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q311289"
+   },
+   "source": {
+    "wikidata": "Q311289",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q363717",
+   "kind": "birth",
+   "sport": "rugby-union",
+   "league": null,
+   "fame": "star",
+   "label": "Jonah Lomu born",
+   "date": "1975-05-12",
+   "era": "1970-",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q363717"
+   },
+   "source": {
+    "wikidata": "Q363717",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "death-Q363717",
+   "kind": "death",
+   "sport": "rugby-union",
+   "league": null,
+   "fame": "star",
+   "label": "Jonah Lomu died",
+   "date": "2015-11-18",
+   "era": "1970-",
+   "match": {
+    "category": "player-death",
+    "qid": "Q363717"
+   },
+   "source": {
+    "wikidata": "Q363717",
+    "property": "P570",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q169814",
+   "kind": "birth",
+   "sport": "motorcycle-racing",
+   "league": null,
+   "fame": "star",
+   "label": "Valentino Rossi born",
+   "date": "1979-02-16",
+   "era": "1970-",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q169814"
+   },
+   "source": {
+    "wikidata": "Q169814",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q1390341",
+   "kind": "birth",
+   "sport": "badminton",
+   "league": null,
+   "fame": "star",
+   "label": "Lin Dan born",
+   "date": "1983-10-14",
+   "era": "1970-",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q1390341"
+   },
+   "source": {
+    "wikidata": "Q1390341",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q16849",
+   "kind": "birth",
+   "sport": "ski-jumping",
+   "league": null,
+   "fame": "star",
+   "label": "Matti Nykänen born",
+   "date": "1963-07-17",
+   "era": "1920-1969",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q16849"
+   },
+   "source": {
+    "wikidata": "Q16849",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q459114",
+   "kind": "birth",
+   "sport": "table-tennis",
+   "league": null,
+   "fame": "star",
+   "label": "Ma Long born",
+   "date": "1988-10-20",
+   "era": "1970-",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q459114"
+   },
+   "source": {
+    "wikidata": "Q459114",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q5162259",
+   "kind": "birth",
+   "sport": "mma",
+   "league": null,
+   "fame": "star",
+   "label": "Conor McGregor born",
+   "date": "1988-07-14",
+   "era": "1970-",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q5162259"
+   },
+   "source": {
+    "wikidata": "Q5162259",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q3526023",
+   "kind": "birth",
+   "sport": "mma",
+   "league": null,
+   "fame": "star",
+   "label": "Khabib Nurmagomedov born",
+   "date": "1988-09-20",
+   "era": "1970-",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q3526023"
+   },
+   "source": {
+    "wikidata": "Q3526023",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q311332",
+   "kind": "birth",
+   "sport": "diving",
+   "league": null,
+   "fame": "star",
+   "label": "Greg Louganis born",
+   "date": "1960-01-29",
+   "era": "1920-1969",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q311332"
+   },
+   "source": {
+    "wikidata": "Q311332",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q313885",
+   "kind": "birth",
+   "sport": "diving",
+   "league": null,
+   "fame": "star",
+   "label": "Tom Daley born",
+   "date": "1994-05-21",
+   "era": "1970-",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q313885"
+   },
+   "source": {
+    "wikidata": "Q313885",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q7855",
+   "kind": "birth",
+   "sport": "rallying",
+   "league": null,
+   "fame": "star",
+   "label": "Sébastien Loeb born",
+   "date": "1974-02-26",
+   "era": "1970-",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q7855"
+   },
+   "source": {
+    "wikidata": "Q7855",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q288656",
+   "kind": "birth",
+   "sport": "snowboarding",
+   "league": null,
+   "fame": "star",
+   "label": "Shaun White born",
+   "date": "1986-09-03",
+   "era": "1970-",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q288656"
+   },
+   "source": {
+    "wikidata": "Q288656",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q189408",
+   "kind": "birth",
+   "sport": "biathlon",
+   "league": null,
+   "fame": "star",
+   "label": "Ole Einar Bjørndalen born",
+   "date": "1974-01-27",
+   "era": "1970-",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q189408"
+   },
+   "source": {
+    "wikidata": "Q189408",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q52679",
+   "kind": "birth",
+   "sport": "rowing",
+   "league": null,
+   "fame": "star",
+   "label": "Steve Redgrave born",
+   "date": "1962-03-23",
+   "era": "1920-1969",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q52679"
+   },
+   "source": {
+    "wikidata": "Q52679",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q449073",
+   "kind": "birth",
+   "sport": "sailing",
+   "league": null,
+   "fame": "star",
+   "label": "Ben Ainslie born",
+   "date": "1977-02-05",
+   "era": "1970-",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q449073"
+   },
+   "source": {
+    "wikidata": "Q449073",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q380613",
+   "kind": "birth",
+   "sport": "golf",
+   "league": null,
+   "fame": "star",
+   "label": "Rory McIlroy born",
+   "date": "1989-05-04",
+   "era": "1970-",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q380613"
+   },
+   "source": {
+    "wikidata": "Q380613",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q272190",
+   "kind": "birth",
+   "sport": "golf",
+   "league": null,
+   "fame": "star",
+   "label": "Seve Ballesteros born",
+   "date": "1957-04-09",
+   "era": "1920-1969",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q272190"
+   },
+   "source": {
+    "wikidata": "Q272190",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q33817",
+   "kind": "birth",
+   "sport": "mountaineering",
+   "league": null,
+   "fame": "icon",
+   "label": "Edmund Hillary born",
+   "date": "1919-07-20",
+   "era": "pre-1920",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q33817"
+   },
+   "source": {
+    "wikidata": "Q33817",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "death-Q33817",
+   "kind": "death",
+   "sport": "mountaineering",
+   "league": null,
+   "fame": "icon",
+   "label": "Edmund Hillary died",
+   "date": "2008-01-11",
+   "era": "1970-",
+   "match": {
+    "category": "player-death",
+    "qid": "Q33817"
+   },
+   "source": {
+    "wikidata": "Q33817",
+    "property": "P570",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q190782",
+   "kind": "birth",
+   "sport": "snooker",
+   "league": null,
+   "fame": "star",
+   "label": "Ronnie O'Sullivan born",
+   "date": "1975-12-05",
+   "era": "1970-",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q190782"
+   },
+   "source": {
+    "wikidata": "Q190782",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q550313",
+   "kind": "birth",
+   "sport": "darts",
+   "league": null,
+   "fame": "star",
+   "label": "Phil Taylor born",
+   "date": "1960-08-13",
+   "era": "1920-1969",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q550313"
+   },
+   "source": {
+    "wikidata": "Q550313",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q313385",
+   "kind": "birth",
+   "sport": "rallying",
+   "league": null,
+   "fame": "star",
+   "label": "Mikko Hirvonen born",
+   "date": "1980-07-31",
+   "era": "1970-",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q313385"
+   },
+   "source": {
+    "wikidata": "Q313385",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q295020",
+   "kind": "birth",
+   "sport": "skateboarding",
+   "league": null,
+   "fame": "star",
+   "label": "Tony Hawk born",
+   "date": "1968-05-12",
+   "era": "1920-1969",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q295020"
+   },
+   "source": {
+    "wikidata": "Q295020",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  }
+ ],
+ "gaps": [
   {
    "id": "birth-Q1338802",
    "kind": "birth",
@@ -4946,75 +6542,6 @@
    }
   },
   {
-   "id": "birth-Q242201",
-   "kind": "birth",
-   "sport": "mma",
-   "league": null,
-   "fame": "icon",
-   "label": "Ronda Rousey born",
-   "date": "1987-02-01",
-   "era": "1970-",
-   "women": true,
-   "match": {
-    "category": "player-birthday",
-    "qid": "Q242201"
-   },
-   "source": {
-    "wikidata": "Q242201",
-    "property": "P569",
-    "wikipedia": "Ronda Rousey",
-    "verifiedBy": "wikidata + wikipedia introduction",
-    "checkedOn": "2026-10-20"
-   },
-   "reason": "not in the published dataset yet"
-  },
-  {
-   "id": "birth-Q171312",
-   "kind": "birth",
-   "sport": "motor-racing",
-   "league": null,
-   "fame": "icon",
-   "label": "Mario Andretti born",
-   "date": "1940-02-28",
-   "era": "1920-1969",
-   "women": false,
-   "match": {
-    "category": "player-birthday",
-    "qid": "Q171312"
-   },
-   "source": {
-    "wikidata": "Q171312",
-    "property": "P569",
-    "wikipedia": "Mario Andretti",
-    "verifiedBy": "wikidata + wikipedia introduction",
-    "checkedOn": "2026-10-20"
-   },
-   "reason": "not in the published dataset yet"
-  },
-  {
-   "id": "birth-Q213448",
-   "kind": "birth",
-   "sport": "motor-racing",
-   "league": null,
-   "fame": "icon",
-   "label": "Danica Patrick born",
-   "date": "1982-03-25",
-   "era": "1970-",
-   "women": true,
-   "match": {
-    "category": "player-birthday",
-    "qid": "Q213448"
-   },
-   "source": {
-    "wikidata": "Q213448",
-    "property": "P569",
-    "wikipedia": "Danica Patrick",
-    "verifiedBy": "wikidata + wikipedia introduction",
-    "checkedOn": "2026-10-20"
-   },
-   "reason": "not in the published dataset yet"
-  },
-  {
    "id": "gap-senna-imola",
    "kind": "death",
    "sport": "motor-racing",
@@ -5057,29 +6584,6 @@
    "reason": "not in the published dataset yet"
   },
   {
-   "id": "birth-Q317422",
-   "kind": "birth",
-   "sport": "olympics",
-   "league": null,
-   "fame": "icon",
-   "label": "Eric Liddell born",
-   "date": "1902-01-16",
-   "era": "pre-1920",
-   "women": false,
-   "match": {
-    "category": "player-birthday",
-    "qid": "Q317422"
-   },
-   "source": {
-    "wikidata": "Q317422",
-    "property": "P569",
-    "wikipedia": "Eric Liddell",
-    "verifiedBy": "wikidata + wikipedia introduction",
-    "checkedOn": "2026-10-20"
-   },
-   "reason": "not in the published dataset yet"
-  },
-  {
    "id": "death-Q82984",
    "kind": "death",
    "sport": "olympics",
@@ -5097,29 +6601,6 @@
     "wikidata": "Q82984",
     "property": "P570",
     "wikipedia": "Pierre de Coubertin",
-    "verifiedBy": "wikidata + wikipedia introduction",
-    "checkedOn": "2026-10-20"
-   },
-   "reason": "not in the published dataset yet"
-  },
-  {
-   "id": "death-Q317422",
-   "kind": "death",
-   "sport": "olympics",
-   "league": null,
-   "fame": "icon",
-   "label": "Eric Liddell died",
-   "date": "1945-02-21",
-   "era": "1920-1969",
-   "women": false,
-   "match": {
-    "category": "player-death",
-    "qid": "Q317422"
-   },
-   "source": {
-    "wikidata": "Q317422",
-    "property": "P570",
-    "wikipedia": "Eric Liddell",
     "verifiedBy": "wikidata + wikipedia introduction",
     "checkedOn": "2026-10-20"
    },
@@ -5263,75 +6744,6 @@
    }
   },
   {
-   "id": "birth-Q151284",
-   "kind": "birth",
-   "sport": "swimming",
-   "league": null,
-   "fame": "icon",
-   "label": "Johnny Weissmuller born",
-   "date": "1904-06-02",
-   "era": "pre-1920",
-   "women": false,
-   "match": {
-    "category": "player-birthday",
-    "qid": "Q151284"
-   },
-   "source": {
-    "wikidata": "Q151284",
-    "property": "P569",
-    "wikipedia": "Johnny Weissmuller",
-    "verifiedBy": "wikidata + wikipedia introduction",
-    "checkedOn": "2026-10-20"
-   },
-   "reason": "not in the published dataset yet"
-  },
-  {
-   "id": "death-Q151284",
-   "kind": "death",
-   "sport": "swimming",
-   "league": null,
-   "fame": "icon",
-   "label": "Johnny Weissmuller died",
-   "date": "1984-01-20",
-   "era": "1970-",
-   "women": false,
-   "match": {
-    "category": "player-death",
-    "qid": "Q151284"
-   },
-   "source": {
-    "wikidata": "Q151284",
-    "property": "P570",
-    "wikipedia": "Johnny Weissmuller",
-    "verifiedBy": "wikidata + wikipedia introduction",
-    "checkedOn": "2026-10-20"
-   },
-   "reason": "not in the published dataset yet"
-  },
-  {
-   "id": "birth-Q53325",
-   "kind": "birth",
-   "sport": "tennis",
-   "league": null,
-   "fame": "icon",
-   "label": "Arthur Ashe born",
-   "date": "1943-07-10",
-   "era": "1920-1969",
-   "women": false,
-   "match": {
-    "category": "player-birthday",
-    "qid": "Q53325"
-   },
-   "source": {
-    "wikidata": "Q53325",
-    "property": "P569",
-    "wikipedia": "Arthur Ashe",
-    "verifiedBy": "wikidata + wikipedia introduction",
-    "checkedOn": "2026-10-20"
-   },
-   "reason": "not in the published dataset yet"
-  },
-  {
    "id": "gap-battle-sexes-court",
    "kind": "final",
    "sport": "tennis",
@@ -5368,52 +6780,6 @@
     "verifiedBy": "wikipedia article",
     "checkedOn": "2026-10-20"
    }
-  },
-  {
-   "id": "birth-Q1426",
-   "kind": "birth",
-   "sport": "tennis",
-   "league": null,
-   "fame": "icon",
-   "label": "Roger Federer born",
-   "date": "1981-08-08",
-   "era": "1970-",
-   "women": false,
-   "match": {
-    "category": "player-birthday",
-    "qid": "Q1426"
-   },
-   "source": {
-    "wikidata": "Q1426",
-    "property": "P569",
-    "wikipedia": "Roger Federer",
-    "verifiedBy": "wikidata + wikipedia introduction",
-    "checkedOn": "2026-10-20"
-   },
-   "reason": "not in the published dataset yet"
-  },
-  {
-   "id": "death-Q53325",
-   "kind": "death",
-   "sport": "tennis",
-   "league": null,
-   "fame": "icon",
-   "label": "Arthur Ashe died",
-   "date": "1993-02-06",
-   "era": "1970-",
-   "women": false,
-   "match": {
-    "category": "player-death",
-    "qid": "Q53325"
-   },
-   "source": {
-    "wikidata": "Q53325",
-    "property": "P570",
-    "wikipedia": "Arthur Ashe",
-    "verifiedBy": "wikidata + wikipedia introduction",
-    "checkedOn": "2026-10-20"
-   },
-   "reason": "not in the published dataset yet"
   }
  ]
 }
