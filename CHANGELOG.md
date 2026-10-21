@@ -4,6 +4,12 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+## [0.8.1] - 2026-10-21
+
+- Japanese wording, from a native-quality review (docs/translations.md, "Japanese revised in 0.8.1"): the context in parentheses on a fact's own day says the year (`（NHL、1990年）`, was `（NHL、1990）`); a game's stage is Japanese and in parentheses (`（プレーオフ）`, `（準々決勝）`, was `、playoffs`; 1,457 stored sentences) and a World Cup round too (`（第7節）`, `（ラウンド16）`); the series game number is `（第3戦）`; the end of a competition names its champion with `優勝は` (a match or a bout keeps `勝者は`); `N年前の今日` for years ago today; the draft sentences take `に` for the club and `で` for the pick (`Edmonton Oilersに全体1位で指名された`); `franchise-began` says `発足した` (was `名義が…始まる`); the second group stage is `2次リーグ`; the colon in a sentence is full-width; the events' lead-ins read more naturally.
+- Demo: the label over the day's facts is `この日の出来事` (was `この日の事実`) so that labels use one word, as on `次の出来事`; three sentences of the page read more naturally. English is unchanged.
+- Data: the stored `textJa` of the facts is rebuilt with the templates (no fact added or removed).
+
 ## [0.8.0] - 2026-10-21
 
 - Data: the events and competition editions of every sport, from the same Wikidata dump (CC0). 28,205 facts in 185 sports, each with its Q id (`wikidata:competition-end:Q176883:2010-07-11`): 11,729 that began, 11,614 that ended and 4,862 that took place on one day, 5,951 with a winner and 19,204 with a place, as Wikidata states them. The Olympic Games (Athens 1896 to Paris 2024), the World Cups, the Grand Prix, the Giro, Wimbledon, the Chess Olympiad, Super Bowl I. 103,592 facts now (was 75,387): a day has 76 events (median; 9 to 153) of 27 sports (median; 4 to 50). The offline set is unchanged in size (1,510 facts, 1.6 MB), the package is about 1 MB packed, and the facts on Pages are 148 MB (were 113 MB).
