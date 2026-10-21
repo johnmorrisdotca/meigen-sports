@@ -82,11 +82,12 @@ let wordingSeed = 0;
 function nextSeed(): string {
   return `demo:${Date.now()}:${++wordingSeed}:${Math.random()}`;
 }
-function drawFacts(box: HTMLElement, records: readonly OnThisDayRecord[]) {
+/** `asOf` is the day the list is about: the facts of that day may say "today" and "on this day". A list that is about no day (random, favourites, the showcase) passes none, so every fact in it says its full date. */
+function drawFacts(box: HTMLElement, records: readonly OnThisDayRecord[], asOf?: string) {
   box.replaceChildren();
   const locale = familyLang.lang === "ja" ? "ja" : "en";
   // One run per list: neighbours never share a template or an outline.
-  const worded = new Map(renderRun(records, { seed: nextSeed(), locale, asOf: date.value }).map((row) => [row.recordId, row.text]));
+  const worded = new Map(renderRun(records, { seed: nextSeed(), locale, ...(asOf ? { asOf } : {}) }).map((row) => [row.recordId, row.text]));
   for (const fact of records) {
     const text = worded.get(fact.recordId);
     if (!text) continue;
@@ -184,7 +185,7 @@ async function renderToday() {
     noteFeeds("today", false);
   } catch { noteFeeds("today", true); }
   if (!facts.length) facts = rankFeed(factsFor(offline, { date: day }), TODAY_COUNT);
-  drawFacts(todayBox, facts);
+  drawFacts(todayBox, facts, `${now.getFullYear()}-${day}`);
   showToday();
   todayStatus.textContent = facts.length < TODAY_COUNT ? familyLang.word("todayFew") : `${facts.length} ${familyLang.word("results")}`;
 }
@@ -270,7 +271,7 @@ async function render() {
     const facts = rankFeed(sport.value ? factsFor(dayFacts, { sport: sport.value }) : dayFacts, FIND_COUNT);
     quoteBox.replaceChildren();
     if (q) { const block = document.createElement("blockquote"); block.textContent = q.text; quoteBox.append(block, credit(q)); } else quoteBox.textContent = familyLang.word("emptyQuote");
-    if (facts.length) drawFacts(historyBox, facts); else { historyBox.replaceChildren(); historyBox.textContent = familyLang.word("emptyHistory"); }
+    if (facts.length) drawFacts(historyBox, facts, date.value); else { historyBox.replaceChildren(); historyBox.textContent = familyLang.word("emptyHistory"); }
     status.textContent = `${facts.length + (q ? 1 : 0)} ${familyLang.word("results")}`;
   } catch { if (generation === ownGeneration) status.textContent = familyLang.word("error"); }
 }

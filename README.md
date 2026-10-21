@@ -41,7 +41,7 @@ A typed data package with no runtime dependencies. Read the included data offlin
 <br><em>Today in sports history, a day at a time: 30,480 facts on all 366 days, each with its source.</em>
 </p>
 
-- **Birthdays, deaths and finals as sentences**, with the club and honours, the score and venue, the title and the season's record; neighbours in a list never share a template (`renderRun`).
+- **Birthdays, deaths and finals as sentences**, with the club and honours, the score and venue, the title and the season's record; neighbours in a list never share a template (`renderRun`). A fact read on a day that is not its own says its full date ("On July 4, 1945, …", "born on July 7, 1960"); "today" and "on this day" are for its own day only, and a missing value is never printed as "(none)".
 
 <p align="center">
 <picture>
@@ -142,13 +142,29 @@ day.records.length; // 2
 
 The network example is not run by the README check; [docs/status.md](./docs/status.md) says what is published and what is still being completed.
 
+A sentence is worded for the day it is read on. Give `render` the day being shown (`asOf`, never read from the clock): on the fact's own day it may say "today" and "on this day" and keeps the year; on any other day, and with no `asOf`, it says the full date at the precision the record holds.
+
+```js
+import { render } from "@johnmorrisdotca/meigen-sports";
+
+const team = (name) => ({ name, franchiseId: null, teamSeasonId: null, soccerTeamId: null, countryCode: "US", fifaCode: null, flagCode: null });
+const game = {
+  recordId: "example:game", category: "game-on-day", tags: [], basis: "source", eventDate: "1945-07-04", datePrecision: "day",
+  sport: "baseball", competition: "mlb", league: "mlb", homeScore: 16, awayScore: 4,
+  home: team("Pittsburgh Pirates"), away: team("New York Giants"), source: { sourceId: "example", licence: "CC0 1.0", attribution: "Example", url: null },
+};
+console.log(render(game, { asOf: "2026-10-20" }).text); // On July 4, 1945, Pittsburgh Pirates beat New York Giants 16–4 (MLB).
+console.log(render(game, { asOf: "2026-07-04" }).text); // Pittsburgh Pirates beat New York Giants 16–4 (MLB, 1945).
+console.log(render(game, { asOf: "2026-10-20", locale: "ja" }).text); // 1945年7月4日、Pittsburgh PiratesがNew York Giantsに16対4で勝利した（MLB）。
+```
+
 ## Examples
 
 The snippets under **In 30 seconds** and **Use it in your project** are run by `pnpm test:readme` against the built package. A network load of the public feed is marked `no-run` until Pages is serving that version.
 
 ## API
 
-The root export provides `isDate`, `monthDayOf`, `selectRecords`, `historyOnDate`, `quoteForDate`, `EXTRACT_CATEGORIES`, `FACT_CATEGORIES`, on-this-day helpers (`factsFor`, `today`, `calendarDayInZone`, `rankFeed`, `rankRecords`, `rankDay`, `bestOfDay`, `significance`, `randomFacts`, `tagsOf`, `uniqueRecordIds`, `withCaptions`, `captionFromFact`, `isRichFact`; how lists are ranked and capped: [docs/ranking.md](./docs/ranking.md)), caption templates (`render`, `renderHistory`, `renderRun`, `templatesFor`, `TEMPLATES`, `TEMPLATE_TYPES`; `renderRun` words a list so that neighbours never repeat), same-event merge (`mergeHistoryEvents`, `finalCaptionFromMatch`, `uniqueHistoryIds`), the core record and feed types, on-this-day consume types (`OnThisDayRecord`, `TeamRef`, `PersonRef`), and `SCHEMA_VERSION` and `VERSION`.
+The root export provides `isDate`, `monthDayOf`, `selectRecords`, `historyOnDate`, `quoteForDate`, `EXTRACT_CATEGORIES`, `FACT_CATEGORIES`, on-this-day helpers (`factsFor`, `today`, `calendarDayInZone`, `rankFeed`, `rankRecords`, `rankDay`, `bestOfDay`, `significance`, `randomFacts`, `tagsOf`, `uniqueRecordIds`, `withCaptions`, `captionFromFact`, `isRichFact`, `dayContext`, `factDate`, `cleanLabel`; how lists are ranked and capped: [docs/ranking.md](./docs/ranking.md)), caption templates (`render`, `renderHistory`, `renderRun`, `templatesFor`, `TEMPLATES`, `TEMPLATE_TYPES`; `renderRun` words a list so that neighbours never repeat), same-event merge (`mergeHistoryEvents`, `finalCaptionFromMatch`, `uniqueHistoryIds`), the core record and feed types, on-this-day consume types (`OnThisDayRecord`, `TeamRef`, `PersonRef`), and `SCHEMA_VERSION` and `VERSION`.
 
 | Import | Contents |
 | --- | --- |

@@ -178,6 +178,14 @@ class ConvertExtractTests(unittest.TestCase):
         self.assertEqual(convert.final_context_fields({"venueName": "", "winnerRecord": {"wins": "91", "losses": 71}, "winnerTitleNumber": 0}), {})
         self.assertEqual(convert.final_context_fields({}), {})
 
+    def test_a_placeholder_is_not_part_of_a_name(self):
+        self.assertEqual(convert.clean_label("Allegheny Club (none)"), "Allegheny Club")
+        self.assertEqual(convert.clean_label("Allegheny Club (None)"), "Allegheny Club")
+        self.assertEqual(convert.clean_label("Boston Red Sox"), "Boston Red Sox")
+        self.assertEqual(convert.clean_label("None Such Rovers"), "None Such Rovers")
+        self.assertIsNone(convert.clean_label(None))
+        self.assertEqual(convert.team({"name": "Allegheny Club (none)", "franchiseId": 1})["name"], "Allegheny Club")
+
 
 if __name__ == "__main__":
     unittest.main()

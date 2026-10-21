@@ -14,6 +14,7 @@ export type FragmentId =
   | "aged" | "diedParen" | "previousHolder" | "overallPick" | "clubBy" | "cityIn" | "homeOf"
   | "hosted" | "extraTime" | "penaltiesAfterDraw" | "penaltiesAfterExtraTime" | "penaltyShootout"
   | "roundPart" | "articleCap" | "article" | "join" | "whoPlain" | "whoThe" | "whoTheAnd" | "whoParen" | "result"
+  | "onDate" | "inDate" | "aroundDate" | "leadOnDate" | "leadInDate" | "leadAroundDate"
   | "recordSet" | "recordHeld" | "recordEqualled" | "recordSurpassed" | "recordSetBy" | "recordHeldBy" | "recordEqualledBy" | "recordBrokenBy";
 
 type Table = Record<FragmentId, { readonly en: readonly string[]; readonly ja: readonly string[] }>;
@@ -59,6 +60,13 @@ export const FRAGMENTS: Table = {
   whoTheAnd: { en: [", the {0} and {1},"], ja: ["（{0}、{1}）"] },
   whoParen: { en: [" ({0})"], ja: ["（{0}）"] },
   result: { en: ["{0}\u2013{1}"], ja: ["{0}対{1}"] },
+  // A date said at the precision the source holds. {0} is the date as `formatDate` writes it.
+  onDate: { en: ["on {0}"], ja: ["{0}に"] },
+  inDate: { en: ["in {0}"], ja: ["{0}に"] },
+  aroundDate: { en: ["around {0}"], ja: ["{0}ごろに"] },
+  leadOnDate: { en: ["On {0}, "], ja: ["{0}、"] },
+  leadInDate: { en: ["In {0}, "], ja: ["{0}、"] },
+  leadAroundDate: { en: ["Around {0}, "], ja: ["{0}ごろ、"] },
   recordSet: { en: ["set"], ja: [""] },
   recordHeld: { en: ["held"], ja: [""] },
   recordEqualled: { en: ["equalled"], ja: [""] },
@@ -107,4 +115,16 @@ export function phrase(
   const options = (override ?? FRAGMENTS[id])[locale];
   const format = options[choose(options.length) % options.length] ?? options[0] ?? "";
   return fill(format, args);
+}
+
+const MONTHS_EN: readonly string[] = [
+  "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December",
+];
+
+/** A date at its precision: "July 4, 1945", "July 1945", "1945" in English; "1945年7月4日", "1945年7月", "1945年" in Japanese. */
+export function formatDate(locale: TemplateLocale, year: number, month?: number, day?: number): string {
+  if (locale === "ja") return `${year}年${month ? `${month}月` : ""}${month && day ? `${day}日` : ""}`;
+  const name = month ? MONTHS_EN[month - 1] : undefined;
+  if (!name) return String(year);
+  return day ? `${name} ${day}, ${year}` : `${name} ${year}`;
 }

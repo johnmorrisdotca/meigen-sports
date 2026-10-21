@@ -142,11 +142,21 @@ def source_of(row: dict) -> dict:
     return {"sourceId": code, "licence": licence, "attribution": attribution, "url": url}
 
 
+PLACEHOLDER = re.compile(r"\s*[(\uff08]\s*(?:none|null|undefined|n/a|nan)\s*[)\uff09]", re.IGNORECASE)
+
+
+def clean_label(value):
+    """A name without a placeholder for "no value" ("Allegheny Club (none)" is the club Allegheny Club). The library says the same at render time."""
+    if not isinstance(value, str):
+        return value
+    return PLACEHOLDER.sub("", value).strip()
+
+
 def team(obj) -> dict | None:
     if not obj:
         return None
     return {
-        "name": obj.get("name"),
+        "name": clean_label(obj.get("name")),
         "franchiseId": obj.get("franchiseId"),
         "teamSeasonId": obj.get("teamSeasonId"),
         "soccerTeamId": obj.get("soccerTeamId"),
@@ -438,6 +448,10 @@ def finalize(row: dict) -> dict | None:
     ):
         if row.get(key) not in (None, [], ""):
             out[key] = row[key]
+    if out.get("clubName"):
+        out["clubName"] = clean_label(out["clubName"])
+    if out.get("clubNames"):
+        out["clubNames"] = [n for n in (clean_label(n) for n in out["clubNames"]) if n]
     if out.get("home"):
         out["home"] = team(out["home"])
     if out.get("away"):

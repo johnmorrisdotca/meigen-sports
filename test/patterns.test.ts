@@ -97,8 +97,11 @@ test("every template can render: none is dead, none leaves a hole", () => {
   for (const row of TEMPLATES) {
     let text: string | null = null;
     for (const item of rows) {
-      const out = "kind" in item ? renderHistory(item, { templateId: row.id, locale: row.locale, asOf: "2026-01-26" })
-        : render(item, { templateId: row.id, locale: row.locale, asOf: "2026-01-26" });
+      // A template that says "today" can only run on the fact's own day; every other one is run on a day that is not the fact's.
+      const day = "kind" in item ? item.date : item.eventDate;
+      const asOf = row.day ? `2026-${(day ?? "01-01").slice(-5)}` : "2026-07-04";
+      const out = "kind" in item ? renderHistory(item, { templateId: row.id, locale: row.locale, asOf })
+        : render(item, { templateId: row.id, locale: row.locale, asOf });
       if (out) { text = out.text; break; }
     }
     assert.ok(text, `${row.type}/${row.id}/${row.locale} matches no fixture`);
@@ -196,12 +199,14 @@ test("a run over the real facts never repeats a neighbour", () => {
 });
 
 test("history rows are worded from the patterns; unknown lines and quotations are left alone", () => {
-  assert.equal(renderHistory(historyFixtures()[0]!)?.text, "Brazil beat Chile 3–1 in the 1950 World Cup, Group 1.");
-  assert.equal(renderHistory(historyFixtures()[1]!)?.text, "Brazil and Chile drew 2–2 at the 1950 World Cup, Group 1.");
-  assert.equal(renderHistory(historyFixtures()[3]!)?.text, "Argentina won the 2022 World Cup, beating France 4–2 on penalties after a 3–3 draw.");
-  assert.equal(renderHistory(historyFixtures()[5]!)?.text, "Italy won the 2006 World Cup, beating France 5–3 on penalties after a 3–3 draw.");
-  assert.equal(renderHistory(historyFixtures()[6]!)?.text, "The 2022 FIFA World Cup began.");
-  assert.equal(renderHistory(historyFixtures()[8]!)?.text, "Super Bowl I took place.");
+  assert.equal(renderHistory(historyFixtures()[0]!)?.text, "On December 18, 2022, Brazil beat Chile 3–1 in the 1950 World Cup, Group 1.");
+  assert.equal(renderHistory(historyFixtures()[1]!)?.text, "On December 18, 2022, Brazil and Chile drew 2–2 at the 1950 World Cup, Group 1.");
+  assert.equal(renderHistory(historyFixtures()[3]!)?.text, "On December 18, 2022, Argentina won the 2022 World Cup, beating France 4–2 on penalties after a 3–3 draw.");
+  assert.equal(renderHistory(historyFixtures()[5]!)?.text, "On December 18, 2022, Italy won the 2006 World Cup, beating France 5–3 on penalties after a 3–3 draw.");
+  assert.equal(renderHistory(historyFixtures()[6]!)?.text, "On December 18, 2022, the 2022 FIFA World Cup began.");
+  assert.equal(renderHistory(historyFixtures()[8]!)?.text, "On December 18, 2022, Super Bowl I took place.");
+  // On the row's own day the year is enough; the date leads only anywhere else.
+  assert.equal(renderHistory(historyFixtures()[0]!, { asOf: "2026-12-18" })?.text, "Brazil beat Chile 3–1 in the 1950 World Cup, Group 1.");
   assert.equal(renderHistory({ ...historyFixtures()[0]!, text: "Some other line." }), null);
   assert.equal(renderHistory({ ...historyFixtures()[0]!, kind: "quote" }), null);
   assert.equal(finalCaptionFromMatch("Argentina 2–1 Germany (World Cup 1986, Final)."), "Argentina won the 1986 World Cup, beating Germany 2–1.");
@@ -224,9 +229,10 @@ test("every bundled history row is either worded by a pattern or is a line the p
 
 test("a soccer or national side never takes 'the'; a team-sport club does", () => {
   const nfl = fixtures()[4]!;
-  assert.match(render(nfl, { templateId: "game-dominated" })?.text ?? "", /^The Chicago Bears dominated the Washington Redskins/);
+  assert.match(render(nfl, { templateId: "game-dominated" })?.text ?? "", /^On December 8, 1940, the Chicago Bears dominated the Washington Redskins/);
+  assert.match(render(nfl, { templateId: "game-dominated", asOf: "2026-12-08" })?.text ?? "", /^The Chicago Bears dominated the Washington Redskins/);
   const soccer: OnThisDayRecord = { ...nfl, recordId: "s", sport: "soccer", league: "wc", competition: "wc", homeScore: 5, awayScore: 0, home: team("Argentina", 1, true), away: team("Chile", 2, true) };
-  assert.match(render(soccer, { templateId: "game-defeated" })?.text ?? "", /^Argentina defeated Chile 5–0/);
+  assert.match(render(soccer, { templateId: "game-defeated" })?.text ?? "", /^On December 8, 1940, Argentina defeated Chile 5–0/);
 });
 
 test("a fixed sentence never moves; a fragment alternate appears only when the wording is seeded", () => {

@@ -17,6 +17,12 @@ export interface SentenceTemplate {
   readonly needs: readonly string[];
   readonly pattern: string;
   readonly when?: "tie" | "decisive" | "lopsided" | "series";
+  /**
+   * Says "today", "on this day", "turns 65" or "N years ago today". Eligible only when the day of the fact is the day being shown
+   * (`asOf`). Every other template is true anywhere and carries the fact's date, at its precision, through `{dateLead}`, `{leadIn}`,
+   * `{dateOn}` or `{date}`.
+   */
+  readonly day?: boolean;
 }
 
 /** Every statement type the package says, in one list. A test holds each type to at least three patterns per language. */
@@ -30,7 +36,12 @@ export interface RenderOptions {
   readonly seed?: string;
   readonly templateId?: string;
   readonly locale?: TemplateLocale;
-  /** Explicit calendar day `YYYY-MM-DD`. Never read from the clock. Required for “years ago today” / “turns N”. */
+  /**
+   * The calendar day being shown, `YYYY-MM-DD`. Never read from the clock. The context of a sentence follows from it: when the fact's
+   * day (month and day) is this day, "today" and "on this day" wording is allowed ("years ago today", "turns N"); in every other case,
+   * and when `asOf` is absent, the sentence is true anywhere and says the full date of the fact at its precision
+   * ("On July 4, 1945, ...", "born on July 7, 1960", "in July 1945", "in 1945").
+   */
   readonly asOf?: string;
 }
 

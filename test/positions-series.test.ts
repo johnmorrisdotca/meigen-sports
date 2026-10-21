@@ -20,23 +20,23 @@ const born = (sport: string, position: string, clubName: string, extra: Partial<
 // ---- positions are spelled out in every sentence ----
 
 test("a position code is spelled out through its sport: C is a catcher in baseball and a center in hockey and basketball", () => {
-  assert.equal(captionFromFact(born("baseball", "C", "New York Yankees"), "en"), "A Player, the New York Yankees catcher, was born on this day in 1931.");
-  assert.equal(captionFromFact(born("ice-hockey", "C", "Edmonton Oilers"), "en"), "A Player, the Edmonton Oilers center, was born on this day in 1931.");
-  assert.equal(captionFromFact(born("basketball", "C", "Boston Celtics"), "en"), "A Player, the Boston Celtics center, was born on this day in 1931.");
-  assert.equal(captionFromFact(born("baseball", "CF", "New York Yankees"), "en"), "A Player, the New York Yankees center fielder, was born on this day in 1931.");
-  assert.equal(captionFromFact(born("baseball", "DH", "Texas Rangers"), "en"), "A Player, the Texas Rangers designated hitter, was born on this day in 1931.");
-  assert.equal(captionFromFact(born("ice-hockey", "LW", "Boston Bruins"), "en"), "A Player, the Boston Bruins left wing, was born on this day in 1931.");
-  assert.equal(captionFromFact(born("ice-hockey", "D", "Boston Bruins"), "en"), "A Player, the Boston Bruins defenseman, was born on this day in 1931.");
-  assert.equal(captionFromFact(born("ice-hockey", "G", "Boston Bruins"), "en"), "A Player, the Boston Bruins goaltender, was born on this day in 1931.");
-  assert.equal(captionFromFact(born("american-football", "QB", "Green Bay Packers"), "en"), "A Player, the Green Bay Packers quarterback, was born on this day in 1931.");
-  assert.equal(captionFromFact(born("canadian-football", "WR", "Toronto Argonauts"), "en"), "A Player, the Toronto Argonauts wide receiver, was born on this day in 1931.");
-  assert.equal(captionFromFact(born("basketball", "PG", "Boston Celtics"), "ja"), "A Player（Boston Celticsのポイントガード）は1931年のこの日に生まれた。");
+  assert.equal(captionFromFact(born("baseball", "C", "New York Yankees"), "en"), "A Player, the New York Yankees catcher, was born on October 20, 1931.");
+  assert.equal(captionFromFact(born("ice-hockey", "C", "Edmonton Oilers"), "en"), "A Player, the Edmonton Oilers center, was born on October 20, 1931.");
+  assert.equal(captionFromFact(born("basketball", "C", "Boston Celtics"), "en"), "A Player, the Boston Celtics center, was born on October 20, 1931.");
+  assert.equal(captionFromFact(born("baseball", "CF", "New York Yankees"), "en"), "A Player, the New York Yankees center fielder, was born on October 20, 1931.");
+  assert.equal(captionFromFact(born("baseball", "DH", "Texas Rangers"), "en"), "A Player, the Texas Rangers designated hitter, was born on October 20, 1931.");
+  assert.equal(captionFromFact(born("ice-hockey", "LW", "Boston Bruins"), "en"), "A Player, the Boston Bruins left wing, was born on October 20, 1931.");
+  assert.equal(captionFromFact(born("ice-hockey", "D", "Boston Bruins"), "en"), "A Player, the Boston Bruins defenseman, was born on October 20, 1931.");
+  assert.equal(captionFromFact(born("ice-hockey", "G", "Boston Bruins"), "en"), "A Player, the Boston Bruins goaltender, was born on October 20, 1931.");
+  assert.equal(captionFromFact(born("american-football", "QB", "Green Bay Packers"), "en"), "A Player, the Green Bay Packers quarterback, was born on October 20, 1931.");
+  assert.equal(captionFromFact(born("canadian-football", "WR", "Toronto Argonauts"), "en"), "A Player, the Toronto Argonauts wide receiver, was born on October 20, 1931.");
+  assert.equal(captionFromFact(born("basketball", "PG", "Boston Celtics"), "ja"), "A Player（Boston Celticsのポイントガード）は1931年10月20日に生まれた。");
 });
 
 test("a code the sport does not have is left out, never printed and never guessed", () => {
   assert.equal(positionName("baseball", "QB", "en"), "");
   assert.equal(positionName(null, "CF", "en"), "", "no sport, no way to read a code");
-  assert.equal(captionFromFact(born("baseball", "QB", "New York Yankees"), "en"), "A Player, the New York Yankees, was born on this day in 1931.");
+  assert.equal(captionFromFact(born("baseball", "QB", "New York Yankees"), "en"), "A Player, the New York Yankees, was born on October 20, 1931.");
   assert.equal(captionFromFact(born("baseball", "QB", "x", { clubNames: [] }), "en"), null, "nothing but a name is not published");
   assert.equal(positionName("baseball", "outfielder", "en"), "outfielder", "a value already in words is kept");
 });
@@ -89,9 +89,9 @@ const final = (extra: Partial<OnThisDayRecord> = {}): OnThisDayRecord => ({
 });
 
 test("a series won over several games says the series result, not the last game's score as the title", () => {
-  assert.equal(captionFromFact(final(), "en"), "Cincinnati Reds won the 1990 World Series, sweeping the Oakland Athletics 4–0 with a 2–1 win in Game 4.");
-  assert.equal(captionFromFact(final({ seriesLoserWins: 3, seriesGames: 7 }), "en"), "Cincinnati Reds won the 1990 World Series, beating the Oakland Athletics 4 games to 3 with a 2–1 win in Game 7.");
-  assert.equal(captionFromFact(final(), "ja"), "Cincinnati Redsが1990年のワールドシリーズでOakland Athleticsに4勝0敗で勝った（第4戦は2対1）。");
+  assert.equal(captionFromFact(final(), "en"), "On October 20, 1990, Cincinnati Reds won the 1990 World Series, sweeping the Oakland Athletics 4–0 with a 2–1 win in Game 4.");
+  assert.equal(captionFromFact(final({ seriesLoserWins: 3, seriesGames: 7 }), "en"), "On October 20, 1990, Cincinnati Reds won the 1990 World Series, beating the Oakland Athletics 4 games to 3 with a 2–1 win in Game 7.");
+  assert.equal(captionFromFact(final(), "ja"), "1990年10月20日、Cincinnati Redsが1990年のワールドシリーズでOakland Athleticsに4勝0敗で勝った（第4戦は2対1）。");
   for (const id of ["final-series-won", "final-series-to-win", "final-series-went-to"]) {
     const text = render(final({ seriesLoserWins: 2, seriesGames: 6 }), { templateId: id })!.text;
     assert.match(text, /4 games to 2/, id);
@@ -100,7 +100,7 @@ test("a series won over several games says the series result, not the last game'
 });
 
 test("a series with no tally, or a tally that cannot be, is never worded as a single game", () => {
-  assert.equal(render(final({ seriesWinnerWins: undefined, seriesLoserWins: undefined, seriesGames: undefined }), { templateId: "final-won" })?.text, "Cincinnati Reds won the 1990 World Series, beating Oakland Athletics 2–1.", "a single-game final (no series fields) keeps the game's score");
+  assert.equal(render(final({ seriesWinnerWins: undefined, seriesLoserWins: undefined, seriesGames: undefined }), { templateId: "final-won" })?.text, "On October 20, 1990, Cincinnati Reds won the 1990 World Series, beating Oakland Athletics 2–1.", "a single-game final (no series fields) keeps the game's score");
   for (const bad of [{ seriesLoserWins: 4 }, { seriesWinnerWins: 3, seriesLoserWins: 4 }, { seriesGames: 3 }, { seriesGames: undefined }, { seriesLoserWins: -1 }]) {
     const text = render(final(bad), { templateId: "final-series-won" });
     assert.equal(text, null, JSON.stringify(bad));
@@ -143,7 +143,7 @@ test("every title sentence of a series in the data carries a tally that agrees w
 
 test("Cincinnati Reds, 1990: the series, not the last game", () => {
   const reds = records.find((r) => r.category === "championship-final" && r.league === "mlb" && r.seasonStartYear === 1990)!;
-  assert.equal(reds.text, "Cincinnati Reds won the 1990 World Series, sweeping the Oakland Athletics 4–0 with a 2–1 win in Game 4 at Oakland Coliseum, Oakland.");
+  assert.equal(reds.text, "On October 20, 1990, Cincinnati Reds won the 1990 World Series, sweeping the Oakland Athletics 4–0 with a 2–1 win in Game 4 at Oakland Coliseum, Oakland.");
 });
 
 test("the context the archive held is in the facts: every final has its venue, and a title number or record only where DS1 stated one", () => {
@@ -158,7 +158,7 @@ test("the context the archive held is in the facts: every final has its venue, a
     else assert.doesNotMatch(r.text ?? "", /regular season/, r.recordId);
   }
   const bears = finals.find((r) => r.league === "nfl" && r.eventDate === "1986-01-26")!;
-  assert.equal(bears.text, "Chicago Bears won the 1986 Super Bowl, beating New England Patriots 46–10 at Louisiana Superdome, New Orleans. It was their 9th title. They had finished the regular season 15–1–0.");
+  assert.equal(bears.text, "On January 26, 1986, Chicago Bears won the 1986 Super Bowl, beating New England Patriots 46–10 at Louisiana Superdome, New Orleans. It was their 9th title. They had finished the regular season 15–1–0.");
 });
 
 test("a season whose games do not add up to its series is not worded as a title (2008 holds a duplicate of a suspended game)", () => {
@@ -178,20 +178,20 @@ test("single-game finals keep the game's score: the football leagues and the soc
 
 test("venue, regular-season record and title number are said when the record holds them and left out when it does not", () => {
   const full = final({ venueName: "Oakland–Alameda County Coliseum", venueCity: "Oakland", winnerRecord: { wins: 91, losses: 71 }, winnerTitleNumber: 5 });
-  assert.equal(captionFromFact(full, "en"), "Cincinnati Reds won the 1990 World Series, sweeping the Oakland Athletics 4–0 with a 2–1 win in Game 4 at Oakland–Alameda County Coliseum, Oakland. It was their 5th title. They had finished the regular season 91–71.");
-  assert.equal(captionFromFact(final({ venueName: "Riverfront Stadium" }), "en"), "Cincinnati Reds won the 1990 World Series, sweeping the Oakland Athletics 4–0 with a 2–1 win in Game 4 at Riverfront Stadium.");
-  assert.equal(captionFromFact(final({ winnerTitleNumber: 22 }), "en"), "Cincinnati Reds won the 1990 World Series, sweeping the Oakland Athletics 4–0 with a 2–1 win in Game 4. It was their 22nd title.");
-  assert.equal(captionFromFact(final({ winnerRecord: { wins: 11, losses: 3, ties: 0 } }), "en"), "Cincinnati Reds won the 1990 World Series, sweeping the Oakland Athletics 4–0 with a 2–1 win in Game 4. They had finished the regular season 11–3–0.");
+  assert.equal(captionFromFact(full, "en"), "On October 20, 1990, Cincinnati Reds won the 1990 World Series, sweeping the Oakland Athletics 4–0 with a 2–1 win in Game 4 at Oakland–Alameda County Coliseum, Oakland. It was their 5th title. They had finished the regular season 91–71.");
+  assert.equal(captionFromFact(final({ venueName: "Riverfront Stadium" }), "en"), "On October 20, 1990, Cincinnati Reds won the 1990 World Series, sweeping the Oakland Athletics 4–0 with a 2–1 win in Game 4 at Riverfront Stadium.");
+  assert.equal(captionFromFact(final({ winnerTitleNumber: 22 }), "en"), "On October 20, 1990, Cincinnati Reds won the 1990 World Series, sweeping the Oakland Athletics 4–0 with a 2–1 win in Game 4. It was their 22nd title.");
+  assert.equal(captionFromFact(final({ winnerRecord: { wins: 11, losses: 3, ties: 0 } }), "en"), "On October 20, 1990, Cincinnati Reds won the 1990 World Series, sweeping the Oakland Athletics 4–0 with a 2–1 win in Game 4. They had finished the regular season 11–3–0.");
   assert.equal(captionFromFact(final({ winnerRecord: { wins: 46, losses: 20, ties: 10, otLosses: 6 } }), "en")?.endsWith("regular season 46–20–6."), true, "overtime losses are the third number where the league has them");
   for (const bad of [{ winnerTitleNumber: 0 }, { winnerTitleNumber: null }, { winnerRecord: null }, { winnerRecord: { wins: -1, losses: 3 } }, { venueName: "", venueCity: "Oakland" }]) {
     const text = captionFromFact(final(bad), "en")!;
     assert.doesNotMatch(text, /title\.|regular season|Oakland\./, JSON.stringify(bad));
   }
-  assert.match(captionFromFact(full, "ja") ?? "", /^Cincinnati Redsが1990年のワールドシリーズ.*4勝0敗.*（第4戦は2対1）（Oakland–Alameda County Coliseum、Oakland）。通算5度目の優勝。レギュラーシーズンの成績は91–71。$/);
+  assert.match(captionFromFact(full, "ja") ?? "", /^1990年10月20日、Cincinnati Redsが1990年のワールドシリーズ.*4勝0敗.*（第4戦は2対1）（Oakland–Alameda County Coliseum、Oakland）。通算5度目の優勝。レギュラーシーズンの成績は91–71。$/);
 });
 
 test("a single-game final takes the same context: venue, title number and record", () => {
   const bowl: OnThisDayRecord = { ...final({ seriesWinnerWins: undefined, seriesLoserWins: undefined, seriesGames: undefined }), league: "nfl", sport: "american-football", competition: "nfl", seasonStartYear: 1985, eventDate: "1986-01-26",
     homeScore: 10, awayScore: 46, home: club("New England Patriots", 3), away: club("Chicago Bears", 4), venueName: "Louisiana Superdome", venueCity: "New Orleans", winnerTitleNumber: 9, winnerRecord: { wins: 15, losses: 1, ties: 0 } };
-  assert.equal(captionFromFact(bowl, "en"), "Chicago Bears won the 1986 Super Bowl, beating New England Patriots 46–10 at Louisiana Superdome, New Orleans. It was their 9th title. They had finished the regular season 15–1–0.");
+  assert.equal(captionFromFact(bowl, "en"), "On January 26, 1986, Chicago Bears won the 1986 Super Bowl, beating New England Patriots 46–10 at Louisiana Superdome, New Orleans. It was their 9th title. They had finished the regular season 15–1–0.");
 });

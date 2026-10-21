@@ -58,11 +58,12 @@ test("every never-rule fires on a bad fact, so a clean pass means something", ()
     "no-invented-day": [{ ...base, category: "franchise-event", eventDate: "2012-03-01" }],
     "no-sex-or-para-labels": [{ ...base, sport: "para-swimming" }, { ...base, tags: ["women-football"] }],
     "unique-record-ids": [base, base],
-    "clean-sentences": [{ ...base, text: "A beat undefined." }, { ...base, text: "No full stop" }],
+    "clean-sentences": [{ ...base, text: "A beat undefined." }, { ...base, text: "No full stop" }, { ...base, text: "A beat Allegheny Club (none) 21–4." }],
+    "dated-sentences": [{ ...base, text: "A was born in 1980." }, { ...base, text: "A was born on this day in 1980." }],
   };
   assert.deepEqual(Object.keys(bad).sort(), NEVER.map((r) => r.id).sort(), "a rule has no bad example");
   for (const rule of NEVER) assert.ok(rule.violations(bad[rule.id]!, "2026-10-19").length > 0, `${rule.id} did not fire`);
-  for (const rule of NEVER) assert.deepEqual(rule.violations([{ ...base, text: "A, the C, was born on this day in 1980." }], "2026-10-19"), [], `${rule.id} fired on a clean fact`);
+  for (const rule of NEVER) assert.deepEqual(rule.violations([{ ...base, text: "A, the C, was born on May 5, 1980." }], "2026-10-19"), [], `${rule.id} fired on a clean fact`);
 });
 
 test("an award fits its position: a pitcher's Cy Young, a goaltender's Vezina; an unknown position or another award is not charged", () => {

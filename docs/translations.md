@@ -10,7 +10,7 @@ This table records English source copy and the meaning checked in the Japanese v
 | [Record schema](record-schema.md) | [記録の形](record-schema.ja.md) | Websites consume typed team and person objects, not names parsed from captions; every row has id, date precision, category, tags, source and licence | Tags are non-exclusive; human review still required before public release |
 | [History tags](categories.md) | [履歴タグ](categories.ja.md) | Forty-six identifiers are tags, not exclusive categories; one fact is stored once and may carry several | Counts are extract-on-disk until convert writes public shards; human review still required |
 | [People list](people.md) | [人物リスト](people.ja.md) | 2,000 people by country and sport; keyed on Wikidata ids; tiers A (Olympic medal entries), B (20+ language editions), C (8+, thin cells only); quotas served in turn; never sex, gender, ethnicity, religion, health, family or politics | Written 2026-10-19; Japanese not yet checked by a person |
-| [Sentence templates](templates.md) | [文の型](templates.ja.md) | Fifteen kinds of statement, three or more patterns each; fragments live in phrases.ts; runs never repeat a neighbour; the Python caption copy is a known gap | Written 2026-10-19; Japanese not yet checked by a person |
+| [Sentence templates](templates.md) | [文の型](templates.ja.md) | Fifteen kinds of statement, three or more patterns each; fragments live in phrases.ts; runs never repeat a neighbour; a sentence read on another day than its fact's says the full date and never "today"; a placeholder such as "(none)" is never printed | Written 2026-10-19, dates and placeholders added 2026-10-20; Japanese not yet checked by a person |
 | [Open sources](open-sources.md) | [公開データの出典](open-sources.ja.md) | What was dropped: selection by sex, para-* batches and labels, wrong sport items | Written 2026-10-19 |
 
 The Japanese pages are paired to the English originals at the top. Review again whenever either source page changes.
@@ -58,3 +58,20 @@ Literal English renderings of the patterns the package says in Japanese. They ar
 
 Fragments (`phrases.ts`) in Japanese: `（延長）` (extra time), `（PK戦）` (penalty shoot-out), `（PK戦、{score}の引き分け後）` (penalties, after a {score} draw), `（延長の後、PK戦）` (penalties after extra time), `第{n}戦` (game {n}), `{n}歳で` (at age {n}), `全体{n}位` (No. {n} overall).
 
+## Japanese sentence patterns and fragments added in 0.6.7
+
+For a fact read on a day that is not its own. `{date}` is the full date at its precision (`1945年7月4日`, `1945年7月`, `1945年`); `{dateOn}` is the same with に (on its own day, only the year: `1945年に`); `{leadIn}` and `{dateLead}` are the date followed by a comma (`1945年7月4日、`; `{dateLead}` is empty on the fact's own day). Not yet checked by a person who reads Japanese.
+
+| Pattern id | Japanese | Literal English |
+| --- | --- | --- |
+| `birthday-in-year` | `{name}{whoClause}は{dateOn}生まれた{diedParenJa}。` | {name}(...) was born on {date} (died {year}). |
+| `birthday-lead` | `{leadIn}{name}{whoClause}が生まれた。` | On {date}, {name}(...) was born. |
+| `birthday-place-dated` | `{leadIn}{name}は{birthPlace}で生まれた。` | On {date}, {name} was born in {place}. |
+| `birthday-deceased-dated` | `{name}{whoClause}は{dateOn}生まれた（{deathYear}年死去）。` | {name}(...) was born on {date} (died {year}). |
+| `death-dated` | `{name}{whoClause}が{dateOn}{agedJa}死去した。` | {name}(...) died on {date}, aged {n}. |
+| `death-lead` | `{leadIn}{name}{whoClause}が{agedJa}死去した。` | On {date}, {name}(...) died, aged {n}. |
+| `first-dated` | `{leadIn}{name}: {highlight}。` | On {date}, {name}: {highlight}. |
+| `first-dated-paren` | `{name}: {highlight}（{date}）。` | {name}: {highlight} ({date}). |
+| `event-took-place-dated` | `{label}は{dateOn}行われた。` | {label} took place on {date}. |
+
+The other Japanese patterns (a game, a final, an award, a record, a World Cup match, a competition's start or end, an event) now open with `{dateLead}`, for example `1945年7月4日、Pittsburgh PiratesがNew York Giantsに16対4で勝利した（MLB）。` (On July 4, 1945, Pittsburgh Pirates beat New York Giants 16–4 (MLB).), and a venue or franchise pattern says `{dateOn}` where it said the year (`League Parkが1884年5月1日に開場した…`: League Park opened on May 1, 1884). New fragments in `phrases.ts`: `{0}に` (on or in {0}), `{0}ごろに` (around {0}), `{0}、` (a date as a lead), `{0}ごろ、` (around {0}, as a lead).

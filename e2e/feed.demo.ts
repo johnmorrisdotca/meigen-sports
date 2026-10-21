@@ -80,6 +80,48 @@ test("when the feeds cannot be reached the bundled offline set is shown, and the
   await expect(page.locator("#feed-note")).toContainText("オフライン版");
   expect(errors).toEqual([]);
 });
+// A list that is about no day (ten mixed facts, favourites, the showcase) says every fact's full date and never "today"; the card for today may say "on this day".
+const DATE = { en: /\b(January|February|March|April|May|June|July|August|September|October|November|December) \d{1,2}, \d{4}\b/, ja: /\d{4}年\d{1,2}月\d{1,2}日/ };
+const TODAY = /\btoday\b|\bthis day\b|\bturns? \d|今日|この日|歳になる/i;
+async function expectDated(page: import("@playwright/test").Page, selector: string, language: "en" | "ja") {
+  const texts = await page.locator(`${selector} .record > p:first-child`).allInnerTexts();
+  expect(texts.length, selector).toBeGreaterThan(0);
+  for (const text of texts) {
+    expect(text, `${selector}: ${text}`).toMatch(DATE[language]);
+    expect(text, `${selector}: ${text}`).not.toMatch(TODAY);
+    expect(text, `${selector}: ${text}`).not.toMatch(/\(none\)|\bnull\b|undefined/i);
+  }
+}
+for (const language of ["en", "ja"] as const) {
+  test(`the ten mixed facts, favourites and showcase carry full dates and never say today, in ${language}, from the feeds and offline`, async ({ page }) => {
+    await servePagesFromLocal(page);
+    await page.goto(`/?lang=${language}`);
+    await expect(page.locator("#random-facts .record")).toHaveCount(10);
+    await expect(page.locator("#today-facts .record")).toHaveCount(3);
+    for (let n = 0; n < 4; n += 1) {
+      await expectDated(page, "#random-facts", language);
+      await page.locator("#random-reload").click();
+      await expect(page.locator("#random-facts .record")).toHaveCount(10);
+    }
+    await page.locator("#fav-find").click();
+    await expect(page.locator("#fav-facts .record").first()).toBeVisible();
+    await expectDated(page, "#fav-facts", language);
+    await expect(page.locator("#showcase-facts .record").first()).toBeVisible();
+    await expectDated(page, "#showcase-facts", language);
+    // Today's card is about today, so its facts may say "today", "N years ago today" or "on this day"; none prints a placeholder or a bare "null".
+    for (const text of await page.locator("#today-facts .record > p:first-child").allInnerTexts()) {
+      expect(text).not.toMatch(/\(none\)|\bnull\b|undefined/i);
+    }
+  });
+}
+test("with the feeds unreachable the offline set is worded the same way: full dates, no today", async ({ page }) => {
+  await page.route(/\/data\/v1\/.+\/facts\//, (route) => route.abort());
+  await page.route(`${PAGES}/**`, (route) => route.abort());
+  await page.goto("/?lang=en");
+  await expect(page.locator("#random-facts .record")).toHaveCount(10);
+  await expect(page.locator("#feed-note")).toContainText("bundled offline set");
+  await expectDated(page, "#random-facts", "en");
+});
 test("manifest and source notices are public files; unknown paths stay 404", async ({ request }) => {
  const manifest = await request.get("/data/v1/0.1.0/manifest.json"); expect(manifest.ok()).toBe(true);
  expect((await manifest.json()).dataVersion).toBe("0.1.0");

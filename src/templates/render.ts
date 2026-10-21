@@ -2,7 +2,9 @@ import type { OnThisDayRecord, TeamRef } from "../schema.ts";
 import type { MeigenRecord } from "../types.ts";
 import { TEMPLATES } from "./catalog.ts";
 import { isCareerHighlight, publicClubName } from "./clubs.ts";
-import { OVERTIME_BY_SPORT, ordinal, phrase } from "./phrases.ts";
+import { isDate } from "../dates.ts";
+import { cleanLabel, hasPlaceholder } from "./labels.ts";
+import { OVERTIME_BY_SPORT, formatDate, ordinal, phrase } from "./phrases.ts";
 import type { FragmentId } from "./phrases.ts";
 import { positionName } from "./positions.ts";
 import { championshipTitle, isLopsided } from "./titles.ts";
@@ -31,7 +33,7 @@ function leagueLabel(record: OnThisDayRecord): string {
 }
 
 function teamName(team: TeamRef | undefined): string {
-  return team?.name?.trim() ?? "";
+  return cleanLabel(team?.name);
 }
 
 function yearOf(record: OnThisDayRecord): string {
@@ -45,6 +47,78 @@ function yearOf(record: OnThisDayRecord): string {
 function deathYearOf(record: OnThisDayRecord): string {
   const death = record.deathDate ?? "";
   return /^\d{4}/.test(death) ? death.slice(0, 4) : "";
+}
+
+/** When a fact happened, as precisely as the record knows it. */
+export interface When {
+  readonly year: number;
+  readonly month?: number;
+  readonly day?: number;
+  readonly approximate: boolean;
+  /** The full day `YYYY-MM-DD`, only when the record knows the day. */
+  readonly iso: string | null;
+}
+
+/** Categories whose games are really played on January 1; for any other kind a January 1 date is how a source writes "some time that year". */
+const REAL_JANUARY_FIRST = new Set(["game-on-day", "soccer-on-day", "championship-final", "upset", "comeback"]);
+
+function whenOfFact(record: OnThisDayRecord): When | null {
+  const iso = record.eventDate ?? "";
+  const full = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
+  const precision = record.datePrecision;
+  if (full && isDate(iso) && precision === "day") {
+    const yearOnly = iso.endsWith("-01-01") && !isPersonDay(record) && !REAL_JANUARY_FIRST.has(record.category);
+    const year = Number(full[1]);
+    return yearOnly ? { year, approximate: false, iso: null } : { year, month: Number(full[2]), day: Number(full[3]), approximate: false, iso };
+  }
+  const monthly = /^(\d{4})-(\d{2})(?:-\d{2})?$/.exec(iso);
+  if (precision === "month" && monthly && Number(monthly[2]) >= 1 && Number(monthly[2]) <= 12) {
+    return { year: Number(monthly[1]), month: Number(monthly[2]), approximate: false, iso: null };
+  }
+  const year = Number(yearOf(record));
+  return Number.isInteger(year) && year > 0 ? { year, approximate: precision === "approximate", iso: null } : null;
+}
+
+function whenOfHistory(record: MeigenRecord): When | null {
+  const iso = record.date ?? "";
+  if (!isDate(iso)) return null;
+  return { year: Number(iso.slice(0, 4)), month: Number(iso.slice(5, 7)), day: Number(iso.slice(8, 10)), approximate: false, iso };
+}
+
+/** The fact's day is the day being shown (same month and day, whatever the year): "today" and "on this day" are true. */
+function isOnDay(when: When | null, asOf: string | undefined): boolean {
+  return Boolean(when?.iso && asOf && isDate(asOf) && asOf.slice(5) === when.iso.slice(5));
+}
+
+/** The four ways a sentence carries its date. On the fact's own day the year is enough and `dateLead` is empty; anywhere else it is the full date. */
+function dateFields(
+  locale: TemplateLocale, when: When | null, onDay: boolean, say: (id: FragmentId, ...args: string[]) => string,
+): Record<string, string> {
+  if (!when) return { date: "", dateOn: "", dateLead: "", leadIn: "", theFirst: say("articleCap") };
+  const text = formatDate(locale, when.year, when.month, when.day);
+  const yearText = formatDate(locale, when.year);
+  const on = when.approximate ? say("aroundDate", text) : when.day ? say("onDate", text) : say("inDate", text);
+  const lead = when.approximate ? say("leadAroundDate", text) : when.day ? say("leadOnDate", text) : say("leadInDate", text);
+  return {
+    date: text,
+    dateOn: onDay ? say("inDate", yearText) : on,
+    dateLead: onDay ? "" : lead,
+    leadIn: onDay ? say("leadInDate", yearText) : lead,
+    // "The" opens a sentence, "the" follows a date: "On July 4, 1945, the Chicago Bears ...".
+    theFirst: onDay ? say("articleCap") : say("article"),
+  };
+}
+
+/** The date a sentence about this record states, at the precision the record holds ("July 4, 1945", "July 1945", "1945"); null when it holds none. */
+export function factDate(record: OnThisDayRecord | MeigenRecord, locale: TemplateLocale = "en"): string | null {
+  const when = "kind" in record ? whenOfHistory(record) : whenOfFact(record);
+  return when ? formatDate(locale, when.year, when.month, when.day) : null;
+}
+
+/** Whether a sentence about this record is worded for the day it is shown on, or for anywhere. Exported so a caller can say which it is. */
+export function dayContext(record: OnThisDayRecord | MeigenRecord, asOf: string | undefined): "onThisDay" | "anywhere" {
+  const when = "kind" in record ? whenOfHistory(record) : whenOfFact(record);
+  return isOnDay(when, asOf) ? "onThisDay" : "anywhere";
 }
 
 function factType(record: OnThisDayRecord): TemplateType | null {
@@ -111,12 +185,14 @@ export interface Subject {
   /** A final decided over several games, with the series tally known. */
   readonly series: boolean;
   readonly blocked: boolean;
+  /** The fact's day is the day being shown, so wording that says "today" is true. */
+  readonly onDay: boolean;
 }
 
 /** Clubs of a team sport take "the" (the Chicago Bears); national sides and soccer clubs do not (Argentina, Arsenal). */
-function clubArticles(record: OnThisDayRecord, say: (id: FragmentId, ...args: string[]) => string): { theW: string; theL: string } {
+function clubArticles(record: OnThisDayRecord, say: (id: FragmentId, ...args: string[]) => string, afterLead: boolean): { theW: string; theL: string } {
   const none = record.sport === "soccer" || record.league === "wc" || record.league === "wwc";
-  return none ? { theW: "", theL: "" } : { theW: say("articleCap"), theL: say("article") };
+  return none ? { theW: "", theL: "" } : { theW: afterLead ? say("article") : say("articleCap"), theL: say("article") };
 }
 
 function isPersonDay(record: OnThisDayRecord): boolean {
@@ -141,10 +217,12 @@ function recordLine(r: OnThisDayRecord["winnerRecord"]): string {
   return [r.wins, r.losses, ...(extra != null && Number.isInteger(extra) && extra >= 0 ? [extra] : [])].join("\u2013");
 }
 
-function fieldsOf(record: OnThisDayRecord, locale: TemplateLocale, asOf: string | undefined, choose: Chooser): Record<string, string> {
+function fieldsOf(
+  record: OnThisDayRecord, locale: TemplateLocale, asOf: string | undefined, choose: Chooser, when: When | null, onDay: boolean,
+): Record<string, string> {
   const ja = locale === "ja";
   const say = (id: FragmentId, ...args: string[]): string => phrase(id, locale, args, choose(id));
-  const name = record.person?.name?.trim() ?? "";
+  const name = cleanLabel(record.person?.name);
   const year = yearOf(record);
   const league = leagueLabel(record);
   const home = teamName(record.home);
@@ -156,22 +234,30 @@ function fieldsOf(record: OnThisDayRecord, locale: TemplateLocale, asOf: string 
   const loser = hs != null && aws != null && hs !== aws ? (homeWon ? away : home) : "";
   const winScore = hs != null && aws != null && hs !== aws ? String(homeWon ? hs : aws) : "";
   const loseScore = hs != null && aws != null && hs !== aws ? String(homeWon ? aws : hs) : "";
-  const ctxBits = [league, year].filter(Boolean).join(say("join"));
+  const dates = dateFields(locale, when, onDay, say);
+  // A draft's year is part of its name ("the 1990 NHL draft"), so a year alone adds nothing in front of it.
+  if (record.category === "draft" && when && !when.day && !when.month) { dates.dateLead = ""; dates.theFirst = say("articleCap"); }
+  // The year goes in the parenthesis only when no date leads the sentence.
+  const ctxBits = [league, dates.dateLead ? "" : year].filter(Boolean).join(say("join"));
   const ctx = ctxBits ? say("context", ctxBits) : "";
   const sportWords = OVERTIME_BY_SPORT[record.sport ?? ""];
   const ot = record.decidedByShootout ? say("shootout")
     : record.wentToOvertime ? (sportWords ? phrase("overtime", locale, [], choose("overtime"), sportWords) : say("overtime")) : "";
-  const stageRaw = record.stage ?? record.phase ?? record.roundLabel;
+  const stageRaw = cleanLabel(record.stage ?? record.phase ?? record.roundLabel);
   const stage = stageRaw && stageRaw !== "regular" ? say("stage", stageRaw.replaceAll("_", " ")) : "";
-  const venue = record.venueName
-    ? (record.venueCity ? say("venueCityAt", record.venueName, record.venueCity) : say("venueAt", record.venueName))
+  const venueNameClean = cleanLabel(record.venueName);
+  const venueCityClean = cleanLabel(record.venueCity);
+  const venue = venueNameClean
+    ? (venueCityClean ? say("venueCityAt", venueNameClean, venueCityClean) : say("venueAt", venueNameClean))
     : "";
   const gameNo = record.seriesGameNumber ? say("gameNumber", String(record.seriesGameNumber)) : "";
-  const clubs = (record.clubNames?.filter((n) => n.trim()) ?? []).join(say("join")) || (record.clubName?.trim() ?? "");
-  const club = publicClubName(record.clubNames, record.clubName ?? "");
+  const clubNamesClean = (record.clubNames ?? []).map(cleanLabel).filter(Boolean);
+  const clubNameClean = cleanLabel(record.clubName);
+  const clubs = clubNamesClean.join(say("join")) || clubNameClean;
+  const club = publicClubName(clubNamesClean, clubNameClean);
   const position = positionName(record.sport, record.position, locale);
   const clubPosition = club && position ? say("clubPosition", club, position) : (club || position);
-  const honour = record.highlight?.trim() ?? "";
+  const honour = cleanLabel(record.highlight);
   const birthday = record.category === "player-birthday";
   const career = birthday && honour && isCareerHighlight(honour);
   const whoCore = career ? honour : (clubPosition || honour);
@@ -203,22 +289,22 @@ function fieldsOf(record: OnThisDayRecord, locale: TemplateLocale, asOf: string 
   const diedParenJa = deceased && ja ? say("diedParen", deathYear) : "";
   const aged = record.ageYears != null ? say("aged", String(record.ageYears)) : "";
   const rec = record.record;
-  const previous = rec?.previousHolderName ? say("previousHolder", rec.previousHolderName) : "";
+  const previous = cleanLabel(rec?.previousHolderName) ? say("previousHolder", cleanLabel(rec?.previousHolderName)) : "";
   const pick = record.overallPick != null ? say("overallPick", String(record.overallPick)) : "";
-  const clubBy = record.clubName?.trim() ? say("clubBy", record.clubName) : "";
-  const cityIn = record.venueCity ? say("cityIn", record.venueCity) : "";
+  const clubBy = clubNameClean ? say("clubBy", clubNameClean) : "";
+  const cityIn = venueCityClean ? say("cityIn", venueCityClean) : "";
   const homeClause = clubs ? say("homeOf", clubs) : "";
   const finalClause = honour ? say("hosted", honour) : "";
   // A venue named only by its city ("Calihan Hall in Detroit opened in 1952") says nothing a reader can use: a club or an honour is needed.
   const venueContext = (clubs || honour) ? "venue" : "";
   const leagueIdentity = record.league ? league : "";
-  const franchiseContext = (record.league?.trim() || record.venueCity?.trim()) ? "franchise" : "";
+  const franchiseContext = (record.league?.trim() || venueCityClean) ? "franchise" : "";
   const yearsAgo = yearsAgoToday(record, asOf);
-  const { theW, theL } = clubArticles(record, say);
+  const { theW, theL } = clubArticles(record, say, Boolean(dates.dateLead));
   const recordEvent = rec && RECORD_VERB[rec.event] ? say(RECORD_VERB[rec.event]!) : "";
   const recordBy = rec && RECORD_BY[rec.event] ? say(RECORD_BY[rec.event]!) : "";
   return {
-    name, year, league, home, away,
+    name, year, league, home, away, ...dates,
     homeScore: hs == null ? "" : String(hs),
     awayScore: aws == null ? "" : String(aws),
     winner, loser, winScore, loseScore, theW, theL, ctx, ot, stage, venue, gameNo,
@@ -226,25 +312,25 @@ function fieldsOf(record: OnThisDayRecord, locale: TemplateLocale, asOf: string 
     clubs,
     who, whoClause, whoAfter: whoClause.replace(/,$/, ""), diedParen, diedParenJa, homeClause, finalClause,
     venueContext, franchiseContext, leagueIdentity,
-    highlight: record.highlight?.trim() ?? "",
+    highlight: honour,
     title: championshipTitle(record, locale),
-    birthPlace: record.birthPlace?.trim() ?? "",
+    birthPlace: cleanLabel(record.birthPlace),
     deathYear,
     yearsAgo, yearsAgoToday: yearsAgo,
     // January 1 is where a source puts an identity or an award it dates only by year; a person's birth or death on it is real.
     dayPrecision: record.datePrecision === "day" && record.eventDate && (isPersonDay(record) || !/-01-01$/.test(record.eventDate)) ? "day" : "",
-    winnerName: (record.winnerName?.trim() || name),
-    award: record.awardName?.trim() ?? "",
-    holderName: rec?.holderName ?? "",
-    scope: rec?.scope ?? "",
-    metric: rec?.metric ?? "",
+    winnerName: (cleanLabel(record.winnerName) || name),
+    award: cleanLabel(record.awardName),
+    holderName: cleanLabel(rec?.holderName),
+    scope: cleanLabel(rec?.scope),
+    metric: cleanLabel(rec?.metric),
     value: rec?.value == null ? "" : String(rec.value),
-    unit: rec?.unit ?? "",
+    unit: cleanLabel(rec?.unit),
     recordEvent, recordBy,
     previous,
     draftYear: record.draftYear == null ? "" : String(record.draftYear),
-    pick, clubBy, clubName: record.clubName?.trim() || record.winnerName?.trim() || "",
-    venueName: record.venueName?.trim() || "",
+    pick, clubBy, clubName: clubNameClean || cleanLabel(record.winnerName),
+    venueName: venueNameClean,
     cityIn,
     aged, agedJa: ja ? aged : "",
   };
@@ -256,8 +342,10 @@ function subjectOfFact(record: OnThisDayRecord, locale: TemplateLocale, asOf: st
   const hs = record.homeScore, aws = record.awayScore;
   const tie = hs != null && aws != null && hs === aws;
   const deathYear = deathYearOf(record);
+  const when = whenOfFact(record);
+  const onDay = isOnDay(when, asOf);
   return {
-    type, recordId: record.recordId, fields: fieldsOf(record, locale, asOf, choose),
+    type, recordId: record.recordId, fields: fieldsOf(record, locale, asOf, choose, when, onDay), onDay,
     living: record.livingStatus === "living",
     deceasedOk: record.category === "player-death" ? record.livingStatus !== "living" : record.livingStatus === "deceased" && Boolean(deathYear),
     tie, decisive: hs != null && aws != null && !tie, lopsided: isLopsided(record), series: seriesOf(record) !== null,
@@ -273,17 +361,21 @@ const EVENT_LINE = /^(.+) took place\.$/;
 /** A final already rewritten to the winner-and-result form (the merged World Cup finals). */
 const FINAL_LINE = /^(.+?) won the (\d{4}) World Cup, beating (.+?) (\d+)–(\d+)(?: (after extra time)| (on penalties) after (?:(extra time)|a (\d+)–(\d+) draw))?\.$/;
 
-function historySubject(type: TemplateType, recordId: string, fields: Record<string, string>, decisive: boolean): Subject {
-  return { type, recordId, fields, living: false, deceasedOk: false, tie: !decisive && type === "world-cup-match", decisive, lopsided: false, series: false, blocked: false };
+function historySubject(type: TemplateType, recordId: string, fields: Record<string, string>, decisive: boolean, onDay: boolean): Subject {
+  return { type, recordId, fields, living: false, deceasedOk: false, tie: !decisive && type === "world-cup-match", decisive, lopsided: false, series: false, blocked: false, onDay };
 }
 
-function subjectOfHistory(record: MeigenRecord, locale: TemplateLocale, choose: Chooser): Subject | null {
+function subjectOfHistory(record: MeigenRecord, locale: TemplateLocale, choose: Chooser, asOf: string | undefined): Subject | null {
   if (record.kind !== "history") return null;
   const say = (id: FragmentId, ...args: string[]): string => phrase(id, locale, args, choose(id));
+  const when = whenOfHistory(record);
+  const onDay = isOnDay(when, asOf);
+  const dates = dateFields(locale, when, onDay, say);
   const text = record.text.trim();
   const match = MATCH_LINE.exec(text);
   if (match) {
-    const [, team1 = "", s1 = "", s2 = "", team2 = "", year = "", roundRaw = "", extra = "", p1, p2] = match;
+    const [, team1Raw = "", s1 = "", s2 = "", team2Raw = "", year = "", roundRaw = "", extra = "", p1, p2] = match;
+    const team1 = cleanLabel(team1Raw), team2 = cleanLabel(team2Raw);
     const score1 = Number(s1), score2 = Number(s2);
     const round = roundRaw.trim();
     let winner = "", loser = "", result = "", decisive = false;
@@ -303,21 +395,22 @@ function subjectOfHistory(record: MeigenRecord, locale: TemplateLocale, choose: 
       result = `${say("result", String(Math.max(score1, score2)), String(Math.min(score1, score2)))}${extra ? say("extraTime") : ""}`;
       decisive = true;
     }
-    const fields = { team1, team2, score1: s1, score2: s2, year, round, roundPart: round ? say("roundPart", round) : "", winner, loser, result };
-    return historySubject(/^final$/i.test(round) ? "world-cup-final" : "world-cup-match", record.id, fields, decisive);
+    const fields = { ...dates, team1, team2, score1: s1, score2: s2, year, round, roundPart: round ? say("roundPart", round) : "", winner, loser, result };
+    return historySubject(/^final$/i.test(round) ? "world-cup-final" : "world-cup-match", record.id, fields, decisive, onDay);
   }
   const final = FINAL_LINE.exec(text);
   if (final) {
-    const [, winner = "", year = "", loser = "", w = "", l = "", afterEt, pens, penEt, d1, d2] = final;
+    const [, winnerRaw = "", year = "", loserRaw = "", w = "", l = "", afterEt, pens, penEt, d1, d2] = final;
+    const winner = cleanLabel(winnerRaw), loser = cleanLabel(loserRaw);
     const how = pens ? (penEt ? say("penaltiesAfterExtraTime") : say("penaltiesAfterDraw", say("result", d1 ?? "", d2 ?? ""))) : afterEt ? say("extraTime") : "";
-    return historySubject("world-cup-final", record.id, { winner, loser, year, result: `${say("result", w, l)}${how}` }, true);
+    return historySubject("world-cup-final", record.id, { ...dates, winner, loser, year, result: `${say("result", w, l)}${how}` }, true, onDay);
   }
   const boundary = BOUNDARY_LINE.exec(text);
   if (boundary) {
-    return historySubject(boundary[3] === "began" ? "competition-start" : "competition-end", record.id, { year: boundary[1] ?? "", name: boundary[2] ?? "" }, false);
+    return historySubject(boundary[3] === "began" ? "competition-start" : "competition-end", record.id, { ...dates, year: boundary[1] ?? "", name: cleanLabel(boundary[2]) }, false, onDay);
   }
   const event = EVENT_LINE.exec(text);
-  if (event) return historySubject("event-date", record.id, { label: event[1] ?? "" }, false);
+  if (event) return historySubject("event-date", record.id, { ...dates, label: cleanLabel(event[1]) }, false, onDay);
   return null;
 }
 
@@ -332,6 +425,8 @@ function eligible(template: SentenceTemplate, subject: Subject, type: TemplateTy
   if (template.when === "series" && !subject.series) return false;
   if (subject.series && template.type === "final" && template.when !== "series") return false;
   if (subject.blocked) return false;
+  // "Today" and "on this day" are true only on the fact's own day.
+  if (template.day && !subject.onDay) return false;
   for (const need of template.needs) {
     if (!subject.fields[need]) return false;
   }
@@ -341,7 +436,9 @@ function eligible(template: SentenceTemplate, subject: Subject, type: TemplateTy
 function apply(template: SentenceTemplate, fields: Record<string, string>): string {
   const filled = template.pattern.replace(/\{([a-zA-Z0-9]+)\}/g, (_, key: string) => fields[key] ?? "");
   // A stray space before a full stop goes; a name such as "Colt .45's" keeps its own.
-  return filled.replace(/[ \t]{2,}/g, " ").replace(/ \.(?=$|\s)/g, ".").replace(/ 。/g, "。").trim();
+  const text = filled.replace(/[ \t]{2,}/g, " ").replace(/ \.(?=$|\s)/g, ".").replace(/ 。/g, "。").trim();
+  // A placeholder for a missing value is never shown: the sentence is not said at all.
+  return hasPlaceholder(text) ? "" : text;
 }
 
 function pickFixed(rows: readonly SentenceTemplate[]): SentenceTemplate | undefined {
@@ -374,7 +471,7 @@ export function prepare(
   const history = "kind" in item;
   const id = history ? item.id : item.recordId;
   const choose = chooserFor(wording, seed, id, locale);
-  const subject = history ? subjectOfHistory(item, locale, choose) : subjectOfFact(item, locale, asOf, choose);
+  const subject = history ? subjectOfHistory(item, locale, choose, asOf) : subjectOfFact(item, locale, asOf, choose);
   if (!subject) return null;
   let type = subject.type;
   let pool = TEMPLATES.filter((row) => row.locale === locale && eligible(row, subject, type));

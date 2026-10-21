@@ -30,7 +30,7 @@ test("turns appears only on living-gated templates", () => {
 
 test("unknown birthday uses the neutral default and never turns", () => {
   const text = captionFromFact(gretzky());
-  assert.equal(text, "Wayne Gretzky, the Edmonton Oilers center, was born on this day in 1961.");
+  assert.equal(text, "Wayne Gretzky, the Edmonton Oilers center, was born on January 26, 1961.");
   assert.equal(/turns|would have turned|celebrates/i.test(text ?? ""), false);
   const ago = render(gretzky(), { wording: "fixed", asOf: "2026-01-26" });
   assert.equal(ago?.text, "Wayne Gretzky, the Edmonton Oilers center, was born on this day in 1961.");
@@ -44,10 +44,13 @@ test("deceased birthday default names the sourced death year", () => {
     person: { personId: 1, qid: "Q1", name: "Babe Ruth", leagueCodes: ["mlb"], franchiseIds: [20], teamSeasonIds: [] },
     clubNames: ["New York Yankees"], position: "OF", sport: "baseball",
   });
-  assert.equal(captionFromFact(dead), "Babe Ruth, the New York Yankees outfielder, was born on this day in 1895 (died 1948).");
+  assert.equal(captionFromFact(dead), "Babe Ruth, the New York Yankees outfielder, was born on February 6, 1895 (died 1948).");
   assert.equal(/turns|would have turned/i.test(captionFromFact(dead) ?? ""), false);
   const ja = captionFromFact(dead, "ja");
-  assert.equal(ja, "Babe Ruth（New York Yankeesの外野手）は1895年のこの日に生まれた（1948年死去）。");
+  assert.equal(ja, "Babe Ruth（New York Yankeesの外野手）は1895年2月6日に生まれた（1948年死去）。");
+  const onTheDay = render(dead, { wording: "fixed", asOf: "2026-02-06" });
+  assert.equal(onTheDay?.text, "Babe Ruth, the New York Yankees outfielder, was born on this day in 1895 (died 1948).");
+  assert.equal(render(dead, { wording: "fixed", asOf: "2026-02-06", locale: "ja" })?.text, "Babe Ruth（New York Yankeesの外野手）は1895年のこの日に生まれた（1948年死去）。");
 });
 
 test("living-only turns template needs sourced living status and asOf on the birthday", () => {
@@ -60,8 +63,11 @@ test("living-only turns template needs sourced living status and asOf on the bir
 
 test("a template that needs a missing field is skipped", () => {
   assert.equal(render(gretzky(), { templateId: "birthday-place" }), null);
-  const withPlace = render(gretzky({ birthPlace: "Brantford" }), { templateId: "birthday-place" });
+  const withPlace = render(gretzky({ birthPlace: "Brantford" }), { templateId: "birthday-place", asOf: "2026-01-26" });
   assert.equal(withPlace?.text, "On this day in 1961, Wayne Gretzky was born in Brantford.");
+  // Another day: "this day" is not said; the date is.
+  assert.equal(render(gretzky({ birthPlace: "Brantford" }), { templateId: "birthday-place", asOf: "2026-10-16" }), null);
+  assert.equal(render(gretzky({ birthPlace: "Brantford" }), { templateId: "birthday-place-dated" })?.text, "On January 26, 1961, Wayne Gretzky was born in Brantford.");
   assert.equal(render(gretzky(), { templateId: "birthday-years-ago-highlight", asOf: "2026-01-26" }), null);
   const withHonour = render(gretzky({ highlight: "four-time Stanley Cup champion" }), {
     templateId: "birthday-years-ago-highlight", asOf: "2026-01-26",
@@ -82,7 +88,8 @@ test("years-ago is true whether living or not", () => {
 test("fixed is stable and seeded variety is deterministic", () => {
   const a = render(gretzky({ birthPlace: "Brantford", highlight: "four-time Stanley Cup champion" }), { wording: "fixed" });
   const b = render(gretzky({ birthPlace: "Brantford", highlight: "four-time Stanley Cup champion" }), { wording: "fixed" });
-  assert.equal(a?.templateId, "birthday-on-this-day");
+  assert.equal(a?.templateId, "birthday-in-year");
+  assert.equal(render(gretzky(), { wording: "fixed", asOf: "2026-01-26" })?.templateId, "birthday-on-this-day");
   assert.deepEqual(a, b);
   const seed1 = render(gretzky({ birthPlace: "Brantford" }), { wording: "seeded", seed: "repeat-me", asOf: "2026-01-26" });
   const seed2 = render(gretzky({ birthPlace: "Brantford" }), { wording: "seeded", seed: "repeat-me", asOf: "2026-01-26" });
@@ -96,7 +103,8 @@ test("varied wording without a seed is refused", () => {
 });
 
 test("Japanese birthday default uses the same fields", () => {
-  assert.equal(captionFromFact(gretzky(), "ja"), "Wayne Gretzky（Edmonton Oilersのセンター）は1961年のこの日に生まれた。");
+  assert.equal(captionFromFact(gretzky(), "ja"), "Wayne Gretzky（Edmonton Oilersのセンター）は1961年1月26日に生まれた。");
+  assert.equal(render(gretzky(), { wording: "fixed", locale: "ja", asOf: "2026-01-26" })?.text, "Wayne Gretzky（Edmonton Oilersのセンター）は1961年のこの日に生まれた。");
 });
 
 function morenz(extra: Partial<OnThisDayRecord> = {}): OnThisDayRecord {
@@ -114,11 +122,11 @@ function morenz(extra: Partial<OnThisDayRecord> = {}): OnThisDayRecord {
 test("a death with club, position and honour names them; missing fields are skipped", () => {
   assert.equal(
     captionFromFact(morenz()),
-    "Howie Morenz, the Montreal Canadiens center and three-time Stanley Cup winner, died on this day in 1937, aged 34.",
+    "Howie Morenz, the Montreal Canadiens center and three-time Stanley Cup winner, died on March 8, 1937, aged 34.",
   );
   assert.equal(
     captionFromFact(morenz(), "ja"),
-    "Howie Morenz（Montreal Canadiensのセンター、three-time Stanley Cup winner）が1937年のこの日に34歳で死去した。",
+    "Howie Morenz（Montreal Canadiensのセンター、three-time Stanley Cup winner）が1937年3月8日に34歳で死去した。",
   );
   const thin = morenz({ clubNames: [], position: null, highlight: null, ageYears: null });
   assert.equal(captionFromFact(thin), null);
@@ -134,7 +142,7 @@ test("a name-and-year venue or franchise is dropped", () => {
   const richVenue = { ...venue, venueCity: "Cleveland", clubNames: ["Cleveland Naps"], highlight: "the 1920 World Series" };
   assert.equal(
     captionFromFact(richVenue),
-    "League Park in Cleveland opened in 1884; home of the Cleveland Naps; it hosted the 1920 World Series.",
+    "League Park in Cleveland opened on May 1, 1884; home of the Cleveland Naps; it hosted the 1920 World Series.",
   );
   const franchise: OnThisDayRecord = {
     recordId: "fr1", category: "franchise-event", tags: ["franchise-identity-change"], basis: "source",
@@ -144,7 +152,7 @@ test("a name-and-year venue or franchise is dropped", () => {
   assert.equal(captionFromFact(franchise), null);
   assert.equal(
     captionFromFact({ ...franchise, league: "mlb", venueCity: "Boston" }),
-    "Boston Red Stockings began this MLB identity in 1871 in Boston.",
+    "Boston Red Stockings began this MLB identity on May 5, 1871 in Boston.",
   );
 });
 
@@ -159,26 +167,26 @@ test("a championship final names the title, not the league code", () => {
     competition: "nhl", league: "nhl", homeScore: 5, awayScore: 3, stage: "final",
     home: team("Montreal Canadiens", 10), away: team("Boston Bruins", 11), source,
   };
-  assert.equal(captionFromFact(nhl), "Montreal Canadiens won the 1975 Stanley Cup, beating Boston Bruins 5–3.");
+  assert.equal(captionFromFact(nhl), "On May 10, 1975, Montreal Canadiens won the 1975 Stanley Cup, beating Boston Bruins 5–3.");
   assert.equal(championshipTitle(nhl), "Stanley Cup");
   const mlb: OnThisDayRecord = {
     ...nhl, recordId: "f2", eventDate: "1934-10-09", sport: "baseball", competition: "mlb", league: "mlb",
     homeScore: 11, awayScore: 0, home: team("St. Louis Cardinals", 20), away: team("Detroit Tigers", 21),
   };
-  assert.equal(captionFromFact(mlb), "St. Louis Cardinals won the 1934 World Series, beating Detroit Tigers 11–0.");
+  assert.equal(captionFromFact(mlb), "On October 9, 1934, St. Louis Cardinals won the 1934 World Series, beating Detroit Tigers 11–0.");
   assert.equal(/the 1934 MLB/.test(captionFromFact(mlb) ?? ""), false);
   const nfl: OnThisDayRecord = {
     ...nhl, recordId: "f3", eventDate: "1940-12-08", sport: "american-football", competition: "nfl", league: "nfl",
     homeScore: 73, awayScore: 0, home: team("Chicago Bears", 30), away: team("Washington Redskins", 31),
   };
-  assert.equal(captionFromFact(nfl), "Chicago Bears won the 1940 NFL Championship, beating Washington Redskins 73–0.");
+  assert.equal(captionFromFact(nfl), "On December 8, 1940, Chicago Bears won the 1940 NFL Championship, beating Washington Redskins 73–0.");
   assert.equal(championshipTitle({ ...nfl, seasonStartYear: 1966, eventDate: "1967-01-15" }), "Super Bowl");
   const mls: OnThisDayRecord = {
     ...nhl, recordId: "f4", category: "soccer-on-day", eventDate: "2005-11-13",
     sport: "soccer", competition: "mls", league: "mls", stage: "final", homeScore: 1, awayScore: 0,
     home: team("Los Angeles Galaxy", 40), away: team("New England Revolution", 41),
   };
-  assert.equal(captionFromFact(mls), "Los Angeles Galaxy won the 2005 MLS Cup, beating New England Revolution 1–0.");
+  assert.equal(captionFromFact(mls), "On November 13, 2005, Los Angeles Galaxy won the 2005 MLS Cup, beating New England Revolution 1–0.");
 });
 
 test("each fact kind has at least three sentence patterns", () => {
@@ -202,11 +210,11 @@ test("a lopsided shutout can say dominated; a 2–1 soccer win cannot", () => {
   assert.equal(isLopsided(football), true);
   assert.equal(isLopsided(soccer), false);
   const dominated = render(football, { templateId: "game-dominated" });
-  assert.equal(dominated?.text, "The Chicago Bears dominated the Washington Redskins 73–0 (NFL, 1940).");
+  assert.equal(dominated?.text, "On December 8, 1940, the Chicago Bears dominated the Washington Redskins 73–0 (NFL).");
   assert.equal(render(soccer, { templateId: "game-dominated" }), null);
   const defeated = render(soccer, { templateId: "game-defeated" });
-  assert.equal(defeated?.text, "Argentina defeated France 2–1 (World Cup, 1940).");
-  assert.equal(render(football, { templateId: "game-defeated" })?.text, "The Chicago Bears defeated the Washington Redskins 73–0 (NFL, 1940).");
+  assert.equal(defeated?.text, "On December 8, 1940, Argentina defeated France 2–1 (World Cup).");
+  assert.equal(render(football, { templateId: "game-defeated" })?.text, "On December 8, 1940, the Chicago Bears defeated the Washington Redskins 73–0 (NFL).");
 });
 
 test("Gretzky bios use Edmonton Oilers, never Alberta Oilers", () => {
@@ -220,8 +228,8 @@ test("Gretzky bios use Edmonton Oilers, never Alberta Oilers", () => {
   assert.equal(/Alberta Oilers/.test(text ?? ""), false);
   assert.equal(/Ted Lindsay/.test(text ?? ""), false);
   const career = captionFromFact(gretzky({ highlight: "four-time Stanley Cup champion" }));
-  assert.equal(career, "Wayne Gretzky, the Edmonton Oilers center and four-time Stanley Cup champion, was born on this day in 1961.");
-  const birthdayOf = render(gretzky(), { templateId: "birthday-of" });
+  assert.equal(career, "Wayne Gretzky, the Edmonton Oilers center and four-time Stanley Cup champion, was born on January 26, 1961.");
+  const birthdayOf = render(gretzky(), { templateId: "birthday-of", asOf: "2026-01-26" });
   assert.equal(birthdayOf?.text, "Today is the birthday of Wayne Gretzky, the Edmonton Oilers center.");
   assert.equal(/Alberta|\.,/.test(birthdayOf?.text ?? ""), false);
 });

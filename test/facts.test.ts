@@ -26,7 +26,7 @@ test("FACT_CATEGORIES keeps extract families and the planned editorial ones", ()
 
 test("captions tell who beat whom from scores and drop thin rows", () => {
   const text = captionFromFact(game("g1"));
-  assert.equal(text, "Montreal Canadiens beat Boston Bruins 5–3 (NHL, 1975).");
+  assert.equal(text, "On October 16, 1975, Montreal Canadiens beat Boston Bruins 5–3 (NHL).");
   assert.equal(isRichFact(game("g2", { homeScore: null, awayScore: null })), false);
   const ja = captionFromFact(game("g3"), "ja");
   assert.ok(ja?.includes("Montreal Canadiens"));
@@ -87,7 +87,7 @@ test("birthday captions are anniversaries and never say turns", () => {
     livingStatus: "unknown", source,
   };
   const text = captionFromFact(row);
-  assert.equal(text, "Wayne Gretzky, the Edmonton Oilers center, was born on this day in 1961.");
+  assert.equal(text, "Wayne Gretzky, the Edmonton Oilers center, was born on January 26, 1961.");
   assert.equal(/turns|would have turned|celebrates/i.test(text ?? ""), false);
   const dead: OnThisDayRecord = {
     ...row, recordId: "b2", livingStatus: "deceased", deathDate: "1948-08-16",
@@ -96,7 +96,7 @@ test("birthday captions are anniversaries and never say turns", () => {
     eventDate: "1895-02-06",
   };
   const deadText = captionFromFact(dead);
-  assert.equal(deadText, "Babe Ruth, the New York Yankees outfielder, was born on this day in 1895 (died 1948).");
+  assert.equal(deadText, "Babe Ruth, the New York Yankees outfielder, was born on February 6, 1895 (died 1948).");
   assert.equal(/turns|would have turned/i.test(deadText ?? ""), false);
 });
 

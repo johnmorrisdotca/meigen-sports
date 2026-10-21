@@ -26,7 +26,7 @@ test("a Hall of Fame year is said as the hall of the person's own sport, with hi
   assert.match(sample.text ?? "", /Hockey Hall of Famer/);
   const base = { recordId: "x:1", category: "player-birthday", tags: [], basis: "source", eventDate: "1931-10-20", datePrecision: "day", sport: "baseball", competition: null, league: "mlb", livingStatus: "unknown",
     source: { sourceId: "wikidata", licence: "CC0 1.0", attribution: "", url: null }, person: { personId: 1, qid: "Q1", name: "A Player", leagueCodes: ["mlb"], franchiseIds: [1], teamSeasonIds: [] }, position: "CF", clubNames: ["New York Yankees (1951–1968)"] } as OnThisDayRecord;
-  assert.equal(captionFromFact({ ...base, highlight: "Baseball Hall of Famer with seven World Series titles" }, "en"), "A Player, the New York Yankees center fielder and Baseball Hall of Famer with seven World Series titles, was born on this day in 1931.");
+  assert.equal(captionFromFact({ ...base, highlight: "Baseball Hall of Famer with seven World Series titles" }, "en"), "A Player, the New York Yankees center fielder and Baseball Hall of Famer with seven World Series titles, was born on October 20, 1931.");
 });
 
 test("a player with statistics but no roster row has his club, and a Hall of Fame year is said in the hall of his own sport", () => {

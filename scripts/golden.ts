@@ -1,6 +1,7 @@
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { resolve } from "node:path";
 import type { OnThisDayRecord } from "../src/schema.ts";
+import { factDate } from "../src/templates/index.ts";
 
 /**
  * The golden facts: famous, well-sourced facts the published data MUST hold with the right date and key
@@ -64,7 +65,8 @@ export function details(entry: GoldenEntry, r: OnThisDayRecord): string[] {
   if (league && LEAGUE_SPORT[league] && r.sport && r.sport !== LEAGUE_SPORT[league]) problems.push(`sport ${r.sport} for league ${league}`);
   if (r.sport && entry.sport !== r.sport && !["venue"].includes(entry.kind)) problems.push(`sport ${r.sport}, source sport ${entry.sport}`);
   if (m.winner) {
-    const text = fold(r.text ?? ""), winner = fold(m.winner);
+    // A sentence outside its own day opens with its date ("On December 18, 1932, Chicago Bears won ..."); the winner follows it.
+    const text = fold(r.text ?? "").replace(/^(?:on|in|around) (?:[a-z]+ )?(?:\d{1,2}, )?\d{4}, /, ""), winner = fold(m.winner);
     const decided = r.homeScore != null && r.awayScore != null && r.homeScore !== r.awayScore;
     if (decided ? !text.startsWith(winner) : !text.includes(winner)) problems.push(`the text does not give ${m.winner} the win: ${r.text}`);
   }
@@ -141,8 +143,14 @@ export const NEVER: Rule[] = [
     violations: (rs) => rs.filter((r) => /^(women|para)[-_]/.test(r.sport ?? "") || (r.tags ?? []).some((t) => /^(women|para)[-_]/.test(t))).map((r) => r.recordId) },
   { id: "unique-record-ids", says: "no fact is stored twice",
     violations: (rs) => { const seen = new Set<string>(); const dup: string[] = []; for (const r of rs) { if (seen.has(r.recordId)) dup.push(r.recordId); seen.add(r.recordId); } return dup; } },
-  { id: "clean-sentences", says: "a sentence never holds undefined, null, NaN or a doubled space, and ends with a full stop",
-    violations: (rs) => rs.filter((r) => /undefined|\bnull\b|NaN|\s{2}/.test(r.text ?? "") || !/[.。]$/.test(r.text ?? "")).map((r) => r.recordId) },
+  { id: "clean-sentences", says: "a sentence never holds undefined, null, NaN, \"(none)\" or a doubled space, and ends with a full stop",
+    violations: (rs) => rs.filter((r) => /undefined|\bnull\b|NaN|\(none\)|（none）|\s{2}/.test(`${r.text ?? ""} ${r.textJa ?? ""}`) || !/[.。]$/.test(r.text ?? "")).map((r) => r.recordId) },
+  { id: "dated-sentences", says: "a stored sentence is read on days that are not its fact's day, so it carries the full date at the precision the record holds and never says \"today\" or \"on this day\"",
+    violations: (rs) => rs.filter((r) => {
+      const en = factDate(r, "en"), ja = factDate(r, "ja");
+      const said = (text: string | undefined, date: string | null) => !text || !date || text.includes(date);
+      return !said(r.text, en) || !said(r.textJa, ja) || /\btoday\b|\bthis day\b|\bturns? \d|今日|この日/i.test(`${r.text ?? ""} ${r.textJa ?? ""}`);
+    }).map((r) => r.recordId) },
 ];
 
 export function loadGolden(root = "."): Golden {
