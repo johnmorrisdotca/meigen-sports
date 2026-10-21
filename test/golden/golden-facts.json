@@ -6799,6 +6799,46 @@
     "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
     "checkedOn": "2026-10-20"
    }
+  },
+  {
+   "id": "birth-Q167828",
+   "kind": "birth",
+   "sport": "soccer",
+   "league": null,
+   "fame": "star",
+   "label": "Lev Yashin born",
+   "date": "1929-10-22",
+   "era": "1920-1969",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q167828"
+   },
+   "source": {
+    "wikidata": "Q167828",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "birth-Q529207",
+   "kind": "birth",
+   "sport": "soccer",
+   "league": null,
+   "fame": "icon",
+   "label": "Ronaldo born",
+   "date": "1976-09-18",
+   "era": "1970-",
+   "match": {
+    "category": "player-birthday",
+    "qid": "Q529207"
+   },
+   "source": {
+    "wikidata": "Q529207",
+    "property": "P569",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
   }
  ],
  "gaps": [

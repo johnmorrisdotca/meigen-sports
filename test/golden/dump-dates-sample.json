@@ -1,0 +1,3006 @@
+{
+ "schemaVersion": 1,
+ "about": "Day-precision P569 and P570 of the Wikidata dump of 2026-10-12 (CC0), one value each, for people whose published birth or death fact is held to them (pipeline/audit_dates.py).",
+ "people": [
+  {
+   "qid": "Q530",
+   "name": "Ingemar Stenmark",
+   "birth": "1956-03-18",
+   "death": null
+  },
+  {
+   "qid": "Q615",
+   "name": "Lionel Messi",
+   "birth": "1987-06-24",
+   "death": null
+  },
+  {
+   "qid": "Q1189",
+   "name": "Usain Bolt",
+   "birth": "1986-08-21",
+   "death": null
+  },
+  {
+   "qid": "Q1426",
+   "name": "Roger Federer",
+   "birth": "1981-08-08",
+   "death": null
+  },
+  {
+   "qid": "Q1835",
+   "name": "Zinedine Zidane",
+   "birth": "1972-06-23",
+   "death": null
+  },
+  {
+   "qid": "Q5812",
+   "name": "Novak Djokovic",
+   "birth": "1987-05-22",
+   "death": null
+  },
+  {
+   "qid": "Q6319",
+   "name": "Yelena Isinbayeva",
+   "birth": "1982-06-03",
+   "death": null
+  },
+  {
+   "qid": "Q7407",
+   "name": "Andre Agassi",
+   "birth": "1970-04-29",
+   "death": null
+  },
+  {
+   "qid": "Q7539",
+   "name": "Peyton Manning",
+   "birth": "1976-03-24",
+   "death": null
+  },
+  {
+   "qid": "Q7855",
+   "name": "Sébastien Loeb",
+   "birth": "1974-02-26",
+   "death": null
+  },
+  {
+   "qid": "Q9424",
+   "name": "Jack Nicklaus",
+   "birth": "1940-01-21",
+   "death": null
+  },
+  {
+   "qid": "Q9434",
+   "name": "Arnold Palmer",
+   "birth": "1929-09-10",
+   "death": "2016-09-25"
+  },
+  {
+   "qid": "Q9488",
+   "name": "Sachin Tendulkar",
+   "birth": "1973-04-24",
+   "death": null
+  },
+  {
+   "qid": "Q9671",
+   "name": "Michael Schumacher",
+   "birth": "1969-01-03",
+   "death": null
+  },
+  {
+   "qid": "Q9673",
+   "name": "Lewis Hamilton",
+   "birth": "1985-01-07",
+   "death": null
+  },
+  {
+   "qid": "Q10068",
+   "name": "Lindsey Vonn",
+   "birth": "1984-10-18",
+   "death": null
+  },
+  {
+   "qid": "Q10132",
+   "name": "Rafael Nadal",
+   "birth": "1986-06-03",
+   "death": null
+  },
+  {
+   "qid": "Q10490",
+   "name": "Ayrton Senna",
+   "birth": "1960-03-21",
+   "death": "1994-05-01"
+  },
+  {
+   "qid": "Q10514",
+   "name": "Fernando Alonso",
+   "birth": "1981-07-29",
+   "death": null
+  },
+  {
+   "qid": "Q10993",
+   "name": "Tiger Woods",
+   "birth": "1975-12-30",
+   "death": null
+  },
+  {
+   "qid": "Q11459",
+   "name": "Serena Williams",
+   "birth": "1981-09-26",
+   "death": null
+  },
+  {
+   "qid": "Q11571",
+   "name": "Cristiano Ronaldo",
+   "birth": "1985-02-05",
+   "death": null
+  },
+  {
+   "qid": "Q11662",
+   "name": "Steffi Graf",
+   "birth": "1969-06-14",
+   "death": null
+  },
+  {
+   "qid": "Q11666",
+   "name": "Maria Sharapova",
+   "birth": "1987-04-19",
+   "death": null
+  },
+  {
+   "qid": "Q11956",
+   "name": "Ola Toivonen",
+   "birth": "1986-07-03",
+   "death": null
+  },
+  {
+   "qid": "Q12897",
+   "name": "Pelé",
+   "birth": "1940-10-23",
+   "death": "2022-12-29"
+  },
+  {
+   "qid": "Q14698",
+   "name": "Janne Ahonen",
+   "birth": "1977-05-11",
+   "death": null
+  },
+  {
+   "qid": "Q16849",
+   "name": "Matti Nykänen",
+   "birth": "1963-07-17",
+   "death": "2019-02-04"
+  },
+  {
+   "qid": "Q17163",
+   "name": "Johan Cruyff",
+   "birth": "1947-04-25",
+   "death": "2016-03-24"
+  },
+  {
+   "qid": "Q17515",
+   "name": "Diego Maradona",
+   "birth": "1960-10-30",
+   "death": "2020-11-25"
+  },
+  {
+   "qid": "Q17717",
+   "name": "Oscar Robertson",
+   "birth": "1938-11-24",
+   "death": null
+  },
+  {
+   "qid": "Q22102",
+   "name": "Larisa Latynina",
+   "birth": "1934-12-27",
+   "death": null
+  },
+  {
+   "qid": "Q25369",
+   "name": "Kobe Bryant",
+   "birth": "1978-08-23",
+   "death": "2020-01-26"
+  },
+  {
+   "qid": "Q28614",
+   "name": "Garry Kasparov",
+   "birth": "1963-04-13",
+   "death": null
+  },
+  {
+   "qid": "Q29545",
+   "name": "Kevin Durant",
+   "birth": "1988-09-29",
+   "death": null
+  },
+  {
+   "qid": "Q31082",
+   "name": "Florence Griffith Joyner",
+   "birth": "1959-12-21",
+   "death": "1998-09-21"
+  },
+  {
+   "qid": "Q31083",
+   "name": "Wilma Rudolph",
+   "birth": "1940-06-23",
+   "death": "1994-11-12"
+  },
+  {
+   "qid": "Q31919",
+   "name": "Vitali Klitschko",
+   "birth": "1971-07-19",
+   "death": null
+  },
+  {
+   "qid": "Q33228",
+   "name": "Nadia Comăneci",
+   "birth": "1961-11-12",
+   "death": null
+  },
+  {
+   "qid": "Q33817",
+   "name": "Edmund Hillary",
+   "birth": "1919-07-20",
+   "death": "2008-01-11"
+  },
+  {
+   "qid": "Q36107",
+   "name": "Muhammad Ali",
+   "birth": "1942-01-17",
+   "death": "2016-06-03"
+  },
+  {
+   "qid": "Q36159",
+   "name": "LeBron James",
+   "birth": "1984-12-30",
+   "death": null
+  },
+  {
+   "qid": "Q39562",
+   "name": "Michael Phelps",
+   "birth": "1985-06-30",
+   "death": null
+  },
+  {
+   "qid": "Q41314",
+   "name": "Bobby Fischer",
+   "birth": "1943-03-09",
+   "death": "2008-01-17"
+  },
+  {
+   "qid": "Q41421",
+   "name": "Michael Jordan",
+   "birth": "1963-02-17",
+   "death": null
+  },
+  {
+   "qid": "Q44068",
+   "name": "Dirk Nowitzki",
+   "birth": "1978-06-19",
+   "death": null
+  },
+  {
+   "qid": "Q44176",
+   "name": "Hulk Hogan",
+   "birth": "1953-08-11",
+   "death": "2025-07-24"
+  },
+  {
+   "qid": "Q45626",
+   "name": "Ruud van Nistelrooy",
+   "birth": "1976-07-01",
+   "death": null
+  },
+  {
+   "qid": "Q47314",
+   "name": "Jorginho Putinatti",
+   "birth": "1959-08-23",
+   "death": null
+  },
+  {
+   "qid": "Q52651",
+   "name": "Jesse Owens",
+   "birth": "1913-09-12",
+   "death": "1980-03-31"
+  },
+  {
+   "qid": "Q52679",
+   "name": "Steve Redgrave",
+   "birth": "1962-03-23",
+   "death": null
+  },
+  {
+   "qid": "Q53325",
+   "name": "Arthur Ashe",
+   "birth": "1943-07-10",
+   "death": "1993-02-06"
+  },
+  {
+   "qid": "Q54527",
+   "name": "Billie Jean King",
+   "birth": "1943-11-22",
+   "death": null
+  },
+  {
+   "qid": "Q54545",
+   "name": "Martina Navratilova",
+   "birth": "1956-10-18",
+   "death": null
+  },
+  {
+   "qid": "Q57365",
+   "name": "Rudolf Caracciola",
+   "birth": "1901-01-30",
+   "death": "1959-09-28"
+  },
+  {
+   "qid": "Q57415",
+   "name": "Claudia Pechstein",
+   "birth": "1972-02-22",
+   "death": null
+  },
+  {
+   "qid": "Q59929",
+   "name": "Jesús Fernández Collado",
+   "birth": "1988-06-11",
+   "death": null
+  },
+  {
+   "qid": "Q61673",
+   "name": "Luděk Pachman",
+   "birth": "1924-05-11",
+   "death": "2003-03-06"
+  },
+  {
+   "qid": "Q67488",
+   "name": "Christina Schwanitz",
+   "birth": "1985-12-24",
+   "death": null
+  },
+  {
+   "qid": "Q73025",
+   "name": "Karl Mildenberger",
+   "birth": "1937-11-23",
+   "death": "2018-10-04"
+  },
+  {
+   "qid": "Q73052",
+   "name": "Jens Boden",
+   "birth": "1978-08-29",
+   "death": null
+  },
+  {
+   "qid": "Q78025",
+   "name": "Felix Schütz",
+   "birth": "1987-11-03",
+   "death": null
+  },
+  {
+   "qid": "Q78489",
+   "name": "Niki Lauda",
+   "birth": "1949-02-22",
+   "death": "2019-05-20"
+  },
+  {
+   "qid": "Q79031",
+   "name": "Mike Tyson",
+   "birth": "1966-06-30",
+   "death": null
+  },
+  {
+   "qid": "Q86190",
+   "name": "Dietmar Lorenz",
+   "birth": "1950-09-23",
+   "death": "2021-09-08"
+  },
+  {
+   "qid": "Q88344",
+   "name": "Anton Rom",
+   "birth": "1909-03-10",
+   "death": "1994-12-30"
+  },
+  {
+   "qid": "Q91305",
+   "name": "Kraft Schepke",
+   "birth": "1934-03-03",
+   "death": "2023-11-12"
+  },
+  {
+   "qid": "Q92322",
+   "name": "Henrik Stehlik",
+   "birth": "1980-12-29",
+   "death": null
+  },
+  {
+   "qid": "Q101942",
+   "name": "Paavo Nurmi",
+   "birth": "1897-06-13",
+   "death": "1973-10-02"
+  },
+  {
+   "qid": "Q102301",
+   "name": "Joe Frazier",
+   "birth": "1944-01-12",
+   "death": "2011-11-07"
+  },
+  {
+   "qid": "Q103756",
+   "name": "Eddy Merckx",
+   "birth": "1945-06-17",
+   "death": null
+  },
+  {
+   "qid": "Q105542",
+   "name": "Miguel Induráin",
+   "birth": "1964-07-16",
+   "death": null
+  },
+  {
+   "qid": "Q106807",
+   "name": "Magnus Carlsen",
+   "birth": "1990-11-30",
+   "death": null
+  },
+  {
+   "qid": "Q119775",
+   "name": "Norman Kwong",
+   "birth": "1929-10-24",
+   "death": "2016-09-03"
+  },
+  {
+   "qid": "Q126710",
+   "name": "Warren Moon",
+   "birth": "1956-11-18",
+   "death": null
+  },
+  {
+   "qid": "Q131237",
+   "name": "Carl Lewis",
+   "birth": "1961-07-01",
+   "death": null
+  },
+  {
+   "qid": "Q134183",
+   "name": "Magic Johnson",
+   "birth": "1959-08-14",
+   "death": null
+  },
+  {
+   "qid": "Q137374",
+   "name": "Katie Ledecky",
+   "birth": "1997-03-17",
+   "death": null
+  },
+  {
+   "qid": "Q139075",
+   "name": "Mikaela Shiffrin",
+   "birth": "1995-03-13",
+   "death": null
+  },
+  {
+   "qid": "Q142794",
+   "name": "Neymar",
+   "birth": "1992-02-05",
+   "death": null
+  },
+  {
+   "qid": "Q146960",
+   "name": "Sándor Tarics",
+   "birth": "1913-09-23",
+   "death": "2016-05-21"
+  },
+  {
+   "qid": "Q153416",
+   "name": "Marcel Schmelzer",
+   "birth": "1988-01-22",
+   "death": null
+  },
+  {
+   "qid": "Q157809",
+   "name": "Nikola Karabatić",
+   "birth": "1984-04-11",
+   "death": null
+  },
+  {
+   "qid": "Q164260",
+   "name": "Jim Duggan",
+   "birth": "1954-01-14",
+   "death": null
+  },
+  {
+   "qid": "Q164546",
+   "name": "Alfredo Di Stéfano",
+   "birth": "1926-07-04",
+   "death": "2014-07-07"
+  },
+  {
+   "qid": "Q165816",
+   "name": "Dara Singh",
+   "birth": "1928-11-19",
+   "death": "2012-07-12"
+  },
+  {
+   "qid": "Q167828",
+   "name": "Lev Yashin",
+   "birth": "1929-10-22",
+   "death": "1990-03-20"
+  },
+  {
+   "qid": "Q169452",
+   "name": "Shaquille O'Neal",
+   "birth": "1972-03-06",
+   "death": null
+  },
+  {
+   "qid": "Q169814",
+   "name": "Valentino Rossi",
+   "birth": "1979-02-16",
+   "death": null
+  },
+  {
+   "qid": "Q169983",
+   "name": "Curro Torres",
+   "birth": "1976-12-27",
+   "death": null
+  },
+  {
+   "qid": "Q171312",
+   "name": "Mario Andretti",
+   "birth": "1940-02-28",
+   "death": null
+  },
+  {
+   "qid": "Q172270",
+   "name": "François Picard",
+   "birth": "1921-04-26",
+   "death": "1996-04-29"
+  },
+  {
+   "qid": "Q172478",
+   "name": "Ted Williams",
+   "birth": "1918-08-30",
+   "death": "2002-07-05"
+  },
+  {
+   "qid": "Q172481",
+   "name": "Johnny Boyd",
+   "birth": "1926-08-19",
+   "death": "2003-10-26"
+  },
+  {
+   "qid": "Q173538",
+   "name": "Charlie Whiting",
+   "birth": "1952-08-12",
+   "death": "2019-03-14"
+  },
+  {
+   "qid": "Q176363",
+   "name": "Stuart Tinney",
+   "birth": "1964-12-07",
+   "death": null
+  },
+  {
+   "qid": "Q178730",
+   "name": "Maksym Kalynychenko",
+   "birth": "1979-01-26",
+   "death": null
+  },
+  {
+   "qid": "Q179051",
+   "name": "Kareem Abdul-Jabbar",
+   "birth": "1947-04-16",
+   "death": null
+  },
+  {
+   "qid": "Q180748",
+   "name": "Mark Spitz",
+   "birth": "1950-02-10",
+   "death": null
+  },
+  {
+   "qid": "Q181126",
+   "name": "Alexandre Lopes",
+   "birth": "1974-10-29",
+   "death": null
+  },
+  {
+   "qid": "Q182455",
+   "name": "Wilt Chamberlain",
+   "birth": "1936-08-21",
+   "death": "1999-10-12"
+  },
+  {
+   "qid": "Q184556",
+   "name": "Sergei Bubka",
+   "birth": "1963-12-04",
+   "death": null
+  },
+  {
+   "qid": "Q185044",
+   "name": "Ian Thorpe",
+   "birth": "1982-10-13",
+   "death": null
+  },
+  {
+   "qid": "Q189408",
+   "name": "Ole Einar Bjørndalen",
+   "birth": "1974-01-27",
+   "death": null
+  },
+  {
+   "qid": "Q190094",
+   "name": "Allen Iverson",
+   "birth": "1975-06-07",
+   "death": null
+  },
+  {
+   "qid": "Q190152",
+   "name": "Larry Bird",
+   "birth": "1956-12-07",
+   "death": null
+  },
+  {
+   "qid": "Q190782",
+   "name": "Ronnie O'Sullivan",
+   "birth": "1975-12-05",
+   "death": null
+  },
+  {
+   "qid": "Q192955",
+   "name": "Steve Nash",
+   "birth": "1974-02-07",
+   "death": null
+  },
+  {
+   "qid": "Q193020",
+   "name": "Tim Duncan",
+   "birth": "1976-04-25",
+   "death": null
+  },
+  {
+   "qid": "Q195367",
+   "name": "Dan Marino",
+   "birth": "1961-09-15",
+   "death": null
+  },
+  {
+   "qid": "Q203816",
+   "name": "Shkëlzen Gashi",
+   "birth": "1988-07-15",
+   "death": null
+  },
+  {
+   "qid": "Q204205",
+   "name": "Sonja Henie",
+   "birth": "1912-04-08",
+   "death": "1969-10-12"
+  },
+  {
+   "qid": "Q209390",
+   "name": "Jackie Joyner-Kersee",
+   "birth": "1962-03-03",
+   "death": null
+  },
+  {
+   "qid": "Q209518",
+   "name": "Wayne Gretzky",
+   "birth": "1961-01-26",
+   "death": null
+  },
+  {
+   "qid": "Q213448",
+   "name": "Danica Patrick",
+   "birth": "1982-03-25",
+   "death": null
+  },
+  {
+   "qid": "Q213812",
+   "name": "Babe Ruth",
+   "birth": "1895-02-06",
+   "death": "1948-08-16"
+  },
+  {
+   "qid": "Q213854",
+   "name": "Virat Kohli",
+   "birth": "1988-11-05",
+   "death": null
+  },
+  {
+   "qid": "Q213919",
+   "name": "George Foreman",
+   "birth": "1949-01-10",
+   "death": "2025-03-21"
+  },
+  {
+   "qid": "Q214124",
+   "name": "Kim Källström",
+   "birth": "1982-08-24",
+   "death": null
+  },
+  {
+   "qid": "Q215777",
+   "name": "Hank Aaron",
+   "birth": "1934-02-05",
+   "death": "2021-01-22"
+  },
+  {
+   "qid": "Q217505",
+   "name": "Bjørn Dæhlie",
+   "birth": "1967-06-19",
+   "death": null
+  },
+  {
+   "qid": "Q221048",
+   "name": "Jackie Robinson",
+   "birth": "1919-01-31",
+   "death": "1972-10-24"
+  },
+  {
+   "qid": "Q221575",
+   "name": "Olga Korbut",
+   "birth": "1955-05-16",
+   "death": null
+  },
+  {
+   "qid": "Q222086",
+   "name": "Mia Hamm",
+   "birth": "1972-03-17",
+   "death": null
+  },
+  {
+   "qid": "Q229967",
+   "name": "Valentina Vezzali",
+   "birth": "1974-02-14",
+   "death": null
+  },
+  {
+   "qid": "Q231983",
+   "name": "Babe Didrikson Zaharias",
+   "birth": "1911-06-26",
+   "death": "1956-09-27"
+  },
+  {
+   "qid": "Q232711",
+   "name": "Annika Sörenstam",
+   "birth": "1970-10-09",
+   "death": null
+  },
+  {
+   "qid": "Q233256",
+   "name": "Tatiana Golovin",
+   "birth": "1988-01-25",
+   "death": null
+  },
+  {
+   "qid": "Q234377",
+   "name": "Elvan Abeylegesse",
+   "birth": "1982-09-11",
+   "death": null
+  },
+  {
+   "qid": "Q236315",
+   "name": "Kateřina Neumannová",
+   "birth": "1973-02-15",
+   "death": null
+  },
+  {
+   "qid": "Q240672",
+   "name": "Sue Bird",
+   "birth": "1980-10-16",
+   "death": null
+  },
+  {
+   "qid": "Q240726",
+   "name": "Diana Taurasi",
+   "birth": "1982-06-11",
+   "death": null
+  },
+  {
+   "qid": "Q242185",
+   "name": "Bill Russell",
+   "birth": "1934-02-12",
+   "death": "2022-07-31"
+  },
+  {
+   "qid": "Q242201",
+   "name": "Ronda Rousey",
+   "birth": "1987-02-01",
+   "death": null
+  },
+  {
+   "qid": "Q257980",
+   "name": "Lisa Leslie",
+   "birth": "1972-07-07",
+   "death": null
+  },
+  {
+   "qid": "Q263487",
+   "name": "Lydia Lassila",
+   "birth": "1982-01-17",
+   "death": null
+  },
+  {
+   "qid": "Q270587",
+   "name": "Sally Peers",
+   "birth": "1991-06-01",
+   "death": null
+  },
+  {
+   "qid": "Q270683",
+   "name": "Sheryl Swoopes",
+   "birth": "1971-03-25",
+   "death": null
+  },
+  {
+   "qid": "Q271933",
+   "name": "Patrick Ewing",
+   "birth": "1962-08-05",
+   "death": null
+  },
+  {
+   "qid": "Q272190",
+   "name": "Seve Ballesteros",
+   "birth": "1957-04-09",
+   "death": "2011-05-07"
+  },
+  {
+   "qid": "Q273206",
+   "name": "Joe Louis",
+   "birth": "1914-05-13",
+   "death": "1981-04-12"
+  },
+  {
+   "qid": "Q273256",
+   "name": "Hakeem Olajuwon",
+   "birth": "1963-01-21",
+   "death": null
+  },
+  {
+   "qid": "Q280437",
+   "name": "Mario Kasun",
+   "birth": "1980-04-05",
+   "death": null
+  },
+  {
+   "qid": "Q288656",
+   "name": "Shaun White",
+   "birth": "1986-09-03",
+   "death": null
+  },
+  {
+   "qid": "Q295020",
+   "name": "Tony Hawk",
+   "birth": "1968-05-12",
+   "death": null
+  },
+  {
+   "qid": "Q295328",
+   "name": "Lennox Lewis",
+   "birth": "1965-09-02",
+   "death": null
+  },
+  {
+   "qid": "Q295345",
+   "name": "Jaromír Jágr",
+   "birth": "1972-02-15",
+   "death": null
+  },
+  {
+   "qid": "Q297142",
+   "name": "Joe DiMaggio",
+   "birth": "1914-11-25",
+   "death": "1999-03-08"
+  },
+  {
+   "qid": "Q299768",
+   "name": "Eduardo Carvalho",
+   "birth": "1982-09-19",
+   "death": null
+  },
+  {
+   "qid": "Q311195",
+   "name": "Jerry West",
+   "birth": "1938-05-28",
+   "death": "2024-06-12"
+  },
+  {
+   "qid": "Q311280",
+   "name": "Sidney Crosby",
+   "birth": "1987-08-07",
+   "death": null
+  },
+  {
+   "qid": "Q311289",
+   "name": "Eric Heiden",
+   "birth": "1958-06-14",
+   "death": null
+  },
+  {
+   "qid": "Q311332",
+   "name": "Greg Louganis",
+   "birth": "1960-01-29",
+   "death": null
+  },
+  {
+   "qid": "Q311374",
+   "name": "Alexander Ovechkin",
+   "birth": "1985-09-17",
+   "death": null
+  },
+  {
+   "qid": "Q313381",
+   "name": "Tom Brady",
+   "birth": "1977-08-03",
+   "death": null
+  },
+  {
+   "qid": "Q313385",
+   "name": "Mikko Hirvonen",
+   "birth": "1980-07-31",
+   "death": null
+  },
+  {
+   "qid": "Q313885",
+   "name": "Tom Daley",
+   "birth": "1994-05-21",
+   "death": null
+  },
+  {
+   "qid": "Q313938",
+   "name": "Tomáš Pekhart",
+   "birth": "1989-05-26",
+   "death": null
+  },
+  {
+   "qid": "Q314185",
+   "name": "George Mikan",
+   "birth": "1924-06-18",
+   "death": "2005-06-01"
+  },
+  {
+   "qid": "Q314315",
+   "name": "Diego Capel",
+   "birth": "1988-02-16",
+   "death": null
+  },
+  {
+   "qid": "Q314712",
+   "name": "Barry Bonds",
+   "birth": "1964-07-24",
+   "death": null
+  },
+  {
+   "qid": "Q316249",
+   "name": "Mario Lemieux",
+   "birth": "1965-10-05",
+   "death": null
+  },
+  {
+   "qid": "Q316864",
+   "name": "Vladislav Tretiak",
+   "birth": "1952-04-25",
+   "death": null
+  },
+  {
+   "qid": "Q317422",
+   "name": "Eric Liddell",
+   "birth": "1902-01-16",
+   "death": "1945-02-21"
+  },
+  {
+   "qid": "Q317790",
+   "name": "Abdullah the Butcher",
+   "birth": "1941-01-11",
+   "death": null
+  },
+  {
+   "qid": "Q319247",
+   "name": "Mark Messier",
+   "birth": "1961-01-18",
+   "death": null
+  },
+  {
+   "qid": "Q325138",
+   "name": "Maurice Richard",
+   "birth": "1921-08-04",
+   "death": "2000-05-27"
+  },
+  {
+   "qid": "Q325335",
+   "name": "John Somers-Smith",
+   "birth": "1887-12-15",
+   "death": "1916-07-01"
+  },
+  {
+   "qid": "Q325620",
+   "name": "Norbert Klaar",
+   "birth": "1954-10-12",
+   "death": null
+  },
+  {
+   "qid": "Q325829",
+   "name": "Anselmo Citterio",
+   "birth": "1927-05-19",
+   "death": "2006-10-02"
+  },
+  {
+   "qid": "Q326245",
+   "name": "Nathan Outteridge",
+   "birth": "1986-01-28",
+   "death": null
+  },
+  {
+   "qid": "Q326958",
+   "name": "Harry Hooper",
+   "birth": "1887-08-24",
+   "death": "1974-12-18"
+  },
+  {
+   "qid": "Q327456",
+   "name": "Hakim Ziyech",
+   "birth": "1993-03-19",
+   "death": null
+  },
+  {
+   "qid": "Q332645",
+   "name": "Francesco Coco",
+   "birth": "1977-01-08",
+   "death": null
+  },
+  {
+   "qid": "Q345004",
+   "name": "Mickey Mantle",
+   "birth": "1931-10-20",
+   "death": "1995-08-13"
+  },
+  {
+   "qid": "Q348011",
+   "name": "Joe Montana",
+   "birth": "1956-06-11",
+   "death": null
+  },
+  {
+   "qid": "Q348017",
+   "name": "Bobby Orr",
+   "birth": "1948-03-20",
+   "death": null
+  },
+  {
+   "qid": "Q349598",
+   "name": "Alajos Szokolyi",
+   "birth": "1871-06-19",
+   "death": "1932-09-09"
+  },
+  {
+   "qid": "Q350538",
+   "name": "Adam Oates",
+   "birth": "1962-08-27",
+   "death": null
+  },
+  {
+   "qid": "Q352128",
+   "name": "Raimondas Rumšas",
+   "birth": "1972-01-14",
+   "death": null
+  },
+  {
+   "qid": "Q352159",
+   "name": "Stephen Curry",
+   "birth": "1988-03-14",
+   "death": null
+  },
+  {
+   "qid": "Q353511",
+   "name": "Derek Jeter",
+   "birth": "1974-06-26",
+   "death": null
+  },
+  {
+   "qid": "Q353514",
+   "name": "Teddy Riner",
+   "birth": "1989-04-07",
+   "death": null
+  },
+  {
+   "qid": "Q355816",
+   "name": "Oleksandr Kucher",
+   "birth": "1982-10-22",
+   "death": null
+  },
+  {
+   "qid": "Q357444",
+   "name": "Lou Gehrig",
+   "birth": "1903-06-19",
+   "death": "1941-06-02"
+  },
+  {
+   "qid": "Q357465",
+   "name": "Martin Brodeur",
+   "birth": "1972-05-06",
+   "death": null
+  },
+  {
+   "qid": "Q357502",
+   "name": "Patrick Roy",
+   "birth": "1965-10-05",
+   "death": null
+  },
+  {
+   "qid": "Q358519",
+   "name": "Gordie Howe",
+   "birth": "1928-03-31",
+   "death": "2016-06-10"
+  },
+  {
+   "qid": "Q362264",
+   "name": "Cy Young",
+   "birth": "1867-03-29",
+   "death": "1955-11-04"
+  },
+  {
+   "qid": "Q363717",
+   "name": "Jonah Lomu",
+   "birth": "1975-05-12",
+   "death": "2015-11-18"
+  },
+  {
+   "qid": "Q364295",
+   "name": "Spud Webb",
+   "birth": "1963-07-13",
+   "death": null
+  },
+  {
+   "qid": "Q366457",
+   "name": "Bob Froese",
+   "birth": "1958-06-30",
+   "death": null
+  },
+  {
+   "qid": "Q371040",
+   "name": "Michael McGlinchey",
+   "birth": "1987-01-07",
+   "death": null
+  },
+  {
+   "qid": "Q380267",
+   "name": "Valeri Kharlamov",
+   "birth": "1948-01-14",
+   "death": "1981-08-27"
+  },
+  {
+   "qid": "Q380613",
+   "name": "Rory McIlroy",
+   "birth": "1989-05-04",
+   "death": null
+  },
+  {
+   "qid": "Q424048",
+   "name": "Chris Jespersen",
+   "birth": "1983-10-18",
+   "death": null
+  },
+  {
+   "qid": "Q430865",
+   "name": "Steven Defour",
+   "birth": "1988-04-15",
+   "death": null
+  },
+  {
+   "qid": "Q432210",
+   "name": "Rūta Paškauskienė",
+   "birth": "1977-03-29",
+   "death": null
+  },
+  {
+   "qid": "Q432931",
+   "name": "John Elway",
+   "birth": "1960-06-28",
+   "death": null
+  },
+  {
+   "qid": "Q438551",
+   "name": "Evgenia Ukolova",
+   "birth": "1989-05-17",
+   "death": null
+  },
+  {
+   "qid": "Q440256",
+   "name": "Sandy Koufax",
+   "birth": "1935-12-30",
+   "death": null
+  },
+  {
+   "qid": "Q440395",
+   "name": "Steve Yzerman",
+   "birth": "1965-05-09",
+   "death": null
+  },
+  {
+   "qid": "Q442632",
+   "name": "Angela Buxton",
+   "birth": "1934-08-16",
+   "death": "2020-08-14"
+  },
+  {
+   "qid": "Q444279",
+   "name": "Jozef Vengloš",
+   "birth": "1936-02-18",
+   "death": "2021-01-26"
+  },
+  {
+   "qid": "Q445682",
+   "name": "Kong Linghui",
+   "birth": "1975-10-18",
+   "death": null
+  },
+  {
+   "qid": "Q445796",
+   "name": "Tobin Heath",
+   "birth": "1988-05-29",
+   "death": null
+  },
+  {
+   "qid": "Q447779",
+   "name": "Suzana Ćebić",
+   "birth": "1984-11-09",
+   "death": null
+  },
+  {
+   "qid": "Q449073",
+   "name": "Ben Ainslie",
+   "birth": "1977-02-05",
+   "death": null
+  },
+  {
+   "qid": "Q456688",
+   "name": "Bobby Hull",
+   "birth": "1939-01-03",
+   "death": "2023-01-30"
+  },
+  {
+   "qid": "Q456779",
+   "name": "Phil Esposito",
+   "birth": "1942-02-20",
+   "death": null
+  },
+  {
+   "qid": "Q459114",
+   "name": "Ma Long",
+   "birth": "1988-10-20",
+   "death": null
+  },
+  {
+   "qid": "Q460700",
+   "name": "Jocelyn Angloma",
+   "birth": "1965-08-07",
+   "death": null
+  },
+  {
+   "qid": "Q472336",
+   "name": "Karch Kiraly",
+   "birth": "1960-11-03",
+   "death": null
+  },
+  {
+   "qid": "Q478150",
+   "name": "Günther Meier",
+   "birth": "1941-07-26",
+   "death": "2020-11-23"
+  },
+  {
+   "qid": "Q479926",
+   "name": "Wolfgang Winkler",
+   "birth": "1940-10-21",
+   "death": "2001-05-11"
+  },
+  {
+   "qid": "Q484303",
+   "name": "Hiromitsu Ochiai",
+   "birth": "1953-12-09",
+   "death": null
+  },
+  {
+   "qid": "Q505165",
+   "name": "Andy Holmes",
+   "birth": "1959-10-15",
+   "death": "2010-10-24"
+  },
+  {
+   "qid": "Q505423",
+   "name": "Jerry Rice",
+   "birth": "1962-10-13",
+   "death": null
+  },
+  {
+   "qid": "Q505479",
+   "name": "Jean Béliveau",
+   "birth": "1931-08-31",
+   "death": "2014-12-02"
+  },
+  {
+   "qid": "Q520254",
+   "name": "Terry Sawchuk",
+   "birth": "1929-12-28",
+   "death": "1970-05-31"
+  },
+  {
+   "qid": "Q522284",
+   "name": "Jack Parker",
+   "birth": "1915-09-27",
+   "death": "1964-05-29"
+  },
+  {
+   "qid": "Q524520",
+   "name": "Li Qing",
+   "birth": "1972-12-01",
+   "death": null
+  },
+  {
+   "qid": "Q528181",
+   "name": "Duncan McNaughton",
+   "birth": "1910-12-07",
+   "death": "1998-01-15"
+  },
+  {
+   "qid": "Q529074",
+   "name": "Ivan Čupić",
+   "birth": "1986-03-27",
+   "death": null
+  },
+  {
+   "qid": "Q529207",
+   "name": "Ronaldo",
+   "birth": "1976-09-18",
+   "death": null
+  },
+  {
+   "qid": "Q536900",
+   "name": "Ken Griffey Jr.",
+   "birth": "1969-11-21",
+   "death": null
+  },
+  {
+   "qid": "Q548746",
+   "name": "Frank Sullivan",
+   "birth": "1898-07-26",
+   "death": "1989-01-08"
+  },
+  {
+   "qid": "Q550313",
+   "name": "Phil Taylor",
+   "birth": "1960-08-13",
+   "death": null
+  },
+  {
+   "qid": "Q552743",
+   "name": "Alexey Troitsky",
+   "birth": "1866-03-14",
+   "death": "1942-08-14"
+  },
+  {
+   "qid": "Q552828",
+   "name": "Ty Cobb",
+   "birth": "1886-12-18",
+   "death": "1961-07-17"
+  },
+  {
+   "qid": "Q553249",
+   "name": "Guy Lafleur",
+   "birth": "1951-09-20",
+   "death": "2022-04-22"
+  },
+  {
+   "qid": "Q555240",
+   "name": "Shane Warne",
+   "birth": "1969-09-13",
+   "death": "2022-03-04"
+  },
+  {
+   "qid": "Q555730",
+   "name": "Satchel Paige",
+   "birth": "1906-07-07",
+   "death": "1982-06-08"
+  },
+  {
+   "qid": "Q556005",
+   "name": "August Nilsson",
+   "birth": "1872-10-15",
+   "death": "1921-05-23"
+  },
+  {
+   "qid": "Q557835",
+   "name": "Hanno Möttölä",
+   "birth": "1976-09-09",
+   "death": null
+  },
+  {
+   "qid": "Q561852",
+   "name": "Willie Mays",
+   "birth": "1931-05-06",
+   "death": "2024-06-18"
+  },
+  {
+   "qid": "Q590329",
+   "name": "Lorenz Larkin",
+   "birth": "1986-09-03",
+   "death": null
+  },
+  {
+   "qid": "Q594947",
+   "name": "Mark Christian",
+   "birth": "1990-11-20",
+   "death": null
+  },
+  {
+   "qid": "Q597023",
+   "name": "Yuzuru Hanyū",
+   "birth": "1994-12-07",
+   "death": null
+  },
+  {
+   "qid": "Q601173",
+   "name": "Geoff Brown",
+   "birth": "1924-04-04",
+   "death": "2001-06-20"
+  },
+  {
+   "qid": "Q603840",
+   "name": "Geertje Wielema",
+   "birth": "1934-07-24",
+   "death": "2009-08-18"
+  },
+  {
+   "qid": "Q609527",
+   "name": "Maya Moore",
+   "birth": "1989-06-11",
+   "death": null
+  },
+  {
+   "qid": "Q614905",
+   "name": "Peter Thibeaux",
+   "birth": "1961-10-03",
+   "death": null
+  },
+  {
+   "qid": "Q616056",
+   "name": "Anthony Calvillo",
+   "birth": "1972-08-23",
+   "death": null
+  },
+  {
+   "qid": "Q618758",
+   "name": "Apo Lazaridès",
+   "birth": "1925-10-16",
+   "death": "1998-10-30"
+  },
+  {
+   "qid": "Q640193",
+   "name": "Max Whitlock",
+   "birth": "1993-01-13",
+   "death": null
+  },
+  {
+   "qid": "Q648447",
+   "name": "Jay Carty",
+   "birth": "1941-07-04",
+   "death": "2017-05-04"
+  },
+  {
+   "qid": "Q648602",
+   "name": "Justin Kripps",
+   "birth": "1987-01-06",
+   "death": null
+  },
+  {
+   "qid": "Q648874",
+   "name": "Eric Hänni",
+   "birth": "1938-12-19",
+   "death": "2024-12-25"
+  },
+  {
+   "qid": "Q656466",
+   "name": "Horst Queck",
+   "birth": "1943-10-05",
+   "death": "2025-09-20"
+  },
+  {
+   "qid": "Q658347",
+   "name": "Maurice Lucas",
+   "birth": "1952-02-18",
+   "death": "2010-10-31"
+  },
+  {
+   "qid": "Q670159",
+   "name": "Emil Sutovsky",
+   "birth": "1977-09-19",
+   "death": null
+  },
+  {
+   "qid": "Q676570",
+   "name": "Tibor Maracskó",
+   "birth": "1948-09-08",
+   "death": null
+  },
+  {
+   "qid": "Q680490",
+   "name": "Ruurd Leegstra",
+   "birth": "1877-06-29",
+   "death": "1933-01-17"
+  },
+  {
+   "qid": "Q684020",
+   "name": "Roberto Clemente",
+   "birth": "1934-08-18",
+   "death": "1972-12-31"
+  },
+  {
+   "qid": "Q686991",
+   "name": "James Wendell",
+   "birth": "1890-09-03",
+   "death": "1958-11-22"
+  },
+  {
+   "qid": "Q695766",
+   "name": "Othmar Schneider",
+   "birth": "1928-08-27",
+   "death": "2012-12-25"
+  },
+  {
+   "qid": "Q705481",
+   "name": "Juho Saaristo",
+   "birth": "1891-07-21",
+   "death": "1969-10-12"
+  },
+  {
+   "qid": "Q705549",
+   "name": "Jean-Antoine Carrel",
+   "birth": null,
+   "death": "1890-08-25"
+  },
+  {
+   "qid": "Q706731",
+   "name": "Heinz Kwiatkowski",
+   "birth": "1926-07-16",
+   "death": "2008-05-23"
+  },
+  {
+   "qid": "Q714640",
+   "name": "Mark Aguirre",
+   "birth": "1959-12-10",
+   "death": null
+  },
+  {
+   "qid": "Q715566",
+   "name": "Ray Bourque",
+   "birth": "1960-12-28",
+   "death": null
+  },
+  {
+   "qid": "Q716029",
+   "name": "Johnny Unitas",
+   "birth": "1933-05-07",
+   "death": "2002-09-11"
+  },
+  {
+   "qid": "Q720558",
+   "name": "Joe Namath",
+   "birth": "1943-05-31",
+   "death": null
+  },
+  {
+   "qid": "Q722059",
+   "name": "Walter Johnson",
+   "birth": "1887-11-06",
+   "death": "1946-12-10"
+  },
+  {
+   "qid": "Q723902",
+   "name": "Helge Løvland",
+   "birth": "1890-05-11",
+   "death": "1984-04-26"
+  },
+  {
+   "qid": "Q725981",
+   "name": "Per Thorén",
+   "birth": "1885-01-26",
+   "death": "1962-01-05"
+  },
+  {
+   "qid": "Q735174",
+   "name": "Evgeny Chigishev",
+   "birth": "1979-05-28",
+   "death": null
+  },
+  {
+   "qid": "Q770696",
+   "name": "Cazzie Russell",
+   "birth": "1944-06-07",
+   "death": null
+  },
+  {
+   "qid": "Q809097",
+   "name": "Barry Sanders",
+   "birth": "1968-07-16",
+   "death": null
+  },
+  {
+   "qid": "Q860796",
+   "name": "Cy Young",
+   "birth": "1928-07-23",
+   "death": "2017-12-06"
+  },
+  {
+   "qid": "Q911981",
+   "name": "Brian Cardinal",
+   "birth": "1977-05-02",
+   "death": null
+  },
+  {
+   "qid": "Q923744",
+   "name": "Mike Teunissen",
+   "birth": "1992-08-25",
+   "death": null
+  },
+  {
+   "qid": "Q925163",
+   "name": "Michael Curry",
+   "birth": "1968-08-22",
+   "death": null
+  },
+  {
+   "qid": "Q925532",
+   "name": "William Peacock",
+   "birth": "1891-12-06",
+   "death": "1948-12-14"
+  },
+  {
+   "qid": "Q925731",
+   "name": "Martin Johansson",
+   "birth": "1984-09-26",
+   "death": null
+  },
+  {
+   "qid": "Q927916",
+   "name": "Jim Brown",
+   "birth": "1936-02-17",
+   "death": "2023-05-18"
+  },
+  {
+   "qid": "Q928386",
+   "name": "John Bromwich",
+   "birth": "1918-11-14",
+   "death": "1999-10-21"
+  },
+  {
+   "qid": "Q931934",
+   "name": "Kenichi Yumoto",
+   "birth": "1984-12-04",
+   "death": null
+  },
+  {
+   "qid": "Q937431",
+   "name": "Michel Andrieux",
+   "birth": "1967-04-28",
+   "death": null
+  },
+  {
+   "qid": "Q944455",
+   "name": "Jasey-Jay Anderson",
+   "birth": "1975-04-13",
+   "death": null
+  },
+  {
+   "qid": "Q949018",
+   "name": "Turk Edwards",
+   "birth": "1907-09-28",
+   "death": "1973-01-10"
+  },
+  {
+   "qid": "Q953483",
+   "name": "Nicolae Neagoe",
+   "birth": "1941-08-02",
+   "death": "2023-04-29"
+  },
+  {
+   "qid": "Q960614",
+   "name": "Eric Lindros",
+   "birth": "1973-02-28",
+   "death": null
+  },
+  {
+   "qid": "Q963461",
+   "name": "Mélonin Noumonvi",
+   "birth": "1982-10-10",
+   "death": null
+  },
+  {
+   "qid": "Q963604",
+   "name": "Ruy de Freitas",
+   "birth": "1916-08-24",
+   "death": "2012-08-02"
+  },
+  {
+   "qid": "Q963863",
+   "name": "Camille Jenatzy",
+   "birth": "1868-11-04",
+   "death": "1913-12-07"
+  },
+  {
+   "qid": "Q964923",
+   "name": "Konstantin Sakaev",
+   "birth": "1974-04-13",
+   "death": null
+  },
+  {
+   "qid": "Q965169",
+   "name": "Matt Harpring",
+   "birth": "1976-05-31",
+   "death": null
+  },
+  {
+   "qid": "Q967366",
+   "name": "Romeo Venturelli",
+   "birth": "1938-12-09",
+   "death": "2011-04-02"
+  },
+  {
+   "qid": "Q969632",
+   "name": "Rune Jansson",
+   "birth": "1932-05-29",
+   "death": "2018-11-24"
+  },
+  {
+   "qid": "Q973797",
+   "name": "Shane Perkins",
+   "birth": "1986-12-30",
+   "death": null
+  },
+  {
+   "qid": "Q976401",
+   "name": "Serhiy Semenov",
+   "birth": "1988-07-28",
+   "death": null
+  },
+  {
+   "qid": "Q983110",
+   "name": "Joe Gans",
+   "birth": "1874-11-25",
+   "death": "1910-08-10"
+  },
+  {
+   "qid": "Q1056011",
+   "name": "Gary Carter",
+   "birth": "1954-04-08",
+   "death": "2012-02-16"
+  },
+  {
+   "qid": "Q1057311",
+   "name": "Edwin Jackson",
+   "birth": "1983-09-09",
+   "death": null
+  },
+  {
+   "qid": "Q1093179",
+   "name": "Ibrahim Rojas",
+   "birth": "1975-10-10",
+   "death": null
+  },
+  {
+   "qid": "Q1094434",
+   "name": "Junior Johnson",
+   "birth": "1931-06-28",
+   "death": "2019-12-20"
+  },
+  {
+   "qid": "Q1116123",
+   "name": "Joey Dorsey",
+   "birth": "1983-12-16",
+   "death": null
+  },
+  {
+   "qid": "Q1125840",
+   "name": "Miroslav Poljak",
+   "birth": "1944-09-03",
+   "death": "2015-11-02"
+  },
+  {
+   "qid": "Q1225887",
+   "name": "Dimitri Claeys",
+   "birth": "1987-06-18",
+   "death": null
+  },
+  {
+   "qid": "Q1231733",
+   "name": "Dixie Kid",
+   "birth": "1883-12-23",
+   "death": "1934-04-06"
+  },
+  {
+   "qid": "Q1251736",
+   "name": "Doug Flutie",
+   "birth": "1962-10-23",
+   "death": null
+  },
+  {
+   "qid": "Q1316903",
+   "name": "Honus Wagner",
+   "birth": "1874-02-24",
+   "death": "1955-12-06"
+  },
+  {
+   "qid": "Q1317557",
+   "name": "Reg Harris",
+   "birth": "1920-03-01",
+   "death": "1992-06-22"
+  },
+  {
+   "qid": "Q1354287",
+   "name": "Erik Ågren",
+   "birth": "1916-01-03",
+   "death": "1985-07-03"
+  },
+  {
+   "qid": "Q1363008",
+   "name": "Väinö Liikkanen",
+   "birth": "1903-11-16",
+   "death": "1957-10-15"
+  },
+  {
+   "qid": "Q1370795",
+   "name": "Léon Moreaux",
+   "birth": "1852-03-10",
+   "death": "1921-11-11"
+  },
+  {
+   "qid": "Q1370915",
+   "name": "Ricardo Rodriguez",
+   "birth": "1986-02-17",
+   "death": null
+  },
+  {
+   "qid": "Q1371263",
+   "name": "Horace Rice",
+   "birth": "1872-09-05",
+   "death": "1950-01-18"
+  },
+  {
+   "qid": "Q1386607",
+   "name": "Matthew Ryan",
+   "birth": "1964-06-03",
+   "death": null
+  },
+  {
+   "qid": "Q1390152",
+   "name": "Ulf Samuelsson",
+   "birth": "1964-03-26",
+   "death": null
+  },
+  {
+   "qid": "Q1390341",
+   "name": "Lin Dan",
+   "birth": "1983-10-14",
+   "death": null
+  },
+  {
+   "qid": "Q1399654",
+   "name": "Red Grange",
+   "birth": "1903-06-13",
+   "death": "1991-01-28"
+  },
+  {
+   "qid": "Q1606728",
+   "name": "Ennio Falco",
+   "birth": "1968-01-03",
+   "death": null
+  },
+  {
+   "qid": "Q1620019",
+   "name": "Phil Walker",
+   "birth": "1956-03-20",
+   "death": null
+  },
+  {
+   "qid": "Q1628889",
+   "name": "George Lynch",
+   "birth": "1970-09-03",
+   "death": null
+  },
+  {
+   "qid": "Q1669593",
+   "name": "Joep Packbiers",
+   "birth": "1875-01-19",
+   "death": "1957-12-08"
+  },
+  {
+   "qid": "Q1691413",
+   "name": "Joseph Fargis",
+   "birth": "1948-04-02",
+   "death": null
+  },
+  {
+   "qid": "Q1712758",
+   "name": "Albert Francis Grenda",
+   "birth": "1889-09-15",
+   "death": "1977-05-30"
+  },
+  {
+   "qid": "Q1769234",
+   "name": "Esteban de Palma",
+   "birth": "1967-01-18",
+   "death": null
+  },
+  {
+   "qid": "Q1806009",
+   "name": "Per-Olof Arvidsson",
+   "birth": "1864-12-18",
+   "death": "1947-08-30"
+  },
+  {
+   "qid": "Q1806017",
+   "name": "Ture Hedman",
+   "birth": "1895-12-18",
+   "death": "1950-08-03"
+  },
+  {
+   "qid": "Q1807100",
+   "name": "Åke Thelning",
+   "birth": "1892-10-24",
+   "death": "1979-02-16"
+  },
+  {
+   "qid": "Q1807582",
+   "name": "Ilmari Pernaja",
+   "birth": "1892-02-10",
+   "death": "1963-07-20"
+  },
+  {
+   "qid": "Q1890805",
+   "name": "Leonel Marshall Jr.",
+   "birth": "1979-09-25",
+   "death": null
+  },
+  {
+   "qid": "Q1989837",
+   "name": "Lorenz Schindelholz",
+   "birth": "1966-07-23",
+   "death": null
+  },
+  {
+   "qid": "Q1998098",
+   "name": "Albert Gingell",
+   "birth": "1883-09-30",
+   "death": "1947-02-20"
+  },
+  {
+   "qid": "Q2036160",
+   "name": "Thomas Meunier",
+   "birth": "1991-09-12",
+   "death": null
+  },
+  {
+   "qid": "Q2050440",
+   "name": "Paolo Simion",
+   "birth": "1992-10-10",
+   "death": null
+  },
+  {
+   "qid": "Q2062685",
+   "name": "Steve Montador",
+   "birth": "1979-12-21",
+   "death": "2015-02-15"
+  },
+  {
+   "qid": "Q2120190",
+   "name": "Vladas Garastas",
+   "birth": "1932-02-08",
+   "death": "2026-06-10"
+  },
+  {
+   "qid": "Q2154755",
+   "name": "Marcus Nyman",
+   "birth": "1990-08-14",
+   "death": null
+  },
+  {
+   "qid": "Q2158221",
+   "name": "Robert Meeuwsen",
+   "birth": "1988-03-21",
+   "death": null
+  },
+  {
+   "qid": "Q2196519",
+   "name": "Kel Nagle",
+   "birth": "1920-12-21",
+   "death": "2015-01-29"
+  },
+  {
+   "qid": "Q2242595",
+   "name": "Sofía Maccari",
+   "birth": "1984-07-03",
+   "death": null
+  },
+  {
+   "qid": "Q2292052",
+   "name": "Vania Voïnova",
+   "birth": "1934-12-27",
+   "death": "1993-03-09"
+  },
+  {
+   "qid": "Q2326964",
+   "name": "John Drew",
+   "birth": "1954-09-30",
+   "death": "2022-04-10"
+  },
+  {
+   "qid": "Q2326997",
+   "name": "Tree Rollins",
+   "birth": "1955-06-16",
+   "death": null
+  },
+  {
+   "qid": "Q2351040",
+   "name": "Med Park",
+   "birth": "1933-04-11",
+   "death": "1998-07-23"
+  },
+  {
+   "qid": "Q2417737",
+   "name": "Daishirō Yoshimura",
+   "birth": "1947-08-16",
+   "death": "2003-11-01"
+  },
+  {
+   "qid": "Q2449308",
+   "name": "Giovanni Mangiante",
+   "birth": "1893-08-28",
+   "death": "1967-12-06"
+  },
+  {
+   "qid": "Q2474413",
+   "name": "Rosey",
+   "birth": "1970-04-07",
+   "death": "2017-04-17"
+  },
+  {
+   "qid": "Q2567386",
+   "name": "Bob Dandridge",
+   "birth": "1947-11-15",
+   "death": null
+  },
+  {
+   "qid": "Q2573742",
+   "name": "Christian Noël",
+   "birth": "1945-03-13",
+   "death": null
+  },
+  {
+   "qid": "Q2638719",
+   "name": "Olaf Frydenlund",
+   "birth": "1862-06-16",
+   "death": "1947-04-08"
+  },
+  {
+   "qid": "Q2698565",
+   "name": "Wataru Misaka",
+   "birth": "1923-12-21",
+   "death": "2019-11-20"
+  },
+  {
+   "qid": "Q2715476",
+   "name": "Shark Boy",
+   "birth": "1975-01-28",
+   "death": null
+  },
+  {
+   "qid": "Q2734324",
+   "name": "Stephen Graham",
+   "birth": "1982-06-11",
+   "death": null
+  },
+  {
+   "qid": "Q2757646",
+   "name": "Nina Skeime",
+   "birth": "1962-05-21",
+   "death": null
+  },
+  {
+   "qid": "Q2806736",
+   "name": "Connor McDavid",
+   "birth": "1997-01-13",
+   "death": null
+  },
+  {
+   "qid": "Q2889724",
+   "name": "Oskar Olsen",
+   "birth": "1897-10-17",
+   "death": "1956-12-28"
+  },
+  {
+   "qid": "Q2915266",
+   "name": "Karel Skalička",
+   "birth": "1896-11-01",
+   "death": "1979-12-10"
+  },
+  {
+   "qid": "Q2985465",
+   "name": "Ed McKeever",
+   "birth": "1983-08-27",
+   "death": null
+  },
+  {
+   "qid": "Q3025619",
+   "name": "Dexter Jackson",
+   "birth": "1977-07-28",
+   "death": null
+  },
+  {
+   "qid": "Q3075618",
+   "name": "Lydia Valentín",
+   "birth": "1985-02-10",
+   "death": null
+  },
+  {
+   "qid": "Q3090378",
+   "name": "Mike Trout",
+   "birth": "1991-08-07",
+   "death": null
+  },
+  {
+   "qid": "Q3142324",
+   "name": "Hugh Trumble",
+   "birth": "1867-05-12",
+   "death": "1938-08-14"
+  },
+  {
+   "qid": "Q3157443",
+   "name": "Jacky Avril",
+   "birth": "1964-07-19",
+   "death": null
+  },
+  {
+   "qid": "Q3176265",
+   "name": "Olav Kjelbotn",
+   "birth": "1898-10-05",
+   "death": "1966-05-17"
+  },
+  {
+   "qid": "Q3176424",
+   "name": "Martin P. Vangsli",
+   "birth": "1903-02-01",
+   "death": "1976-06-05"
+  },
+  {
+   "qid": "Q3196371",
+   "name": "Kid Nichols",
+   "birth": "1869-09-14",
+   "death": "1953-04-11"
+  },
+  {
+   "qid": "Q3229608",
+   "name": "Leo Ware",
+   "birth": "1876-09-27",
+   "death": "1914-12-28"
+  },
+  {
+   "qid": "Q3243189",
+   "name": "Kevin Cash",
+   "birth": "1977-12-06",
+   "death": null
+  },
+  {
+   "qid": "Q3295995",
+   "name": "Martín Maldonado",
+   "birth": "1986-08-16",
+   "death": null
+  },
+  {
+   "qid": "Q3308616",
+   "name": "Mikhail Studenetsky",
+   "birth": "1934-03-06",
+   "death": "2021-03-01"
+  },
+  {
+   "qid": "Q3374850",
+   "name": "Sandra Toft",
+   "birth": "1989-10-18",
+   "death": null
+  },
+  {
+   "qid": "Q3427007",
+   "name": "Vicky Vilagos",
+   "birth": "1963-04-17",
+   "death": null
+  },
+  {
+   "qid": "Q3432957",
+   "name": "Charles Thomas Butler",
+   "birth": "1932-06-11",
+   "death": "2019-11-21"
+  },
+  {
+   "qid": "Q3435016",
+   "name": "Thomas McMeekin",
+   "birth": "1866-12-31",
+   "death": "1946-10-24"
+  },
+  {
+   "qid": "Q3437676",
+   "name": "David Granger",
+   "birth": "1903-01-26",
+   "death": "2002-09-27"
+  },
+  {
+   "qid": "Q3441098",
+   "name": "James Blair",
+   "birth": "1909-10-28",
+   "death": "1992-05-23"
+  },
+  {
+   "qid": "Q3445858",
+   "name": "Virgil Jacomini",
+   "birth": "1899-05-30",
+   "death": "1984-10-04"
+  },
+  {
+   "qid": "Q3497882",
+   "name": "Stefan Logan",
+   "birth": "1981-06-02",
+   "death": null
+  },
+  {
+   "qid": "Q3503443",
+   "name": "Vladimír Andrs",
+   "birth": "1937-05-12",
+   "death": "2018-06-17"
+  },
+  {
+   "qid": "Q3503570",
+   "name": "František Králík",
+   "birth": "1942-04-12",
+   "death": "1974-09-07"
+  },
+  {
+   "qid": "Q3526023",
+   "name": "Khabib Nurmagomedov",
+   "birth": "1988-09-20",
+   "death": null
+  },
+  {
+   "qid": "Q3536179",
+   "name": "A. E. J. Collins",
+   "birth": "1885-08-18",
+   "death": "1914-11-11"
+  },
+  {
+   "qid": "Q3618488",
+   "name": "Anthony Gaitor",
+   "birth": "1988-10-09",
+   "death": null
+  },
+  {
+   "qid": "Q3759433",
+   "name": "Gene Ollrich",
+   "birth": "1922-06-30",
+   "death": "2008-06-16"
+  },
+  {
+   "qid": "Q3814803",
+   "name": "Kevin Cone",
+   "birth": "1988-03-20",
+   "death": null
+  },
+  {
+   "qid": "Q3856181",
+   "name": "Michael Holton",
+   "birth": "1961-08-04",
+   "death": null
+  },
+  {
+   "qid": "Q3857393",
+   "name": "Mike Gale",
+   "birth": "1950-07-18",
+   "death": "2020-07-31"
+  },
+  {
+   "qid": "Q3881805",
+   "name": "Oliver Robinson",
+   "birth": "1960-03-13",
+   "death": null
+  },
+  {
+   "qid": "Q4012915",
+   "name": "Ville Mattila",
+   "birth": "1903-03-09",
+   "death": "1987-07-11"
+  },
+  {
+   "qid": "Q4267665",
+   "name": "Péter Kovács",
+   "birth": "1959-09-28",
+   "death": "2024-06-22"
+  },
+  {
+   "qid": "Q4355800",
+   "name": "Sandra Haynie",
+   "birth": "1943-06-04",
+   "death": null
+  },
+  {
+   "qid": "Q4391858",
+   "name": "Shohei Ohtani",
+   "birth": "1994-07-05",
+   "death": null
+  },
+  {
+   "qid": "Q4679732",
+   "name": "Braun Strowman",
+   "birth": "1983-09-06",
+   "death": null
+  },
+  {
+   "qid": "Q4733901",
+   "name": "Almondo Curry",
+   "birth": "1980-08-18",
+   "death": null
+  },
+  {
+   "qid": "Q4735350",
+   "name": "Alphonse Burnand",
+   "birth": "1896-01-21",
+   "death": "1981-12-04"
+  },
+  {
+   "qid": "Q4760830",
+   "name": "Andy Hopkins",
+   "birth": "1949-10-19",
+   "death": "2017-10-01"
+  },
+  {
+   "qid": "Q4772101",
+   "name": "Anthony Bennett",
+   "birth": "1993-03-14",
+   "death": null
+  },
+  {
+   "qid": "Q4909325",
+   "name": "Bill Harris",
+   "birth": "1897-10-26",
+   "death": "1961-03-07"
+  },
+  {
+   "qid": "Q4935100",
+   "name": "Bobby Harris",
+   "birth": "1983-06-15",
+   "death": null
+  },
+  {
+   "qid": "Q4945482",
+   "name": "Borislava Ivanova",
+   "birth": "1966-11-24",
+   "death": null
+  },
+  {
+   "qid": "Q5085289",
+   "name": "Charlie Neal",
+   "birth": "1931-01-30",
+   "death": "1996-11-18"
+  },
+  {
+   "qid": "Q5106367",
+   "name": "Chris Davis",
+   "birth": "1983-12-01",
+   "death": null
+  },
+  {
+   "qid": "Q5162259",
+   "name": "Conor McGregor",
+   "birth": "1988-07-14",
+   "death": null
+  },
+  {
+   "qid": "Q5200166",
+   "name": "Cynthia Vescan",
+   "birth": "1992-02-07",
+   "death": null
+  },
+  {
+   "qid": "Q5212802",
+   "name": "Damon Allen",
+   "birth": "1963-07-29",
+   "death": null
+  },
+  {
+   "qid": "Q5256411",
+   "name": "Tim Hardaway Jr.",
+   "birth": "1992-03-16",
+   "death": null
+  },
+  {
+   "qid": "Q5358317",
+   "name": "Pepijn Aardewijn",
+   "birth": "1970-06-15",
+   "death": null
+  },
+  {
+   "qid": "Q5371347",
+   "name": "Hack Wilson",
+   "birth": "1900-04-26",
+   "death": "1948-11-23"
+  },
+  {
+   "qid": "Q5496726",
+   "name": "Freddie Gilroy",
+   "birth": "1936-03-07",
+   "death": "2016-06-28"
+  },
+  {
+   "qid": "Q5596444",
+   "name": "Grant Shaw",
+   "birth": "1984-08-03",
+   "death": null
+  },
+  {
+   "qid": "Q5603295",
+   "name": "Lars-Göran Carlsson",
+   "birth": "1949-07-24",
+   "death": "2020-07-27"
+  },
+  {
+   "qid": "Q6161931",
+   "name": "Jason Arakgi",
+   "birth": "1985-05-12",
+   "death": null
+  },
+  {
+   "qid": "Q6266374",
+   "name": "Johnny Bright",
+   "birth": "1930-06-11",
+   "death": "1983-12-14"
+  },
+  {
+   "qid": "Q6482218",
+   "name": "Lamont Reid",
+   "birth": "1982-05-04",
+   "death": null
+  },
+  {
+   "qid": "Q6688391",
+   "name": "Louis Williquet",
+   "birth": "1894-07-02",
+   "death": "1937-02-04"
+  },
+  {
+   "qid": "Q6768828",
+   "name": "Mark McLoughlin",
+   "birth": "1965-10-26",
+   "death": null
+  },
+  {
+   "qid": "Q6820961",
+   "name": "Merwyn Fernandes",
+   "birth": "1959-04-12",
+   "death": null
+  },
+  {
+   "qid": "Q6848465",
+   "name": "Mike Pringle",
+   "birth": "1967-10-01",
+   "death": null
+  },
+  {
+   "qid": "Q7072101",
+   "name": "O. D. Anosike",
+   "birth": "1991-01-03",
+   "death": null
+  },
+  {
+   "qid": "Q7143713",
+   "name": "Pat McAfee",
+   "birth": "1987-05-02",
+   "death": null
+  },
+  {
+   "qid": "Q7289588",
+   "name": "Ramin Rezaeian",
+   "birth": "1990-03-21",
+   "death": null
+  },
+  {
+   "qid": "Q7310414",
+   "name": "Reino Poutanen",
+   "birth": "1928-02-21",
+   "death": "2007-04-14"
+  },
+  {
+   "qid": "Q7346142",
+   "name": "Robert Johnsen",
+   "birth": "1896-06-23",
+   "death": "1975-08-31"
+  },
+  {
+   "qid": "Q7347558",
+   "name": "Robert McKnight",
+   "birth": "1938-03-19",
+   "death": "2021-03-21"
+  },
+  {
+   "qid": "Q7356941",
+   "name": "Rodney Hardeway",
+   "birth": "1986-02-13",
+   "death": null
+  },
+  {
+   "qid": "Q7381158",
+   "name": "Russ Jackson",
+   "birth": "1936-07-28",
+   "death": null
+  },
+  {
+   "qid": "Q7384420",
+   "name": "Ryan Phillips",
+   "birth": "1982-11-15",
+   "death": null
+  },
+  {
+   "qid": "Q7395772",
+   "name": "Saba Anjum Karim",
+   "birth": "1985-06-12",
+   "death": null
+  },
+  {
+   "qid": "Q7520267",
+   "name": "Simone Biles",
+   "birth": "1997-03-14",
+   "death": null
+  },
+  {
+   "qid": "Q7537852",
+   "name": "Skyler Green",
+   "birth": "1984-09-12",
+   "death": null
+  },
+  {
+   "qid": "Q9146594",
+   "name": "Alexandra Kustova",
+   "birth": "1998-08-26",
+   "death": null
+  },
+  {
+   "qid": "Q9147083",
+   "name": "Alex Beaulieu-Marchand",
+   "birth": "1994-03-03",
+   "death": null
+  },
+  {
+   "qid": "Q10431625",
+   "name": "Tyrone Bell",
+   "birth": "1974-10-20",
+   "death": null
+  },
+  {
+   "qid": "Q14950210",
+   "name": "Josh Johnson",
+   "birth": "1990-09-10",
+   "death": null
+  },
+  {
+   "qid": "Q14951181",
+   "name": "Tydus Winans",
+   "birth": "1972-07-26",
+   "death": null
+  },
+  {
+   "qid": "Q15831045",
+   "name": "Jemerson",
+   "birth": "1992-08-24",
+   "death": null
+  },
+  {
+   "qid": "Q15935247",
+   "name": "Christian O'Sullivan",
+   "birth": "1991-08-22",
+   "death": null
+  },
+  {
+   "qid": "Q16199465",
+   "name": "Bennie Goods",
+   "birth": "1968-02-28",
+   "death": null
+  },
+  {
+   "qid": "Q16235543",
+   "name": "Rade Krunić",
+   "birth": "1993-10-07",
+   "death": null
+  },
+  {
+   "qid": "Q16354863",
+   "name": "Seo Seung-jae",
+   "birth": "1997-09-04",
+   "death": null
+  },
+  {
+   "qid": "Q16674228",
+   "name": "Simon Gotch",
+   "birth": "1982-10-18",
+   "death": null
+  },
+  {
+   "qid": "Q16727427",
+   "name": "John Beaton",
+   "birth": "1950-03-02",
+   "death": null
+  },
+  {
+   "qid": "Q16729130",
+   "name": "Jermaine Gabriel",
+   "birth": "1990-03-14",
+   "death": null
+  },
+  {
+   "qid": "Q17385566",
+   "name": "Corey Anderson",
+   "birth": "1989-09-22",
+   "death": null
+  },
+  {
+   "qid": "Q17509918",
+   "name": "Sederrik Cunningham",
+   "birth": "1989-07-14",
+   "death": null
+  },
+  {
+   "qid": "Q18011042",
+   "name": "Eliza McCartney",
+   "birth": "1996-12-11",
+   "death": null
+  },
+  {
+   "qid": "Q18128572",
+   "name": "András Szatmári",
+   "birth": "1993-02-03",
+   "death": null
+  },
+  {
+   "qid": "Q18182646",
+   "name": "Sorn Seavmey",
+   "birth": "1995-09-14",
+   "death": null
+  },
+  {
+   "qid": "Q18216929",
+   "name": "Rob Lohr",
+   "birth": "1990-03-01",
+   "death": null
+  },
+  {
+   "qid": "Q18226867",
+   "name": "Elias Samson",
+   "birth": "1987-11-22",
+   "death": null
+  },
+  {
+   "qid": "Q18706201",
+   "name": "Deatrich Wise",
+   "birth": "1965-05-06",
+   "death": null
+  },
+  {
+   "qid": "Q18915163",
+   "name": "Rafael Capote",
+   "birth": "1987-10-05",
+   "death": null
+  },
+  {
+   "qid": "Q19667998",
+   "name": "Patrick Mahomes",
+   "birth": "1995-09-17",
+   "death": null
+  },
+  {
+   "qid": "Q19879328",
+   "name": "Sam Johnson",
+   "birth": "1959-05-18",
+   "death": null
+  },
+  {
+   "qid": "Q19950524",
+   "name": "Nikita Rafalovich",
+   "birth": "1993-10-10",
+   "death": null
+  },
+  {
+   "qid": "Q20067704",
+   "name": "Kyle Connor",
+   "birth": "1996-12-09",
+   "death": null
+  },
+  {
+   "qid": "Q20204870",
+   "name": "Andrew Stewart",
+   "birth": "1965-11-20",
+   "death": null
+  },
+  {
+   "qid": "Q20643228",
+   "name": "Matthew Wells",
+   "birth": "1990-11-26",
+   "death": null
+  },
+  {
+   "qid": "Q20723829",
+   "name": "Rosamaria Montibeller",
+   "birth": "1994-04-09",
+   "death": null
+  },
+  {
+   "qid": "Q20820857",
+   "name": "Massimo Stano",
+   "birth": "1992-02-27",
+   "death": null
+  },
+  {
+   "qid": "Q20873154",
+   "name": "Kateryna Reznik",
+   "birth": "1995-11-20",
+   "death": null
+  },
+  {
+   "qid": "Q21030456",
+   "name": "Irma Testa",
+   "birth": "1997-12-28",
+   "death": null
+  },
+  {
+   "qid": "Q21066249",
+   "name": "Rory Connop",
+   "birth": "1990-12-27",
+   "death": null
+  },
+  {
+   "qid": "Q23059678",
+   "name": "Katharina Hennig",
+   "birth": "1996-06-14",
+   "death": null
+  },
+  {
+   "qid": "Q24006066",
+   "name": "Artem Dolgopyat",
+   "birth": "1997-06-16",
+   "death": null
+  },
+  {
+   "qid": "Q24642436",
+   "name": "Abuyazid Mantsigov",
+   "birth": "1993-07-28",
+   "death": null
+  },
+  {
+   "qid": "Q24997799",
+   "name": "Dylan Collier",
+   "birth": "1991-04-27",
+   "death": null
+  },
+  {
+   "qid": "Q26132646",
+   "name": "Marina Canetta",
+   "birth": "1989-04-01",
+   "death": null
+  },
+  {
+   "qid": "Q30902787",
+   "name": "Arshad Nadeem",
+   "birth": "1997-01-02",
+   "death": null
+  },
+  {
+   "qid": "Q35831063",
+   "name": "Matheus Cunha",
+   "birth": "1999-05-27",
+   "death": null
+  },
+  {
+   "qid": "Q48809478",
+   "name": "Giorgia Villa",
+   "birth": "2003-02-23",
+   "death": null
+  },
+  {
+   "qid": "Q50425487",
+   "name": "Sabrina Ionescu",
+   "birth": "1997-12-06",
+   "death": null
+  },
+  {
+   "qid": "Q55999670",
+   "name": "Christoph Baumgartner",
+   "birth": "1999-08-01",
+   "death": null
+  },
+  {
+   "qid": "Q56025896",
+   "name": "Leandro Bolmaro",
+   "birth": "2000-09-11",
+   "death": null
+  },
+  {
+   "qid": "Q56073420",
+   "name": "Iris Tió",
+   "birth": "2002-11-02",
+   "death": null
+  },
+  {
+   "qid": "Q56635650",
+   "name": "Sarah Fahr",
+   "birth": "2001-09-12",
+   "death": null
+  },
+  {
+   "qid": "Q57235640",
+   "name": "Jiner Zhu",
+   "birth": "2002-11-16",
+   "death": null
+  },
+  {
+   "qid": "Q57409544",
+   "name": "Pauletta Foppa",
+   "birth": "2000-12-22",
+   "death": null
+  },
+  {
+   "qid": "Q61303863",
+   "name": "Sophie Sorschag",
+   "birth": "1998-11-14",
+   "death": null
+  },
+  {
+   "qid": "Q61757641",
+   "name": "Simona Radiș",
+   "birth": "1999-04-05",
+   "death": null
+  },
+  {
+   "qid": "Q64613436",
+   "name": "Ai Mori",
+   "birth": "2003-09-17",
+   "death": null
+  },
+  {
+   "qid": "Q65618791",
+   "name": "Michał Oleksiejczuk",
+   "birth": "1995-02-22",
+   "death": null
+  },
+  {
+   "qid": "Q65974089",
+   "name": "Connor McGough",
+   "birth": "1995-08-14",
+   "death": null
+  },
+  {
+   "qid": "Q66385776",
+   "name": "Nat Phillips",
+   "birth": "1997-03-21",
+   "death": null
+  },
+  {
+   "qid": "Q67070943",
+   "name": "Tanguy Nianzou",
+   "birth": "2002-06-07",
+   "death": null
+  },
+  {
+   "qid": "Q68780528",
+   "name": "Blanka Kata Vas",
+   "birth": "2001-09-03",
+   "death": null
+  },
+  {
+   "qid": "Q72339696",
+   "name": "David Ungerer",
+   "birth": "1995-09-16",
+   "death": null
+  },
+  {
+   "qid": "Q74882407",
+   "name": "Yuko Takahashi",
+   "birth": "1991-08-27",
+   "death": null
+  },
+  {
+   "qid": "Q78638386",
+   "name": "Wes Hills",
+   "birth": "1995-06-05",
+   "death": null
+  },
+  {
+   "qid": "Q97279295",
+   "name": "Anthony Mahoungou",
+   "birth": "1994-02-12",
+   "death": null
+  },
+  {
+   "qid": "Q98843149",
+   "name": "Gavin Heslop",
+   "birth": "1997-11-13",
+   "death": null
+  },
+  {
+   "qid": "Q106571826",
+   "name": "Solfrid Koanda",
+   "birth": "1998-11-13",
+   "death": null
+  },
+  {
+   "qid": "Q106839208",
+   "name": "Anna Haak",
+   "birth": "1996-09-19",
+   "death": null
+  },
+  {
+   "qid": "Q107252358",
+   "name": "Mary Tucker",
+   "birth": "2001-07-20",
+   "death": null
+  },
+  {
+   "qid": "Q107332874",
+   "name": "Finn Butcher",
+   "birth": "1995-03-17",
+   "death": null
+  },
+  {
+   "qid": "Q108491198",
+   "name": "Federico Gatti",
+   "birth": "1998-06-24",
+   "death": null
+  },
+  {
+   "qid": "Q111131080",
+   "name": "Diogo Moreira",
+   "birth": "2004-04-23",
+   "death": null
+  },
+  {
+   "qid": "Q113458969",
+   "name": "John Haggerty",
+   "birth": "1995-02-06",
+   "death": null
+  },
+  {
+   "qid": "Q117041294",
+   "name": "Matias Fernandez-Pardo",
+   "birth": "2005-02-03",
+   "death": null
+  },
+  {
+   "qid": "Q118322381",
+   "name": "Anthony Johnson",
+   "birth": "2000-02-04",
+   "death": null
+  },
+  {
+   "qid": "Q122950038",
+   "name": "Hong Kexin",
+   "birth": "2003-01-06",
+   "death": null
+  },
+  {
+   "qid": "Q126000289",
+   "name": "Valentin Bontus",
+   "birth": "2001-02-01",
+   "death": null
+  },
+  {
+   "qid": "Q131743002",
+   "name": "Thomas Sorber",
+   "birth": "2005-12-25",
+   "death": null
+  },
+  {
+   "qid": "Q136399673",
+   "name": "Chaney Johnson",
+   "birth": "2002-06-20",
+   "death": null
+  }
+ ]
+}
