@@ -122,6 +122,24 @@ export interface OnThisDayRecord {
   readonly birthDate?: string | null;
   readonly deathDate?: string | null;
   readonly birthPlace?: string | null;
+  /**
+   * True when Wikidata holds two or more equal-rank values for a date this fact states (its own day, or the birth or death date it carries) and names no preferred one: the
+   * source itself disagrees. The fact keeps the one date it always had, and the others are here: `dateAlternatives` for its own `eventDate`, `birthDateAlternatives` and
+   * `deathDateAlternatives` for a date it carries that is not its own day. Nothing is dropped and nothing is guessed (`pipeline/audit_dates.py`, `data-sources/disputed-dates.json`).
+   * The fact carries the tag `date:disputed`, and a sentence never says "today" unless every alternative falls on the same month and day.
+   */
+  readonly dateDisputed?: boolean;
+  /** The other days (`YYYY-MM-DD`, ascending) Wikidata gives for this fact's own date (`eventDate`: a birth on a birthday fact, a death on a death fact). Present only with `dateDisputed`. */
+  readonly dateAlternatives?: readonly string[];
+  /** The other days Wikidata gives for the `birthDate` a fact carries when that is not its own day (a death fact). */
+  readonly birthDateAlternatives?: readonly string[];
+  /** The other days Wikidata gives for the `deathDate` a fact carries when that is not its own day (a birthday fact). */
+  readonly deathDateAlternatives?: readonly string[];
+  /** The ages the dates could give instead of `ageYears` (age at death, from the alternatives of the birth and the death), ascending. Present only where they differ. */
+  readonly ageAlternatives?: readonly number[];
+  /** A short note on the disputed date, in English and in Japanese (`dateNote` writes it): "Date disputed: Wikidata also gives October 21, 1929." Never part of the sentence. */
+  readonly dateNote?: string;
+  readonly dateNoteJa?: string;
   readonly livingStatus?: LivingStatus;
   readonly featuredReasons?: readonly string[];
   /** Wikidata sitelink count when the extract supplied one. Used to rank famous people, never as identity. */

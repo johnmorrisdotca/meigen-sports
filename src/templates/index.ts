@@ -1,5 +1,5 @@
 export { TEMPLATES } from "./catalog.ts";
-export { dayContext, factDate, render, renderHistory, templatesFor } from "./render.ts";
+export { dateNote, dayContext, factDate, render, renderHistory, templatesFor } from "./render.ts";
 export { cleanLabel } from "./labels.ts";
 export { renderRun } from "./run.ts";
 export { FRAGMENTS } from "./phrases.ts";

@@ -10,13 +10,19 @@ itself disagrees, the fact must carry one of them, and the count is reported so 
 
     python3 -I pipeline/audit_dates.py [--facts DIR] [--dump DIR]        # exit 1 on any fact that differs from a single dump value
     python3 -I pipeline/audit_dates.py --write-sample test/golden/dump-dates-sample.json [--size 500]
+    python3 -I pipeline/audit_dates.py --write-disputed data-sources/disputed-dates.json [--check]
 
 `--write-sample` writes the fixture that `test/dump-dates.test.ts` holds the published data to without the dump: 500 people, the golden
 births among them and every person whose date has needed a preferred statement, the rest by a fixed hash order. Each carries the dump's date.
+
+`--write-disputed` writes the list of the CONTESTED people: each one's day-precision values of P569 and P570 where Wikidata holds two or more with
+no preferred one. `pipeline/convert_extract.py` reads that committed file (not the dump) and marks every fact that carries one of those dates
+(`dateDisputed`, `dateAlternatives`, the tag `date:disputed`); `--check` compares the committed file with a fresh read of the dump and exits 1 if they differ.
 """
 from __future__ import annotations
 
 import argparse
+import calendar
 import glob
 import gzip
 import hashlib
@@ -30,18 +36,28 @@ ROOT = Path(__file__).resolve().parent.parent
 FACTS = ROOT / "data/v1/0.1.0/facts"
 DUMP = Path(os.environ.get("MEIGEN_WIKIDATA_DUMP_DIR", str(Path.home() / "Projects/backups/spx-stats/2026-10-12-wikidata-dump-out")))
 GOLDEN = ROOT / "test/golden/golden-facts.json"
+DISPUTED = ROOT / "data-sources/disputed-dates.json"
 # People with two statements of one date, a preferred one among them: the first two were published a day or four days off (the first statement was taken), the other three hold a year first.
 PREFERRED_CASES = ("Q167828", "Q529207", "Q64853314", "Q107332874", "Q126000289")
 KINDS = (("birthDate", "P569", "player-birthday"), ("deathDate", "P570", "player-death"))
 
 
+def is_day(day: str) -> bool:
+    """A real day of the Gregorian calendar: Wikidata holds 1957-02-29 for Jan Ceulemans, who was born on the 28th of a year with no 29th."""
+    try:
+        y, m, d = int(day[:4]), int(day[5:7]), int(day[8:10])
+    except ValueError:
+        return False
+    return len(day) == 10 and y >= 1 and 1 <= m <= 12 and 1 <= d <= calendar.monthrange(y, m)[1]
+
+
 def day_values(statements: list | None) -> list[str]:
-    """The distinct days of the statements that are exact to the day, in the text of the dump's own timestamp."""
+    """The distinct days of the statements that are exact to the day and are real calendar days, in the text of the dump's own timestamp."""
     seen: list[str] = []
     for s in statements or []:
         if s.get("p") == 11 and isinstance(s.get("t"), str):
             day = s["t"][1:11]
-            if day not in seen:
+            if day not in seen and is_day(day):
                 seen.append(day)
     return seen
 
@@ -96,6 +112,36 @@ def compare(records: list[dict], dump: dict[str, dict]) -> tuple[Counter, list[t
     return count, wrong
 
 
+def disputed_people(records: list[dict], dump: dict[str, dict]) -> list[dict]:
+    """The people whose published birth or death date Wikidata holds two or more equal-rank values of: their qid, name and every day, ascending.
+    Only a date a published fact carries counts (the same facts and fields `compare` looks at)."""
+    found: dict[str, dict] = {}
+    for r in records:
+        person = r.get("person") or {}
+        qid = person.get("qid")
+        if not qid or qid not in dump:
+            continue
+        for field, prop, category in KINDS:
+            if not (r.get(field) or (r.get("category") == category and r.get("eventDate"))):
+                continue
+            days = day_values(dump[qid][prop])
+            if len(days) > 1:
+                entry = found.setdefault(qid, {"qid": qid, "name": person.get("name") or ""})
+                entry["birth" if prop == "P569" else "death"] = sorted(days)
+    return [found[q] for q in sorted(found, key=lambda q: int(q[1:]))]
+
+
+def disputed_document(people: list[dict]) -> str:
+    births = sum(1 for p in people if "birth" in p)
+    deaths = sum(1 for p in people if "death" in p)
+    return json.dumps({
+        "schemaVersion": 1,
+        "about": "People whose published birth or death date the Wikidata dump of 2026-10-12 (CC0) holds two or more equal-rank day-precision values of, with no preferred one: every day, ascending (pipeline/audit_dates.py --write-disputed).",
+        "counts": {"people": len(people), "births": births, "deaths": deaths},
+        "people": people,
+    }, ensure_ascii=False, indent=1) + "\n"
+
+
 def write_sample(facts: Path, dump: Path, out: Path, size: int) -> None:
     records = published(facts)
     people: dict[str, str] = {}
@@ -133,6 +179,8 @@ def main() -> int:
     ap.add_argument("--facts", type=Path, default=FACTS)
     ap.add_argument("--dump", type=Path, default=DUMP)
     ap.add_argument("--write-sample", type=Path)
+    ap.add_argument("--write-disputed", type=Path)
+    ap.add_argument("--check", action="store_true", help="with --write-disputed: write nothing, compare with the file and exit 1 if it differs")
     ap.add_argument("--size", type=int, default=500)
     args = ap.parse_args()
     if args.write_sample:
@@ -140,6 +188,15 @@ def main() -> int:
         return 0
     records = published(args.facts)
     wanted = {(r.get("person") or {}).get("qid") for r in records} - {None}
+    if args.write_disputed:
+        body = disputed_document(disputed_people(records, read_dump(args.dump, wanted)))
+        if args.check:
+            same = args.write_disputed.read_text(encoding="utf-8") == body
+            print(f"{args.write_disputed}: {'agrees with' if same else 'DIFFERS from'} the dump")
+            return 0 if same else 1
+        args.write_disputed.write_text(body, encoding="utf-8")
+        print(f"wrote {args.write_disputed}")
+        return 0
     count, wrong = compare(records, read_dump(args.dump, wanted))
     for key, n in sorted(count.items()):
         print(f"{n:>7}  {key}")

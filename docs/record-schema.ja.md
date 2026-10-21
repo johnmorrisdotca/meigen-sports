@@ -26,6 +26,11 @@
 | `flag` | 文字列 | 表示する旗 1 枚のコード（`RO`、`GB-ENG`、`SUHH`）。スポーツで代表した国、または唯一の国です。2 つの国を持ち、代表した国がない人には付きません。同じ国の 2 チームの試合は `flagOf` が読みます。 |
 | `birthCountry` | 文字列 | 出生地のある国（ISO 3166-1 alpha-2）。 |
 | `awards` | 文字列の配列 | 本人が受けた個人賞の ID（例: `hart-memorial-trophy`）。 |
+| `dateDisputed` | 真偽値 | 記録が述べる日付（その日そのもの、または持っている生年月日・没年月日）について、Wikidata が同順位の値を2つ以上持ち、優先する値を決めていないときに `true`。記録はこれまでの日付を保ち、ほかの日付は下の欄に入ります。タグ `date:disputed` も付きます。それ以外の記録にはありません。 |
+| `dateAlternatives` | 文字列の配列 | 記録自身の `eventDate`（誕生日の記録なら誕生、死去の記録なら死去）について、Wikidata が挙げるほかの日（`YYYY-MM-DD`、昇順）。 |
+| `birthDateAlternatives`、`deathDateAlternatives` | 文字列の配列 | 死去の記録が持つ `birthDate`、または誕生日の記録が持つ `deathDate` について、Wikidata が挙げるほかの日。 |
+| `ageAlternatives` | 数の配列 | 日付が違えば `ageYears` の代わりになりうる年齢（異なる場合のみ）。 |
+| `dateNote`、`dateNoteJa` | 文字列 | 日付に諸説あることを伝える短い注記。文には含めません。`日付に諸説あり：Wikidataにはほかに1929年10月21日の記載がある。`（`dateNote(record, locale)` が書きます）。 |
 | `wikidata`、`wikipedia` | 文字列、オブジェクト | その記録が扱う Wikidata 項目（人物または大会）と、そのウィキペディア記事のタイトル `{ en, fr, ja }`（Wikidata が結びつけているもの）。アドレスは `wikipediaUrl` が作ります。項目のない記録にはどちらも付かず、名前からリンクを推測することはありません。 |
 | `hostCountries` | 文字列の配列 | 大会の開催国。 |
 | `livingStatus` | `deceased`、`living`、または `unknown` | `unknown` は存命ではありません。`living` は出典があるときだけ。 |

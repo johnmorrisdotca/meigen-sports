@@ -1,4 +1,4 @@
-import { factsFor, quoteForDate, rankFeed, renderRun, tagsOf, wikipediaUrl } from "../src/index.ts";
+import { dateNote, factsFor, quoteForDate, rankFeed, renderRun, tagsOf, wikipediaUrl } from "../src/index.ts";
 import { quotes } from "../src/data/quotes.ts";
 import { OFFLINE_BUILD, offline } from "../src/data/offline.ts";
 import { loadFactDay, loadFactEventsDay, loadFactPeopleDay, loadFactShard, loadShard } from "../src/load.ts";
@@ -110,6 +110,14 @@ function drawFacts(box: HTMLElement, records: readonly OnThisDayRecord[], asOf?:
       const link = document.createElement("a"); link.className = "wiki"; link.href = url; link.target = "_blank"; link.rel = "noopener noreferrer"; link.dataset.testid = "wikipedia-link";
       link.textContent = familyLang.word(url.includes("wikidata.org") ? "wikidata" : locale === "ja" && url.includes("//en.wikipedia.org") ? "wikipediaEn" : "wikipedia");
       p.append(" ", link);
+    }
+    // A date Wikidata itself disagrees about: a small marker after the sentence, and the other days in its tooltip (hover, focus or a tap). The sentence is the same either way.
+    const note = fact.dateDisputed ? dateNote(fact, locale) : null;
+    if (note) {
+      const word = familyLang.word("dateDisputed");
+      const marker = document.createElement("span"); marker.className = "disputed"; marker.tabIndex = 0; marker.dataset.testid = "date-disputed"; marker.dataset.note = note;
+      marker.setAttribute("role", "note"); marker.setAttribute("aria-label", `${word}. ${note}`); marker.textContent = word;
+      p.append(" ", marker);
     }
     const tags = document.createElement("ul"); tags.className = "tags"; tags.dataset.testid = "fact-tags";
     for (const tag of tagsOf(fact)) { const li = document.createElement("li"); li.className = "tag"; li.textContent = tag; tags.append(li); }

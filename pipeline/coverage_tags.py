@@ -30,6 +30,7 @@ NAMESPACES = [
     ("title", "a club title the person won", "`championshipName`", "titles", "`title:stanley-cup`"),
     ("honour", "an honour: award winner, champion, Hall of Famer", "`awards`, `championships`, `hallOfFameYear`", "honours", "`honour:award-winner`"),
     ("source", "where the fact comes from", "`source.sourceId`", "", "`source:wikidata`"),
+    ("date", "Wikidata disagrees about a date the fact states: `disputed` (the other days are in `dateAlternatives`)", "`dateDisputed`", "", "`date:disputed`"),
 ]
 
 

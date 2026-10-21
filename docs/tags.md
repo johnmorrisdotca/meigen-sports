@@ -27,6 +27,7 @@ Every one of the 103,592 facts carries its tags in `tags`: the history types tha
 | `title` | a club title the person won | `championshipName` | 6 | 3,472 | `indexes/titles/<value>.json` | `title:stanley-cup` |
 | `honour` | an honour: award winner, champion, Hall of Famer | `awards`, `championships`, `hallOfFameYear` | 3 | 4,572 | `indexes/honours/<value>.json` | `honour:award-winner` |
 | `source` | where the fact comes from | `source.sourceId` | 9 | 103,592 | in `tags` only | `source:wikidata` |
+| `date` | Wikidata disagrees about a date the fact states: `disputed` (the other days are in `dateAlternatives`) | `dateDisputed` | 1 | 716 | in `tags` only | `date:disputed` |
 
 A tag's value is letters, digits, hyphens, dots and underscores. A country is an ISO 3166-1 alpha-2 code (`RO`), or the ISO 3166-3 code of a former country that has a flag in Hata (`SUHH` the Soviet Union, `DDDE` East Germany, `CSHH` Czechoslovakia, `YUCS` Yugoslavia); England, Scotland, Wales and Northern Ireland are `GB`. A person of two countries has both, and the flag (`flag`, a code a flag set draws) only when he represents one in sport or has one country. A state no code names (the British Raj, the Empire of Japan) is not guessed.
 

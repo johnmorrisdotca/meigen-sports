@@ -88,9 +88,13 @@ function whenOfHistory(record: MeigenRecord): When | null {
   return { year: Number(iso.slice(0, 4)), month: Number(iso.slice(5, 7)), day: Number(iso.slice(8, 10)), approximate: false, iso };
 }
 
-/** The fact's day is the day being shown (same month and day, whatever the year): "today" and "on this day" are true. */
-function isOnDay(when: When | null, asOf: string | undefined): boolean {
-  return Boolean(when?.iso && asOf && isDate(asOf) && asOf.slice(5) === when.iso.slice(5));
+/**
+ * The fact's day is the day being shown (same month and day, whatever the year): "today" and "on this day" are true. A fact whose date Wikidata disputes
+ * (`alternatives`: the other days it gives) is on the day only when every alternative falls on that month and day too; otherwise "today" could be false, and the
+ * sentence says the date it always said.
+ */
+function isOnDay(when: When | null, asOf: string | undefined, alternatives: readonly string[] = []): boolean {
+  return Boolean(when?.iso && asOf && isDate(asOf) && asOf.slice(5) === when.iso.slice(5) && alternatives.every((day) => day.slice(5) === asOf.slice(5)));
 }
 
 /** The four ways a sentence carries its date. On the fact's own day the year is enough and `dateLead` is empty; anywhere else it is the full date. */
@@ -118,10 +122,31 @@ export function factDate(record: OnThisDayRecord | MeigenRecord, locale: Templat
   return when ? formatDate(locale, when.year, when.month, when.day) : null;
 }
 
+/**
+ * The short note that goes with a fact whose date Wikidata disputes (`dateDisputed`), or null for any other fact: one sentence for each disputed date
+ * and one for an age the dates leave open. It is data, never part of the fact's sentence: "Date disputed: Wikidata also gives October 21, 1929."
+ * (`日付に諸説あり：Wikidataにはほかに1929年10月21日の記載がある。`). It says only the days the record holds and never decides between them.
+ */
+export function dateNote(record: OnThisDayRecord, locale: TemplateLocale = "en"): string | null {
+  if (!record.dateDisputed) return null;
+  const say = (id: FragmentId, ...args: string[]): string => phrase(id, locale, args, () => 0);
+  // "A", "A and B", "A, B and C" (Japanese: the days with a comma between).
+  const list = (items: readonly string[]): string => items.length < 2 ? (items[0] ?? "") : `${items.slice(0, -1).join(say("join"))}${say("listLast")}${items.at(-1)}`;
+  const days = (found: readonly string[] | undefined): string =>
+    list((found ?? []).filter(isDate).map((day) => formatDate(locale, Number(day.slice(0, 4)), Number(day.slice(5, 7)), Number(day.slice(8, 10)))));
+  const parts: string[] = [];
+  for (const [id, found] of [["noteDate", record.dateAlternatives], ["noteBirth", record.birthDateAlternatives], ["noteDeath", record.deathDateAlternatives]] as const) {
+    const text = days(found);
+    if (text) parts.push(say(id, text));
+  }
+  if (record.ageAlternatives?.length) parts.push(say("noteAge", record.ageAlternatives.map((age) => say("ageUnit", String(age))).join(say("ageOr"))));
+  return parts.length ? parts.join(locale === "ja" ? "" : " ") : null;
+}
+
 /** Whether a sentence about this record is worded for the day it is shown on, or for anywhere. Exported so a caller can say which it is. */
 export function dayContext(record: OnThisDayRecord | MeigenRecord, asOf: string | undefined): "onThisDay" | "anywhere" {
   const when = "kind" in record ? whenOfHistory(record) : whenOfFact(record);
-  return isOnDay(when, asOf) ? "onThisDay" : "anywhere";
+  return isOnDay(when, asOf, "kind" in record ? [] : record.dateAlternatives) ? "onThisDay" : "anywhere";
 }
 
 function factType(record: OnThisDayRecord): TemplateType | null {
@@ -366,7 +391,7 @@ function subjectOfFact(record: OnThisDayRecord, locale: TemplateLocale, asOf: st
   const tie = hs != null && aws != null && hs === aws;
   const deathYear = deathYearOf(record);
   const when = whenOfFact(record);
-  const onDay = isOnDay(when, asOf);
+  const onDay = isOnDay(when, asOf, record.dateAlternatives);
   return {
     type, recordId: record.recordId, fields: fieldsOf(record, locale, asOf, choose, when, onDay), onDay,
     living: record.livingStatus === "living",

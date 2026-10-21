@@ -57,7 +57,15 @@ python3 -I pipeline/audit_dates.py --write-sample test/golden/dump-dates-sample.
 python3 -I pipeline/test_dates_rank.py                                    # the preferred-statement rule
 ```
 
-A property with several equal-rank values and no preferred one is **contested** (Wikidata disagrees with itself): the audit counts them and the published date is one of them.
+A property with several equal-rank values and no preferred one is **contested** (Wikidata disagrees with itself): the audit counts them and the published date is one of them. A value that is not a real calendar day (Jan Ceulemans has 1957-02-29) is no alternative. Those people are listed in `data-sources/disputed-dates.json` (524 people: 369 births, 169 deaths):
+
+```sh
+python3 -I pipeline/audit_dates.py --write-disputed data-sources/disputed-dates.json            # rewrite the list from the dump
+python3 -I pipeline/audit_dates.py --write-disputed data-sources/disputed-dates.json --check    # exit 1 if the committed list differs from the dump
+python3 -I pipeline/test_disputed_dates.py                                                       # mark_disputed and the list's rules
+```
+
+`convert_extract.py` reads that committed list (no dump needed to rebuild) and marks each fact that states one of those dates: `dateDisputed`, `dateAlternatives`, `birthDateAlternatives`, `deathDateAlternatives`, `ageAlternatives`, the tag `date:disputed`, and the note `dateNote` / `dateNoteJa` the library writes. The date a fact had is never changed; a published date that is not one of Wikidata's stops the build.
 
 ## Wikidata open fetch (famous)
 

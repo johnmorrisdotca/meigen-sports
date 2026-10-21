@@ -8,7 +8,7 @@ export { EXTRACT_CATEGORIES, FACT_CATEGORIES } from "./schema.ts";
 export { SCHEMA_VERSION, VERSION } from "./version.ts";
 export { isDate, monthDayOf } from "./dates.ts";
 export { captionFromFact, isRichFact } from "./sentences.ts";
-export { cleanLabel, dayContext, factDate, render, renderHistory, renderRun, templatesFor, TEMPLATES, TEMPLATE_TYPES } from "./templates/index.ts";
+export { cleanLabel, dateNote, dayContext, factDate, render, renderHistory, renderRun, templatesFor, TEMPLATES, TEMPLATE_TYPES } from "./templates/index.ts";
 export type {
   RenderedSentence, RenderOptions, RunOptions, RunSentence, SentenceTemplate, TemplateGate, TemplateLocale,
   TemplateRole, TemplateType, Wording,

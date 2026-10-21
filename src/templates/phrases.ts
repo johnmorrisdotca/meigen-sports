@@ -16,6 +16,7 @@ export type FragmentId =
   | "roundPart" | "articleCap" | "article" | "join" | "whoPlain" | "whoThe" | "whoTheAnd" | "whoOf" | "whoOfAnd" | "whoParen" | "result"
   | "onDate" | "inDate" | "aroundDate" | "leadOnDate" | "leadInDate" | "leadAroundDate"
   | "placeIn" | "placeAt" | "wonBy" | "wonByTitle"
+  | "noteDate" | "noteBirth" | "noteDeath" | "noteAge" | "listLast" | "ageUnit" | "ageOr"
   | "recordSet" | "recordHeld" | "recordEqualled" | "recordSurpassed" | "recordSetBy" | "recordHeldBy" | "recordEqualledBy" | "recordBrokenBy";
 
 type Table = Record<FragmentId, { readonly en: readonly string[]; readonly ja: readonly string[] }>;
@@ -77,6 +78,14 @@ export const FRAGMENTS: Table = {
   wonBy: { en: [", won by {0}"], ja: ["勝者は{0}。"] },
   // The winner of a whole competition (a season, a championship): 優勝, where a match or a bout has a 勝者.
   wonByTitle: { en: [", won by {0}"], ja: ["優勝は{0}。"] },
+  // The note on a date Wikidata disputes (`dateNote`): one sentence for each disputed date, one for an age the dates leave open. {0} is the list of other days (or ages).
+  noteDate: { en: ["Date disputed: Wikidata also gives {0}."], ja: ["日付に諸説あり：Wikidataにはほかに{0}の記載がある。"] },
+  noteBirth: { en: ["Birth date disputed: Wikidata also gives {0}."], ja: ["生年月日に諸説あり：Wikidataにはほかに{0}の記載がある。"] },
+  noteDeath: { en: ["Death date disputed: Wikidata also gives {0}."], ja: ["没年月日に諸説あり：Wikidataにはほかに{0}の記載がある。"] },
+  noteAge: { en: ["The age may also be {0}."], ja: ["年齢は{0}の可能性もある。"] },
+  listLast: { en: [" and "], ja: ["、"] },
+  ageUnit: { en: ["{0}"], ja: ["{0}歳"] },
+  ageOr: { en: [" or "], ja: ["または"] },
   recordSet: { en: ["set"], ja: [""] },
   recordHeld: { en: ["held"], ja: [""] },
   recordEqualled: { en: ["equalled"], ja: [""] },

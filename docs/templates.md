@@ -43,6 +43,8 @@ Four fields carry the date into a pattern: `{dateLead}` (“On July 4, 1945, ”
 
 `dayContext(record, asOf)` returns `"onThisDay"` or `"anywhere"`, and `factDate(record, locale)` the date a sentence about the record states (`null` when it holds none), so a caller can tell which wording a sentence got and check it.
 
+A fact whose date Wikidata disputes (`dateAlternatives`, [record-schema.md](record-schema.md)) is on its day only when **every** alternative falls on that month and day too: otherwise “today” could be false, and the sentence says the date it always said. `dateNote(record, locale)` writes the short note that goes with it, kept in `dateNote` / `dateNoteJa`, never in the sentence.
+
 The stored default (`text` / `textJa`, `captionFromFact`) is read on any day, so it is the “anywhere” form with the full date.
 
 ## Missing values

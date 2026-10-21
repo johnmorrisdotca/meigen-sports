@@ -162,6 +162,11 @@ A birth or death also carries what the sentence is made of, each only when the s
 | `flag` | string | The code of the one flag to show (`RO`, `GB-ENG`, `SUHH`): the country he represents in sport, or his only country. Absent for a person of two countries with none he represents. `flagOf` also reads two teams of one country. |
 | `birthCountry` | string | The country his birthplace lies in (ISO 3166-1 alpha-2). |
 | `awards` | string[] | The individual awards he won himself, as ids (`hart-memorial-trophy`). |
+| `dateDisputed` | boolean | `true` when Wikidata holds two or more equal-rank values for a date the fact states (its own day, or the birth or death date it carries) and names no preferred one. The fact keeps the date it had; the others are in the fields below. Also the tag `date:disputed`. Absent on every other fact. |
+| `dateAlternatives` | string[] | The other days (`YYYY-MM-DD`, ascending) Wikidata gives for the fact's own `eventDate`: the birth of a birthday, the death of a death. |
+| `birthDateAlternatives`, `deathDateAlternatives` | string[] | The other days for the `birthDate` a death fact carries, or the `deathDate` a birthday fact carries. |
+| `ageAlternatives` | number[] | The ages the dates could give instead of `ageYears`, where they differ. |
+| `dateNote`, `dateNoteJa` | string | A short note on the disputed date, never part of the sentence: `Date disputed: Wikidata also gives October 21, 1929.` (`dateNote(record, locale)` writes it). |
 | `wikidata`, `wikipedia` | string, object | The Wikidata item a fact is about (a person, an event) and the titles of its Wikipedia articles, `{ en, fr, ja }` where Wikidata links them; `wikipediaUrl` builds the address. A fact with no item has neither: no link is guessed from a name. |
 | `hostCountries` | string[] | For an event, the countries it was held in. |
 | `livingStatus` | `deceased`, `unknown` | `deceased` when a source holds a death; `unknown` when it holds none, never `living` unless a source confirms it. |

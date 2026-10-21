@@ -39,7 +39,7 @@
 
 日付を型に入れる欄は四つです。`{dateLead}`（「1945年7月4日、」。その日は空）、`{leadIn}`（同じ。ただしその日は「1945年、」）、`{dateOn}`（「1945年7月4日に」。その日は「1945年に」）、`{date}`（「1945年7月4日」）。`day: true` でない型は必ずこのどれかを含みます。`test/dated-facts.test.ts` は、含まない型と、印が無いのに「今日」と言う型で失敗します。
 
-`dayContext(record, asOf)` は `"onThisDay"` か `"anywhere"` を、`factDate(record, locale)` は記録について文が述べる日付（持っていなければ `null`）を返します。保存する既定の一文（`text` / `textJa`、`captionFromFact`）はどの日にも読まれるので「どこでも」の形、つまり完全な日付です。
+`dayContext(record, asOf)` は `"onThisDay"` か `"anywhere"` を、`factDate(record, locale)` は記録について文が述べる日付（持っていなければ `null`）を返します。Wikidata が日付に諸説ある記録（`dateAlternatives`、[record-schema.ja.md](record-schema.ja.md)）は、すべての代替日も同じ月日に当たるときだけ「その日」の記録になります。そうでなければ「今日」が偽になりうるので、これまでどおりの日付で書きます。`dateNote(record, locale)` が添える短い注記を書き、`dateNote` / `dateNoteJa` に保存します（文には含めません）。保存する既定の一文（`text` / `textJa`、`captionFromFact`）はどの日にも読まれるので「どこでも」の形、つまり完全な日付です。
 
 ## 欠けた値
 

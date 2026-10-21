@@ -28,6 +28,8 @@ EVENTS_DAY = 40  # facts in a day's events shard (`events/MM-DD.json`)
 EVENT_CATEGORIES = ("competition-start", "competition-end", "sport-event")
 # The people and the events the facts are about, with their countries and Wikipedia titles (pipeline/wikidata_links.py); empty when that extract is absent.
 LINKS: dict = {"people": {}, "events": {}}
+# People whose birth or death date Wikidata holds two or more equal-rank values of (pipeline/audit_dates.py --write-disputed); filled in main().
+DISPUTED: dict[str, dict] = {}
 TROPHIES: dict = json.loads((Path(__file__).resolve().parent.parent / "data-sources/trophies.json").read_text(encoding="utf-8"))
 AWARD_NAMES: dict[str, str] = {}  # award id (`hart-memorial-trophy`) -> the award's name, for the vocabulary's menus
 # The namespaces of a fact's tags that get an index of ids (`indexes/<folder>/<value>.json`); sport, league, team and day have theirs already.
@@ -39,7 +41,7 @@ TAG_INDEXES = (
 TAG_FIELDS = (
     "recordId", "category", "sport", "league", "competition", "eventLabel", "awardName", "countries", "nationality", "home", "away", "hostCountries",
     "birthCountry", "person", "position", "venueId", "eventDate", "draftYear", "seasonStartYear", "phase", "stage", "awards", "championships",
-    "championshipName", "hallOfFameYear", "source",
+    "championshipName", "hallOfFameYear", "source", "dateDisputed",
 )
 # Joseon-era general Q704476 (Myong-won Kim); never an athlete fact. The others are items of the priority list that are not the athlete the list
 # meant (the Wikidata item of a namesake, or of a politician, an actor or a doctor): Sun Yat-sen, Ronald Ross, the actress Jennifer Jones, the
@@ -91,6 +93,61 @@ def load_links() -> dict:
         return {"people": {}, "events": {}}
     data = json.loads(path.read_text(encoding="utf-8"))
     return {"people": data.get("people") or {}, "events": data.get("events") or {}}
+
+
+def load_disputed() -> dict[str, dict]:
+    """The people whose published birth or death date Wikidata holds two or more equal-rank values of (`data-sources/disputed-dates.json`, written by
+    `pipeline/audit_dates.py --write-disputed`): qid -> {"birth": [days], "death": [days]}. Committed, so a rebuild needs no dump."""
+    path = ROOT / "data-sources/disputed-dates.json"
+    if not path.exists():
+        print(f"missing {path}: no fact is marked date:disputed", file=sys.stderr)
+        return {}
+    return {p["qid"]: {k: p[k] for k in ("birth", "death") if p.get(k)} for p in json.loads(path.read_text(encoding="utf-8"))["people"]}
+
+
+def age_on(born: str, day: str) -> int:
+    by, bm, bd = map(int, born.split("-"))
+    dy, dm, dd = map(int, day.split("-"))
+    return dy - by - (1 if (dm, dd) < (bm, bd) else 0)
+
+
+def mark_disputed(out: dict) -> None:
+    """A fact that states a date Wikidata disputes keeps the date it always had and says the others: `dateAlternatives` (its own day: the birth of a birthday fact, the
+    death of a death fact), `birthDateAlternatives` / `deathDateAlternatives` (a date it carries that is not its own day), `ageAlternatives` (the ages the dates could give
+    instead of `ageYears`), and `dateDisputed`. Nothing is dropped and nothing chosen; a published date that is not one of Wikidata's is a build error."""
+    dispute = DISPUTED.get((out.get("person") or {}).get("qid") or "")
+    if not dispute:
+        return
+
+    def others(kind: str, value: str | None) -> list[str]:
+        days = dispute.get(kind)
+        if not days or not value:
+            return []
+        if value not in days:
+            raise SystemExit(f"{out['recordId']}: the published {kind} {value} is not one of Wikidata's {days}")
+        return [d for d in days if d != value]
+
+    cat = out["category"]
+    own = others("birth", out.get("eventDate")) if cat == "player-birthday" else others("death", out.get("eventDate")) if cat == "player-death" else []
+    birth = others("birth", out.get("birthDate")) if cat != "player-birthday" else []
+    death = others("death", out.get("deathDate")) if cat != "player-death" else []
+    ages: list[int] = []
+    if out.get("ageYears") is not None and out.get("birthDate") and out.get("deathDate") and (birth or own or death):
+        births = dispute.get("birth") or [out["birthDate"]]
+        deaths = dispute.get("death") or [out["deathDate"]]
+        every = {age_on(b, d) for b in births for d in deaths}
+        if out["ageYears"] in every:
+            ages = sorted(every - {out["ageYears"]})
+    if own:
+        out["dateAlternatives"] = own
+    if birth:
+        out["birthDateAlternatives"] = birth
+    if death:
+        out["deathDateAlternatives"] = death
+    if ages:
+        out["ageAlternatives"] = ages
+    if own or birth or death:
+        out["dateDisputed"] = True
 
 
 def best_award(awards: list[dict]) -> str | None:
@@ -514,6 +571,7 @@ def finalize(row: dict) -> dict | None:
         out["home"] = team(out["home"])
     if out.get("away"):
         out["away"] = team(out["away"])
+    mark_disputed(out)
     attach_links(out)
     hint = trophy_hint(out)
     if hint:
@@ -584,6 +642,10 @@ def add_captions(rows: list[dict]) -> list[dict]:
         row["text"] = words["text"]
         if words.get("textJa"):
             row["textJa"] = words["textJa"]
+        if words.get("dateNote"):
+            row["dateNote"] = words["dateNote"]
+        if words.get("dateNoteJa"):
+            row["dateNoteJa"] = words["dateNoteJa"]
         kept.append(row)
     return kept
 
@@ -1010,6 +1072,7 @@ def main() -> int:
         print(f"EXTRACT dir missing: {EXTRACT}", file=sys.stderr)
         return 1
     LINKS.update(load_links())
+    DISPUTED.update(load_disputed())
     games = [r for r in load_records("extract_games_on_day.json") if allowed(r) and r.get("status") == "final"]
     finals = [r for r in load_records("extract_finals.json") if allowed(r)]
     soccer = [r for r in load_records("extract_soccer_on_day.json") if allowed(r)]
