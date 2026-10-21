@@ -163,6 +163,17 @@ OTHER_TRADE = set(
 WORD = re.compile(r"[A-Za-zÀ-ɏ]+(?:['’][A-Za-zÀ-ɏ]+)*")
 
 
+def plain_words(text: str) -> str:
+    """Wikidata's formal names for the sport ("association football player") as readers say them ("footballer", "football manager"). A capital stays."""
+
+    def say(word: str):
+        return lambda m: word.capitalize() if m.group(0)[:1].isupper() else word
+
+    text = re.sub(r"\bassociation football players?\b", say("footballer"), text, flags=re.I)
+    text = re.sub(r"\bassociation footballers?\b", say("footballer"), text, flags=re.I)
+    return re.sub(r"\bassociation football\b", say("football"), text, flags=re.I)
+
+
 def words(text: str) -> list[str]:
     """The words of a phrase; a hyphenated or dashed pair ("Czech-American") is two."""
     return WORD.findall(text or "")
@@ -464,7 +475,12 @@ class Describer:
         return f"{demonym} {first} {rest}".strip()
 
     def phrase(self, p: dict) -> tuple[str | None, str]:
-        """(phrase, how): `description` when the person's own words are fit to show, `built` when assembled, (None, "") when neither."""
+        """(phrase, how): `description` when the person's own words are fit to show, `built` when assembled, (None, "") when neither.
+        Wikidata's formal "association football player" is said the way readers say it ("footballer")."""
+        text, how = self._phrase(p)
+        return (plain_words(text) if text else text), how
+
+    def _phrase(self, p: dict) -> tuple[str | None, str]:
         country = (self.labels.get(p["p27"][0]) or {}).get("en") if p["p27"] else None
         demonym = self.demonym.get(country or "")
         shown = self._tidy(p["desc"]) if p["desc"] and self._ok(p["desc"]) else None

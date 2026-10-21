@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readdirSync, readFileSync } from "node:fs";
 import test from "node:test";
 import { offline } from "../src/data/offline.ts";
-import { bestOfDay, factsFor, rankDay, rankRecords, significance, tagsOf } from "../src/facts.ts";
+import { bestOfDay, factsFor, kindTagsOf, rankDay, rankRecords, significance } from "../src/facts.ts";
 import type { OnThisDayRecord } from "../src/schema.ts";
 
 const root = "data/v1/0.1.0/facts";
@@ -16,7 +16,7 @@ test("every day shard keeps to two facts of a tag and two of a competition, when
   for (const name of readdirSync(`${root}/days`)) {
     const records = shard(`days/${name}`);
     const tags = new Map<string, number>(), comps = new Map<string, number>();
-    for (const r of records) { for (const t of tagsOf(r)) tags.set(t, (tags.get(t) ?? 0) + 1); comps.set(competition(r), (comps.get(competition(r)) ?? 0) + 1); }
+    for (const r of records) { for (const t of kindTagsOf(r)) tags.set(t, (tags.get(t) ?? 0) + 1); comps.set(competition(r), (comps.get(competition(r)) ?? 0) + 1); }
     if ([...tags.values(), ...comps.values()].every((n) => n <= 2)) strict += 1;
   }
   assert.ok(strict >= 340, `${strict} of 366 days keep to two`);

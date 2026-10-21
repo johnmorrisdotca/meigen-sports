@@ -9,6 +9,7 @@ import os
 import re
 import subprocess
 import sys
+import unicodedata
 from collections import defaultdict
 from datetime import date, timedelta
 from pathlib import Path
@@ -21,9 +22,23 @@ EXTRACT = Path(os.environ.get(
 OUT = ROOT / "data/v1/0.1.0/facts"
 VERSION = "0.1.0"
 ERA_START = 1850
+QID = re.compile(r"^Q[1-9]\d*$")
 PEOPLE_DAY = 40  # facts in a day's people shard (`people/MM-DD.json`)
 EVENTS_DAY = 40  # facts in a day's events shard (`events/MM-DD.json`)
 EVENT_CATEGORIES = ("competition-start", "competition-end", "sport-event")
+# The people and the events the facts are about, with their countries and Wikipedia titles (pipeline/wikidata_links.py); empty when that extract is absent.
+LINKS: dict = {"people": {}, "events": {}}
+# The namespaces of a fact's tags that get an index of ids (`indexes/<folder>/<value>.json`); sport, league, team and day have theirs already.
+TAG_INDEXES = (
+    ("country", "countries"), ("birthcountry", "birthcountries"), ("host", "hosts"), ("decade", "decades"), ("award", "awards"),
+    ("position", "positions"), ("honour", "honours"), ("series", "series"), ("title", "titles"),
+)
+# The fields a tag is built from (src/tags.ts `derivedTags`): all that scripts/tags-batch.ts is sent.
+TAG_FIELDS = (
+    "recordId", "category", "sport", "league", "competition", "eventLabel", "awardName", "countries", "nationality", "home", "away", "hostCountries",
+    "birthCountry", "person", "position", "venueId", "eventDate", "draftYear", "seasonStartYear", "phase", "stage", "awards", "championships",
+    "championshipName", "hallOfFameYear", "source",
+)
 # Joseon-era general Q704476 (Myong-won Kim); never an athlete fact. The others are items of the priority list that are not the athlete the list
 # meant (the Wikidata item of a namesake, or of a politician, an actor or a doctor): Sun Yat-sen, Ronald Ross, the actress Jennifer Jones, the
 # comedian George Burns, the politicians Marty Walsh and Jack Marshall, the singer Kim Woo-jin, the musician Paul Brady, the physician Pedro Gil.
@@ -59,6 +74,21 @@ AWARD_ORDER = (
 DESCRIPTION_BLOCKED = re.compile(r"female|male|woman|women|girl|\bman\b|\bpara|disab|blind|deaf|wheelchair|transgender|gay|lesbian|sportswoman", re.I)
 PARA_SPORT = re.compile(r"^(para|deaflympic|wheelchair|goalball|boccia|sitting)[-_]?", re.I)
 NOT_A_SPORT = {"entertainment", "film_stunts", "stunt", "high_wire"}
+
+
+def slug_of_name(text: str) -> str:
+    """"Hart Memorial Trophy" as an id, `hart-memorial-trophy`: the same rule as `slugOf` in src/tags.ts."""
+    plain = "".join(c for c in unicodedata.normalize("NFKD", text) if not unicodedata.combining(c))
+    return re.sub(r"[^a-z0-9]+", "-", plain.lower()).strip("-")
+
+
+def load_links() -> dict:
+    path = EXTRACT / "extract_wikidata_links.json"
+    if not path.exists():
+        print(f"missing {path}: no countries beyond nationality, no Wikipedia links", file=sys.stderr)
+        return {"people": {}, "events": {}}
+    data = json.loads(path.read_text(encoding="utf-8"))
+    return {"people": data.get("people") or {}, "events": data.get("events") or {}}
 
 
 def best_award(awards: list[dict]) -> str | None:
@@ -155,6 +185,20 @@ def clean_label(value):
     if not isinstance(value, str):
         return value
     return PLACEHOLDER.sub("", value).strip()
+
+
+# Wikidata's formal names for the sport ("Bosnian association football player") are not what a reader says: "Bosnian footballer". The same rule is
+# in pipeline/wikidata_dump_people.py (the extractor's phrases) and is applied here to every phrase that says who a person is, whoever wrote it.
+def plain_words(text):
+    if not isinstance(text, str):
+        return text
+
+    def say(word: str):
+        return lambda m: word.capitalize() if m.group(0)[:1].isupper() else word
+
+    text = re.sub(r"\bassociation football players?\b", say("footballer"), text, flags=re.I)
+    text = re.sub(r"\bassociation footballers?\b", say("footballer"), text, flags=re.I)
+    return re.sub(r"\bassociation football\b", say("football"), text, flags=re.I)
 
 
 def team(obj) -> dict | None:
@@ -345,10 +389,11 @@ def featured_reasons(row: dict) -> list[str]:
 
 
 def tag_set(row: dict) -> list[str]:
+    """The kind of fact: the category and the history types. A namespaced tag (`country:RO`) says what a fact is about and has its own indexes."""
     seen: set[str] = set()
     out: list[str] = []
     for tag in [row.get("category"), *(row.get("tags") or [])]:
-        if tag and tag not in seen:
+        if tag and ":" not in tag and tag not in seen:
             seen.add(tag)
             out.append(tag)
     return out
@@ -452,10 +497,13 @@ def finalize(row: dict) -> dict | None:
         "announcedDate", "awardDate", "ratifiedDate", "featuredReasons", "record",
         "sitelinks", "priorityAthlete", "nationality", "epithet", "eventLabel", "eventPlace",
         "championships", "championshipName", "personAward", "awardCount", "hallOfFameYear",
-        "seriesWinnerWins", "seriesLoserWins", "seriesGames", "winnerRecord", "winnerTitleNumber",
+        "seriesWinnerWins", "seriesLoserWins", "seriesGames", "winnerRecord", "winnerTitleNumber", "awards",
     ):
         if row.get(key) not in (None, [], ""):
             out[key] = row[key]
+    for key in ("epithet", "highlight"):
+        if out.get(key):
+            out[key] = plain_words(out[key])
     if out.get("clubName"):
         out["clubName"] = clean_label(out["clubName"])
     if out.get("clubNames"):
@@ -464,7 +512,35 @@ def finalize(row: dict) -> dict | None:
         out["home"] = team(out["home"])
     if out.get("away"):
         out["away"] = team(out["away"])
+    attach_links(out)
     return out
+
+
+def attach_links(out: dict) -> None:
+    """The Wikidata item a fact is about (its person, or its event), the item's Wikipedia titles, and, for a person, his countries, the one flag when it is
+    unambiguous and his birth country; for an event, the countries it was held in. Only what the dump holds: a fact whose person has no Q id gets nothing."""
+    qid = (out.get("person") or {}).get("qid")
+    link = None
+    if qid and QID.match(qid):
+        link = LINKS["people"].get(qid)
+        out["wikidata"] = qid
+        if link:
+            if link.get("c"):
+                out["countries"] = list(link["c"])
+            if link.get("f"):
+                out["flag"] = link["f"]
+            if link.get("b"):
+                out["birthCountry"] = link["b"]
+    elif out.get("category") in EVENT_CATEGORIES:
+        event = (out.get("recordId") or "").split(":")[2:3]
+        if event and QID.match(event[0]):
+            qid = event[0]
+            link = LINKS["events"].get(qid)
+            out["wikidata"] = qid
+            if link and link.get("e"):
+                out["hostCountries"] = list(link["e"])
+    if link and link.get("w"):
+        out["wikipedia"] = {k: link["w"][k] for k in ("en", "fr", "ja") if link["w"].get(k)}
 
 
 def add_captions(rows: list[dict]) -> list[dict]:
@@ -488,6 +564,21 @@ def add_captions(rows: list[dict]) -> list[dict]:
             row["textJa"] = words["textJa"]
         kept.append(row)
     return kept
+
+
+def stamp_tags(rows: list[dict]) -> None:
+    """Add each fact's namespaced tags (`country:RO`, `sport:handball`, `decade:1960s`, ...) to its `tags`, as the library's own `derivedTags` gives them
+    (scripts/tags-batch.ts): the vocabulary is in src/tags.ts and nowhere here."""
+    sent = {row["recordId"]: {k: row[k] for k in TAG_FIELDS if k in row} for row in rows}
+    done = subprocess.run(
+        ["node", str(ROOT / "scripts/tags-batch.ts")], input=json.dumps(sent, ensure_ascii=False),
+        capture_output=True, text=True, check=False, cwd=ROOT,
+    )
+    if done.returncode != 0:
+        raise SystemExit(f"tags-batch failed: {done.stderr}")
+    tags = json.loads(done.stdout)
+    for row in rows:
+        row["tags"] = [*[t for t in row.get("tags") or [] if ":" not in t], *tags[row["recordId"]]]
 
 
 def name_map(rows: list[dict]) -> dict[int, str]:
@@ -718,6 +809,9 @@ def person_record(row: dict, context: dict, awards_by_person: dict, person_award
     own = ctx.get("awardCount") or len(person_awards.get(pid) or [])
     if own:
         rec["awardCount"] = own
+    ids = sorted({slug_of_name(a["name"]) for a in person_awards.get(pid) or [] if a.get("name")} - {""})
+    if ids:
+        rec["awards"] = ids
     info = priority.get(qid) or {}
     for key in ("sitelinks", "hallOfFameYear"):
         if info.get(key) and not rec.get(key):
@@ -874,6 +968,7 @@ def main() -> int:
     if not EXTRACT.is_dir():
         print(f"EXTRACT dir missing: {EXTRACT}", file=sys.stderr)
         return 1
+    LINKS.update(load_links())
     games = [r for r in load_records("extract_games_on_day.json") if allowed(r) and r.get("status") == "final"]
     finals = [r for r in load_records("extract_finals.json") if allowed(r)]
     soccer = [r for r in load_records("extract_soccer_on_day.json") if allowed(r)]
@@ -1106,6 +1201,7 @@ def main() -> int:
     by_id = {row["recordId"]: row for row in facts}
     by_id, merged_events = merge_same_event(by_id)
     facts = list(by_id.values())
+    stamp_tags(facts)
 
     if OUT.exists():
         for old in OUT.rglob("*.json"):
@@ -1185,6 +1281,16 @@ def main() -> int:
     for cat, rows in by_cat.items():
         rows = uniq_of(rows)
         specs.append({"key": f"tag:{cat}", "ids": [r["recordId"] for r in rows], "n": 40, "options": {"maxPer": 8, "exempt": [cat]}})
+    by_namespace: dict[str, dict[str, list[dict]]] = defaultdict(lambda: defaultdict(list))
+    for row in facts:
+        for tag in row.get("tags") or []:
+            if ":" in tag:
+                namespace, value = tag.split(":", 1)
+                by_namespace[namespace][value].append(row)
+    for code, rows in by_namespace["country"].items():
+        rows = uniq_of(rows)
+        # A country's people are births and deaths in a hundred sports: sixteen of a kind, so the forty reach into games, events and venues too.
+        specs.append({"key": f"country:{code}", "ids": [r["recordId"] for r in rows], "n": 40, "options": {"maxPer": 16, "exempt": [*competitions(rows)]}})
     for fid, rows in by_team.items():
         rows = uniq_of(rows)
         specs.append({"key": f"team:{fid}", "ids": [r["recordId"] for r in rows], "n": 40, "options": {"maxPer": 8, "exempt": [f"f:{fid}", *competitions(rows)]}})
@@ -1237,6 +1343,11 @@ def main() -> int:
     for cat, rows in by_cat.items():
         write_index(f"indexes/tags/{cat}.json", [r["recordId"] for r in uniq_of(rows)], files)
         write_shard(f"feeds/tags/{cat}.json", feed_of(f"tag:{cat}"), files)
+    for namespace, folder in TAG_INDEXES:
+        for value, rows in by_namespace[namespace].items():
+            write_index(f"indexes/{folder}/{value}.json", [r["recordId"] for r in uniq_of(rows)], files)
+    for code, rows in by_namespace["country"].items():
+        write_shard(f"feeds/countries/{code}.json", feed_of(f"country:{code}"), files)
     for fid, rows in by_team.items():
         write_index(f"indexes/teams/f-{fid}.json", [r["recordId"] for r in uniq_of(rows)], files)
         write_shard(f"feeds/teams/f-{fid}.json", feed_of(f"team:{fid}"), files)
@@ -1281,6 +1392,8 @@ def main() -> int:
         "coveredDays": len(covered),
         "missingDays": [d for d in calendar if d not in by_day],
         "categories": {k: len({r["recordId"] for r in v}) for k, v in sorted(by_cat.items())},
+        "tags": {ns: {"values": len(values), "facts": len({r["recordId"] for rows in values.values() for r in rows})} for ns, values in sorted(by_namespace.items())},
+        "countries": dict(sorted(((c, len({r["recordId"] for r in rows})) for c, rows in by_namespace["country"].items()), key=lambda kv: (-kv[1], kv[0]))),
         "uniqueRecords": len({r["recordId"] for r in facts}),
         "mergedSameEvent": merged_events,
         "daysWithFewerThan3": days_lt3,

@@ -148,6 +148,16 @@ class DumpPeopleTest(unittest.TestCase):
         self.assertEqual(typo["epithet"], "Brazilian footballer")
         self.assertEqual(built["Q300"], "Brazilian footballer")
 
+    def test_wikidatas_formal_name_of_the_sport_is_said_as_readers_say_it(self) -> None:
+        rows, _, _, _, _ = self.run_build([person("Q301", "Formal Man", desc="Brazilian association football player", born=t("1970-03-04"), sl=80)])
+        formal = next(r for r in rows if r["person"]["qid"] == "Q301")
+        self.assertEqual(formal["epithet"], "Brazilian footballer")
+        self.assertEqual(wdp.plain_words("Bosnian association football player and manager"), "Bosnian footballer and manager")
+        self.assertEqual(wdp.plain_words("Bosnian association football manager"), "Bosnian football manager")
+        self.assertEqual(wdp.plain_words("German sports official and association football player"), "German sports official and footballer")
+        self.assertEqual(wdp.plain_words("American football player"), "American football player")
+        self.assertEqual(wdp.plain_words("Association football player"), "Footballer")
+
     def test_a_sex_marker_in_a_sport_label_is_reduced_to_the_sport_and_para_sports_are_skipped(self) -> None:
         self.assertEqual(wdp.slug_of("women's association football"), "soccer")
         self.assertEqual(wdp.slug_of("Women's basketball"), "basketball")

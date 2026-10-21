@@ -13,8 +13,12 @@ export type {
   RenderedSentence, RenderOptions, RunOptions, RunSentence, SentenceTemplate, TemplateGate, TemplateLocale,
   TemplateRole, TemplateType, Wording,
 } from "./templates/index.ts";
-export { bestOfDay, calendarDayInZone, factsFor, randomFacts, rankDay, rankFeed, rankRecords, significance, tagsOf, today, uniqueRecordIds, withCaptions } from "./facts.ts";
+export { bestOfDay, calendarDayInZone, factsFor, kindTagsOf, randomFacts, rankDay, rankFeed, rankRecords, significance, tagsOf, today, uniqueRecordIds, withCaptions } from "./facts.ts";
 export type { RankOptions } from "./facts.ts";
+export { countriesOf, derivedTags, flagOf, isNamespaced, NAMESPACED_TAG, slugOf, TAG_NAMESPACES, tagValues, VALID_TAG } from "./tags.ts";
+export type { TagNamespace } from "./tags.ts";
+export { wikipediaPageUrl, wikipediaUrl } from "./links.ts";
+export type { WikipediaLanguage } from "./links.ts";
 export { finalCaptionFromMatch, mergeHistoryEvents, uniqueHistoryIds } from "./mergeEvents.ts";
 export type { MergeReport } from "./mergeEvents.ts";
 import { isDate, monthDayOf } from "./dates.ts";

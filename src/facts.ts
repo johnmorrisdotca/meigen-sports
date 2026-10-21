@@ -1,6 +1,7 @@
 import { isDate, monthDayOf } from "./dates.ts";
 import type { FactFilters, OnThisDayRecord, TeamRef } from "./schema.ts";
 import { captionFromFact, isRichFact } from "./sentences.ts";
+import { countriesOf, derivedTags, isNamespaced } from "./tags.ts";
 
 function sportSlug(value: string | null | undefined): string | null {
   if (!value) return null;
@@ -28,12 +29,27 @@ function teamMatches(team: TeamRef | undefined, filter: NonNullable<FactFilters[
   return false;
 }
 
-/** Primary extract family plus non-exclusive history tags. Order is category first, then tags, unique. */
+/**
+ * Every tag of a fact: the primary extract family, then the history tags and the namespaced tags the fact carries (`country:RO`, `sport:handball`,
+ * `decade:1960s`, ...), then any namespaced tag its fields give that it does not carry yet. Unique, in that order.
+ */
 export function tagsOf(record: OnThisDayRecord): string[] {
   const seen = new Set<string>();
   const out: string[] = [];
-  for (const tag of [record.category, ...(record.tags ?? [])]) {
+  for (const tag of [record.category, ...(record.tags ?? []), ...derivedTags(record)]) {
     if (!tag || seen.has(tag)) continue;
+    seen.add(tag);
+    out.push(tag);
+  }
+  return out;
+}
+
+/** The kind of fact: the primary family and the history tags, without the namespaced tags. Ranking caps count these (two of one kind in a list), never a country or a decade. */
+export function kindTagsOf(record: OnThisDayRecord): string[] {
+  const seen = new Set<string>();
+  const out: string[] = [];
+  for (const tag of [record.category, ...(record.tags ?? [])]) {
+    if (!tag || isNamespaced(tag) || seen.has(tag)) continue;
     seen.add(tag);
     out.push(tag);
   }
@@ -47,8 +63,14 @@ function matches(record: OnThisDayRecord, filters: FactFilters): boolean {
   if (filters.category && !tagsOf(record).includes(filters.category)) return false;
   if (filters.country) {
     const code = filters.country;
-    const hit = record.home?.countryCode === code || record.away?.countryCode === code || record.venueCountry === code;
+    const hit = countriesOf(record).includes(code) || record.home?.countryCode === code || record.away?.countryCode === code || record.venueCountry === code;
     if (!hit) return false;
+  }
+  if (filters.host && !(record.hostCountries ?? []).includes(filters.host)) return false;
+  if (filters.birthCountry && record.birthCountry !== filters.birthCountry) return false;
+  if (filters.tags?.length) {
+    const have = new Set(tagsOf(record));
+    if (!filters.tags.every((tag) => have.has(tag))) return false;
   }
   if (filters.team) {
     const personTeams = record.person?.franchiseIds ?? [];
@@ -142,7 +164,7 @@ export function uniqueRecordIds(records: readonly OnThisDayRecord[]): boolean {
 
 /** How much a fact is worth showing: finals, famous people and playoff drama above routine results. A pure function of the fact's fields. */
 export function significance(record: OnThisDayRecord): number {
-  const tags = new Set(tagsOf(record));
+  const tags = new Set(kindTagsOf(record));
   const reasons = new Set(record.featuredReasons ?? []);
   if (tags.has("sport-record") || tags.has("career-stat-milestone") || reasons.has("record")) return 100;
   switch (record.category) {
@@ -243,7 +265,7 @@ export function rankRecords(records: readonly OnThisDayRecord[], n: number, opti
     for (const record of ordered) {
       if (picked.length >= n) break;
       if (seen.has(record.recordId)) continue;
-      const keys = [...tagsOf(record), `competition:${competitionKey(record)}`].filter((key) => !exempt.has(key));
+      const keys = [...kindTagsOf(record), `competition:${competitionKey(record)}`].filter((key) => !exempt.has(key));
       if (cap !== null && keys.some((key) => (counts.get(key) ?? 0) >= cap)) continue;
       const sport = record.sport && !exempt.has(`sport:${record.sport}`) ? `sport:${record.sport}` : null;
       if (sportCap !== null && sport && (counts.get(sport) ?? 0) >= sportCap) continue;
@@ -297,7 +319,7 @@ export function randomFacts(records: readonly OnThisDayRecord[], n: number, filt
   const byCompetition = new Map<string, number>();
   for (const record of pool) {
     if (picked.length >= n) break;
-    const tags = tagsOf(record);
+    const tags = kindTagsOf(record);
     const competition = competitionKey(record);
     if (seen.has(record.recordId)) continue;
     if (tags.some((tag) => (byTag.get(tag) ?? 0) >= 2) || (byCompetition.get(competition) ?? 0) >= 2) continue;

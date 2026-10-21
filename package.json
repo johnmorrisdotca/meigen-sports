@@ -1,7 +1,7 @@
 {
   "name": "@johnmorrisdotca/meigen-sports",
   "version": "0.8.1",
-  "description": "Meigen Sports \u540d\u8a00, source-verified sports quotations and on-this-day history: typed offline data and pure date, sport and entity selectors, with static JSON feeds. Zero runtime dependencies.",
+  "description": "Meigen Sports 名言, source-verified sports quotations and on-this-day history: typed offline data and pure date, sport and entity selectors, with static JSON feeds. Zero runtime dependencies.",
   "keywords": [
     "sports",
     "quotes",
@@ -131,6 +131,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.0.0",
+    "@johnmorrisdotca/hata": "1.7.2",
     "@playwright/test": "^1.63.0",
     "@types/node": "^24.0.0",
     "esbuild": "^0.25.0",

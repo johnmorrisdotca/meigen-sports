@@ -129,6 +129,27 @@ export interface OnThisDayRecord {
   /** True when the person's QID is on the committed 1,000-name priority list. */
   readonly priorityAthlete?: boolean;
   readonly nationality?: string | null;
+  /**
+   * The countries of the person the fact is about: every country he represents in sport or is a citizen of, as ISO 3166-1 alpha-2 codes ("RO"),
+   * and the ISO 3166-3 code of a former country Hata has a flag for ("SUHH", the Soviet Union). Facts about teams carry theirs on `home` and
+   * `away` (`countryCode`); `countriesOf` gives either. Absent when the data names none; a state no code names is never guessed.
+   */
+  readonly countries?: readonly string[];
+  /**
+   * The flag to show, a Hata code: "RO", "GB-ENG" for a person of England, "SUHH". Present only when it is unambiguous: one country, one flag.
+   * Never for a person of two countries, a country with no flag, or a fact about two countries (`flagOf` also reads two teams of one country).
+   */
+  readonly flag?: string | null;
+  /** The country the person's birthplace lies in (ISO 3166-1 alpha-2), as Wikidata gives the place's country. Distinct from `countries`. */
+  readonly birthCountry?: string | null;
+  /** The countries an event was held in (ISO 3166-1 alpha-2), from the item's country. */
+  readonly hostCountries?: readonly string[];
+  /** The individual awards the person won himself, as ids (`hart-memorial-trophy`), from the archive's own awards: the `award:` tags and `honour:award-winner`. */
+  readonly awards?: readonly string[];
+  /** The Wikidata item the fact is about: the person, or the event. Absent where the fact has no item (a game) or the archive's person has no Q id. */
+  readonly wikidata?: string;
+  /** The titles of that item's Wikipedia articles, as Wikidata's sitelinks give them (a title, never an address; `wikipediaUrl` builds one). */
+  readonly wikipedia?: { readonly en?: string; readonly fr?: string; readonly ja?: string };
   readonly record?: RecordProgression;
   readonly sport: string | null;
   readonly competition: string | null;
@@ -207,7 +228,14 @@ export interface FactFilters {
   readonly competition?: string;
   readonly team?: { readonly franchiseId?: number; readonly fifaCode?: string; readonly countryCode?: string; readonly soccerTeamId?: string };
   readonly player?: { readonly personId?: number; readonly qid?: string };
+  /** An ISO 3166 country code ("RO"): the people or the teams of the fact are of it (`country:RO`), or its home or away team, or its venue. */
   readonly country?: string;
+  /** The country an event was held in (`host:RO`). */
+  readonly host?: string;
+  /** The country the person was born in (`birthcountry:RO`). */
+  readonly birthCountry?: string;
+  /** Every one of these tags (`sport:handball`, `decade:1960s`, `award:hart-memorial-trophy`, `honour:champion`, a history type) is on the fact. */
+  readonly tags?: readonly string[];
   /** Matches if the primary `category` or ANY history tag equals this id. */
   readonly category?: string;
   readonly date?: string;

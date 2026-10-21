@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import test from "node:test";
 import { HISTORY_TYPES } from "../src/categories.ts";
-import { factsFor, randomFacts, rankFeed, tagsOf, uniqueRecordIds } from "../src/facts.ts";
+import { factsFor, kindTagsOf, randomFacts, rankFeed, uniqueRecordIds } from "../src/facts.ts";
 import type { OnThisDayRecord } from "../src/schema.ts";
 
 const root = "data/v1/0.1.0/facts";
@@ -38,12 +38,12 @@ test("one fact, many tags: a fact is in the index of each of its tags and in no 
   for (const name of readdirSync(`${root}/indexes/tags`)) perTag.set(name.replace(/\.json$/, ""), new Set(ids(`${root}/indexes/tags/${name}`).ids));
   let multi = 0;
   for (const r of store.values()) {
-    const tags = tagsOf(r);
+    const tags = kindTagsOf(r);
     if (tags.length > 1) multi += 1;
     for (const tag of tags) assert.ok(perTag.get(tag)?.has(r.recordId), `${r.recordId} is missing from the ${tag} index`);
   }
   assert.ok(multi > 10000, `${multi} facts carry several tags`);
-  for (const [tag, set] of perTag) for (const id of set) assert.ok(tagsOf(store.get(id)!).includes(tag), `${id} is in the ${tag} index without that tag`);
+  for (const [tag, set] of perTag) for (const id of set) assert.ok(kindTagsOf(store.get(id)!).includes(tag), `${id} is in the ${tag} index without that tag`);
 });
 
 test("a tag feed holds only facts that carry the tag, once each, even when they carry others", () => {
@@ -51,7 +51,7 @@ test("a tag feed holds only facts that carry the tag, once each, even when they 
     const tag = name.replace(/\.json$/, "");
     const records = ids(`${root}/feeds/tags/${name}`).records ?? [];
     assert.ok(records.length > 0, tag);
-    for (const r of records) assert.ok(tagsOf(r).includes(tag), `${r.recordId} is in the ${tag} feed`);
+    for (const r of records) assert.ok(kindTagsOf(r).includes(tag), `${r.recordId} is in the ${tag} feed`);
   }
 });
 
@@ -60,7 +60,8 @@ test("every tag is one of the forty-six history types or an extract family; none
   const unknown = new Set<string>();
   for (const r of store.values()) {
     assert.equal(new Set(r.tags).size, r.tags.length, `${r.recordId} repeats a tag`);
-    for (const tag of r.tags) if (!allowed.has(tag)) unknown.add(tag);
+    // A namespaced tag (`country:RO`) is held to the vocabulary by test/tags.test.ts.
+    for (const tag of r.tags) if (!tag.includes(":") && !allowed.has(tag)) unknown.add(tag);
   }
   assert.deepEqual([...unknown], []);
 });

@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { calendarDayInZone, factsFor, randomFacts, rankFeed, tagsOf, today, uniqueRecordIds } from "../src/facts.ts";
+import { calendarDayInZone, factsFor, kindTagsOf, randomFacts, rankFeed, tagsOf, today, uniqueRecordIds } from "../src/facts.ts";
 import { captionFromFact, isRichFact } from "../src/sentences.ts";
 import { FACT_CATEGORIES } from "../src/schema.ts";
 import type { OnThisDayRecord } from "../src/schema.ts";
@@ -53,7 +53,8 @@ test("today uses an explicit instant and time zone, not the clock", () => {
 
 test("a fact is stored once and matches any of its tags", () => {
   const ot = game("ot", { category: "championship-final", tags: ["championship-win", "match-result", "overtime-result"] });
-  assert.deepEqual(tagsOf(ot), ["championship-final", "championship-win", "match-result", "overtime-result"]);
+  assert.deepEqual(kindTagsOf(ot), ["championship-final", "championship-win", "match-result", "overtime-result"]);
+  assert.deepEqual(tagsOf(ot).slice(0, 4), ["championship-final", "championship-win", "match-result", "overtime-result"]);
   assert.equal(factsFor([ot], { category: "championship-win" })[0]?.recordId, "ot");
   assert.equal(factsFor([ot], { category: "overtime-result" })[0]?.recordId, "ot");
   assert.equal(factsFor([ot], { category: "player-birthday" }).length, 0);

@@ -72,7 +72,7 @@ test("no record of the dump holds a field that is about sex, gender, ethnicity, 
     for (const k of Object.keys(r.person ?? {})) keys.add(`person.${k}`);
   }
   assert.deepEqual([...keys].filter((k) => FORBIDDEN_KEY.test(k)), []);
-  assert.deepEqual([...keys].filter((k) => !/^(?:recordId|category|tags|basis|eventDate|datePrecision|sport|competition|league|source|person|person\.(?:personId|qid|name|leagueCodes|franchiseIds|teamSeasonIds)|epithet|sitelinks|nationality|birthDate|deathDate|birthPlace|livingStatus|bornYear|ageYears|text|textJa)$/.test(k)), [], "only the fields of the schema");
+  assert.deepEqual([...keys].filter((k) => !/^(?:recordId|category|tags|basis|eventDate|datePrecision|sport|competition|league|source|person|person\.(?:personId|qid|name|leagueCodes|franchiseIds|teamSeasonIds)|epithet|sitelinks|nationality|birthDate|deathDate|birthPlace|livingStatus|bornYear|ageYears|wikidata|wikipedia|countries|flag|birthCountry|text|textJa)$/.test(k)), [], "only the fields of the schema");
   for (const r of dump) assert.ok((r.sitelinks ?? 0) >= 5, `${r.recordId} has ${r.sitelinks} editions`);
 });
 

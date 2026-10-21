@@ -70,7 +70,7 @@ test("the words are the item's: its name, its place and its winner, each only wh
 test("no event is of para sport, and nothing about a person's sex, ethnicity, religion, politics, family or health is in an event", () => {
   const keys = new Set<string>();
   for (const r of events) for (const k of Object.keys(r)) keys.add(k);
-  assert.deepEqual([...keys].filter((k) => !/^(?:recordId|category|tags|basis|eventDate|datePrecision|sport|competition|league|source|sitelinks|eventLabel|eventPlace|winnerName|text|textJa)$/.test(k)), [], "only the fields of the schema");
+  assert.deepEqual([...keys].filter((k) => !/^(?:recordId|category|tags|basis|eventDate|datePrecision|sport|competition|league|source|sitelinks|eventLabel|eventPlace|winnerName|wikidata|wikipedia|hostCountries|text|textJa)$/.test(k)), [], "only the fields of the schema");
   for (const r of events) {
     assert.doesNotMatch(`${r.eventLabel} ${r.sport}`, /\b(?:para\w*|paralympic\w*|wheelchair|deaf\w*|blind|sitting|goalball|boccia)\b/i, r.recordId);
     assert.doesNotMatch(r.sport ?? "", /(?:^|-)(?:women|men|female|male|girls|boys|para)(?:-|$)/, r.recordId);
@@ -110,7 +110,7 @@ test("an event is worded in English and Japanese from its fields: the name with 
   assert.equal(render({ ...start, category: "competition-end", eventDate: "2012-06-03", winnerName: "Russia" }, { asOf: "2026-10-20" })?.text, "On June 3, 2012, the 2012 Rhythmic Gymnastics European Championships ended in Nizhny Novgorod, won by Russia.");
   const named: OnThisDayRecord = { ...base, recordId: "t:3", category: "sport-event", eventDate: "1993-11-12", sport: "mma", eventLabel: "UFC 1" };
   assert.equal(render(named, { asOf: "2026-10-20" })?.text, "On November 12, 1993, UFC 1 took place.");
-  assert.equal(render(named, { asOf: "2026-11-12" })?.text, "UFC 1 took place.");
+  assert.equal(render(named, { asOf: "2026-11-12" })?.text, "In 1993, UFC 1 took place.");
   const lower: OnThisDayRecord = { ...base, recordId: "t:4", category: "sport-event", eventDate: "2026-02-21", sport: "biathlon", eventLabel: "biathlon at the 2026 Winter Olympics – mass start" };
   assert.equal(render(lower, { asOf: "2026-02-21" })?.text, "Biathlon at the 2026 Winter Olympics – mass start took place.");
   assert.equal(render(lower, { asOf: "2026-10-20" })?.text, "On February 21, 2026, biathlon at the 2026 Winter Olympics – mass start took place.");
