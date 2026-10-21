@@ -4,7 +4,7 @@
 // is a light and a dark twin. Playwright takes one png per step and `img2webp` (libwebp's tool: `brew install webp`) joins them into a looping lossy animation, each file well under 1.5 MB.
 // A step holds as long as its scene says. Nothing is served: the pages are written straight into the browser, so no port is used.
 //
-//   node scripts/animations.ts                 all of them (needs the site built: `pnpm animations` builds it first)
+//   node scripts/animations.ts                 all of them (needs the site built, for its fact files: `pnpm animations` builds it first)
 //   ONLY=hero-today node scripts/animations.ts one scene (hero-today, sentences, offline, feeds), both twins
 //   IMAGES_OUT=dir                             writes somewhere else than docs/images
 //   QUALITY=80                                 the webp quality
@@ -15,8 +15,8 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import process from "node:process";
 import { chromium } from "@playwright/test";
-import { rankFeed, renderRun } from "../dist/index.js";
-import type { OnThisDayRecord } from "../dist/index.js";
+import { rankFeed, renderRun } from "../src/index.ts";
+import type { OnThisDayRecord } from "../src/index.ts";
 
 const root = new URL("..", import.meta.url).pathname;
 const facts = join(root, "site", "data", "v1", "0.1.0", "facts");
