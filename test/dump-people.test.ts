@@ -12,7 +12,7 @@ const shard = (path: string): OnThisDayRecord[] => (JSON.parse(readFileSync(`${r
 const store = new Map<string, OnThisDayRecord>();
 for (const name of readdirSync(`${root}/store`)) for (const r of shard(`store/${name}`)) store.set(r.recordId, r);
 const all = [...store.values()];
-const dump = all.filter((r) => r.recordId.startsWith("wikidata:"));
+const dump = all.filter((r) => r.recordId.startsWith("wikidata:player-"));
 const manifest = JSON.parse(readFileSync(`${root}/manifest.json`, "utf8")) as { sources?: { wikidataDump?: Record<string, unknown> }; peopleDay?: number };
 
 const SENSITIVE = /\b(?:female|male|woman|women|girl|boy|lady|gentleman|sportswoman|sportsman|gay|lesbian|bisexual|transgender|queer|lgbt\w*|son|daughter|father|mother|wife|husband|brother|sister|widow|spouse|married|partner|family|jewish|christian|catholic|muslim|islamic|hindu|buddhist|sikh|atheist|religious|priest|bishop|pastor|imam|rabbi|monk|nun|protestant|orthodox|anglican|lutheran|missionary|republican|democrat|conservative|liberal|socialist|communist|nationalist|ethnic|disabled|disability|deaf|blind|paralympic\w*|para|wheelchair|cancer|illness|convicted|criminal|murder\w*|terror\w*|nazi|fascist|doping|banned)\b/i;
@@ -81,7 +81,7 @@ test("every day has people of many sports; January 1 has only what was already c
   for (const r of all) if (r.eventDate && (r.category === "player-birthday" || r.category === "player-death")) {
     const day = r.eventDate.slice(5);
     (sportsOf.get(day) ?? sportsOf.set(day, new Set()).get(day)!).add(r.sport ?? "");
-    if (r.recordId.startsWith("wikidata:")) dumpOf.set(day, (dumpOf.get(day) ?? 0) + 1);
+    if (r.recordId.startsWith("wikidata:player-")) dumpOf.set(day, (dumpOf.get(day) ?? 0) + 1);
   }
   assert.equal(sportsOf.size, 366);
   for (const [day, sports] of sportsOf) assert.ok(sports.size >= (day === "01-01" ? 5 : 25), `${day} has people of ${sports.size} sports`);
