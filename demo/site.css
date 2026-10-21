@@ -1,2 +1,23 @@
 *{box-sizing:border-box}body{margin:0}main{max-width:1200px;margin:auto;padding:24px}section{margin:24px 0}.panel{background:var(--surface);border:1px solid var(--rule);color:var(--ink);border-radius:18px;padding:24px;min-width:0}h2{font-size:1.25rem;margin:0 0 14px}.lead p{max-width:75ch;line-height:1.6}.source-note,.credit,.status{font-size:.85rem;opacity:.8;line-height:1.5}.controls{display:flex;flex-wrap:wrap;gap:20px;align-items:flex-start}.controls label{display:grid;gap:8px}.controls input,.controls select,.controls button,.fav-panel input,.fav-panel select,.fav-panel button,.feed-filters input,.feed-filters select,.random-panel button{font:inherit;max-width:100%;min-height:44px;padding:10px;border-radius:9px;border:1px solid #739083;background:#162d25;color:#f2f0e9}.controls button,.fav-panel button{align-self:flex-start}.controls button{margin-top:27px}.fav-panel label,.feed-filters label{display:grid;gap:8px}.results{display:grid;grid-template-columns:1fr 1.35fr;gap:24px}.results .panel{margin:0}blockquote{margin:0;font-size:1.45rem;line-height:1.5}.credit{margin-top:16px}.record{padding:14px 0;border-top:1px solid #66807655;line-height:1.5}.record:first-child{border:0}.record p{margin:4px 0}a{overflow-wrap:anywhere}pre{overflow-x:auto;max-width:100%;padding:18px;background:#081b14;color:#e8f1ec;border-radius:12px;font-size:.85rem;line-height:1.6}:focus-visible{outline:3px solid #e4bf6b;outline-offset:3px}@media(max-width:680px){main{padding:16px}.panel{padding:18px}.results{grid-template-columns:1fr}.controls{gap:14px}.controls label{width:100%}.fam-row{max-width:100%}blockquote{font-size:1.25rem}}
  .feed-filters{flex-basis:100%;border-top:1px solid #66807655;padding-top:14px}.feed-filters summary{cursor:pointer;font-weight:600}.filter-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px}@media(max-width:680px){.filter-grid{grid-template-columns:1fr}}.today-panel .record,.random-panel .record{padding:12px 0}.today-panel .record:first-child,.random-panel .record:first-child{border:0}
+.today-card{display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 22px;align-items:start}
+.leaf{display:grid;grid-template-rows:auto 1fr;width:92px;border:1px solid var(--rule);border-radius:12px;overflow:hidden;background:var(--page);text-align:center;box-shadow:0 2px 0 var(--rule)}
+.leaf-month{background:var(--accent);color:var(--accent-ink);font-weight:700;letter-spacing:.08em;font-size:.8rem;padding:5px 0;text-transform:uppercase}
+.leaf-day{font-size:2.6rem;font-weight:700;line-height:1.1;padding:6px 0 8px;font-variant-numeric:tabular-nums}
+.today-main{min-width:0}.today-main h2{margin-bottom:10px}
+.today-facts{display:grid}
+.today-facts .record{grid-area:1/1;padding:0;border:0;opacity:0;visibility:hidden;transition:opacity .5s ease,visibility .5s}
+.today-facts .record[data-current]{opacity:1;visibility:visible}
+.today-facts .record p:first-child{font-size:1.2rem;line-height:1.45}
+.today-bar{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin-top:12px}
+.today-bar button{min-width:44px;min-height:44px;padding:0 14px;border:1px solid var(--rule);border-radius:999px;background:var(--surface);color:var(--ink);font-weight:600;cursor:pointer}
+.today-bar #today-play[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.today-bar #today-play{min-width:6rem}
+.today-dots{display:inline-flex;gap:2px;margin-left:4px}
+.today-dots button{min-width:44px;padding:0;border:0;background:transparent}
+.today-dots button::before{content:"";display:block;width:10px;height:10px;margin:auto;border-radius:50%;background:color-mix(in srgb,var(--ink) 25%,transparent)}
+.today-dots button[aria-current="true"]::before{background:var(--ink)}
+.today-intro{color:var(--muted);font-size:.9rem;margin:6px 0 0}
+@media(prefers-reduced-motion:reduce){.today-facts .record{transition:none}}
+@media(max-width:899px){main{padding:12px 16px 24px}header{margin-bottom:8px}.intro{min-height:0}section{margin:16px 0}.today-card{grid-template-columns:minmax(0,1fr)}.leaf{width:100%;grid-template-columns:auto 1fr;grid-template-rows:none;text-align:left;align-items:center}.leaf-month{padding:10px 14px}.leaf-day{font-size:1.6rem;padding:4px 14px}.today-facts .record p:first-child{font-size:1.1rem}.today-intro{display:none}}
+

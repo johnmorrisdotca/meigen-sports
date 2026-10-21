@@ -109,10 +109,53 @@ function shuffle<T>(records: readonly T[]): T[] {
 function localFeed() {
   return { baseUrl: new URL("./", location.href).href, dataVersion: DATA_VERSION, fetch: window.fetch.bind(window) };
 }
+// Today is a calendar card: the leaf of the day, and its facts one at a time, going round by themselves (not for a reader who prefers
+// reduced motion, nor for an address that names a fact or says play=0; while it plays the address says nothing, so a reload starts it again). Pause, Next, Previous and the dots hold or move it, and nothing
+// else on the page stops it. `?gap=` is how long each fact stays, in milliseconds (the tests shorten it).
+const addressed = new URLSearchParams(location.search);
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const FACT_MS = Math.min(Math.max(Number(addressed.get("gap")) || 6000, 150), 60000);
+const todayPlay = document.querySelector<HTMLButtonElement>("#today-play")!;
+const todayPrev = document.querySelector<HTMLButtonElement>("#today-prev")!;
+const todayNext = document.querySelector<HTMLButtonElement>("#today-next")!;
+const todayDots = document.querySelector<HTMLElement>("#today-dots")!;
+const leafMonth = document.querySelector<HTMLElement>("#leaf-month")!;
+const leafDay = document.querySelector<HTMLElement>("#leaf-day")!;
+let todayIndex = Math.max(0, Number.parseInt(addressed.get("fact") ?? "0", 10) || 0);
+let todayPlaying = !reducedMotion.matches && !addressed.has("fact") && addressed.get("play") !== "0";
+function todayRecords(): HTMLElement[] { return [...todayBox.querySelectorAll<HTMLElement>(".record")]; }
+function todayAddress() {
+  const query = new URLSearchParams(location.search);
+  query.delete("play"); query.delete("fact");
+  if (!todayPlaying && !reducedMotion.matches) { query.set("play", "0"); query.set("fact", String(todayIndex)); }
+  try { history.replaceState(null, "", `${location.pathname}${query.size ? `?${query}` : ""}${location.hash}`); } catch { /* the address stays as it is */ }
+}
+function showToday() {
+  const records = todayRecords();
+  if (!records.length) return;
+  todayIndex = ((todayIndex % records.length) + records.length) % records.length;
+  records.forEach((record, at) => { if (at === todayIndex) record.setAttribute("data-current", ""); else record.removeAttribute("data-current"); record.setAttribute("aria-hidden", String(at !== todayIndex)); });
+  todayDots.replaceChildren(...records.map((_, at) => {
+    const dot = document.createElement("button"); dot.type = "button"; dot.dataset.testid = `today-dot-${at}`;
+    dot.setAttribute("aria-label", familyLang.word("todayDot").replace("{n}", String(at + 1)));
+    if (at === todayIndex) dot.setAttribute("aria-current", "true");
+    dot.addEventListener("click", () => { todayIndex = at; todayPlaying = false; showToday(); todayAddress(); });
+    return dot;
+  }));
+  todayPlay.textContent = familyLang.word(todayPlaying ? "todayPause" : "todayPlay");
+  todayPlay.setAttribute("aria-pressed", String(todayPlaying));
+  todayPrev.textContent = "‹"; todayNext.textContent = "›";
+}
+todayPlay.addEventListener("click", () => { todayPlaying = !todayPlaying; showToday(); todayAddress(); });
+todayPrev.addEventListener("click", () => { todayIndex -= 1; todayPlaying = false; showToday(); todayAddress(); });
+todayNext.addEventListener("click", () => { todayIndex += 1; todayPlaying = false; showToday(); todayAddress(); });
+setInterval(() => { if (todayPlaying && !document.hidden) { todayIndex += 1; showToday(); } }, FACT_MS);
 async function renderToday() {
   const now = new Date();
   const locale = familyLang.lang === "ja" ? "ja" : "en";
   todayHeading.textContent = new Intl.DateTimeFormat(locale, { month: "long", day: "numeric" }).format(now);
+  leafMonth.textContent = new Intl.DateTimeFormat(locale, { month: "short" }).format(now);
+  leafDay.textContent = String(now.getDate());
   const day = monthDayLocal(now);
   let facts: OnThisDayRecord[] = [];
   try {
@@ -122,6 +165,7 @@ async function renderToday() {
   } catch { noteFeeds("today", true); }
   if (!facts.length) facts = rankFeed(factsFor(offline, { date: day }), TODAY_COUNT);
   drawFacts(todayBox, facts);
+  showToday();
   todayStatus.textContent = facts.length < TODAY_COUNT ? familyLang.word("todayFew") : `${facts.length} ${familyLang.word("results")}`;
 }
 let randomGeneration = 0;
