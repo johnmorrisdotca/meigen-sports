@@ -2,7 +2,7 @@
 <html lang="en"><head><!--family:head--><link rel="stylesheet" href="family.css"><link rel="stylesheet" href="site.css"></head>
 <body><main><!--family:header--><!--family:unreviewed-->
 <p id="feed-note" class="status" role="status" aria-live="polite"></p>
-<section class="panel today-panel today-card" aria-labelledby="today-heading"><div class="leaf" aria-hidden="true"><span class="leaf-month" id="leaf-month"></span><span class="leaf-day" id="leaf-day"></span></div><div class="today-main"><h2 id="today-heading"></h2><div id="today-facts" class="today-facts" data-testid="today-facts"></div><div class="today-bar" data-testid="today-bar"><button type="button" id="today-play" data-testid="today-play" aria-pressed="false"></button><button type="button" id="today-prev" data-testid="today-prev" data-say-label="todayPrev"></button><button type="button" id="today-next" data-testid="today-next" data-say-label="todayNext"></button><span id="today-dots" class="today-dots" role="group" data-say-label="todayDots"></span></div><p id="today-status" class="status" role="status" aria-live="polite"></p><p class="today-intro" data-say="todayIntro"></p></div></section>
+<section class="panel today-panel today-card" aria-labelledby="today-heading"><div class="leaf" aria-hidden="true"><span class="leaf-month" id="leaf-month"></span><span class="leaf-day" id="leaf-day"></span><span class="leaf-year" id="leaf-year" data-testid="leaf-year"></span></div><div class="today-main"><h2 id="today-heading"></h2><div id="today-facts" class="today-facts" data-testid="today-facts"></div><div class="today-bar" data-testid="today-bar"><button type="button" id="today-play" data-testid="today-play" aria-pressed="false"></button><button type="button" id="today-prev" data-testid="today-prev" data-say-label="todayPrev"></button><button type="button" id="today-next" data-testid="today-next" data-say-label="todayNext"></button><span id="today-dots" class="today-dots" role="group" data-say-label="todayDots"></span></div><p id="today-status" class="status" role="status" aria-live="polite"></p><p class="today-intro" data-say="todayIntro"></p></div></section>
 <section class="panel random-panel"><h2 data-say="randomHeading"></h2><p data-say="randomIntro"></p>
 <div class="fam-row random-actions"><p id="random-status" class="status" role="status" aria-live="polite"></p><button type="button" id="random-reload" data-say="randomReload"></button></div>
 <div id="random-facts"></div></section>
@@ -10,12 +10,17 @@
 <section class="panel fav-panel"><h2 data-say="favHeading"></h2><p data-say="favIntro"></p>
 <div class="filter-grid">
 <div class="fam-row"><label><span data-say="sport"></span><select id="fav-sport"><option value="" data-say="allSports"></option></select></label></div>
-<div class="fam-row"><label><span data-say="favLeague"></span><input id="fav-league" type="text" spellcheck="false"></label></div>
+<div class="fam-row"><label><span data-say="favLeague"></span><select id="fav-league"><option value="" data-say="favAny"></option></select></label></div>
 <div class="fam-row"><label><span data-say="favCategory"></span><select id="fav-category"><option value="" data-say="favAllTags"></option></select></label></div>
+<div class="fam-row"><label><span data-say="favCountry"></span><select id="fav-country"><option value="" data-say="favAny"></option></select></label></div>
+<div class="fam-row"><label><span data-say="favDecade"></span><select id="fav-decade"><option value="" data-say="favAny"></option></select></label></div>
+<div class="fam-row"><label><span data-say="favAward"></span><select id="fav-award"><option value="" data-say="favAny"></option></select></label></div>
+<div class="fam-row"><label><span data-say="favHonour"></span><select id="fav-honour"><option value="" data-say="favAny"></option></select></label></div>
 <div class="fam-row"><label><span data-say="favFrom"></span><input id="fav-from" type="number" min="1800" max="2100"></label></div>
 <div class="fam-row"><label><span data-say="favTo"></span><input id="fav-to" type="number" min="1800" max="2100"></label></div>
-<div class="fam-row"><label><span data-say="favTeam"></span><input id="fav-team" type="number" min="1"></label></div>
-<div class="fam-row"><label><span data-say="favPlayer"></span><input id="fav-player" type="number" min="1"></label></div>
+<div class="fam-row combo"><label><span data-say="favTeamName"></span><input id="fav-team" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="fav-team-list" autocomplete="off" spellcheck="false" data-say-placeholder="favSearchTeam"></label><ul id="fav-team-list" role="listbox" hidden></ul></div>
+<div class="fam-row combo"><label><span data-say="favPerson"></span><input id="fav-person" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="fav-person-list" autocomplete="off" spellcheck="false" data-say-placeholder="favSearchPerson"></label><ul id="fav-person-list" role="listbox" hidden></ul></div>
+<div class="fam-row"><label class="check"><input id="fav-day" type="checkbox"><span data-say="favOnlyDay"></span></label></div>
 </div>
 <button id="fav-find" data-say="favFind"></button>
 <p id="fav-status" class="status" role="status" aria-live="polite"></p>

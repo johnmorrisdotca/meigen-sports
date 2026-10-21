@@ -1,8 +1,9 @@
-import { factsFor, quoteForDate, rankFeed, renderRun, tagsOf } from "../src/index.ts";
+import { factsFor, quoteForDate, rankFeed, renderRun, tagsOf, wikipediaUrl } from "../src/index.ts";
 import { quotes } from "../src/data/quotes.ts";
 import { OFFLINE_BUILD, offline } from "../src/data/offline.ts";
 import { loadFactDay, loadFactEventsDay, loadFactPeopleDay, loadFactShard, loadShard } from "../src/load.ts";
-import type { FactFilters, OnThisDayRecord } from "../src/schema.ts";
+import { startExplore } from "./explore.ts";
+import type { OnThisDayRecord } from "../src/schema.ts";
 import { pickVariedFacts } from "./variety.ts";
 import type { MeigenRecord } from "../src/types.ts";
 interface Language { lang: "en" | "ja"; word: (key: string) => string }
@@ -36,14 +37,8 @@ const todayStatus = document.querySelector<HTMLElement>("#today-status")!;
 const randomBox = document.querySelector<HTMLElement>("#random-facts")!;
 const randomStatus = document.querySelector<HTMLElement>("#random-status")!;
 const favSport = document.querySelector<HTMLSelectElement>("#fav-sport")!;
-const favLeague = document.querySelector<HTMLInputElement>("#fav-league")!;
 const favCategory = document.querySelector<HTMLSelectElement>("#fav-category")!;
-const favFrom = document.querySelector<HTMLInputElement>("#fav-from")!;
-const favTo = document.querySelector<HTMLInputElement>("#fav-to")!;
-const favTeam = document.querySelector<HTMLInputElement>("#fav-team")!;
-const favPlayer = document.querySelector<HTMLInputElement>("#fav-player")!;
 const favBox = document.querySelector<HTMLElement>("#fav-facts")!;
-const favStatus = document.querySelector<HTMLElement>("#fav-status")!;
 const peopleBox = document.querySelector<HTMLElement>("#people-facts")!;
 const peopleStatus = document.querySelector<HTMLElement>("#people-status")!;
 const eventsBox = document.querySelector<HTMLElement>("#events-facts")!;
@@ -97,9 +92,18 @@ function drawFacts(box: HTMLElement, records: readonly OnThisDayRecord[], asOf?:
     const text = worded.get(fact.recordId);
     if (!text) continue;
     const article = document.createElement("article"); article.className = "record";
+    if (fact.eventDate) article.dataset.year = fact.eventDate.slice(0, 4);
     const p = document.createElement("p");
-    p.textContent = text;
-    const tags = document.createElement("p"); tags.className = "credit"; tags.textContent = tagsOf(fact).join(" · ");
+    p.append(text);
+    // A small link to the article about its person or event, in the reader's language (English, then Wikidata where there is none); a fact with no item has none.
+    const url = wikipediaUrl(fact, locale);
+    if (url) {
+      const link = document.createElement("a"); link.className = "wiki"; link.href = url; link.target = "_blank"; link.rel = "noopener noreferrer"; link.dataset.testid = "wikipedia-link";
+      link.textContent = familyLang.word(url.includes("wikidata.org") ? "wikidata" : locale === "ja" && url.includes("//en.wikipedia.org") ? "wikipediaEn" : "wikipedia");
+      p.append(" ", link);
+    }
+    const tags = document.createElement("ul"); tags.className = "tags"; tags.dataset.testid = "fact-tags";
+    for (const tag of tagsOf(fact)) { const li = document.createElement("li"); li.className = "tag"; li.textContent = tag; tags.append(li); }
     article.append(p, tags, factCredit(fact)); box.append(article);
   }
 }
@@ -127,6 +131,7 @@ const todayNext = document.querySelector<HTMLButtonElement>("#today-next")!;
 const todayDots = document.querySelector<HTMLElement>("#today-dots")!;
 const leafMonth = document.querySelector<HTMLElement>("#leaf-month")!;
 const leafDay = document.querySelector<HTMLElement>("#leaf-day")!;
+const leafYear = document.querySelector<HTMLElement>("#leaf-year")!;
 let todayIndex = Math.max(0, Number.parseInt(addressed.get("fact") ?? "0", 10) || 0);
 let todayPlaying = !reducedMotion.matches && !addressed.has("fact") && addressed.get("play") === "1";
 /** True while the mouse is over the card: it plays, and leaving stops it. */
@@ -145,6 +150,8 @@ function showToday() {
   if (!records.length) return;
   todayIndex = ((todayIndex % records.length) + records.length) % records.length;
   records.forEach((record, at) => { if (at === todayIndex) record.setAttribute("data-current", ""); else record.removeAttribute("data-current"); record.setAttribute("aria-hidden", String(at !== todayIndex)); });
+  // The year of the fact on the card, beside the day: the reader never does the sum.
+  leafYear.textContent = records[todayIndex]?.dataset.year ?? "";
   todayDots.replaceChildren(...records.map((_, at) => {
     const dot = document.createElement("button"); dot.type = "button"; dot.dataset.testid = `today-dot-${at}`;
     dot.setAttribute("aria-label", familyLang.word("todayDot").replace("{n}", String(at + 1)));
@@ -212,39 +219,6 @@ async function renderRandom() {
   drawFacts(randomBox, picked);
   randomStatus.textContent = `${picked.length} ${familyLang.word("results")}`;
 }
-async function renderFavourites() {
-  const teamId = Number(favTeam.value);
-  const playerId = Number(favPlayer.value);
-  const from = Number(favFrom.value);
-  const to = Number(favTo.value);
-  const filters: FactFilters = {
-    ...(favSport.value ? { sport: favSport.value } : {}),
-    ...(favLeague.value.trim() ? { league: favLeague.value.trim() } : {}),
-    ...(favCategory.value ? { category: favCategory.value } : {}),
-    ...(Number.isInteger(from) && from >= 1800 ? { from } : {}),
-    ...(Number.isInteger(to) && to >= 1800 ? { to } : {}),
-    ...(Number.isInteger(teamId) && teamId > 0 ? { team: { franchiseId: teamId } } : {}),
-    ...(Number.isInteger(playerId) && playerId > 0 ? { player: { personId: playerId } } : {}),
-  };
-  // The smallest feed that can hold the answer: a team's, a player's bucket, a tag's, a league's or a sport's.
-  let path: string | null = null;
-  if (Number.isInteger(teamId) && teamId > 0) path = `feeds/teams/f-${teamId}.json`;
-  else if (Number.isInteger(playerId) && playerId > 0) path = `feeds/players/${String(playerId % 100).padStart(2, "0")}.json`;
-  else if (favCategory.value) path = `feeds/tags/${favCategory.value}.json`;
-  else if (favLeague.value.trim()) path = `feeds/leagues/${favLeague.value.trim()}.json`;
-  else if (favSport.value) path = `feeds/sports/${favSport.value}.json`;
-  let rows: OnThisDayRecord[] = [];
-  let reached = false;
-  try {
-    const shard = await loadFactShard(path ?? `store/${String(Math.floor(Math.random() * STORE_FILES)).padStart(2, "0")}.json`, localFeed());
-    rows = pickVariedFacts(shuffle(factsFor(shard.records, filters)), 20);
-    reached = true;
-  } catch { /* offline set below */ }
-  noteFeeds("favourites", !reached);
-  if (!reached) rows = pickVariedFacts(shuffle(factsFor(offline, filters)), 20);
-  drawFacts(favBox, rows);
-  favStatus.textContent = rows.length ? `${rows.length} ${familyLang.word("results")}` : familyLang.word("favEmpty");
-}
 /** The births and deaths of the chosen day across sports: one request to the day's people shard, or the bundled offline set when it cannot be reached. */
 async function renderPeople(day: string, ownGeneration: number) {
   let rows: readonly OnThisDayRecord[] = [];
@@ -276,7 +250,6 @@ let generation = 0;
 async function render() {
   const ownGeneration = ++generation;
   for (const option of sport.options) if (option.value) option.textContent = familyLang.word(option.value);
-  for (const option of favSport.options) if (option.value) option.textContent = familyLang.word(option.value);
   void renderToday();
   void renderPeople(date.value, ownGeneration);
   void renderEvents(date.value, ownGeneration);
@@ -326,10 +299,14 @@ async function renderShowcase() {
     noteFeeds("showcase", true);
   }
 }
-document.querySelector("#fav-find")!.addEventListener("click", () => { void renderFavourites(); });
+const explore = startExplore({
+  feed: localFeed, lang: () => (familyLang.lang === "ja" ? "ja" : "en"), word: (key) => familyLang.word(key), offline,
+  draw: (rows) => drawFacts(favBox, rows), note: (fellBack) => noteFeeds("favourites", fellBack), day: () => date.value,
+});
 document.querySelector("#random-reload")!.addEventListener("click", () => { void renderRandom(); });
-window.addEventListener("meigen-language", () => { void render(); void renderRandom(); void renderShowcase(); });
+window.addEventListener("meigen-language", () => { void render(); void renderRandom(); void renderShowcase(); explore.refreshMenus(); });
 void OFFLINE_BUILD;
 void render();
 void renderRandom();
 void renderShowcase();
+void explore.restore();

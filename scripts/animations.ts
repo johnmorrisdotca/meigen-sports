@@ -63,9 +63,10 @@ const STYLE = `
 *{box-sizing:border-box}html,body{margin:0;background:var(--page);color:var(--ink);font-family:var(--font)}
 #scene{width:${WIDTH}px;padding:18px;background:var(--page)}
 .card{display:grid;grid-template-columns:150px 1fr;gap:26px;padding:22px 26px;background:var(--surface);border:1px solid var(--rule);border-radius:18px;min-height:250px}
-.leaf{display:grid;grid-template-rows:auto 1fr;align-self:start;border:1px solid var(--rule);border-radius:14px;overflow:hidden;background:var(--page);text-align:center;box-shadow:0 3px 0 var(--rule);transform-origin:50% 0}
+.leaf{display:grid;grid-template-rows:auto 1fr auto;align-self:start;border:1px solid var(--rule);border-radius:14px;overflow:hidden;background:var(--page);text-align:center;box-shadow:0 3px 0 var(--rule);transform-origin:50% 0}
 .leaf-month{background:var(--accent);color:var(--accent-ink);font-weight:700;letter-spacing:.1em;font-size:15px;padding:8px 0}
-.leaf-day{font-size:68px;font-weight:700;line-height:1;padding:14px 0 18px;font-variant-numeric:tabular-nums}
+.leaf-day{font-size:68px;font-weight:700;line-height:1;padding:14px 0 14px;font-variant-numeric:tabular-nums}
+.leaf-year{border-top:1px solid var(--rule);font-size:17px;font-weight:700;letter-spacing:.04em;padding:7px 0;font-variant-numeric:tabular-nums}
 .kind{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
 .fact{font-size:25px;line-height:1.42;margin:8px 0 12px;min-height:106px}
 .src{font-size:13px;color:var(--muted)}
@@ -85,7 +86,7 @@ function heroToday(): Step[] {
     const [month, day] = leaf.monthDay.split("-").map(Number) as [number, number];
     const scale = Math.max(0.04, flip);
     const dots = facts.map((_, i) => `<i${i === textOf ? ' class="on"' : ""}></i>`).join("");
-    return `<div class="card"><div class="leaf" style="transform:scaleY(${scale})"><div class="leaf-month">${MONTHS[month - 1]}</div><div class="leaf-day">${day}</div></div><div><span class="kind">${escape(sportLabel(shown.record.sport))} · ${escape(kindLabel(shown.record.category))}</span><p class="fact">${escape(shown.text)}</p><div class="src">${credit(shown.record)}</div><div class="dots">${dots}</div></div></div>`;
+    return `<div class="card"><div class="leaf" style="transform:scaleY(${scale})"><div class="leaf-month">${MONTHS[month - 1]}</div><div class="leaf-day">${day}</div><div class="leaf-year">${(leaf.record.eventDate ?? "").slice(0, 4)}</div></div><div><span class="kind">${escape(sportLabel(shown.record.sport))} · ${escape(kindLabel(shown.record.category))}</span><p class="fact">${escape(shown.text)}</p><div class="src">${credit(shown.record)}</div><div class="dots">${dots}</div></div></div>`;
   };
   const steps: Step[] = [];
   facts.forEach((_, at) => {

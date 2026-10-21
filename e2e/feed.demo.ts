@@ -25,7 +25,10 @@ for (const language of ["en", "ja"]) {
   expect(fetched.some((url) => /\/facts\/days\/\d\d-\d\d\.json$/.test(url))).toBe(true);
   expect(fetched.filter((url) => /\/facts\/store\/\d\d\.json$/.test(url)).length).toBe(1);
   expect(fetched.some((url) => url.endsWith("/all.json"))).toBe(false);
-  expect(fetched.length).toBeLessThanOrEqual(8);
+  // The favourites' menus (the vocabulary and the clubs, two small files) are read when the panel comes near, and they are all that is read for them.
+  const menus = fetched.filter((url) => /\/facts\/index\//.test(url));
+  expect(menus.length).toBeLessThanOrEqual(2);
+  expect(fetched.length - menus.length).toBeLessThanOrEqual(8);
   // The day's people are one more request, and they are of many sports.
   expect(fetched.filter((url) => /\/facts\/people\/\d\d-\d\d\.json$/.test(url)).length).toBe(1);
   await expect(page.locator("#people-facts .record").first()).toBeVisible();
@@ -59,18 +62,24 @@ for (const language of ["en", "ja"]) {
   expect(errors).toEqual([]);
  });
 }
-test("a team feed and a player feed are fetched for their own view only", async ({ page }) => {
+test("a club's feed and a person's facts are fetched for their own view only", async ({ page }) => {
   await servePagesFromLocal(page);
   const requests: string[] = [];
   page.on("request", (request) => requests.push(request.url()));
   await page.goto("/?lang=en");
   await expect(page.locator("#today-facts .record")).toHaveCount(3);
-  await page.locator("#fav-team").fill("1405"); await page.locator("#fav-find").click();
+  await page.locator(".fav-panel").scrollIntoViewIfNeeded();
+  await expect.poll(() => page.locator("#fav-country option").count()).toBeGreaterThan(100);
+  await page.locator("#fav-team").pressSequentially("oilers");
+  await page.locator("#fav-team-list [role=option]").first().click();
   await expect(page.locator("#fav-facts .record").first()).toBeVisible();
-  expect(requests.some((url) => url.endsWith("/facts/feeds/teams/f-1405.json"))).toBe(true);
-  await page.locator("#fav-team").fill(""); await page.locator("#fav-player").fill("69"); await page.locator("#fav-find").click();
+  expect(requests.some((url) => /\/facts\/feeds\/teams\/f-\d+\.json$/.test(url))).toBe(true);
+  await page.locator("#fav-team").fill("");
+  await page.locator("#fav-person").pressSequentially("gretzky");
+  await page.locator("#fav-person-list [role=option]", { hasText: "Wayne Gretzky" }).first().click();
   await expect(page.locator("#fav-facts .record").first()).toBeVisible();
-  expect(requests.some((url) => url.endsWith("/facts/feeds/players/69.json"))).toBe(true);
+  // One names file (the letter g), and the store files his facts are in: nothing else.
+  expect(requests.some((url) => url.endsWith("/facts/index/names/g.json"))).toBe(true);
   await expect(page.locator("#feed-note")).toHaveText("");
 });
 test("when the feeds cannot be reached the bundled offline set is shown, and the page says so", async ({ page }) => {
