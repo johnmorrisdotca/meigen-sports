@@ -56,7 +56,7 @@ test("deceased birthday default names the sourced death year", () => {
 test("living-only turns template needs sourced living status and asOf on the birthday", () => {
   const living = gretzky({ livingStatus: "living" });
   const hit = render(living, { wording: "fixed", templateId: "birthday-turns", asOf: "2026-01-26" });
-  assert.equal(hit?.text, "Wayne Gretzky turns 65 today.");
+  assert.equal(hit?.text, "Wayne Gretzky turns 65 today (born in 1961).");
   assert.equal(render(living, { templateId: "birthday-turns", asOf: "2026-10-16" }), null);
   assert.equal(render(gretzky({ livingStatus: "deceased", deathDate: "2020-01-01" }), { templateId: "birthday-turns", asOf: "2026-01-26" }), null);
 });
@@ -72,17 +72,17 @@ test("a template that needs a missing field is skipped", () => {
   const withHonour = render(gretzky({ highlight: "four-time Stanley Cup champion" }), {
     templateId: "birthday-years-ago-highlight", asOf: "2026-01-26",
   });
-  assert.equal(withHonour?.text, "65 years ago today: Wayne Gretzky, four-time Stanley Cup champion, was born.");
+  assert.equal(withHonour?.text, "65 years ago today, in 1961: Wayne Gretzky, four-time Stanley Cup champion, was born.");
   assert.equal(render(gretzky({ datePrecision: "year", eventDate: null, bornYear: 1961 }), { wording: "fixed" }), null);
 });
 
 test("years-ago is true whether living or not", () => {
   const ago = render(gretzky(), { templateId: "birthday-years-ago", asOf: "2026-01-26" });
-  assert.equal(ago?.text, "Wayne Gretzky, the Edmonton Oilers center, was born 65 years ago today.");
+  assert.equal(ago?.text, "Wayne Gretzky, the Edmonton Oilers center, was born 65 years ago today, in 1961.");
   const deadAgo = render(gretzky({ livingStatus: "deceased", deathDate: "2020-01-01" }), {
     templateId: "birthday-years-ago", asOf: "2026-01-26",
   });
-  assert.equal(deadAgo?.text, "Wayne Gretzky, the Edmonton Oilers center, was born 65 years ago today.");
+  assert.equal(deadAgo?.text, "Wayne Gretzky, the Edmonton Oilers center, was born 65 years ago today, in 1961.");
 });
 
 test("fixed is stable and seeded variety is deterministic", () => {
@@ -230,6 +230,6 @@ test("Gretzky bios use Edmonton Oilers, never Alberta Oilers", () => {
   const career = captionFromFact(gretzky({ highlight: "four-time Stanley Cup champion" }));
   assert.equal(career, "Wayne Gretzky, the Edmonton Oilers center and four-time Stanley Cup champion, was born on January 26, 1961.");
   const birthdayOf = render(gretzky(), { templateId: "birthday-of", asOf: "2026-01-26" });
-  assert.equal(birthdayOf?.text, "Today is the birthday of Wayne Gretzky, the Edmonton Oilers center.");
+  assert.equal(birthdayOf?.text, "Today is the birthday of Wayne Gretzky, the Edmonton Oilers center, born in 1961.");
   assert.equal(/Alberta|\.,/.test(birthdayOf?.text ?? ""), false);
 });

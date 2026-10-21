@@ -51,7 +51,7 @@ test("the ticket's four facts: a date outside the day, 'today' only on it, no (n
   assert.equal(render(fact({}), { asOf: "2026-10-20", templateId: "game-won-against" })?.text, "On July 4, 1945, Pittsburgh Pirates won 16–4 against New York Giants (MLB).");
   // 2) "Today is the birthday of" only on the birthday; elsewhere the date.
   assert.equal(render(sampson(), { templateId: "birthday-of", asOf: "2026-10-20" }), null);
-  assert.equal(render(sampson(), { templateId: "birthday-of", asOf: "2026-07-07" })?.text, "Today is the birthday of Ralph Sampson, the Houston Rockets center.");
+  assert.equal(render(sampson(), { templateId: "birthday-of", asOf: "2026-07-07" })?.text, "Today is the birthday of Ralph Sampson, the Houston Rockets center, born in 1960.");
   assert.equal(render(sampson(), { wording: "fixed", asOf: "2026-10-20" })?.text, "Ralph Sampson, the Houston Rockets center, was born on July 7, 1960.");
   // 3) No placeholder.
   const allegheny = fact({ home: { ...fact({}).home!, name: "Cincinnati Red Stockings" }, away: { ...fact({}).away!, name: "Allegheny Club (none)" }, homeScore: 21, awayScore: 4, eventDate: "1882-05-03" });
@@ -69,7 +69,7 @@ test("the same fact on its own day may say today and this day, and keeps the yea
   assert.equal(dayContext(sampson(), undefined), "anywhere");
   assert.equal(render(fact({}), { asOf: "2026-07-04" })?.text, "Pittsburgh Pirates beat New York Giants 16–4 (MLB, 1945).");
   assert.equal(render(sampson(), { wording: "fixed", asOf: "2026-07-07" })?.text, "Ralph Sampson, the Houston Rockets center, was born on this day in 1960.");
-  assert.equal(render(sampson(), { templateId: "birthday-years-ago", asOf: "2026-07-07" })?.text, "Ralph Sampson, the Houston Rockets center, was born 66 years ago today.");
+  assert.equal(render(sampson(), { templateId: "birthday-years-ago", asOf: "2026-07-07" })?.text, "Ralph Sampson, the Houston Rockets center, was born 66 years ago today, in 1960.");
   assert.equal(render(sampson(), { templateId: "birthday-years-ago", asOf: "2026-10-20" }), null);
 });
 

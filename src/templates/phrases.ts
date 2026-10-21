@@ -13,7 +13,7 @@ export type FragmentId =
   | "context" | "overtime" | "shootout" | "stage" | "venueAt" | "venueCityAt" | "gameNumber" | "seriesWin"
   | "aged" | "diedParen" | "previousHolder" | "overallPick" | "clubBy" | "cityIn" | "homeOf"
   | "hosted" | "extraTime" | "penaltiesAfterDraw" | "penaltiesAfterExtraTime" | "penaltyShootout"
-  | "roundPart" | "articleCap" | "article" | "join" | "whoPlain" | "whoThe" | "whoTheAnd" | "whoParen" | "result"
+  | "roundPart" | "articleCap" | "article" | "join" | "whoPlain" | "whoThe" | "whoTheAnd" | "whoOf" | "whoOfAnd" | "whoParen" | "result"
   | "onDate" | "inDate" | "aroundDate" | "leadOnDate" | "leadInDate" | "leadAroundDate"
   | "placeIn" | "placeAt" | "wonBy" | "wonByTitle"
   | "recordSet" | "recordHeld" | "recordEqualled" | "recordSurpassed" | "recordSetBy" | "recordHeldBy" | "recordEqualledBy" | "recordBrokenBy";
@@ -59,6 +59,9 @@ export const FRAGMENTS: Table = {
   whoPlain: { en: [", {0},"], ja: ["（{0}）"] },
   whoThe: { en: [", the {0},"], ja: ["（{0}）"] },
   whoTheAnd: { en: [", the {0} and {1},"], ja: ["（{0}、{1}）"] },
+  // A club and no position: "Gregg Popovich, of the San Antonio Spurs,", never "the San Antonio Spurs," (a club is not what he is).
+  whoOf: { en: [", of the {0},"], ja: ["（{0}）"] },
+  whoOfAnd: { en: [", of the {0}, {1},"], ja: ["（{0}、{1}）"] },
   whoParen: { en: [" ({0})"], ja: ["（{0}）"] },
   result: { en: ["{0}\u2013{1}"], ja: ["{0}対{1}"] },
   // A date said at the precision the source holds. {0} is the date as `formatDate` writes it.

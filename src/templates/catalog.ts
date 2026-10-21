@@ -9,8 +9,8 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
   },
   {
     id: "birthday-of", type: "birthday", locale: "en", gate: "neutral", role: "variant", day: true,
-    needs: ["name", "dayPrecision", "who"],
-    pattern: "Today is the birthday of {name}{whoAfter}.",
+    needs: ["name", "year", "dayPrecision", "who"],
+    pattern: "Today is the birthday of {name}{whoAfter}, born in {year}.",
   },
   {
     id: "birthday-in-year", type: "birthday", locale: "en", gate: "neutral", role: "default",
@@ -19,8 +19,8 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
   },
   {
     id: "birthday-years-ago", type: "birthday", locale: "en", gate: "neutral", role: "variant", day: true,
-    needs: ["name", "yearsAgoToday", "who"],
-    pattern: "{name}{whoClause} was born {yearsAgo} years ago today.",
+    needs: ["name", "year", "yearsAgoToday", "who"],
+    pattern: "{name}{whoClause} was born {yearsAgo} years ago today, in {year}.",
   },
   {
     id: "birthday-place", type: "birthday", locale: "en", gate: "neutral", role: "variant", day: true,
@@ -29,8 +29,8 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
   },
   {
     id: "birthday-years-ago-highlight", type: "birthday", locale: "en", gate: "neutral", role: "variant", day: true,
-    needs: ["name", "yearsAgoToday", "highlight"],
-    pattern: "{yearsAgo} years ago today: {name}, {highlight}, was born.",
+    needs: ["name", "year", "yearsAgoToday", "highlight"],
+    pattern: "{yearsAgo} years ago today, in {year}: {name}, {highlight}, was born.",
   },
   {
     id: "birthday-deceased-paren", type: "birthday", locale: "en", gate: "deceased", role: "default", day: true,
@@ -44,8 +44,8 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
   },
   {
     id: "birthday-turns", type: "birthday", locale: "en", gate: "living", role: "variant", day: true,
-    needs: ["name", "yearsAgoToday"],
-    pattern: "{name} turns {yearsAgo} today.",
+    needs: ["name", "year", "yearsAgoToday"],
+    pattern: "{name} turns {yearsAgo} today (born in {year}).",
   },
   {
     id: "birthday-on-this-day", type: "birthday", locale: "ja", gate: "neutral", role: "default", day: true,
@@ -54,8 +54,8 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
   },
   {
     id: "birthday-of", type: "birthday", locale: "ja", gate: "neutral", role: "variant", day: true,
-    needs: ["name", "dayPrecision", "who"],
-    pattern: "今日は{name}{whoClause}の誕生日。",
+    needs: ["name", "year", "dayPrecision", "who"],
+    pattern: "今日は{name}{whoClause}の誕生日（{year}年生まれ）。",
   },
   {
     id: "birthday-in-year", type: "birthday", locale: "ja", gate: "neutral", role: "default",
@@ -64,8 +64,8 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
   },
   {
     id: "birthday-years-ago", type: "birthday", locale: "ja", gate: "neutral", role: "variant", day: true,
-    needs: ["name", "yearsAgoToday", "who"],
-    pattern: "{name}{whoClause}は{yearsAgo}年前の今日、生まれた。",
+    needs: ["name", "year", "yearsAgoToday", "who"],
+    pattern: "{name}{whoClause}は{yearsAgo}年前の今日、{year}年に生まれた。",
   },
   {
     id: "birthday-place", type: "birthday", locale: "ja", gate: "neutral", role: "variant", day: true,
@@ -74,8 +74,8 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
   },
   {
     id: "birthday-years-ago-highlight", type: "birthday", locale: "ja", gate: "neutral", role: "variant", day: true,
-    needs: ["name", "yearsAgoToday", "highlight"],
-    pattern: "{yearsAgo}年前の今日：{name}（{highlight}）が生まれた。",
+    needs: ["name", "year", "yearsAgoToday", "highlight"],
+    pattern: "{yearsAgo}年前の今日（{year}年）：{name}（{highlight}）が生まれた。",
   },
   {
     id: "birthday-deceased-paren", type: "birthday", locale: "ja", gate: "deceased", role: "default", day: true,
@@ -84,8 +84,8 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
   },
   {
     id: "birthday-turns", type: "birthday", locale: "ja", gate: "living", role: "variant", day: true,
-    needs: ["name", "yearsAgoToday"],
-    pattern: "{name}は今日{yearsAgo}歳になる。",
+    needs: ["name", "year", "yearsAgoToday"],
+    pattern: "{name}は今日{yearsAgo}歳になる（{year}年生まれ）。",
   },
   {
     id: "death-context", type: "death", locale: "en", gate: "deceased", role: "default", day: true,
@@ -660,13 +660,13 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
   },
   {
     id: "event-on-this-day", type: "event-date", locale: "en", gate: "neutral", role: "variant", day: true,
-    needs: ["label"],
-    pattern: "{label} took place on this day.",
+    needs: ["label", "year"],
+    pattern: "{label} took place on this day in {year}.",
   },
   {
     id: "event-lead-in", type: "event-date", locale: "en", gate: "neutral", role: "variant", day: true,
-    needs: ["label"],
-    pattern: "On this day: {label}.",
+    needs: ["label", "year"],
+    pattern: "On this day in {year}: {label}.",
   },
   {
     id: "event-took-place", type: "event-date", locale: "ja", gate: "neutral", role: "default",
@@ -675,13 +675,13 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
   },
   {
     id: "event-on-this-day", type: "event-date", locale: "ja", gate: "neutral", role: "variant", day: true,
-    needs: ["label"],
-    pattern: "{label}は、この日に行われた。",
+    needs: ["label", "year"],
+    pattern: "{label}は、{year}年のこの日に行われた。",
   },
   {
     id: "event-lead-in", type: "event-date", locale: "ja", gate: "neutral", role: "variant", day: true,
-    needs: ["label"],
-    pattern: "今日は{label}が行われた日。",
+    needs: ["label", "year"],
+    pattern: "今日は{label}が行われた日（{year}年）。",
   },
   // ---- Added in 0.6.7: wording for a fact shown outside its own day. These say the date at its precision and never "today". ----
   {

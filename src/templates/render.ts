@@ -243,6 +243,11 @@ function fieldsOf(
   const dates = dateFields(locale, when, onDay, say);
   // A draft's year is part of its name ("the 1990 NHL draft"), so a year alone adds nothing in front of it.
   if (record.category === "draft" && when && !when.day && !when.month) { dates.dateLead = ""; dates.theFirst = say("articleCap"); }
+  // An event's own day says no date, but the year is still said: an edition whose name holds no year ("Channel One Russia began in Moscow") starts "In 1995, ".
+  if (onDay && when && (record.category === "competition-start" || record.category === "competition-end" || record.category === "sport-event") && !cleanLabel(record.eventLabel).includes(String(when.year))) {
+    dates.dateLead = dates.leadIn;
+    dates.theFirst = say("article");
+  }
   // The year goes in the parenthesis only when no date leads the sentence.
   const ctxBits = [league, dates.dateLead ? "" : (ja && year ? `${year}年` : year)].filter(Boolean).join(say("join"));
   const ctx = ctxBits ? say("context", ctxBits) : "";
@@ -250,7 +255,7 @@ function fieldsOf(
   const ot = record.decidedByShootout ? say("shootout")
     : record.wentToOvertime ? (sportWords ? phrase("overtime", locale, [], choose("overtime"), sportWords) : say("overtime")) : "";
   const stageRaw = cleanLabel(record.stage ?? record.phase ?? record.roundLabel);
-  const stage = stageRaw && stageRaw !== "regular" ? say("stage", ja ? stageJa(stageRaw) : stageRaw.replaceAll("_", " ")) : "";
+  const stage = stageRaw && stageRaw !== "regular" ? say("stage", ja ? stageJa(stageRaw, record.sport) : stageRaw.replaceAll("_", " ")) : "";
   const venueNameClean = cleanLabel(record.venueName);
   const venueCityClean = cleanLabel(record.venueCity);
   const venue = venueNameClean
@@ -263,6 +268,8 @@ function fieldsOf(
   const club = publicClubName(clubNamesClean, clubNameClean);
   const position = positionName(record.sport, record.position, locale);
   const clubPosition = club && position ? say("clubPosition", club, position) : (club || position);
+  // A club with no position is "of the club", not "the club": a club is not a trade.
+  const clubOnly = Boolean(club) && !position;
   const honour = cleanLabel(record.highlight) || cleanLabel(record.epithet);
   const birthday = record.category === "player-birthday";
   const career = birthday && honour && isCareerHighlight(honour);
@@ -272,11 +279,11 @@ function fieldsOf(
   if (whoCore) {
     if (ja) {
       whoClause = say("whoParen", career ? [clubPosition, honour].filter(Boolean).join(say("join")) : birthday ? (clubPosition || honour) : [clubPosition, honour].filter(Boolean).join(say("join")));
-    } else if (career && clubPosition) whoClause = say("whoTheAnd", clubPosition, honour);
+    } else if (career && clubPosition) whoClause = clubOnly ? say("whoOfAnd", club, honour) : say("whoTheAnd", clubPosition, honour);
     else if (career) whoClause = say("whoPlain", honour);
-    else if (birthday && clubPosition) whoClause = say("whoThe", clubPosition);
-    else if (clubPosition && honour) whoClause = say("whoTheAnd", clubPosition, honour);
-    else if (clubPosition) whoClause = say("whoThe", clubPosition);
+    else if (birthday && clubPosition) whoClause = clubOnly ? say("whoOf", club) : say("whoThe", clubPosition);
+    else if (clubPosition && honour) whoClause = clubOnly ? say("whoOfAnd", club, honour) : say("whoTheAnd", clubPosition, honour);
+    else if (clubPosition) whoClause = clubOnly ? say("whoOf", club) : say("whoThe", clubPosition);
     else whoClause = say("whoPlain", honour);
   }
   const deathYear = deathYearOf(record);
@@ -423,10 +430,17 @@ function subjectOfHistory(record: MeigenRecord, locale: TemplateLocale, choose: 
   }
   const boundary = BOUNDARY_LINE.exec(text);
   if (boundary) {
-    return historySubject(boundary[3] === "began" ? "competition-start" : "competition-end", record.id, { ...dates, year: boundary[1] ?? "", name: cleanLabel(boundary[2]) }, false, onDay);
+    // The Games of "2020" held in 2021: on its own day the sentence says the year of the day as well.
+    const fields = onDay && when && boundary[1] !== String(when.year) ? { ...dates, dateLead: dates.leadIn, theFirst: say("article") } : dates;
+    return historySubject(boundary[3] === "began" ? "competition-start" : "competition-end", record.id, { ...fields, year: boundary[1] ?? "", name: cleanLabel(boundary[2]) }, false, onDay);
   }
   const event = EVENT_LINE.exec(text);
-  if (event) return historySubject("event-date", record.id, { ...dates, label: cleanLabel(event[1]) }, false, onDay);
+  if (event) {
+    const label = cleanLabel(event[1]);
+    // On its own day an event whose name holds no year still says it ("In 1975, Thrilla in Manila took place.").
+    const fields = onDay && when && !label.includes(String(when.year)) ? { ...dates, dateLead: dates.leadIn } : dates;
+    return historySubject("event-date", record.id, { ...fields, label, year: when ? String(when.year) : "" }, false, onDay);
+  }
   return null;
 }
 

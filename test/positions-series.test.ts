@@ -36,7 +36,7 @@ test("a position code is spelled out through its sport: C is a catcher in baseba
 test("a code the sport does not have is left out, never printed and never guessed", () => {
   assert.equal(positionName("baseball", "QB", "en"), "");
   assert.equal(positionName(null, "CF", "en"), "", "no sport, no way to read a code");
-  assert.equal(captionFromFact(born("baseball", "QB", "New York Yankees"), "en"), "A Player, the New York Yankees, was born on October 20, 1931.");
+  assert.equal(captionFromFact(born("baseball", "QB", "New York Yankees"), "en"), "A Player, of the New York Yankees, was born on October 20, 1931.");
   assert.equal(captionFromFact(born("baseball", "QB", "x", { clubNames: [] }), "en"), null, "nothing but a name is not published");
   assert.equal(positionName("baseball", "outfielder", "en"), "outfielder", "a value already in words is kept");
 });

@@ -30,9 +30,13 @@ const STAGE_JA: Record<string, string> = {
   second_group: "2次リーグ",
 };
 
-/** The stage of a game ("playoffs", "quarter") in Japanese; a stage with no entry keeps its own words. */
-export function stageJa(stage: string): string {
-  return STAGE_JA[stage.trim().toLowerCase()] ?? stage.replaceAll("_", " ");
+/** Baseball's own word for its playoffs in Japanese: the postseason. */
+const STAGE_JA_BASEBALL: Record<string, string> = { playoffs: "ポストシーズン" };
+
+/** The stage of a game ("playoffs", "quarter") in Japanese; a stage with no entry keeps its own words. Baseball's playoffs are the postseason (`ポストシーズン`), the other sports' are `プレーオフ`. */
+export function stageJa(stage: string, sport?: string | null): string {
+  const key = stage.trim().toLowerCase();
+  return (sport === "baseball" ? STAGE_JA_BASEBALL[key] : undefined) ?? STAGE_JA[key] ?? stage.replaceAll("_", " ");
 }
 
 /** The round of a World Cup match ("Matchday 7", "Quarter-finals") in Japanese; a round with no entry keeps its own words. */
