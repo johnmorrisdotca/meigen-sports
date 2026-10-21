@@ -75,7 +75,7 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
   {
     id: "birthday-years-ago-highlight", type: "birthday", locale: "ja", gate: "neutral", role: "variant", day: true,
     needs: ["name", "year", "yearsAgoToday", "highlight"],
-    pattern: "{yearsAgo}年前の今日（{year}年）：{name}（{highlight}）が生まれた。",
+    pattern: "{yearsAgo}年前の今日（{year}年）、{name}（{highlight}）が生まれた。",
   },
   {
     id: "birthday-deceased-paren", type: "birthday", locale: "ja", gate: "deceased", role: "default", day: true,
@@ -611,17 +611,17 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
   {
     id: "start-the", type: "competition-start", locale: "ja", gate: "neutral", role: "default",
     needs: ["year", "name"],
-    pattern: "{dateLead}{year}年の{name}が始まった。",
+    pattern: "{dateLead}{yearJa}の{name}が始まった。",
   },
   {
     id: "start-opened", type: "competition-start", locale: "ja", gate: "neutral", role: "variant",
     needs: ["year", "name"],
-    pattern: "{dateLead}{year}年の{name}が開幕した。",
+    pattern: "{dateLead}{yearJa}の{name}が開幕した。",
   },
   {
     id: "start-curtain", type: "competition-start", locale: "ja", gate: "neutral", role: "variant",
     needs: ["year", "name"],
-    pattern: "{dateLead}{name}（{year}年）が幕を開けた。",
+    pattern: "{dateLead}{name}（{yearJa}）が幕を開けた。",
   },
   {
     id: "end-the", type: "competition-end", locale: "en", gate: "neutral", role: "default",
@@ -641,17 +641,17 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
   {
     id: "end-the", type: "competition-end", locale: "ja", gate: "neutral", role: "default",
     needs: ["year", "name"],
-    pattern: "{dateLead}{year}年の{name}が終わった。",
+    pattern: "{dateLead}{yearJa}の{name}が終わった。",
   },
   {
     id: "end-closed", type: "competition-end", locale: "ja", gate: "neutral", role: "variant",
     needs: ["year", "name"],
-    pattern: "{dateLead}{year}年の{name}が閉幕した。",
+    pattern: "{dateLead}{yearJa}の{name}が閉幕した。",
   },
   {
     id: "end-curtain", type: "competition-end", locale: "ja", gate: "neutral", role: "variant",
     needs: ["year", "name"],
-    pattern: "{dateLead}{name}（{year}年）が幕を閉じた。",
+    pattern: "{dateLead}{name}（{yearJa}）が幕を閉じた。",
   },
   {
     id: "event-took-place", type: "event-date", locale: "en", gate: "neutral", role: "default",
@@ -676,7 +676,7 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
   {
     id: "event-on-this-day", type: "event-date", locale: "ja", gate: "neutral", role: "variant", day: true,
     needs: ["label", "year"],
-    pattern: "{label}は、{year}年のこの日に行われた。",
+    pattern: "{label}は{year}年のこの日に行われた。",
   },
   {
     id: "event-lead-in", type: "event-date", locale: "ja", gate: "neutral", role: "variant", day: true,
@@ -785,17 +785,17 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
   {
     id: "start-event", type: "competition-start", locale: "ja", gate: "neutral", role: "default",
     needs: ["eventLabel"],
-    pattern: "{dateLead}{eventLabel}が始まった{placeIn}。",
+    pattern: "{dateLead}{eventLabel}{placeIn}が始まった。",
   },
   {
     id: "start-event-opened", type: "competition-start", locale: "ja", gate: "neutral", role: "variant",
     needs: ["eventLabel"],
-    pattern: "{dateLead}{eventLabel}が開幕した{placeIn}。",
+    pattern: "{dateLead}{eventLabel}{placeIn}が開幕した。",
   },
   {
     id: "start-event-curtain", type: "competition-start", locale: "ja", gate: "neutral", role: "variant",
     needs: ["eventLabel"],
-    pattern: "{dateLead}{eventLabel}が幕を開けた{placeIn}。",
+    pattern: "{dateLead}{eventLabel}{placeIn}が幕を開けた。",
   },
   {
     id: "end-event", type: "competition-end", locale: "en", gate: "neutral", role: "default",
@@ -815,17 +815,17 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
   {
     id: "end-event", type: "competition-end", locale: "ja", gate: "neutral", role: "default",
     needs: ["eventLabel"],
-    pattern: "{dateLead}{eventLabel}が終わった{placeIn}。{wonByTitle}",
+    pattern: "{dateLead}{eventLabel}{placeIn}が終わった。{wonByTitle}",
   },
   {
     id: "end-event-closed", type: "competition-end", locale: "ja", gate: "neutral", role: "variant",
     needs: ["eventLabel"],
-    pattern: "{dateLead}{eventLabel}が閉幕した{placeIn}。{wonByTitle}",
+    pattern: "{dateLead}{eventLabel}{placeIn}が閉幕した。{wonByTitle}",
   },
   {
     id: "end-event-curtain", type: "competition-end", locale: "ja", gate: "neutral", role: "variant",
     needs: ["eventLabel"],
-    pattern: "{dateLead}{eventLabel}が幕を閉じた{placeIn}。{wonByTitle}",
+    pattern: "{dateLead}{eventLabel}{placeIn}が幕を閉じた。{wonByTitle}",
   },
   {
     id: "event-held", type: "event-date", locale: "en", gate: "neutral", role: "default",
@@ -845,16 +845,16 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
   {
     id: "event-held", type: "event-date", locale: "ja", gate: "neutral", role: "default",
     needs: ["eventLabel"],
-    pattern: "{dateLead}{eventLabel}が行われた{placeIn}。{wonBy}",
+    pattern: "{dateLead}{eventLabel}{placeIn}が行われた。{wonBy}",
   },
   {
     id: "event-was-held", type: "event-date", locale: "ja", gate: "neutral", role: "variant",
     needs: ["eventLabel"],
-    pattern: "{dateLead}{eventLabel}が開催された{placeIn}。{wonBy}",
+    pattern: "{dateLead}{eventLabel}{placeIn}が開催された。{wonBy}",
   },
   {
     id: "event-was-staged", type: "event-date", locale: "ja", gate: "neutral", role: "variant",
     needs: ["eventLabel"],
-    pattern: "{dateLead}{eventLabel}が催された{placeIn}。{wonBy}",
+    pattern: "{dateLead}{eventLabel}{placeIn}が催された。{wonBy}",
   },
 ];

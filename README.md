@@ -61,6 +61,7 @@ A typed data package with no runtime dependencies. Read the included data offlin
 <br><em>The bundled offline set, a month at a time.</em>
 </p>
 
+- **Tags for everything a fact is about, and a flag where it is unambiguous**: every fact carries `sport:handball`, `country:RO`, `decade:1990s`, `award:hart-memorial-trophy`, `honour:champion` and more in its `tags`, each built from a field the fact holds and never guessed ([the vocabulary and its counts](./docs/tags.md)). A person has the countries Wikidata gives (`countries`, ISO 3166), a `flag` code only when he represents one country, a `birthCountry`, and the titles of his Wikipedia articles (`wikipediaUrl` builds the address in the reader's language, English next, then Wikidata); a game of two teams of one country has its flag too (`flagOf`). `queryFacts({ country: "RO", day: "03-04" })` is the Romanian facts of a calendar day, from static indexes of ids; `findPeopleByName` finds a person by first or last name in one small file. No tag says sex, gender, ethnicity, religion, politics, family or health.
 - **Feeds by team, player, sport and tag**, and **the people and the events of each day across sports**: one small static file each, loaded with `loadFactShard` (`loadFactPeopleDay` for a day's people: up to forty births and deaths, at most three of one sport; `loadFactEventsDay` for its events, the same), so a site fetches only what it shows.
 
 <p align="center">
@@ -98,7 +99,7 @@ One build ships both places. The package and the GitHub Pages site are made from
 | Quotations | 30 (22 Gutenberg excerpts, 8 Wikiquote sports lines tagged `famous-quotes`) | the same 30 in `quotes.json` |
 | History starter | 1,052 dated rows on 142 days (`@johnmorrisdotca/meigen-sports/history`; World Cup matches and Wikidata events), kept for compatibility | `all.json`, `days/`, `sports/`, `entities/` |
 
-`today(offline, timeZone, nowIso)` always answers from the package. **The rest of the facts are not in the package: Pages must be reachable for them** (the package is about 1 MB packed; the full facts are about 150 MB). A site should load the feeds and fall back to the offline set when they cannot be reached, and say that it did; the demo does exactly that. `data/v1/latest.json` names the current build (`package`, `build`, `offlineRecords`, `factRecords`) and its manifests, so a site can check that the feeds it reads are the build its package was made with.
+`today(offline, timeZone, nowIso)` always answers from the package. **The rest of the facts are not in the package: Pages must be reachable for them** (the package is about 1 MB packed; the full facts are about 200 MB). A site should load the feeds and fall back to the offline set when they cannot be reached, and say that it did; the demo does exactly that. `data/v1/latest.json` names the current build (`package`, `build`, `offlineRecords`, `factRecords`) and its manifests, so a site can check that the feeds it reads are the build its package was made with.
 
 This is a sourced collection with coverage gaps, not a complete daily almanac: [docs/golden-facts.md](./docs/golden-facts.md) lists the famous facts the data must hold, and those it is known not to hold yet. Quotes have unknown utterance dates and are never assigned invented anniversaries.
 
@@ -164,7 +165,7 @@ The snippets under **In 30 seconds** and **Use it in your project** are run by `
 
 ## API
 
-The root export provides `isDate`, `monthDayOf`, `selectRecords`, `historyOnDate`, `quoteForDate`, `EXTRACT_CATEGORIES`, `FACT_CATEGORIES`, on-this-day helpers (`factsFor`, `today`, `calendarDayInZone`, `rankFeed`, `rankRecords`, `rankDay`, `bestOfDay`, `significance`, `randomFacts`, `tagsOf`, `uniqueRecordIds`, `withCaptions`, `captionFromFact`, `isRichFact`, `dayContext`, `factDate`, `cleanLabel`; how lists are ranked and capped: [docs/ranking.md](./docs/ranking.md)), caption templates (`render`, `renderHistory`, `renderRun`, `templatesFor`, `TEMPLATES`, `TEMPLATE_TYPES`; `renderRun` words a list so that neighbours never repeat), same-event merge (`mergeHistoryEvents`, `finalCaptionFromMatch`, `uniqueHistoryIds`), the core record and feed types, on-this-day consume types (`OnThisDayRecord`, `TeamRef`, `PersonRef`), and `SCHEMA_VERSION` and `VERSION`.
+The root export provides `isDate`, `monthDayOf`, `selectRecords`, `historyOnDate`, `quoteForDate`, `EXTRACT_CATEGORIES`, `FACT_CATEGORIES`, on-this-day helpers (`factsFor`, `today`, `calendarDayInZone`, `rankFeed`, `rankRecords`, `rankDay`, `bestOfDay`, `significance`, `randomFacts`, `tagsOf`, `kindTagsOf`, `uniqueRecordIds`, `withCaptions`, `captionFromFact`, `isRichFact`, `dayContext`, `factDate`, `cleanLabel`; how lists are ranked and capped: [docs/ranking.md](./docs/ranking.md)), tags and links (`derivedTags`, `countriesOf`, `flagOf`, `slugOf`, `tagValues`, `isNamespaced`, `TAG_NAMESPACES`, `NAMESPACED_TAG`, `VALID_TAG`, `wikipediaUrl`, `wikipediaPageUrl`; [docs/tags.md](./docs/tags.md)), caption templates (`render`, `renderHistory`, `renderRun`, `templatesFor`, `TEMPLATES`, `TEMPLATE_TYPES`; `renderRun` words a list so that neighbours never repeat), same-event merge (`mergeHistoryEvents`, `finalCaptionFromMatch`, `uniqueHistoryIds`), the core record and feed types, on-this-day consume types (`OnThisDayRecord`, `TeamRef`, `PersonRef`), and `SCHEMA_VERSION` and `VERSION`.
 
 | Import | Contents |
 | --- | --- |
@@ -172,7 +173,7 @@ The root export provides `isDate`, `monthDayOf`, `selectRecords`, `historyOnDate
 | `@johnmorrisdotca/meigen-sports/quotes` | Bundled quotation records |
 | `@johnmorrisdotca/meigen-sports/history` | Bundled dated history records (the starter) |
 | `@johnmorrisdotca/meigen-sports/offline` | `offline`, the best three to five facts for every calendar day, and `OFFLINE_BUILD`, the build they were chosen from |
-| `@johnmorrisdotca/meigen-sports/load` | `loadShard`, `loadDay`, `loadSport`, `loadEntity` and loader types |
+| `@johnmorrisdotca/meigen-sports/load` | `loadShard`, `loadDay`, `loadSport`, `loadEntity`, the facts loaders (`loadFactDay`, `loadCountry`, `queryFacts`, `queryFactIds`, `loadFactsById`, `findPeopleByName`, `loadVocabulary`, `loadTeamPicker`) and loader types |
 | `@johnmorrisdotca/meigen-sports/categories` | `HISTORY_TYPES` and its evidence/readiness descriptions |
 
 The shapes of a record (`MeigenRecord`, `OnThisDayRecord`, `PersonRef`, `TeamRef`) and the 46 history tags are in [docs/record-schema.md](./docs/record-schema.md) and [docs/categories.md](./docs/categories.md): one fact is stored once and may carry several tags, and an entity label is never an identity key.

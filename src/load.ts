@@ -322,3 +322,61 @@ function sha256Prefix(text: string): number {
   }
   return h[0]! >>> 16;
 }
+
+/** A person a reader can look up by name: `n` the name (a label, never identity), `q` the Wikidata id, `p` the archive's person id, `ids` the ids of the person's facts. */
+export interface NamedPerson { readonly n: string; readonly q: string | null; readonly p: number | null; readonly ids: readonly string[] }
+
+/** A name folded for searching: accents and case gone, split into its words (letters and digits). */
+export function nameWords(text: string): string[] {
+  return text.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().match(/[\p{L}\p{N}]+/gu) ?? [];
+}
+
+/** The files of `index/names/` a name is in: the first letter of its first word and of its last (`a` to `z`, else `_`). A reader types either name. */
+export function nameLetters(text: string): string[] {
+  const words = nameWords(text);
+  const letter = (word: string | undefined): string => (word && /^[a-z]/.test(word) ? word[0]! : "_");
+  return [...new Set([letter(words[0]), letter(words.at(-1))])];
+}
+
+/** One file of people by name (`index/names/a.json`): everyone whose first or last name begins with that letter. */
+export async function loadPeopleNames(letter: string, options: LoadOptions): Promise<NamedPerson[]> {
+  if (!/^(?:[a-z]|_)$/.test(letter)) throw new RangeError("Expected one letter, a to z, or _");
+  const value = await fetchShard(`facts/index/names/${letter}.json`, options) as { schemaVersion?: number; dataVersion?: string; people?: unknown } | null;
+  if (!value || value.schemaVersion !== 1 || value.dataVersion !== options.dataVersion || !Array.isArray(value.people)) throw new TypeError("Invalid or incompatible names index");
+  return value.people.filter((row): row is NamedPerson => Boolean(row) && typeof (row as NamedPerson).n === "string" && Array.isArray((row as NamedPerson).ids));
+}
+
+/**
+ * People whose name matches what a reader typed: every word typed begins a word of the name ("wayne gr", "gretz", "ovech"). One file request, the file of the
+ * first letter of the first word typed. Names are labels: two people may share one, and the Q id (`q`) tells them apart.
+ */
+export async function findPeopleByName(query: string, options: LoadOptions, limit = 20): Promise<NamedPerson[]> {
+  const typed = nameWords(query);
+  if (!typed.length) return [];
+  const letter = /^[a-z]/.test(typed[0]!) ? typed[0]![0]! : "_";
+  const people = await loadPeopleNames(letter, options);
+  return people.filter((person) => {
+    const words = nameWords(person.n);
+    return typed.every((word) => words.some((w) => w.startsWith(word)));
+  }).slice(0, Math.max(0, limit));
+}
+
+/** A club a reader can pick: the archive's franchise id, its name (null where no fact names it), its sport and league. */
+export interface PickerTeam { readonly franchiseId: number; readonly name: string | null; readonly sport: string | null; readonly league: string | null }
+
+/** The clubs a reader can pick by name (`index/teams.json`, a few kilobytes). People are found by name with `findPeopleByName`. */
+export async function loadTeamPicker(options: LoadOptions): Promise<PickerTeam[]> {
+  const value = await fetchShard("facts/index/teams.json", options) as { schemaVersion?: number; dataVersion?: string; teams?: unknown } | null;
+  if (!value || value.schemaVersion !== 1 || value.dataVersion !== options.dataVersion || !Array.isArray(value.teams)) throw new TypeError("Invalid or incompatible picker");
+  return value.teams.filter((team): team is PickerTeam => Boolean(team) && Number.isInteger((team as PickerTeam).franchiseId));
+}
+
+/** The values a reader can filter by, with the number of facts of each, by the folder of their index (`countries`, `sports`, `leagues`, `decades`, `awards`, `positions`, `honours`, `series`, `titles`, `birthcountries`, `hosts`), most facts first. */
+export type Vocabulary = Readonly<Record<"countries" | "sports" | "leagues" | "decades" | "awards" | "positions" | "honours" | "series" | "titles" | "birthcountries" | "hosts", Readonly<Record<string, number>>>> & { readonly awardNames: Readonly<Record<string, string>> };
+
+/** The vocabulary of the facts (`index/vocabulary.json`): one small file, for a menu of what can be asked. */
+export async function loadVocabulary(options: LoadOptions): Promise<Vocabulary> {
+  const value = await fetchShard("facts/index/vocabulary.json", options) as (Partial<Vocabulary> & { schemaVersion?: number; dataVersion?: string }) | null;
+  if (!value || value.schemaVersion !== 1 || value.dataVersion !== options.dataVersion || typeof value.countries !== "object" || typeof value.sports !== "object") throw new TypeError("Invalid or incompatible vocabulary");
+  return value as Vocabulary;
+}

@@ -104,7 +104,7 @@ test("an event is worded in English and Japanese from its fields: the name with 
   const final: OnThisDayRecord = { ...base, recordId: "t:1", category: "sport-event", eventDate: "1966-07-30", sport: "soccer", eventLabel: "1966 FIFA World Cup Final", eventPlace: "Wembley Stadium", winnerName: "England" };
   assert.equal(render(final, { asOf: "2026-10-20" })?.text, "On July 30, 1966, the 1966 FIFA World Cup Final took place at Wembley Stadium, won by England.");
   assert.equal(render(final, { asOf: "2026-07-30" })?.text, "The 1966 FIFA World Cup Final took place at Wembley Stadium, won by England.");
-  assert.equal(render(final, { asOf: "2026-10-20", locale: "ja" })?.text, "1966年7月30日、1966 FIFA World Cup Finalが行われた（Wembley Stadium）。勝者はEngland。");
+  assert.equal(render(final, { asOf: "2026-10-20", locale: "ja" })?.text, "1966年7月30日、1966 FIFA World Cup Final（Wembley Stadium）が行われた。勝者はEngland。");
   const start: OnThisDayRecord = { ...base, recordId: "t:2", category: "competition-start", eventDate: "2012-05-29", sport: "rhythmic-gymnastics", eventLabel: "2012 Rhythmic Gymnastics European Championships", eventPlace: "Nizhny Novgorod" };
   assert.equal(render(start, { asOf: "2026-10-20" })?.text, "On May 29, 2012, the 2012 Rhythmic Gymnastics European Championships began in Nizhny Novgorod.");
   assert.equal(render({ ...start, category: "competition-end", eventDate: "2012-06-03", winnerName: "Russia" }, { asOf: "2026-10-20" })?.text, "On June 3, 2012, the 2012 Rhythmic Gymnastics European Championships ended in Nizhny Novgorod, won by Russia.");

@@ -432,7 +432,9 @@ function subjectOfHistory(record: MeigenRecord, locale: TemplateLocale, choose: 
   if (boundary) {
     // The Games of "2020" held in 2021: on its own day the sentence says the year of the day as well.
     const fields = onDay && when && boundary[1] !== String(when.year) ? { ...dates, dateLead: dates.leadIn, theFirst: say("article") } : dates;
-    return historySubject(boundary[3] === "began" ? "competition-start" : "competition-end", record.id, { ...fields, year: boundary[1] ?? "", name: cleanLabel(boundary[2]) }, false, onDay);
+    // Japanese: "2020年大会" for the Games named for a year that is not the year they were held in, "2012年" otherwise.
+    const delayed = fields !== dates;
+    return historySubject(boundary[3] === "began" ? "competition-start" : "competition-end", record.id, { ...fields, year: boundary[1] ?? "", yearJa: boundary[1] ? `${boundary[1]}年${delayed ? "大会" : ""}` : "", name: cleanLabel(boundary[2]) }, false, onDay);
   }
   const event = EVENT_LINE.exec(text);
   if (event) {

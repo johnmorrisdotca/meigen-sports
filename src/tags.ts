@@ -58,7 +58,7 @@ export function countriesOf(record: OnThisDayRecord): string[] {
 }
 
 /**
- * The flag a fact may show, a Hata code ("US", "GB-ENG", "SUHH"), only when it is unambiguous: one person of one country, or two teams of one country.
+ * The flag a fact may show, by the code a flag set keys its flags by ("US", "GB-ENG", "SUHH"), only when it is unambiguous: one person of one country, or two teams of one country.
  * `null` when the fact is about two countries, a country with no flag, a person of two countries, or no country at all. A flag is never guessed.
  */
 export function flagOf(record: OnThisDayRecord): string | null {

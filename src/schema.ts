@@ -136,8 +136,10 @@ export interface OnThisDayRecord {
    */
   readonly countries?: readonly string[];
   /**
-   * The flag to show, a Hata code: "RO", "GB-ENG" for a person of England, "SUHH". Present only when it is unambiguous: one country, one flag.
-   * Never for a person of two countries, a country with no flag, or a fact about two countries (`flagOf` also reads two teams of one country).
+   * The flag to show, as the code a flag set keys its flags by (ISO 3166-1 "RO", ISO 3166-2 "GB-ENG" for a person of England, ISO 3166-3 "SUHH" for the
+   * Soviet Union): the one country he represents in sport, or his one country. Present only when it is unambiguous. Never for a person of two countries
+   * with none he represents, a state no code names, or a fact about two countries (`flagOf` also reads two teams of one country). A flag set that
+   * has no flag for a code (Oman, in Hata 1.7.2) draws none.
    */
   readonly flag?: string | null;
   /** The country the person's birthplace lies in (ISO 3166-1 alpha-2), as Wikidata gives the place's country. Distinct from `countries`. */

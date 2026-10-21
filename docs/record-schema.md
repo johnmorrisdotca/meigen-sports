@@ -158,6 +158,12 @@ A birth or death also carries what the sentence is made of, each only when the s
 | `highlight` | string | A career honour ("Hockey Hall of Famer", "Grey Cup winner"). |
 | `sitelinks` | number | Wikidata's count of the person's Wikipedia (and sister-project) pages: the fame the lists are ranked by. |
 | `nationality` | string | ISO 3166-1 alpha-2 code of the country he represented or holds citizenship of. |
+| `countries` | string[] | The countries of the person: every country he represents in sport or holds, as ISO 3166-1 alpha-2 codes (`RO`), and the ISO 3166-3 code of a former country that has a flag (`SUHH`). England, Scotland, Wales and Northern Ireland are `GB`. Absent where the data names none; a state no code names is never guessed. |
+| `flag` | string | The code of the one flag to show (`RO`, `GB-ENG`, `SUHH`): the country he represents in sport, or his only country. Absent for a person of two countries with none he represents. `flagOf` also reads two teams of one country. |
+| `birthCountry` | string | The country his birthplace lies in (ISO 3166-1 alpha-2). |
+| `awards` | string[] | The individual awards he won himself, as ids (`hart-memorial-trophy`). |
+| `wikidata`, `wikipedia` | string, object | The Wikidata item a fact is about (a person, an event) and the titles of its Wikipedia articles, `{ en, fr, ja }` where Wikidata links them; `wikipediaUrl` builds the address. A fact with no item has neither: no link is guessed from a name. |
+| `hostCountries` | string[] | For an event, the countries it was held in. |
 | `livingStatus` | `deceased`, `unknown` | `deceased` when a source holds a death; `unknown` when it holds none, never `living` unless a source confirms it. |
 
 An event or a competition edition (`category` `competition-start`, `competition-end` or `sport-event`) carries `eventLabel` (its name, as Wikidata names it), `eventPlace` (its `location`, where the item states one) and `winnerName` (its winner, where it names one: a national team by its country), and `sitelinks` ranks it. Its sentence says it began, ended or took place, with the place ("at" before a venue, "in" before a town) and the winner last.

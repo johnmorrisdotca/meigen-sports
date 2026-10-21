@@ -22,6 +22,12 @@
 | `derivedInputs` | 文字列の配列 | その規則の入力。 |
 | `birthDate` | 文字列または null | 誕生日は一度だけ保存します。年齢はその年について計算します。 |
 | `deathDate` | 文字列または null | 出典がある死去日。 |
+| `countries` | 文字列の配列 | その人の国。代表した国と国籍のある国すべてを ISO 3166-1 alpha-2 コード（`RO`）で示し、旗のある旧国は ISO 3166-3 コード（`SUHH`）で示します。イングランド、スコットランド、ウェールズ、北アイルランドは `GB` です。データに国がなければ付きません。コードのない国は推測しません。 |
+| `flag` | 文字列 | 表示する旗 1 枚のコード（`RO`、`GB-ENG`、`SUHH`）。スポーツで代表した国、または唯一の国です。2 つの国を持ち、代表した国がない人には付きません。同じ国の 2 チームの試合は `flagOf` が読みます。 |
+| `birthCountry` | 文字列 | 出生地のある国（ISO 3166-1 alpha-2）。 |
+| `awards` | 文字列の配列 | 本人が受けた個人賞の ID（例: `hart-memorial-trophy`）。 |
+| `wikidata`、`wikipedia` | 文字列、オブジェクト | その記録が扱う Wikidata 項目（人物または大会）と、そのウィキペディア記事のタイトル `{ en, fr, ja }`（Wikidata が結びつけているもの）。アドレスは `wikipediaUrl` が作ります。項目のない記録にはどちらも付かず、名前からリンクを推測することはありません。 |
+| `hostCountries` | 文字列の配列 | 大会の開催国。 |
 | `livingStatus` | `deceased`、`living`、または `unknown` | `unknown` は存命ではありません。`living` は出典があるときだけ。 |
 | `birthPlace` | 文字列または null | 出典のある出生地（Wikidata P19）。推測しません。 |
 | `text` / `textJa` | 文字列 | 既定の文（`wording: "fixed"`）。正本は欄です。[templates.ja.md](templates.ja.md)。 |

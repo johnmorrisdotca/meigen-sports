@@ -97,15 +97,15 @@ Literal English renderings of the Japanese added with the events and competition
 
 | Where | Japanese | Literal English |
 | --- | --- | --- |
-| `start-event` | `{dateLead}{eventLabel}が始まった{placeIn}。` | {date} {event} began (place). |
-| `start-event-opened` | `{dateLead}{eventLabel}が開幕した{placeIn}。` | {date} {event} opened (place). |
-| `start-event-curtain` | `{dateLead}{eventLabel}が幕を開けた{placeIn}。` | {date} the curtain rose on {event} (place). |
-| `end-event` | `{dateLead}{eventLabel}が終わった{placeIn}。{wonByTitle}` | {date} {event} ended (place). The winner is X. |
-| `end-event-closed` | `{dateLead}{eventLabel}が閉幕した{placeIn}。{wonByTitle}` | {date} {event} closed (place). The winner is X. |
-| `end-event-curtain` | `{dateLead}{eventLabel}が幕を閉じた{placeIn}。{wonByTitle}` | {date} the curtain fell on {event} (place). The winner is X. |
-| `event-held` | `{dateLead}{eventLabel}が行われた{placeIn}。{wonBy}` | {date} {event} took place (place). The winner is X. |
-| `event-was-held` | `{dateLead}{eventLabel}が開催された{placeIn}。{wonBy}` | {date} {event} was held (place). The winner is X. |
-| `event-was-staged` | `{dateLead}{eventLabel}が催された{placeIn}。{wonBy}` | {date} {event} was staged (place). The winner is X. |
+| `start-event` | `{dateLead}{eventLabel}{placeIn}が始まった。` | {date} {event} began (place). |
+| `start-event-opened` | `{dateLead}{eventLabel}{placeIn}が開幕した。` | {date} {event} opened (place). |
+| `start-event-curtain` | `{dateLead}{eventLabel}{placeIn}が幕を開けた。` | {date} the curtain rose on {event} (place). |
+| `end-event` | `{dateLead}{eventLabel}{placeIn}が終わった。{wonByTitle}` | {date} {event} ended (place). The winner is X. |
+| `end-event-closed` | `{dateLead}{eventLabel}{placeIn}が閉幕した。{wonByTitle}` | {date} {event} closed (place). The winner is X. |
+| `end-event-curtain` | `{dateLead}{eventLabel}{placeIn}が幕を閉じた。{wonByTitle}` | {date} the curtain fell on {event} (place). The winner is X. |
+| `event-held` | `{dateLead}{eventLabel}{placeIn}が行われた。{wonBy}` | {date} {event} took place (place). The winner is X. |
+| `event-was-held` | `{dateLead}{eventLabel}{placeIn}が開催された。{wonBy}` | {date} {event} was held (place). The winner is X. |
+| `event-was-staged` | `{dateLead}{eventLabel}{placeIn}が催された。{wonBy}` | {date} {event} was staged (place). The winner is X. |
 | fragment `wonBy` | 勝者は{0}。 | The winner is {0}. |
 | fragment `wonByTitle` (end of a competition) | 優勝は{0}。 | The champion is {0}. |
 | Demo, heading of the day's events | この日の大会・試合（競技をまたいで） | The day's competitions and matches (across sports) |
@@ -132,3 +132,29 @@ Written after a Japanese review (the reviewer is not a native speaker; a person 
 | Demo, end of `sourceNote` | 権利を確認しないまま使ったりしません。 | nor use them without checking the rights. |
 | Demo, end of `favIntro` | 各事実は1度だけ保存されます。 | Each fact is stored only once. |
 | Demo, label `todayDots` | この日の出来事 (was この日の事実) | The day's events (a label; the body copy keeps 事実) |
+
+## Japanese revised in 0.9.0
+
+Written after a Japanese review (the reviewer is not a native speaker; a person who reads Japanese has not yet checked these). Literal English renderings.
+
+| Where | Japanese | Literal English |
+| --- | --- | --- |
+| `birthday-years-ago` (the year is said too) | `{name}{whoClause}は{yearsAgo}年前の今日、{year}年に生まれた。` | {name}(...) was born {n} years ago today, in {year}. |
+| `birthday-of` | `今日は{name}{whoClause}の誕生日（{year}年生まれ）。` | Today is {name}'s birthday (born {year}). |
+| `birthday-years-ago-highlight` (the colon is a comma) | `{yearsAgo}年前の今日（{year}年）、{name}（{highlight}）が生まれた。` | {n} years ago today ({year}), {name} ({highlight}) was born. |
+| `birthday-turns` (living people only) | `{name}は今日{yearsAgo}歳になる（{year}年生まれ）。` | {name} turns {n} today (born {year}). |
+| `event-on-this-day` | `{label}は{year}年のこの日に行われた。` | {label} was held on this day in {year}. |
+| `event-lead-in` | `今日は{label}が行われた日（{year}年）。` | Today is the day {label} was held ({year}). |
+| An event whose name holds no year, on its own day | `1995年、Channel One Russia（Moscow）が始まった。` (the place follows the name, not the verb) | In 1995, Channel One Russia (Moscow) began. |
+| A Games named for a year other than the one it was held in | `2021年、2020年大会のSummer Olympicsが始まった。` | In 2021, the 2020 edition of the Summer Olympics began. |
+| A person with a club and no position | `Gregg Popovich（San Antonio Spurs）は…` | Gregg Popovich (San Antonio Spurs) ... |
+| Baseball's playoffs | `（ポストシーズン）` (hockey and basketball keep `（プレーオフ）`) | (postseason) |
+| Demo, filters | 指定なし, 国, 年代, 賞・トロフィー, 栄誉, チーム, 人物 | Any, Country, Decade, Award or trophy, Honour, Club, Person |
+| Demo, `favOnlyDay` | 上で選んだ日の出来事だけ | Only the day chosen above |
+| Demo, placeholders | チーム名を入力, 姓または名（英字）を入力 | Type a club's name, Type a first or last name (Latin letters) |
+| Demo, `favShown` | {n}件中{m}件を表示 | Showing {m} of {n} |
+| Demo, honours | 受賞者, 優勝経験者, 殿堂入り | Award winner, Champion (has won the title), Hall of Famer |
+| Demo, links | ウィキペディア, ウィキペディア（英語版） where only the English article exists, ウィキデータ | Wikipedia, Wikipedia (English edition), Wikidata |
+| Demo, `favIntro` | 競技、リーグ、履歴タグ、国、年代、賞、栄誉、年のほか、名前で選んだチームや人物、上で選んだ日を組み合わせて絞り込めます。表示されるのは、すべての条件に合う事実だけです。選んだ条件はURLに残るので、この画面をそのまま共有できます。 | You can narrow down by combining sport, league, history tag, country, decade, award, honour and year, plus a club or person chosen by name and the day chosen above. Only facts that match every condition are shown. The chosen conditions stay in the URL, so the screen can be shared as it is. |
+
+The reviewer would join the stage and the league in one pair of parentheses (`（MLBポストシーズン）` for `（ポストシーズン）（MLB）`); that is left as it is, for a person who reads Japanese to decide.

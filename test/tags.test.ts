@@ -259,3 +259,31 @@ test("Wikidata's formal name of the sport is never said: 'footballer', not 'asso
   const bosnian = facts.filter((r) => /^Bosnian /.test(r.epithet ?? ""));
   assert.ok(bosnian.length > 0 && bosnian.some((r) => r.epithet === "Bosnian footballer"));
 });
+
+test("people are found by name: every person is in the file of his first and of his last name's letter, and a typed name finds him", async () => {
+  const { findPeopleByName, loadPeopleNames, nameLetters } = await import("../src/load.ts");
+  const feed = diskFeed();
+  let people = 0;
+  const seen = new Map<string, Set<string>>();
+  for (const name of readdirSync(`${root}/index/names`)) {
+    const letter = name.replace(/\.json$/, "");
+    for (const person of await loadPeopleNames(letter, feed.options)) {
+      assert.ok(nameLetters(person.n).includes(letter), `${person.n} is in ${letter}.json`);
+      (seen.get(person.q ?? `p${person.p}`) ?? seen.set(person.q ?? `p${person.p}`, new Set()).get(person.q ?? `p${person.p}`)!).add(letter);
+      for (const id of person.ids) assert.ok(store.has(id) && (store.get(id)!.person?.qid ?? null) === person.q, `${person.n}: ${id}`);
+    }
+  }
+  for (const [key, letters] of seen) { people += 1; assert.ok(letters.size >= 1 && letters.size <= 2, key); }
+  assert.ok(people > 49000, `${people} people`);
+  const wayne = await findPeopleByName("wayne gret", feed.options);
+  assert.ok(wayne.some((p) => p.q === "Q209518"), "first and last name");
+  const last = await findPeopleByName("Gretz", feed.options);
+  assert.ok(last.some((p) => p.q === "Q209518"), "last name alone");
+  assert.ok((await findPeopleByName("OVECHKIN", feed.options)).some((p) => p.q === "Q311374"), "capitals");
+  assert.deepEqual(await findPeopleByName("   ", feed.options), []);
+  const facts = await loadFactsById(wayne.find((p) => p.q === "Q209518")!.ids, feed.options);
+  assert.ok(facts.length >= 1 && facts.every((f) => f.person?.qid === "Q209518"));
+  await assert.rejects(() => loadPeopleNames("ab", feed.options), RangeError);
+  assert.deepEqual(nameLetters("Ōtani Shōhei"), ["o", "s"]);
+  assert.deepEqual(nameLetters("日本 太郎"), ["_"]);
+});

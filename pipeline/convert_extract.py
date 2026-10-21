@@ -28,6 +28,7 @@ EVENTS_DAY = 40  # facts in a day's events shard (`events/MM-DD.json`)
 EVENT_CATEGORIES = ("competition-start", "competition-end", "sport-event")
 # The people and the events the facts are about, with their countries and Wikipedia titles (pipeline/wikidata_links.py); empty when that extract is absent.
 LINKS: dict = {"people": {}, "events": {}}
+AWARD_NAMES: dict[str, str] = {}  # award id (`hart-memorial-trophy`) -> the award's name, for the vocabulary's menus
 # The namespaces of a fact's tags that get an index of ids (`indexes/<folder>/<value>.json`); sport, league, team and day have theirs already.
 TAG_INDEXES = (
     ("country", "countries"), ("birthcountry", "birthcountries"), ("host", "hosts"), ("decade", "decades"), ("award", "awards"),
@@ -566,6 +567,16 @@ def add_captions(rows: list[dict]) -> list[dict]:
     return kept
 
 
+def name_letters(name: str) -> set[str]:
+    """The files a person is in: the first letter of the first word of his name and of the last (a to z, else `_`). The same rule as `nameLetters` in src/load.ts."""
+    folded = "".join(c for c in unicodedata.normalize("NFKD", name) if not unicodedata.combining(c)).lower()
+    words = re.findall(r"[^\W_]+", folded)
+    out = set()
+    for word in (words[0], words[-1]) if words else ("_",):
+        out.add(word[0] if "a" <= word[0] <= "z" else "_")
+    return out
+
+
 def stamp_tags(rows: list[dict]) -> None:
     """Add each fact's namespaced tags (`country:RO`, `sport:handball`, `decade:1960s`, ...) to its `tags`, as the library's own `derivedTags` gives them
     (scripts/tags-batch.ts): the vocabulary is in src/tags.ts and nowhere here."""
@@ -581,8 +592,14 @@ def stamp_tags(rows: list[dict]) -> None:
         row["tags"] = [*[t for t in row.get("tags") or [] if ":" not in t], *tags[row["recordId"]]]
 
 
-def name_map(rows: list[dict]) -> dict[int, str]:
+def name_map(rows: list[dict], persons: list[dict] | None = None) -> dict[int, str]:
     votes: dict[tuple[int, str], int] = defaultdict(int)
+    # A club no game names is named by a person who played for it alone: one franchise id and one club ("Gregg Popovich ... San Antonio Spurs (1996-2024)").
+    for row in persons or []:
+        ids = ((row.get("person") or {}).get("franchiseIds")) or []
+        clubs = [n for n in (row.get("clubNames") or []) if n]
+        if len(ids) == 1 and len(clubs) == 1:
+            votes[(ids[0], re.sub(r"\s*\(\d{4}(?:[\u2013-]\d{4})?\)$", "", clubs[0]))] += 1
     for row in rows:
         for side in ("home", "away"):
             obj = row.get(side) or {}
@@ -810,6 +827,9 @@ def person_record(row: dict, context: dict, awards_by_person: dict, person_award
     if own:
         rec["awardCount"] = own
     ids = sorted({slug_of_name(a["name"]) for a in person_awards.get(pid) or [] if a.get("name")} - {""})
+    for a in person_awards.get(pid) or []:
+        if a.get("name") and slug_of_name(a["name"]):
+            AWARD_NAMES.setdefault(slug_of_name(a["name"]), a["name"])
     if ids:
         rec["awards"] = ids
     info = priority.get(qid) or {}
@@ -1210,6 +1230,7 @@ def main() -> int:
     by_day, by_sport, by_league, by_cat = defaultdict(list), defaultdict(list), defaultdict(list), defaultdict(list)
     by_team, by_fifa, by_player = defaultdict(list), defaultdict(list), defaultdict(list)
     teams_index, players_index = {}, {}
+    picker_names = name_map(games + finals + franchise, [r for r in facts if r.get("person")])
     for row in facts:
         day = (row.get("eventDate") or "")[5:]
         if day:
@@ -1242,7 +1263,7 @@ def main() -> int:
         for fid in person.get("franchiseIds") or []:
             by_team[fid].append(row)
             if fid not in teams_index:
-                teams_index[fid] = {"franchiseId": fid, "name": names.get(fid), "sport": row.get("sport"), "league": row.get("league")}
+                teams_index[fid] = {"franchiseId": fid, "name": picker_names.get(fid), "sport": row.get("sport"), "league": row.get("league")}
 
     calendar = [(date(2024, 1, 1) + timedelta(days=i)).strftime("%m-%d") for i in range(366)]
     covered = sorted(d for d in by_day if by_day[d])
@@ -1370,6 +1391,28 @@ def main() -> int:
     showcase += feed_of("showcase-deaths")
     showcase += [r for r in facts if "sport-record" in (r.get("tags") or []) or r.get("record")]
     write_shard("feeds/showcase.json", list({r["recordId"]: r for r in showcase}.values()), files)
+    # Who a reader can look up by name: every person a fact is about, with the ids of his facts, in one file for each first letter of his name
+    # (`index/names/a.json`), so a picker reads one small file and then the facts by id (`loadFactsById`). A name is a label, never identity: the Q id is.
+    people_by_key: dict[str, dict] = {}
+    for row in facts:
+        person = row.get("person") or {}
+        key = person.get("qid") or (f"p{person['personId']}" if person.get("personId") else None)
+        if not key or not person.get("name"):
+            continue
+        entry = people_by_key.setdefault(key, {"n": person["name"], "q": person.get("qid"), "p": person.get("personId"), "ids": []})
+        entry["ids"].append(row["recordId"])
+    by_letter: dict[str, list[dict]] = defaultdict(list)
+    for entry in people_by_key.values():
+        entry["ids"] = sorted(set(entry["ids"]))
+        # In the file of the first letter of his first name and of his last (a reader types either): `nameLetters` in src/load.ts says the same.
+        for letter in name_letters(entry["n"]):
+            by_letter[letter].append(entry)
+    for letter, entries in by_letter.items():
+        entries.sort(key=lambda e: (e["n"], e["q"] or "", e["p"] or 0))
+        body = json.dumps({"schemaVersion": 1, "dataVersion": VERSION, "people": entries}, ensure_ascii=False, separators=(",", ":")) + "\n"
+        (OUT / "index/names").mkdir(parents=True, exist_ok=True)
+        (OUT / f"index/names/{letter}.json").write_text(body, encoding="utf-8")
+        files[f"index/names/{letter}.json"] = {"sha256": hashlib.sha256(body.encode()).hexdigest(), "bytes": len(body.encode()), "records": len(entries)}
     index = {
         "schemaVersion": 1,
         "dataVersion": VERSION,
@@ -1384,6 +1427,23 @@ def main() -> int:
         "bytes": len(index_body.encode()),
         "records": len(index["teams"]) + len(index["players"]),
     }
+    # What a reader can filter by, with the number of facts of each: one small file (`index/vocabulary.json`) for a demo's menus, so none reads a whole index to list its values.
+    folders = {namespace: folder for namespace, folder in TAG_INDEXES} | {"sport": "sports", "league": "leagues"}
+    vocabulary = {"schemaVersion": 1, "dataVersion": VERSION, **{
+        folder: dict(sorted(((v, len({r["recordId"] for r in rows})) for v, rows in by_namespace[namespace].items()), key=lambda kv: (-kv[1], kv[0])))
+        for namespace, folder in folders.items()
+    }}
+    for row in facts:
+        if row.get("category") == "award" and row.get("awardName") and slug_of_name(row["awardName"]):
+            AWARD_NAMES.setdefault(slug_of_name(row["awardName"]), row["awardName"])
+    vocabulary["awardNames"] = {slug: AWARD_NAMES[slug] for slug in sorted(vocabulary["awards"]) if slug in AWARD_NAMES}
+    vocabulary_body = json.dumps(vocabulary, ensure_ascii=False, separators=(",", ":")) + "\n"
+    (OUT / "index/vocabulary.json").write_text(vocabulary_body, encoding="utf-8")
+    files["index/vocabulary.json"] = {"sha256": hashlib.sha256(vocabulary_body.encode()).hexdigest(), "bytes": len(vocabulary_body.encode()), "records": len(vocabulary) - 3}
+    # The clubs alone (a few kilobytes), for a picker that has no use for the 10,000 players of picker.json.
+    teams_body = json.dumps({"schemaVersion": 1, "dataVersion": VERSION, "teams": index["teams"]}, ensure_ascii=False, separators=(",", ":")) + "\n"
+    (OUT / "index/teams.json").write_text(teams_body, encoding="utf-8")
+    files["index/teams.json"] = {"sha256": hashlib.sha256(teams_body.encode()).hexdigest(), "bytes": len(teams_body.encode()), "records": len(index["teams"])}
     manifest = {
         "schemaVersion": 1,
         "dataVersion": VERSION,
