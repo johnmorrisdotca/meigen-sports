@@ -1428,7 +1428,7 @@ def main() -> int:
         # In the file of the first letter of his first name and of his last (a reader types either): `nameLetters` in src/load.ts says the same.
         for letter in name_letters(entry["n"]):
             by_letter[letter].append(entry)
-    for letter, entries in by_letter.items():
+    for letter, entries in sorted(by_letter.items()):
         entries.sort(key=lambda e: (e["n"], e["q"] or "", e["p"] or 0))
         body = json.dumps({"schemaVersion": 1, "dataVersion": VERSION, "people": entries}, ensure_ascii=False, separators=(",", ":")) + "\n"
         (OUT / "index/names").mkdir(parents=True, exist_ok=True)
