@@ -21,8 +21,11 @@ EXTRACT = Path(os.environ.get(
 OUT = ROOT / "data/v1/0.1.0/facts"
 VERSION = "0.1.0"
 ERA_START = 1850
-# Joseon-era general Q704476 (Myong-won Kim); never an athlete fact.
-BLOCKED_QIDS = {"Q704476"}
+PEOPLE_DAY = 40  # facts in a day's people shard (`people/MM-DD.json`)
+# Joseon-era general Q704476 (Myong-won Kim); never an athlete fact. The others are items of the priority list that are not the athlete the list
+# meant (the Wikidata item of a namesake, or of a politician, an actor or a doctor): Sun Yat-sen, Ronald Ross, the actress Jennifer Jones, the
+# comedian George Burns, the politicians Marty Walsh and Jack Marshall, the singer Kim Woo-jin, the musician Paul Brady, the physician Pedro Gil.
+BLOCKED_QIDS = {"Q704476", "Q8573", "Q102034", "Q189895", "Q344793", "Q15126384", "Q61100680", "Q284733", "Q648789", "Q7159603"}
 BLOCKED = {"nhl_api", "spx_database", "spx_files", "spxn_database"}
 NUMBER_WORD = {
     1: "one", 2: "two", 3: "three", 4: "four", 5: "five",
@@ -442,7 +445,7 @@ def finalize(row: dict) -> dict | None:
         "clubNames", "clubName", "bornYear", "ageYears", "highlight", "draftYear", "round",
         "overallPick", "awardName", "awardKind", "winnerName", "birthDate", "deathDate", "birthPlace", "livingStatus",
         "announcedDate", "awardDate", "ratifiedDate", "featuredReasons", "record",
-        "sitelinks", "priorityAthlete", "nationality",
+        "sitelinks", "priorityAthlete", "nationality", "epithet",
         "championships", "championshipName", "personAward", "awardCount", "hallOfFameYear",
         "seriesWinnerWins", "seriesLoserWins", "seriesGames", "winnerRecord", "winnerTitleNumber",
     ):
@@ -808,6 +811,37 @@ def priority_rows(taken: dict[tuple[str, str, str], str]) -> list[dict]:
     return out
 
 
+def load_dump_people() -> tuple[list[dict], dict, dict[str, int], dict[str, str]]:
+    """Births and deaths of sports people from the Wikidata dump (pipeline/wikidata_dump_people.py): the rows, the dump's provenance, and the
+    edition count of every person in the filtered file who has at least three (the fame the package ranks by), and the phrase built for a person whose own
+    description is not fit to show. Empty when the extract is absent."""
+    path = EXTRACT / "extract_wikidata_dump_people.json"
+    if not path.exists():
+        print(f"missing {path}", file=sys.stderr)
+        return [], {}, {}, {}
+    data = json.loads(path.read_text(encoding="utf-8"))
+    return data.get("records") or [], data.get("meta") or {}, data.get("sitelinks") or {}, data.get("builtPhrases") or {}
+
+
+def add_dump_people(chosen: dict[str, dict], rows: list[dict]) -> int:
+    """Add the dump's births and deaths of people the package does not already hold for that kind (a person with a birthday fact from DS1,
+    the priority list or an earlier extract keeps it). The rows come with their words and Q id; nothing is worded here."""
+    held = {(rec.get("category"), (rec.get("person") or {}).get("qid")) for rec in chosen.values() if rec.get("category") in ("player-birthday", "player-death")}
+    added = 0
+    for row in rows:
+        qid = (row.get("person") or {}).get("qid")
+        if not qid or qid in BLOCKED_QIDS or (row["category"], qid) in held:
+            continue
+        rec = {**row, "basis": "source", "clubNames": []}
+        rec["sport"] = sport_slug(rec.get("sport"))
+        if not is_sport_person(rec):
+            continue
+        chosen[row["recordId"]] = rec
+        held.add((row["category"], qid))
+        added += 1
+    return added
+
+
 def main() -> int:
     if not EXTRACT.is_dir():
         print(f"EXTRACT dir missing: {EXTRACT}", file=sys.stderr)
@@ -979,6 +1013,16 @@ def main() -> int:
             continue
         chosen[row["recordId"]] = rec
         priority_added += 1
+    dump_rows, dump_meta, dump_sitelinks, dump_phrases = load_dump_people()
+    dump_added = add_dump_people(chosen, dump_rows)
+    # A priority person's phrase is his Wikidata description. Where the description is not fit to show (a misspelling: "associaton fooball player")
+    # the phrase built from his occupation and country takes its place; an honour ("Baseball Hall of Famer") stays.
+    rephrased = 0
+    for rec in chosen.values():
+        qid = (rec.get("person") or {}).get("qid")
+        if rec.get("priorityAthlete") and qid in dump_phrases and rec.get("highlight") and "Hall of Famer" not in rec["highlight"] and rec["highlight"] != dump_phrases[qid]:
+            rec["highlight"] = dump_phrases[qid]
+            rephrased += 1
     for row in awards:
         if not row.get("eventDate") or not (row.get("winnerName") or (row.get("person") or {}).get("name")) or not row.get("awardName"):
             continue
@@ -1117,6 +1161,15 @@ def main() -> int:
     for bucket, rows in by_player.items():
         rows = uniq_of(rows)
         specs.append({"key": f"player:{bucket}", "ids": [r["recordId"] for r in rows], "n": 40, "options": {"personMax": 2, "exempt": [*tags_in(rows), *competitions(rows), *clubs_in(rows)]}})
+    # The people of a day, across sports: births and deaths only, at most three of one sport, so a day lists footballers, runners, boxers and
+    # skaters and not only the five leagues. The day's own list (`days/`) is mixed and holds two births and two deaths at most.
+    people_by_day: dict[str, list[dict]] = defaultdict(list)
+    for row in facts:
+        if row.get("category") in ("player-birthday", "player-death") and row.get("eventDate"):
+            people_by_day[row["eventDate"][5:]].append(row)
+    for day in calendar:
+        rows = uniq_of(people_by_day.get(day, []))
+        specs.append({"key": f"people:{day}", "ids": [r["recordId"] for r in rows], "n": PEOPLE_DAY, "options": {"maxPer": PEOPLE_DAY, "personMax": 1, "maxPerSport": 3}})
     deaths = [r["recordId"] for r in facts if r.get("category") == "player-death"]
     specs.append({"key": "showcase-deaths", "ids": deaths, "n": 8})
     specs.append({"key": "sample", "ids": [r["recordId"] for r in shuffle(facts, "meigen-sample-0.1.0")], "n": 400, "options": {"maxPer": 60, "personMax": 1, "minimum": 400}})
@@ -1135,6 +1188,8 @@ def main() -> int:
             days_lt3.append(day)
         write_shard(f"days/{day}.json", feed, files, allow_empty=True)
         write_index(f"indexes/days/{day}.json", [r["recordId"] for r in rows], files)
+    for day in calendar:
+        write_shard(f"people/{day}.json", feed_of(f"people:{day}"), files, allow_empty=True)
     for sport, rows in by_sport.items():
         write_index(f"indexes/sports/{sport}.json", [r["recordId"] for r in uniq_of(rows)], files)
         write_shard(f"feeds/sports/{sport}.json", feed_of(f"sport:{sport}"), files)
@@ -1192,6 +1247,8 @@ def main() -> int:
         "mergedSameEvent": merged_events,
         "daysWithFewerThan3": days_lt3,
         "featuredMargin": FEATURE_MARGIN,
+        "peopleDay": PEOPLE_DAY,
+        "sources": {"wikidataDump": {**dump_meta, "factsAdded": sum(1 for row in facts if row["recordId"].startswith("wikidata:"))}} if dump_meta else {},
         "extractOnDisk": {
             "game-on-day": 392898, "championship-final": 1867, "soccer-on-day": 10423,
             "player-birthday": 20532, "player-death": 4028, "award": 5181,
@@ -1204,7 +1261,7 @@ def main() -> int:
     man_body = json.dumps(manifest, ensure_ascii=False, indent=2) + "\n"
     (OUT / "manifest.json").write_text(man_body, encoding="utf-8")
     summary = {
-        "priorityAdded": priority_added,
+        "priorityAdded": priority_added, "wikidataDumpAdded": dump_added, "priorityRephrased": rephrased,
         "records": len(facts), "droppedThin": dropped, "coveredDays": len(covered),
         "daysWithFewerThan3": len(days_lt3), "uniqueRecords": len({r["recordId"] for r in facts}),
         "mergedSameEvent": merged_events,

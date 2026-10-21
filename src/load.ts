@@ -143,6 +143,12 @@ export function loadFactDay(date: string, options: LoadOptions): Promise<FactSha
   return loadFactShard(`days/${monthDayOf(date)}.json`, options);
 }
 
+/** The people of a calendar day across sports: its births and deaths, up to forty, at most three of one sport (`people/MM-DD.json`). The day's own
+ * list (`loadFactDay`) is mixed and holds two births and two deaths at most. */
+export function loadFactPeopleDay(date: string, options: LoadOptions): Promise<FactShard> {
+  return loadFactShard(`people/${monthDayOf(date)}.json`, options);
+}
+
 export function loadLeague(league: string, options: LoadOptions): Promise<FactShard> {
   if (!/^[a-z0-9-]+$/.test(league)) throw new RangeError("Invalid league code");
   return loadFactShard(`feeds/leagues/${league}.json`, options);

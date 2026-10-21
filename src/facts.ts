@@ -163,6 +163,10 @@ export function significance(record: OnThisDayRecord): number {
       if (record.highlight) score += 10;
       if ((record.championships ?? 0) > 0) score += 10;
       if ((record.sitelinks ?? 0) >= 20) score += 15;
+      // Editions beyond twenty: a name known in fifty languages outranks one known in twenty, and one known in a hundred is known everywhere (the
+      // priority list gives such a name 45 and the twenty-edition bonus 15; a name the list does not hold gets the same by its editions alone).
+      if ((record.sitelinks ?? 0) >= 50) score += 20;
+      if ((record.sitelinks ?? 0) >= 100) score += 25;
       if (record.category === "player-death") score += 5;
       return score;
     }

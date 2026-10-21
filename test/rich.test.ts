@@ -60,7 +60,7 @@ test("a fuller record gives a fuller sentence: club, position and a career honou
     assert.ok(text.includes(positionName(r.sport, r.position, "en")), `${r.recordId} drops its position: ${text}`);
     assert.ok(text.includes(r.highlight!.replace(/^Winner of the /, "")) || /winner|champion/i.test(text), `${r.recordId} drops its honour: ${text}`);
   }
-  const thin = records.filter((r) => r.category === "player-birthday" && !r.clubNames?.length && !r.position && !r.highlight);
+  const thin = records.filter((r) => r.category === "player-birthday" && !r.clubNames?.length && !r.position && !r.highlight && !r.epithet);
   assert.equal(thin.length, 0, "a birthday with nothing but a name is dropped, not published");
 });
 

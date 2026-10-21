@@ -30,7 +30,8 @@ test("a Hall of Fame year is said as the hall of the person's own sport, with hi
 });
 
 test("a player with statistics but no roster row has his club, and a Hall of Fame year is said in the hall of his own sport", () => {
-  const birthdays = people.filter((r) => r.category === "player-birthday" && (r.sport === "baseball" || r.sport === "ice-hockey") && !r.priorityAthlete);
+  // A baseball or hockey player the Wikidata dump adds (recordId "wikidata:") has no DS1 club season; the check is for the league players DS1 holds.
+  const birthdays = people.filter((r) => r.category === "player-birthday" && (r.sport === "baseball" || r.sport === "ice-hockey") && !r.priorityAthlete && !r.recordId.startsWith("wikidata:"));
   const noClub = birthdays.filter((r) => !r.clubNames?.length);
   assert.ok(noClub.length / birthdays.length < 0.03, `${noClub.length} of ${birthdays.length} baseball and hockey birthdays have no club`);
   const gonzalez = people.find((r) => r.person?.qid === "Q3107002" && r.category === "player-birthday")!;

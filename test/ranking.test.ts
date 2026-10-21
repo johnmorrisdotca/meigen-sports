@@ -107,5 +107,15 @@ test("a Hall of Fame year, a long list of own awards and a name on the priority 
   assert.equal(significance(person({ awardCount: 1 })) - plain, 0);
   assert.equal(significance(person({ priorityAthlete: true })) - plain, 45);
   assert.equal(significance(person({ priorityAthlete: true, sitelinks: 6 })) - plain, 20);
-  assert.equal(significance(person({ priorityAthlete: true, sitelinks: 60 })) - plain, 45 + 15);
+  assert.equal(significance(person({ priorityAthlete: true, sitelinks: 60 })) - plain, 45 + 15 + 20);
+  // Editions beyond twenty: fifty is known in many languages, a hundred everywhere.
+  assert.equal(significance(person({ sitelinks: 19 })) - plain, 0);
+  assert.equal(significance(person({ sitelinks: 20 })) - plain, 15);
+  assert.equal(significance(person({ sitelinks: 49 })) - plain, 15);
+  assert.equal(significance(person({ sitelinks: 50 })) - plain, 35);
+  assert.equal(significance(person({ sitelinks: 99 })) - plain, 35);
+  assert.equal(significance(person({ sitelinks: 100 })) - plain, 60);
+  // A phrase that says who someone is (`epithet`) is not an honour: it adds nothing, where `highlight` adds ten.
+  assert.equal(significance(person({ epithet: "Brazilian footballer" })) - plain, 0);
+  assert.equal(significance(person({ highlight: "Hockey Hall of Famer" })) - plain, 10);
 });

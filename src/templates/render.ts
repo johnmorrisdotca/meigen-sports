@@ -257,7 +257,7 @@ function fieldsOf(
   const club = publicClubName(clubNamesClean, clubNameClean);
   const position = positionName(record.sport, record.position, locale);
   const clubPosition = club && position ? say("clubPosition", club, position) : (club || position);
-  const honour = cleanLabel(record.highlight);
+  const honour = cleanLabel(record.highlight) || cleanLabel(record.epithet);
   const birthday = record.category === "player-birthday";
   const career = birthday && honour && isCareerHighlight(honour);
   const whoCore = career ? honour : (clubPosition || honour);

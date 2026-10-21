@@ -168,6 +168,12 @@ export interface OnThisDayRecord {
   readonly bornYear?: number | null;
   readonly ageYears?: number | null;
   readonly highlight?: string | null;
+  /**
+   * A short phrase that says who the person is ("Brazilian footballer"), from data: the person's own English description when every word of it is an
+   * ordinary word of other sports people's descriptions, else built from his occupation and country. Said where a record has no club, position
+   * or `highlight`; it is not an honour and adds nothing to a fact's significance.
+   */
+  readonly epithet?: string | null;
   /** Titles the person won, as a count, with the title's name (`championshipName`) and the best individual award (`personAward`). */
   readonly championships?: number;
   readonly championshipName?: string | null;

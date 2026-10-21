@@ -12,7 +12,7 @@ export type Path = "full" | "offline" | "day" | "team" | "player";
 
 export interface GoldenEntry {
   id: string; kind: string; sport: string; league: string | null; fame: "icon" | "star"; label: string; date: string;
-  era: "pre-1920" | "1920-1969" | "1970-"; women: boolean; para?: boolean; reason?: string;
+  era: "pre-1920" | "1920-1969" | "1970-"; /** Set by the network builder from its seed; never set for an entry checked against the Wikidata dump, which holds no sex or gender. */ women?: boolean; para?: boolean; reason?: string;
   match?: { category: string; qid?: string; league?: string; winner?: string | null };
   source: { wikidata?: string | null; wikipedia?: string | null; verifiedBy: string; checkedOn: string };
 }
