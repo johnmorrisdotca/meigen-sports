@@ -32,19 +32,19 @@ Literal English renderings of the patterns the package says in Japanese. They ar
 | `award-named` | `{winnerName}が{award}の受賞者に選ばれた（…）。` | {winnerName} was chosen as the {award} winner. |
 | `record-of` | `{scope} {metric}の記録は{holderName}の{value}{unit}…。` | The {scope} {metric} record is {holderName}'s {value} {unit}. |
 | `record-colon` | `{scope} {metric}：{holderName}（{value}{unit}）…。` | {scope} {metric}: {holderName} ({value} {unit}). |
-| `draft-selected` | `{draftYear}年の{league}ドラフトで、{name}が指名された…。` | In the {draftYear} {league} draft, {name} was selected. |
-| `draft-club-took` | `{clubName}は{draftYear}年の{league}ドラフトで{name}を{pick}で指名した。` | {clubName} selected {name} {pick} in the {draftYear} {league} draft. |
+| `draft-selected` | `{draftYear}年の{league}ドラフトで、{name}が{club}に{pick}指名された。` | In the {draftYear} {league} draft, {name} was selected by {club} at {pick}. |
+| `draft-club-took` | `{clubName}は{draftYear}年の{league}ドラフトで{name}を{pick}指名した。` | {clubName} selected {name} {pick} in the {draftYear} {league} draft. |
 | `venue-in-year` | `{year}年、{venueName}（{city}）が開場した…。` | In {year}, {venueName} ({city}) opened. |
 | `venue-first-opened` | `{venueName}は{year}年に開場（{city}）…。` | {venueName} opened in {year} ({city}). |
 | `franchise-year-first` | `{year}年、{clubName}の{leagueIdentity}名義が始まった（…）。` | In {year}, the {clubName} {league} identity began. |
 | `franchise-identity-began` | `{clubName}（{leagueIdentity}）は{year}年にこの名義で始まった（…）。` | {clubName} ({league}) began under this identity in {year}. |
-| `first-year-first` | `{year}年: {name}、{highlight}。` | {year}: {name}, {highlight}. |
-| `first-parenthesis` | `{name}: {highlight}（{year}年のこの日）。` | {name}: {highlight} (on this day in {year}). |
+| `first-year-first` | `{year}年：{name}、{highlight}。` | {year}: {name}, {highlight}. |
+| `first-parenthesis` | `{name}：{highlight}（{year}年のこの日）。` | {name}: {highlight} (on this day in {year}). |
 | `wcm-beat` | `{winner}が{year}年のワールドカップで{loser}に{result}で勝った（…）。` | {winner} beat {loser} {result} at the {year} World Cup. |
-| `wcm-in-the` | `{year}年のワールドカップ: {winner}が{loser}を{result}で破った（…）。` | {year} World Cup: {winner} defeated {loser} {result}. |
+| `wcm-in-the` | `{year}年のワールドカップ：{winner}が{loser}を{result}で破った（…）。` | {year} World Cup: {winner} defeated {loser} {result}. |
 | `wcm-lost` | `{loser}は{year}年のワールドカップで{winner}に{result}で敗れた（…）。` | {loser} lost to {winner} {result} at the {year} World Cup. |
 | `wcm-draw` | `{team1}と{team2}は{year}年のワールドカップで{score1}対{score2}で引き分けた（…）。` | {team1} and {team2} drew {score} at the {year} World Cup. |
-| `wcm-played-to` | `{year}年のワールドカップ: {team1}と{team2}は{score1}対{score2}の引き分けに終わった（…）。` | {year} World Cup: {team1} and {team2} ended in a {score} draw. |
+| `wcm-played-to` | `{year}年のワールドカップ：{team1}と{team2}は{score1}対{score2}の引き分けに終わった（…）。` | {year} World Cup: {team1} and {team2} ended in a {score} draw. |
 | `wcm-level` | `{team1}と{team2}の一戦は{score1}対{score2}で決着がつかなかった（{year}年のワールドカップ）（…）。` | The match between {team1} and {team2} was undecided at {score} ({year} World Cup). |
 | `wcf-won` | `{winner}が{year}年のワールドカップで{loser}に{result}で勝って優勝した。` | {winner} won the {year} World Cup by beating {loser} {result}. |
 | `wcf-to-win` | `{year}年のワールドカップ決勝で、{winner}が{loser}に{result}で勝った。` | In the {year} World Cup final, {winner} beat {loser} {result}. |
@@ -53,10 +53,10 @@ Literal English renderings of the patterns the package says in Japanese. They ar
 | `start-curtain` | `{name}（{year}年）が幕を開けた。` | {name} ({year}) raised its curtain. |
 | `end-closed` | `{year}年の{name}が閉幕した。` | The {year} {name} closed. |
 | `end-curtain` | `{name}（{year}年）が幕を閉じた。` | {name} ({year}) lowered its curtain. |
-| `event-on-this-day` | `{label}が、この日に行われた。` | {label} took place on this day. |
-| `event-lead-in` | `今日: {label}の開催日。` | Today: the day of {label}. |
+| `event-on-this-day` | `{label}は、この日に行われた。` | {label} took place on this day. |
+| `event-lead-in` | `今日は{label}が行われた日。` | Today is the day {label} took place. |
 
-Fragments (`phrases.ts`) in Japanese: `（延長）` (extra time), `（PK戦）` (penalty shoot-out), `（PK戦、{score}の引き分け後）` (penalties, after a {score} draw), `（延長の後、PK戦）` (penalties after extra time), `第{n}戦` (game {n}), `{n}歳で` (at age {n}), `全体{n}位` (No. {n} overall).
+Fragments (`phrases.ts`) in Japanese: `（延長）` (extra time), `（PK戦）` (penalty shoot-out), `（PK戦、{score}の引き分け後）` (penalties, after a {score} draw), `（延長の後、PK戦）` (penalties after extra time), `（第{n}戦）` (game {n}), `{n}歳で` (at age {n}), `全体{n}位` (No. {n} overall).
 
 ## Japanese sentence patterns and fragments added in 0.6.7
 
@@ -70,8 +70,8 @@ For a fact read on a day that is not its own. `{date}` is the full date at its p
 | `birthday-deceased-dated` | `{name}{whoClause}は{dateOn}生まれた（{deathYear}年死去）。` | {name}(...) was born on {date} (died {year}). |
 | `death-dated` | `{name}{whoClause}が{dateOn}{agedJa}死去した。` | {name}(...) died on {date}, aged {n}. |
 | `death-lead` | `{leadIn}{name}{whoClause}が{agedJa}死去した。` | On {date}, {name}(...) died, aged {n}. |
-| `first-dated` | `{leadIn}{name}: {highlight}。` | On {date}, {name}: {highlight}. |
-| `first-dated-paren` | `{name}: {highlight}（{date}）。` | {name}: {highlight} ({date}). |
+| `first-dated` | `{leadIn}{name}：{highlight}。` | On {date}, {name}: {highlight}. |
+| `first-dated-paren` | `{name}：{highlight}（{date}）。` | {name}: {highlight} ({date}). |
 | `event-took-place-dated` | `{label}は{dateOn}行われた。` | {label} took place on {date}. |
 
 The other Japanese patterns (a game, a final, an award, a record, a World Cup match, a competition's start or end, an event) now open with `{dateLead}`, for example `1945年7月4日、Pittsburgh PiratesがNew York Giantsに16対4で勝利した（MLB）。` (On July 4, 1945, Pittsburgh Pirates beat New York Giants 16–4 (MLB).), and a venue or franchise pattern says `{dateOn}` where it said the year (`League Parkが1884年5月1日に開場した…`: League Park opened on May 1, 1884). New fragments in `phrases.ts`: `{0}に` (on or in {0}), `{0}ごろに` (around {0}), `{0}、` (a date as a lead), `{0}ごろ、` (around {0}, as a lead).
@@ -88,7 +88,7 @@ Literal English renderings of the Japanese added with the births and deaths of s
 | `epithet` | その人が何者かを表す短い句（例: `Brazilian footballer`）。クラブ・ポジション・`highlight` がない記録で使います。栄誉ではなく、重要度には加わりません。 | A short phrase that says who the person is. Used in a record with no club, position or `highlight`. It is not an honour and adds nothing to significance. |
 | `highlight` | 経歴上の栄誉（例: `Hockey Hall of Famer`）。 | A career honour. |
 | `sitelinks` | Wikidata が数える、その人のウィキペディア（と姉妹プロジェクト）のページ数。一覧の並びはこの知名度で決まります。 | The number of Wikipedia (and sister-project) pages Wikidata counts for the person. The lists are ordered by this fame. |
-| `nationality` | 代表した国または市民権のある国の ISO 3166-1 alpha-2 コード。 | The ISO 3166-1 alpha-2 code of the country he represented or holds citizenship of. |
+| `nationality` | 代表した国、または国籍のある国の ISO 3166-1 alpha-2 コード。 | The ISO 3166-1 alpha-2 code of the country he represented or holds citizenship of. |
 | Record schema, the dump's records | Wikidata のダンプから加えた誕生日と死去の記録 ID は `wikidata:<category>:<Q id>:<date>` です。出典は `wikidata`（CC0 1.0）で、性別、民族、宗教、政治、家族、健康に関する情報は一切持ちません。 | The record id of a birth or death added from the Wikidata dump is `wikidata:<category>:<Q id>:<date>`. The source is `wikidata` (CC0 1.0), and it holds no information on sex, gender, ethnicity, religion, politics, family or health. |
 
 ## Japanese added in 0.8.0
@@ -100,13 +100,35 @@ Literal English renderings of the Japanese added with the events and competition
 | `start-event` | `{dateLead}{eventLabel}が始まった{placeIn}。` | {date} {event} began (place). |
 | `start-event-opened` | `{dateLead}{eventLabel}が開幕した{placeIn}。` | {date} {event} opened (place). |
 | `start-event-curtain` | `{dateLead}{eventLabel}が幕を開けた{placeIn}。` | {date} the curtain rose on {event} (place). |
-| `end-event` | `{dateLead}{eventLabel}が終わった{placeIn}。{wonBy}` | {date} {event} ended (place). The winner is X. |
-| `end-event-closed` | `{dateLead}{eventLabel}が閉幕した{placeIn}。{wonBy}` | {date} {event} closed (place). The winner is X. |
-| `end-event-curtain` | `{dateLead}{eventLabel}が幕を閉じた{placeIn}。{wonBy}` | {date} the curtain fell on {event} (place). The winner is X. |
+| `end-event` | `{dateLead}{eventLabel}が終わった{placeIn}。{wonByTitle}` | {date} {event} ended (place). The winner is X. |
+| `end-event-closed` | `{dateLead}{eventLabel}が閉幕した{placeIn}。{wonByTitle}` | {date} {event} closed (place). The winner is X. |
+| `end-event-curtain` | `{dateLead}{eventLabel}が幕を閉じた{placeIn}。{wonByTitle}` | {date} the curtain fell on {event} (place). The winner is X. |
 | `event-held` | `{dateLead}{eventLabel}が行われた{placeIn}。{wonBy}` | {date} {event} took place (place). The winner is X. |
 | `event-was-held` | `{dateLead}{eventLabel}が開催された{placeIn}。{wonBy}` | {date} {event} was held (place). The winner is X. |
 | `event-was-staged` | `{dateLead}{eventLabel}が催された{placeIn}。{wonBy}` | {date} {event} was staged (place). The winner is X. |
 | fragment `wonBy` | 勝者は{0}。 | The winner is {0}. |
+| fragment `wonByTitle` (end of a competition) | 優勝は{0}。 | The champion is {0}. |
 | Demo, heading of the day's events | この日の大会・試合（競技をまたいで） | The day's competitions and matches (across sports) |
 | Demo, its text | 選んだ日に始まった、または終わった大会と、その日に行われた試合・大会を、最大40件、同じ競技は3件まで表示します。出典は Wikidata（CC0）で、開催地と勝者は Wikidata に記載があるときだけ示します。上で競技を選ぶと、その競技のものだけを表示します。 | Shows competitions that began or ended on the chosen day, and matches and competitions held on it, at most 40, at most three of one sport. The source is Wikidata (CC0); the place and the winner are shown only when Wikidata states them. Choosing a sport above shows only that sport's. |
 | Record schema, events | 大会や試合（`category` が `competition-start`、`competition-end`、`sport-event`）には、`eventLabel`（Wikidata の名称）、`eventPlace`（項目に開催地があるときの開催地）、`winnerName`（項目に勝者があるときの勝者。代表チームは国名）が付き、並びは `sitelinks` で決まります。文は、始まった・終わった・行われたと言い、開催地、勝者の順に添えます。 | An event or match (`category` ...) carries `eventLabel` (Wikidata's name), `eventPlace` (the place, when the item has one), `winnerName` (the winner, when the item has one; a national team by its country), and is ordered by `sitelinks`. The sentence says began, ended or took place, then adds the place, then the winner. |
+
+## Japanese revised in 0.8.1
+
+Written after a Japanese review (the reviewer is not a native speaker; a person who reads Japanese has not yet checked these). Literal English renderings.
+
+| Where | Japanese | Literal English |
+| --- | --- | --- |
+| Context in parentheses on a fact's own day | `（NHL、1990年）` (was `（NHL、1990）`) | (NHL, 1990) |
+| `stage` fragment | `（プレーオフ）`, `（準々決勝）`, `（準決勝）`, `（決勝）`, `（グループステージ）`, `（カンファレンス決勝）`, `（エキシビション）`, `（2次リーグ）` (was `、playoffs`) | (playoffs), (quarter-final), (semi-final), (final), (group stage), (conference final), (exhibition), (second group stage) |
+| `gameNumber` fragment | `（第{n}戦）` (was `第{n}戦` after the verb) | (game {n}) |
+| World Cup round | `（第7節）`, `（ラウンド16）`, `（準々決勝）`, `（準決勝）`, `（1回戦）`, `（3位決定戦）` (was the English round name) | (matchday 7), (round of 16), (quarter-final), (semi-final), (first round), (third-place match) |
+| `birthday-years-ago` | `{name}{whoClause}は{yearsAgo}年前の今日、生まれた。` | {name}(...) was born {n} years ago today. |
+| `birthday-years-ago-highlight` | `{yearsAgo}年前の今日：{name}（{highlight}）が生まれた。` | {n} years ago today: {name} ({highlight}) was born. |
+| `franchise-began` | `{leagueIdentity}の{clubName}は、{dateOn}発足した{cityIn}。` (was `{clubName}のこの{leagueIdentity}名義が…始まる`; 名義 means the name on a registration) | {league} club {club} was founded {date}. |
+| `draft-picked`, `draft-selected` | `{draftYear}年の{league}ドラフトで、{name}が{clubBy}{pick}指名された。` (`Edmonton Oilersに全体1位で`; `clubBy` is `{club}に`, `overallPick` is `全体{n}位で`) | In the {year} {league} draft, {name} was selected by {club} at No. {n} overall. |
+| `draft-club-took` | `…{name}を{pick}指名した。` | {club} selected {name} at No. {n} overall. |
+| Colon in a sentence | full-width `：` everywhere | |
+| Demo, `todayFew` | この日の事実は3件未満です。 | There are fewer than 3 facts for this day. |
+| Demo, end of `sourceNote` | 権利を確認しないまま使ったりしません。 | nor use them without checking the rights. |
+| Demo, end of `favIntro` | 各事実は1度だけ保存されます。 | Each fact is stored only once. |
+| Demo, label `todayDots` | この日の出来事 (was この日の事実) | The day's events (a label; the body copy keeps 事実) |

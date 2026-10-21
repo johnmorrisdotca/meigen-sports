@@ -65,7 +65,7 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
   {
     id: "birthday-years-ago", type: "birthday", locale: "ja", gate: "neutral", role: "variant", day: true,
     needs: ["name", "yearsAgoToday", "who"],
-    pattern: "{name}{whoClause}は今日から{yearsAgo}年前に生まれた。",
+    pattern: "{name}{whoClause}は{yearsAgo}年前の今日、生まれた。",
   },
   {
     id: "birthday-place", type: "birthday", locale: "ja", gate: "neutral", role: "variant", day: true,
@@ -75,7 +75,7 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
   {
     id: "birthday-years-ago-highlight", type: "birthday", locale: "ja", gate: "neutral", role: "variant", day: true,
     needs: ["name", "yearsAgoToday", "highlight"],
-    pattern: "今日から{yearsAgo}年前: {name}（{highlight}）が生まれた。",
+    pattern: "{yearsAgo}年前の今日：{name}（{highlight}）が生まれた。",
   },
   {
     id: "birthday-deceased-paren", type: "birthday", locale: "ja", gate: "deceased", role: "default", day: true,
@@ -205,7 +205,7 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
   {
     id: "draft-picked", type: "draft", locale: "ja", gate: "neutral", role: "default",
     needs: ["name", "draftYear", "league"],
-    pattern: "{dateLead}{name}が{draftYear}年の{league}ドラフト{pick}{clubBy}で指名された。",
+    pattern: "{dateLead}{name}が{draftYear}年の{league}ドラフトで{clubBy}{pick}指名された。",
   },
   {
     id: "venue-opened", type: "venue", locale: "en", gate: "neutral", role: "default",
@@ -224,8 +224,8 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
   },
   {
     id: "franchise-began", type: "franchise", locale: "ja", gate: "neutral", role: "default",
-    needs: ["clubName", "date", "franchiseContext"],
-    pattern: "{clubName}のこの{leagueIdentity}名義が{dateOn}始まる{cityIn}。",
+    needs: ["clubName", "date", "franchiseContext", "leagueIdentity"],
+    pattern: "{leagueIdentity}の{clubName}は、{dateOn}発足した{cityIn}。",
   },
   {
     id: "first-on-this-day", type: "first", locale: "en", gate: "neutral", role: "default", day: true,
@@ -235,7 +235,7 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
   {
     id: "first-on-this-day", type: "first", locale: "ja", gate: "neutral", role: "default", day: true,
     needs: ["name", "year", "highlight", "dayPrecision"],
-    pattern: "{year}年のこの日、{name}: {highlight}。",
+    pattern: "{year}年のこの日、{name}：{highlight}。",
   },
 
   // ---- Added in 0.4.0: every statement type has at least three patterns in each language. ----
@@ -430,12 +430,12 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
   {
     id: "draft-selected", type: "draft", locale: "ja", gate: "neutral", role: "variant",
     needs: ["name", "draftYear", "league"],
-    pattern: "{dateLead}{draftYear}年の{league}ドラフトで、{name}が指名された{pick}{clubBy}。",
+    pattern: "{dateLead}{draftYear}年の{league}ドラフトで、{name}が{clubBy}{pick}指名された。",
   },
   {
     id: "draft-club-took", type: "draft", locale: "ja", gate: "neutral", role: "variant",
     needs: ["name", "draftYear", "league", "clubName", "pick"],
-    pattern: "{dateLead}{clubName}は{draftYear}年の{league}ドラフトで{name}を{pick}で指名した。",
+    pattern: "{dateLead}{clubName}は{draftYear}年の{league}ドラフトで{name}を{pick}指名した。",
   },
   // venues
   {
@@ -493,12 +493,12 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
   {
     id: "first-year-first", type: "first", locale: "ja", gate: "neutral", role: "variant",
     needs: ["name", "date", "highlight", "dayPrecision"],
-    pattern: "{date}: {name}、{highlight}。",
+    pattern: "{date}：{name}、{highlight}。",
   },
   {
     id: "first-parenthesis", type: "first", locale: "ja", gate: "neutral", role: "variant", day: true,
     needs: ["name", "year", "highlight", "dayPrecision"],
-    pattern: "{name}: {highlight}（{year}年のこの日）。",
+    pattern: "{name}：{highlight}（{year}年のこの日）。",
   },
   // World Cup matches (read back from the stored caption)
   {
@@ -539,7 +539,7 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
   {
     id: "wcm-in-the", type: "world-cup-match", locale: "ja", gate: "neutral", role: "variant", when: "decisive",
     needs: ["winner", "loser", "result", "year"],
-    pattern: "{dateLead}{year}年のワールドカップ: {winner}が{loser}を{result}で破った{roundPart}。",
+    pattern: "{dateLead}{year}年のワールドカップ：{winner}が{loser}を{result}で破った{roundPart}。",
   },
   {
     id: "wcm-lost", type: "world-cup-match", locale: "ja", gate: "neutral", role: "variant", when: "decisive",
@@ -554,7 +554,7 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
   {
     id: "wcm-played-to", type: "world-cup-match", locale: "ja", gate: "neutral", role: "variant", when: "tie",
     needs: ["team1", "team2", "score1", "score2", "year"],
-    pattern: "{dateLead}{year}年のワールドカップ: {team1}と{team2}は{score1}対{score2}の引き分けに終わった{roundPart}。",
+    pattern: "{dateLead}{year}年のワールドカップ：{team1}と{team2}は{score1}対{score2}の引き分けに終わった{roundPart}。",
   },
   {
     id: "wcm-level", type: "world-cup-match", locale: "ja", gate: "neutral", role: "variant", when: "tie",
@@ -676,12 +676,12 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
   {
     id: "event-on-this-day", type: "event-date", locale: "ja", gate: "neutral", role: "variant", day: true,
     needs: ["label"],
-    pattern: "{label}が、この日に行われた。",
+    pattern: "{label}は、この日に行われた。",
   },
   {
     id: "event-lead-in", type: "event-date", locale: "ja", gate: "neutral", role: "variant", day: true,
     needs: ["label"],
-    pattern: "今日: {label}の開催日。",
+    pattern: "今日は{label}が行われた日。",
   },
   // ---- Added in 0.6.7: wording for a fact shown outside its own day. These say the date at its precision and never "today". ----
   {
@@ -747,12 +747,12 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
   {
     id: "first-dated", type: "first", locale: "ja", gate: "neutral", role: "default",
     needs: ["name", "leadIn", "highlight", "dayPrecision"],
-    pattern: "{leadIn}{name}: {highlight}。",
+    pattern: "{leadIn}{name}：{highlight}。",
   },
   {
     id: "first-dated-paren", type: "first", locale: "ja", gate: "neutral", role: "variant",
     needs: ["name", "date", "highlight", "dayPrecision"],
-    pattern: "{name}: {highlight}（{date}）。",
+    pattern: "{name}：{highlight}（{date}）。",
   },
   {
     id: "event-took-place-dated", type: "event-date", locale: "en", gate: "neutral", role: "variant",
@@ -815,17 +815,17 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
   {
     id: "end-event", type: "competition-end", locale: "ja", gate: "neutral", role: "default",
     needs: ["eventLabel"],
-    pattern: "{dateLead}{eventLabel}が終わった{placeIn}。{wonBy}",
+    pattern: "{dateLead}{eventLabel}が終わった{placeIn}。{wonByTitle}",
   },
   {
     id: "end-event-closed", type: "competition-end", locale: "ja", gate: "neutral", role: "variant",
     needs: ["eventLabel"],
-    pattern: "{dateLead}{eventLabel}が閉幕した{placeIn}。{wonBy}",
+    pattern: "{dateLead}{eventLabel}が閉幕した{placeIn}。{wonByTitle}",
   },
   {
     id: "end-event-curtain", type: "competition-end", locale: "ja", gate: "neutral", role: "variant",
     needs: ["eventLabel"],
-    pattern: "{dateLead}{eventLabel}が幕を閉じた{placeIn}。{wonBy}",
+    pattern: "{dateLead}{eventLabel}が幕を閉じた{placeIn}。{wonByTitle}",
   },
   {
     id: "event-held", type: "event-date", locale: "en", gate: "neutral", role: "default",

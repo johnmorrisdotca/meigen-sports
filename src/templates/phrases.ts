@@ -15,7 +15,7 @@ export type FragmentId =
   | "hosted" | "extraTime" | "penaltiesAfterDraw" | "penaltiesAfterExtraTime" | "penaltyShootout"
   | "roundPart" | "articleCap" | "article" | "join" | "whoPlain" | "whoThe" | "whoTheAnd" | "whoParen" | "result"
   | "onDate" | "inDate" | "aroundDate" | "leadOnDate" | "leadInDate" | "leadAroundDate"
-  | "placeIn" | "placeAt" | "wonBy"
+  | "placeIn" | "placeAt" | "wonBy" | "wonByTitle"
   | "recordSet" | "recordHeld" | "recordEqualled" | "recordSurpassed" | "recordSetBy" | "recordHeldBy" | "recordEqualledBy" | "recordBrokenBy";
 
 type Table = Record<FragmentId, { readonly en: readonly string[]; readonly ja: readonly string[] }>;
@@ -36,16 +36,16 @@ export const FRAGMENTS: Table = {
   overtime: { en: [" in overtime", " after overtime"], ja: ["（延長）"] },
   extraTime: { en: [" after extra time", " in extra time"], ja: ["（延長）"] },
   shootout: { en: [" in a shootout", " after a shootout"], ja: ["（PK戦）"] },
-  stage: { en: [", {0}"], ja: ["、{0}"] },
+  stage: { en: [", {0}"], ja: ["（{0}）"] },
   venueAt: { en: [" at {0}"], ja: ["（{0}）"] },
   venueCityAt: { en: [" at {0}, {1}"], ja: ["（{0}、{1}）"] },
-  gameNumber: { en: [" in Game {0}"], ja: ["第{0}戦"] },
+  gameNumber: { en: [" in Game {0}"], ja: ["（第{0}戦）"] },
   seriesWin: { en: [" to win the{0} {1}"], ja: ["。シリーズ{1}で{0}を制した"] },
   aged: { en: [", aged {0}", " at the age of {0}"], ja: ["{0}歳で"] },
   diedParen: { en: [" (died {0})"], ja: ["（{0}年死去）"] },
   previousHolder: { en: [" Previous holder: {0}.", " The previous holder was {0}."], ja: ["。それ以前は{0}"] },
-  overallPick: { en: [" No. {0} overall", " as the No. {0} pick"], ja: ["全体{0}位"] },
-  clubBy: { en: [" by the {0}"], ja: ["、{0}"] },
+  overallPick: { en: [" No. {0} overall", " as the No. {0} pick"], ja: ["全体{0}位で"] },
+  clubBy: { en: [" by the {0}"], ja: ["{0}に"] },
   cityIn: { en: [" in {0}"], ja: ["（{0}）"] },
   homeOf: { en: ["; home of the {0}", ", the home of the {0}"], ja: ["。{0}の本拠地"] },
   hosted: { en: ["; it hosted {0}"], ja: ["。{0}を開催"] },
@@ -72,6 +72,8 @@ export const FRAGMENTS: Table = {
   placeIn: { en: [" in {0}"], ja: ["（{0}）"] },
   placeAt: { en: [" at {0}"], ja: ["（{0}）"] },
   wonBy: { en: [", won by {0}"], ja: ["勝者は{0}。"] },
+  // The winner of a whole competition (a season, a championship): 優勝, where a match or a bout has a 勝者.
+  wonByTitle: { en: [", won by {0}"], ja: ["優勝は{0}。"] },
   recordSet: { en: ["set"], ja: [""] },
   recordHeld: { en: ["held"], ja: [""] },
   recordEqualled: { en: ["equalled"], ja: [""] },

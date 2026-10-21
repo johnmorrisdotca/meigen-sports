@@ -3,7 +3,7 @@ import type { MeigenRecord } from "../types.ts";
 import { TEMPLATES } from "./catalog.ts";
 import { isCareerHighlight, publicClubName } from "./clubs.ts";
 import { isDate } from "../dates.ts";
-import { cleanLabel, hasPlaceholder } from "./labels.ts";
+import { cleanLabel, hasPlaceholder, roundJa, stageJa } from "./labels.ts";
 import { OVERTIME_BY_SPORT, formatDate, ordinal, phrase } from "./phrases.ts";
 import type { FragmentId } from "./phrases.ts";
 import { positionName } from "./positions.ts";
@@ -244,13 +244,13 @@ function fieldsOf(
   // A draft's year is part of its name ("the 1990 NHL draft"), so a year alone adds nothing in front of it.
   if (record.category === "draft" && when && !when.day && !when.month) { dates.dateLead = ""; dates.theFirst = say("articleCap"); }
   // The year goes in the parenthesis only when no date leads the sentence.
-  const ctxBits = [league, dates.dateLead ? "" : year].filter(Boolean).join(say("join"));
+  const ctxBits = [league, dates.dateLead ? "" : (ja && year ? `${year}年` : year)].filter(Boolean).join(say("join"));
   const ctx = ctxBits ? say("context", ctxBits) : "";
   const sportWords = OVERTIME_BY_SPORT[record.sport ?? ""];
   const ot = record.decidedByShootout ? say("shootout")
     : record.wentToOvertime ? (sportWords ? phrase("overtime", locale, [], choose("overtime"), sportWords) : say("overtime")) : "";
   const stageRaw = cleanLabel(record.stage ?? record.phase ?? record.roundLabel);
-  const stage = stageRaw && stageRaw !== "regular" ? say("stage", stageRaw.replaceAll("_", " ")) : "";
+  const stage = stageRaw && stageRaw !== "regular" ? say("stage", ja ? stageJa(stageRaw) : stageRaw.replaceAll("_", " ")) : "";
   const venueNameClean = cleanLabel(record.venueName);
   const venueCityClean = cleanLabel(record.venueCity);
   const venue = venueNameClean
@@ -314,6 +314,7 @@ function fieldsOf(
   const labelThe = eventLabel ? `${/^\d/.test(eventLabel) ? (dates.dateLead ? say("article") : say("articleCap")) : ""}${labelOpening}` : "";
   const placeIn = eventPlace ? say(VENUE_WORDS.test(eventPlace) ? "placeAt" : "placeIn", eventPlace) : "";
   const wonBy = eventLabel && cleanLabel(record.winnerName) ? say("wonBy", cleanLabel(record.winnerName)) : "";
+  const wonByTitle = eventLabel && cleanLabel(record.winnerName) ? say("wonByTitle", cleanLabel(record.winnerName)) : "";
   const { theW, theL } = clubArticles(record, say, Boolean(dates.dateLead));
   const recordEvent = rec && RECORD_VERB[rec.event] ? say(RECORD_VERB[rec.event]!) : "";
   const recordBy = rec && RECORD_BY[rec.event] ? say(RECORD_BY[rec.event]!) : "";
@@ -347,7 +348,7 @@ function fieldsOf(
     venueName: venueNameClean,
     cityIn,
     aged, agedJa: ja ? aged : "",
-    eventLabel, labelThe, placeIn, wonBy,
+    eventLabel, labelThe, placeIn, wonBy, wonByTitle,
   };
 }
 
@@ -410,7 +411,7 @@ function subjectOfHistory(record: MeigenRecord, locale: TemplateLocale, choose: 
       result = `${say("result", String(Math.max(score1, score2)), String(Math.min(score1, score2)))}${extra ? say("extraTime") : ""}`;
       decisive = true;
     }
-    const fields = { ...dates, team1, team2, score1: s1, score2: s2, year, round, roundPart: round ? say("roundPart", round) : "", winner, loser, result };
+    const fields = { ...dates, team1, team2, score1: s1, score2: s2, year, round, roundPart: round ? say("roundPart", locale === "ja" ? roundJa(round) : round) : "", winner, loser, result };
     return historySubject(/^final$/i.test(round) ? "world-cup-final" : "world-cup-match", record.id, fields, decisive, onDay);
   }
   const final = FINAL_LINE.exec(text);

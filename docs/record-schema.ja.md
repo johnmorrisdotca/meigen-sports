@@ -157,7 +157,7 @@
 | `epithet` | 文字列 | その人が何者かを表す短い句（例: `Brazilian footballer`）。クラブ・ポジション・`highlight` がない記録で使います。栄誉ではなく、重要度には加わりません。 |
 | `highlight` | 文字列 | 経歴上の栄誉（例: `Hockey Hall of Famer`）。 |
 | `sitelinks` | 数値 | Wikidata が数える、その人のウィキペディア（と姉妹プロジェクト）のページ数。一覧の並びはこの知名度で決まります。 |
-| `nationality` | 文字列 | 代表した国または市民権のある国の ISO 3166-1 alpha-2 コード。 |
+| `nationality` | 文字列 | 代表した国、または国籍のある国の ISO 3166-1 alpha-2 コード。 |
 
 大会や試合（`category` が `competition-start`、`competition-end`、`sport-event`）には、`eventLabel`（Wikidata の名称）、`eventPlace`（項目に開催地があるときの開催地）、`winnerName`（項目に勝者があるときの勝者。代表チームは国名）が付き、並びは `sitelinks` で決まります。文は、始まった・終わった・行われたと言い、開催地、勝者の順に添えます。
 

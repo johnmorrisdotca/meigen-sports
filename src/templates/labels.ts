@@ -13,3 +13,40 @@ export function cleanLabel(value: string | null | undefined): string {
 export function hasPlaceholder(text: string): boolean {
   return PLACEHOLDER_LEFT.test(text);
 }
+
+const STAGE_JA: Record<string, string> = {
+  playoffs: "プレーオフ",
+  exhibition: "エキシビション",
+  final: "決勝",
+  group: "グループステージ",
+  conference_final: "カンファレンス決勝",
+  conference_semi: "カンファレンス準決勝",
+  quarter: "準々決勝",
+  semi: "準決勝",
+  round_of_16: "ラウンド16",
+  round_one: "1回戦",
+  final_round: "決勝ラウンド",
+  wild_card: "ワイルドカード",
+  second_group: "2次リーグ",
+};
+
+/** The stage of a game ("playoffs", "quarter") in Japanese; a stage with no entry keeps its own words. */
+export function stageJa(stage: string): string {
+  return STAGE_JA[stage.trim().toLowerCase()] ?? stage.replaceAll("_", " ");
+}
+
+/** The round of a World Cup match ("Matchday 7", "Quarter-finals") in Japanese; a round with no entry keeps its own words. */
+export function roundJa(round: string): string {
+  const text = round.trim();
+  const matchday = /^Matchday (\d+)$/i.exec(text);
+  if (matchday) return `第${matchday[1]}節`;
+  if (/^round of 16$/i.test(text)) return "ラウンド16";
+  if (/^quarter-?finals?$/i.test(text)) return "準々決勝";
+  if (/^semi-?finals?$/i.test(text)) return "準決勝";
+  if (/^first round$/i.test(text)) return "1回戦";
+  if (/^preliminary round$/i.test(text)) return "予選";
+  if (/^final round$/i.test(text)) return "決勝ラウンド";
+  if (/^final$/i.test(text)) return "決勝";
+  if (/^(?:match for third place|third[- ]place (?:match|play-off))$/i.test(text)) return "3位決定戦";
+  return text;
+}
