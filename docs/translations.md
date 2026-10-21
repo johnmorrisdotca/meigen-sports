@@ -158,3 +158,13 @@ Written after a Japanese review (the reviewer is not a native speaker; a person 
 | Demo, `favIntro` | 競技、リーグ、履歴タグ、国、年代、賞、栄誉、年のほか、名前で選んだチームや人物、上で選んだ日を組み合わせて絞り込めます。表示されるのは、すべての条件に合う事実だけです。選んだ条件はURLに残るので、この画面をそのまま共有できます。 | You can narrow down by combining sport, league, history tag, country, decade, award, honour and year, plus a club or person chosen by name and the day chosen above. Only facts that match every condition are shown. The chosen conditions stay in the URL, so the screen can be shared as it is. |
 
 The reviewer would join the stage and the league in one pair of parentheses (`（MLBポストシーズン）` for `（ポストシーズン）（MLB）`); that is left as it is, for a person who reads Japanese to decide.
+
+## Japanese added in 0.10.0
+
+Not yet checked by a person who reads Japanese. Literal English renderings.
+
+| Where | Japanese | Literal English |
+| --- | --- | --- |
+| Demo, the two switches on the card | 国旗, トロフィー | Flags, Trophies |
+| Demo, the flag's `alt` | the name of the country in Japanese from Hata (`カナダ`, `アメリカ合衆国`) | Canada, United States |
+
