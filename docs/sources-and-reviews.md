@@ -50,4 +50,4 @@ Copyrighted editorial sites are not sources of wording. Quotes are ingested only
 | Wikidata exact-day events | 98 | in the 142-day union | CC0 1.0 |
 | openfootball World Cup matches | 964 | in the 142-day union | CC0 1.0 |
 | Combined history (bundled `all.json`) | 1052 | 142 of 366 | 10 same-event rows merged |
-| On-this-day facts (`facts/`) | 75,387 | 366 of 366 | see `facts/manifest.json`; 44,922 births and deaths are from the Wikidata dump, CC0 1.0 |
+| On-this-day facts (`facts/`) | 103,592 | 366 of 366 | see `facts/manifest.json`; 44,922 births and deaths and 28,205 events are from the Wikidata dump, CC0 1.0 |

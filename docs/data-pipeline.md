@@ -4,7 +4,7 @@
 
 Meigen Sports keeps original sources on DS1, uses the existing Turso database for curation, and serves reviewed static files through GitHub Pages. An npm installation also has typed offline records. Reading a public quote does not query DS1 or Turso.
 
-The reviewed source inputs have 30 quotations (22 Gutenberg excerpts and 8 Wikiquote sports lines) and 1052 published dated history rows (10 same-event duplicates merged) in the bundled feed. They cover 142 month-days, leaving 224 gaps. The separate on-this-day fact feeds hold 75,387 facts that cover all 366 days. The longer-term feed should draw primarily from SPX's existing historical facts on DS1; source-verified open data supplements those facts. A source's data rights remain distinct from the package's MIT code licence.
+The reviewed source inputs have 30 quotations (22 Gutenberg excerpts and 8 Wikiquote sports lines) and 1052 published dated history rows (10 same-event duplicates merged) in the bundled feed. They cover 142 month-days, leaving 224 gaps. The separate on-this-day fact feeds hold 103,592 facts that cover all 366 days. The longer-term feed should draw primarily from SPX's existing historical facts on DS1; source-verified open data supplements those facts. A source's data rights remain distinct from the package's MIT code licence.
 
 ## 1. Rebuild and verify
 
@@ -80,6 +80,19 @@ pnpm data && python3 -I pipeline/coverage_people.py
 ```
 
 `MEIGEN_WIKIDATA_DUMP_DIR` names the folder of the filtered files and `MEIGEN_WIKIDATA_OCCUPATIONS` spx-stats' `occupations.tsv`. The extract holds each birth and death with its Q id, a sport, an ISO nationality code and an `epithet`, plus the dump's name, date and hashes, which the converter copies into `facts/manifest.json` (`sources.wikidataDump`) with the count it added. The rules (a sports person, day precision, the Gregorian calendar, from 1850, never January 1, fame by Wikipedia editions with a per-day-and-sport floor, words from data, nothing about sex, gender, ethnicity, religion, politics, family or health) are in the header of `pipeline/wikidata_dump_people.py` and each has a count in its report; 44,922 births and deaths in 146 sports were added, by sport and by day in [coverage of people](coverage-people.md). `pipeline/test_wikidata_dump_people.py` and `test/dump-people.test.ts` hold the rules.
+
+## 6. Events of every sport, from the same dump
+
+The dump's events (competitions, games, finals, races, bouts, Games) take the same road, with `pipeline/wikidata_dump_events.py`, `extract_wikidata_dump_events.json` and the same provenance (`sources.wikidataDumpEvents` in `facts/manifest.json`):
+
+```sh
+python3 -I pipeline/wikidata_dump_events.py --report
+python3 -I pipeline/wikidata_dump_events.py
+python3 -I pipeline/test_wikidata_dump_events.py
+python3 -I pipeline/coverage_events.py     # docs/coverage-events.md
+```
+
+An edition with a start and an end is two facts (`competition-start`, `competition-end` with its winner), a single day one (`sport-event`). A season, a play-off, an edition of a league SPX holds, para sport, a date on January 1 or December 31 and an end before its start are left out; the place and the winner are the item's own; the winner who is a person is not named where the event's name carries a sex marker, and a national team is named by its country. 28,205 events in 185 sports were added, by sport and by day in [coverage of events](coverage-events.md); `test/dump-events.test.ts` holds the rules.
 
 ## Older sources remain useful
 

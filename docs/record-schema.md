@@ -15,7 +15,7 @@ The 46 identifiers in [categories.md](categories.md) are **tags, not exclusive c
 | `recordId` | string | Stable id, unique inside a dataset (`spx:game:123`) |
 | `eventDate` | string or null | `YYYY-MM-DD` when `datePrecision` is `day`; otherwise null |
 | `datePrecision` | `day`, `month`, or `year` | Year-only drafts and most awards leave `eventDate` null; never invent 1 January |
-| `category` | `EXTRACT_CATEGORIES` | Extract family that produced the row (game, final, soccer, birthday, death, draft, award, franchise, venue, quotation). Not exclusive of `tags`. |
+| `category` | `EXTRACT_CATEGORIES` | Extract family that produced the row (game, final, soccer, birthday, death, draft, award, franchise, venue, competition start, competition end, sport event, quotation). Not exclusive of `tags`. |
 | `tags` | `string[]` | Non-exclusive [history-type](categories.md) ids. One `recordId` is stored once and may carry several (`championship-win` and `overtime-result` on the same championship OT goal). Empty when no history type is evidenced yet. A filter matches if **any** tag matches. |
 | `basis` | `source` or `derived` | `source`: a source states the fact. `derived`: computed from statistics; then `derivedRule` and `derivedInputs` are required and published only when those inputs are complete for the scope. |
 | `derivedRule` | string | How the derived value is computed. Absent on source facts. |
@@ -160,7 +160,9 @@ A birth or death also carries what the sentence is made of, each only when the s
 | `nationality` | string | ISO 3166-1 alpha-2 code of the country he represented or holds citizenship of. |
 | `livingStatus` | `deceased`, `unknown` | `deceased` when a source holds a death; `unknown` when it holds none, never `living` unless a source confirms it. |
 
-The births and deaths from the Wikidata dump have the record id `wikidata:<category>:<Q id>:<date>`, a source of `wikidata` (CC0 1.0) with the item's address, and nothing about sex, gender, ethnicity, religion, politics, family or health.
+An event or a competition edition (`category` `competition-start`, `competition-end` or `sport-event`) carries `eventLabel` (its name, as Wikidata names it), `eventPlace` (its `location`, where the item states one) and `winnerName` (its winner, where it names one: a national team by its country), and `sitelinks` ranks it. Its sentence says it began, ended or took place, with the place ("at" before a venue, "in" before a town) and the winner last.
+
+The births and deaths from the Wikidata dump have the record id `wikidata:<category>:<Q id>:<date>` (an event's too), a source of `wikidata` (CC0 1.0) with the item's address, and nothing about sex, gender, ethnicity, religion, politics, family or health.
 
 ### Example: birthday
 

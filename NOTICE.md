@@ -19,6 +19,7 @@ Eight sports quotations are extracted from English Wikiquote athlete, coach and 
 ## Factual data
 
 - **Wikidata contributors:** structured event statements are labelled CC0-1.0 under Wikidata's data terms. Captions in this package are original wording based on those statements; no Wikipedia article prose is included. Each item revision and statement identifier is retained in its citation.
+- **Wikidata dump (2026-10-12), events:** each fact names an event item and carries its name, a date at day precision, its place and winner where the item states them, and a sport, all CC0-1.0. An event keeps the name it is called by; no person is told to be of a sex. The dump's name, date and hashes are in `facts/manifest.json` under `sources.wikidataDumpEvents`.
 - **Wikidata dump (2026-10-12), births and deaths of sports people:** each fact names a person's Wikidata item and carries a date of birth or death at day precision, a sport, a nationality code and a short phrase built from Wikidata labels and descriptions, all CC0-1.0. No sex or gender, ethnicity, religion, politics, family or health statement is read or stored. The dump's name, date and hashes are in `facts/manifest.json` under `sources.wikidataDump`.
 - **openfootball contributors:** all 964 results in the 22 FIFA World Cup edition files (1930–2022) are included under its CC0-1.0 dedication. The source commit and original dedication are recorded in [LICENSES/OPENFOOTBALL-CC0.txt](./LICENSES/OPENFOOTBALL-CC0.txt).
 

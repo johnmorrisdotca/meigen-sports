@@ -15,7 +15,7 @@
 | `recordId` | 文字列 | データセット内で一意 (`spx:game:123`) |
 | `eventDate` | 文字列または null | 精度が `day` のとき `YYYY-MM-DD`。それ以外は null |
 | `datePrecision` | `day` / `month` / `year` | 年だけの指名や賞は日付を作りません |
-| `category` | `EXTRACT_CATEGORIES` | 抽出の種類（試合、決勝、サッカー、誕生日、死去、指名、賞など）。`tags` と排他ではありません。 |
+| `category` | `EXTRACT_CATEGORIES` | 抽出の種類（試合、決勝、サッカー、誕生日、死去、指名、賞、大会の開始、大会の終了、その日の試合・大会など）。`tags` と排他ではありません。 |
 | `tags` | 文字列の配列 | 排他ではない [履歴タグ](categories.ja.md) です。1件の事実は1つの `recordId` に一度だけ保存し、複数のタグを付けられます（優勝と延長の両方など）。根拠がないときは空です。絞り込みは、いずれかのタグが一致すれば当たります。 |
 | `basis` | `source` または `derived` | `source` は出典が述べる事実。`derived` は統計から計算したもので、`derivedRule` と `derivedInputs` が必要です。入力がその範囲で揃っていないときは公開しません。 |
 | `derivedRule` | 文字列 | 導出の規則。出典の事実にはありません。 |
@@ -159,7 +159,9 @@
 | `sitelinks` | 数値 | Wikidata が数える、その人のウィキペディア（と姉妹プロジェクト）のページ数。一覧の並びはこの知名度で決まります。 |
 | `nationality` | 文字列 | 代表した国または市民権のある国の ISO 3166-1 alpha-2 コード。 |
 
-Wikidata のダンプから加えた誕生日と死去の記録 ID は `wikidata:<category>:<Q id>:<date>` です。出典は `wikidata`（CC0 1.0）で、性別、民族、宗教、政治、家族、健康に関する情報は一切持ちません。
+大会や試合（`category` が `competition-start`、`competition-end`、`sport-event`）には、`eventLabel`（Wikidata の名称）、`eventPlace`（項目に開催地があるときの開催地）、`winnerName`（項目に勝者があるときの勝者。代表チームは国名）が付き、並びは `sitelinks` で決まります。文は、始まった・終わった・行われたと言い、開催地、勝者の順に添えます。
+
+Wikidata のダンプから加えた誕生日と死去（と大会・試合）の記録 ID は `wikidata:<category>:<Q id>:<date>` です。出典は `wikidata`（CC0 1.0）で、性別、民族、宗教、政治、家族、健康に関する情報は一切持ちません。
 
 ### 例: 誕生日
 

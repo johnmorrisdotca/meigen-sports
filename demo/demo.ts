@@ -1,7 +1,7 @@
 import { factsFor, quoteForDate, rankFeed, renderRun, tagsOf } from "../src/index.ts";
 import { quotes } from "../src/data/quotes.ts";
 import { OFFLINE_BUILD, offline } from "../src/data/offline.ts";
-import { loadFactDay, loadFactPeopleDay, loadFactShard, loadShard } from "../src/load.ts";
+import { loadFactDay, loadFactEventsDay, loadFactPeopleDay, loadFactShard, loadShard } from "../src/load.ts";
 import type { FactFilters, OnThisDayRecord } from "../src/schema.ts";
 import { pickVariedFacts } from "./variety.ts";
 import type { MeigenRecord } from "../src/types.ts";
@@ -46,6 +46,8 @@ const favBox = document.querySelector<HTMLElement>("#fav-facts")!;
 const favStatus = document.querySelector<HTMLElement>("#fav-status")!;
 const peopleBox = document.querySelector<HTMLElement>("#people-facts")!;
 const peopleStatus = document.querySelector<HTMLElement>("#people-status")!;
+const eventsBox = document.querySelector<HTMLElement>("#events-facts")!;
+const eventsStatus = document.querySelector<HTMLElement>("#events-status")!;
 const showcaseBox = document.querySelector<HTMLElement>("#showcase-facts")!;
 const showcaseStatus = document.querySelector<HTMLElement>("#showcase-status")!;
 const slugs = [...new Set([...quotes.flatMap((r) => r.sports), ...offline.flatMap((r) => (r.sport ? [r.sport] : []))])].sort();
@@ -257,6 +259,19 @@ async function renderPeople(day: string, ownGeneration: number) {
   if (shown.length) drawFacts(peopleBox, shown, day); else { peopleBox.replaceChildren(); }
   peopleStatus.textContent = shown.length ? `${shown.length} ${familyLang.word("results")}` : familyLang.word("emptyHistory");
 }
+/** The events and competition editions of the chosen day across sports: one request to the day's events shard. The bundled offline set holds none, so a day with no Pages feed says so. */
+async function renderEvents(day: string, ownGeneration: number) {
+  let rows: readonly OnThisDayRecord[] = [];
+  let reached = false;
+  if (mode.value === "static") {
+    try { rows = (await loadFactEventsDay(day, localFeed())).records; reached = true; } catch { /* nothing to show offline */ }
+    noteFeeds("events", !reached);
+  }
+  if (generation !== ownGeneration) return;
+  const shown = (sport.value ? factsFor(rows, { sport: sport.value }) : [...rows]).slice(0, PEOPLE_COUNT);
+  if (shown.length) drawFacts(eventsBox, shown, day); else eventsBox.replaceChildren();
+  eventsStatus.textContent = shown.length ? `${shown.length} ${familyLang.word("results")}` : familyLang.word("emptyHistory");
+}
 let generation = 0;
 async function render() {
   const ownGeneration = ++generation;
@@ -264,6 +279,7 @@ async function render() {
   for (const option of favSport.options) if (option.value) option.textContent = familyLang.word(option.value);
   void renderToday();
   void renderPeople(date.value, ownGeneration);
+  void renderEvents(date.value, ownGeneration);
   try {
     const context = {
       ...(sport.value ? { sports: [sport.value] } : {}),

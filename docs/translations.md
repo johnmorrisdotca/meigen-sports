@@ -90,3 +90,23 @@ Literal English renderings of the Japanese added with the births and deaths of s
 | `sitelinks` | Wikidata が数える、その人のウィキペディア（と姉妹プロジェクト）のページ数。一覧の並びはこの知名度で決まります。 | The number of Wikipedia (and sister-project) pages Wikidata counts for the person. The lists are ordered by this fame. |
 | `nationality` | 代表した国または市民権のある国の ISO 3166-1 alpha-2 コード。 | The ISO 3166-1 alpha-2 code of the country he represented or holds citizenship of. |
 | Record schema, the dump's records | Wikidata のダンプから加えた誕生日と死去の記録 ID は `wikidata:<category>:<Q id>:<date>` です。出典は `wikidata`（CC0 1.0）で、性別、民族、宗教、政治、家族、健康に関する情報は一切持ちません。 | The record id of a birth or death added from the Wikidata dump is `wikidata:<category>:<Q id>:<date>`. The source is `wikidata` (CC0 1.0), and it holds no information on sex, gender, ethnicity, religion, politics, family or health. |
+
+## Japanese added in 0.8.0
+
+Literal English renderings of the Japanese added with the events and competition editions of every sport. Written for review; a person who reads Japanese has not yet checked them. `{...}` are fields: `{eventLabel}` the event's name, `{placeIn}` the place in parentheses, `{wonBy}` "The winner is X."
+
+| Where | Japanese | Literal English |
+| --- | --- | --- |
+| `start-event` | `{dateLead}{eventLabel}が始まった{placeIn}。` | {date} {event} began (place). |
+| `start-event-opened` | `{dateLead}{eventLabel}が開幕した{placeIn}。` | {date} {event} opened (place). |
+| `start-event-curtain` | `{dateLead}{eventLabel}が幕を開けた{placeIn}。` | {date} the curtain rose on {event} (place). |
+| `end-event` | `{dateLead}{eventLabel}が終わった{placeIn}。{wonBy}` | {date} {event} ended (place). The winner is X. |
+| `end-event-closed` | `{dateLead}{eventLabel}が閉幕した{placeIn}。{wonBy}` | {date} {event} closed (place). The winner is X. |
+| `end-event-curtain` | `{dateLead}{eventLabel}が幕を閉じた{placeIn}。{wonBy}` | {date} the curtain fell on {event} (place). The winner is X. |
+| `event-held` | `{dateLead}{eventLabel}が行われた{placeIn}。{wonBy}` | {date} {event} took place (place). The winner is X. |
+| `event-was-held` | `{dateLead}{eventLabel}が開催された{placeIn}。{wonBy}` | {date} {event} was held (place). The winner is X. |
+| `event-was-staged` | `{dateLead}{eventLabel}が催された{placeIn}。{wonBy}` | {date} {event} was staged (place). The winner is X. |
+| fragment `wonBy` | 勝者は{0}。 | The winner is {0}. |
+| Demo, heading of the day's events | この日の大会・試合（競技をまたいで） | The day's competitions and matches (across sports) |
+| Demo, its text | 選んだ日に始まった、または終わった大会と、その日に行われた試合・大会を、最大40件、同じ競技は3件まで表示します。出典は Wikidata（CC0）で、開催地と勝者は Wikidata に記載があるときだけ示します。上で競技を選ぶと、その競技のものだけを表示します。 | Shows competitions that began or ended on the chosen day, and matches and competitions held on it, at most 40, at most three of one sport. The source is Wikidata (CC0); the place and the winner are shown only when Wikidata states them. Choosing a sport above shows only that sport's. |
+| Record schema, events | 大会や試合（`category` が `competition-start`、`competition-end`、`sport-event`）には、`eventLabel`（Wikidata の名称）、`eventPlace`（項目に開催地があるときの開催地）、`winnerName`（項目に勝者があるときの勝者。代表チームは国名）が付き、並びは `sitelinks` で決まります。文は、始まった・終わった・行われたと言い、開催地、勝者の順に添えます。 | An event or match (`category` ...) carries `eventLabel` (Wikidata's name), `eventPlace` (the place, when the item has one), `winnerName` (the winner, when the item has one; a national team by its country), and is ordered by `sitelinks`. The sentence says began, ended or took place, then adds the place, then the winner. |

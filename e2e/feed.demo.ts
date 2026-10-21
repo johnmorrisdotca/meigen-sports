@@ -25,11 +25,15 @@ for (const language of ["en", "ja"]) {
   expect(fetched.some((url) => /\/facts\/days\/\d\d-\d\d\.json$/.test(url))).toBe(true);
   expect(fetched.filter((url) => /\/facts\/store\/\d\d\.json$/.test(url)).length).toBe(1);
   expect(fetched.some((url) => url.endsWith("/all.json"))).toBe(false);
-  expect(fetched.length).toBeLessThanOrEqual(7);
+  expect(fetched.length).toBeLessThanOrEqual(8);
   // The day's people are one more request, and they are of many sports.
   expect(fetched.filter((url) => /\/facts\/people\/\d\d-\d\d\.json$/.test(url)).length).toBe(1);
   await expect(page.locator("#people-facts .record").first()).toBeVisible();
   expect(await page.locator("#people-facts .record").count()).toBeGreaterThanOrEqual(10);
+  // And the day's events are one more, of many sports too.
+  expect(fetched.filter((url) => /\/facts\/events\/\d\d-\d\d\.json$/.test(url)).length).toBe(1);
+  await expect(page.locator("#events-facts .record").first()).toBeVisible();
+  expect(await page.locator("#events-facts .record").count()).toBeGreaterThanOrEqual(8);
   const before = await page.locator("#random-facts").innerText();
   let changed = false;
   for (let i = 0; i < 5 && !changed; i++) {
