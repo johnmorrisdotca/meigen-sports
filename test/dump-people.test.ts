@@ -115,6 +115,11 @@ test("the people shard of a day lists births and deaths of many sports, at most 
   assert.ok(deep >= 360, `${deep} days list 30 people or more`);
 });
 
+test("the README says how many births and deaths the dump adds", () => {
+  const readme = readFileSync("README.md", "utf8");
+  assert.ok(readme.includes(`**${dump.length.toLocaleString("en-US")} births and deaths of sports people** in ${new Set(dump.map((r) => r.sport)).size} sports`), "the README's count of people is out of date");
+});
+
 test("the facts' metadata names the dump: its name, date and hashes, and how many facts it added", () => {
   const meta = manifest.sources?.wikidataDump as Record<string, unknown> | undefined;
   assert.ok(meta, "no sources.wikidataDump in facts/manifest.json");
