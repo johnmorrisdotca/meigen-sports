@@ -109,12 +109,12 @@ function shuffle<T>(records: readonly T[]): T[] {
 function localFeed() {
   return { baseUrl: new URL("./", location.href).href, dataVersion: DATA_VERSION, fetch: window.fetch.bind(window) };
 }
-// Today is a calendar card: the leaf of the day, and its facts one at a time, going round by themselves (not for a reader who prefers
-// reduced motion, nor for an address that names a fact or says play=0; while it plays the address says nothing, so a reload starts it again). Pause, Next, Previous and the dots hold or move it, and nothing
-// else on the page stops it. `?gap=` is how long each fact stays, in milliseconds (the tests shorten it).
+// Today is a calendar card: the leaf of the day, and its facts one at a time. It waits on the first fact and goes round while the mouse is over the card (a tap on the card on a touch screen plays it and a second
+// tap holds it), and stops when the pointer leaves. Play keeps it going wherever the pointer is (and `?play=1` starts it, for a reader who has not asked for less motion); Pause, Next, Previous and the dots hold or move it, and
+// nothing else on the page stops it. A reader who prefers reduced motion is never played to by the pointer. `?gap=` is how long each fact stays, in milliseconds (12,000 unless it says; the tests shorten it).
 const addressed = new URLSearchParams(location.search);
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-const FACT_MS = Math.min(Math.max(Number(addressed.get("gap")) || 6000, 150), 60000);
+const FACT_MS = Math.min(Math.max(Number(addressed.get("gap")) || 12000, 150), 60000);
 const todayPlay = document.querySelector<HTMLButtonElement>("#today-play")!;
 const todayPrev = document.querySelector<HTMLButtonElement>("#today-prev")!;
 const todayNext = document.querySelector<HTMLButtonElement>("#today-next")!;
@@ -122,12 +122,16 @@ const todayDots = document.querySelector<HTMLElement>("#today-dots")!;
 const leafMonth = document.querySelector<HTMLElement>("#leaf-month")!;
 const leafDay = document.querySelector<HTMLElement>("#leaf-day")!;
 let todayIndex = Math.max(0, Number.parseInt(addressed.get("fact") ?? "0", 10) || 0);
-let todayPlaying = !reducedMotion.matches && !addressed.has("fact") && addressed.get("play") !== "0";
+let todayPlaying = !reducedMotion.matches && !addressed.has("fact") && addressed.get("play") === "1";
+/** True while the mouse is over the card: it plays, and leaving stops it. */
+let todayHover = false;
+const todayRunning = () => todayPlaying || todayHover;
 function todayRecords(): HTMLElement[] { return [...todayBox.querySelectorAll<HTMLElement>(".record")]; }
 function todayAddress() {
   const query = new URLSearchParams(location.search);
   query.delete("play"); query.delete("fact");
-  if (!todayPlaying && !reducedMotion.matches) { query.set("play", "0"); query.set("fact", String(todayIndex)); }
+  if (todayPlaying) query.set("play", "1");
+  else if (!todayHover && !reducedMotion.matches) { query.set("play", "0"); query.set("fact", String(todayIndex)); }
   try { history.replaceState(null, "", `${location.pathname}${query.size ? `?${query}` : ""}${location.hash}`); } catch { /* the address stays as it is */ }
 }
 function showToday() {
@@ -139,17 +143,33 @@ function showToday() {
     const dot = document.createElement("button"); dot.type = "button"; dot.dataset.testid = `today-dot-${at}`;
     dot.setAttribute("aria-label", familyLang.word("todayDot").replace("{n}", String(at + 1)));
     if (at === todayIndex) dot.setAttribute("aria-current", "true");
-    dot.addEventListener("click", () => { todayIndex = at; todayPlaying = false; showToday(); todayAddress(); });
+    dot.addEventListener("click", () => { todayIndex = at; todayPlaying = false; todayHover = false; showToday(); todayAddress(); });
     return dot;
   }));
-  todayPlay.textContent = familyLang.word(todayPlaying ? "todayPause" : "todayPlay");
-  todayPlay.setAttribute("aria-pressed", String(todayPlaying));
+  todayPlay.textContent = familyLang.word(todayRunning() ? "todayPause" : "todayPlay");
+  todayPlay.setAttribute("aria-pressed", String(todayRunning()));
   todayPrev.textContent = "‹"; todayNext.textContent = "›";
 }
-todayPlay.addEventListener("click", () => { todayPlaying = !todayPlaying; showToday(); todayAddress(); });
-todayPrev.addEventListener("click", () => { todayIndex -= 1; todayPlaying = false; showToday(); todayAddress(); });
-todayNext.addEventListener("click", () => { todayIndex += 1; todayPlaying = false; showToday(); todayAddress(); });
-setInterval(() => { if (todayPlaying && !document.hidden) { todayIndex += 1; showToday(); } }, FACT_MS);
+todayPlay.addEventListener("click", () => { const on = !todayRunning(); todayHover = false; todayPlaying = on; showToday(); todayAddress(); });
+todayPrev.addEventListener("click", () => { todayIndex -= 1; todayPlaying = false; todayHover = false; showToday(); todayAddress(); });
+todayNext.addEventListener("click", () => { todayIndex += 1; todayPlaying = false; todayHover = false; showToday(); todayAddress(); });
+setInterval(() => { if (todayRunning() && !document.hidden) { todayIndex += 1; showToday(); } }, FACT_MS);
+// The mouse over the card plays it and leaving stops it; on a touch screen or a pen a tap on the card (not on a button or a link) plays it and a second tap holds it.
+const todayCard = document.querySelector<HTMLElement>(".today-card")!;
+let lastPointer = "mouse";
+todayCard.addEventListener("pointerdown", (event) => { lastPointer = event.pointerType; });
+todayCard.addEventListener("pointerenter", (event) => {
+  if (event.pointerType !== "mouse" || reducedMotion.matches || todayRunning()) return;
+  todayHover = true; showToday(); todayAddress();
+});
+todayCard.addEventListener("pointerleave", (event) => {
+  if (event.pointerType !== "mouse" || !todayHover) return;
+  todayHover = false; showToday(); todayAddress();
+});
+todayCard.addEventListener("click", (event) => {
+  if (lastPointer === "mouse" || (event.target as Element).closest("button, a")) return;
+  const on = !todayRunning(); todayHover = false; todayPlaying = on; showToday(); todayAddress();
+});
 async function renderToday() {
   const now = new Date();
   const locale = familyLang.lang === "ja" ? "ja" : "en";
