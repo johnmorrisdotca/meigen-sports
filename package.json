@@ -1,6 +1,6 @@
 {
   "name": "@johnmorrisdotca/meigen-sports",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "description": "Meigen Sports 名言, source-verified sports quotations and on-this-day history: typed offline data and pure date, sport and entity selectors, with static JSON feeds. Zero runtime dependencies.",
   "keywords": [
     "sports",
