@@ -54,6 +54,22 @@ PEOPLE: list[tuple[str, str, str]] = [
     ("Edmund Hillary", "mountaineering", "b"), ("Edmund Hillary", "mountaineering", "d"), ("Ronnie O'Sullivan", "snooker", "b"),
     ("Phil Taylor", "darts", "b"), ("Mikko Hirvonen", "rallying", "b"), ("Tony Hawk", "skateboarding", "b"),
 ]
+# (the event's name as the fact holds it, the sport the fact must carry, the category: competition-start, competition-end or sport-event)
+EVENTS: list[tuple[str, str, str]] = [
+    ("1896 Summer Olympics", "olympics", "competition-start"), ("1936 Summer Olympics", "olympics", "competition-start"), ("1948 Summer Olympics", "olympics", "competition-start"),
+    ("1956 Summer Olympics", "olympics", "competition-start"), ("1960 Summer Olympics", "olympics", "competition-start"), ("1964 Summer Olympics", "olympics", "competition-start"),
+    ("1972 Summer Olympics", "olympics", "competition-start"), ("1980 Winter Olympics", "olympics", "competition-start"), ("1984 Summer Olympics", "olympics", "competition-start"),
+    ("1988 Winter Olympics", "olympics", "competition-start"), ("1992 Summer Olympics", "olympics", "competition-start"), ("2008 Summer Olympics", "olympics", "competition-start"),
+    ("2012 Summer Olympics", "olympics", "competition-start"), ("2012 Summer Olympics", "olympics", "competition-end"), ("2022 Winter Olympics", "olympics", "competition-start"),
+    ("2024 Summer Olympics", "olympics", "competition-start"), ("2024 Summer Olympics", "olympics", "competition-end"),
+    ("1930 FIFA World Cup", "soccer", "competition-start"), ("1930 FIFA World Cup", "soccer", "competition-end"), ("1966 FIFA World Cup", "soccer", "competition-end"),
+    ("1994 FIFA World Cup", "soccer", "competition-end"), ("1998 FIFA World Cup", "soccer", "competition-end"), ("2002 FIFA World Cup", "soccer", "competition-end"),
+    ("2010 FIFA World Cup", "soccer", "competition-end"), ("2014 FIFA World Cup", "soccer", "competition-end"), ("2018 FIFA World Cup", "soccer", "competition-end"),
+    ("2022 FIFA World Cup", "soccer", "competition-start"), ("2022 FIFA World Cup", "soccer", "competition-end"),
+    ("1966 FIFA World Cup Final", "soccer", "sport-event"), ("Super Bowl I", "american-football", "sport-event"), ("1997 Belgian Grand Prix", "auto-racing", "sport-event"),
+    ("1st Chess Olympiad", "chess", "competition-start"), ("1953 Giro d'Italia", "cycling", "competition-start"), ("2012 Wimbledon Championships", "tennis", "competition-start"),
+    ("2022 French Open", "tennis", "competition-end"), ("2023 European Games", "multi-sport", "competition-start"), ("2021 World Judo Championships", "judo", "competition-start"),
+]
 ERAS = (("pre-1920", "0000", "1920"), ("1920-1969", "1920", "1970"), ("1970-", "1970", "9999"))
 
 
@@ -82,6 +98,25 @@ def dump_dates(dump: Path, qids: set[str]) -> dict[str, dict[str, str | None]]:
             for key in ("P569", "P570"):
                 v = (r.get(key) or [None])[0]
                 row[key] = v["t"][1:11] if v and v.get("p", 0) >= 11 and v.get("c") == "Q1985727" else None
+            found[qid] = row
+    return found
+
+
+def event_dates(dump: Path, qids: set[str]) -> dict[str, dict[str, str | None]]:
+    """The day-precision Gregorian P585, P580 and P582 of each event item, and whether it names a winner, as the dump holds them."""
+    found: dict[str, dict[str, str | None]] = {}
+    with gzip.open(dump / "events.jsonl.gz", "rt", encoding="utf-8") as fh:
+        for line in fh:
+            head = line[:40]
+            qid = head[head.index('"id":"') + 6: head.index('"', head.index('"id":"') + 6)]
+            if qid not in qids:
+                continue
+            r = json.loads(line)
+            row: dict[str, str | None] = {}
+            for key in ("P585", "P580", "P582"):
+                v = (r.get(key) or [None])[0]
+                row[key] = v["t"][1:11] if v and v.get("p", 0) >= 11 and v.get("c") == "Q1985727" else None
+            row["winner"] = "yes" if r.get("P1346") else None
             found[qid] = row
     return found
 
@@ -136,6 +171,39 @@ def main() -> int:
             "fame": "icon" if r["sitelinks"] >= 100 else "star", "label": f"{r['person']['name']} {'born' if kind == 'b' else 'died'}",
             "date": r["eventDate"], "era": era_of(r["eventDate"]), "match": {"category": r["category"], "qid": qid},
             "source": {"wikidata": qid, "property": prop, "verifiedBy": VERIFIED_BY, "checkedOn": CHECKED_ON},
+        }
+        golden["must"].append(entry)
+        have.add(eid)
+        added.append(entry)
+    # 3. The events: each a fact the published data holds, its date the dump's own.
+    by_label: dict[tuple[str, str, str], list[dict]] = {}
+    for r in store:
+        if r["category"] in ("competition-start", "competition-end", "sport-event") and r.get("eventLabel"):
+            by_label.setdefault((r["eventLabel"], r["sport"], r["category"]), []).append(r)
+    wanted_events: list[dict] = []
+    for label, sport, category in EVENTS:
+        rows = by_label.get((label, sport, category), [])
+        if not rows:
+            problems.append(f"{label} ({sport}, {category}): no such fact in the published data")
+            continue
+        wanted_events.append(max(rows, key=lambda r: r["sitelinks"]))
+    edates = event_dates(Path(args.dump), {r["recordId"].split(":")[2] for r in wanted_events})
+    for r in wanted_events:
+        qid = r["recordId"].split(":")[2]
+        short = {"competition-start": "start", "competition-end": "end", "sport-event": "event"}[r["category"]]
+        eid = f"{short}-{qid}"
+        d = edates.get(qid, {})
+        expected = {"competition-start": d.get("P580"), "competition-end": d.get("P582"), "sport-event": d.get("P585") or (d.get("P580") if d.get("P580") == d.get("P582") else None)}[r["category"]]
+        if eid in have or any(e["id"] == eid for e in golden["gaps"]):
+            continue
+        if expected != r["eventDate"]:
+            problems.append(f"{r['eventLabel']}: the fact says {r['eventDate']}, the dump says {expected}")
+            continue
+        verb = {"competition-start": "began", "competition-end": "ended", "sport-event": "took place"}[r["category"]]
+        entry = {
+            "id": eid, "kind": "event", "sport": r["sport"], "league": None, "fame": "icon" if r["sitelinks"] >= 50 else "star", "label": f"{r['eventLabel']} {verb}",
+            "date": r["eventDate"], "era": era_of(r["eventDate"]), "match": {"category": r["category"], "qid": qid, **({"winner": r["winnerName"]} if r.get("winnerName") and d.get("winner") else {})},
+            "source": {"wikidata": qid, "property": {"competition-start": "P580", "competition-end": "P582", "sport-event": "P585"}[r["category"]], "verifiedBy": VERIFIED_BY, "checkedOn": CHECKED_ON},
         }
         golden["must"].append(entry)
         have.add(eid)

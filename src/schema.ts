@@ -9,6 +9,9 @@ export const EXTRACT_CATEGORIES = [
   "award",
   "franchise-event",
   "venue-opening",
+  "competition-start",
+  "competition-end",
+  "sport-event",
   "quotation",
 ] as const;
 export type ExtractCategory = (typeof EXTRACT_CATEGORIES)[number];
@@ -187,7 +190,12 @@ export interface OnThisDayRecord {
   readonly overallPick?: number | null;
   readonly awardName?: string | null;
   readonly awardKind?: string | null;
+  /** The winner of an award or of an event, named as Wikidata names it (a team by its country when it is a national team). */
   readonly winnerName?: string | null;
+  /** The name of an event or competition edition, as Wikidata names it ("2012 Rhythmic Gymnastics European Championships"). Only on `competition-start`, `competition-end` and `sport-event`. */
+  readonly eventLabel?: string;
+  /** Where it was held: the item's `location` (a city, a country or a venue). */
+  readonly eventPlace?: string | null;
   readonly text?: string;
   readonly textJa?: string;
 }

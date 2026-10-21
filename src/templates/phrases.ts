@@ -15,6 +15,7 @@ export type FragmentId =
   | "hosted" | "extraTime" | "penaltiesAfterDraw" | "penaltiesAfterExtraTime" | "penaltyShootout"
   | "roundPart" | "articleCap" | "article" | "join" | "whoPlain" | "whoThe" | "whoTheAnd" | "whoParen" | "result"
   | "onDate" | "inDate" | "aroundDate" | "leadOnDate" | "leadInDate" | "leadAroundDate"
+  | "placeIn" | "placeAt" | "wonBy"
   | "recordSet" | "recordHeld" | "recordEqualled" | "recordSurpassed" | "recordSetBy" | "recordHeldBy" | "recordEqualledBy" | "recordBrokenBy";
 
 type Table = Record<FragmentId, { readonly en: readonly string[]; readonly ja: readonly string[] }>;
@@ -67,6 +68,10 @@ export const FRAGMENTS: Table = {
   leadOnDate: { en: ["On {0}, "], ja: ["{0}、"] },
   leadInDate: { en: ["In {0}, "], ja: ["{0}、"] },
   leadAroundDate: { en: ["Around {0}, "], ja: ["{0}ごろ、"] },
+  // Where an event was held and who won it (events and competition editions).
+  placeIn: { en: [" in {0}"], ja: ["（{0}）"] },
+  placeAt: { en: [" at {0}"], ja: ["（{0}）"] },
+  wonBy: { en: [", won by {0}"], ja: ["勝者は{0}。"] },
   recordSet: { en: ["set"], ja: [""] },
   recordHeld: { en: ["held"], ja: [""] },
   recordEqualled: { en: ["equalled"], ja: [""] },

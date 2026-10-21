@@ -26,6 +26,9 @@ const RECORD_BY: Record<string, FragmentId> = {
   set: "recordSetBy", held: "recordHeldBy", equalled: "recordEqualledBy", surpassed: "recordBrokenBy",
 };
 
+/** A place that is a venue, not a town: it is "at" it ("at Wembley Stadium"), where a city or a country is "in" it. */
+const VENUE_WORDS = /\b(?:Stadium|Stadion|Stadio|Arena|Circuit|Park|Field|Grounds?|Centre|Center|Gardens?|Dome|Hall|Course|Raceway|Speedway|Velodrome|Coliseum|Pavilion|Gymnasium|Gimnasio|Palacio|Hippodrome|Bowl|Oval|Complex|Autodromo|Autódromo|Ring|Lake|Piste|Pool|Aquatics|Club|Links|Court|Courts|Theatre|Theater|Road|Casino|Hotel|Auditorium|Fairgrounds?|Racecourse|Showgrounds?)\b/i;
+
 function leagueLabel(record: OnThisDayRecord): string {
   const code = record.league ?? record.competition;
   if (!code) return "";
@@ -139,6 +142,9 @@ function factType(record: OnThisDayRecord): TemplateType | null {
     case "milestone":
       return "award";
     case "draft": return "draft";
+    case "competition-start": return "competition-start";
+    case "competition-end": return "competition-end";
+    case "sport-event": return "event-date";
     case "venue-opening": return "venue";
     case "franchise-event": return "franchise";
     case "first": return "first";
@@ -300,6 +306,14 @@ function fieldsOf(
   const leagueIdentity = record.league ? league : "";
   const franchiseContext = (record.league?.trim() || venueCityClean) ? "franchise" : "";
   const yearsAgo = yearsAgoToday(record, asOf);
+  // An event or a competition edition: its name ("the" before a name that opens with a year or a number), where it was held, and who won it.
+  const eventLabel = cleanLabel(record.eventLabel);
+  const eventPlace = cleanLabel(record.eventPlace);
+  // A name that opens with a lower-case letter ("biathlon at the 2026 Winter Olympics") is capitalized where it opens the sentence.
+  const labelOpening = !dates.dateLead && /^\p{Ll}/u.test(eventLabel) ? eventLabel.charAt(0).toUpperCase() + eventLabel.slice(1) : eventLabel;
+  const labelThe = eventLabel ? `${/^\d/.test(eventLabel) ? (dates.dateLead ? say("article") : say("articleCap")) : ""}${labelOpening}` : "";
+  const placeIn = eventPlace ? say(VENUE_WORDS.test(eventPlace) ? "placeAt" : "placeIn", eventPlace) : "";
+  const wonBy = eventLabel && cleanLabel(record.winnerName) ? say("wonBy", cleanLabel(record.winnerName)) : "";
   const { theW, theL } = clubArticles(record, say, Boolean(dates.dateLead));
   const recordEvent = rec && RECORD_VERB[rec.event] ? say(RECORD_VERB[rec.event]!) : "";
   const recordBy = rec && RECORD_BY[rec.event] ? say(RECORD_BY[rec.event]!) : "";
@@ -333,6 +347,7 @@ function fieldsOf(
     venueName: venueNameClean,
     cityIn,
     aged, agedJa: ja ? aged : "",
+    eventLabel, labelThe, placeIn, wonBy,
   };
 }
 
@@ -436,7 +451,8 @@ function eligible(template: SentenceTemplate, subject: Subject, type: TemplateTy
 function apply(template: SentenceTemplate, fields: Record<string, string>): string {
   const filled = template.pattern.replace(/\{([a-zA-Z0-9]+)\}/g, (_, key: string) => fields[key] ?? "");
   // A stray space before a full stop goes; a name such as "Colt .45's" keeps its own.
-  const text = filled.replace(/[ \t]{2,}/g, " ").replace(/ \.(?=$|\s)/g, ".").replace(/ 。/g, "。").trim();
+  // A name that ends in a full stop ("Nottingham Forest F.C.") does not double the sentence's own.
+  const text = filled.replace(/[ \t]{2,}/g, " ").replace(/ \.(?=$|\s)/g, ".").replace(/ 。/g, "。").replace(/([^.])\.\.$/, "$1.").trim();
   // A placeholder for a missing value is never shown: the sentence is not said at all.
   return hasPlaceholder(text) ? "" : text;
 }

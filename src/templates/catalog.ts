@@ -764,4 +764,97 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
     needs: ["label", "date"],
     pattern: "{label}は{dateOn}行われた。",
   },
+  // ---- Added in 0.8.0: events and competition editions from Wikidata (an OnThisDayRecord with an `eventLabel`). ----
+  // `{labelThe}` is the name with "the" before one that opens with a year or a number; `{placeIn}` is " in Kraków" or " at Wembley Stadium"; `{wonBy}` is ", won by Spain". Each holds a date field,
+  // so on a fact's own day (no `{dateLead}`) it says the event and not the date, and anywhere else it says the date.
+  {
+    id: "start-event", type: "competition-start", locale: "en", gate: "neutral", role: "default",
+    needs: ["labelThe"],
+    pattern: "{dateLead}{labelThe} began{placeIn}.",
+  },
+  {
+    id: "start-event-under-way", type: "competition-start", locale: "en", gate: "neutral", role: "variant",
+    needs: ["labelThe"],
+    pattern: "{dateLead}{labelThe} got under way{placeIn}.",
+  },
+  {
+    id: "start-event-opened", type: "competition-start", locale: "en", gate: "neutral", role: "variant",
+    needs: ["labelThe"],
+    pattern: "{dateLead}{labelThe} opened{placeIn}.",
+  },
+  {
+    id: "start-event", type: "competition-start", locale: "ja", gate: "neutral", role: "default",
+    needs: ["eventLabel"],
+    pattern: "{dateLead}{eventLabel}が始まった{placeIn}。",
+  },
+  {
+    id: "start-event-opened", type: "competition-start", locale: "ja", gate: "neutral", role: "variant",
+    needs: ["eventLabel"],
+    pattern: "{dateLead}{eventLabel}が開幕した{placeIn}。",
+  },
+  {
+    id: "start-event-curtain", type: "competition-start", locale: "ja", gate: "neutral", role: "variant",
+    needs: ["eventLabel"],
+    pattern: "{dateLead}{eventLabel}が幕を開けた{placeIn}。",
+  },
+  {
+    id: "end-event", type: "competition-end", locale: "en", gate: "neutral", role: "default",
+    needs: ["labelThe"],
+    pattern: "{dateLead}{labelThe} ended{placeIn}{wonBy}.",
+  },
+  {
+    id: "end-event-came-to", type: "competition-end", locale: "en", gate: "neutral", role: "variant",
+    needs: ["labelThe"],
+    pattern: "{dateLead}{labelThe} came to an end{placeIn}{wonBy}.",
+  },
+  {
+    id: "end-event-wrapped-up", type: "competition-end", locale: "en", gate: "neutral", role: "variant",
+    needs: ["labelThe"],
+    pattern: "{dateLead}{labelThe} wrapped up{placeIn}{wonBy}.",
+  },
+  {
+    id: "end-event", type: "competition-end", locale: "ja", gate: "neutral", role: "default",
+    needs: ["eventLabel"],
+    pattern: "{dateLead}{eventLabel}が終わった{placeIn}。{wonBy}",
+  },
+  {
+    id: "end-event-closed", type: "competition-end", locale: "ja", gate: "neutral", role: "variant",
+    needs: ["eventLabel"],
+    pattern: "{dateLead}{eventLabel}が閉幕した{placeIn}。{wonBy}",
+  },
+  {
+    id: "end-event-curtain", type: "competition-end", locale: "ja", gate: "neutral", role: "variant",
+    needs: ["eventLabel"],
+    pattern: "{dateLead}{eventLabel}が幕を閉じた{placeIn}。{wonBy}",
+  },
+  {
+    id: "event-held", type: "event-date", locale: "en", gate: "neutral", role: "default",
+    needs: ["labelThe"],
+    pattern: "{dateLead}{labelThe} took place{placeIn}{wonBy}.",
+  },
+  {
+    id: "event-was-held", type: "event-date", locale: "en", gate: "neutral", role: "variant",
+    needs: ["labelThe"],
+    pattern: "{dateLead}{labelThe} was held{placeIn}{wonBy}.",
+  },
+  {
+    id: "event-was-staged", type: "event-date", locale: "en", gate: "neutral", role: "variant",
+    needs: ["labelThe"],
+    pattern: "{dateLead}{labelThe} was staged{placeIn}{wonBy}.",
+  },
+  {
+    id: "event-held", type: "event-date", locale: "ja", gate: "neutral", role: "default",
+    needs: ["eventLabel"],
+    pattern: "{dateLead}{eventLabel}が行われた{placeIn}。{wonBy}",
+  },
+  {
+    id: "event-was-held", type: "event-date", locale: "ja", gate: "neutral", role: "variant",
+    needs: ["eventLabel"],
+    pattern: "{dateLead}{eventLabel}が開催された{placeIn}。{wonBy}",
+  },
+  {
+    id: "event-was-staged", type: "event-date", locale: "ja", gate: "neutral", role: "variant",
+    needs: ["eventLabel"],
+    pattern: "{dateLead}{eventLabel}が催された{placeIn}。{wonBy}",
+  },
 ];

@@ -38,6 +38,10 @@ function fixtures(): OnThisDayRecord[] {
     { ...base, recordId: "draft", category: "draft", eventDate: null, datePrecision: "year", draftYear: 1979, sport: "ice-hockey", competition: "nhl", league: "nhl", person: person("Wayne Gretzky", "Q209518"), overallPick: 1, clubName: "Edmonton Oilers" },
     { ...base, recordId: "venue", category: "venue-opening", eventDate: "1884-05-01", sport: "baseball", competition: "mlb", league: "mlb", venueName: "League Park", venueCity: "Cleveland", clubNames: ["Cleveland Naps"], highlight: "the 1920 World Series" },
     { ...base, recordId: "franchise", category: "franchise-event", eventDate: "1871-05-05", sport: "baseball", competition: "mlb", league: "mlb", clubName: "Boston Red Stockings", venueCity: "Boston" },
+    { ...base, recordId: "event-start", category: "competition-start", eventDate: "2012-05-29", sport: "rhythmic-gymnastics", competition: null, league: null, eventLabel: "2012 Rhythmic Gymnastics European Championships", eventPlace: "Nizhny Novgorod", sitelinks: 8 },
+    { ...base, recordId: "event-end", category: "competition-end", eventDate: "2010-07-11", sport: "soccer", competition: null, league: null, eventLabel: "2010 FIFA World Cup", eventPlace: "Johannesburg", winnerName: "Spain", sitelinks: 150 },
+    { ...base, recordId: "event-day", category: "sport-event", eventDate: "1966-07-30", sport: "soccer", competition: null, league: null, eventLabel: "1966 FIFA World Cup Final", eventPlace: "Wembley Stadium", winnerName: "England", sitelinks: 28 },
+    { ...base, recordId: "event-lower", category: "sport-event", eventDate: "2026-02-21", sport: "biathlon", competition: null, league: null, eventLabel: "biathlon at the 2026 Winter Olympics – mass start", eventPlace: "South Tyrol Arena", sitelinks: 20 },
     { ...base, recordId: "first", category: "first", eventDate: "1947-04-15", sport: "baseball", competition: "mlb", league: "mlb", person: person("Jackie Robinson", "Q1"), highlight: "first game in the major leagues" },
   ];
 }

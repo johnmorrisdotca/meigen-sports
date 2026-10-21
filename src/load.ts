@@ -149,6 +149,11 @@ export function loadFactPeopleDay(date: string, options: LoadOptions): Promise<F
   return loadFactShard(`people/${monthDayOf(date)}.json`, options);
 }
 
+/** The events and competition editions of a calendar day across sports: those that began, ended or took place on it, up to forty, at most three of one sport (`events/MM-DD.json`). */
+export function loadFactEventsDay(date: string, options: LoadOptions): Promise<FactShard> {
+  return loadFactShard(`events/${monthDayOf(date)}.json`, options);
+}
+
 export function loadLeague(league: string, options: LoadOptions): Promise<FactShard> {
   if (!/^[a-z0-9-]+$/.test(league)) throw new RangeError("Invalid league code");
   return loadFactShard(`feeds/leagues/${league}.json`, options);

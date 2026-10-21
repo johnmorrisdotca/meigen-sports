@@ -150,6 +150,13 @@ export function significance(record: OnThisDayRecord): number {
     case "award": return 85;
     case "soccer-on-day": return 70 + (/^final$/i.test(record.stage ?? "") ? 30 : /semi/i.test(record.stage ?? "") ? 20 : /quarter/i.test(record.stage ?? "") ? 10 : 0);
     case "venue-opening": return 55;
+    // An event or a competition edition: by the editions of its page, as a person is. A winner named adds a little: the fact says who.
+    case "competition-start":
+    case "competition-end":
+    case "sport-event": {
+      const editions = record.sitelinks ?? 0;
+      return 30 + (editions >= 100 ? 45 : editions >= 50 ? 28 : editions >= 30 ? 16 : editions >= 20 ? 10 : editions >= 10 ? 5 : 0) + (record.winnerName ? 6 : 0);
+    }
     case "franchise-event": return 45;
     case "player-birthday":
     case "player-death": {

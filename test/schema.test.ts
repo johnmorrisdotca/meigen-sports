@@ -5,7 +5,7 @@ import { EXTRACT_CATEGORIES, type OnThisDayRecord, type PersonRef, type TeamRef 
 test("website records name every extract category", () => {
   assert.deepEqual([...EXTRACT_CATEGORIES], [
     "game-on-day", "championship-final", "soccer-on-day", "player-birthday", "player-death",
-    "draft", "award", "franchise-event", "venue-opening", "quotation",
+    "draft", "award", "franchise-event", "venue-opening", "competition-start", "competition-end", "sport-event", "quotation",
   ]);
 });
 

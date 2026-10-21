@@ -22,6 +22,8 @@ OUT = ROOT / "data/v1/0.1.0/facts"
 VERSION = "0.1.0"
 ERA_START = 1850
 PEOPLE_DAY = 40  # facts in a day's people shard (`people/MM-DD.json`)
+EVENTS_DAY = 40  # facts in a day's events shard (`events/MM-DD.json`)
+EVENT_CATEGORIES = ("competition-start", "competition-end", "sport-event")
 # Joseon-era general Q704476 (Myong-won Kim); never an athlete fact. The others are items of the priority list that are not the athlete the list
 # meant (the Wikidata item of a namesake, or of a politician, an actor or a doctor): Sun Yat-sen, Ronald Ross, the actress Jennifer Jones, the
 # comedian George Burns, the politicians Marty Walsh and Jack Marshall, the singer Kim Woo-jin, the musician Paul Brady, the physician Pedro Gil.
@@ -282,6 +284,9 @@ def history_tags(row: dict) -> list[str]:
         tags.append("franchise-identity-change")
     if cat == "venue-opening":
         tags.append("venue-history")
+    if cat in ("competition-start", "competition-end", "sport-event"):
+        tags.append("competition-boundary")  # a single-day event began and ended that day
+    tags.extend(row.get("extraTags") or [])
     seen: set[str] = set()
     out: list[str] = []
     for tag in tags:
@@ -445,7 +450,7 @@ def finalize(row: dict) -> dict | None:
         "clubNames", "clubName", "bornYear", "ageYears", "highlight", "draftYear", "round",
         "overallPick", "awardName", "awardKind", "winnerName", "birthDate", "deathDate", "birthPlace", "livingStatus",
         "announcedDate", "awardDate", "ratifiedDate", "featuredReasons", "record",
-        "sitelinks", "priorityAthlete", "nationality", "epithet",
+        "sitelinks", "priorityAthlete", "nationality", "epithet", "eventLabel", "eventPlace",
         "championships", "championshipName", "personAward", "awardCount", "hallOfFameYear",
         "seriesWinnerWins", "seriesLoserWins", "seriesGames", "winnerRecord", "winnerTitleNumber",
     ):
@@ -634,7 +639,7 @@ def merge_same_event(chosen: dict[str, dict]) -> tuple[dict[str, dict], int]:
 
 
 RANK_FIELDS = (
-    "recordId", "category", "tags", "eventDate", "competition", "league", "sport", "person", "home", "away", "featuredReasons",
+    "recordId", "category", "tags", "eventDate", "competition", "league", "sport", "person", "home", "away", "featuredReasons", "winnerName",
     "stage", "phase", "priorityAthlete", "personAward", "awardCount", "hallOfFameYear", "highlight", "championships", "sitelinks", "record",
 )
 
@@ -842,6 +847,29 @@ def add_dump_people(chosen: dict[str, dict], rows: list[dict]) -> int:
     return added
 
 
+def load_dump_events() -> tuple[list[dict], dict]:
+    """Events and competition editions from the Wikidata dump (pipeline/wikidata_dump_events.py): the rows and the dump's provenance. Empty when the extract is absent."""
+    path = EXTRACT / "extract_wikidata_dump_events.json"
+    if not path.exists():
+        print(f"missing {path}", file=sys.stderr)
+        return [], {}
+    data = json.loads(path.read_text(encoding="utf-8"))
+    return data.get("records") or [], data.get("meta") or {}
+
+
+def add_dump_events(chosen: dict[str, dict], rows: list[dict]) -> int:
+    """Add the dump's events: each with the Q id of its item in its record id, its name, its place and its winner as Wikidata states them."""
+    added = 0
+    for row in rows:
+        if row["recordId"] in chosen or row["category"] not in EVENT_CATEGORIES or not row.get("eventLabel"):
+            continue
+        rec = {k: v for k, v in row.items() if k != "entityId"}
+        rec["sport"] = sport_slug(rec.get("sport"))
+        chosen[row["recordId"]] = rec
+        added += 1
+    return added
+
+
 def main() -> int:
     if not EXTRACT.is_dir():
         print(f"EXTRACT dir missing: {EXTRACT}", file=sys.stderr)
@@ -1023,6 +1051,8 @@ def main() -> int:
         if rec.get("priorityAthlete") and qid in dump_phrases and rec.get("highlight") and "Hall of Famer" not in rec["highlight"] and rec["highlight"] != dump_phrases[qid]:
             rec["highlight"] = dump_phrases[qid]
             rephrased += 1
+    event_rows, event_meta = load_dump_events()
+    events_added = add_dump_events(chosen, event_rows)
     for row in awards:
         if not row.get("eventDate") or not (row.get("winnerName") or (row.get("person") or {}).get("name")) or not row.get("awardName"):
             continue
@@ -1170,6 +1200,13 @@ def main() -> int:
     for day in calendar:
         rows = uniq_of(people_by_day.get(day, []))
         specs.append({"key": f"people:{day}", "ids": [r["recordId"] for r in rows], "n": PEOPLE_DAY, "options": {"maxPer": PEOPLE_DAY, "personMax": 1, "maxPerSport": 3}})
+    events_by_day: dict[str, list[dict]] = defaultdict(list)
+    for row in facts:
+        if row.get("category") in EVENT_CATEGORIES and row.get("eventDate"):
+            events_by_day[row["eventDate"][5:]].append(row)
+    for day in calendar:
+        rows = uniq_of(events_by_day.get(day, []))
+        specs.append({"key": f"events:{day}", "ids": [r["recordId"] for r in rows], "n": EVENTS_DAY, "options": {"maxPer": EVENTS_DAY, "personMax": 1, "maxPerSport": 3}})
     deaths = [r["recordId"] for r in facts if r.get("category") == "player-death"]
     specs.append({"key": "showcase-deaths", "ids": deaths, "n": 8})
     specs.append({"key": "sample", "ids": [r["recordId"] for r in shuffle(facts, "meigen-sample-0.1.0")], "n": 400, "options": {"maxPer": 60, "personMax": 1, "minimum": 400}})
@@ -1190,6 +1227,7 @@ def main() -> int:
         write_index(f"indexes/days/{day}.json", [r["recordId"] for r in rows], files)
     for day in calendar:
         write_shard(f"people/{day}.json", feed_of(f"people:{day}"), files, allow_empty=True)
+        write_shard(f"events/{day}.json", feed_of(f"events:{day}"), files, allow_empty=True)
     for sport, rows in by_sport.items():
         write_index(f"indexes/sports/{sport}.json", [r["recordId"] for r in uniq_of(rows)], files)
         write_shard(f"feeds/sports/{sport}.json", feed_of(f"sport:{sport}"), files)
@@ -1248,7 +1286,11 @@ def main() -> int:
         "daysWithFewerThan3": days_lt3,
         "featuredMargin": FEATURE_MARGIN,
         "peopleDay": PEOPLE_DAY,
-        "sources": {"wikidataDump": {**dump_meta, "factsAdded": sum(1 for row in facts if row["recordId"].startswith("wikidata:"))}} if dump_meta else {},
+        "eventsDay": EVENTS_DAY,
+        "sources": {
+            **({"wikidataDump": {**dump_meta, "factsAdded": sum(1 for row in facts if row["recordId"].startswith("wikidata:player-"))}} if dump_meta else {}),
+            **({"wikidataDumpEvents": {**event_meta, "factsAdded": sum(1 for row in facts if row["recordId"].startswith("wikidata:") and row.get("category") in EVENT_CATEGORIES)}} if event_meta else {}),
+        },
         "extractOnDisk": {
             "game-on-day": 392898, "championship-final": 1867, "soccer-on-day": 10423,
             "player-birthday": 20532, "player-death": 4028, "award": 5181,
@@ -1261,7 +1303,7 @@ def main() -> int:
     man_body = json.dumps(manifest, ensure_ascii=False, indent=2) + "\n"
     (OUT / "manifest.json").write_text(man_body, encoding="utf-8")
     summary = {
-        "priorityAdded": priority_added, "wikidataDumpAdded": dump_added, "priorityRephrased": rephrased,
+        "priorityAdded": priority_added, "wikidataDumpAdded": dump_added, "wikidataDumpEventsAdded": events_added, "priorityRephrased": rephrased,
         "records": len(facts), "droppedThin": dropped, "coveredDays": len(covered),
         "daysWithFewerThan3": len(days_lt3), "uniqueRecords": len({r["recordId"] for r in facts}),
         "mergedSameEvent": merged_events,

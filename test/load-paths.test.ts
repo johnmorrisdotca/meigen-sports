@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { existsSync, readFileSync } from "node:fs";
 import test from "node:test";
-import { loadFactCategory, loadFactDay, loadFactPeopleDay, loadFactShard, loadLeague, loadPlayerBucket, loadTeamFacts } from "../src/load.ts";
+import { loadFactCategory, loadFactDay, loadFactEventsDay, loadFactPeopleDay, loadFactShard, loadLeague, loadPlayerBucket, loadTeamFacts } from "../src/load.ts";
 
 /** A fetch that serves the committed files and records every address, so a wrong path is a failing test, not a 404 on Pages. */
 function diskFeed() {
@@ -47,4 +47,15 @@ test("a day's people and a sport's feed are requested under facts/ and hold peop
     "/meigen/data/v1/0.1.0/facts/people/10-20.json",
     "/meigen/data/v1/0.1.0/facts/feeds/sports/tennis.json",
   ]);
+});
+
+test("a day's events are requested under facts/events and hold events of many sports", async () => {
+  const feed = diskFeed();
+  const events = await loadFactEventsDay("2026-07-27", feed.options);
+  assert.ok(events.records.length >= 15 && events.records.length <= 40, `${events.records.length} events on July 27`);
+  assert.ok(events.records.every((r) => r.eventDate?.endsWith("-07-27") && ["competition-start", "competition-end", "sport-event"].includes(r.category)));
+  const sports = new Map<string, number>();
+  for (const r of events.records) sports.set(r.sport ?? "", (sports.get(r.sport ?? "") ?? 0) + 1);
+  assert.ok(sports.size >= 6 && [...sports.values()].every((n) => n <= 3), "events of six sports or more, at most three of one");
+  assert.deepEqual(feed.asked.map((href) => new URL(href).pathname), ["/meigen/data/v1/0.1.0/facts/events/07-27.json"]);
 });
