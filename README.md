@@ -15,6 +15,25 @@ A typed data package with no runtime dependencies. Read the included data offlin
 <p align="center"><a href="https://johnmorrisdotca.github.io/meigen-sports/"><strong>Open the demo →</strong></a> · <a href="./NOTICE.md">Sources</a> · <a href="./docs/record-schema.md">Record schema</a> · <a href="./docs/templates.md">Templates</a> · <a href="./docs/categories.md">History tags</a> · <a href="./docs/history-model.md">History model</a> · <a href="./docs/data-pipeline.md">Pipeline</a> · <a href="./docs/demo.md">The demo in pictures</a></p>
 
 <p align="center">
+<img alt="The Meigen Sports demo on a desk: a date, a sport, a quotation and on-this-day facts." src="docs/images/hero-desktop.png" width="720">
+</p>
+
+<table align="center">
+<tr>
+<td align="center" valign="top">
+<img alt="The demo on a phone, in English." src="docs/images/hero-phone.png" width="190"><br><em>On a phone</em>
+</td>
+<td align="center" valign="top">
+<img alt="The demo on a phone, in Japanese." src="docs/images/hero-phone-ja.png" width="190"><br><em>In Japanese</em>
+</td>
+</tr>
+</table>
+
+## The best of it
+
+- **Today in sports history**: 30,480 facts on all 366 calendar days, each with a sport, its people and teams, and its source.
+
+<p align="center">
 <picture>
 <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/hero-today-dark.webp">
 <img alt="A calendar card turning from one day of the year to the next, each day with a fact from sports history: a 1967 football final, birthdays of Julius Erving and Katie Ledecky, the 1954 World Cup, Mickey Mantle's birthday, a Grey Cup." src="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/hero-today-light.webp" width="760">
@@ -22,9 +41,6 @@ A typed data package with no runtime dependencies. Read the included data offlin
 <br><em>Today in sports history, a day at a time: 30,480 facts on all 366 days, each with its source.</em>
 </p>
 
-## The best of it
-
-- **Today in sports history**: 30,480 facts on all 366 calendar days, each with a sport, its people and teams, and its source.
 - **Birthdays, deaths and finals as sentences**, with the club and honours, the score and venue, the title and the season's record; neighbours in a list never share a template (`renderRun`).
 
 <p align="center">

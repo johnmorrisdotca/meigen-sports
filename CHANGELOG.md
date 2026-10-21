@@ -4,6 +4,11 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+## [0.6.6] - 2026-10-21
+
+- Docs: the README opens on the still picture of the demo again, with the phone shots under it; the calendar card turning from day to day is beside "Today in sports history" in "The best of it", and every moving picture runs at half the speed (`pnpm animations` keeps each step twice as long, `SLOW=1` for the old pace; the files are the same size).
+- Demo: the calendar card waits on the first fact and the facts go round while the mouse is over the card (a tap on the card on a phone plays it, a second tap holds it), stopping when the pointer leaves, with the address naming the fact it stopped on. Each fact stays 12 seconds (it was 6; `?gap=` still sets it). Play keeps them going wherever the pointer is; Pause, Previous, Next and the dots hold them as before. `?play=1` starts them; `?fact=` and `?play=0` open still, as before. A reader who prefers reduced motion is never played to by the pointer.
+
 ## [0.6.5] - 2026-10-20
 
 - Docs: the README opens on today in sports history as a calendar card turning from one day to the next, then "The best of it", a picture each: the sentences the facts are worded into, the offline set filling a year, and the feeds by team, player, sport and tag. The four animated webp pictures (`docs/images/hero-today-*`, `sentences-*`, `offline-*`, `feeds-*`, a light and a dark twin each, under 250 kB) are made by `pnpm animations` (`scripts/animations.ts`) from the real fact files with Playwright and `img2webp`. The README is no longer than before: the demo's screenshots went to `docs/demo.md`, and detail went to the pages that already hold its subject (`docs/record-schema.md`, `docs/golden-facts.md`, `docs/status.md`, `docs/data-pipeline.md`, `docs/open-sources.md`, `docs/coverage.md`); nothing was removed.

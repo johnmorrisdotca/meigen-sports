@@ -8,6 +8,7 @@
 //   ONLY=hero-today node scripts/animations.ts one scene (hero-today, sentences, offline, feeds), both twins
 //   IMAGES_OUT=dir                             writes somewhere else than docs/images
 //   QUALITY=80                                 the webp quality
+//   SLOW=2                                     how many times longer than a scene says each step stays (2: half the speed, which is how the README's pictures are made)
 //   FRAMES_OUT=dir                             also keeps every step as a png there, to look at
 import { spawnSync } from "node:child_process";
 import { copyFileSync, existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
@@ -23,6 +24,7 @@ const facts = join(root, "site", "data", "v1", "0.1.0", "facts");
 const out = process.env.IMAGES_OUT ?? join(root, "docs", "images");
 const only = process.env.ONLY ? process.env.ONLY.split(",") : null;
 const quality = Number(process.env.QUALITY ?? 80);
+const slow = Number(process.env.SLOW ?? 2);
 const framesOut = process.env.FRAMES_OUT ?? null;
 const MAX_BYTES = 1.5 * 1024 * 1024;
 const WIDTH = 760;
@@ -192,7 +194,7 @@ try {
         await page.setContent(html(step, tallest));
         const file = join(dir, `${String(at).padStart(3, "0")}.png`);
         writeFileSync(file, await page.locator("#scene").screenshot({ type: "png" }));
-        args.push("-d", String(step.delay), file);
+        args.push("-d", String(Math.round(step.delay * slow)), file);
         if (framesOut) { mkdirSync(framesOut, { recursive: true }); copyFileSync(file, join(framesOut, `${scene.name}-${scheme}-${String(at).padStart(2, "0")}.png`)); }
       }
       const target = join(out, `${scene.name}-${scheme}.webp`);
