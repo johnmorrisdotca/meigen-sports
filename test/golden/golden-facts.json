@@ -6047,6 +6047,758 @@
     "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
     "checkedOn": "2026-10-20"
    }
+  },
+  {
+   "id": "start-Q8080",
+   "kind": "event",
+   "sport": "olympics",
+   "league": null,
+   "fame": "icon",
+   "label": "1896 Summer Olympics began",
+   "date": "1896-04-06",
+   "era": "pre-1920",
+   "match": {
+    "category": "competition-start",
+    "qid": "Q8080"
+   },
+   "source": {
+    "wikidata": "Q8080",
+    "property": "P580",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "start-Q8150",
+   "kind": "event",
+   "sport": "olympics",
+   "league": null,
+   "fame": "icon",
+   "label": "1936 Summer Olympics began",
+   "date": "1936-08-01",
+   "era": "1920-1969",
+   "match": {
+    "category": "competition-start",
+    "qid": "Q8150"
+   },
+   "source": {
+    "wikidata": "Q8150",
+    "property": "P580",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "start-Q8403",
+   "kind": "event",
+   "sport": "olympics",
+   "league": null,
+   "fame": "icon",
+   "label": "1948 Summer Olympics began",
+   "date": "1948-07-29",
+   "era": "1920-1969",
+   "match": {
+    "category": "competition-start",
+    "qid": "Q8403"
+   },
+   "source": {
+    "wikidata": "Q8403",
+    "property": "P580",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "start-Q8411",
+   "kind": "event",
+   "sport": "olympics",
+   "league": null,
+   "fame": "icon",
+   "label": "1956 Summer Olympics began",
+   "date": "1956-11-22",
+   "era": "1920-1969",
+   "match": {
+    "category": "competition-start",
+    "qid": "Q8411"
+   },
+   "source": {
+    "wikidata": "Q8411",
+    "property": "P580",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "start-Q8415",
+   "kind": "event",
+   "sport": "olympics",
+   "league": null,
+   "fame": "icon",
+   "label": "1960 Summer Olympics began",
+   "date": "1960-08-25",
+   "era": "1920-1969",
+   "match": {
+    "category": "competition-start",
+    "qid": "Q8415"
+   },
+   "source": {
+    "wikidata": "Q8415",
+    "property": "P580",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "start-Q8420",
+   "kind": "event",
+   "sport": "olympics",
+   "league": null,
+   "fame": "icon",
+   "label": "1964 Summer Olympics began",
+   "date": "1964-10-10",
+   "era": "1920-1969",
+   "match": {
+    "category": "competition-start",
+    "qid": "Q8420"
+   },
+   "source": {
+    "wikidata": "Q8420",
+    "property": "P580",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "start-Q8438",
+   "kind": "event",
+   "sport": "olympics",
+   "league": null,
+   "fame": "icon",
+   "label": "1972 Summer Olympics began",
+   "date": "1972-08-26",
+   "era": "1970-",
+   "match": {
+    "category": "competition-start",
+    "qid": "Q8438"
+   },
+   "source": {
+    "wikidata": "Q8438",
+    "property": "P580",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "start-Q9652",
+   "kind": "event",
+   "sport": "olympics",
+   "league": null,
+   "fame": "icon",
+   "label": "1980 Winter Olympics began",
+   "date": "1980-02-14",
+   "era": "1970-",
+   "match": {
+    "category": "competition-start",
+    "qid": "Q9652"
+   },
+   "source": {
+    "wikidata": "Q9652",
+    "property": "P580",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "start-Q8456",
+   "kind": "event",
+   "sport": "olympics",
+   "league": null,
+   "fame": "icon",
+   "label": "1984 Summer Olympics began",
+   "date": "1984-07-28",
+   "era": "1970-",
+   "match": {
+    "category": "competition-start",
+    "qid": "Q8456"
+   },
+   "source": {
+    "wikidata": "Q8456",
+    "property": "P580",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "start-Q9658",
+   "kind": "event",
+   "sport": "olympics",
+   "league": null,
+   "fame": "icon",
+   "label": "1988 Winter Olympics began",
+   "date": "1988-02-13",
+   "era": "1970-",
+   "match": {
+    "category": "competition-start",
+    "qid": "Q9658"
+   },
+   "source": {
+    "wikidata": "Q9658",
+    "property": "P580",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "start-Q8488",
+   "kind": "event",
+   "sport": "olympics",
+   "league": null,
+   "fame": "icon",
+   "label": "1992 Summer Olympics began",
+   "date": "1992-07-25",
+   "era": "1970-",
+   "match": {
+    "category": "competition-start",
+    "qid": "Q8488"
+   },
+   "source": {
+    "wikidata": "Q8488",
+    "property": "P580",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "start-Q8567",
+   "kind": "event",
+   "sport": "olympics",
+   "league": null,
+   "fame": "icon",
+   "label": "2008 Summer Olympics began",
+   "date": "2008-08-08",
+   "era": "1970-",
+   "match": {
+    "category": "competition-start",
+    "qid": "Q8567"
+   },
+   "source": {
+    "wikidata": "Q8567",
+    "property": "P580",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "start-Q8577",
+   "kind": "event",
+   "sport": "olympics",
+   "league": null,
+   "fame": "icon",
+   "label": "2012 Summer Olympics began",
+   "date": "2012-07-27",
+   "era": "1970-",
+   "match": {
+    "category": "competition-start",
+    "qid": "Q8577"
+   },
+   "source": {
+    "wikidata": "Q8577",
+    "property": "P580",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "end-Q8577",
+   "kind": "event",
+   "sport": "olympics",
+   "league": null,
+   "fame": "icon",
+   "label": "2012 Summer Olympics ended",
+   "date": "2012-08-12",
+   "era": "1970-",
+   "match": {
+    "category": "competition-end",
+    "qid": "Q8577"
+   },
+   "source": {
+    "wikidata": "Q8577",
+    "property": "P582",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "start-Q193074",
+   "kind": "event",
+   "sport": "olympics",
+   "league": null,
+   "fame": "icon",
+   "label": "2022 Winter Olympics began",
+   "date": "2022-02-04",
+   "era": "1970-",
+   "match": {
+    "category": "competition-start",
+    "qid": "Q193074"
+   },
+   "source": {
+    "wikidata": "Q193074",
+    "property": "P580",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "start-Q995653",
+   "kind": "event",
+   "sport": "olympics",
+   "league": null,
+   "fame": "icon",
+   "label": "2024 Summer Olympics began",
+   "date": "2024-07-26",
+   "era": "1970-",
+   "match": {
+    "category": "competition-start",
+    "qid": "Q995653"
+   },
+   "source": {
+    "wikidata": "Q995653",
+    "property": "P580",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "end-Q995653",
+   "kind": "event",
+   "sport": "olympics",
+   "league": null,
+   "fame": "icon",
+   "label": "2024 Summer Olympics ended",
+   "date": "2024-08-11",
+   "era": "1970-",
+   "match": {
+    "category": "competition-end",
+    "qid": "Q995653"
+   },
+   "source": {
+    "wikidata": "Q995653",
+    "property": "P582",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "start-Q48432",
+   "kind": "event",
+   "sport": "soccer",
+   "league": null,
+   "fame": "icon",
+   "label": "1930 FIFA World Cup began",
+   "date": "1930-07-13",
+   "era": "1920-1969",
+   "match": {
+    "category": "competition-start",
+    "qid": "Q48432"
+   },
+   "source": {
+    "wikidata": "Q48432",
+    "property": "P580",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "end-Q48432",
+   "kind": "event",
+   "sport": "soccer",
+   "league": null,
+   "fame": "icon",
+   "label": "1930 FIFA World Cup ended",
+   "date": "1930-07-30",
+   "era": "1920-1969",
+   "match": {
+    "category": "competition-end",
+    "qid": "Q48432",
+    "winner": "Uruguay"
+   },
+   "source": {
+    "wikidata": "Q48432",
+    "property": "P582",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "end-Q134202",
+   "kind": "event",
+   "sport": "soccer",
+   "league": null,
+   "fame": "icon",
+   "label": "1966 FIFA World Cup ended",
+   "date": "1966-07-30",
+   "era": "1920-1969",
+   "match": {
+    "category": "competition-end",
+    "qid": "Q134202",
+    "winner": "England"
+   },
+   "source": {
+    "wikidata": "Q134202",
+    "property": "P582",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "end-Q101751",
+   "kind": "event",
+   "sport": "soccer",
+   "league": null,
+   "fame": "icon",
+   "label": "1994 FIFA World Cup ended",
+   "date": "1994-07-17",
+   "era": "1970-",
+   "match": {
+    "category": "competition-end",
+    "qid": "Q101751",
+    "winner": "Brazil"
+   },
+   "source": {
+    "wikidata": "Q101751",
+    "property": "P582",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "end-Q101730",
+   "kind": "event",
+   "sport": "soccer",
+   "league": null,
+   "fame": "icon",
+   "label": "1998 FIFA World Cup ended",
+   "date": "1998-07-12",
+   "era": "1970-",
+   "match": {
+    "category": "competition-end",
+    "qid": "Q101730",
+    "winner": "France"
+   },
+   "source": {
+    "wikidata": "Q101730",
+    "property": "P582",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "end-Q47735",
+   "kind": "event",
+   "sport": "soccer",
+   "league": null,
+   "fame": "icon",
+   "label": "2002 FIFA World Cup ended",
+   "date": "2002-06-29",
+   "era": "1970-",
+   "match": {
+    "category": "competition-end",
+    "qid": "Q47735",
+    "winner": "Brazil"
+   },
+   "source": {
+    "wikidata": "Q47735",
+    "property": "P582",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "end-Q176883",
+   "kind": "event",
+   "sport": "soccer",
+   "league": null,
+   "fame": "icon",
+   "label": "2010 FIFA World Cup ended",
+   "date": "2010-07-11",
+   "era": "1970-",
+   "match": {
+    "category": "competition-end",
+    "qid": "Q176883",
+    "winner": "Spain"
+   },
+   "source": {
+    "wikidata": "Q176883",
+    "property": "P582",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "end-Q79859",
+   "kind": "event",
+   "sport": "soccer",
+   "league": null,
+   "fame": "icon",
+   "label": "2014 FIFA World Cup ended",
+   "date": "2014-07-13",
+   "era": "1970-",
+   "match": {
+    "category": "competition-end",
+    "qid": "Q79859",
+    "winner": "Germany"
+   },
+   "source": {
+    "wikidata": "Q79859",
+    "property": "P582",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "end-Q170645",
+   "kind": "event",
+   "sport": "soccer",
+   "league": null,
+   "fame": "icon",
+   "label": "2018 FIFA World Cup ended",
+   "date": "2018-07-15",
+   "era": "1970-",
+   "match": {
+    "category": "competition-end",
+    "qid": "Q170645",
+    "winner": "France"
+   },
+   "source": {
+    "wikidata": "Q170645",
+    "property": "P582",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "start-Q284163",
+   "kind": "event",
+   "sport": "soccer",
+   "league": null,
+   "fame": "icon",
+   "label": "2022 FIFA World Cup began",
+   "date": "2022-11-20",
+   "era": "1970-",
+   "match": {
+    "category": "competition-start",
+    "qid": "Q284163"
+   },
+   "source": {
+    "wikidata": "Q284163",
+    "property": "P580",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "end-Q284163",
+   "kind": "event",
+   "sport": "soccer",
+   "league": null,
+   "fame": "icon",
+   "label": "2022 FIFA World Cup ended",
+   "date": "2022-12-18",
+   "era": "1970-",
+   "match": {
+    "category": "competition-end",
+    "qid": "Q284163",
+    "winner": "Argentina"
+   },
+   "source": {
+    "wikidata": "Q284163",
+    "property": "P582",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "event-Q1065912",
+   "kind": "event",
+   "sport": "soccer",
+   "league": null,
+   "fame": "star",
+   "label": "1966 FIFA World Cup Final took place",
+   "date": "1966-07-30",
+   "era": "1920-1969",
+   "match": {
+    "category": "sport-event",
+    "qid": "Q1065912",
+    "winner": "England"
+   },
+   "source": {
+    "wikidata": "Q1065912",
+    "property": "P585",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "event-Q847827",
+   "kind": "event",
+   "sport": "american-football",
+   "league": null,
+   "fame": "star",
+   "label": "Super Bowl I took place",
+   "date": "1967-01-15",
+   "era": "1920-1969",
+   "match": {
+    "category": "sport-event",
+    "qid": "Q847827",
+    "winner": "Green Bay Packers"
+   },
+   "source": {
+    "wikidata": "Q847827",
+    "property": "P585",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "event-Q20947",
+   "kind": "event",
+   "sport": "auto-racing",
+   "league": null,
+   "fame": "star",
+   "label": "1997 Belgian Grand Prix took place",
+   "date": "1997-08-24",
+   "era": "1970-",
+   "match": {
+    "category": "sport-event",
+    "qid": "Q20947",
+    "winner": "Michael Schumacher and Scuderia Ferrari"
+   },
+   "source": {
+    "wikidata": "Q20947",
+    "property": "P585",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "start-Q8483",
+   "kind": "event",
+   "sport": "chess",
+   "league": null,
+   "fame": "star",
+   "label": "1st Chess Olympiad began",
+   "date": "1927-07-18",
+   "era": "1920-1969",
+   "match": {
+    "category": "competition-start",
+    "qid": "Q8483"
+   },
+   "source": {
+    "wikidata": "Q8483",
+    "property": "P580",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "start-Q277415",
+   "kind": "event",
+   "sport": "cycling",
+   "league": null,
+   "fame": "star",
+   "label": "1953 Giro d'Italia began",
+   "date": "1953-05-12",
+   "era": "1920-1969",
+   "match": {
+    "category": "competition-start",
+    "qid": "Q277415"
+   },
+   "source": {
+    "wikidata": "Q277415",
+    "property": "P580",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "start-Q289587",
+   "kind": "event",
+   "sport": "tennis",
+   "league": null,
+   "fame": "star",
+   "label": "2012 Wimbledon Championships began",
+   "date": "2012-06-25",
+   "era": "1970-",
+   "match": {
+    "category": "competition-start",
+    "qid": "Q289587"
+   },
+   "source": {
+    "wikidata": "Q289587",
+    "property": "P580",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "end-Q107026465",
+   "kind": "event",
+   "sport": "tennis",
+   "league": null,
+   "fame": "star",
+   "label": "2022 French Open ended",
+   "date": "2022-06-05",
+   "era": "1970-",
+   "match": {
+    "category": "competition-end",
+    "qid": "Q107026465"
+   },
+   "source": {
+    "wikidata": "Q107026465",
+    "property": "P582",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "start-Q39057517",
+   "kind": "event",
+   "sport": "multi-sport",
+   "league": null,
+   "fame": "star",
+   "label": "2023 European Games began",
+   "date": "2023-06-21",
+   "era": "1970-",
+   "match": {
+    "category": "competition-start",
+    "qid": "Q39057517"
+   },
+   "source": {
+    "wikidata": "Q39057517",
+    "property": "P580",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
+  },
+  {
+   "id": "start-Q56679145",
+   "kind": "event",
+   "sport": "judo",
+   "league": null,
+   "fame": "star",
+   "label": "2021 World Judo Championships began",
+   "date": "2021-06-06",
+   "era": "1970-",
+   "match": {
+    "category": "competition-start",
+    "qid": "Q56679145"
+   },
+   "source": {
+    "wikidata": "Q56679145",
+    "property": "P580",
+    "verifiedBy": "wikidata dump 2026-10-12 (CC0): day-precision Gregorian date",
+    "checkedOn": "2026-10-20"
+   }
   }
  ],
  "gaps": [

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "factsReady": 75387,
+  "factsReady": 103592,
   "rows": [
     {
       "sport": "ice-hockey",
@@ -610,7 +610,7 @@
       "archived": 7,
       "identityLinked": 7,
       "rightsCleared": 2,
-      "feedReady": 4
+      "feedReady": 8
     },
     {
       "sport": "ice-hockey",
@@ -760,7 +760,7 @@
       "archived": 35,
       "identityLinked": 35,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 18
     },
     {
       "sport": "ice-hockey",
@@ -910,7 +910,7 @@
       "archived": 39,
       "identityLinked": 39,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 17
     },
     {
       "sport": "ice-hockey",
@@ -1060,7 +1060,7 @@
       "archived": 51,
       "identityLinked": 51,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "ice-hockey",
@@ -1210,7 +1210,7 @@
       "archived": 56,
       "identityLinked": 56,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 10
     },
     {
       "sport": "ice-hockey",
@@ -1360,7 +1360,7 @@
       "archived": 55,
       "identityLinked": 55,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 9
     },
     {
       "sport": "ice-hockey",
@@ -1510,7 +1510,7 @@
       "archived": 54,
       "identityLinked": 54,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 11
     },
     {
       "sport": "ice-hockey",
@@ -1660,7 +1660,7 @@
       "archived": 51,
       "identityLinked": 51,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 13
     },
     {
       "sport": "ice-hockey",
@@ -1810,7 +1810,7 @@
       "archived": 49,
       "identityLinked": 49,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 22
     },
     {
       "sport": "ice-hockey",
@@ -1960,7 +1960,7 @@
       "archived": 57,
       "identityLinked": 57,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 32
     },
     {
       "sport": "ice-hockey",
@@ -2050,7 +2050,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "ice-hockey",
@@ -2110,7 +2110,7 @@
       "archived": 60,
       "identityLinked": 60,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 51
     },
     {
       "sport": "ice-hockey",
@@ -2260,7 +2260,7 @@
       "archived": 41,
       "identityLinked": 41,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 44
     },
     {
       "sport": "ice-hockey",
@@ -3610,7 +3610,7 @@
       "archived": 61,
       "identityLinked": 61,
       "rightsCleared": 61,
-      "feedReady": 10
+      "feedReady": 11
     },
     {
       "sport": "baseball",
@@ -4060,7 +4060,7 @@
       "archived": 59,
       "identityLinked": 59,
       "rightsCleared": 59,
-      "feedReady": 10
+      "feedReady": 11
     },
     {
       "sport": "baseball",
@@ -4360,7 +4360,7 @@
       "archived": 54,
       "identityLinked": 54,
       "rightsCleared": 13,
-      "feedReady": 2
+      "feedReady": 5
     },
     {
       "sport": "baseball",
@@ -4510,7 +4510,7 @@
       "archived": 60,
       "identityLinked": 60,
       "rightsCleared": 48,
-      "feedReady": 8
+      "feedReady": 20
     },
     {
       "sport": "baseball",
@@ -4660,7 +4660,7 @@
       "archived": 35,
       "identityLinked": 35,
       "rightsCleared": 35,
-      "feedReady": 6
+      "feedReady": 12
     },
     {
       "sport": "baseball",
@@ -5950,7 +5950,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 3
     },
     {
       "sport": "basketball",
@@ -6010,7 +6010,7 @@
       "archived": 61,
       "identityLinked": 61,
       "rightsCleared": 61,
-      "feedReady": 10
+      "feedReady": 15
     },
     {
       "sport": "basketball",
@@ -6160,7 +6160,7 @@
       "archived": 61,
       "identityLinked": 61,
       "rightsCleared": 61,
-      "feedReady": 10
+      "feedReady": 23
     },
     {
       "sport": "basketball",
@@ -6310,7 +6310,7 @@
       "archived": 55,
       "identityLinked": 55,
       "rightsCleared": 55,
-      "feedReady": 9
+      "feedReady": 24
     },
     {
       "sport": "basketball",
@@ -6460,7 +6460,7 @@
       "archived": 55,
       "identityLinked": 55,
       "rightsCleared": 55,
-      "feedReady": 6
+      "feedReady": 18
     },
     {
       "sport": "basketball",
@@ -6610,7 +6610,7 @@
       "archived": 55,
       "identityLinked": 55,
       "rightsCleared": 55,
-      "feedReady": 8
+      "feedReady": 19
     },
     {
       "sport": "basketball",
@@ -6760,7 +6760,7 @@
       "archived": 54,
       "identityLinked": 54,
       "rightsCleared": 15,
-      "feedReady": 3
+      "feedReady": 15
     },
     {
       "sport": "basketball",
@@ -6910,7 +6910,7 @@
       "archived": 58,
       "identityLinked": 58,
       "rightsCleared": 45,
-      "feedReady": 8
+      "feedReady": 32
     },
     {
       "sport": "basketball",
@@ -7060,7 +7060,7 @@
       "archived": 40,
       "identityLinked": 40,
       "rightsCleared": 40,
-      "feedReady": 7
+      "feedReady": 21
     },
     {
       "sport": "basketball",
@@ -8560,7 +8560,7 @@
       "archived": 9,
       "identityLinked": 9,
       "rightsCleared": 9,
-      "feedReady": 9
+      "feedReady": 12
     },
     {
       "sport": "american-football",
@@ -8710,7 +8710,7 @@
       "archived": 8,
       "identityLinked": 8,
       "rightsCleared": 8,
-      "feedReady": 10
+      "feedReady": 20
     },
     {
       "sport": "american-football",
@@ -8860,7 +8860,7 @@
       "archived": 10,
       "identityLinked": 10,
       "rightsCleared": 10,
-      "feedReady": 17
+      "feedReady": 25
     },
     {
       "sport": "american-football",
@@ -9010,7 +9010,7 @@
       "archived": 10,
       "identityLinked": 10,
       "rightsCleared": 10,
-      "feedReady": 11
+      "feedReady": 20
     },
     {
       "sport": "american-football",
@@ -9160,7 +9160,7 @@
       "archived": 10,
       "identityLinked": 10,
       "rightsCleared": 6,
-      "feedReady": 6
+      "feedReady": 15
     },
     {
       "sport": "american-football",
@@ -9310,7 +9310,7 @@
       "archived": 10,
       "identityLinked": 10,
       "rightsCleared": 8,
-      "feedReady": 8
+      "feedReady": 19
     },
     {
       "sport": "american-football",
@@ -9460,7 +9460,7 @@
       "archived": 7,
       "identityLinked": 7,
       "rightsCleared": 7,
-      "feedReady": 7
+      "feedReady": 15
     },
     {
       "sport": "american-football",
@@ -12010,7 +12010,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 13
     },
     {
       "sport": "soccer",
@@ -12160,7 +12160,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 7
     },
     {
       "sport": "soccer",
@@ -12310,7 +12310,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 8
     },
     {
       "sport": "soccer",
@@ -12460,7 +12460,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 12
     },
     {
       "sport": "soccer",
@@ -12610,7 +12610,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 11
     },
     {
       "sport": "soccer",
@@ -12760,7 +12760,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 7
     },
     {
       "sport": "soccer",
@@ -12910,7 +12910,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 3
+      "feedReady": 15
     },
     {
       "sport": "soccer",
@@ -13060,7 +13060,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 2
     },
     {
       "sport": "soccer",
@@ -13210,7 +13210,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 2
+      "feedReady": 28
     },
     {
       "sport": "soccer",
@@ -13360,7 +13360,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 2
+      "feedReady": 83
     },
     {
       "sport": "soccer",
@@ -13510,7 +13510,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 3
+      "feedReady": 83
     },
     {
       "sport": "soccer",
@@ -13660,7 +13660,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 2
+      "feedReady": 106
     },
     {
       "sport": "soccer",
@@ -13810,7 +13810,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 10
+      "feedReady": 127
     },
     {
       "sport": "soccer",
@@ -13960,7 +13960,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 14
+      "feedReady": 141
     },
     {
       "sport": "soccer",
@@ -14110,7 +14110,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 16
+      "feedReady": 202
     },
     {
       "sport": "soccer",
@@ -14260,7 +14260,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 8
+      "feedReady": 87
     },
     {
       "sport": "soccer",
@@ -14410,7 +14410,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "tennis",
@@ -15460,7 +15460,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 2
     },
     {
       "sport": "tennis",
@@ -15760,7 +15760,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 3
     },
     {
       "sport": "tennis",
@@ -15910,7 +15910,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 11
     },
     {
       "sport": "tennis",
@@ -16060,7 +16060,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 9
     },
     {
       "sport": "tennis",
@@ -16210,7 +16210,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 7
     },
     {
       "sport": "tennis",
@@ -16360,7 +16360,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 16
     },
     {
       "sport": "tennis",
@@ -16510,7 +16510,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 26
     },
     {
       "sport": "tennis",
@@ -16660,7 +16660,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "tennis",
@@ -19060,7 +19060,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "golf",
@@ -21440,7 +21440,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "boxing",
@@ -21590,7 +21590,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "boxing",
@@ -23540,7 +23540,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 12
     },
     {
       "sport": "mma",
@@ -23690,7 +23690,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 79
     },
     {
       "sport": "mma",
@@ -23840,7 +23840,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 274
     },
     {
       "sport": "mma",
@@ -23990,7 +23990,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 182
     },
     {
       "sport": "mma",
@@ -25510,7 +25510,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 2
     },
     {
       "sport": "athletics",
@@ -25660,7 +25660,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 3
     },
     {
       "sport": "athletics",
@@ -25810,7 +25810,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 6
     },
     {
       "sport": "athletics",
@@ -25960,7 +25960,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 4
     },
     {
       "sport": "athletics",
@@ -26110,7 +26110,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 13
     },
     {
       "sport": "athletics",
@@ -26260,7 +26260,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 2
     },
     {
       "sport": "athletics",
@@ -30310,7 +30310,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "formula-one",
@@ -30910,7 +30910,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 10
     },
     {
       "sport": "formula-one",
@@ -31060,7 +31060,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 56
     },
     {
       "sport": "formula-one",
@@ -33460,7 +33460,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 4
     },
     {
       "sport": "stock-car-racing",
@@ -35410,7 +35410,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 51
     },
     {
       "sport": "motorcycle-racing",
@@ -35560,7 +35560,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 101
     },
     {
       "sport": "motorcycle-racing",
@@ -35710,7 +35710,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 136
     },
     {
       "sport": "motorcycle-racing",
@@ -35860,7 +35860,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 43
     },
     {
       "sport": "motorcycle-racing",
@@ -45310,7 +45310,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 2
     },
     {
       "sport": "cycling",
@@ -49660,7 +49660,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "cricket",
@@ -49960,7 +49960,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "cricket",
@@ -50110,7 +50110,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 4
     },
     {
       "sport": "cricket",
@@ -50260,7 +50260,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 7
     },
     {
       "sport": "cricket",
@@ -55060,7 +55060,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 1
     },
     {
       "sport": "alpine-skiing",

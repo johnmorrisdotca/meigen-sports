@@ -911,6 +911,34 @@
   "offline",
   "day"
  ],
+ "end-Q101730": [
+  "day"
+ ],
+ "end-Q101751": [],
+ "end-Q107026465": [],
+ "end-Q134202": [],
+ "end-Q170645": [
+  "offline",
+  "day"
+ ],
+ "end-Q176883": [],
+ "end-Q284163": [],
+ "end-Q47735": [],
+ "end-Q48432": [],
+ "end-Q79859": [
+  "day"
+ ],
+ "end-Q8577": [
+  "offline",
+  "day"
+ ],
+ "end-Q995653": [
+  "offline",
+  "day"
+ ],
+ "event-Q1065912": [],
+ "event-Q20947": [],
+ "event-Q847827": [],
  "mlb-1903": [
   "team"
  ],
@@ -967,6 +995,63 @@
  "nfl-sb20": [],
  "nfl-sb23": [],
  "nfl-sb25": [
+  "offline",
+  "day"
+ ],
+ "start-Q193074": [
+  "day"
+ ],
+ "start-Q277415": [],
+ "start-Q284163": [
+  "day"
+ ],
+ "start-Q289587": [],
+ "start-Q39057517": [],
+ "start-Q48432": [],
+ "start-Q56679145": [],
+ "start-Q8080": [
+  "day"
+ ],
+ "start-Q8150": [
+  "day"
+ ],
+ "start-Q8403": [
+  "offline",
+  "day"
+ ],
+ "start-Q8411": [
+  "day"
+ ],
+ "start-Q8415": [
+  "day"
+ ],
+ "start-Q8420": [
+  "day"
+ ],
+ "start-Q8438": [
+  "day"
+ ],
+ "start-Q8456": [
+  "day"
+ ],
+ "start-Q8483": [],
+ "start-Q8488": [
+  "day"
+ ],
+ "start-Q8567": [
+  "day"
+ ],
+ "start-Q8577": [
+  "day"
+ ],
+ "start-Q9652": [
+  "day"
+ ],
+ "start-Q9658": [
+  "offline",
+  "day"
+ ],
+ "start-Q995653": [
   "offline",
   "day"
  ],
