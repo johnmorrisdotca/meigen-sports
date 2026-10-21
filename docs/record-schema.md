@@ -150,6 +150,18 @@ Birthdays, deaths, drafts and awards carry a `PersonRef`:
 
 Team ids come from roster, draft or award rows, never from a name match.
 
+A birth or death also carries what the sentence is made of, each only when the source holds it:
+
+| Field | Type | Meaning |
+| --- | --- | --- |
+| `epithet` | string | A short phrase that says who the person is ("Brazilian footballer"): his own English description when every word of it is an ordinary word of other sports people's descriptions, else built from his occupation and country. Said where a record has no club, position or `highlight`; it is not an honour and adds nothing to significance. |
+| `highlight` | string | A career honour ("Hockey Hall of Famer", "Grey Cup winner"). |
+| `sitelinks` | number | Wikidata's count of the person's Wikipedia (and sister-project) pages: the fame the lists are ranked by. |
+| `nationality` | string | ISO 3166-1 alpha-2 code of the country he represented or holds citizenship of. |
+| `livingStatus` | `deceased`, `unknown` | `deceased` when a source holds a death; `unknown` when it holds none, never `living` unless a source confirms it. |
+
+The births and deaths from the Wikidata dump have the record id `wikidata:<category>:<Q id>:<date>`, a source of `wikidata` (CC0 1.0) with the item's address, and nothing about sex, gender, ethnicity, religion, politics, family or health.
+
 ### Example: birthday
 
 ```json

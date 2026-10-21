@@ -31,14 +31,14 @@ A typed data package with no runtime dependencies. Read the included data offlin
 
 ## The best of it
 
-- **Today in sports history**: 30,480 facts on all 366 calendar days, each with a sport, its people and teams, and its source.
+- **Today in sports history**: 75,387 facts on all 366 calendar days, each with a sport, its people and teams, and its source. Among them are **44,922 births and deaths of sports people** in 146 sports, from the Wikidata dump (CC0), each with its Q id: a day's people are of every sport, not only the five leagues ([coverage of people](./docs/coverage-people.md)).
 
 <p align="center">
 <picture>
 <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/hero-today-dark.webp">
 <img alt="A calendar card turning from one day of the year to the next, each day with a fact from sports history: a 1967 football final, birthdays of Julius Erving and Katie Ledecky, the 1954 World Cup, Mickey Mantle's birthday, a Grey Cup." src="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/hero-today-light.webp" width="760">
 </picture>
-<br><em>Today in sports history, a day at a time: 30,480 facts on all 366 days, each with its source.</em>
+<br><em>Today in sports history, a day at a time: 75,387 facts on all 366 days, each with its source.</em>
 </p>
 
 - **Birthdays, deaths and finals as sentences**, with the club and honours, the score and venue, the title and the season's record; neighbours in a list never share a template (`renderRun`). A fact read on a day that is not its own says its full date ("On July 4, 1945, …", "born on July 7, 1960"); "today" and "on this day" are for its own day only, and a missing value is never printed as "(none)".
@@ -51,17 +51,17 @@ A typed data package with no runtime dependencies. Read the included data offlin
 <br><em>Four of the sentences the facts are worded into.</em>
 </p>
 
-- **An offline set in the package**: 1,509 facts, three to five for every day, so `today()` works with no network ([offline](#what-is-bundled-and-what-loads-from-pages)).
+- **An offline set in the package**: 1,510 facts, three to five for every day, so `today()` works with no network ([offline](#what-is-bundled-and-what-loads-from-pages)).
 
 <p align="center">
 <picture>
 <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/offline-dark.webp">
-<img alt="A year as twelve rows of days filling in month by month, each day shaded by how many bundled facts it holds, with a count rising to 1,509 facts." src="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/offline-light.webp" width="720">
+<img alt="A year as twelve rows of days filling in month by month, each day shaded by how many bundled facts it holds, with a count rising to 1,510 facts." src="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/offline-light.webp" width="720">
 </picture>
 <br><em>The bundled offline set, a month at a time.</em>
 </p>
 
-- **Feeds by team, player, sport and tag**: one small static file each, loaded with `loadFactShard`, so a site fetches only what it shows.
+- **Feeds by team, player, sport and tag**, and **the people of each day across sports**: one small static file each, loaded with `loadFactShard` (`loadFactPeopleDay` for a day's people: up to forty births and deaths, at most three of one sport), so a site fetches only what it shows.
 
 <p align="center">
 <picture>
@@ -94,11 +94,11 @@ One build ships both places. The package and the GitHub Pages site are made from
 
 | | In the npm package, works offline | On GitHub Pages, needs a network |
 | --- | --- | --- |
-| On-this-day facts | **1,509 facts**: the best three to five for each of the 366 calendar days, chosen by significance and fame and varied by kind, sport, person and club (`@johnmorrisdotca/meigen-sports/offline`) | **30,480 facts** on all 366 days, in static JSON under `data/v1/0.1.0/facts/` (days, teams, players, leagues, sports, tags, 100 `store/` files that together hold every fact), read through the `load*` functions |
+| On-this-day facts | **1,510 facts**: the best three to five for each of the 366 calendar days, chosen by significance and fame and varied by kind, sport, person and club (`@johnmorrisdotca/meigen-sports/offline`) | **75,387 facts** on all 366 days, in static JSON under `data/v1/0.1.0/facts/` (days, the people of each day across sports, teams, players, leagues, sports, tags, 100 `store/` files that together hold every fact), read through the `load*` functions |
 | Quotations | 30 (22 Gutenberg excerpts, 8 Wikiquote sports lines tagged `famous-quotes`) | the same 30 in `quotes.json` |
 | History starter | 1,052 dated rows on 142 days (`@johnmorrisdotca/meigen-sports/history`; World Cup matches and Wikidata events), kept for compatibility | `all.json`, `days/`, `sports/`, `entities/` |
 
-`today(offline, timeZone, nowIso)` always answers from the package. **The rest of the facts are not in the package: Pages must be reachable for them** (the package is about 0.9 MB packed; the full facts are about 55 MB). A site should load the feeds and fall back to the offline set when they cannot be reached, and say that it did; the demo does exactly that. `data/v1/latest.json` names the current build (`package`, `build`, `offlineRecords`, `factRecords`) and its manifests, so a site can check that the feeds it reads are the build its package was made with.
+`today(offline, timeZone, nowIso)` always answers from the package. **The rest of the facts are not in the package: Pages must be reachable for them** (the package is about 1 MB packed; the full facts are about 110 MB). A site should load the feeds and fall back to the offline set when they cannot be reached, and say that it did; the demo does exactly that. `data/v1/latest.json` names the current build (`package`, `build`, `offlineRecords`, `factRecords`) and its manifests, so a site can check that the feeds it reads are the build its package was made with.
 
 This is a sourced collection with coverage gaps, not a complete daily almanac: [docs/golden-facts.md](./docs/golden-facts.md) lists the famous facts the data must hold, and those it is known not to hold yet. Quotes have unknown utterance dates and are never assigned invented anniversaries.
 

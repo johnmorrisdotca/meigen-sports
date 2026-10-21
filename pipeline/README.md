@@ -33,6 +33,20 @@ Besides the DS1 extracts the converter reads `data-sources/priority-facts.jsonl`
 
 Writes `data/v1/0.1.0/facts/`. One `recordId` per fact; `tags` are the 46 history identifiers and are not exclusive. Category shards copy the same fact into every matching tag file. Indexes hold ids only; `store/` holds each full record once.
 
+## Wikidata dump: people of every sport
+
+Does not contact DS1 or the network. Reads the filtered files of spx-stats' `scripts/wikidata_dump/filter.py` (`people`, `items`, `events`, `labels`, read only, from `MEIGEN_WIKIDATA_DUMP_DIR`) and spx-stats' `occupations.tsv` (`MEIGEN_WIKIDATA_OCCUPATIONS`), and writes `extract_wikidata_dump_people.json` to `MEIGEN_EXTRACT_DIR` with the dump's provenance. The rules are in the header of the script and counted in its report (`--report` writes nothing):
+
+```sh
+python3 -I pipeline/wikidata_dump_people.py --report
+python3 -I pipeline/wikidata_dump_people.py
+python3 -I pipeline/test_wikidata_dump_people.py
+python3 -I pipeline/coverage_people.py     # docs/coverage-people.md, from the published facts
+python3 -I pipeline/golden/add_from_dump.py [--write]   # golden facts for famous athletes of every sport, checked against the dump
+```
+
+`convert_extract.py` reads the extract after the others and adds a birth or death only for a person it does not already hold for that kind. The dump's name, date and hashes land in `data/v1/0.1.0/facts/manifest.json` under `sources.wikidataDump`.
+
 ## Wikidata open fetch (famous)
 
 Does not contact DS1. SPARQL only, 2 s gap, User-Agent `MeigenSports/0.1.0`. Writes gitignored raw JSON under `data-sources/raw/wikidata/` and convert-shaped extracts under `MEIGEN_EXTRACT_DIR` (default `~/Projects/backups/spx-stats/meigen-extract/`). The coordinating session archives those files to DS1/Dropbox.

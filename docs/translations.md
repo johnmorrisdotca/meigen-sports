@@ -75,3 +75,18 @@ For a fact read on a day that is not its own. `{date}` is the full date at its p
 | `event-took-place-dated` | `{label}は{dateOn}行われた。` | {label} took place on {date}. |
 
 The other Japanese patterns (a game, a final, an award, a record, a World Cup match, a competition's start or end, an event) now open with `{dateLead}`, for example `1945年7月4日、Pittsburgh PiratesがNew York Giantsに16対4で勝利した（MLB）。` (On July 4, 1945, Pittsburgh Pirates beat New York Giants 16–4 (MLB).), and a venue or franchise pattern says `{dateOn}` where it said the year (`League Parkが1884年5月1日に開場した…`: League Park opened on May 1, 1884). New fragments in `phrases.ts`: `{0}に` (on or in {0}), `{0}ごろに` (around {0}), `{0}、` (a date as a lead), `{0}ごろ、` (around {0}, as a lead).
+
+## Japanese added in 0.7.0
+
+Literal English renderings of the Japanese added with the births and deaths of sports people. Written for review; a person who reads Japanese has not yet checked them.
+
+| Where | Japanese | Literal English |
+| --- | --- | --- |
+| Demo, heading of the day's people | この日の人物（競技をまたいで） | The day's people (across sports) |
+| Demo, its text | 選んだ日に生まれた、または亡くなったスポーツ選手などを、最大40人、同じ競技は3人まで表示します。出典は Wikidata（CC0）です。上で競技を選ぶと、その競技の人物だけを表示します。 | Shows people of sport who were born or died on the chosen day, at most 40, at most three of one sport. The source is Wikidata (CC0). Choosing a sport above shows only that sport's people. |
+| Record schema, a birth or death's fields | 誕生日と死去には、出典に値があるときだけ次の欄が付きます。 | A birth or death carries the following fields only when the source holds a value. |
+| `epithet` | その人が何者かを表す短い句（例: `Brazilian footballer`）。クラブ・ポジション・`highlight` がない記録で使います。栄誉ではなく、重要度には加わりません。 | A short phrase that says who the person is. Used in a record with no club, position or `highlight`. It is not an honour and adds nothing to significance. |
+| `highlight` | 経歴上の栄誉（例: `Hockey Hall of Famer`）。 | A career honour. |
+| `sitelinks` | Wikidata が数える、その人のウィキペディア（と姉妹プロジェクト）のページ数。一覧の並びはこの知名度で決まります。 | The number of Wikipedia (and sister-project) pages Wikidata counts for the person. The lists are ordered by this fame. |
+| `nationality` | 代表した国または市民権のある国の ISO 3166-1 alpha-2 コード。 | The ISO 3166-1 alpha-2 code of the country he represented or holds citizenship of. |
+| Record schema, the dump's records | Wikidata のダンプから加えた誕生日と死去の記録 ID は `wikidata:<category>:<Q id>:<date>` です。出典は `wikidata`（CC0 1.0）で、性別、民族、宗教、政治、家族、健康に関する情報は一切持ちません。 | The record id of a birth or death added from the Wikidata dump is `wikidata:<category>:<Q id>:<date>`. The source is `wikidata` (CC0 1.0), and it holds no information on sex, gender, ethnicity, religion, politics, family or health. |

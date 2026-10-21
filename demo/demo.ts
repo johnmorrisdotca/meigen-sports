@@ -1,7 +1,7 @@
 import { factsFor, quoteForDate, rankFeed, renderRun, tagsOf } from "../src/index.ts";
 import { quotes } from "../src/data/quotes.ts";
 import { OFFLINE_BUILD, offline } from "../src/data/offline.ts";
-import { loadFactDay, loadFactShard, loadShard } from "../src/load.ts";
+import { loadFactDay, loadFactPeopleDay, loadFactShard, loadShard } from "../src/load.ts";
 import type { FactFilters, OnThisDayRecord } from "../src/schema.ts";
 import { pickVariedFacts } from "./variety.ts";
 import type { MeigenRecord } from "../src/types.ts";
@@ -10,6 +10,7 @@ declare const familyLang: Language;
 const DATA_VERSION = "0.1.0";
 const TODAY_COUNT = 3;
 const RANDOM_COUNT = 10;
+const PEOPLE_COUNT = 40;
 const FIND_COUNT = 8;
 // The full set is stored in 100 files by record id, so any one of them is a uniform 1% sample of every fact.
 const STORE_FILES = 100;
@@ -43,6 +44,8 @@ const favTeam = document.querySelector<HTMLInputElement>("#fav-team")!;
 const favPlayer = document.querySelector<HTMLInputElement>("#fav-player")!;
 const favBox = document.querySelector<HTMLElement>("#fav-facts")!;
 const favStatus = document.querySelector<HTMLElement>("#fav-status")!;
+const peopleBox = document.querySelector<HTMLElement>("#people-facts")!;
+const peopleStatus = document.querySelector<HTMLElement>("#people-status")!;
 const showcaseBox = document.querySelector<HTMLElement>("#showcase-facts")!;
 const showcaseStatus = document.querySelector<HTMLElement>("#showcase-status")!;
 const slugs = [...new Set([...quotes.flatMap((r) => r.sports), ...offline.flatMap((r) => (r.sport ? [r.sport] : []))])].sort();
@@ -240,12 +243,27 @@ async function renderFavourites() {
   drawFacts(favBox, rows);
   favStatus.textContent = rows.length ? `${rows.length} ${familyLang.word("results")}` : familyLang.word("favEmpty");
 }
+/** The births and deaths of the chosen day across sports: one request to the day's people shard, or the bundled offline set when it cannot be reached. */
+async function renderPeople(day: string, ownGeneration: number) {
+  let rows: readonly OnThisDayRecord[] = [];
+  let reached = false;
+  if (mode.value === "static") {
+    try { rows = (await loadFactPeopleDay(day, localFeed())).records; reached = true; } catch { /* the offline set below */ }
+    noteFeeds("people", !reached);
+  }
+  if (!reached) rows = factsFor(offline, { date: day }).filter((r) => r.category === "player-birthday" || r.category === "player-death");
+  if (generation !== ownGeneration) return;
+  const shown = (sport.value ? factsFor(rows, { sport: sport.value }) : [...rows]).slice(0, PEOPLE_COUNT);
+  if (shown.length) drawFacts(peopleBox, shown, day); else { peopleBox.replaceChildren(); }
+  peopleStatus.textContent = shown.length ? `${shown.length} ${familyLang.word("results")}` : familyLang.word("emptyHistory");
+}
 let generation = 0;
 async function render() {
   const ownGeneration = ++generation;
   for (const option of sport.options) if (option.value) option.textContent = familyLang.word(option.value);
   for (const option of favSport.options) if (option.value) option.textContent = familyLang.word(option.value);
   void renderToday();
+  void renderPeople(date.value, ownGeneration);
   try {
     const context = {
       ...(sport.value ? { sports: [sport.value] } : {}),

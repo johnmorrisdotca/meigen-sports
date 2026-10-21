@@ -25,7 +25,11 @@ for (const language of ["en", "ja"]) {
   expect(fetched.some((url) => /\/facts\/days\/\d\d-\d\d\.json$/.test(url))).toBe(true);
   expect(fetched.filter((url) => /\/facts\/store\/\d\d\.json$/.test(url)).length).toBe(1);
   expect(fetched.some((url) => url.endsWith("/all.json"))).toBe(false);
-  expect(fetched.length).toBeLessThanOrEqual(6);
+  expect(fetched.length).toBeLessThanOrEqual(7);
+  // The day's people are one more request, and they are of many sports.
+  expect(fetched.filter((url) => /\/facts\/people\/\d\d-\d\d\.json$/.test(url)).length).toBe(1);
+  await expect(page.locator("#people-facts .record").first()).toBeVisible();
+  expect(await page.locator("#people-facts .record").count()).toBeGreaterThanOrEqual(10);
   const before = await page.locator("#random-facts").innerText();
   let changed = false;
   for (let i = 0; i < 5 && !changed; i++) {

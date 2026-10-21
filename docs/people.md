@@ -20,6 +20,10 @@
 
 Never recorded: sex or gender, ethnicity, religion, health (no para label, impairment class or classification code), family, politics.
 
+## Beyond the list
+
+The 2,000 are the people the package was built around. From 0.7.0 the births and deaths of other sports people come from the Wikidata dump (CC0), by Wikipedia editions, in every sport it covers: [coverage of people](coverage-people.md) says how many, by sport and by day, and [the pipeline](data-pipeline.md) how. The same rule holds there: never sex or gender, ethnicity, religion, politics, family or health.
+
 ## The rule
 
 The script is `pipeline/people/select_people.py`; run on the same evidence it gives the same list (`--check`).

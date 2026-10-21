@@ -30,7 +30,7 @@ A template runs only when:
    - `living` — a source confirms `livingStatus: "living"`. Only then “turns N today” is allowed.
 4. `when: "tie" | "decisive"` matches the scores, when present.
 
-Missing `birthPlace`, `highlight` or day precision skips the template that needs it.
+Missing `birthPlace`, `highlight` or day precision skips the template that needs it. A person's `epithet` ("Brazilian footballer") says who he is where a record has no club, position or `highlight`; the sentence names an honour when there is one, and the epithet when there is not.
 
 ## Its own day, and every other day
 

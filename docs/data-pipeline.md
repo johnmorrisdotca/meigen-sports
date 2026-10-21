@@ -4,7 +4,7 @@
 
 Meigen Sports keeps original sources on DS1, uses the existing Turso database for curation, and serves reviewed static files through GitHub Pages. An npm installation also has typed offline records. Reading a public quote does not query DS1 or Turso.
 
-The reviewed source inputs have 30 quotations (22 Gutenberg excerpts and 8 Wikiquote sports lines) and 1052 published dated history rows (10 same-event duplicates merged) in the bundled feed. They cover 142 month-days, leaving 224 gaps. The separate on-this-day fact feeds hold 30,480 facts that cover all 366 days. The longer-term feed should draw primarily from SPX's existing historical facts on DS1; source-verified open data supplements those facts. A source's data rights remain distinct from the package's MIT code licence.
+The reviewed source inputs have 30 quotations (22 Gutenberg excerpts and 8 Wikiquote sports lines) and 1052 published dated history rows (10 same-event duplicates merged) in the bundled feed. They cover 142 month-days, leaving 224 gaps. The separate on-this-day fact feeds hold 75,387 facts that cover all 366 days. The longer-term feed should draw primarily from SPX's existing historical facts on DS1; source-verified open data supplements those facts. A source's data rights remain distinct from the package's MIT code licence.
 
 ## 1. Rebuild and verify
 
@@ -67,6 +67,19 @@ The current static source inputs rebuild with `pnpm data`. Compare the reviewed 
 Versioned static files use `data/v1/<dataVersion>/`: `all.json`, `quotes.json`, `history.json`, `days/<MM-DD>.json`, `sports/<sport>.json` and `entities/<base64url-UTF8-ID>.json`. `manifest.json` records every shard's checksum, size and record count plus actual calendar gaps. Missing days stay missing; consumers may choose a properly labelled general-sport quote fallback.
 
 The initial archive and candidate load **completed on DS1 on 2026-10-15**: 99 raw source retrievals, 95 distinct raw hashes and 184 candidate records. Stored byte hashes and a complete DS1 export were verified. Hash-verified copies are in the existing local Dropbox raw-backup folder; remote synchronization was not independently confirmed. **Turso load, review and export remain pending and untested against its server**. Archival does not grant publication approval. Full environment variables, SQL assets, review requirements and offline commands are in the [manual pipeline reference](../pipeline/README.md). Source licences and original notices are in [source data](../data-sources/README.md) and [credits](../LICENSES/GUTENBERG-CREDITS.md).
+
+## 5. People of every sport, from the Wikidata dump
+
+The one-off Wikidata dump of 2026-10-12 (CC0, 156 GB compressed) was filtered on nas1 by spx-stats' `scripts/wikidata_dump/filter.py` into sports people, events, items and labels, and loaded on DS1. This package reads the filtered files, read only, and never the dump itself and never the network:
+
+```sh
+python3 -I pipeline/wikidata_dump_people.py --report   # counts only, writes nothing
+python3 -I pipeline/wikidata_dump_people.py            # writes extract_wikidata_dump_people.json to MEIGEN_EXTRACT_DIR
+python3 -I pipeline/convert_extract.py                 # reads it with the other extracts
+pnpm data && python3 -I pipeline/coverage_people.py
+```
+
+`MEIGEN_WIKIDATA_DUMP_DIR` names the folder of the filtered files and `MEIGEN_WIKIDATA_OCCUPATIONS` spx-stats' `occupations.tsv`. The extract holds each birth and death with its Q id, a sport, an ISO nationality code and an `epithet`, plus the dump's name, date and hashes, which the converter copies into `facts/manifest.json` (`sources.wikidataDump`) with the count it added. The rules (a sports person, day precision, the Gregorian calendar, from 1850, never January 1, fame by Wikipedia editions with a per-day-and-sport floor, words from data, nothing about sex, gender, ethnicity, religion, politics, family or health) are in the header of `pipeline/wikidata_dump_people.py` and each has a count in its report; 44,922 births and deaths in 146 sports were added, by sport and by day in [coverage of people](coverage-people.md). `pipeline/test_wikidata_dump_people.py` and `test/dump-people.test.ts` hold the rules.
 
 ## Older sources remain useful
 
