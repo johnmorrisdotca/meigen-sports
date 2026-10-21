@@ -289,7 +289,10 @@ def claims(client: Client) -> None:
             for qid, ent in data["entities"].items():
                 read_now.append(qid)
                 for prop in ("P31", "P27", "P106", "P641", "P569", "P570"):
-                    for st in (ent.get("claims") or {}).get(prop, []):
+                    stated = (ent.get("claims") or {}).get(prop, [])
+                    if prop in ("P569", "P570") and any(st.get("rank") == "preferred" for st in stated):
+                        stated = [st for st in stated if st.get("rank") == "preferred"]  # the value Wikidata means
+                    for st in stated:
                         snak = st.get("mainsnak") or {}
                         value = (snak.get("datavalue") or {}).get("value")
                         if st.get("rank") == "deprecated" or not value:

@@ -41,8 +41,11 @@ def get(url: str) -> bytes:
 
 
 def time_claim(claims: dict, prop: str):
+    stated = [c for c in claims.get(prop) or [] if c.get("rank") != "deprecated"]
+    # A preferred statement is the one Wikidata means when it holds several values.
+    stated = [c for c in stated if c.get("rank") == "preferred"] or stated
     rows = []
-    for c in claims.get(prop) or []:
+    for c in stated:
         sn = c.get("mainsnak") or {}
         if sn.get("snaktype") != "value":
             continue

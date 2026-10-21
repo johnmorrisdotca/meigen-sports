@@ -124,6 +124,8 @@
     "data:coverage-events": "python3 -I pipeline/coverage_events.py",
     "data:coverage-tags": "python3 -I pipeline/coverage_tags.py",
     "test:links": "python3 -I pipeline/test_wikidata_links.py",
+    "test:dates": "python3 -I pipeline/audit_dates.py",
+    "test:datesrank": "python3 -I pipeline/test_dates_rank.py",
     "test:people": "python3 -I pipeline/people/test_select_people.py",
     "site": "pnpm build && node scripts/site.ts",
     "dev": "pnpm site && node scripts/dev.ts",

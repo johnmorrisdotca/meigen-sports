@@ -7,14 +7,12 @@ from __future__ import annotations
 
 import csv
 import json
+import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SEED = Path(__file__).resolve().parent / "ds1-people/spx-stats/db/seed"
-# Prefer the spx-stats worktree seed when present.
-ALT = Path.home() / "Projects/spx-stats-worktrees/meigen-people/db/seed"
-if (ALT / "wikidata_meigen_bio.csv").is_file():
-    SEED = ALT
+# The committed seed only (an outside copy once shadowed it and kept a wrong birth date); MEIGEN_BIO_SEED names another on purpose.
+SEED = Path(os.environ.get("MEIGEN_BIO_SEED", str(Path(__file__).resolve().parent / "ds1-people/spx-stats/db/seed")))
 OUT = ROOT / "data-sources/priority-facts.jsonl"
 
 

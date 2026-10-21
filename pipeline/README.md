@@ -47,6 +47,18 @@ python3 -I pipeline/golden/add_from_dump.py [--write]   # golden facts for famou
 
 `convert_extract.py` reads the extract after the others and adds a birth or death only for a person it does not already hold for that kind. The dump's name, date and hashes land in `data/v1/0.1.0/facts/manifest.json` under `sources.wikidataDump`.
 
+## Birth and death dates against the dump
+
+A date is text (`+1929-10-22T00:00:00Z` is the day `1929-10-22`), never read through a clock or a time zone. When Wikidata holds several values for a birth or a death, the **preferred** statement is the one it means: the extractors take it (`fetch_priority_pages.py`, `fetch_wikidata_lists.py`, `priority_entities.py`, `people/fetch_people.py`), and the dump keeps only it. Lev Yashin has 21 and 22 October 1929, the 22nd preferred; taking the first statement published the 21st.
+
+```sh
+python3 -I pipeline/audit_dates.py                                        # every published date against the dump; exit 1 on a difference
+python3 -I pipeline/audit_dates.py --write-sample test/golden/dump-dates-sample.json   # the 500 people test/dump-dates.test.ts holds the data to
+python3 -I pipeline/test_dates_rank.py                                    # the preferred-statement rule
+```
+
+A property with several equal-rank values and no preferred one is **contested** (Wikidata disagrees with itself): the audit counts them and the published date is one of them.
+
 ## Wikidata open fetch (famous)
 
 Does not contact DS1. SPARQL only, 2 s gap, User-Agent `MeigenSports/0.1.0`. Writes gitignored raw JSON under `data-sources/raw/wikidata/` and convert-shaped extracts under `MEIGEN_EXTRACT_DIR` (default `~/Projects/backups/spx-stats/meigen-extract/`). The coordinating session archives those files to DS1/Dropbox.

@@ -294,7 +294,9 @@ def extract_one(qid: str, sport: str, ent: dict, meta: dict, wikitext: str) -> t
         return ""
 
     def first_time(prop: str) -> tuple[str, str]:
-        for c in claims(ent, prop):
+        # When Wikidata holds several values, the preferred statement is the one it means.
+        stated = claims(ent, prop)
+        for c in [c for c in stated if c.get("rank") == "preferred"] + stated:
             day, prec = time_val(c)
             if day:
                 return day, str(prec or "")

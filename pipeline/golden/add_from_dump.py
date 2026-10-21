@@ -53,6 +53,7 @@ PEOPLE: list[tuple[str, str, str]] = [
     ("Steve Redgrave", "rowing", "b"), ("Ben Ainslie", "sailing", "b"), ("Rory McIlroy", "golf", "b"), ("Seve Ballesteros", "golf", "b"),
     ("Edmund Hillary", "mountaineering", "b"), ("Edmund Hillary", "mountaineering", "d"), ("Ronnie O'Sullivan", "snooker", "b"),
     ("Phil Taylor", "darts", "b"), ("Mikko Hirvonen", "rallying", "b"), ("Tony Hawk", "skateboarding", "b"),
+    ("Lev Yashin", "soccer", "b"), ("Ronaldo", "soccer", "b"),
 ]
 # (the event's name as the fact holds it, the sport the fact must carry, the category: competition-start, competition-end or sport-event)
 EVENTS: list[tuple[str, str, str]] = [
