@@ -1,6 +1,6 @@
 {
   "name": "@johnmorrisdotca/meigen-sports",
-  "version": "0.6.7",
+  "version": "0.7.0",
   "description": "Meigen Sports \u540d\u8a00, source-verified sports quotations and on-this-day history: typed offline data and pure date, sport and entity selectors, with static JSON feeds. Zero runtime dependencies.",
   "keywords": [
     "sports",
@@ -118,6 +118,7 @@
     "data:dump": "python3 -I pipeline/wikidata_dump_people.py",
     "test:dump": "python3 -I pipeline/test_wikidata_dump_people.py",
     "data:golden": "python3 -I pipeline/golden/add_from_dump.py",
+    "data:coverage-people": "python3 -I pipeline/coverage_people.py",
     "test:people": "python3 -I pipeline/people/test_select_people.py",
     "site": "pnpm build && node scripts/site.ts",
     "dev": "pnpm site && node scripts/dev.ts",
