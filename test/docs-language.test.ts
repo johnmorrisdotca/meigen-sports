@@ -13,6 +13,7 @@ const ALLOWED: Allowed[] = [
  { file: "README.md", between: ["<!-- family:start", "<!-- family:end -->"], reason: "The shared family block preserves each sibling's proper name." },
  { file: "README.md", quoted: ["<sub>名言</sub>", "名言", "めいげん"], reason: "The package's own Japanese name and reading are the subject." },
  { file: "docs/translations.md", both: true, reason: "This document is the paired translation/back-translation review table." },
+ { file: "docs/calendar-icons.md", both: true, reason: "The theme name table shows each Japanese label beside its English one." },
 ];
 
 const JAPANESE = /[\u3000-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uff00-\uffef]/;

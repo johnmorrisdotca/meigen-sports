@@ -1,0 +1,13 @@
+/* Optional calendar-icon styles. The SVG from calendarIcon() already carries its colours. */
+
+.meigen-cal {
+  display: inline-block;
+  line-height: 0;
+  vertical-align: top;
+}
+
+.meigen-cal svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}

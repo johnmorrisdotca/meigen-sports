@@ -1,6 +1,6 @@
 {
   "name": "@johnmorrisdotca/meigen-sports",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "description": "Meigen Sports 名言, source-verified sports quotations and on-this-day history: typed offline data and pure date, sport and entity selectors, with static JSON feeds. Zero runtime dependencies.",
   "keywords": [
     "sports",
@@ -66,7 +66,8 @@
       "types": "./dist/categories.d.ts",
       "import": "./dist/categories.js",
       "default": "./dist/categories.js"
-    }
+    },
+    "./styles.css": "./styles.css"
   },
   "files": [
     "dist",
@@ -84,7 +85,8 @@
     "CHANGELOG.md",
     "README.md",
     "data-sources/sources.json",
-    "data-sources/README.md"
+    "data-sources/README.md",
+    "styles.css"
   ],
   "engines": {
     "node": ">=22"
