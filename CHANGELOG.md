@@ -4,6 +4,10 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+## [0.13.0] - 2026-10-23
+
+- Layouts: four ways to show a day's facts (`displayMarkup`, `displayLayoutOf`, `displayKind`, `DISPLAY_LAYOUTS`): a calendar card, a year list with Events, Births and Deaths, a compact list, and one featured fact. The helpers return HTML and do not word a sentence. Optional rules are in `@johnmorrisdotca/meigen-sports/styles.css` (colours follow the page). The demo keeps the choice in `?layout=calendar|years|compact|featured`. [docs/display-layouts.md](docs/display-layouts.md).
+
 ## [0.12.0] - 2026-10-23
 
 - Drawings: ten original calendar-page themes (`calendarIcon`, `CALENDAR_THEMES`, `calendarThemeOf`, `CALENDAR_THEME_LABELS`): classic, outline, spiral, bold, tent, curl, pad, minimal, fold and tile. Each is SVG, light and dark, with the month, the day and an optional year chip. Theme names are generic. Optional CSS is `@johnmorrisdotca/meigen-sports/styles.css`. [docs/calendar-icons.md](docs/calendar-icons.md).

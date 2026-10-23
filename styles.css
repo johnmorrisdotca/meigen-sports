@@ -11,3 +11,137 @@
   width: 100%;
   height: auto;
 }
+
+/* Four ways to show a day's facts. Colours follow the page (--ink, --surface, --rule, --accent). */
+.meigen-layout {
+  --meigen-ink: var(--ink, CanvasText);
+  --meigen-muted: var(--muted, GrayText);
+  --meigen-surface: var(--surface, Canvas);
+  --meigen-rule: var(--rule, GrayText);
+  --meigen-accent: var(--accent, Highlight);
+  color: var(--meigen-ink);
+  font: inherit;
+}
+
+.meigen-calendar {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1rem 1.25rem;
+  align-items: start;
+}
+
+.meigen-calendar .meigen-cal svg {
+  width: 6rem;
+}
+
+.meigen-fact {
+  margin: 0.35rem 0;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.meigen-years {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.meigen-tab-input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.meigen-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 48px;
+  padding: 0 16px;
+  border: 1px solid var(--meigen-rule);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.meigen-tab-input:checked + .meigen-tab {
+  background: var(--meigen-ink);
+  color: var(--meigen-surface);
+  border-color: var(--meigen-ink);
+}
+
+.meigen-tab-input:focus-visible + .meigen-tab {
+  outline: 3px solid var(--meigen-accent);
+  outline-offset: 3px;
+}
+
+.meigen-count {
+  font-variant-numeric: tabular-nums;
+  opacity: 0.8;
+}
+
+.meigen-year-panel {
+  display: none;
+  flex: 1 0 100%;
+}
+
+.meigen-years .meigen-tab-input:nth-of-type(1):checked ~ .meigen-year-panel[data-kind="event"],
+.meigen-years .meigen-tab-input:nth-of-type(2):checked ~ .meigen-year-panel[data-kind="birth"],
+.meigen-years .meigen-tab-input:nth-of-type(3):checked ~ .meigen-year-panel[data-kind="death"] {
+  display: block;
+}
+
+.meigen-year-row {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: baseline;
+  padding: 0.65rem 0;
+  border-top: 1px solid var(--meigen-rule);
+}
+
+.meigen-year {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.meigen-compact {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.meigen-compact li {
+  padding: 0.4rem 0;
+  border-top: 1px solid var(--meigen-rule);
+}
+
+.meigen-compact .meigen-year {
+  display: inline-block;
+  min-width: 3.4rem;
+  color: var(--meigen-muted);
+  font-weight: 700;
+}
+
+.meigen-featured .meigen-year {
+  margin: 0;
+  color: var(--meigen-muted);
+  font-size: 0.95rem;
+}
+
+.meigen-featured .meigen-fact {
+  margin: 0.25rem 0 0;
+  font-size: 1.45rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 680px) {
+  .meigen-calendar {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .meigen-featured .meigen-fact {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 120" width="360" height="120" role="img" aria-label="Featured fact">
+  <rect width="360" height="120" fill="#f7f4ef"/>
+  <text x="24" y="36" font-size="14" fill="#6a5e54" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="700">1995</text>
+  <text x="24" y="78" font-size="22" fill="#1a1510" font-family="ui-sans-serif,system-ui,sans-serif">One fact, set large.</text>
+</svg>

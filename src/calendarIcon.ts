@@ -8,12 +8,12 @@ export type CalendarTheme = (typeof CALENDAR_THEMES)[number];
 export const CALENDAR_THEME_LABELS: Record<CalendarTheme, { en: string; ja: string }> = {
   classic: { en: "Classic", ja: "クラシック" },
   outline: { en: "Outline", ja: "線画" },
-  spiral: { en: "Spiral", ja: "リング綴じ" },
+  spiral: { en: "Spiral", ja: "スパイラル綴じ" },
   bold: { en: "Bold", ja: "太枠" },
   tent: { en: "Tent", ja: "卓上" },
   curl: { en: "Curl", ja: "めくり" },
   pad: { en: "Pad", ja: "日めくり" },
-  minimal: { en: "Minimal", ja: "数字" },
+  minimal: { en: "Minimal", ja: "ミニマル" },
   fold: { en: "Fold", ja: "折り角" },
   tile: { en: "Tile", ja: "タイル" },
 };

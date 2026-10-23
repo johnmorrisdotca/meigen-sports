@@ -170,13 +170,21 @@ console.log(calendarThemeOf("classic")); // classic
 console.log(calendarIcon({ month: 3, day: 20, year: 2026, theme: "classic" }).includes("2026")); // true
 ```
 
+A day's facts can be laid out four ways. The helper returns HTML; the optional stylesheet colours it from the page.
+
+```js
+import { displayLayoutOf, displayMarkup } from "@johnmorrisdotca/meigen-sports";
+console.log(displayLayoutOf("years")); // years
+console.log(displayMarkup({ layout: "featured", items: [{ text: "A fact", year: "1995" }] }).includes("1995")); // true
+```
+
 ## Examples
 
 The snippets under **In 30 seconds** and **Use it in your project** are run by `pnpm test:readme` against the built package. A network load of the public feed is marked `no-run` until Pages is serving that version.
 
 ## API
 
-The root export provides `isDate`, `monthDayOf`, `selectRecords`, `historyOnDate`, `quoteForDate`, `EXTRACT_CATEGORIES`, `FACT_CATEGORIES`, on-this-day helpers (`factsFor`, `today`, `calendarDayInZone`, `rankFeed`, `rankRecords`, `rankDay`, `bestOfDay`, `significance`, `randomFacts`, `tagsOf`, `kindTagsOf`, `uniqueRecordIds`, `withCaptions`, `captionFromFact`, `isRichFact`, `dayContext`, `factDate`, `dateNote`, `cleanLabel`; how lists are ranked and capped: [docs/ranking.md](./docs/ranking.md)), tags and links (`derivedTags`, `countriesOf`, `flagOf`, `slugOf`, `tagValues`, `isNamespaced`, `TAG_NAMESPACES`, `NAMESPACED_TAG`, `VALID_TAG`, `wikipediaUrl`, `wikipediaPageUrl`; [docs/tags.md](./docs/tags.md)), caption templates (`render`, `renderHistory`, `renderRun`, `templatesFor`, `TEMPLATES`, `TEMPLATE_TYPES`; `renderRun` words a list so that neighbours never repeat), same-event merge (`mergeHistoryEvents`, `finalCaptionFromMatch`, `uniqueHistoryIds`), calendar-page drawings (`calendarIcon`, `calendarThemeOf`, `CALENDAR_THEMES`, `CALENDAR_THEME_LABELS`; [docs/calendar-icons.md](./docs/calendar-icons.md)), the core record and feed types, on-this-day consume types (`OnThisDayRecord`, `TeamRef`, `PersonRef`), and `SCHEMA_VERSION` and `VERSION`.
+The root export provides `isDate`, `monthDayOf`, `selectRecords`, `historyOnDate`, `quoteForDate`, `EXTRACT_CATEGORIES`, `FACT_CATEGORIES`, on-this-day helpers (`factsFor`, `today`, `calendarDayInZone`, `rankFeed`, `rankRecords`, `rankDay`, `bestOfDay`, `significance`, `randomFacts`, `tagsOf`, `kindTagsOf`, `uniqueRecordIds`, `withCaptions`, `captionFromFact`, `isRichFact`, `dayContext`, `factDate`, `dateNote`, `cleanLabel`; how lists are ranked and capped: [docs/ranking.md](./docs/ranking.md)), tags and links (`derivedTags`, `countriesOf`, `flagOf`, `slugOf`, `tagValues`, `isNamespaced`, `TAG_NAMESPACES`, `NAMESPACED_TAG`, `VALID_TAG`, `wikipediaUrl`, `wikipediaPageUrl`; [docs/tags.md](./docs/tags.md)), caption templates (`render`, `renderHistory`, `renderRun`, `templatesFor`, `TEMPLATES`, `TEMPLATE_TYPES`; `renderRun` words a list so that neighbours never repeat), same-event merge (`mergeHistoryEvents`, `finalCaptionFromMatch`, `uniqueHistoryIds`), calendar-page drawings (`calendarIcon`, `calendarThemeOf`, `CALENDAR_THEMES`, `CALENDAR_THEME_LABELS`; [docs/calendar-icons.md](./docs/calendar-icons.md)), display layouts (`displayMarkup`, `displayLayoutOf`, `displayKind`, `DISPLAY_LAYOUTS`, `DisplayItem`, `DisplayKind`, `DisplayLabels`, `DisplayLayout`, `DisplayOptions`; [docs/display-layouts.md](./docs/display-layouts.md)), the core record and feed types, on-this-day consume types (`OnThisDayRecord`, `TeamRef`, `PersonRef`), and `SCHEMA_VERSION` and `VERSION`.
 
 | Import | Contents |
 | --- | --- |
@@ -186,7 +194,7 @@ The root export provides `isDate`, `monthDayOf`, `selectRecords`, `historyOnDate
 | `@johnmorrisdotca/meigen-sports/offline` | `offline`, the best three to five facts for every calendar day, and `OFFLINE_BUILD`, the build they were chosen from |
 | `@johnmorrisdotca/meigen-sports/load` | `loadShard`, `loadDay`, `loadSport`, `loadEntity`, the facts loaders (`loadFactDay`, `loadCountry`, `queryFacts`, `queryFactIds`, `loadFactsById`, `findPeopleByName`, `loadVocabulary`, `loadTeamPicker`) and loader types |
 | `@johnmorrisdotca/meigen-sports/categories` | `HISTORY_TYPES` and its evidence/readiness descriptions |
-| `@johnmorrisdotca/meigen-sports/styles.css` | Optional rules for a `calendarIcon` SVG (`.meigen-cal`) |
+| `@johnmorrisdotca/meigen-sports/styles.css` | Optional rules for a `calendarIcon` SVG (`.meigen-cal`) and the four fact layouts |
 
 The shapes of a record (`MeigenRecord`, `OnThisDayRecord`, `PersonRef`, `TeamRef`) and the 46 history tags are in [docs/record-schema.md](./docs/record-schema.md) and [docs/categories.md](./docs/categories.md): one fact is stored once and may carry several tags, and an entity label is never an identity key.
 

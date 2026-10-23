@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 120" width="360" height="120" role="img" aria-label="Compact list">
+  <rect width="360" height="120" fill="#f7f4ef"/>
+  <text x="20" y="40" font-size="15" fill="#6a5e54" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="700">1995</text>
+  <text x="84" y="40" font-size="15" fill="#1a1510" font-family="ui-sans-serif,system-ui,sans-serif">A short line for one fact.</text>
+  <text x="20" y="72" font-size="15" fill="#6a5e54" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="700">1931</text>
+  <text x="84" y="72" font-size="15" fill="#1a1510" font-family="ui-sans-serif,system-ui,sans-serif">Another short line.</text>
+  <text x="20" y="104" font-size="15" fill="#6a5e54" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="700">1919</text>
+  <text x="84" y="104" font-size="15" fill="#1a1510" font-family="ui-sans-serif,system-ui,sans-serif">A third short line.</text>
+</svg>

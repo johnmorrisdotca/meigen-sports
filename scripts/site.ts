@@ -4,6 +4,7 @@ import { renderIndex, renderSources } from "./page.ts";
 rmSync("site", { recursive: true, force: true }); mkdirSync("site", { recursive: true });
 writeFileSync("site/index.html", renderIndex());
 for (const file of ["family.css", "site.css"]) cpSync(`demo/${file}`, `site/${file}`);
+cpSync("styles.css", "site/styles.css");
 cpSync("data", "site/data", { recursive: true }); cpSync("LICENSES", "site/LICENSES", { recursive: true });
 // The flags the demo draws beside a fact (`?flags=1`): Hata's own SVG files, for every country the facts name, and Hata's notice with them.
 mkdirSync("site/flags", { recursive: true });

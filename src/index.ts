@@ -8,6 +8,8 @@ export { EXTRACT_CATEGORIES, FACT_CATEGORIES } from "./schema.ts";
 export { SCHEMA_VERSION, VERSION } from "./version.ts";
 export { CALENDAR_THEMES, CALENDAR_THEME_LABELS, calendarIcon, calendarThemeOf } from "./calendarIcon.ts";
 export type { CalendarIconOptions, CalendarTheme } from "./calendarIcon.ts";
+export { DISPLAY_LAYOUTS, displayKind, displayLayoutOf, displayMarkup } from "./display.ts";
+export type { DisplayItem, DisplayKind, DisplayLabels, DisplayLayout, DisplayOptions } from "./display.ts";
 export { isDate, monthDayOf } from "./dates.ts";
 export { captionFromFact, isRichFact } from "./sentences.ts";
 export { cleanLabel, dateNote, dayContext, factDate, render, renderHistory, renderRun, templatesFor, TEMPLATES, TEMPLATE_TYPES } from "./templates/index.ts";
