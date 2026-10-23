@@ -1,4 +1,4 @@
-import { dateNote, factsFor, quoteForDate, rankFeed, renderRun, tagsOf, wikipediaUrl } from "../src/index.ts";
+import { CALENDAR_THEME_LABELS, CALENDAR_THEMES, calendarIcon, calendarThemeOf, dateNote, factsFor, quoteForDate, rankFeed, renderRun, tagsOf, wikipediaUrl } from "../src/index.ts";
 import { quotes } from "../src/data/quotes.ts";
 import { OFFLINE_BUILD, offline } from "../src/data/offline.ts";
 import { loadFactDay, loadFactEventsDay, loadFactPeopleDay, loadFactShard, loadShard } from "../src/load.ts";
@@ -149,6 +149,10 @@ const todayDots = document.querySelector<HTMLElement>("#today-dots")!;
 const leafMonth = document.querySelector<HTMLElement>("#leaf-month")!;
 const leafDay = document.querySelector<HTMLElement>("#leaf-day")!;
 const leafYear = document.querySelector<HTMLElement>("#leaf-year")!;
+const leafIcon = document.querySelector<HTMLElement>("#leaf-icon")!;
+const leaf = document.querySelector<HTMLElement>(".leaf")!;
+const optIcon = document.querySelector<HTMLSelectElement>("#opt-icon")!;
+const iconGallery = document.querySelector<HTMLElement>("#icon-gallery")!;
 // Flags and trophies beside the facts: two switches on the card, kept in the address (`?flags=1&trophies=1`), clickable while the card turns.
 const optFlags = document.querySelector<HTMLInputElement>("#opt-flags")!;
 const optTrophies = document.querySelector<HTMLInputElement>("#opt-trophies")!;
@@ -164,6 +168,66 @@ function applyMarks(keep: boolean) {
 applyMarks(false);
 optFlags.addEventListener("change", () => applyMarks(true));
 optTrophies.addEventListener("change", () => applyMarks(true));
+function iconScheme(): "light" | "dark" {
+  const forced = document.documentElement.dataset.theme;
+  if (forced === "dark" || forced === "light") return forced;
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+function iconLocale(): "en" | "ja" { return familyLang.lang === "ja" ? "ja" : "en"; }
+function fillIconSelect() {
+  const keep = calendarThemeOf(optIcon.value) ?? calendarThemeOf(addressed.get("icon")) ?? "";
+  optIcon.replaceChildren(new Option(familyLang.word("iconLeaf"), ""));
+  const lang = iconLocale();
+  for (const theme of CALENDAR_THEMES) {
+    const option = new Option(`${CALENDAR_THEME_LABELS[theme][lang]} / ${CALENDAR_THEME_LABELS[theme].en}`, theme);
+    optIcon.append(option);
+  }
+  optIcon.value = keep || "";
+}
+function leafDate() {
+  const now = new Date();
+  return { month: now.getMonth() + 1, day: now.getDate(), year: Number(leafYear.textContent) || now.getFullYear() };
+}
+function drawLeaf() {
+  const theme = calendarThemeOf(optIcon.value);
+  if (!theme) { leaf.removeAttribute("data-icon"); leafIcon.replaceChildren(); return; }
+  leaf.dataset.icon = theme;
+  const { month, day, year } = leafDate();
+  leafIcon.innerHTML = calendarIcon({ theme, month, day, year, locale: iconLocale(), scheme: iconScheme(), size: 96 });
+}
+function drawIconGallery() {
+  const lang = iconLocale();
+  const active = calendarThemeOf(optIcon.value);
+  const { month, day, year } = leafDate();
+  iconGallery.replaceChildren(...CALENDAR_THEMES.map((theme) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "icon-swatch";
+    button.dataset.testid = `icon-${theme}`;
+    button.dataset.theme = theme;
+    if (theme === active) button.setAttribute("aria-current", "true");
+    button.innerHTML = `${calendarIcon({ theme, month, day, year, locale: lang, scheme: iconScheme(), size: 88 })}<span>${CALENDAR_THEME_LABELS[theme][lang]}</span>`;
+    button.addEventListener("click", () => { optIcon.value = theme; applyIcon(true); });
+    return button;
+  }));
+}
+function applyIcon(keep: boolean) {
+  if (keep) {
+    const query = new URLSearchParams(location.search);
+    const theme = calendarThemeOf(optIcon.value);
+    if (theme) query.set("icon", theme); else query.delete("icon");
+    try { history.replaceState(null, "", `${location.pathname}${query.size ? `?${query}` : ""}${location.hash}`); } catch { /* the address stays as it is */ }
+  }
+  drawLeaf();
+  drawIconGallery();
+}
+fillIconSelect();
+optIcon.value = calendarThemeOf(addressed.get("icon")) ?? "";
+optIcon.addEventListener("change", () => applyIcon(true));
+window.addEventListener("meigen-language", () => { fillIconSelect(); applyIcon(false); });
+new MutationObserver(() => applyIcon(false)).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => applyIcon(false));
+applyIcon(false);
 let todayIndex = Math.max(0, Number.parseInt(addressed.get("fact") ?? "0", 10) || 0);
 let todayPlaying = !reducedMotion.matches && !addressed.has("fact") && addressed.get("play") === "1";
 /** True while the mouse is over the card: it plays, and leaving stops it. */
@@ -184,6 +248,7 @@ function showToday() {
   records.forEach((record, at) => { if (at === todayIndex) record.setAttribute("data-current", ""); else record.removeAttribute("data-current"); record.setAttribute("aria-hidden", String(at !== todayIndex)); });
   // The year of the fact on the card, beside the day: the reader never does the sum.
   leafYear.textContent = records[todayIndex]?.dataset.year ?? "";
+  drawLeaf();
   todayDots.replaceChildren(...records.map((_, at) => {
     const dot = document.createElement("button"); dot.type = "button"; dot.dataset.testid = `today-dot-${at}`;
     dot.setAttribute("aria-label", familyLang.word("todayDot").replace("{n}", String(at + 1)));

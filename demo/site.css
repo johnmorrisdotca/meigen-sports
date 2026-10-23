@@ -48,6 +48,25 @@
 html:not([data-flags="on"]) .mark-flag{display:none}
 html:not([data-trophies="on"]) .mark-trophy{display:none}
 html:not([data-flags="on"]):not([data-trophies="on"]) .marks{display:none}
+
+/* 0.12.0: named calendar-page drawings. The CSS leaf stays until ?icon= names one. */
+.leaf{position:relative}
+.leaf-icon{display:none}
+.leaf[data-icon]{background:transparent;border:0;box-shadow:none;overflow:visible}
+.leaf[data-icon] .leaf-icon{display:block}
+.leaf[data-icon] .leaf-icon svg{width:92px;height:auto}
+.leaf[data-icon] .leaf-month,.leaf[data-icon] .leaf-day,.leaf[data-icon] .leaf-year{position:absolute;inset:0;opacity:0}
+.today-options .icon-pick{display:grid;gap:6px;min-width:10rem}
+.icon-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(7.5rem,1fr));gap:12px;margin-top:14px}
+.icon-swatch{display:grid;justify-items:center;gap:8px;padding:12px 8px;border:1px solid var(--rule);border-radius:12px;background:var(--surface);color:var(--ink);min-height:48px;cursor:pointer}
+.icon-swatch svg{width:88px;height:auto}
+.icon-swatch span{font-size:.8rem;text-align:center}
+.icon-swatch[aria-current="true"]{outline:3px solid var(--accent);outline-offset:2px}
+@media(max-width:899px){
+  .today-card:has(.leaf[data-icon]){grid-template-columns:auto minmax(0,1fr)}
+  .leaf[data-icon]{width:72px}
+  .leaf[data-icon] .leaf-icon svg{width:72px}
+}
 html[data-flags="on"]:not([data-trophies="on"]) .marks:not(:has(.mark-flag)),html[data-trophies="on"]:not([data-flags="on"]) .marks:not(:has(.mark-trophy)){display:none}
 .today-options{display:flex;flex-wrap:wrap;gap:4px 18px;margin-top:8px}
 .today-options label{display:inline-flex;align-items:center;gap:8px;min-height:44px;cursor:pointer}

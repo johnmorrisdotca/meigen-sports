@@ -116,6 +116,7 @@ Use Meigen Sports in a site, app or research tool that needs cited historical sp
 - Versioned static JSON shards for calendar days, sports and stable entities, validated by an explicit loader.
 - Source rights and provenance travel with each row. The package's MIT code licence does not relicense its data. Source lifecycle and usage notes ship in `data-sources/sources.json` and `data-sources/README.md`.
 - Initial coverage includes all 964 matches from 22 FIFA World Cup editions (1930–2022), plus 88 published Wikidata event facts (10 World Cup start/end rows merged into the same-day match). The included sample does not contain collected player milestones or world records.
+- Ten original calendar-page drawings (`calendarIcon`, `CALENDAR_THEMES`): classic, outline, spiral, bold, tent, curl, pad, minimal, fold and tile. Each names the month, the day and an optional year, in light or dark. Optional CSS lives at `@johnmorrisdotca/meigen-sports/styles.css`. See [docs/calendar-icons.md](./docs/calendar-icons.md).
 
 ## Use it in your project
 
@@ -160,13 +161,22 @@ console.log(render(game, { asOf: "2026-07-04" }).text); // Pittsburgh Pirates be
 console.log(render(game, { asOf: "2026-10-20", locale: "ja" }).text); // 1945年7月4日、Pittsburgh PiratesがNew York Giantsに16対4で勝利した（MLB）。
 ```
 
+A calendar page is drawn as SVG. Pass the month, day and year; the library never reads the clock.
+
+```js
+import { CALENDAR_THEMES, calendarIcon, calendarThemeOf } from "@johnmorrisdotca/meigen-sports";
+console.log(CALENDAR_THEMES.length); // 10
+console.log(calendarThemeOf("classic")); // classic
+console.log(calendarIcon({ month: 3, day: 20, year: 2026, theme: "classic" }).includes("2026")); // true
+```
+
 ## Examples
 
 The snippets under **In 30 seconds** and **Use it in your project** are run by `pnpm test:readme` against the built package. A network load of the public feed is marked `no-run` until Pages is serving that version.
 
 ## API
 
-The root export provides `isDate`, `monthDayOf`, `selectRecords`, `historyOnDate`, `quoteForDate`, `EXTRACT_CATEGORIES`, `FACT_CATEGORIES`, on-this-day helpers (`factsFor`, `today`, `calendarDayInZone`, `rankFeed`, `rankRecords`, `rankDay`, `bestOfDay`, `significance`, `randomFacts`, `tagsOf`, `kindTagsOf`, `uniqueRecordIds`, `withCaptions`, `captionFromFact`, `isRichFact`, `dayContext`, `factDate`, `dateNote`, `cleanLabel`; how lists are ranked and capped: [docs/ranking.md](./docs/ranking.md)), tags and links (`derivedTags`, `countriesOf`, `flagOf`, `slugOf`, `tagValues`, `isNamespaced`, `TAG_NAMESPACES`, `NAMESPACED_TAG`, `VALID_TAG`, `wikipediaUrl`, `wikipediaPageUrl`; [docs/tags.md](./docs/tags.md)), caption templates (`render`, `renderHistory`, `renderRun`, `templatesFor`, `TEMPLATES`, `TEMPLATE_TYPES`; `renderRun` words a list so that neighbours never repeat), same-event merge (`mergeHistoryEvents`, `finalCaptionFromMatch`, `uniqueHistoryIds`), the core record and feed types, on-this-day consume types (`OnThisDayRecord`, `TeamRef`, `PersonRef`), and `SCHEMA_VERSION` and `VERSION`.
+The root export provides `isDate`, `monthDayOf`, `selectRecords`, `historyOnDate`, `quoteForDate`, `EXTRACT_CATEGORIES`, `FACT_CATEGORIES`, on-this-day helpers (`factsFor`, `today`, `calendarDayInZone`, `rankFeed`, `rankRecords`, `rankDay`, `bestOfDay`, `significance`, `randomFacts`, `tagsOf`, `kindTagsOf`, `uniqueRecordIds`, `withCaptions`, `captionFromFact`, `isRichFact`, `dayContext`, `factDate`, `dateNote`, `cleanLabel`; how lists are ranked and capped: [docs/ranking.md](./docs/ranking.md)), tags and links (`derivedTags`, `countriesOf`, `flagOf`, `slugOf`, `tagValues`, `isNamespaced`, `TAG_NAMESPACES`, `NAMESPACED_TAG`, `VALID_TAG`, `wikipediaUrl`, `wikipediaPageUrl`; [docs/tags.md](./docs/tags.md)), caption templates (`render`, `renderHistory`, `renderRun`, `templatesFor`, `TEMPLATES`, `TEMPLATE_TYPES`; `renderRun` words a list so that neighbours never repeat), same-event merge (`mergeHistoryEvents`, `finalCaptionFromMatch`, `uniqueHistoryIds`), calendar-page drawings (`calendarIcon`, `calendarThemeOf`, `CALENDAR_THEMES`, `CALENDAR_THEME_LABELS`; [docs/calendar-icons.md](./docs/calendar-icons.md)), the core record and feed types, on-this-day consume types (`OnThisDayRecord`, `TeamRef`, `PersonRef`), and `SCHEMA_VERSION` and `VERSION`.
 
 | Import | Contents |
 | --- | --- |
@@ -176,6 +186,7 @@ The root export provides `isDate`, `monthDayOf`, `selectRecords`, `historyOnDate
 | `@johnmorrisdotca/meigen-sports/offline` | `offline`, the best three to five facts for every calendar day, and `OFFLINE_BUILD`, the build they were chosen from |
 | `@johnmorrisdotca/meigen-sports/load` | `loadShard`, `loadDay`, `loadSport`, `loadEntity`, the facts loaders (`loadFactDay`, `loadCountry`, `queryFacts`, `queryFactIds`, `loadFactsById`, `findPeopleByName`, `loadVocabulary`, `loadTeamPicker`) and loader types |
 | `@johnmorrisdotca/meigen-sports/categories` | `HISTORY_TYPES` and its evidence/readiness descriptions |
+| `@johnmorrisdotca/meigen-sports/styles.css` | Optional rules for a `calendarIcon` SVG (`.meigen-cal`) |
 
 The shapes of a record (`MeigenRecord`, `OnThisDayRecord`, `PersonRef`, `TeamRef`) and the 46 history tags are in [docs/record-schema.md](./docs/record-schema.md) and [docs/categories.md](./docs/categories.md): one fact is stored once and may carry several tags, and an entity label is never an identity key.
 
@@ -187,7 +198,7 @@ What the current API does not yet expose (the record progression, all source evi
 
 ## Theming
 
-The library ships no colours, drawings or CSS. The demo follows the family's cloth switch (`demo/family.css`).
+Calendar pages are original SVG from `calendarIcon`. Optional layout rules ship as `@johnmorrisdotca/meigen-sports/styles.css`. The demo follows the family's cloth switch (`demo/family.css`) and keeps the chosen theme in `?icon=`.
 
 ## Accessibility
 
