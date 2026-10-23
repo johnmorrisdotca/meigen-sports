@@ -10,7 +10,7 @@
 .today-facts .record[data-current]{opacity:1;visibility:visible}
 .today-facts .record p:first-child{font-size:1.2rem;line-height:1.45}
 .today-bar{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin-top:12px}
-.today-bar button{min-width:44px;min-height:44px;padding:0 14px;border:1px solid var(--rule);border-radius:999px;background:var(--surface);color:var(--ink);font-weight:600;cursor:pointer}
+.today-bar button{min-width:48px;min-height:48px;padding:0 14px;border:1px solid var(--rule);border-radius:999px;background:var(--surface);color:var(--ink);font:inherit;font-weight:600;cursor:pointer}
 .today-bar #today-play[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
 .today-bar #today-play{min-width:6rem}
 .today-dots{display:inline-flex;gap:2px;margin-left:4px}
@@ -56,12 +56,12 @@ html:not([data-flags="on"]):not([data-trophies="on"]) .marks{display:none}
 .leaf[data-icon] .leaf-icon{display:block}
 .leaf[data-icon] .leaf-icon svg{width:92px;height:auto}
 .leaf[data-icon] .leaf-month,.leaf[data-icon] .leaf-day,.leaf[data-icon] .leaf-year{position:absolute;inset:0;opacity:0}
-.today-options .icon-pick{display:grid;gap:6px;min-width:10rem}
+.today-options .icon-pick{display:grid;gap:6px;flex:1 1 12rem;min-width:min(100%,12rem)}
 .icon-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(7.5rem,1fr));gap:12px;margin-top:14px}
 .icon-swatch{display:grid;justify-items:center;gap:8px;padding:12px 8px;border:1px solid var(--rule);border-radius:12px;background:var(--surface);color:var(--ink);min-height:48px;cursor:pointer}
 .icon-swatch svg{width:88px;height:auto}
 .icon-swatch span{font-size:.8rem;text-align:center}
-.icon-swatch[aria-current="true"]{outline:3px solid var(--accent);outline-offset:2px}
+.icon-swatch[aria-current="true"]{border-color:var(--ink);box-shadow:0 0 0 2px var(--ink)}
 #layout-host:empty{display:none}
 .today-card[data-layout="years"] .today-facts,.today-card[data-layout="years"] .today-bar,.today-card[data-layout="compact"] .today-facts,.today-card[data-layout="compact"] .today-bar,.today-card[data-layout="featured"] .today-facts,.today-card[data-layout="featured"] .today-bar{display:none}
 @media(max-width:899px){
@@ -70,10 +70,20 @@ html:not([data-flags="on"]):not([data-trophies="on"]) .marks{display:none}
   .leaf[data-icon] .leaf-icon svg{width:72px}
 }
 html[data-flags="on"]:not([data-trophies="on"]) .marks:not(:has(.mark-flag)),html[data-trophies="on"]:not([data-flags="on"]) .marks:not(:has(.mark-trophy)){display:none}
-.today-options{display:flex;flex-wrap:wrap;gap:4px 18px;margin-top:8px}
-.today-options label{display:inline-flex;align-items:center;gap:8px;min-height:44px;cursor:pointer}
-.today-options input{width:1.3em;height:1.3em;min-height:0;accent-color:var(--ink)}
+.today-options{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:8px}
+.today-options .opt-chip{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 16px;border:1px solid var(--rule);border-radius:999px;background:var(--surface);color:var(--ink);font-weight:600;cursor:pointer}
+.today-options .opt-chip:has(input:checked){background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.today-options input[type=checkbox]{-webkit-appearance:none;appearance:none;width:22px;height:22px;min-height:0;margin:0;padding:0;border:2px solid currentColor;border-radius:6px;background:transparent;flex:none}
+.today-options .opt-chip:has(input:checked) input{background:var(--surface);border-color:var(--surface)}
 .today-facts .record p:first-child .marks{margin-right:.6em}
 /* 0.11.0: a date Wikidata disagrees about. */
 .disputed{position:relative;display:inline-block;vertical-align:middle;font-size:.75rem;line-height:1.2;border:1px dashed var(--muted);border-radius:999px;padding:2px 8px;margin-left:.2em;color:var(--muted);cursor:help;white-space:nowrap}
 .disputed:hover::after,.disputed:focus::after{content:attr(data-note);position:absolute;left:0;top:calc(100% + 6px);z-index:6;width:max-content;max-width:min(22rem,calc(100vw - 48px));white-space:normal;padding:8px 10px;border:1px solid var(--rule);border-radius:10px;background:var(--surface);color:var(--ink);font-size:.8rem;line-height:1.35;box-shadow:0 8px 24px rgb(0 0 0/.18)}
+
+/* 0.13.1: every menu and tick uses the same pills as the buttons. WebKit ignores inline-flex on a select, so these stay inline-block at 48px. */
+.controls select,.fav-panel select,.feed-filters select,.today-options select{-webkit-appearance:none;appearance:none;display:inline-block;box-sizing:border-box;height:48px;min-height:48px;padding:0 34px 0 14px;border:1px solid var(--rule);border-radius:999px;background-color:var(--surface);color:var(--ink);font:inherit;font-weight:600;background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);background-position:calc(100% - 18px) 22px,calc(100% - 13px) 22px;background-size:5px 5px;background-repeat:no-repeat}
+.controls button,.fav-panel button,.random-panel button,.icon-swatch{min-height:48px}
+.fav-panel label.check{display:flex;align-items:center;gap:10px;min-height:48px}
+.fav-panel input[type=checkbox]{-webkit-appearance:none;appearance:none;width:22px;height:22px;min-height:0;margin:0;padding:0;border:2px solid var(--rule);border-radius:6px;background:var(--surface);accent-color:auto;flex:none}
+.fav-panel input[type=checkbox]:checked{background:var(--ink);border-color:var(--ink)}
+@media(max-width:680px){.today-options .icon-pick{flex-basis:100%}.today-options select{width:100%}}

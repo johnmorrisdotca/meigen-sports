@@ -52,6 +52,11 @@
   opacity: 0;
   width: 1px;
   height: 1px;
+  -webkit-appearance: none;
+  appearance: none;
+  border: 0;
+  background: transparent;
+  border-radius: 999px;
 }
 
 .meigen-tab {

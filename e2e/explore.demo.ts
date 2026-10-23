@@ -136,8 +136,13 @@ test("a person and a club are picked by name, and the address keeps them", async
   // The keyboard picks too.
   await person.fill("");
   await person.pressSequentially("ovech");
-  await expect(page.locator("#fav-person-list [role=option]", { hasText: "Ovechkin" }).first()).toBeVisible();
-  await page.keyboard.press("ArrowDown"); await page.keyboard.press("Enter");
+  const suggestions = page.locator("#fav-person-list");
+  await expect(suggestions).toHaveAttribute("data-query", "ovech");
+  const ovechkin = suggestions.locator("[role=option]", { hasText: "Ovechkin" }).first();
+  await expect(ovechkin).toBeVisible();
+  await person.press("ArrowDown");
+  await expect(ovechkin).toHaveAttribute("aria-selected", "true");
+  await person.press("Enter");
   await expect(person).toHaveValue(/Ovechkin/);
   // A club by name.
   await person.fill("");
