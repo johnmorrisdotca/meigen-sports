@@ -15,7 +15,7 @@ Ten original calendar-page drawings. Each is SVG from `calendarIcon`. No photogr
 | `fold` | Fold | 折り角 | ![Fold](images/calendar-fold.svg) |
 | `tile` | Tile | タイル | ![Tile](images/calendar-tile.svg) |
 
-The Japanese names have not yet been read by a person who reads Japanese.
+The Japanese names were read. Spiral is スパイラル綴じ (a coil binding). Minimal is ミニマル. The gallery intro names the URL example `?icon=classic`.
 
 ```js no-run
 import { calendarIcon } from "@johnmorrisdotca/meigen-sports";
