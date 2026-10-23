@@ -179,7 +179,7 @@ function fillIconSelect() {
   optIcon.replaceChildren(new Option(familyLang.word("iconLeaf"), ""));
   const lang = iconLocale();
   for (const theme of CALENDAR_THEMES) {
-    const option = new Option(`${CALENDAR_THEME_LABELS[theme][lang]} / ${CALENDAR_THEME_LABELS[theme].en}`, theme);
+    const option = new Option(CALENDAR_THEME_LABELS[theme][lang], theme);
     optIcon.append(option);
   }
   optIcon.value = keep || "";

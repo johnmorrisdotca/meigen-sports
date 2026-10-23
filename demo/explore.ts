@@ -52,7 +52,7 @@ function combo<T>(input: HTMLInputElement, list: HTMLUListElement, find: (text: 
   let items: T[] = [];
   let active = -1;
   let ticket = 0;
-  const close = (): void => { list.hidden = true; input.setAttribute("aria-expanded", "false"); active = -1; input.removeAttribute("aria-activedescendant"); };
+  const close = (): void => { list.hidden = true; input.setAttribute("aria-expanded", "false"); active = -1; input.removeAttribute("aria-activedescendant"); delete list.dataset.query; };
   const mark = (): void => {
     [...list.children].forEach((li, at) => { li.setAttribute("aria-selected", String(at === active)); if (at === active) input.setAttribute("aria-activedescendant", li.id); });
   };
@@ -80,7 +80,7 @@ function combo<T>(input: HTMLInputElement, list: HTMLUListElement, find: (text: 
     const text = input.value.trim();
     if (!text) { items = []; close(); pick(null); return; }
     const mine = ++ticket;
-    void find(text).then((found) => { if (mine !== ticket) return; items = found; active = -1; open(); }).catch(() => { items = []; close(); });
+    void find(text).then((found) => { if (mine !== ticket) return; items = found; active = -1; list.dataset.query = text; open(); }).catch(() => { items = []; close(); });
   });
   input.addEventListener("keydown", (event) => {
     if (event.key === "ArrowDown" && items.length) { event.preventDefault(); active = (active + 1) % items.length; mark(); }

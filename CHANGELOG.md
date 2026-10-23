@@ -4,6 +4,11 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+## [0.13.1] - 2026-10-23
+
+- Demo: the today card's Flags and Trophies switches, and the calendar-icon and layout menus, use the same pills as the other buttons (48 px, the page's colours, light and dark, wrapping on a phone). Each drawing is named once, in the language of the page. The chosen drawing's highlight follows the card's corners. `e2e/controls.demo.ts` fails when a visible button, select, checkbox or radio is still the browser's own control.
+- The person search waits until the suggestion list for the typed name is in place before a key chooses it.
+
 ## [0.13.0] - 2026-10-23
 
 - Layouts: four ways to show a day's facts (`displayMarkup`, `displayLayoutOf`, `displayKind`, `DISPLAY_LAYOUTS`): a calendar card, a year list with Events, Births and Deaths, a compact list, and one featured fact. The helpers return HTML and do not word a sentence. Optional rules are in `@johnmorrisdotca/meigen-sports/styles.css` (colours follow the page). The demo keeps the choice in `?layout=calendar|years|compact|featured`. [docs/display-layouts.md](docs/display-layouts.md).
