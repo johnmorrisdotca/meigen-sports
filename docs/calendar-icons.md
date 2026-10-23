@@ -6,12 +6,12 @@ Ten original calendar-page drawings. Each is SVG from `calendarIcon`. No photogr
 | --- | --- | --- | --- |
 | `classic` | Classic | クラシック | ![Classic](images/calendar-classic.svg) |
 | `outline` | Outline | 線画 | ![Outline](images/calendar-outline.svg) |
-| `spiral` | Spiral | リング綴じ | ![Spiral](images/calendar-spiral.svg) |
+| `spiral` | Spiral | スパイラル綴じ | ![Spiral](images/calendar-spiral.svg) |
 | `bold` | Bold | 太枠 | ![Bold](images/calendar-bold.svg) |
 | `tent` | Tent | 卓上 | ![Tent](images/calendar-tent.svg) |
 | `curl` | Curl | めくり | ![Curl](images/calendar-curl.svg) |
 | `pad` | Pad | 日めくり | ![Pad](images/calendar-pad.svg) |
-| `minimal` | Minimal | 数字 | ![Minimal](images/calendar-minimal.svg) |
+| `minimal` | Minimal | ミニマル | ![Minimal](images/calendar-minimal.svg) |
 | `fold` | Fold | 折り角 | ![Fold](images/calendar-fold.svg) |
 | `tile` | Tile | タイル | ![Tile](images/calendar-tile.svg) |
 

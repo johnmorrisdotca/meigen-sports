@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 160" width="360" height="160" role="img" aria-label="Year list">
+  <rect width="360" height="160" fill="#f7f4ef"/>
+  <rect x="16" y="16" width="88" height="32" rx="16" fill="#1a1510"/>
+  <text x="60" y="37" text-anchor="middle" font-size="13" fill="#f7f4ef" font-family="ui-sans-serif,system-ui,sans-serif">Events</text>
+  <rect x="112" y="16" width="80" height="32" rx="16" fill="none" stroke="#6a5e54"/>
+  <text x="152" y="37" text-anchor="middle" font-size="13" fill="#1a1510" font-family="ui-sans-serif,system-ui,sans-serif">Births</text>
+  <rect x="200" y="16" width="80" height="32" rx="16" fill="none" stroke="#6a5e54"/>
+  <text x="240" y="37" text-anchor="middle" font-size="13" fill="#1a1510" font-family="ui-sans-serif,system-ui,sans-serif">Deaths</text>
+  <text x="24" y="84" font-size="16" fill="#1a1510" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="700">1995</text>
+  <text x="96" y="84" font-size="16" fill="#1a1510" font-family="ui-sans-serif,system-ui,sans-serif">The fact for that year.</text>
+  <text x="24" y="120" font-size="16" fill="#1a1510" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="700">1967</text>
+  <text x="96" y="120" font-size="16" fill="#1a1510" font-family="ui-sans-serif,system-ui,sans-serif">An earlier fact, under it.</text>
+</svg>

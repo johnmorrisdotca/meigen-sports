@@ -1,4 +1,4 @@
-import { CALENDAR_THEME_LABELS, CALENDAR_THEMES, calendarIcon, calendarThemeOf, dateNote, factsFor, quoteForDate, rankFeed, renderRun, tagsOf, wikipediaUrl } from "../src/index.ts";
+import { CALENDAR_THEME_LABELS, CALENDAR_THEMES, calendarIcon, calendarThemeOf, dateNote, displayKind, displayLayoutOf, displayMarkup, DISPLAY_LAYOUTS, factsFor, quoteForDate, rankFeed, renderRun, tagsOf, wikipediaUrl } from "../src/index.ts";
 import { quotes } from "../src/data/quotes.ts";
 import { OFFLINE_BUILD, offline } from "../src/data/offline.ts";
 import { loadFactDay, loadFactEventsDay, loadFactPeopleDay, loadFactShard, loadShard } from "../src/load.ts";
@@ -224,10 +224,47 @@ function applyIcon(keep: boolean) {
 fillIconSelect();
 optIcon.value = calendarThemeOf(addressed.get("icon")) ?? "";
 optIcon.addEventListener("change", () => applyIcon(true));
-window.addEventListener("meigen-language", () => { fillIconSelect(); applyIcon(false); });
+window.addEventListener("meigen-language", () => { fillIconSelect(); applyIcon(false); fillLayoutSelect(); applyLayout(false); });
 new MutationObserver(() => applyIcon(false)).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
 window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => applyIcon(false));
 applyIcon(false);
+const optLayout = document.querySelector<HTMLSelectElement>("#opt-layout")!;
+const layoutHost = document.querySelector<HTMLElement>("#layout-host")!;
+const LAYOUT_COUNT = 24;
+let layoutItems: { text: string; year?: string; kind: ReturnType<typeof displayKind> }[] = [];
+function fillLayoutSelect() {
+  const keep = displayLayoutOf(optLayout.value) ?? displayLayoutOf(addressed.get("layout")) ?? "calendar";
+  optLayout.replaceChildren(...DISPLAY_LAYOUTS.map((layout) => new Option(familyLang.word(`layout-${layout}`), layout)));
+  optLayout.value = keep;
+}
+function drawLayout() {
+  const layout = displayLayoutOf(optLayout.value) ?? "calendar";
+  const card = document.querySelector<HTMLElement>(".today-card")!;
+  if (layout === "calendar") {
+    card.removeAttribute("data-layout");
+    layoutHost.replaceChildren();
+    return;
+  }
+  card.dataset.layout = layout;
+  const { month, day, year } = leafDate();
+  const icon = calendarIcon({ theme: calendarThemeOf(optIcon.value) ?? "classic", month, day, year, locale: iconLocale(), scheme: iconScheme(), size: 96 });
+  layoutHost.innerHTML = displayMarkup({
+    layout, items: layoutItems, icon, name: "today-kind",
+    labels: { events: familyLang.word("layoutEvents"), births: familyLang.word("layoutBirths"), deaths: familyLang.word("layoutDeaths") },
+  });
+}
+function applyLayout(keep: boolean) {
+  if (keep) {
+    const query = new URLSearchParams(location.search);
+    const layout = displayLayoutOf(optLayout.value);
+    if (layout && layout !== "calendar") query.set("layout", layout); else query.delete("layout");
+    try { history.replaceState(null, "", `${location.pathname}${query.size ? `?${query}` : ""}${location.hash}`); } catch { /* the address stays as it is */ }
+  }
+  drawLayout();
+}
+fillLayoutSelect();
+optLayout.value = displayLayoutOf(addressed.get("layout")) ?? "calendar";
+optLayout.addEventListener("change", () => applyLayout(true));
 let todayIndex = Math.max(0, Number.parseInt(addressed.get("fact") ?? "0", 10) || 0);
 let todayPlaying = !reducedMotion.matches && !addressed.has("fact") && addressed.get("play") === "1";
 /** True while the mouse is over the card: it plays, and leaving stops it. */
@@ -287,15 +324,23 @@ async function renderToday() {
   leafMonth.textContent = new Intl.DateTimeFormat(locale, { month: "short" }).format(now);
   leafDay.textContent = String(now.getDate());
   const day = monthDayLocal(now);
-  let facts: OnThisDayRecord[] = [];
+  let pool: readonly OnThisDayRecord[] = [];
   try {
     // One request: today's day shard from the Pages feeds.
-    facts = rankFeed((await loadFactDay(`${now.getFullYear()}-${day}`, localFeed())).records, TODAY_COUNT);
+    pool = (await loadFactDay(`${now.getFullYear()}-${day}`, localFeed())).records;
     noteFeeds("today", false);
   } catch { noteFeeds("today", true); }
-  if (!facts.length) facts = rankFeed(factsFor(offline, { date: day }), TODAY_COUNT);
+  if (!pool.length) pool = factsFor(offline, { date: day });
+  const facts = rankFeed(pool, TODAY_COUNT);
+  const wider = rankFeed(pool, LAYOUT_COUNT);
+  const worded = new Map(renderRun(wider, { seed: nextSeed(), locale, asOf: `${now.getFullYear()}-${day}` }).map((row) => [row.recordId, row.text]));
+  layoutItems = wider.flatMap((fact) => {
+    const text = worded.get(fact.recordId);
+    return text ? [{ text, year: fact.eventDate?.slice(0, 4), kind: displayKind(fact.category) }] : [];
+  });
   drawFacts(todayBox, facts, `${now.getFullYear()}-${day}`);
   showToday();
+  drawLayout();
   todayStatus.textContent = facts.length < TODAY_COUNT ? familyLang.word("todayFew") : `${facts.length} ${familyLang.word("results")}`;
 }
 let randomGeneration = 0;
