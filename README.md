@@ -12,7 +12,107 @@ A typed data package with no runtime dependencies. Read the included data offlin
   <img alt="TypeScript" src="https://img.shields.io/badge/types-TypeScript-3178c6">
 </p>
 
-<p align="center"><a href="https://johnmorrisdotca.github.io/meigen-sports/"><strong>Open the demo →</strong></a> · <a href="./NOTICE.md">Sources</a> · <a href="./docs/record-schema.md">Record schema</a> · <a href="./docs/templates.md">Templates</a> · <a href="./docs/categories.md">History tags</a> · <a href="./docs/history-model.md">History model</a> · <a href="./docs/data-pipeline.md">Pipeline</a> · <a href="./docs/demo.md">The demo in pictures</a></p>
+<p align="center"><a href="https://johnmorrisdotca.github.io/meigen-sports/"><strong>Open the demo →</strong></a> · <a href="./NOTICE.md">Sources</a> · <a href="./docs/record-schema.md">Record schema</a> · <a href="./docs/templates.md">Templates</a> · <a href="./docs/categories.md">History tags</a> · <a href="./docs/history-model.md">History model</a> · <a href="./docs/data-pipeline.md">Pipeline</a> · <a href="./docs/demo.md">The demo in pictures</a> · <a href="./docs/calendar-gallery.md">Calendar gallery</a> · <a href="./docs/calendar-icons.md">Calendar icons</a> · <a href="./docs/display-layouts.md">Layouts</a></p>
+
+<p align="center">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/hero-icons-dark.webp">
+<img alt="A today card for October 20 with a red pinned calendar page and the sentence for Mickey Mantle's birthday, over all fourteen calendar-page themes in a grid: pins, loops, long shadow, heavy, cartoon, flip, stack, line, curl, soft, desk, thin, frame and badge." src="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/hero-icons-light.webp" width="760">
+</picture>
+<br><em>A today card, and the fourteen calendar pages, all drawn by <code>calendarIcon</code>: the same fact on October 20.</em>
+</p>
+
+## The best of it
+
+The pictures of calendar pages, layouts, cards, banners and sports are drawn by the package's own functions (`pnpm images:showcase` draws them again), each in light and dark.
+
+- **Fourteen calendar pages** (`calendarIcon`): pins, loops, long shadow, heavy, cartoon, flip, stack, line, curl, soft, desk, thin, frame and badge, each in light and dark, in English and Japanese, from 16 to 1024 pixels wide. [Every theme at every size and date](./docs/calendar-gallery.md) · [Gallery in Japanese](./docs/calendar-gallery.ja.md) · [how each is drawn](./docs/calendar-icons.md).
+
+<p align="center">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/themes-dark.webp">
+<img alt="All fourteen calendar pages in two rows of seven, each named under its picture: pins, loops, long shadow, heavy, cartoon, flip, stack, line, curl, soft, desk, thin, frame and badge, for March 20, 2026." src="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/themes-light.webp" width="760">
+</picture>
+<br><em>Fourteen themes, one call each.</em>
+</p>
+
+```js
+import { CALENDAR_THEMES, calendarIcon } from "@johnmorrisdotca/meigen-sports";
+
+const row = CALENDAR_THEMES.map((theme) => calendarIcon({ theme, month: 3, day: 20, year: 2026, scheme: "dark", size: 96 }));
+console.log(row.length); // 14
+console.log(CALENDAR_THEMES.join(" ")); // pins loops shadow heavy cartoon flip stack line curl soft desk thin frame badge
+```
+
+- **Four ways to lay out a day** (`displayMarkup`): a calendar card, a year list of events, births and deaths, a compact list, and one featured fact. The helpers return HTML; the optional `styles.css` colours it from the page ([layouts](./docs/display-layouts.md)).
+
+<p align="center">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/layouts-dark.webp">
+<img alt="Four layouts of November 20 facts in two columns: a calendar card with a pinned page and three facts, a compact list of four years, a year list with Events, Births and Deaths tabs, and one large featured fact." src="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/layouts-light.webp" width="760">
+</picture>
+<br><em>The four layouts over the same day.</em>
+</p>
+
+```js
+import { DISPLAY_LAYOUTS, displayMarkup } from "@johnmorrisdotca/meigen-sports";
+
+const items = [{ text: "The 2011 MLS Cup went to LA Galaxy, who beat Houston Dynamo 1–0.", year: "2011" }];
+console.log(DISPLAY_LAYOUTS.join(" ")); // calendar years compact featured
+console.log(displayMarkup({ layout: "featured", items }).includes("2011 MLS Cup")); // true
+```
+
+- **Today cards**: the day's facts, worded for the day they are read on, beside a calendar page in any theme and either language. `today` picks the day in the reader's time zone; the library never reads the clock.
+
+<p align="center">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/today-dark.webp">
+<img alt="Three today cards: October 20 with a pins page and Mickey Mantle's birthday, November 20 with a desk page and the 2022 Grey Cup, and July 4 with a line page and the 1954 World Cup in Japanese." src="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/today-light.webp" width="760">
+</picture>
+<br><em>Three days, three themes, one in Japanese.</em>
+</p>
+
+```js
+import { calendarDayInZone, calendarIcon, displayMarkup, renderRun, today } from "@johnmorrisdotca/meigen-sports";
+import offline from "@johnmorrisdotca/meigen-sports/offline";
+
+const now = "2026-10-20T15:00:00Z";
+const [month, day] = calendarDayInZone("America/Toronto", now).split("-").map(Number);
+const facts = renderRun(today(offline, "America/Toronto", now).slice(0, 3), { seed: "card", locale: "en", asOf: "2026-10-20" });
+const card = displayMarkup({ layout: "calendar", icon: calendarIcon({ theme: "pins", month, day, year: 2026 }), items: facts.map((fact) => ({ text: fact.text })) });
+console.log(month, day); // 10 20
+console.log(facts.length, card.includes("meigen-cal")); // 3 true
+```
+
+- **Banners**: an icon beside one featured fact, as wide as the page. Two lines of your own CSS, no new API ([how](./docs/display-layouts.md#banners)).
+
+<p align="center">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/banners-dark.webp">
+<img alt="Three wide banners, each a calendar page beside one large fact with its year: a long-shadow page for Katie Ledecky's birthday, a heavy page for the 1954 World Cup final and a soft page for Rickey Henderson's birthday." src="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/banners-light.webp" width="760">
+</picture>
+<br><em>A banner is an icon and the featured layout.</em>
+</p>
+
+- **Facts by sport**: every sport has its own feed (`loadFactShard("feeds/sports/<sport>.json")`, 253 sports), one small file each, so a site fetches only the sports it shows. Cards of six of them, each drawn on the page of its own day:
+
+<p align="center">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/sports-dark.webp">
+<img alt="Six cards, each the best short fact of a sport on the calendar page of its own day: hockey with loops, baseball with cartoon, basketball with flip, soccer with frame, football with curl and tennis with badge." src="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/sports-light.webp" width="760">
+</picture>
+<br><em>Hockey, baseball, basketball, soccer, football and tennis.</em>
+</p>
+
+- **Today in sports history**: 103,592 facts on all 366 calendar days, each with a sport, its people and teams, and its source. Among them are **44,922 births and deaths of sports people** in 146 sports, from the Wikidata dump (CC0), each with its Q id: a day's people are of every sport, not only the five leagues ([coverage of people](./docs/coverage-people.md)); and **28,205 events and competition editions** (the Olympic Games, World Cups, Grand Prix, Giro, Wimbledon and the rest: began, ended or took place on the day, with the place and the winner where Wikidata states them) ([coverage of events](./docs/coverage-events.md)).
+
+- **Birthdays, deaths and finals as sentences**, with the club and honours, the score and venue, the title and the season's record; neighbours in a list never share a template (`renderRun`). A fact read on a day that is not its own says its full date ("On July 4, 1945, …", "born on July 7, 1960"); "today" and "on this day" are for its own day only, and a missing value is never printed as "(none)".
+
+- **An offline set in the package**: 1,510 facts, three to five for every day, so `today()` works with no network ([offline](#what-is-bundled-and-what-loads-from-pages)).
+
+- **Tags for everything a fact is about, and a flag where it is unambiguous**: every fact carries `sport:handball`, `country:RO`, `decade:1990s`, `award:hart-memorial-trophy`, `honour:champion` and more in its `tags`, each built from a field the fact holds and never guessed ([the vocabulary and its counts](./docs/tags.md)). A person has the countries Wikidata gives (`countries`, ISO 3166), a `flag` code only when he represents one country, a `birthCountry`, and the titles of his Wikipedia articles (`wikipediaUrl` builds the address in the reader's language, English next, then Wikidata); a game of two teams of one country has its flag too (`flagOf`). `queryFacts({ country: "RO", day: "03-04" })` is the Romanian facts of a calendar day, from static indexes of ids; `findPeopleByName` finds a person by first or last name in one small file. No tag says sex, gender, ethnicity, religion, politics, family or health. The demo can draw a flag and the very trophy beside a fact (`trophy` names the emblem; [which awards have a likeness](./docs/tags.md#trophies)): `?flags=1&trophies=1`.
+- **A date Wikidata itself disagrees about is marked, not hidden**: where Wikidata holds two or more equal-rank values for a birth or a death and names no preferred one, the fact keeps the date it had, says `dateDisputed: true`, lists the other days (`dateAlternatives`, and `birthDateAlternatives` / `deathDateAlternatives` for a date it only carries), carries the tag `date:disputed` and a short `dateNote`; 716 facts of 524 people. A sentence never says "today" unless every alternative falls on that month and day, and the demo shows a small "date disputed" marker with the other days in its tooltip. The list is [`data-sources/disputed-dates.json`](./data-sources/disputed-dates.json), made by `pipeline/audit_dates.py`.
+- **Feeds by team, player, sport and tag**, and **the people and the events of each day across sports**: one small static file each, loaded with `loadFactShard` (`loadFactPeopleDay` for a day's people: up to forty births and deaths, at most three of one sport; `loadFactEventsDay` for its events, the same), so a site fetches only what it shows.
 
 <p align="center">
 <img alt="The Meigen Sports demo on a desk: a date, a sport, a quotation and on-this-day facts." src="docs/images/hero-desktop.png" width="720">
@@ -28,50 +128,6 @@ A typed data package with no runtime dependencies. Read the included data offlin
 </td>
 </tr>
 </table>
-
-## The best of it
-
-- **Today in sports history**: 103,592 facts on all 366 calendar days, each with a sport, its people and teams, and its source. Among them are **44,922 births and deaths of sports people** in 146 sports, from the Wikidata dump (CC0), each with its Q id: a day's people are of every sport, not only the five leagues ([coverage of people](./docs/coverage-people.md)); and **28,205 events and competition editions** (the Olympic Games, World Cups, Grand Prix, Giro, Wimbledon and the rest: began, ended or took place on the day, with the place and the winner where Wikidata states them) ([coverage of events](./docs/coverage-events.md)).
-
-<p align="center">
-<picture>
-<source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/hero-today-dark.webp">
-<img alt="A calendar card turning from one day of the year to the next, each day with a fact from sports history: a 1967 football final, birthdays of Julius Erving and Katie Ledecky, the 1954 World Cup, Mickey Mantle's birthday, a Grey Cup." src="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/hero-today-light.webp" width="760">
-</picture>
-<br><em>Today in sports history, a day at a time: 103,592 facts on all 366 days, each with its source.</em>
-</p>
-
-- **Birthdays, deaths and finals as sentences**, with the club and honours, the score and venue, the title and the season's record; neighbours in a list never share a template (`renderRun`). A fact read on a day that is not its own says its full date ("On July 4, 1945, …", "born on July 7, 1960"); "today" and "on this day" are for its own day only, and a missing value is never printed as "(none)".
-
-<p align="center">
-<picture>
-<source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/sentences-dark.webp">
-<img alt="Four fact cards one after another, each a sentence with its tag and source: Mickey Mantle's birthday, the 2022 Grey Cup with its score, venue and title count, the 1967 AFL Championship, and Mike Bossy's death." src="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/sentences-light.webp" width="720">
-</picture>
-<br><em>Four of the sentences the facts are worded into.</em>
-</p>
-
-- **An offline set in the package**: 1,510 facts, three to five for every day, so `today()` works with no network ([offline](#what-is-bundled-and-what-loads-from-pages)).
-
-<p align="center">
-<picture>
-<source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/offline-dark.webp">
-<img alt="A year as twelve rows of days filling in month by month, each day shaded by how many bundled facts it holds, with a count rising to 1,510 facts." src="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/offline-light.webp" width="720">
-</picture>
-<br><em>The bundled offline set, a month at a time.</em>
-</p>
-
-- **Tags for everything a fact is about, and a flag where it is unambiguous**: every fact carries `sport:handball`, `country:RO`, `decade:1990s`, `award:hart-memorial-trophy`, `honour:champion` and more in its `tags`, each built from a field the fact holds and never guessed ([the vocabulary and its counts](./docs/tags.md)). A person has the countries Wikidata gives (`countries`, ISO 3166), a `flag` code only when he represents one country, a `birthCountry`, and the titles of his Wikipedia articles (`wikipediaUrl` builds the address in the reader's language, English next, then Wikidata); a game of two teams of one country has its flag too (`flagOf`). `queryFacts({ country: "RO", day: "03-04" })` is the Romanian facts of a calendar day, from static indexes of ids; `findPeopleByName` finds a person by first or last name in one small file. No tag says sex, gender, ethnicity, religion, politics, family or health. The demo can draw a flag and the very trophy beside a fact (`trophy` names the emblem; [which awards have a likeness](./docs/tags.md#trophies)): `?flags=1&trophies=1`.
-- **A date Wikidata itself disagrees about is marked, not hidden**: where Wikidata holds two or more equal-rank values for a birth or a death and names no preferred one, the fact keeps the date it had, says `dateDisputed: true`, lists the other days (`dateAlternatives`, and `birthDateAlternatives` / `deathDateAlternatives` for a date it only carries), carries the tag `date:disputed` and a short `dateNote`; 716 facts of 524 people. A sentence never says "today" unless every alternative falls on that month and day, and the demo shows a small "date disputed" marker with the other days in its tooltip. The list is [`data-sources/disputed-dates.json`](./data-sources/disputed-dates.json), made by `pipeline/audit_dates.py`.
-- **Feeds by team, player, sport and tag**, and **the people and the events of each day across sports**: one small static file each, loaded with `loadFactShard` (`loadFactPeopleDay` for a day's people: up to forty births and deaths, at most three of one sport; `loadFactEventsDay` for its events, the same), so a site fetches only what it shows.
-
-<p align="center">
-<picture>
-<source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/feeds-dark.webp">
-<img alt="The four kinds of feed in turn, each with the call that loads it, its fact count and size, and sentences from it: a team, a player, a sport and a tag." src="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/feeds-light.webp" width="720">
-</picture>
-<br><em>One request for each: a team, a player, a sport, a tag.</em>
-</p>
 
 ## In 30 seconds
 
@@ -117,6 +173,58 @@ Use Meigen Sports in a site, app or research tool that needs cited historical sp
 - Source rights and provenance travel with each row. The package's MIT code licence does not relicense its data. Source lifecycle and usage notes ship in `data-sources/sources.json` and `data-sources/README.md`.
 - Initial coverage includes all 964 matches from 22 FIFA World Cup editions (1930–2022), plus 88 published Wikidata event facts (10 World Cup start/end rows merged into the same-day match). The included sample does not contain collected player milestones or world records.
 - Fourteen original calendar-page drawings (`calendarIcon`, `CALENDAR_THEMES`, `CALENDAR_THEME_ALIASES`): pins, loops, shadow, heavy, cartoon, flip, stack, line, curl, soft, desk, thin, frame and badge; the ten names of 0.12 still work. Each names the date in the way its look does, in light or dark. Optional CSS lives at `@johnmorrisdotca/meigen-sports/styles.css`. See [docs/calendar-icons.md](./docs/calendar-icons.md).
+
+## Moving pictures
+
+Slow on purpose (half speed), and in a row only the centre one moves.
+
+<p align="center">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/centre-days-dark.webp">
+<img alt="A row of seven calendar pages for March 20, where only the centre flip page changes, day by day from February 26 to March 3." src="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/centre-days-light.webp" width="760">
+</picture>
+<br><em>The centre page turns from day to day; the others stay.</em>
+</p>
+
+<p align="center">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/centre-themes-dark.webp">
+<img alt="A row of seven calendar pages for March 20, where only the centre page changes, through all fourteen themes in turn." src="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/centre-themes-light.webp" width="760">
+</picture>
+<br><em>The centre page changes theme; the others stay.</em>
+</p>
+
+<p align="center">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/hero-today-dark.webp">
+<img alt="A calendar card turning from one day of the year to the next, each day with a fact from sports history: a 1967 football final, birthdays of Julius Erving and Katie Ledecky, the 1954 World Cup, Mickey Mantle's birthday, a Grey Cup." src="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/hero-today-light.webp" width="760">
+</picture>
+<br><em>Today in sports history, a day at a time: 103,592 facts on all 366 days, each with its source.</em>
+</p>
+
+<p align="center">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/sentences-dark.webp">
+<img alt="Four fact cards one after another, each a sentence with its tag and source: Mickey Mantle's birthday, the 2022 Grey Cup with its score, venue and title count, the 1967 AFL Championship, and Mike Bossy's death." src="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/sentences-light.webp" width="720">
+</picture>
+<br><em>Four of the sentences the facts are worded into.</em>
+</p>
+
+<p align="center">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/offline-dark.webp">
+<img alt="A year as twelve rows of days filling in month by month, each day shaded by how many bundled facts it holds, with a count rising to 1,510 facts." src="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/offline-light.webp" width="720">
+</picture>
+<br><em>The bundled offline set, a month at a time.</em>
+</p>
+
+<p align="center">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/feeds-dark.webp">
+<img alt="The four kinds of feed in turn, each with the call that loads it, its fact count and size, and sentences from it: a team, a player, a sport and a tag." src="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/feeds-light.webp" width="720">
+</picture>
+<br><em>One request for each: a team, a player, a sport, a tag.</em>
+</p>
 
 ## Use it in your project
 
@@ -286,7 +394,8 @@ pnpm check          # lint, types, tests, the build and the packed package
 pnpm dev            # the demo on http://127.0.0.1:7400/
 pnpm test:demo      # the demo in a real browser
 pnpm test:readme    # the README's and the docs' examples
-pnpm screenshots    # retake the README's pictures
+pnpm screenshots    # retake the README's demo pictures
+pnpm images:showcase # redraw the calendar, layout, gallery and moving pictures
 ```
 
 This package owns local ports 7400 to 7499 (see [CONTRIBUTING.md](./CONTRIBUTING.md)).

@@ -135,6 +135,7 @@
     "images": "pnpm site && node scripts/screenshots.ts",
     "animations": "pnpm site && node scripts/animations.ts",
     "images:calendar": "node scripts/calendar-images.ts",
+    "images:showcase": "pnpm site && node scripts/showcase-images.ts",
     "screenshots": "pnpm images"
   },
   "devDependencies": {

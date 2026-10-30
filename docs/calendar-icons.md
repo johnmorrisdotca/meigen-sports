@@ -1,6 +1,98 @@
 # Calendar icons
 
-Fourteen original calendar-page drawings. Each is SVG from `calendarIcon`, drawn from shapes, gradients and a stroke-drawn digit set, so it looks the same on every device and needs no font file or picture. Each theme follows one of the looks John collected as references (a flat page with pins, a heavy black outline, a flip calendar, a thin large number and so on); the shapes are our own, no company's artwork is copied or shipped, no logo is used and no theme is named after a company or product.
+[Gallery of every theme at several sizes and dates](calendar-gallery.md) · [The gallery in Japanese](calendar-gallery.ja.md) · [Layouts that use them](display-layouts.md)
+
+<p align="center">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="./images/hero-icons-dark.webp">
+<img alt="A calendar page for October 20 beside a sentence, over all fourteen themes." src="./images/hero-icons-light.webp" width="720">
+</picture>
+</p>
+
+Fourteen themes, one call each. The picture above is `calendarIcon` called once for each theme (light and dark are the same call with `scheme`).
+
+```js
+import { CALENDAR_THEMES, calendarIcon } from "@johnmorrisdotca/meigen-sports";
+
+const svg = calendarIcon({ theme: "flip", month: 3, day: 20, year: 2026, locale: "en", scheme: "light", size: 96 });
+console.log(svg.startsWith("<svg")); // true
+console.log(svg.includes("Friday Mar 20 2026")); // true
+console.log(CALENDAR_THEMES.length); // 14
+```
+
+## Examples
+
+### Every theme, light and dark
+
+<p align="center">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="./images/themes-dark.webp">
+<img alt="All fourteen themes in two rows of seven for March 20, 2026." src="./images/themes-light.webp" width="720">
+</picture>
+</p>
+
+```js
+import { CALENDAR_THEMES, calendarIcon } from "@johnmorrisdotca/meigen-sports";
+
+const light = CALENDAR_THEMES.map((theme) => calendarIcon({ theme, month: 3, day: 20, year: 2026, scheme: "light" }));
+const dark = CALENDAR_THEMES.map((theme) => calendarIcon({ theme, month: 3, day: 20, year: 2026, scheme: "dark" }));
+console.log(light.every((svg, at) => svg !== dark[at])); // true
+```
+
+### In Japanese
+
+The month and the weekday follow `locale`. A theme that names the month draws `3月`; the weekday and the full date are in the `<title>`.
+
+<p align="center">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="./images/themes-ja-dark.webp">
+<img alt="All fourteen themes for March 20, 2026 with Japanese month and weekday words." src="./images/themes-ja-light.webp" width="720">
+</picture>
+</p>
+
+```js
+import { calendarIcon } from "@johnmorrisdotca/meigen-sports";
+
+const svg = calendarIcon({ theme: "line", month: 9, day: 9, year: 2026, locale: "ja", scheme: "dark" });
+console.log(svg.includes("水曜日 9月 9 2026")); // true
+```
+
+### Sizes
+
+`size` is the width in pixels, from 16 to 1024, and the height follows the theme's own shape. The [gallery](calendar-gallery.md) shows every theme from 16 to 96 pixels.
+
+```js
+import { calendarIcon } from "@johnmorrisdotca/meigen-sports";
+
+const widths = [16, 32, 64, 128].map((size) => calendarIcon({ theme: "desk", month: 12, day: 31, size }).match(/ width="(\d+)"/)?.[1]);
+console.log(widths.join(" ")); // 16 32 64 128
+```
+
+### With a year and without
+
+A weekday is drawn only when a year is given, because without a year it would be a guess. Without one, a theme with room shows the month in its place.
+
+```js
+import { calendarIcon } from "@johnmorrisdotca/meigen-sports";
+
+console.log(calendarIcon({ theme: "pins", month: 3, day: 20 }).includes("Friday")); // false
+console.log(calendarIcon({ theme: "pins", month: 3, day: 20, year: 2026 }).includes("Friday")); // true
+```
+
+### Every date is drawn
+
+All 366 days, both languages, light and dark, with and without a year, are drawn and checked for well-formed markup by `test/calendar-icon.test.ts`. 29 February is a real day here.
+
+```js
+import { CALENDAR_THEMES, calendarIcon } from "@johnmorrisdotca/meigen-sports";
+
+const whole = CALENDAR_THEMES.every((theme) => calendarIcon({ theme, month: 2, day: 29, year: 2028 }).endsWith("</svg>"));
+console.log(whole); // true
+```
+
+## The fourteen looks
+
+Each is SVG from `calendarIcon`, drawn from shapes, gradients and a stroke-drawn digit set, so it looks the same on every device and needs no font file or picture. Each theme follows one of the looks John collected as references (a flat page with pins, a heavy black outline, a flip calendar, a thin large number and so on); the shapes are our own, no company's artwork is copied or shipped, no logo is used and no theme is named after a company or product.
 
 | Id | English | Japanese | Picture | The look |
 | --- | --- | --- | --- | --- |
@@ -40,11 +132,15 @@ The ten themes of 0.12 and 0.13 are still accepted. Each name reads as the theme
 | `fold` | `frame` |
 | `tile` | `badge` |
 
+## In a page
+
+The `.meigen-cal` box makes the drawing as wide as its box. The stylesheet is optional.
+
 ```js no-run
 import { calendarIcon } from "@johnmorrisdotca/meigen-sports";
 import "@johnmorrisdotca/meigen-sports/styles.css";
 
-document.body.innerHTML = `<span class="meigen-cal">${calendarIcon({
+document.body.innerHTML = `<span class="meigen-cal" style="width:96px">${calendarIcon({
   theme: "pins",
   month: 3,
   day: 20,

@@ -4,6 +4,11 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+- Docs: the README opens on a still hero picture, a today card over all fourteen calendar pages, and "The best of it" is now rows, each light and dark and each with the code that makes it: the fourteen themes, the four layouts, today cards (one in Japanese), banners and facts by sport. The moving pictures are lower down at half speed, and two new ones move only the centre page of a row (through days, through themes).
+- Docs: `docs/calendar-icons.md` and `docs/display-layouts.md` lead with live pictures and examples that `pnpm test:readme` runs (sizes, with and without a year, Japanese, every date, banners, facts by sport, labels). New `docs/calendar-gallery.md` and `docs/calendar-gallery.ja.md` show every theme at five dates (1 January, 9 February, 9 September, 30 November, 31 December) and six sizes (16 to 96 px), in light and dark, in each language.
+- Demo: the calendar-icons panel links to both galleries (`galleryLink`, `galleryLinkJa`, English and Japanese).
+- Tooling: `pnpm images:showcase` (`scripts/showcase-images.ts`) draws all of these pictures from the package's own functions and the fact files; they need `brew install webp` (`cwebp`, `img2webp`). The library and the data are unchanged.
+
 ## [0.14.0] - 2026-10-30
 
 - Drawings: the calendar-page themes are redrawn to match the fourteen looks John collected, with the same proportions, header, type weight, colours, corners, binding, page curl and placement of the month and weekday: `pins`, `loops`, `shadow`, `heavy`, `cartoon`, `flip`, `stack`, `line`, `curl`, `soft`, `desk`, `thin`, `frame`, `badge` (`CALENDAR_THEMES` is now 14 long). The shapes and a stroke-drawn digit set are our own: no font file, picture, logo or company name. Month names are the full name (in capitals where the look has capitals), not the three-letter form; a weekday is drawn only when a year is given.
