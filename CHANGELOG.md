@@ -4,6 +4,8 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+## [0.14.0] - 2026-10-30
+
 - Drawings: the calendar-page themes are redrawn to match the fourteen looks John collected, with the same proportions, header, type weight, colours, corners, binding, page curl and placement of the month and weekday: `pins`, `loops`, `shadow`, `heavy`, `cartoon`, `flip`, `stack`, `line`, `curl`, `soft`, `desk`, `thin`, `frame`, `badge` (`CALENDAR_THEMES` is now 14 long). The shapes and a stroke-drawn digit set are our own: no font file, picture, logo or company name. Month names are the full name (in capitals where the look has capitals), not the three-letter form; a weekday is drawn only when a year is given.
 - API: the ten earlier names (`classic`, `outline`, `spiral`, `bold`, `tent`, `curl`, `pad`, `minimal`, `fold`, `tile`) still work and read as the theme that replaced each (`CALENDAR_THEME_ALIASES`; `calendarThemeOf("classic")` is `"pins"`). The default theme is `pins`. `CalendarIconOptions` is unchanged. The drawing is no longer the same size per theme: each theme's height follows its own shape. A day a month does not have (30 February) is drawn without a weekday instead of rolling into the next month.
 - Tests: every theme is drawn for all 366 dates, in English and Japanese, light and dark, with and without a year, at 16 to 512 px, and checked for well-formed markup.
