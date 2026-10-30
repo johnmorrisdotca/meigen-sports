@@ -247,7 +247,7 @@ function drawLayout() {
   }
   card.dataset.layout = layout;
   const { month, day, year } = leafDate();
-  const icon = calendarIcon({ theme: calendarThemeOf(optIcon.value) ?? "classic", month, day, year, locale: iconLocale(), scheme: iconScheme(), size: 96 });
+  const icon = calendarIcon({ theme: calendarThemeOf(optIcon.value) ?? "pins", month, day, year, locale: iconLocale(), scheme: iconScheme(), size: 96 });
   layoutHost.innerHTML = displayMarkup({
     layout, items: layoutItems, icon, name: "today-kind",
     labels: { events: familyLang.word("layoutEvents"), births: familyLang.word("layoutBirths"), deaths: familyLang.word("layoutDeaths") },

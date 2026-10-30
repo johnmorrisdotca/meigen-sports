@@ -15,7 +15,7 @@ The year list groups facts into Events (出来事), Births (誕生) and Deaths (
 import { calendarIcon, displayMarkup } from "@johnmorrisdotca/meigen-sports";
 import "@johnmorrisdotca/meigen-sports/styles.css";
 
-const icon = calendarIcon({ theme: "classic", month: 10, day: 23, year: 1995 });
+const icon = calendarIcon({ theme: "pins", month: 10, day: 23, year: 1995 });
 document.body.innerHTML = displayMarkup({
   layout: "calendar",
   icon,

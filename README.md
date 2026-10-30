@@ -116,7 +116,7 @@ Use Meigen Sports in a site, app or research tool that needs cited historical sp
 - Versioned static JSON shards for calendar days, sports and stable entities, validated by an explicit loader.
 - Source rights and provenance travel with each row. The package's MIT code licence does not relicense its data. Source lifecycle and usage notes ship in `data-sources/sources.json` and `data-sources/README.md`.
 - Initial coverage includes all 964 matches from 22 FIFA World Cup editions (1930–2022), plus 88 published Wikidata event facts (10 World Cup start/end rows merged into the same-day match). The included sample does not contain collected player milestones or world records.
-- Ten original calendar-page drawings (`calendarIcon`, `CALENDAR_THEMES`): classic, outline, spiral, bold, tent, curl, pad, minimal, fold and tile. Each names the month, the day and an optional year, in light or dark. Optional CSS lives at `@johnmorrisdotca/meigen-sports/styles.css`. See [docs/calendar-icons.md](./docs/calendar-icons.md).
+- Fourteen original calendar-page drawings (`calendarIcon`, `CALENDAR_THEMES`, `CALENDAR_THEME_ALIASES`): pins, loops, shadow, heavy, cartoon, flip, stack, line, curl, soft, desk, thin, frame and badge; the ten names of 0.12 still work. Each names the date in the way its look does, in light or dark. Optional CSS lives at `@johnmorrisdotca/meigen-sports/styles.css`. See [docs/calendar-icons.md](./docs/calendar-icons.md).
 
 ## Use it in your project
 
@@ -165,9 +165,9 @@ A calendar page is drawn as SVG. Pass the month, day and year; the library never
 
 ```js
 import { CALENDAR_THEMES, calendarIcon, calendarThemeOf } from "@johnmorrisdotca/meigen-sports";
-console.log(CALENDAR_THEMES.length); // 10
-console.log(calendarThemeOf("classic")); // classic
-console.log(calendarIcon({ month: 3, day: 20, year: 2026, theme: "classic" }).includes("2026")); // true
+console.log(CALENDAR_THEMES.length); // 14
+console.log(calendarThemeOf("classic")); // pins
+console.log(calendarIcon({ month: 3, day: 20, year: 2026, theme: "pins" }).includes("2026")); // true
 ```
 
 A day's facts can be laid out four ways. The helper returns HTML; the optional stylesheet colours it from the page.
