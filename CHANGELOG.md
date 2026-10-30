@@ -4,6 +4,8 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+## [0.14.1] - 2026-10-30
+
 - Docs: the README opens on a still hero picture, a today card over all fourteen calendar pages, and "The best of it" is now rows, each light and dark and each with the code that makes it: the fourteen themes, the four layouts, today cards (one in Japanese), banners and facts by sport. The moving pictures are lower down at half speed, and two new ones move only the centre page of a row (through days, through themes).
 - Docs: `docs/calendar-icons.md` and `docs/display-layouts.md` lead with live pictures and examples that `pnpm test:readme` runs (sizes, with and without a year, Japanese, every date, banners, facts by sport, labels). New `docs/calendar-gallery.md` and `docs/calendar-gallery.ja.md` show every theme at five dates (1 January, 9 February, 9 September, 30 November, 31 December) and six sizes (16 to 96 px), in light and dark, in each language.
 - Demo: the calendar-icons panel links to both galleries (`galleryLink`, `galleryLinkJa`, English and Japanese).
