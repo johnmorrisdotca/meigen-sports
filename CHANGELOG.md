@@ -4,6 +4,8 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+## [0.14.3] - 2026-10-30
+
 - Fix: the compact layout lists the facts newest year first, like the year list, instead of in the order given. A fact with no year goes last. The featured layout still keeps the first fact given. `docs/display-layouts.md` says so.
 
 ## [0.14.2] - 2026-10-30
