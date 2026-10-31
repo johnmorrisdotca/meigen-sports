@@ -4,6 +4,10 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+## [0.14.2] - 2026-10-30
+
+- Fix: the Japanese `<title>` and `aria-label` of a calendar icon are in Japanese date order: `2026年12月31日（木曜日）` (2026, December 31, Thursday), or `12月31日` (December 31) when no year is given, on every theme, light and dark. It was `木曜日 12月 31 2026`. A weekday is still given only with a year, and the English label is unchanged. Docs: `docs/calendar-icons.md` and `docs/calendar-gallery.ja.md` show the new label.
+
 ## [0.14.1] - 2026-10-30
 
 - Docs: the README opens on a still hero picture, a today card over all fourteen calendar pages, and "The best of it" is now rows, each light and dark and each with the code that makes it: the fourteen themes, the four layouts, today cards (one in Japanese), banners and facts by sport. The moving pictures are lower down at half speed, and two new ones move only the centre page of a row (through days, through themes).
