@@ -83,7 +83,7 @@ function years(items: readonly DisplayItem[], labels: DisplayLabels, name: strin
 }
 
 function compact(items: readonly DisplayItem[]): string {
-  const rows = items.map((item) => `<li><span class="meigen-year">${esc(item.year ?? "")}</span> ${esc(item.text)}</li>`).join("");
+  const rows = [...items].sort((a, b) => yearOf(b) - yearOf(a)).map((item) => `<li><span class="meigen-year">${esc(item.year ?? "")}</span> ${esc(item.text)}</li>`).join("");
   return `<ul class="meigen-layout meigen-compact">${rows}</ul>`;
 }
 

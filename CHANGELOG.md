@@ -4,6 +4,8 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+- Fix: the compact layout lists the facts newest year first, like the year list, instead of in the order given. A fact with no year goes last. The featured layout still keeps the first fact given. `docs/display-layouts.md` says so.
+
 ## [0.14.2] - 2026-10-30
 
 - Fix: the Japanese `<title>` and `aria-label` of a calendar icon are in Japanese date order: `2026年12月31日（木曜日）` (2026, December 31, Thursday), or `12月31日` (December 31) when no year is given, on every theme, light and dark. It was `木曜日 12月 31 2026`. A weekday is still given only with a year, and the English label is unchanged. Docs: `docs/calendar-icons.md` and `docs/calendar-gallery.ja.md` show the new label.

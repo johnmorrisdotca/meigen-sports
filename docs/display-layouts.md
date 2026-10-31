@@ -31,7 +31,7 @@ Four ways to show facts that are already worded. `displayMarkup` returns HTML. I
 | `compact` | Compact | 短い一覧 | ![Compact](images/layout-compact.svg) |
 | `featured` | Featured | 一つを大きく | ![Featured](images/layout-featured.svg) |
 
-The year list groups facts into Events (出来事), Births (誕生) and Deaths (死去). A birthday is `player-birthday`, a death is `player-death`, and every other category is an event. Years run newest first. The featured layout keeps the first fact only.
+The year list groups facts into Events (出来事), Births (誕生) and Deaths (死去). A birthday is `player-birthday`, a death is `player-death`, and every other category is an event. Years run newest first, and the compact list is in the same order (a fact with no year goes last). The featured layout keeps the first fact only.
 
 ```js no-run
 import { calendarIcon, displayMarkup } from "@johnmorrisdotca/meigen-sports";

@@ -44,6 +44,20 @@ test("the year list groups by kind, newest first, with a tab per group", () => {
   assert.ok(!html.includes("<1990>"));
 });
 
+test("compact lists the facts newest first, and a fact with no year goes last", () => {
+  const mixed = [
+    { text: "no year" },
+    { text: "old", year: "1960" },
+    { text: "newest", year: "2024" },
+    { text: "middle", year: "1998" },
+  ];
+  const html = displayMarkup({ layout: "compact", items: mixed });
+  const order = ["newest", "middle", "old", "no year"].map((text) => html.indexOf(text));
+  assert.deepEqual(order, [...order].sort((a, b) => a - b));
+  assert.ok(order.every((at) => at >= 0));
+  assert.equal(mixed[0].text, "no year");
+});
+
 test("compact lists every fact and featured keeps only the first", () => {
   const compact = displayMarkup({ layout: "compact", items });
   assert.match(compact, /<ul class="meigen-layout meigen-compact">/);
