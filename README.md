@@ -12,7 +12,7 @@ A typed data package with no runtime dependencies. Read the included data offlin
   <img alt="TypeScript" src="https://img.shields.io/badge/types-TypeScript-3178c6">
 </p>
 
-<p align="center"><a href="https://johnmorrisdotca.github.io/meigen-sports/"><strong>Open the demo →</strong></a> · <a href="./NOTICE.md">Sources</a> · <a href="./docs/record-schema.md">Record schema</a> · <a href="./docs/templates.md">Templates</a> · <a href="./docs/categories.md">History tags</a> · <a href="./docs/history-model.md">History model</a> · <a href="./docs/data-pipeline.md">Pipeline</a> · <a href="./docs/demo.md">The demo in pictures</a> · <a href="./docs/calendar-gallery.md">Calendar gallery</a> · <a href="./docs/calendar-icons.md">Calendar icons</a> · <a href="./docs/display-layouts.md">Layouts</a></p>
+<p align="center"><a href="https://johnmorrisdotca.github.io/meigen-sports/"><strong>Open the demo →</strong></a> · <a href="./NOTICE.md">Sources</a> · <a href="./docs/record-schema.md">Record schema</a> · <a href="./docs/templates.md">Templates</a> · <a href="./docs/categories.md">History tags</a> · <a href="./docs/history-model.md">History model</a> · <a href="./docs/data-pipeline.md">Pipeline</a> · <a href="./docs/demo.md">The demo in pictures</a> · <a href="./docs/calendar-gallery.md">Calendar gallery</a> · <a href="./docs/calendar-icons.md">Calendar icons</a> · <a href="./docs/display-layouts.md">Layouts</a> · <a href="./docs/uses.md">Uses</a></p>
 
 <p align="center">
 <picture>

@@ -4,6 +4,8 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+- Docs: new `docs/uses.md`, a short design note on how a sports history site can use the package (what it exports, what a page calls, what is missing) and how a stats site could build a database of famous people from sports outside the major leagues from Wikidata, with the licence, freshness and duplicate risks and a recommended order of work. Linked from the README.
+
 ## [0.14.3] - 2026-10-30
 
 - Fix: the compact layout lists the facts newest year first, like the year list, instead of in the order given. A fact with no year goes last. The featured layout still keeps the first fact given. `docs/display-layouts.md` says so.
