@@ -137,7 +137,9 @@ function dateParts(month: number, day: number, year: number | undefined, locale:
   const weekday = year === undefined || date.getUTCMonth() !== month - 1 ? "" : fmt(date, { weekday: "long" });
   const yearText = year === undefined ? "" : String(year);
   const up = (s: string) => s.toLocaleUpperCase(locale);
-  const label = [weekday, monthShort, String(day), yearText].filter(Boolean).join(" ");
+  const label = new Intl.Locale(locale).language === "ja"
+    ? `${year === undefined ? "" : `${year}年`}${month}月${day}日${weekday ? `（${weekday}）` : ""}`
+    : [weekday, monthShort, String(day), yearText].filter(Boolean).join(" ");
   return { month: monthLong, monthUp: up(monthLong), monthShort, monthShortUp: up(monthShort), weekday, day: String(day), year: yearText, label };
 }
 

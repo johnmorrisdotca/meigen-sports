@@ -41,7 +41,14 @@ console.log(light.every((svg, at) => svg !== dark[at])); // true
 
 ### In Japanese
 
-The month and the weekday follow `locale`. A theme that names the month draws `3月`; the weekday and the full date are in the `<title>`.
+The month and the weekday follow `locale`. A theme that names the month draws `3月`; the weekday and the full date are in the `<title>`, in Japanese date order: `2026年3月20日（金曜日）` (2026, March 20, Friday), or `3月20日` (March 20) when no year is given.
+
+```js
+import { calendarIcon } from "@johnmorrisdotca/meigen-sports";
+
+console.log(calendarIcon({ theme: "pins", month: 3, day: 20, year: 2026, locale: "ja" }).includes("<title>2026年3月20日（金曜日）</title>")); // true
+console.log(calendarIcon({ theme: "pins", month: 3, day: 20, locale: "ja" }).includes("<title>3月20日</title>")); // true
+```
 
 <p align="center">
 <picture>
@@ -54,7 +61,7 @@ The month and the weekday follow `locale`. A theme that names the month draws `3
 import { calendarIcon } from "@johnmorrisdotca/meigen-sports";
 
 const svg = calendarIcon({ theme: "line", month: 9, day: 9, year: 2026, locale: "ja", scheme: "dark" });
-console.log(svg.includes("水曜日 9月 9 2026")); // true
+console.log(svg.includes("2026年9月9日（水曜日）")); // true
 ```
 
 ### Sizes
@@ -113,7 +120,7 @@ Each is SVG from `calendarIcon`, drawn from shapes, gradients and a stroke-drawn
 
 ## What each drawing says
 
-A theme draws what its look has room for. A theme whose look has a month word draws it in capitals (`MARCH`, or `3月`); one that has a weekday draws it only when a year is given (without a year a weekday would be a guess), and shows the month instead. A small year is drawn where the page has room. Whatever a theme leaves off the picture is in its `<title>` and `aria-label` (`Friday Mar 20 2026`). A day the month does not have (30 February) is drawn as given and has no weekday.
+A theme draws what its look has room for. A theme whose look has a month word draws it in capitals (`MARCH`, or `3月`); one that has a weekday draws it only when a year is given (without a year a weekday would be a guess), and shows the month instead. A small year is drawn where the page has room. Whatever a theme leaves off the picture is in its `<title>` and `aria-label` (`Friday Mar 20 2026`; in Japanese `2026年3月20日（金曜日）`). A day the month does not have (30 February) is drawn as given and has no weekday.
 
 ## Earlier names
 

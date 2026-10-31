@@ -96,7 +96,17 @@ test("the label names the date in the page's language and a year only when given
   const noYear = calendarIcon({ theme: "pins", month: 3, day: 20, locale: "en" });
   assert.match(noYear, /aria-label="Mar 20"/);
   const ja = calendarIcon({ theme: "pins", month: 3, day: 20, year: 2026, locale: "ja" });
-  assert.match(ja, /aria-label="[^"]*3月[^"]*20[^"]*2026/);
+  assert.match(ja, /aria-label="2026年3月20日（金曜日）"/);
+  assert.match(ja, /<title>2026年3月20日（金曜日）<\/title>/);
+  assert.match(calendarIcon({ theme: "pins", month: 12, day: 31, locale: "ja" }), /aria-label="12月31日"/);
+  assert.match(calendarIcon({ theme: "pins", month: 12, day: 31, year: 2026, locale: "ja-JP" }), /aria-label="2026年12月31日（木曜日）"/);
+  assert.match(calendarIcon({ theme: "pins", month: 2, day: 30, year: 2026, locale: "ja" }), /aria-label="2026年2月30日"/);
+  for (const theme of CALENDAR_THEMES) {
+    for (const scheme of ["light", "dark"] as const) {
+      assert.match(calendarIcon({ theme, month: 12, day: 31, year: 2026, locale: "ja", scheme }), /aria-label="2026年12月31日（木曜日）"/, theme);
+      assert.match(calendarIcon({ theme, month: 12, day: 31, locale: "ja", scheme }), /aria-label="12月31日"/, theme);
+    }
+  }
   assert.ok(ja.includes("3月"));
   const word = calendarIcon({ theme: "thin", month: 3, day: 20, year: 2026, locale: "en" });
   assert.ok(word.includes("Friday"));
