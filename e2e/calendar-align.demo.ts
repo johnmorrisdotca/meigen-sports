@@ -11,7 +11,7 @@ const SIZE = 240;
 const CAP = 0.716;
 /** Seen at an angle: a wider number measures taller, so the one-size rule is held to a looser height. */
 const ANGLED: ReadonlySet<CalendarTheme> = new Set(["desk"]);
-/** Themes whose day is stroke-drawn are centred to the pixel; a day drawn as text is held to a looser rule, as a font's own 1 is narrow. */
+/** Themes whose day is stroke-drawn are centred to the pixel; a day drawn as text is held to a looser rule (3% of the page, or 6% of the font size), because each font draws its 1 narrow and a little left of its box by its own amount. */
 const STROKED: ReadonlySet<CalendarTheme> = new Set(["flip", "curl", "soft", "thin"]);
 /** Where a header must run edge to edge (a flat colour block that meets the frame): x, y, width, height. */
 const HEADERS: Partial<Record<CalendarTheme, readonly [number, number, number, number]>> = {
@@ -37,7 +37,7 @@ for (const theme of CALENDAR_THEMES) {
           expect(d, `${day} is drawn`).not.toBeNull();
           const across = (d.x0 + d.x1) / 2 - (px + pw / 2);
           const at = `${theme} ${scheme} ${year ?? "-"} day ${day}`;
-          expect(Math.abs(across), `${at}: the day's ink is ${across.toFixed(1)} units off the centre of its page`).toBeLessThanOrEqual(Math.max(1 / (SIZE / bw), (STROKED.has(theme) ? 0.02 : 0.03) * pw));
+          expect(Math.abs(across), `${at}: the day's ink is ${across.toFixed(1)} units off the centre of its page`).toBeLessThanOrEqual(STROKED.has(theme) ? Math.max(1 / (SIZE / bw), 0.02 * pw) : Math.max(0.03 * pw, (0.06 * (d.y1 - d.y0)) / CAP));
           const block = [d, seen.ink.month, seen.ink.year].filter((one) => one !== null && one !== undefined && one.y0 >= py - 0.5 && one.y1 <= py + ph + 0.5);
           const top = Math.min(...block.map((one) => one!.y0));
           const bottom = Math.max(...block.map((one) => one!.y1));
