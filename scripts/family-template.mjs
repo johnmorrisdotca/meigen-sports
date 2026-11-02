@@ -171,7 +171,7 @@ export function familyHead({ id, title, description, ogTitle, ogDescription }) {
 /**
  * The header: the name with its kana, the pitch (data-say="pitch"), a line on the name
  * (data-say="name", and a link to the README's "The name", data-say="nameLink"), the
- * kazoku-ui language picker and theme switch (the page imports their `define` modules from kazoku-ui), the cloth patches, the Help switch, and the GitHub and npm pills. `links` adds pills before those
+ * kazoku-ui language picker, the cloth patches, the Help switch, the kazoku-ui theme switch (the page imports the `define` modules of both from kazoku-ui), and the GitHub and npm pills. `links` adds pills before those
  * two: [{ href, say }] where `say` is a key in the page's words.
  */
 export function familyHeader({ id, links = [] }) {
@@ -184,12 +184,12 @@ export function familyHeader({ id, links = [] }) {
           <p class="name"><span data-say="name"></span> <a href="${repo(id)}#the-name" data-say="nameLink"></a></p>
         </div>
         <nav>
-          <kazoku-language-picker languages="en ja" address storage="${id}.page.lang"></kazoku-language-picker>
-          <kazoku-theme-switch address storage="johnmorrisdotca.theme"></kazoku-theme-switch>${links.map((link) => `\n          <a href="${escape(link.href)}" data-say="${escape(link.say)}"></a>`).join("")}
+          <kazoku-language-picker languages="en ja" address storage="${id}.page.lang"></kazoku-language-picker>${links.map((link) => `\n          <a href="${escape(link.href)}" data-say="${escape(link.say)}"></a>`).join("")}
           <div class="cloth" role="radiogroup" data-say-label="cloth" style="display:inline-flex;gap:0;align-items:center">${Object.entries(FAMILY_CLOTHS)
             .map(([name, cloth]) => `<button type="button" role="radio" data-cloth="${name}" data-say-label="cloth_${name}" style="width:44px;height:44px;min-width:44px;padding:8px;border:0;border-radius:12px;cursor:pointer;background:radial-gradient(120% 90% at 30% 20%, ${cloth.felt} 0%, ${cloth.deep} 100%) content-box;box-shadow:inset 0 0 0 8px transparent"></button>`)
             .join("")}</div>
           <button type="button" class="fam-button" data-help-switch aria-pressed="false" data-say="help" data-say-title="helpTip" style="min-width:68px"></button>
+          <kazoku-theme-switch address storage="johnmorrisdotca.theme"></kazoku-theme-switch>
           <a href="${repo(id)}">GitHub</a>
 ${onNpm ? `          <a href="${npm(id)}">npm</a>\n` : ""}        </nav>
       </header>`;
