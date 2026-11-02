@@ -4,6 +4,8 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+## [0.15.1] - 2026-11-02
+
 - Tooling: the 5,442 shard files of `data/v1/0.1.0/facts/` (215 MiB) are no longer committed. `pnpm shards` builds them from `data-sources/facts/` (every fact once, 14 MiB in 100 gzip files), in `pnpm check`, `pnpm site`, the Pages job and the Release job. The converter has two stages (`pipeline/convert_extract.py`: extracts to facts, facts to shards); every shard is byte for byte what was committed, except that `manifest.json` lists its files in sorted order (same content), so the build id changed. URLs under `data/v1` are the same. History is not rewritten.
 
 ## [0.15.0] - 2026-11-02
