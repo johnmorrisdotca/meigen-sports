@@ -1,0 +1,14 @@
+[
+  {
+    "gameId": 4615655,
+    "homeScore": 89,
+    "awayScore": 119,
+    "reason": "The SPX database has since corrected this game of 1968-11-19 (English Wikipedia): Milwaukee Bucks 119 at home, Atlanta Hawks 98. The extract still has Atlanta Hawks 89 at home, Milwaukee Bucks 119."
+  },
+  {
+    "gameId": 4620295,
+    "homeScore": 117,
+    "awayScore": 88,
+    "reason": "The SPX database has since corrected this game of 1975-03-12 (English Wikipedia): Washington Bullets 115, Houston Rockets 88. The extract still has Washington Bullets 117."
+  }
+]

@@ -258,7 +258,8 @@ class ConvertExtractTests(unittest.TestCase):
         self.assertEqual(convert.venue_in("Scotiabank Arena", 2016), "Air Canada Centre")
         self.assertIsNone(convert.venue_in("Lakewood Church Central Campus", 1998))  # a year two names share: neither is said
         self.assertIsNone(convert.venue_in("Lakewood Church Central Campus", 1960))  # no name that year
-        self.assertEqual(convert.venue_in("Kia Forum", 1968), "Kia Forum")
+        self.assertIsNone(convert.venue_in("Kia Forum", 1968))  # the building took that name in 2021 and the database has no history for it
+        self.assertEqual(convert.venue_in("Kia Forum", 2022), "Kia Forum")
         self.assertEqual(convert.venue_in("Some Unknown Park", 1900), "Some Unknown Park")
         final = {"category": "championship-final", "eventDate": "1995-06-14", "league": "nba", "venueName": "Lakewood Church Central Campus", "venueCity": "Houston"}
         convert.dated_fixes(final)
@@ -329,6 +330,14 @@ class ConvertExtractTests(unittest.TestCase):
         finally:
             convert.EXTRACT = original
             self.dated()
+
+    def test_a_game_the_database_has_corrected_is_left_out_while_the_extract_has_the_old_score(self):
+        rows = [
+            {"gameId": 4615655, "homeScore": 89, "awayScore": 119},
+            {"gameId": 4615655, "homeScore": 119, "awayScore": 98},
+            {"gameId": 1, "homeScore": 89, "awayScore": 119},
+        ]
+        self.assertEqual(convert.without_stale_games(rows), rows[1:])
 
 
 if __name__ == "__main__":

@@ -207,6 +207,17 @@ def load_records(name: str) -> list:
     return data.get("records") or []
 
 
+def without_stale_games(rows: list[dict]) -> list[dict]:
+    """A game the SPX database has corrected since the extract was made is left out while the extract still holds the old score (`data-sources/game-corrections.json`:
+    game id and the old score). A fresh DS1 extract carries the corrected game, which no longer matches, so the entry does nothing then and can be deleted."""
+    stale = json.loads((ROOT / "data-sources/game-corrections.json").read_text(encoding="utf-8"))
+    old = {(c["gameId"], c["homeScore"], c["awayScore"]) for c in stale}
+    kept = [r for r in rows if (r.get("gameId"), r.get("homeScore"), r.get("awayScore")) not in old]
+    if len(kept) < len(rows):
+        print(f"left out {len(rows) - len(kept)} game(s) the database has corrected since the extract: {sorted(c['gameId'] for c in stale)}", file=sys.stderr)
+    return kept
+
+
 def allowed(row: dict) -> bool:
     if row.get("sourceId") in BLOCKED:
         return False
@@ -1254,10 +1265,16 @@ def league_of_club_on(name: str, day: str) -> str | None:
     return None
 
 
+# A building's name the database holds no dated history for, and the year it took that name: before it the building is left out of the fact, as for a year with no name on record.
+NAME_SINCE = {"Kia Forum": 2021}
+
+
 def venue_in(name: str, year: int) -> str | None:
     """What a building was called in a year (`api.venue_name`: from year, until year), given the name a fact uses (usually today's). The name unchanged when the
     database knows no history for it or it is the name of that year; the name of that year when it differs; None when no one name covers that year (a year both names
     shared, a gap) or the name could be two buildings that disagree."""
+    if year < NAME_SINCE.get(name, 0):
+        return None
     ids = DATED["venueIds"].get(plain(name))
     if not ids:
         return name
@@ -1474,7 +1491,7 @@ def build_facts() -> tuple[list[dict], dict]:
     LINKS.update(load_links())
     DISPUTED.update(load_disputed())
     load_dated_names()
-    games = [r for r in load_records("extract_games_on_day.json") if allowed(r) and r.get("status") == "final"]
+    games = without_stale_games([r for r in load_records("extract_games_on_day.json") if allowed(r) and r.get("status") == "final"])
     finals = [r for r in load_records("extract_finals.json") if allowed(r)]
     soccer = [r for r in load_records("extract_soccer_on_day.json") if allowed(r)]
     birthdays = load_records("player-birthday-candidates.json")

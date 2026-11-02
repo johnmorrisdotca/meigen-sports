@@ -69,3 +69,18 @@ test("a franchise identity of the National Association or the American Associati
   assert.equal(identity("Chicago Cubs", "1903-04-16")?.league, "mlb");
   assert.equal(identity("New York Giants", "1885-05-02")?.league, "mlb");
 });
+
+test("a game the database has corrected is not published with the old score, and a second game of a doubleheader the database lacks is", () => {
+  assert.equal(byId.get("spx:game:4615655"), undefined);
+  assert.equal(byId.get("spx:game:4620295"), undefined);
+  assert.equal(byId.get("spx:game:1891707")?.text, "On July 6, 2007, Minnesota Twins beat Chicago White Sox 12–0 (MLB).");
+  assert.equal(byId.get("spx:final:1891749")?.text, "On October 27, 2008, Philadelphia Phillies beat Tampa Bay Rays 4–3, playoffs (MLB).");
+});
+
+test("a building the database has no dated name for, and that took its name later, is left out of an earlier fact: the Celtics' 1968 final is not at Kia Forum", () => {
+  const final = facts.find((r) => r.category === "championship-final" && r.league === "nba" && r.eventDate === "1968-05-02");
+  assert.ok(final);
+  assert.equal(final.venueName, undefined);
+  assert.doesNotMatch(final.text ?? "", /Kia Forum/);
+  assert.deepEqual(facts.filter((r) => (r.category === "championship-final" || r.category === "all-star") && r.venueName === "Kia Forum" && (r.eventDate ?? "") < "2021").map((r) => r.recordId), []);
+});

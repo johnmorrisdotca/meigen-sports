@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "factsReady": 104835,
+  "factsReady": 104833,
   "rows": [
     {
       "sport": "ice-hockey",
@@ -6170,7 +6170,7 @@
       "archived": 4333,
       "identityLinked": 4333,
       "rightsCleared": 4333,
-      "feedReady": 379
+      "feedReady": 378
     },
     {
       "sport": "basketball",
@@ -6320,7 +6320,7 @@
       "archived": 5270,
       "identityLinked": 5270,
       "rightsCleared": 5270,
-      "feedReady": 442
+      "feedReady": 441
     },
     {
       "sport": "basketball",
