@@ -140,6 +140,11 @@ Each is SVG from `calendarIcon`, drawn from shapes, gradients and a stroke-drawn
 | `mark` | your own SVG shapes in place of the sun's red disc (`sun` only) | the disc |
 | `columns` | `false` leaves the side columns of `sun` and `roll` off | on |
 | `moon` | `false` leaves the moon of `plain` off | on |
+| `housing` | `"circle"` sets the icon on a coloured disc (from [koyomi-calendars](https://github.com/johnmorrisdotca/koyomi-calendars), where these drawings now live) | `square`: the icon alone |
+| `housingColour` | the disc's colour, any CSS colour | a soft blue |
+| `rings` | `true` (or a number, 0 to 24): spiral rings across the top, on `badge`, `frame`, `sun`, `roll` and `plain` | off |
+| `turn` | a slight turn of the whole icon, in degrees, −45 to 45 | 0 |
+| `preset` | a named set of `housing`, `rings` and `turn`: `flat`, `disc`, `ringed`, `tilted`, `disc-ringed` | none |
 
 The other functions of the calendar are `calendarThemeOf(name)` (a name or an old alias to a theme, or `null`), `CALENDAR_THEMES`, `CALENDAR_THEME_LABELS` (the English and Japanese label of each), `CALENDAR_THEME_ALIASES`, `calendarWeekend(year, month, day)` (the Saturday and Sunday a page shows) and `calendarMoon` (the moon's phase by a mean lunation, which can be a day out near the turn of a phase).
 
