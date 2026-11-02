@@ -1,7 +1,7 @@
 <h1 align="center">Meigen Sports <sub>名言</sub></h1>
 
 <p align="center"><strong>Source-verified sports quotations and dated events in sports history.</strong><br>
-A typed data package with no runtime dependencies. Read the included data offline, filter it by date, sport or source, or load versioned static JSON feeds. MIT code; source data keeps its own rights.</p>
+A typed data package with one small runtime dependency, koyomi-calendars, for the calendar icons. Read the included data offline, filter it by date, sport or source, or load versioned static JSON feeds. MIT code; source data keeps its own rights.</p>
 
 <p align="center">
   <a href="https://github.com/johnmorrisdotca/meigen-sports/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/johnmorrisdotca/meigen-sports/actions/workflows/ci.yml/badge.svg"></a>

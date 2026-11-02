@@ -4,6 +4,11 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+## [0.20.0] - 2026-11-02
+
+- The calendar icons and the Japanese calendar functions now come from the new package `@johnmorrisdotca/koyomi-calendars`, meigen-sports' one runtime dependency. The API and the 17 themes are unchanged, and the same options draw the same icons; `housing`, `rings` and `turn` are new options.
+- Japanese labels of five designs were corrected: desk, flip, roll, curl and loops.
+
 ## [0.19.3] - 2026-11-02
 
 - Fix: a retired number names the club as it was called on the day, not the franchise's first name. "On November 2, 2013, the Colorado Avalanche retired Adam Foote's No. 52." (it said the Quebec Nordiques; the same for Hejduk 2018, Sakic 2009, Bourque 2001 and Roy 2003, and the New England Whalers for Brind'Amour 2011, Staal 2025 and Francis 2006). The names and the days they applied come from `api.franchise_names`; a club whose games name it the same apart from an accent ("Montréal") keeps the name it had. 8 of the 255 changed.

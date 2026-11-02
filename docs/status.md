@@ -1,6 +1,6 @@
 # Status of meigen-sports, 2026-11-02
 
-Version 0.19.3 on `main`. The work of ticket cmvfh0kqd0000i90665rmo7sw (SPX-610) and the tickets that followed it is finished in this repository: what is left is elsewhere, and is listed at the end. Tags v0.15.1 to v0.19.1 are the coordinating session's to push (v0.12.0, v0.14.4 and v0.14.5 were also never tagged). `pnpm check` is green (272 tests), and so are `pnpm test:readme` and `pnpm test:demo`.
+Version 0.20.0 on `main`. The work of ticket cmvfh0kqd0000i90665rmo7sw (SPX-610) and the tickets that followed it is finished in this repository: what is left is elsewhere, and is listed at the end. Tags v0.15.1 to v0.19.1 are the coordinating session's to push (v0.12.0, v0.14.4 and v0.14.5 were also never tagged). `pnpm check` is green (272 tests), and so are `pnpm test:readme` and `pnpm test:demo`.
 
 ## What changed since the 0.15.0 audit
 
@@ -14,6 +14,7 @@ Version 0.19.3 on `main`. The work of ticket cmvfh0kqd0000i90665rmo7sw (SPX-610)
 | 0.19.0 | Japanese public holidays, the old calendar and rokuyō, computed (`docs/japanese-calendar.md`), in the side columns of `sun` and `roll`. |
 | 0.19.1 | Every picture drawn again from the current code and data; `test/pictures.test.ts` fails when one is older than its inputs; every option of `calendarIcon` and `displayMarkup` is documented and tested. |
 | 0.19.2 | The demo's header has the family's shared language picker and a theme switch, the address is kept by the shared address state, `release.yml` calls the shared release workflow and `AGENTS.md` is from the family template (kazoku-ui 0.7.3). |
+| 0.20.0 | The calendar icons and Japanese calendar functions come from koyomi-calendars. |
 | 0.19.3 | A retired number names the club of its day, a final or All-Star Game the building of its year, and a game of the National Association, American Association, Union Association, Players' League or Federal League says its own league, not MLB (`pipeline/extract_dated_names.py`). |
 
 "One wording" (the Python converter's own sentences) was already finished in 0.6.0: `test/captions.test.ts` holds every stored sentence to the library's templates. The 0.4.0 audit's other open items are done or have a ticket below.
