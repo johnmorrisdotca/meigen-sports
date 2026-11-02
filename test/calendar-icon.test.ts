@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { CALENDAR_THEME_ALIASES, CALENDAR_THEME_LABELS, CALENDAR_THEMES, CALENDAR_YEAR_MIN, calendarIcon, calendarLayout, calendarThemeOf } from "../src/calendarIcon.ts";
+import { CALENDAR_THEME_ALIASES, CALENDAR_THEME_LABELS, CALENDAR_THEMES, CALENDAR_YEAR_MIN, calendarIcon, calendarLayout, calendarMoon, calendarThemeOf, calendarWeekend } from "../src/calendarIcon.ts";
 import type { CalendarTheme } from "../src/calendarIcon.ts";
 
 const FORBIDDEN = /google|apple|microsoft|android|ios|material|fluent|samsung|icons8|flaticon|shutterstock/i;
@@ -39,9 +39,9 @@ function drawsDay(svg: string, day: number): boolean {
   return groups >= String(day).length;
 }
 
-test("fourteen generic themes, each with an English and a short Japanese name", () => {
-  assert.equal(CALENDAR_THEMES.length, 14);
-  assert.deepEqual([...CALENDAR_THEMES], ["pins", "loops", "shadow", "heavy", "cartoon", "flip", "stack", "line", "curl", "soft", "desk", "thin", "frame", "badge"]);
+test("seventeen generic themes, each with an English and a short Japanese name", () => {
+  assert.equal(CALENDAR_THEMES.length, 17);
+  assert.deepEqual([...CALENDAR_THEMES], ["pins", "loops", "shadow", "heavy", "cartoon", "flip", "stack", "line", "curl", "soft", "desk", "thin", "frame", "badge", "sun", "roll", "plain"]);
   for (const theme of CALENDAR_THEMES) {
     assert.equal(calendarThemeOf(theme), theme);
     assert.equal(calendarThemeOf(theme.toUpperCase()), theme);
@@ -179,5 +179,113 @@ test("a year is drawn at the theme's minimum size or larger", () => {
     const chip = svg.match(/<g data-part="year">.*?<\/g>|<text[^>]*><tspan data-part="month">.*?<\/text>/)![0];
     const size = Number(chip.match(/font-size="([\d.]+)"/)![1]);
     assert.ok(size >= CALENDAR_YEAR_MIN * width - 0.5, `${theme}: the year is ${size} in a drawing ${width} wide`);
+  }
+});
+
+const WEEKEND_THEMES = ["sun", "roll"] as const;
+/** Saturday and Sunday: 6 and 7, 31 and 1 (a month end), 30 and 31, and 31 Dec and 1 Jan (a year end). */
+const WEEKENDS = [
+  { year: 2026, saturday: [6, 6], sunday: [6, 7] },
+  { year: 2026, saturday: [10, 31], sunday: [11, 1] },
+  { year: 2026, saturday: [5, 30], sunday: [5, 31] },
+  { year: 2022, saturday: [12, 31], sunday: [1, 1] },
+] as const;
+
+test("a weekend is the Saturday and the Sunday after it, across a month or a year end, and a weekday has none", () => {
+  for (const w of WEEKENDS) {
+    const sunYear = w.sunday[0] === 1 && w.saturday[0] === 12 ? w.year + 1 : w.year;
+    const want = { saturday: { year: w.year, month: w.saturday[0], day: w.saturday[1] }, sunday: { year: sunYear, month: w.sunday[0], day: w.sunday[1] } };
+    assert.deepEqual(calendarWeekend(w.year, w.saturday[0], w.saturday[1]), want);
+    assert.deepEqual(calendarWeekend(sunYear, w.sunday[0], w.sunday[1]), want);
+  }
+  assert.equal(calendarWeekend(2027, 1, 1), null, "Friday 1 January 2027");
+  assert.equal(calendarWeekend(2026, 11, 2), null, "a Monday");
+  assert.equal(calendarWeekend(2026, 2, 30), null, "a day the month does not have");
+  assert.equal(calendarWeekend(2027, 2, 29), null, "29 February of a common year");
+  assert.notEqual(calendarWeekend(2028, 2, 26), null, "Saturday 26 February 2028");
+});
+
+test("the moon is a mean lunation: known new and full moons fall on 0 and 4", () => {
+  assert.equal(calendarMoon(2000, 1, 6), 0);
+  assert.equal(calendarMoon(2024, 4, 8), 0);
+  assert.equal(calendarMoon(2026, 11, 9), 0);
+  assert.equal(calendarMoon(2000, 1, 21), 4);
+  assert.equal(calendarMoon(2024, 1, 25), 4);
+  assert.equal(calendarMoon(2026, 11, 24), 4);
+  for (const [month, day] of everyDate()) assert.ok([0, 1, 2, 3, 4, 5, 6, 7].includes(calendarMoon(2026, month, day)));
+});
+
+test("a weekend page draws both days, each in its own half, on `sun` and `roll` only, light and dark, in both languages", () => {
+  for (const theme of WEEKEND_THEMES) {
+    for (const w of WEEKENDS) {
+      for (const locale of ["en", "ja"]) {
+        for (const scheme of ["light", "dark"] as const) {
+          for (const [month, day] of [w.saturday, w.sunday]) {
+            const svg = calendarIcon({ theme, month, day, year: month === 1 && w.saturday[0] === 12 ? w.year + 1 : w.year, locale, scheme, weekend: "split" });
+            const what = `${theme} ${locale} ${scheme} ${month}/${day}`;
+            assertWellFormed(svg, what);
+            assert.ok(drawsDay(svg, w.saturday[1]) && drawsDay(svg, w.sunday[1]), `${what}: both days are drawn`);
+            assert.ok(svg.includes("clip-path"), `${what}: a diagonal cuts the page`);
+            assert.equal(svg.match(/<g data-part="day">/g)?.length, 1, what);
+          }
+        }
+      }
+    }
+    const label = (month: number, day: number, year: number, locale = "en") => calendarIcon({ theme, month, day, year, locale, weekend: "split" }).match(/aria-label="([^"]*)"/)![1];
+    assert.equal(label(10, 31, 2026), "Saturday Oct 31 2026 and Sunday Nov 1 2026");
+    assert.equal(label(11, 1, 2026), label(10, 31, 2026), "the Sunday is on the Saturday's page");
+    assert.equal(calendarIcon({ theme, month: 11, day: 1, year: 2026, weekend: "split" }), calendarIcon({ theme, month: 10, day: 31, year: 2026, weekend: "split" }), "and it is the same picture, byte for byte");
+    assert.equal(label(12, 31, 2022, "ja"), "2022年12月31日（土曜日）と2023年1月1日（日曜日）");
+    assert.equal(label(1, 1, 2023), "Saturday Dec 31 2022 and Sunday Jan 1 2023");
+    const monday = calendarIcon({ theme, month: 11, day: 2, year: 2026, weekend: "split" });
+    assert.equal(monday, calendarIcon({ theme, month: 11, day: 2, year: 2026 }), "a Monday, a holiday or not, keeps its own page");
+    assert.equal(calendarIcon({ theme, month: 10, day: 31, weekend: "split" }), calendarIcon({ theme, month: 10, day: 31 }), "no year, no weekend page");
+    assert.notEqual(calendarIcon({ theme, month: 10, day: 31, year: 2026, weekend: "split" }), calendarIcon({ theme, month: 10, day: 31, year: 2026 }));
+    assert.deepEqual(Object.keys(calendarLayout(theme, true, true)).includes("split"), true);
+    assert.equal(calendarLayout(theme, true, true).numeral, "diagonal");
+    assert.equal(calendarLayout(theme, true).numeral, "centre");
+  }
+  for (const theme of CALENDAR_THEMES.filter((one) => !(WEEKEND_THEMES as readonly string[]).includes(one))) {
+    assert.equal(calendarIcon({ theme, month: 10, day: 31, year: 2026, weekend: "split" }), calendarIcon({ theme, month: 10, day: 31, year: 2026 }), `${theme} has no weekend page`);
+  }
+  assert.throws(() => calendarIcon({ theme: "sun", month: 10, day: 31, year: 2026, weekend: "both" as "split" }), /weekend/);
+});
+
+test("the side columns say only what is known: the weekday and month, and a holiday only when the page is given one", () => {
+  const sun = (extra: object, locale = "ja") => calendarIcon({ theme: "sun", month: 1, day: 1, year: 2027, locale, ...extra });
+  assert.ok(sun({}).includes("金") && sun({}).includes("月"));
+  assert.ok(!sun({}).includes("元日"));
+  assert.ok(sun({ holidays: { "2027-01-01": "元日" } }).includes("元"));
+  assert.ok(sun({ holidays: { "01-01": { en: "New Year's Day", ja: "元日" } } }).includes("日"));
+  assert.ok(sun({ holidays: { "01-01": { en: "New Year's Day" } } }, "en").includes("New Year&#39;s Day") || sun({ holidays: { "01-01": { en: "New Year's Day" } } }, "en").includes("New Year's Day"));
+  assert.ok(!sun({ holidays: { "2027-01-02": "other" } }).includes("other"));
+  for (const theme of WEEKEND_THEMES) assert.ok(!calendarIcon({ theme, month: 1, day: 1, year: 2027, columns: false }).includes('data-part="side"'));
+  assert.ok(calendarIcon({ theme: "roll", month: 1, day: 1, year: 2027 }).includes('data-part="side"'));
+  assert.ok(!calendarIcon({ theme: "roll", month: 1, day: 1 }).includes("FRIDAY"), "no year, no weekday");
+  assert.ok(calendarIcon({ theme: "plain", month: 1, day: 1, year: 2027, holidays: { "01-01": "元日" } }).includes("元日"));
+  assert.ok(!calendarIcon({ theme: "plain", month: 1, day: 1, year: 2027 }).includes("元日"));
+  assert.ok(calendarIcon({ theme: "plain", month: 1, day: 1, year: 2027 }).includes("<path"), "the moon is drawn");
+  assert.ok(!calendarIcon({ theme: "plain", month: 1, day: 1, year: 2027, moon: false }).includes('stroke-width="1.8"'));
+});
+
+test("weekday ink: Saturday blue, Sunday and a holiday red, any other day black", () => {
+  const ink = (day: number, extra: object = {}) => {
+    const svg = calendarIcon({ theme: "roll", month: 11, day, year: 2026, ...extra });
+    return svg.match(/<g data-part="day">.*?stroke="(#[0-9a-f]{6})"/)![1];
+  };
+  const [black, blue, red] = [ink(2), ink(7), ink(8)];
+  assert.equal(new Set([black, blue, red]).size, 3);
+  assert.equal(ink(3, { holidays: { "2026-11-03": "x" } }), red, "a holiday on a Tuesday");
+  assert.equal(ink(4), black);
+});
+
+test("the sun's disc is a slot: a mark replaces it, and anything that could run code is refused", () => {
+  const plain = calendarIcon({ theme: "sun", month: 3, day: 20, year: 2026 });
+  const marked = calendarIcon({ theme: "sun", month: 3, day: 20, year: 2026, mark: '<rect x="-80" y="-80" width="160" height="160" fill="#123456"/>' });
+  assert.ok(marked.includes("#123456") && !plain.includes("#123456"));
+  assert.notEqual(plain, marked);
+  assertWellFormed(marked, "sun with a mark");
+  for (const bad of ["<script>alert(1)</script>", '<circle onclick="x()" r="9"/>', "<style>*{}</style>", "<foreignObject/>", '<a href="javascript:x"/>']) {
+    assert.throws(() => calendarIcon({ theme: "sun", month: 3, day: 20, mark: bad }), /mark/, bad);
   }
 });

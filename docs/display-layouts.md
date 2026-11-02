@@ -70,7 +70,7 @@ import { CALENDAR_THEMES, calendarIcon, displayMarkup } from "@johnmorrisdotca/m
 const cards = CALENDAR_THEMES.map((theme) =>
   displayMarkup({ layout: "calendar", icon: calendarIcon({ theme, month: 10, day: 20, year: 2026 }), items: [{ text: "A fact" }] }),
 );
-console.log(cards.length, cards.every((card) => card.includes("meigen-cal"))); // 14 true
+console.log(cards.length, cards.every((card) => card.includes("meigen-cal"))); // 17 true
 ```
 
 ### Banners

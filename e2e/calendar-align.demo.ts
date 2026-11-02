@@ -12,7 +12,7 @@ const CAP = 0.716;
 /** Seen at an angle: a wider number measures taller, so the one-size rule is held to a looser height. */
 const ANGLED: ReadonlySet<CalendarTheme> = new Set(["desk"]);
 /** Themes whose day is stroke-drawn are centred to the pixel; a day drawn as text is held to a looser rule (3% of the page, or 6% of the font size), because each font draws its 1 narrow and a little left of its box by its own amount. */
-const STROKED: ReadonlySet<CalendarTheme> = new Set(["flip", "curl", "soft", "thin"]);
+const STROKED: ReadonlySet<CalendarTheme> = new Set(["flip", "curl", "soft", "thin", "sun", "roll", "plain"]);
 /** Where a header must run edge to edge (a flat colour block that meets the frame): x, y, width, height. */
 const HEADERS: Partial<Record<CalendarTheme, readonly [number, number, number, number]>> = {
   pins: [35, 70, 243, 30],
@@ -32,13 +32,13 @@ for (const theme of CALENDAR_THEMES) {
         const boxes = [];
         for (const [month, day] of DATES) {
           const svg = calendarIcon({ theme, month, day, year, scheme, size: SIZE });
-          const seen = await look(page, svg, ["day", "month", "year"], []);
+          const seen = await look(page, svg, ["day", "month", "year", "weekday"], []);
           const d = seen.ink.day!;
           expect(d, `${day} is drawn`).not.toBeNull();
           const across = (d.x0 + d.x1) / 2 - (px + pw / 2);
           const at = `${theme} ${scheme} ${year ?? "-"} day ${day}`;
           expect(Math.abs(across), `${at}: the day's ink is ${across.toFixed(1)} units off the centre of its page`).toBeLessThanOrEqual(STROKED.has(theme) ? Math.max(1 / (SIZE / bw), 0.02 * pw) : Math.max(0.03 * pw, (0.06 * (d.y1 - d.y0)) / CAP));
-          const block = [d, seen.ink.month, seen.ink.year].filter((one) => one !== null && one !== undefined && one.y0 >= py - 0.5 && one.y1 <= py + ph + 0.5);
+          const block = [d, seen.ink.month, seen.ink.year, seen.ink.weekday].filter((one) => one !== null && one !== undefined && one.y0 >= py - 0.5 && one.y1 <= py + ph + 0.5);
           const top = Math.min(...block.map((one) => one!.y0));
           const bottom = Math.max(...block.map((one) => one!.y1));
           const down = (top + bottom) / 2 - (py + ph / 2);
@@ -84,6 +84,46 @@ for (const theme of CALENDAR_THEMES) {
           const apart = Math.max(...[0, 1, 2].map((c) => Math.abs(l[c]! - r[c]!)));
           expect(apart, `${theme} ${scheme}: the header's left and right edges are different colours (${l.slice(0, 3)} and ${r.slice(0, 3)})`).toBeLessThanOrEqual(24);
         }
+      });
+    }
+  }
+}
+
+/** A weekend page puts its numerals off the centre on purpose, the same for every weekend: the Saturday upper left, the Sunday lower right, each wholly on its side of the diagonal and inside the page, both one size and point-symmetric about the page's centre. */
+const WEEKENDS = [
+  { at: "6/7", year: 2026, saturday: [6, 6], sunday: [6, 7] },
+  { at: "31/1", year: 2026, saturday: [10, 31], sunday: [11, 1] },
+  { at: "30/31", year: 2026, saturday: [5, 30], sunday: [5, 31] },
+  { at: "31 Dec/1 Jan", year: 2022, saturday: [12, 31], sunday: [1, 1] },
+] as const;
+
+for (const theme of ["sun", "roll"] as const) {
+  for (const scheme of ["light", "dark"] as const) {
+    for (const w of WEEKENDS) {
+      test(`${theme} ${scheme} weekend ${w.at}: each day is wholly in its own half, and the pair is one size and centred`, async ({ page, browserName }) => {
+        test.skip(browserName !== "chromium", "the measuring reads Chromium's own rendering");
+        const layout = calendarLayout(theme, true, true);
+        const split = layout.split!;
+        const [px, py, pw, ph] = layout.page;
+        const svg = calendarIcon({ theme, month: w.saturday[0], day: w.saturday[1], year: w.year, scheme, size: SIZE, weekend: "split" });
+        const seen = await look(page, svg, ["saturday", "sunday"], []);
+        const [sat, sun] = [seen.ink.saturday!, seen.ink.sunday!];
+        expect(sat && sun, "both days are drawn").toBeTruthy();
+        for (const [name, d] of [["Saturday", sat], ["Sunday", sun]] as const) {
+          expect(d.x0 >= px - 0.5 && d.x1 <= px + pw + 0.5 && d.y0 >= py - 0.5 && d.y1 <= py + ph + 0.5, `the ${name} is inside the page: ${JSON.stringify(d)}`).toBe(true);
+          expect(d.y1 - d.y0, `the ${name} is tall`).toBeGreaterThan(0.3 * ph);
+        }
+        const [x1, y1, x2, y2] = split.line;
+        const along = Math.hypot(x2 - x1, y2 - y1);
+        // Positive on the upper left of the diagonal (the Saturday's side), negative on the lower right (the Sunday's).
+        const side = (x: number, y: number) => ((x2 - x1) * (y - y1) - (y2 - y1) * (x - x1)) / along;
+        const corners = (d: typeof sat) => [[d.x0, d.y0], [d.x1, d.y0], [d.x0, d.y1], [d.x1, d.y1]] as const;
+        for (const [x, y] of corners(sat)) expect(side(x, y), `the Saturday's ink corner ${x.toFixed(0)},${y.toFixed(0)} crosses the diagonal`).toBeGreaterThanOrEqual(-1);
+        for (const [x, y] of corners(sun)) expect(side(x, y), `the Sunday's ink corner ${x.toFixed(0)},${y.toFixed(0)} crosses the diagonal`).toBeLessThanOrEqual(1);
+        expect(Math.abs(sat.y1 - sat.y0 - (sun.y1 - sun.y0)), "the two numerals are one height").toBeLessThanOrEqual(0.06 * ph);
+        const [sx, sy] = [(sat.x0 + sat.x1) / 2 + (sun.x0 + sun.x1) / 2, (sat.y0 + sat.y1) / 2 + (sun.y0 + sun.y1) / 2];
+        expect(Math.abs(sx / 2 - (split.saturday[0] + split.sunday[0]) / 2), "the pair is centred across the page").toBeLessThanOrEqual(0.06 * pw);
+        expect(Math.abs(sy / 2 - (split.saturday[1] + split.sunday[1]) / 2), "the pair is centred down the page").toBeLessThanOrEqual(0.06 * ph);
       });
     }
   }

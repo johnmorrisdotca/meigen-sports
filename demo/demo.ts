@@ -1,4 +1,4 @@
-import { CALENDAR_THEME_LABELS, CALENDAR_THEMES, calendarIcon, calendarThemeOf, dateNote, displayKind, displayLayoutOf, displayMarkup, DISPLAY_LAYOUTS, factsFor, quoteForDate, rankFeed, renderRun, tagsOf, wikipediaUrl } from "../src/index.ts";
+import { CALENDAR_THEME_LABELS, CALENDAR_THEMES, calendarIcon, calendarThemeOf, calendarWeekend, dateNote, displayKind, displayLayoutOf, displayMarkup, DISPLAY_LAYOUTS, factsFor, quoteForDate, rankFeed, renderRun, tagsOf, wikipediaUrl } from "../src/index.ts";
 import { quotes } from "../src/data/quotes.ts";
 import { OFFLINE_BUILD, offline } from "../src/data/offline.ts";
 import { loadFactDay, loadFactEventsDay, loadFactPeopleDay, loadFactShard, loadShard } from "../src/load.ts";
@@ -152,6 +152,27 @@ const leafYear = document.querySelector<HTMLElement>("#leaf-year")!;
 const leafIcon = document.querySelector<HTMLElement>("#leaf-icon")!;
 const leaf = document.querySelector<HTMLElement>(".leaf")!;
 const optIcon = document.querySelector<HTMLSelectElement>("#opt-icon")!;
+const optWeekend = document.querySelector<HTMLInputElement>("#opt-weekend")!;
+optWeekend.checked = addressed.get("weekend") === "split";
+// The fixed-date holidays of Japan, as an example of what a page passes in `holidays`: the package knows none of its own.
+const DEMO_HOLIDAYS = {
+  "01-01": { en: "New Year's Day", ja: "元日" }, "02-11": { en: "Foundation Day", ja: "建国記念の日" }, "02-23": { en: "Emperor's Birthday", ja: "天皇誕生日" },
+  "04-29": { en: "Showa Day", ja: "昭和の日" }, "05-03": { en: "Constitution Day", ja: "憲法記念日" }, "05-04": { en: "Greenery Day", ja: "みどりの日" },
+  "05-05": { en: "Children's Day", ja: "こどもの日" }, "08-11": { en: "Mountain Day", ja: "山の日" }, "11-03": { en: "Culture Day", ja: "文化の日" },
+  "11-23": { en: "Labour Thanksgiving", ja: "勤労感謝の日" },
+} as const;
+/** The date a page draws. With weekend pages on, a weekday shows the weekend that follows it, so the choice is always visible. */
+function pageOf(date: { month: number; day: number; year: number }): { month: number; day: number; year: number } {
+  if (!optWeekend.checked) return date;
+  for (let ahead = 0; ahead < 7; ahead += 1) {
+    const next = new Date(Date.UTC(2000, 0, 1));
+    next.setUTCFullYear(date.year, date.month - 1, date.day + ahead);
+    const found = calendarWeekend(next.getUTCFullYear(), next.getUTCMonth() + 1, next.getUTCDate());
+    if (found) return found.saturday;
+  }
+  return date;
+}
+const iconExtras = () => ({ holidays: DEMO_HOLIDAYS, ...(optWeekend.checked ? { weekend: "split" as const } : {}) });
 const iconGallery = document.querySelector<HTMLElement>("#icon-gallery")!;
 // Flags and trophies beside the facts: two switches on the card, kept in the address (`?flags=1&trophies=1`), clickable while the card turns.
 const optFlags = document.querySelector<HTMLInputElement>("#opt-flags")!;
@@ -192,13 +213,13 @@ function drawLeaf() {
   const theme = calendarThemeOf(optIcon.value);
   if (!theme) { leaf.removeAttribute("data-icon"); leafIcon.replaceChildren(); return; }
   leaf.dataset.icon = theme;
-  const { month, day, year } = leafDate();
-  leafIcon.innerHTML = calendarIcon({ theme, month, day, year, locale: iconLocale(), scheme: iconScheme(), size: 96 });
+  const { month, day, year } = pageOf(leafDate());
+  leafIcon.innerHTML = calendarIcon({ theme, month, day, year, locale: iconLocale(), scheme: iconScheme(), size: 96, ...iconExtras() });
 }
 function drawIconGallery() {
   const lang = iconLocale();
   const active = calendarThemeOf(optIcon.value);
-  const { month, day, year } = leafDate();
+  const { month, day, year } = pageOf(leafDate());
   iconGallery.replaceChildren(...CALENDAR_THEMES.map((theme) => {
     const button = document.createElement("button");
     button.type = "button";
@@ -206,7 +227,7 @@ function drawIconGallery() {
     button.dataset.testid = `icon-${theme}`;
     button.dataset.theme = theme;
     if (theme === active) button.setAttribute("aria-current", "true");
-    button.innerHTML = `${calendarIcon({ theme, month, day, year, locale: lang, scheme: iconScheme(), size: 88 })}<span>${CALENDAR_THEME_LABELS[theme][lang]}</span>`;
+    button.innerHTML = `${calendarIcon({ theme, month, day, year, locale: lang, scheme: iconScheme(), size: 88, ...iconExtras() })}<span>${CALENDAR_THEME_LABELS[theme][lang]}</span>`;
     button.addEventListener("click", () => { optIcon.value = theme; applyIcon(true); });
     return button;
   }));
@@ -216,6 +237,7 @@ function applyIcon(keep: boolean) {
     const query = new URLSearchParams(location.search);
     const theme = calendarThemeOf(optIcon.value);
     if (theme) query.set("icon", theme); else query.delete("icon");
+    if (optWeekend.checked) query.set("weekend", "split"); else query.delete("weekend");
     try { history.replaceState(null, "", `${location.pathname}${query.size ? `?${query}` : ""}${location.hash}`); } catch { /* the address stays as it is */ }
   }
   drawLeaf();
@@ -224,6 +246,7 @@ function applyIcon(keep: boolean) {
 fillIconSelect();
 optIcon.value = calendarThemeOf(addressed.get("icon")) ?? "";
 optIcon.addEventListener("change", () => applyIcon(true));
+optWeekend.addEventListener("change", () => { applyIcon(true); drawLayout(); });
 window.addEventListener("meigen-language", () => { fillIconSelect(); applyIcon(false); fillLayoutSelect(); applyLayout(false); });
 new MutationObserver(() => applyIcon(false)).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
 window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => applyIcon(false));
@@ -246,8 +269,8 @@ function drawLayout() {
     return;
   }
   card.dataset.layout = layout;
-  const { month, day, year } = leafDate();
-  const icon = calendarIcon({ theme: calendarThemeOf(optIcon.value) ?? "pins", month, day, year, locale: iconLocale(), scheme: iconScheme(), size: 96 });
+  const { month, day, year } = pageOf(leafDate());
+  const icon = calendarIcon({ theme: calendarThemeOf(optIcon.value) ?? "pins", month, day, year, locale: iconLocale(), scheme: iconScheme(), size: 96, ...iconExtras() });
   layoutHost.innerHTML = displayMarkup({
     layout, items: layoutItems, icon, name: "today-kind",
     labels: { events: familyLang.word("layoutEvents"), births: familyLang.word("layoutBirths"), deaths: familyLang.word("layoutDeaths") },

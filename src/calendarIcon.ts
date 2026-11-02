@@ -1,8 +1,8 @@
-// Original calendar-page drawings as SVG. Fourteen named themes, each in light and dark.
+// Original calendar-page drawings as SVG. Seventeen named themes, each in light and dark.
 // Every drawing is our own: shapes, gradients and a stroke-drawn digit set. No image, font file or product art is used,
 // and theme names are generic: never a company or product name.
 
-export const CALENDAR_THEMES = ["pins", "loops", "shadow", "heavy", "cartoon", "flip", "stack", "line", "curl", "soft", "desk", "thin", "frame", "badge"] as const;
+export const CALENDAR_THEMES = ["pins", "loops", "shadow", "heavy", "cartoon", "flip", "stack", "line", "curl", "soft", "desk", "thin", "frame", "badge", "sun", "roll", "plain"] as const;
 
 export type CalendarTheme = (typeof CALENDAR_THEMES)[number];
 
@@ -21,6 +21,9 @@ export const CALENDAR_THEME_LABELS: Record<CalendarTheme, { en: string; ja: stri
   thin: { en: "Thin", ja: "細字" },
   frame: { en: "Frame", ja: "四色枠" },
   badge: { en: "Badge", ja: "バッジ" },
+  sun: { en: "Sun disc", ja: "日の丸" },
+  roll: { en: "Wall roll", ja: "壁掛け" },
+  plain: { en: "Plain", ja: "無地" },
 };
 
 /** The ten names of 0.12 and 0.13, still accepted: each reads as the theme that replaced it. */
@@ -50,6 +53,16 @@ export interface CalendarIconOptions {
   scheme?: "light" | "dark";
   /** Width in CSS pixels. Height follows the theme's shape. Default 96. */
   size?: number;
+  /** `"split"` draws a Saturday and the Sunday after it on one page, cut by a diagonal (themes `sun` and `roll`, and only when a year is given and the day is a Saturday or a Sunday). Any other day keeps its own page. */
+  weekend?: "split";
+  /** Holiday names for the side columns, by date (`"2027-01-01"`) or by day of every year (`"01-01"`): one string, or one per language. The library knows none itself; a date with no name leaves its cell empty. */
+  holidays?: Readonly<Record<string, string | { readonly en?: string; readonly ja?: string }>>;
+  /** SVG shapes that replace the sun's red disc: drawn in a box from -100,-100 to 100,100 centred behind the day. Your own markup, written as given: no scripts, styles, event attributes or foreign objects. */
+  mark?: string;
+  /** The side columns of `sun` and `roll` (weekday, month, holiday). Default true. */
+  columns?: boolean;
+  /** The moon phase on `plain`, drawn when a year is given. Default true. */
+  moon?: boolean;
 }
 
 interface Parts {
@@ -72,6 +85,19 @@ export interface CalendarLayout {
   page: Rect;
   /** The room the year chip sits in: it keeps the minimum size and the margin from the bottom of this. `null` for a look with no year chip. */
   yearZone: Rect | null;
+  /** Only on a weekend page: where the two numerals sit (their centres), how tall they are, and the diagonal that cuts the page (from top right to bottom left). */
+  split?: { saturday: readonly [number, number]; sunday: readonly [number, number]; height: number; line: readonly [number, number, number, number] };
+}
+
+/** The data a tear-off theme draws beside the date itself. */
+interface Extras {
+  ja: boolean;
+  day: DayInfo;
+  /** The Saturday and the Sunday of a weekend page. */
+  split: { saturday: DayInfo; sunday: DayInfo } | null;
+  mark: string | undefined;
+  columns: boolean;
+  moon: boolean;
 }
 
 interface Ctx {
@@ -82,6 +108,7 @@ interface Ctx {
   dayNo: number;
   yearNo: number | undefined;
   l: CalendarLayout;
+  x: Extras;
 }
 
 interface Def {
@@ -89,8 +116,8 @@ interface Def {
   box: Rect;
   /** Where the day sits in its page. Every theme centres it; a look that places it otherwise says so here, for 1, 9, 30 and 31 alike. */
   numeral: "centre";
-  /** The layout with a year and without one (the drawing is re-centred when the year is absent). */
-  layout: (year: boolean) => CalendarLayout;
+  /** The layout with a year and without one (the drawing is re-centred when the year is absent), and, for a theme with a weekend page, as that page. */
+  layout: (year: boolean, weekend?: boolean) => CalendarLayout;
   draw: (c: Ctx) => string;
 }
 
@@ -98,10 +125,51 @@ interface Def {
 export const CALENDAR_YEAR_MIN = 0.07;
 export const CALENDAR_YEAR_CLEAR = 0.03;
 
-/** The box, the page and the year's room of a theme, with and without a year. */
-export function calendarLayout(theme: CalendarTheme, withYear: boolean): CalendarLayout & { box: Rect; numeral: "centre" } {
+/** The box, the page and the year's room of a theme, with and without a year. A weekend page places its numerals on the diagonal, on purpose, the same for every weekend. */
+export function calendarLayout(theme: CalendarTheme, withYear: boolean, weekend = false): CalendarLayout & { box: Rect; numeral: "centre" | "diagonal" } {
   const def = THEMES[theme];
-  return { ...def.layout(withYear), box: def.box, numeral: def.numeral };
+  const layout = def.layout(withYear, weekend && WEEKEND_THEMES.has(theme));
+  return { ...layout, box: def.box, numeral: layout.split ? "diagonal" : def.numeral };
+}
+
+/** The themes that have a weekend page. */
+const WEEKEND_THEMES: ReadonlySet<CalendarTheme> = new Set(["sun", "roll"]);
+
+export interface CalendarDate {
+  year: number;
+  month: number;
+  day: number;
+}
+
+/** The Saturday and the Sunday of the weekend a date is in, or null for a weekday, a day the month does not have, or a weekend that runs outside years 1 to 9999. The Sunday may be in the next month or year. */
+export function calendarWeekend(year: number, month: number, day: number): { saturday: CalendarDate; sunday: CalendarDate } | null {
+  const at = utc(year, month, day);
+  if (at.getUTCMonth() !== month - 1 || at.getUTCDate() !== day) return null;
+  const weekday = at.getUTCDay();
+  if (weekday !== 6 && weekday !== 0) return null;
+  const other = new Date(at.getTime() + (weekday === 6 ? 1 : -1) * 86400000);
+  const [saturday, sunday] = weekday === 6 ? [at, other] : [other, at];
+  const out = { saturday: dateOf(saturday), sunday: dateOf(sunday) };
+  return out.saturday.year < 1 || out.sunday.year > 9999 ? null : out;
+}
+
+function utc(year: number, month: number, day: number): Date {
+  const date = new Date(Date.UTC(2000, month - 1, day));
+  date.setUTCFullYear(year);
+  return date;
+}
+
+function dateOf(date: Date): CalendarDate {
+  return { year: date.getUTCFullYear(), month: date.getUTCMonth() + 1, day: date.getUTCDate() };
+}
+
+const MOON_MONTH = 29.530588853;
+const NEW_MOON = Date.UTC(2000, 0, 6, 18, 14);
+
+/** The phase of the moon at noon UTC on a date, in eighths of a lunation: 0 new, 2 first quarter, 4 full, 6 last quarter. A mean lunation from a known new moon, so it can be a day out near the turn of a phase. */
+export function calendarMoon(year: number, month: number, day: number): number {
+  const age = (((utc(year, month, day).getTime() + 12 * 3600000 - NEW_MOON) / 86400000) % MOON_MONTH + MOON_MONTH) % MOON_MONTH;
+  return Math.round((age / MOON_MONTH) * 8) % 8;
 }
 
 const SANS = "ui-sans-serif,system-ui,Roboto,Helvetica,Arial,sans-serif";
@@ -131,13 +199,50 @@ export function calendarIcon(options: CalendarIconOptions): string {
   const dark = options.scheme === "dark";
   const size = options.size ?? 96;
   if (!Number.isFinite(size) || size < 16 || size > 1024) throw new RangeError("size must be 16–1024");
+  if (options.weekend !== undefined && options.weekend !== "split") throw new RangeError(`unknown weekend page: ${String(options.weekend)}`);
+  if (options.mark !== undefined && UNSAFE_MARK.test(options.mark)) throw new RangeError("mark must be plain SVG shapes: no script, style, event attribute or foreign object");
   const parts = dateParts(month, day, options.year, locale);
-  const uid = `cal-${theme}-${month}-${day}-${options.year ?? "x"}-${dark ? "d" : "l"}`;
+  const ja = new Intl.Locale(locale).language === "ja";
+  const dayInfo = (year: number | undefined, m: number, d: number): DayInfo => dayInfoOf(year, m, d, locale, ja, options.holidays);
+  const pair = options.weekend === "split" && WEEKEND_THEMES.has(theme) && options.year !== undefined ? calendarWeekend(options.year, month, day) : null;
+  const split = pair ? { saturday: dayInfo(pair.saturday.year, pair.saturday.month, pair.saturday.day), sunday: dayInfo(pair.sunday.year, pair.sunday.month, pair.sunday.day) } : null;
+  const label = split ? `${split.saturday.label}${ja ? "と" : " and "}${split.sunday.label}` : parts.label;
+  const uid = split ? `cal-${theme}-${pair!.saturday.month}-${pair!.saturday.day}-${pair!.saturday.year}-${dark ? "d" : "l"}-w` : `cal-${theme}-${month}-${day}-${options.year ?? "x"}-${dark ? "d" : "l"}`;
   const def = THEMES[theme];
   const [x, y, w, h] = def.box;
-  const body = def.draw({ p: parts, dark, uid, month, dayNo: day, yearNo: options.year, l: def.layout(parts.year !== "") });
+  const extras: Extras = { ja, day: dayInfo(options.year, month, day), split, mark: options.mark, columns: options.columns !== false, moon: options.moon !== false };
+  const body = def.draw({ p: parts, dark, uid, month, dayNo: day, yearNo: options.year, l: def.layout(parts.year !== "", split !== null), x: extras });
   const height = Math.round((size * h) / w);
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${x} ${y} ${w} ${h}" width="${r1(size)}" height="${height}" role="img" aria-label="${esc(parts.label)}"><title>${esc(parts.label)}</title>${body}</svg>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${x} ${y} ${w} ${h}" width="${r1(size)}" height="${height}" role="img" aria-label="${esc(label)}"><title>${esc(label)}</title>${body}</svg>`;
+}
+
+/** What a tear-off page says about one day. */
+interface DayInfo {
+  year: number | undefined;
+  month: number;
+  day: number;
+  /** 0 Sunday to 6 Saturday; undefined without a year or for a day the month does not have. */
+  weekdayNo: number | undefined;
+  weekday: string;
+  monthShortUp: string;
+  holiday: string;
+  /** The ink the day is written in: Saturday blue, Sunday and a holiday red, any other day black. */
+  ink: "black" | "blue" | "red";
+  label: string;
+}
+
+const UNSAFE_MARK = /<\s*(script|style|foreignObject|iframe|object|embed)|\son[a-z]+\s*=|javascript:/i;
+
+function dayInfoOf(year: number | undefined, month: number, day: number, locale: string, ja: boolean, holidays: CalendarIconOptions["holidays"]): DayInfo {
+  const p = dateParts(month, day, year, locale);
+  const real = year !== undefined && p.weekday !== "";
+  const weekdayNo = real ? utc(year, month, day).getUTCDay() : undefined;
+  const pad = (n: number) => String(n).padStart(2, "0");
+  const named = (key: string) => (holidays && Object.hasOwn(holidays, key) ? holidays[key] : undefined);
+  const found = (year === undefined ? undefined : named(`${String(year).padStart(4, "0")}-${pad(month)}-${pad(day)}`)) ?? named(`${pad(month)}-${pad(day)}`);
+  const holiday = (typeof found === "string" ? found : (ja ? found?.ja : found?.en) ?? found?.en ?? found?.ja ?? "").trim();
+  const ink = holiday || weekdayNo === 0 ? "red" : weekdayNo === 6 ? "blue" : "black";
+  return { year, month, day, weekdayNo, weekday: p.weekday, monthShortUp: p.monthShortUp, holiday, ink, label: p.label };
 }
 
 function localeOf(value: string | undefined): string {
@@ -266,26 +371,50 @@ interface DigitOptions {
   gap?: number;
   cap?: "round" | "butt" | "square";
   base?: boolean;
+  /** Narrows every digit to this share of its width (a condensed face): the strokes keep their thickness. */
+  condense?: number;
+  /** Centre the number by the ink it really draws, stroke included, not by the middle of the strokes (for a heavy face). */
+  inked?: boolean;
+}
+
+const squeezed = new Map<string, string>();
+/** A path with every x coordinate multiplied by `xs` (its strokes are drawn afterwards, so they keep their thickness). */
+function squeeze(d: string, xs: number): string {
+  if (xs === 1) return d;
+  const key = `${xs}|${d}`;
+  const known = squeezed.get(key);
+  if (known) return known;
+  const out = d.replace(/([a-zA-Z])([^a-zA-Z]*)/g, (_, cmd: string, args: string) => {
+    const n = (args.match(/-?\d*\.?\d+/g) ?? []).map(Number);
+    const low = cmd.toLowerCase();
+    const moved = n.map((v, i) => (low === "h" || (low !== "v" && i % 2 === 0) ? v * xs : v));
+    return `${cmd}${moved.map(r3).join(" ")}`;
+  });
+  squeezed.set(key, out);
+  return out;
 }
 
 /** The number drawn as strokes: its ink centred on `cx` and `cy`, `h` tall, `sw` thick. One size for every number. */
 function digits(value: string, cx: number, cy: number, h: number, sw: number, color: string, o: DigitOptions = {}): string {
   const gap = o.gap ?? 5;
   const lean = (o.slant ?? 0) / 12;
+  const xs = o.condense ?? 1;
+  const k = h / 16;
+  const half = o.inked ? sw / (2 * k) : 0;
   const ink = [...value].map((d) => {
     const flat = o.base && d === "1" ? ([-0.8, 7.2] as const) : INK[d]!;
     const leaned = INK_LEAN[o.base && d === "1" ? "1b" : d]!;
-    return [flat[0] + (leaned[0] - flat[0]) * lean, flat[1] + (leaned[1] - flat[1]) * lean] as const;
+    const pad = o.base && d === "1" ? 0 : half;
+    return [(flat[0] + (leaned[0] - flat[0]) * lean) * xs - pad, (flat[1] + (leaned[1] - flat[1]) * lean) * xs + pad] as const;
   });
-  const k = h / 16;
   const top = cy - h / 2;
   const total = ink.reduce((a, [l, r]) => a + r - l, 0) + gap * (ink.length - 1);
   let at = cx - (total * k) / 2;
   let out = "";
   [...value].forEach((d, i) => {
     const [l, r] = ink[i]!;
-    const path = d === "9" ? `<path d="${SK["6"]}" transform="rotate(180 5 8)"/>` : `<path d="${SK[d]}"/>`;
-    const serif = o.base && d === "1" ? '<path d="M-.8 15.5h8"/>' : "";
+    const path = d === "9" ? `<path d="${squeeze(SK["6"]!, xs)}" transform="rotate(180 ${r2(5 * xs)} 8)"/>` : `<path d="${squeeze(SK[d]!, xs)}"/>`;
+    const serif = o.base && d === "1" ? `<path d="${squeeze("M-.8 15.5h8", xs)}"/>` : "";
     out += `<g transform="translate(${r2(at - l * k)} ${r2(top)}) scale(${r3(k)})" stroke-width="${r3(sw / k)}">${path}${serif}</g>`;
     at += (r - l + gap) * k;
   });
@@ -313,7 +442,7 @@ function stack(top: number, bottom: number, rows: ReadonlyArray<readonly [cap: n
 }
 
 /** Marks a part of the drawing (`day`, `month`, `year`) so a test, or a page's own style, can find it. */
-function part(name: "day" | "month" | "year", markup: string): string {
+function part(name: "day" | "month" | "year" | "weekday" | "monthno" | "saturday" | "sunday", markup: string): string {
   return markup ? `<g data-part="${name}">${markup}</g>` : "";
 }
 
@@ -330,7 +459,125 @@ function topRound(x: number, y: number, w: number, h: number, r: number, fill: s
   return `<path d="M${r2(x)} ${r2(y + h)}V${r2(y + r)}a${r2(r)} ${r2(r)} 0 0 1 ${r2(r)} ${r2(-r)}h${r2(w - 2 * r)}a${r2(r)} ${r2(r)} 0 0 1 ${r2(r)} ${r2(r)}V${r2(y + h)}Z" fill="${fill}"${extra ? ` ${extra}` : ""}/>`;
 }
 
-// ---------- the fourteen themes ----------
+// ---------- the tear-off pages (sun, roll, plain) ----------
+
+const tearColours = (dark: boolean) =>
+  dark
+    ? { paper: "#1f2023", back: "#2c2e33", edge: "#44464c", ink: "#f2f1ec", muted: "#8f9198", red: "#ff6f55", blue: "#7ba7ff", disc: "#c4301d", strip: "#4b4e57", stripHi: "#5d616b", dot: "#4d5057", kraft: "#7d6445", kraftEdge: "#68533a", hole: "#2a2a2c" }
+    : { paper: "#fdfdfa", back: "#e9e9e4", edge: "#d3d4cf", ink: "#111111", muted: "#85868c", red: "#d8321c", blue: "#1f4ea6", disc: "#e2371f", strip: "#cdd1da", stripHi: "#e3e6ec", dot: "#c9cac6", kraft: "#c9a574", kraftEdge: "#b48e5d", hole: "#efe9de" };
+type TearColours = ReturnType<typeof tearColours>;
+const inkOf = (k: TearColours, ink: DayInfo["ink"]): string => (ink === "red" ? k.red : ink === "blue" ? k.blue : k.ink);
+
+/** The condensed, very heavy numerals of the sun and roll pages. */
+const BIG = { condense: 0.62, cap: "butt", base: true, inked: true, gap: 1 } as const;
+const bigInk = (h: number, sw: number): number => (h * 15) / 16 + sw;
+
+/** Characters one under another, centred on `cx`: the end is where the next thing may start. */
+function stacked(cx: number, top: number, chars: readonly string[], size: number, fill: string, weight: number): { markup: string; end: number } {
+  const pitch = size * 1.1;
+  const markup = chars.map((ch, i) => tx(cx, top + i * pitch + size * 0.86, ch, size, fill, weight)).join("");
+  return { markup, end: top + chars.length * pitch };
+}
+
+/** A word turned a quarter turn, reading downwards, centred across `cx` and starting at `top`: its length (the next start) is what it occupies. */
+function spine(cx: number, top: number, value: string, size: number, fill: string, weight: number, spacing = 0): { markup: string; end: number } {
+  if (!value) return { markup: "", end: top };
+  const length = [...value].reduce((a, ch) => a + (CJK.test(ch) ? 1 : 0.7), 0) * size + spacing * value.length;
+  return { markup: `<g transform="translate(${r2(cx - (size * CAP) / 2)} ${r2(top)}) rotate(90)">${tx(0, 0, value, size, fill, weight, { anchor: "start", spacing })}</g>`, end: top + length };
+}
+
+/** The weekday of a side column: the kanji one under another in Japanese, a word reading downwards in any other language. */
+function weekdayCell(box: Rect, d: DayInfo, ja: boolean, k: TearColours, size: number, top = box[1]): { markup: string; end: number } {
+  if (!d.weekday) return { markup: "", end: top };
+  const fill = inkOf(k, d.ink);
+  const cx = box[0] + box[2] / 2;
+  if (ja) return stacked(cx, top, [...d.weekday], Math.min(size, box[2] * 0.84), fill, 900);
+  const word = d.weekday.toLocaleUpperCase();
+  return spine(cx, top, word, fit(word, Math.min(size, box[2] * 0.62), Math.max(20, box[3] - (top - box[1]) - 4), 0.72), fill, 900);
+}
+
+/** The month of a side column: the number and 月 in Japanese, the short month name reading downwards in any other language. */
+function monthCell(box: Rect, d: DayInfo, ja: boolean, k: TearColours, size: number, top = box[1]): { markup: string; end: number } {
+  const fill = inkOf(k, d.ink);
+  const cx = box[0] + box[2] / 2;
+  if (!ja) return spine(cx, top, d.monthShortUp, Math.min(size, box[2] * 0.62), fill, 900, 1);
+  const num = fit(String(d.month), size, box[2] * 0.9, 0.62);
+  const unit = stacked(cx, top + num * 1.05, ["月"], Math.min(size, box[2] * 0.76), fill, 900);
+  return { markup: tx(cx, top + num * 0.86, String(d.month), num, fill, 900) + unit.markup, end: unit.end };
+}
+
+/** The holiday of a side column, in red, in whatever room is left (a day with none leaves it empty). */
+function holidayCell(box: Rect, d: DayInfo, ja: boolean, k: TearColours, size: number, top: number): string {
+  if (!d.holiday) return "";
+  const room = box[1] + box[3] - top;
+  const cx = box[0] + box[2] / 2;
+  if (ja) {
+    const chars = [...d.holiday];
+    const fs = Math.min(size, box[2] * 0.62, room / (chars.length * 1.1));
+    return stacked(cx, top, chars, fs, k.red, 900).markup;
+  }
+  return spine(cx, top, d.holiday, fit(d.holiday, Math.min(size, box[2] * 0.4), room, 0.62), k.red, 800).markup;
+}
+
+/** The corners of a polygon that covers one side of the diagonal `line` (far past the page): `up` is the upper left, otherwise the lower right. */
+function halfPlane(line: readonly [number, number, number, number], up: boolean): string {
+  const [x1, y1, x2, y2] = line;
+  const dx = x2 - x1;
+  const dy = y2 - y1;
+  const far = 4;
+  const nx = (up ? -dy : dy) * far;
+  const ny = (up ? dx : -dx) * far;
+  const [ax, ay, bx, by] = [x1 - dx * far, y1 - dy * far, x2 + dx * far, y2 + dy * far];
+  return [ax, ay, bx, by, bx + nx, by + ny, ax + nx, ay + ny].map(r1).join(" ").replace(/(\S+) (\S+)/g, "$1,$2");
+}
+
+/** The numerals of a weekend page: the Saturday upper left, the Sunday lower right, each over a faint ghost of the other, cut by the diagonal. */
+function weekendNumerals(c: Ctx, k: TearColours, uid: string, inks: { saturday: string; sunday: string }, ghostSize: number): string {
+  const s = c.l.split!;
+  const days = c.x.split!;
+  const [h, sw] = [s.height, s.height * 0.125];
+  const big = (value: number, at: readonly [number, number], color: string, size = h, weight = sw) =>
+    digits(String(value), at[0], at[1], size, weight, color, BIG);
+  const ghost = (value: number, at: readonly [number, number]) => `<g opacity=".06">${big(value, at, k.ink, ghostSize, ghostSize * 0.125)}</g>`;
+  const [cx, cy] = [(s.saturday[0] + s.sunday[0]) / 2, (s.saturday[1] + s.sunday[1]) / 2];
+  return (
+    `<defs><clipPath id="${uid}-u"><polygon points="${halfPlane(s.line, true)}"/></clipPath><clipPath id="${uid}-d"><polygon points="${halfPlane(s.line, false)}"/></clipPath>` +
+    `<clipPath id="${uid}-p"><rect x="${c.l.page[0]}" y="${c.l.page[1]}" width="${c.l.page[2]}" height="${c.l.page[3]}"/></clipPath></defs>` +
+    `<g clip-path="url(#${uid}-p)"><g clip-path="url(#${uid}-u)">${ghost(days.sunday.day, [cx - 14, cy - ghostSize * 0.16])}</g>` +
+    `<g clip-path="url(#${uid}-d)">${ghost(days.saturday.day, [cx + 14, cy + ghostSize * 0.16])}</g></g>` +
+    `<path d="M${s.line.slice(0, 2).map(r2).join(" ")}L${s.line.slice(2).map(r2).join(" ")}" stroke="${k.muted}" stroke-width="1.6"/>` +
+    part("day", part("saturday", big(days.saturday.day, s.saturday, inks.saturday)) + part("sunday", big(days.sunday.day, s.sunday, inks.sunday)))
+  );
+}
+
+/** The corner pieces both tear-off pages put in a page's two side columns: the weekday and month (and for a weekend page, one column each for the Saturday and the Sunday). */
+function sideColumns(c: Ctx, k: TearColours, left: Rect, right: Rect, date: boolean): string {
+  if (!c.x.columns) return "";
+  const { ja, day } = c.x;
+  const size = 38;
+  if (c.x.split) {
+    const side = (box: Rect, d: DayInfo, ink: DayInfo["ink"]) => {
+      const e = { ...d, ink };
+      const w = weekdayCell(box, e, ja, k, 32);
+      const m = monthCell(box, e, ja, k, 28, w.end + 14);
+      return w.markup + m.markup + holidayCell(box, e, ja, k, 20, m.end + 14);
+    };
+    return `<g data-part="side">${side(left, c.x.split.saturday, "blue")}${side(right, c.x.split.sunday, "red")}</g>`;
+  }
+  const w = weekdayCell(left, day, ja, k, size);
+  const m = monthCell(right, day, ja, k, 36);
+  let end = m.end;
+  let dateText = "";
+  if (date) {
+    const text = [day.year, String(day.month).padStart(2, "0"), String(day.day).padStart(2, "0")].filter((one) => one !== undefined).join(".");
+    const at = spine(right[0] + right[2] / 2, end + 14, text, Math.min(14, right[2] * 0.3), inkOf(k, day.ink), 700);
+    dateText = at.markup;
+    end = at.end;
+  }
+  return `<g data-part="side">${w.markup}${m.markup}${dateText}${holidayCell(right, day, ja, k, 22, end + 14)}</g>`;
+}
+
+// ---------- the themes ----------
 
 // Each theme's layout is data: the `page` its day is centred in (x, y, width, height, in the drawing's own units, at the day's
 // height) and the `yearZone` its year sits in. The day is centred in its page, horizontally always, and vertically as one block
@@ -360,6 +607,40 @@ const flipPage = (top: number, bottom: number): Rect => {
   const mid = (top + bottom) / 2;
   return [flipLeft(mid), top, flipRight(mid) - flipLeft(mid), bottom - top];
 };
+
+// The tear-off pages share one rule: the page is the centre zone between two side columns, and the numeral sits in it. `sun` and `roll`
+// have a weekend page too, which puts the Saturday upper left and the Sunday lower right on a diagonal, on purpose and the same for every weekend.
+const SUN: Rect = [86, 46, 188, 274];
+const SUN_NUMERAL = { h: 186, sw: 20, year: 30, gap: 16, split: { h: 98, dx: 48, dy: 50 } } as const;
+const SUN_LEFT: Rect = [18, 52, 58, 262];
+const SUN_RIGHT: Rect = [284, 52, 58, 262];
+const ROLL: Rect = [66, 70, 188, 268];
+const ROLL_NUMERAL = { h: 190, sw: 20, year: 23, gap: 14, split: { h: 98, dx: 48, dy: 50 } } as const;
+const ROLL_LEFT: Rect = [16, 82, 44, 248];
+const ROLL_RIGHT: Rect = [260, 82, 44, 248];
+const PLAIN_PAGE: Rect = [60, 108, 180, 184];
+const PLAIN_NUMERAL = { h: 100, sw: 12, word: 20, gap: 20 } as const;
+
+/** The block of a sun or roll page: the year, then the day, centred in the page; for a weekend page the diagonal and the two numerals' centres. */
+function tearBlock(page: Rect, n: { h: number; sw: number; year: number; gap: number; split: { h: number; dx: number; dy: number } }, withYear: boolean, weekend: boolean): { rows: number[]; centre: number; layout: CalendarLayout } {
+  const ink = bigInk(n.h, n.sw);
+  const rows = stack(page[1], page[1] + page[3], [...(withYear ? [[n.year * CAP, 0] as const] : []), [ink, withYear ? n.gap : 0]]);
+  const day = rows[rows.length - 1]!;
+  const centre = day - ink / 2;
+  const cx = page[0] + page[2] / 2;
+  const zone: Rect | null = withYear ? [page[0], rows[0]! - n.year * CAP - 6, page[2], n.year * CAP + 6 + n.gap] : page;
+  const layout: CalendarLayout = { page, yearZone: zone };
+  if (weekend) {
+    const s = n.split;
+    layout.split = {
+      saturday: [cx - s.dx, centre - s.dy],
+      sunday: [cx + s.dx, centre + s.dy],
+      height: s.h,
+      line: [page[0] + page[2], centre - ink / 2, page[0], centre + ink / 2],
+    };
+  }
+  return { rows, centre, layout };
+}
 
 const THEMES: Record<CalendarTheme, Def> = {
   // 01: flat page, red header, two slate pins through white holes.
@@ -755,7 +1036,123 @@ const THEMES: Record<CalendarTheme, Def> = {
       );
     },
   },
+
+  // 15: a square tear-off page: a grey strip to tear off by, a huge black day over a red disc (a slot for any mark), side columns for the weekday, month and holiday.
+  sun: {
+    box: [0, 0, 360, 350],
+    numeral: "centre",
+    layout: (year, weekend) => tearBlock(SUN, SUN_NUMERAL, year, weekend === true).layout,
+    draw: (c) => {
+      const { p, dark, uid, l, x } = c;
+      const k = tearColours(dark);
+      const n = SUN_NUMERAL;
+      const cx = SUN[0] + SUN[2] / 2;
+      const { rows, centre } = tearBlock(SUN, n, p.year !== "", x.split !== null);
+      const disc = x.mark === undefined
+        ? circle(cx, centre, 94, k.disc)
+        : `<g transform="translate(${r2(cx)} ${r2(centre)}) scale(.94)">${x.mark}</g>`;
+      const split = l.split;
+      const halves = split && x.mark === undefined
+        ? `<defs><clipPath id="${uid}-hu"><polygon points="${halfPlane(split.line, true)}"/></clipPath><clipPath id="${uid}-hd"><polygon points="${halfPlane(split.line, false)}"/></clipPath></defs>` +
+          `<g clip-path="url(#${uid}-hu)">${circle(cx, centre, 94, dark ? "#3c5fb0" : "#7aa2e6")}</g><g clip-path="url(#${uid}-hd)">${circle(cx, centre, 94, k.disc)}</g>`
+        : disc;
+      return (
+        rect(9, 12, 342, 336, 6, k.back) +
+        rect(6, 6, 348, 336, 6, k.paper, `stroke="${k.edge}" stroke-width="1.4"`) +
+        `<path d="M6 36V12a6 6 0 0 1 6-6H348a6 6 0 0 1 6 6V36Z" fill="${k.strip}"/>` +
+        `<path d="M6 36H354" stroke="${k.muted}" stroke-width="1.2" stroke-dasharray="2.5 3"/>` +
+        halves +
+        sideColumns(c, k, SUN_LEFT, SUN_RIGHT, false) +
+        (split
+          ? weekendNumerals(c, k, uid, { saturday: k.ink, sunday: k.ink }, 150)
+          : part("day", digits(p.day, cx, centre, n.h, n.sw, k.ink, BIG))) +
+        part("year", tx(cx, rows[0]!, p.year, n.year, k.ink, 900, { family: BLACK, spacing: 3 }))
+      );
+    },
+  },
+
+  // 16: a tall wall tear-off page: the pages already torn off curl above, a huge condensed day in the ink of its weekday, side columns, a dotted memo area.
+  roll: {
+    box: [0, 0, 320, 450],
+    numeral: "centre",
+    layout: (year, weekend) => tearBlock(ROLL, ROLL_NUMERAL, year, weekend === true).layout,
+    draw: (c) => {
+      const { p, dark, uid, x } = c;
+      const k = tearColours(dark);
+      const n = ROLL_NUMERAL;
+      const cx = ROLL[0] + ROLL[2] / 2;
+      const { rows, centre } = tearBlock(ROLL, n, p.year !== "", x.split !== null);
+      let dots = "";
+      for (let row = 0; row < 5; row += 1) for (let col = 0; col < 17; col += 1) dots += `<circle cx="${28 + col * 16}" cy="${352 + row * 16}" r="1.5"/>`;
+      return (
+        `<defs><linearGradient id="${uid}-r" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${k.paper}"/><stop offset=".45" stop-color="${k.back}"/><stop offset="1" stop-color="${k.edge}"/></linearGradient>` +
+        `<linearGradient id="${uid}-s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${k.ink}" stop-opacity=".22"/><stop offset="1" stop-color="${k.ink}" stop-opacity="0"/></linearGradient></defs>` +
+        rect(14, 438, 292, 8, 3, k.edge) +
+        rect(10, 432, 300, 8, 3, k.back, `stroke="${k.edge}" stroke-width="1"`) +
+        rect(8, 40, 304, 394, 3, k.paper, `stroke="${k.edge}" stroke-width="1.4"`) +
+        `<path d="M8 52H312V74H8Z" fill="url(#${uid}-s)"/>` +
+        rect(6, 6, 308, 46, 23, `url(#${uid}-r)`, `stroke="${k.edge}" stroke-width="1.4"`) +
+        `<path d="M30 20H290M30 33H290" stroke="${k.edge}" stroke-width="1.2" opacity=".8"/>` +
+        `<g fill="${k.dot}">${dots}</g>` +
+        sideColumns(c, k, ROLL_LEFT, ROLL_RIGHT, true) +
+        (c.l.split
+          ? weekendNumerals(c, k, uid, { saturday: k.blue, sunday: k.red }, 150)
+          : part("day", digits(p.day, cx, centre, n.h, n.sw, inkOf(k, x.day.ink), BIG))) +
+        part("year", tx(cx, rows[0]!, p.year, n.year, k.ink, 900, { family: BLACK, spacing: 2 }))
+      );
+    },
+  },
+
+  // 17: a plain, unbranded tear-off pad on a kraft stand: a small month, a big day, the weekday in capitals, the month and year, the moon.
+  plain: {
+    box: [0, 0, 300, 380],
+    numeral: "centre",
+    layout: () => ({ page: PLAIN_PAGE, yearZone: [60, 300, 190, 46] }),
+    draw: ({ p, dark, uid, month, dayNo, yearNo, l, x }) => {
+      const k = tearColours(dark);
+      const n = PLAIN_NUMERAL;
+      const [px, py, pw, ph] = l.page;
+      const cx = px + pw / 2;
+      const ink = bigInk(n.h, n.sw);
+      const word = x.ja ? p.weekday : p.weekday.toLocaleUpperCase();
+      const wordSize = fit(word, n.word, pw, x.ja ? 1.3 : 0.74);
+      const [db, wb] = stack(py, py + ph, [[ink, 0], ...(word ? [[wordSize * CAP, n.gap] as const] : [])]);
+      const colour = inkOf(k, x.day.ink === "blue" ? "black" : x.day.ink);
+      const size = x.ja ? 22 : fit([p.monthShort, p.year].filter(Boolean).join(" "), 22, 150, 0.58);
+      const label = x.ja
+        ? `<text x="60" y="326" font-size="${size}" font-family="${SANS}" font-weight="500" fill="${k.ink}">${p.year ? `<tspan data-part="year">${p.year}</tspan><tspan font-size="${size - 4}">年</tspan>` : ""}<tspan data-part="month" font-size="${p.year ? size - 4 : size}">${month}月</tspan></text>`
+        : `<text x="60" y="326" font-size="${r2(size)}" font-family="${SANS}" font-weight="500" fill="${k.ink}"><tspan data-part="month">${esc(p.monthShort)}</tspan>${p.year ? `<tspan data-part="year" dx="${r2(size * 0.3)}">${esc(p.year)}</tspan>` : ""}</text>`;
+      const holiday = x.day.holiday ? tx(cx, wb! + 6 + 14 * CAP + 8, x.day.holiday, fit(x.day.holiday, 14, pw, x.ja ? 1 : 0.6), k.red, 600) : "";
+      const moon = x.moon && yearNo !== undefined && p.weekday !== "" ? moonGlyph(236, 316, 12, calendarMoon(yearNo, month, dayNo), k.ink, k.paper) : "";
+      return (
+        `<defs><linearGradient id="${uid}-m" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${k.stripHi}"/><stop offset="1" stop-color="${k.strip}"/></linearGradient></defs>` +
+        rect(0, 0, 300, 380, 8, k.kraft) +
+        circle(150, 30, 9, k.hole, `stroke="${k.kraftEdge}" stroke-width="1.2"`) +
+        rect(48, 356, 204, 6, 2, k.back, `stroke="${k.edge}" stroke-width=".8"`) +
+        rect(46, 352, 208, 6, 2, k.paper, `stroke="${k.edge}" stroke-width=".8"`) +
+        rect(44, 84, 212, 266, 3, k.paper, `stroke="${k.edge}" stroke-width="1"`) +
+        rect(40, 70, 220, 32, 4, `url(#${uid}-m)`, `stroke="${k.edge}" stroke-width="1"`) +
+        `<path d="M44 102H256" stroke="${k.ink}" stroke-width="1" opacity=".12"/>` +
+        part("monthno", tx(60, 132, String(month), 24, k.ink, 500)) +
+        part("day", digits(p.day, cx, db! - ink / 2, n.h, n.sw, colour, { gap: 4.5 })) +
+        part("weekday", tx(cx, wb ?? 0, word, wordSize, k.ink, 500, { spacing: x.ja ? 3 : 2.5 })) +
+        holiday +
+        label +
+        moon
+      );
+    },
+  },
 };
+
+/** A moon phase (0 new to 7, see `calendarMoon`) as a small disc: the lit part filled, the rest left as an outline. */
+function moonGlyph(cx: number, cy: number, r: number, phase: number, ink: string, paper: string): string {
+  const outline = `<circle cx="${r2(cx)}" cy="${r2(cy)}" r="${r2(r)}" fill="${phase === 4 ? ink : paper}" stroke="${ink}" stroke-width="1.8"/>`;
+  if (phase === 0 || phase === 4) return outline;
+  const i = phase < 4 ? phase : 8 - phase;
+  const rx = r * Math.abs(Math.cos((Math.PI * 2 * i) / 8));
+  const lit = `<path d="M${r2(cx)} ${r2(cy - r)}A${r2(r)} ${r2(r)} 0 0 1 ${r2(cx)} ${r2(cy + r)}A${r2(rx)} ${r2(r)} 0 0 ${i < 2 ? 0 : 1} ${r2(cx)} ${r2(cy - r)}Z" fill="${ink}"/>`;
+  return outline + (phase < 4 ? lit : `<g transform="translate(${r2(cx)} 0) scale(-1 1) translate(${r2(-cx)} 0)">${lit}</g>`);
+}
 
 // ---------- small utilities ----------
 

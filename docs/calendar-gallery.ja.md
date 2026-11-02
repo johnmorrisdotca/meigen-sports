@@ -2,14 +2,14 @@
 
 # カレンダーのギャラリー
 
-十四のカレンダーを、五つの日付と六つの大きさで、明るい色と暗い色で並べました。日付は、1日（1月1日）、一桁の日（2月9日、9月9日）、長い月の名前（9月、11月、12月）、31日です。どの絵も `calendarIcon` を一回呼んだものです。上の二段は年つきの日付（曜日が入るテーマもあります）、下の二つは 12月31日 を16から96ピクセルで、年なしで並べています。絵の `<title>` と `aria-label` は日本語の日付の順で、年つきは `2026年12月31日（木曜日）`、年なしは `12月31日` です。どの絵でも、日付は紙の真ん中にあり、年は下の縁から離れた場所にあります。使い方は [calendar-icons.md](calendar-icons.md) を見てください。
+十七のカレンダーを、五つの日付と六つの大きさで、明るい色と暗い色で並べました。日付は、1日（1月1日）、一桁の日（2月9日、9月9日）、長い月の名前（9月、11月、12月）、31日です。どの絵も `calendarIcon` を一回呼んだものです。上の二段は年つきの日付（曜日が入るテーマもあります）、下の二つは 12月31日 を16から96ピクセルで、年なしで並べています。絵の `<title>` と `aria-label` は日本語の日付の順で、年つきは `2026年12月31日（木曜日）`、年なしは `12月31日` です。`sun` と `roll` には、土日ページ（6月6日・7日、10月31日・11月1日、5月30日・31日、12月31日・1月1日）の段もあります。どの絵でも、日付は紙の真ん中にあり、年は下の縁から離れた場所にあります。使い方は [calendar-icons.md](calendar-icons.md) を見てください。
 
 ```js
 import { CALENDAR_THEMES, calendarIcon } from "@johnmorrisdotca/meigen-sports";
 
 const dates = [[1, 1], [2, 9], [9, 9], [11, 30], [12, 31]];
 const sheet = CALENDAR_THEMES.map((theme) => dates.map(([month, day]) => calendarIcon({ theme, month, day, year: 2026, locale: "ja", scheme: "light", size: 112 })));
-console.log(sheet.length, sheet[0].length); // 14 5
+console.log(sheet.length, sheet[0].length); // 17 5
 const sizes = [16, 24, 32, 48, 64, 96].map((size) => calendarIcon({ theme: "pins", month: 12, day: 31, locale: "ja", scheme: "dark", size }));
 console.log(sizes.length); // 6
 ```
@@ -97,3 +97,21 @@ console.log(sizes.length); // 6
 `badge`: 白いタイルに、やわらかい青いページと白い数字。
 
 ![バッジ：五つの日付（明るい色と暗い色）と六つの大きさ](images/gallery-badge-ja.webp)
+
+## 日の丸
+
+`sun`: 四角い日めくり。上に灰色のはがす帯、赤い丸の上に大きな黒い数字、年は上、左右に欄があります。三段目と四段目は土日ページです。
+
+![日の丸：五つの日付、四つの土日ページ（明るい色と暗い色）と六つの大きさ](images/gallery-sun-ja.webp)
+
+## 壁掛け
+
+`roll`: 縦長の壁掛け日めくり。はがした紙が上で丸まり、曜日の色の大きな細長い数字、左右の欄、点線のメモ欄があります。三段目と四段目は土日ページです。
+
+![壁掛け：五つの日付、四つの土日ページ（明るい色と暗い色）と六つの大きさ](images/gallery-roll-ja.webp)
+
+## 無地
+
+`plain`: 無地の日めくり。クラフト紙の台に、小さな月、大きな数字、大文字の曜日、月と年、月の満ち欠けがあります。
+
+![無地：五つの日付（明るい色と暗い色）と六つの大きさ](images/gallery-plain-ja.webp)

@@ -13,7 +13,7 @@ A design note, not an API reference. Two questions: what a sports history websit
 | Facts for one thing | `queryFacts({ country: "RO", sport: "handball", day: "03-04" }, options)` | Static id indexes, intersected in the browser. `tag`, `award`, `decade`, `team`, `league` too. |
 | Find a person | `findPeopleByName("wayne gr", options)` | One file per first letter. Returns the Q id; a name is a label, never identity. |
 | Words | `captionFromFact(fact, "en" \| "ja")`, `render`, `renderRun` | Neighbours in a list never share a template. |
-| Pictures | `calendarIcon({ theme, month, day, year })` | Fourteen themes, light and dark, SVG. |
+| Pictures | `calendarIcon({ theme, month, day, year })` | Seventeen themes, light and dark, SVG (three tear-off pages with weekend pages). |
 | Layouts | `displayMarkup({ layout, icon, items })` | `calendar`, `years`, `compact`, `featured`. Returns HTML; `styles.css` is optional. |
 | Links, flags | `wikipediaUrl`, `flagOf`, `countriesOf`, `tagsOf` | A flag only when one country is unambiguous. |
 
