@@ -10,7 +10,7 @@ test("the picker and the gallery list sun, roll and plain, in both languages, an
   expect(await page.locator("#icon-gallery .icon-swatch").count()).toBe(17);
   expect(await page.locator("#opt-icon option").allTextContents()).toEqual(expect.arrayContaining(["Sun disc", "Wall roll", "Plain"]));
   await page.locator('[data-testid="icon-sun"]').click();
-  expect(page.url()).toContain("icon=sun");
+  await expect(page).toHaveURL(/icon=sun/);
   await page.goto("/?lang=ja&icon=plain");
   expect(await page.locator("#opt-icon option").allTextContents()).toEqual(expect.arrayContaining(["日の丸", "壁掛け", "無地"]));
 });
@@ -25,10 +25,10 @@ test("the weekend switch draws the Saturday and the Sunday on one page, keeps it
   expect(box!.height).toBeGreaterThanOrEqual(48);
   await chip.locator("xpath=..").click();
   await expect(chip).not.toBeChecked();
-  expect(page.url()).not.toContain("weekend");
+  await expect(page).not.toHaveURL(/weekend/);
   await expect(page.locator('[data-testid="leaf-icon"] svg [data-part="saturday"]')).toHaveCount(0);
   await chip.locator("xpath=..").click();
-  expect(page.url()).toContain("weekend=split");
+  await expect(page).toHaveURL(/weekend=split/);
   await page.goto("/?lang=en&icon=pins&weekend=split");
   await expect(page.locator('[data-testid="leaf-icon"] svg [data-part="saturday"]')).toHaveCount(0);
 });
@@ -45,7 +45,7 @@ test("the Japanese calendar switch adds the holiday, the old calendar date and t
   expect(box!.height).toBeGreaterThanOrEqual(48);
   await chip.locator("xpath=..").click();
   await expect(chip).toBeChecked();
-  expect(page.url()).toContain("jp=1");
+  await expect(page).toHaveURL(/jp=1/);
   const text = (await svg.textContent()) ?? "";
   expect(text).toContain("旧暦");
   expect(text).toMatch(/\d{1,2}\.\d{1,2}閏?旧暦|旧暦/);
@@ -59,5 +59,5 @@ test("the Japanese calendar switch adds the holiday, the old calendar date and t
   expect(english).toMatch(/L?\d{1,2}\.\d{1,2}/);
   expect(english).toMatch(/TAIAN|SHAKKO|SENSHO|TOMOBIKI|SENBU|BUTSUMETSU/);
   await chip.locator("xpath=..").click();
-  expect(page.url()).not.toContain("jp=1");
+  await expect(page).not.toHaveURL(/jp=1/);
 });

@@ -1,3 +1,4 @@
+import { createAddressState } from "@johnmorrisdotca/kazoku-ui/address-state";
 import { CALENDAR_THEME_LABELS, CALENDAR_THEMES, calendarIcon, calendarThemeOf, calendarWeekend, dateNote, displayKind, displayLayoutOf, displayMarkup, DISPLAY_LAYOUTS, factsFor, quoteForDate, rankFeed, renderRun, tagsOf, wikipediaUrl } from "../src/index.ts";
 import { quotes } from "../src/data/quotes.ts";
 import { OFFLINE_BUILD, offline } from "../src/data/offline.ts";
@@ -141,6 +142,7 @@ function localFeed() {
 // tap holds it), and stops when the pointer leaves. Play keeps it going wherever the pointer is (and `?play=1` starts it, for a reader who has not asked for less motion); Pause, Next, Previous and the dots hold or move it, and
 // nothing else on the page stops it. A reader who prefers reduced motion is never played to by the pointer. `?gap=` is how long each fact stays, in milliseconds (12,000 unless it says; the tests shorten it).
 const addressed = new URLSearchParams(location.search);
+const address = createAddressState();
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const FACT_MS = Math.min(Math.max(Number(addressed.get("gap")) || 12000, 150), 60000);
 const todayPlay = document.querySelector<HTMLButtonElement>("#today-play")!;
@@ -185,9 +187,7 @@ function applyMarks(keep: boolean) {
   document.documentElement.dataset.flags = optFlags.checked ? "on" : "off";
   document.documentElement.dataset.trophies = optTrophies.checked ? "on" : "off";
   if (!keep) return;
-  const query = new URLSearchParams(location.search);
-  for (const [key, on] of [["flags", optFlags.checked], ["trophies", optTrophies.checked]] as const) { if (on) query.set(key, "1"); else query.delete(key); }
-  try { history.replaceState(null, "", `${location.pathname}${query.size ? `?${query}` : ""}${location.hash}`); } catch { /* the address stays as it is */ }
+  address.setMany({ flags: optFlags.checked ? "1" : null, trophies: optTrophies.checked ? "1" : null });
 }
 applyMarks(false);
 optFlags.addEventListener("change", () => applyMarks(true));
@@ -237,12 +237,7 @@ function drawIconGallery() {
 }
 function applyIcon(keep: boolean) {
   if (keep) {
-    const query = new URLSearchParams(location.search);
-    const theme = calendarThemeOf(optIcon.value);
-    if (theme) query.set("icon", theme); else query.delete("icon");
-    if (optWeekend.checked) query.set("weekend", "split"); else query.delete("weekend");
-    if (optJapanese.checked) query.set("jp", "1"); else query.delete("jp");
-    try { history.replaceState(null, "", `${location.pathname}${query.size ? `?${query}` : ""}${location.hash}`); } catch { /* the address stays as it is */ }
+    address.setMany({ icon: calendarThemeOf(optIcon.value) || null, weekend: optWeekend.checked ? "split" : null, jp: optJapanese.checked ? "1" : null });
   }
   drawLeaf();
   drawIconGallery();
@@ -283,10 +278,8 @@ function drawLayout() {
 }
 function applyLayout(keep: boolean) {
   if (keep) {
-    const query = new URLSearchParams(location.search);
     const layout = displayLayoutOf(optLayout.value);
-    if (layout && layout !== "calendar") query.set("layout", layout); else query.delete("layout");
-    try { history.replaceState(null, "", `${location.pathname}${query.size ? `?${query}` : ""}${location.hash}`); } catch { /* the address stays as it is */ }
+    address.setMany({ layout: layout && layout !== "calendar" ? layout : null });
   }
   drawLayout();
 }
@@ -300,11 +293,8 @@ let todayHover = false;
 const todayRunning = () => todayPlaying || todayHover;
 function todayRecords(): HTMLElement[] { return [...todayBox.querySelectorAll<HTMLElement>(".record")]; }
 function todayAddress() {
-  const query = new URLSearchParams(location.search);
-  query.delete("play"); query.delete("fact");
-  if (todayPlaying) query.set("play", "1");
-  else if (!todayHover && !reducedMotion.matches) { query.set("play", "0"); query.set("fact", String(todayIndex)); }
-  try { history.replaceState(null, "", `${location.pathname}${query.size ? `?${query}` : ""}${location.hash}`); } catch { /* the address stays as it is */ }
+  const paused = !todayPlaying && !todayHover && !reducedMotion.matches;
+  address.setMany({ play: todayPlaying ? "1" : paused ? "0" : null, fact: paused ? String(todayIndex) : null });
 }
 function showToday() {
   const records = todayRecords();

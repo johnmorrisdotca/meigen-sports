@@ -17,6 +17,8 @@ for (const code of wanted) if (existsSync(`node_modules/@johnmorrisdotca/hata/di
 cpSync("node_modules/@johnmorrisdotca/hata/NOTICE.md", "site/flags/NOTICE.md");
 cpSync("node_modules/@johnmorrisdotca/hata/LICENSE", "site/flags/LICENSE");
 console.log(`Copied ${copied} flags from Hata.`);
+// The shared parts (a dev dependency, used only by the page's header and address) are served beside the pages.
+cpSync("node_modules/@johnmorrisdotca/kazoku-ui/dist", "site/kazoku-ui", { recursive: true, dereference: true, filter: (from) => !/\.d\.ts$/.test(from) });
 writeFileSync("site/.nojekyll", "");
 writeFileSync("site/sources.html", renderSources(readFileSync("NOTICE.md", "utf8")));
 await build({ entryPoints: ["demo/demo.ts"], outfile: "site/demo.js", bundle: true, format: "esm", target: "es2022", minify: true });

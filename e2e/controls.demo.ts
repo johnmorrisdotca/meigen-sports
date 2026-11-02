@@ -69,3 +69,21 @@ test("each drawing is named once, and the switches match the buttons", async ({ 
   expect(japanese).toContain("線画");
   expect(japanese.some((name) => name.includes("Line"))).toBe(false);
 });
+
+test("the header's language picker and theme switch answer, and keep their choice in the address", async ({ page }) => {
+  await page.goto("/");
+  await expect(page.locator("html")).toHaveAttribute("lang", "en");
+  await page.locator('kazoku-language-picker [data-v="ja"]').click();
+  await expect(page.locator("html")).toHaveAttribute("lang", "ja");
+  await expect(page.locator("#unreviewed")).toBeVisible();
+  await expect(page).toHaveURL(/lang=ja/);
+  await page.locator('kazoku-theme-switch [data-v="dark"]').click();
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+  await expect(page).toHaveURL(/theme=dark/);
+  await page.goto(page.url());
+  await expect(page.locator("html")).toHaveAttribute("lang", "ja");
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+  await page.locator('kazoku-language-picker [data-v="en"]').click();
+  await expect(page.locator("html")).toHaveAttribute("lang", "en");
+  await expect(page.locator("#unreviewed")).toBeHidden();
+});

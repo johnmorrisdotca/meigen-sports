@@ -17,6 +17,9 @@ importers:
       '@johnmorrisdotca/hata':
         specifier: 1.7.2
         version: 1.7.2
+      '@johnmorrisdotca/kazoku-ui':
+        specifier: ^0.7.3
+        version: 0.7.3
       '@johnmorrisdotca/senshu-jerseys':
         specifier: 0.33.1
         version: 0.33.1
@@ -262,6 +265,10 @@ packages:
   '@johnmorrisdotca/hata@1.7.2':
     resolution: {integrity: sha512-ULxtLeW1n+GekfILrfFAaDbEegqFpmbc70rI1AzNksmftZvha95lthNmHZdgl6csrACUVZH5Kvqq5VixqYgiog==}
     engines: {node: '>=24'}
+
+  '@johnmorrisdotca/kazoku-ui@0.7.3':
+    resolution: {integrity: sha512-NethtIFZhxHLcKKuCDnXJtQn4174lznqv/MS2gXHY4XrM6Dtaoiv6zQY68qVRxRJw/udmYTl9Jzttt2FhGD3hg==}
+    engines: {node: '>=22'}
 
   '@johnmorrisdotca/senshu-jerseys@0.33.1':
     resolution: {integrity: sha512-zKjsq/TDw4ji3n3lJnI6GrtT0S+XJEs+SGn/houmgZhILEZlDHhBhwLr9UWhYrxGGz7QiOnd/55CNwQGp5IKmQ==}
@@ -837,6 +844,8 @@ snapshots:
   '@johnmorrisdotca/dougu-sports@0.14.0': {}
 
   '@johnmorrisdotca/hata@1.7.2': {}
+
+  '@johnmorrisdotca/kazoku-ui@0.7.3': {}
 
   '@johnmorrisdotca/senshu-jerseys@0.33.1': {}
 

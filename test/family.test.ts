@@ -30,7 +30,7 @@ const id = pkg.name.replace(/^@[^/]+\//, "");
 
 // 2026-10-16 adds Meigen Sports (not on npm yet) after Senshu Jerseys. Copy this file into the
 // other family repositories in one sweep so every package lists twenty-nine.
-const TEMPLATE = { version: "2026-10-16", sha256: "525e13f149d865eaed24a99d439a7fe13bb9548f29d8881017302deb975a4aae" };
+const TEMPLATE = { version: "2026-11-02", sha256: "fa2f571733fc63e371231030d0e0fd9022f58a0097c763f9bfe206b900c03a83" };
 const WRITER_SHA256 = "6752eaa287a9007af87d9019e4cee4c36fe1d79b60bf24478e7851ebe75138c4";
 
 test("the family template is the one file, byte for byte, in every package", () => {

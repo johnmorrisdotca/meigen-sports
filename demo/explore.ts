@@ -3,6 +3,7 @@ import { findPeopleByName, loadCountry, loadFactShard, loadFactsById, loadTeamPi
 import type { FactQuery, LoadOptions, NamedPerson, PickerTeam, Vocabulary } from "../src/load.ts";
 import type { FactFilters, OnThisDayRecord } from "../src/schema.ts";
 import { flagName } from "@johnmorrisdotca/hata/names";
+import { createAddressState } from "@johnmorrisdotca/kazoku-ui/address-state";
 
 /**
  * "My favourites": the facts by sport, league, history tag, country, decade, award, honour, years, a club or a person picked by name, and the day above.
@@ -25,6 +26,7 @@ interface State {
   from: string; to: string; team: string; person: string; pname: string; day: boolean;
 }
 const KEYS = ["sport", "league", "tag", "country", "decade", "award", "honour", "from", "to", "team", "person", "pname"] as const;
+const address = createAddressState();
 const SHOWN = 12;
 const STORE_FILES = 100;
 
@@ -114,11 +116,7 @@ export function startExplore(host: ExploreHost): { restore: () => Promise<void>;
 
   /** The address with these choices and nothing of the old ones; every other part of it (language, cloth, the card's fact) stays. */
   function writeAddress(s: State): void {
-    const query = new URLSearchParams(location.search);
-    for (const key of [...KEYS, "day"]) query.delete(key);
-    for (const key of KEYS) if (s[key]) query.set(key, s[key]);
-    if (s.day) query.set("day", "1");
-    try { history.replaceState(null, "", `${location.pathname}${query.size ? `?${query}` : ""}${location.hash}`); } catch { /* the address stays as it is */ }
+    address.setMany({ ...Object.fromEntries(KEYS.map((key) => [key, s[key] || null])), day: s.day ? "1" : null });
   }
 
   function option(value: string, text: string): HTMLOptionElement {

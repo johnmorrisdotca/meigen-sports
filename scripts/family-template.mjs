@@ -46,7 +46,7 @@
 const OWNER = "johnmorrisdotca";
 
 /** The day this file was last changed, in every repository at once. A test records the file's hash beside it. */
-export const FAMILY_TEMPLATE_VERSION = "2026-10-16";
+export const FAMILY_TEMPLATE_VERSION = "2026-11-02";
 
 /** The packages, in the order the footer lists them. `kana` is the name as it is written in Japanese. */
 export const FAMILY = [
@@ -171,7 +171,7 @@ export function familyHead({ id, title, description, ogTitle, ogDescription }) {
 /**
  * The header: the name with its kana, the pitch (data-say="pitch"), a line on the name
  * (data-say="name", and a link to the README's "The name", data-say="nameLink"), the
- * "English · 日本語" chooser, the cloth patches, the Help switch, and the GitHub and npm pills. `links` adds pills before those
+ * kazoku-ui language picker and theme switch (the page imports their `define` modules from kazoku-ui), the cloth patches, the Help switch, and the GitHub and npm pills. `links` adds pills before those
  * two: [{ href, say }] where `say` is a key in the page's words.
  */
 export function familyHeader({ id, links = [] }) {
@@ -184,10 +184,8 @@ export function familyHeader({ id, links = [] }) {
           <p class="name"><span data-say="name"></span> <a href="${repo(id)}#the-name" data-say="nameLink"></a></p>
         </div>
         <nav>
-          <div class="lang" role="group" aria-label="Language / 言語">
-            <button type="button" data-lang="en" lang="en">English</button>
-            <button type="button" data-lang="ja" lang="ja">日本語</button>
-          </div>${links.map((link) => `\n          <a href="${escape(link.href)}" data-say="${escape(link.say)}"></a>`).join("")}
+          <kazoku-language-picker languages="en ja" address storage="${id}.page.lang"></kazoku-language-picker>
+          <kazoku-theme-switch address storage="johnmorrisdotca.theme"></kazoku-theme-switch>${links.map((link) => `\n          <a href="${escape(link.href)}" data-say="${escape(link.say)}"></a>`).join("")}
           <div class="cloth" role="radiogroup" data-say-label="cloth" style="display:inline-flex;gap:0;align-items:center">${Object.entries(FAMILY_CLOTHS)
             .map(([name, cloth]) => `<button type="button" role="radio" data-cloth="${name}" data-say-label="cloth_${name}" style="width:44px;height:44px;min-width:44px;padding:8px;border:0;border-radius:12px;cursor:pointer;background:radial-gradient(120% 90% at 30% 20%, ${cloth.felt} 0%, ${cloth.deep} 100%) content-box;box-shadow:inset 0 0 0 8px transparent"></button>`)
             .join("")}</div>
@@ -219,8 +217,9 @@ export function familyFooter({ id }) {
  * The chooser's behaviour, as the source of a classic script that defines `familyLanguage`.
  * The address first (?lang=ja or ?lang=en), then what this device chose, then the browser's
  * language. `familyLanguage({ id, words, onChange })` fills every [data-say], sets <html lang>,
- * presses the right button, shows the not-yet-reviewed line in Japanese only, and returns
- * { lang, asked, say(), set(lang) }. `onChange(lang)` runs after each switch, not on the first fill.
+ * shows the not-yet-reviewed line in Japanese only, and returns { lang, asked, say(), set(lang) }.
+ * The choosing itself is the header's <kazoku-language-picker>: its `kazoku-languagechange` event moves the page.
+ * `onChange(lang)` runs after each switch, not on the first fill.
  * [data-say-label] sets aria-label, [data-say-placeholder] sets placeholder and [data-say-title] sets title, the same way.
  * Each switch of language also re-reads the rows marked for the Help switch (see the top of this file).
  */
@@ -356,18 +355,22 @@ function familyLanguage(options) {
     document.querySelectorAll("[data-say-placeholder]").forEach(function (el) { var text = word(el.dataset.sayPlaceholder); if (text !== undefined) el.setAttribute("placeholder", text); });
     document.querySelectorAll("[data-say-title]").forEach(function (el) { var text = word(el.dataset.sayTitle); if (text !== undefined) el.setAttribute("title", text); });
     familyHelp.refresh();
-    document.querySelectorAll("[data-lang]").forEach(function (button) { button.setAttribute("aria-pressed", String(button.dataset.lang === state.lang)); });
     var note = document.getElementById("unreviewed");
     if (note !== null) note.hidden = state.lang !== "ja";
   };
-  state.set = function (lang) {
+  var follow = function (lang) {
     state.lang = lang === "ja" ? "ja" : "en";
-    try { localStorage.setItem(KEY, state.lang); } catch (error) { /* Not remembered; still switched. */ }
     state.say();
     if (typeof options.onChange === "function") options.onChange(state.lang);
   };
-  document.querySelectorAll("[data-lang]").forEach(function (button) {
-    button.addEventListener("click", function () { state.set(button.dataset.lang); });
+  state.set = function (lang) {
+    var picker = document.querySelector("kazoku-language-picker");
+    try { localStorage.setItem(KEY, lang === "ja" ? "ja" : "en"); } catch (error) { /* Not remembered; still switched. */ }
+    follow(lang);
+    if (picker !== null && picker.value !== state.lang) picker.value = state.lang;
+  };
+  document.addEventListener("kazoku-languagechange", function (event) {
+    if (event.detail.lang !== state.lang && (event.detail.lang === "ja" || event.detail.lang === "en")) follow(event.detail.lang);
   });
   state.say();
   return state;
