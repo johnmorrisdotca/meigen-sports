@@ -4,6 +4,12 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+## [0.16.0] - 2026-11-02
+
+- Data: the 2,000-person list is built into the shards. 1,886 of its 2,000 people now have a birth or death fact (1,713 had one). 217 facts are new (ids `people:player-birthday:wikidata:Q…:day`), for a listed person no other source gave for that kind; 38 facts DS1 held with nothing to say about the person now say it with the list's phrase. The phrase is Wikidata's English description (`data-sources/people-profiles.csv`, CC0, read with `pipeline/people/fetch_people.py profiles`) or "Olympic medallist" for a person English Wikipedia's medallist lists name; a day is published only where the list holds a day-precision date, not 1 January. Left out (95 days): 49 with no usable phrase (a description that names sex or para sport, or another trade; the first list holds about ten wrong Wikidata items), 24 stunt and high-wire performers, 11 wheelchair, goalball, boccia and sitting-volleyball players, 8 on 1 January, 3 before 1850. The facts are 103,813 (was 103,592) and the offline set 1,511 facts (was 1,510). Listing a person does not raise his rank.
+- Tests: `test/people.test.ts` holds the list to the shards (1,850 of 2,000 have a fact; each of the first fourteen countries over 85 percent; each `people:` fact is about a listed person, on the listed day, from Wikidata CC0, in no para sport). The disputed-dates and club tests count the new facts.
+- Docs: `docs/people.md` and `docs/people.ja.md` say what is in the shards and what is left out; coverage pages and the offline picture are regenerated.
+
 ## [0.15.2] - 2026-11-02
 
 - Fix: `pipeline/fetch_wikidata_open.py` and `fetch_wikidata_lists.py` no longer call `query.wikidata.org/sparql` or `Special:EntityData` (both disallowed by robots.txt). They use the documented Wikidata and MediaWiki APIs through `pipeline/people/wikimedia.py` (same User-Agent, 1.1 s between requests, every response kept so a rerun makes none), in batches of 50 items. The list reader keeps only items that are humans and drops the para-sport and wheelchair list pages and the `para_*` sport codes. Nothing published changes.
