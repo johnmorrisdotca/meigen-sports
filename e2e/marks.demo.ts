@@ -57,6 +57,24 @@ test("a trophy with no likeness is the plain cup, and a fact with no award has n
   expect(await page.locator("#fav-facts [data-testid=trophy]").count()).toBe(0);
 });
 
+test("a retired number hangs as a banner with its number, and a championship hangs the title banner with its year; both come with the trophies switch", async ({ page }) => {
+  const errors: string[] = [];
+  page.on("pageerror", (error) => errors.push(error.message));
+  await page.goto(`/?lang=en&${GRETZKY}`);
+  await expect(page.locator("#fav-facts .record").first()).toBeVisible();
+  await expect(page.locator("#fav-facts [data-testid=banner]").first()).toBeHidden();
+  await page.goto(`/?lang=en&trophies=1&${GRETZKY}`);
+  const retired = page.locator("#fav-facts [data-testid=banner][data-kind=retired]").first();
+  await expect(retired).toBeVisible();
+  await expect(retired.locator("svg")).toBeVisible();
+  await expect(retired).toContainText("99");
+  await page.goto("/?lang=en&trophies=1&league=nba");
+  const title = page.locator("#fav-facts [data-testid=banner][data-kind=title]").first();
+  await expect(title).toBeVisible();
+  await expect(title.locator("svg")).toBeVisible();
+  expect(errors).toEqual([]);
+});
+
 test.describe("a reader who has not asked for less motion", () => {
 test.use({ reducedMotion: "no-preference" });
 test("the switches work while the card turns, and the card keeps going", async ({ page }) => {

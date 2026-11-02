@@ -22,7 +22,7 @@ Return value: `{ text, templateId, locale }` or `null`.
 
 A template runs only when:
 
-1. Its `type` matches the fact (one of the fifteen kinds below).
+1. Its `type` matches the fact (one of the sixteen kinds below).
 2. Every name in `needs` has a non-empty field.
 3. `gate` matches living status:
    - `neutral` — true whether the person is living, deceased, or unknown. Default birthday set.
@@ -142,7 +142,7 @@ Generic “X began/ended” history rows are published only when no richer match
 
 ## Every statement the package says
 
-There are fifteen kinds. Each has at least three patterns in English and in Japanese (`TEMPLATE_TYPES`; `test/patterns.test.ts` fails if one has fewer, if a pattern can never render, or if two patterns are the same).
+There are sixteen kinds. Each has at least three patterns in English and in Japanese (`TEMPLATE_TYPES`; `test/patterns.test.ts` fails if one has fewer, if a pattern can never render, or if two patterns are the same).
 
 | Kind | Said about | Patterns per language | Default (`fixed`) |
 | --- | --- | --- | --- |
@@ -155,6 +155,7 @@ There are fifteen kinds. Each has at least three patterns in English and in Japa
 | `draft` | a draft pick | 3 | “… was drafted in the 1979 NHL draft No. 1 overall by the Edmonton Oilers.” |
 | `venue` | a venue opening | 3 | “League Park in Cleveland opened on May 1, 1884; …” |
 | `franchise` | a club identity | 3 | “Boston Red Stockings began this MLB identity on May 5, 1871 in Boston.” |
+| `retired` | a retired jersey number | 3 for a club, 3 for a league-wide retirement | “On February 6, 2000, the NHL retired No. 99 across the league for Wayne Gretzky.” |
 | `first` | a first | 5 (2 on its day) | “On April 15, 1947, Jackie Robinson: first game in the major leagues.” |
 | `world-cup-match` | a World Cup match | 3 decisive, 3 draw | “On July 13, 1930, France beat Mexico 4–1 in the 1930 World Cup, Group 1.” |
 | `world-cup-final` | a World Cup final | 3 | “On December 18, 2022, Argentina won the 2022 World Cup, beating France 4–2 on penalties after a 3–3 draw.” |

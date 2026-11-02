@@ -3,7 +3,7 @@ import { quotes } from "../src/data/quotes.ts";
 import { OFFLINE_BUILD, offline } from "../src/data/offline.ts";
 import { loadFactDay, loadFactEventsDay, loadFactPeopleDay, loadFactShard, loadShard } from "../src/load.ts";
 import { startExplore } from "./explore.ts";
-import { flagMark, trophyMark } from "./marks.ts";
+import { bannerMark, flagMark, trophyMark } from "./marks.ts";
 import type { OnThisDayRecord } from "../src/schema.ts";
 import { pickVariedFacts } from "./variety.ts";
 import type { MeigenRecord } from "../src/types.ts";
@@ -96,11 +96,12 @@ function drawFacts(box: HTMLElement, records: readonly OnThisDayRecord[], asOf?:
     if (fact.eventDate) article.dataset.year = fact.eventDate.slice(0, 4);
     const p = document.createElement("p");
     // The flag of its country (where the data says it is unambiguous) and the trophy it is about: drawn always, shown by the two switches, so a switch redraws nothing.
-    const flag = flagMark(fact, locale), trophy = trophyMark(fact);
-    if (flag || trophy) {
+    const flag = flagMark(fact, locale), trophy = trophyMark(fact), banner = bannerMark(fact, locale);
+    if (flag || trophy || banner) {
       const marks = document.createElement("span"); marks.className = "marks";
       if (flag) { const img = document.createElement("img"); img.className = "mark-flag"; img.src = flag.src; img.alt = flag.name; img.title = flag.name; img.loading = "lazy"; img.dataset.testid = "flag"; img.dataset.code = flag.code; marks.append(img); }
       if (trophy) { const span = document.createElement("span"); span.className = trophy.exact ? "mark-trophy" : "mark-trophy generic"; span.innerHTML = trophy.svg; span.dataset.testid = "trophy"; span.dataset.id = fact.trophy ?? ""; marks.append(span); }
+      if (banner) { const span = document.createElement("span"); span.className = "mark-banner"; span.innerHTML = banner.svg; span.dataset.testid = "banner"; span.dataset.kind = banner.kind; marks.append(span); }
       p.append(marks);
     }
     p.append(text);

@@ -75,7 +75,7 @@ Status: **collected** = convert can attach this tag from extracts already on dis
 | `rules-format-change` | Dated rule or format adoption | league minutes | planned | 0 |
 | `league-federation-history` | Founding, merger, expansion | league history | planned | 0 |
 | `sporting-first` | Verified first participation or medal | firsts with evidence | planned | 0 |
-| `ceremony-recognition` | Jersey retirement, Hall of Fame | ceremonies | planned | 0 |
+| `ceremony-recognition` | Jersey retirement, Hall of Fame | `extract_retired_numbers` (retirements only) | collected | 255 |
 | `attendance-audience` | Verified crowd or broadcast figure | attendance | planned | 0 |
 | `cancelled-postponed` | Cancelled, postponed, lockout | game status | planned | 0 |
 

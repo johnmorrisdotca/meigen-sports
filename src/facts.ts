@@ -180,6 +180,8 @@ export function significance(record: OnThisDayRecord): number {
       return 30 + (editions >= 100 ? 45 : editions >= 50 ? 28 : editions >= 30 ? 16 : editions >= 20 ? 10 : editions >= 10 ? 5 : 0) + (record.winnerName ? 6 : 0);
     }
     case "franchise-event": return 45;
+    // A retired number: a league-wide retirement is a league's act; a club's counts for more when the person is known in other languages.
+    case "retired-number": return 38 + (record.leagueWide ? 12 : 0) + ((record.sitelinks ?? 0) >= 20 ? 6 : 0) + ((record.sitelinks ?? 0) >= 50 ? 8 : 0);
     case "player-birthday":
     case "player-death": {
       let score = 30;

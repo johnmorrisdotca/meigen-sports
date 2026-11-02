@@ -28,7 +28,8 @@ NAMESPACES = [
     ("stage", "the round: final, semi, group", "`stage`", "", "`stage:final`"),
     ("award", "an individual award the person won himself", "`awards`", "awards", "`award:hart-memorial-trophy`"),
     ("title", "a club title the person won", "`championshipName`", "titles", "`title:stanley-cup`"),
-    ("honour", "an honour: award winner, champion, Hall of Famer", "`awards`, `championships`, `hallOfFameYear`", "honours", "`honour:award-winner`"),
+    ("honour", "an honour: award winner, champion, Hall of Famer, a number a club retired for him", "`awards`, `championships`, `hallOfFameYear`, `jerseyRetired`, a `retired-number` fact", "honours", "`honour:award-winner`"),
+    ("number", "the jersey number of the person, or the number retired", "`jerseyNumber`", "", "`number:99`"),
     ("source", "where the fact comes from", "`source.sourceId`", "", "`source:wikidata`"),
     ("date", "Wikidata disagrees about a date the fact states: `disputed` (the other days are in `dateAlternatives`)", "`dateDisputed`", "", "`date:disputed`"),
 ]

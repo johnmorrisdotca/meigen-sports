@@ -479,6 +479,67 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
     needs: ["clubName", "date", "franchiseContext"],
     pattern: "{clubName}（{leagueIdentity}）は{dateOn}この名義で始まった{cityIn}。",
   },
+  // retired numbers
+  {
+    id: "retired-club", type: "retired", locale: "en", gate: "neutral", role: "default",
+    needs: ["name", "number", "clubName", "leadIn"],
+    pattern: "{leadIn}{theClub}{clubName} retired {name}'s No. {number}.",
+  },
+  {
+    id: "retired-was", type: "retired", locale: "en", gate: "neutral", role: "variant",
+    needs: ["name", "number", "clubName", "dateOn"],
+    pattern: "{name}'s No. {number} was retired by {theClub}{clubName} {dateOn}.",
+  },
+  {
+    id: "retired-for", type: "retired", locale: "en", gate: "neutral", role: "variant",
+    needs: ["name", "number", "clubName", "leadIn"],
+    pattern: "{leadIn}No. {number} was retired for {name} by {theClub}{clubName}.",
+  },
+  {
+    id: "retired-league", type: "retired", locale: "en", gate: "neutral", role: "default",
+    needs: ["name", "number", "leagueWide", "leadIn"],
+    pattern: "{leadIn}the {leagueWide} retired No. {number} across the league for {name}.",
+  },
+  {
+    id: "retired-league-was", type: "retired", locale: "en", gate: "neutral", role: "variant",
+    needs: ["name", "number", "leagueWide", "dateOn"],
+    pattern: "{name}'s No. {number} was retired league-wide by the {leagueWide} {dateOn}.",
+  },
+  {
+    id: "retired-league-every", type: "retired", locale: "en", gate: "neutral", role: "variant",
+    needs: ["name", "number", "leagueWide", "leadIn"],
+    pattern: "{leadIn}No. {number} was retired for every {leagueWide} club, in {name}'s name.",
+  },
+  {
+    id: "retired-club", type: "retired", locale: "ja", gate: "neutral", role: "default",
+    needs: ["name", "number", "clubName", "leadIn"],
+    pattern: "{leadIn}{clubName}が{name}の背番号{number}を永久欠番にした。",
+  },
+  {
+    id: "retired-was", type: "retired", locale: "ja", gate: "neutral", role: "variant",
+    needs: ["name", "number", "clubName", "dateOn"],
+    pattern: "{name}の背番号{number}は{dateOn}{clubName}の永久欠番になった。",
+  },
+  {
+    id: "retired-for", type: "retired", locale: "ja", gate: "neutral", role: "variant",
+    needs: ["name", "number", "clubName", "leadIn"],
+    pattern: "{leadIn}{clubName}は{name}にちなみ、背番号{number}を永久欠番とした。",
+  },
+  {
+    id: "retired-league", type: "retired", locale: "ja", gate: "neutral", role: "default",
+    needs: ["name", "number", "leagueWide", "leadIn"],
+    pattern: "{leadIn}{leagueWide}が{name}の背番号{number}を全球団の永久欠番にした。",
+  },
+  {
+    id: "retired-league-was", type: "retired", locale: "ja", gate: "neutral", role: "variant",
+    needs: ["name", "number", "leagueWide", "dateOn"],
+    pattern: "{name}の背番号{number}は{dateOn}{leagueWide}全体の永久欠番になった。",
+  },
+  {
+    id: "retired-league-every", type: "retired", locale: "ja", gate: "neutral", role: "variant",
+    needs: ["name", "number", "leagueWide", "leadIn"],
+    pattern: "{leadIn}{leagueWide}は{name}をたたえ、背番号{number}を全球団で永久欠番とした。",
+  },
   // firsts
   {
     id: "first-year-first", type: "first", locale: "en", gate: "neutral", role: "variant",

@@ -168,3 +168,19 @@ Not yet checked by a person who reads Japanese. Literal English renderings.
 | Demo, the two switches on the card | 国旗, トロフィー | Flags, Trophies |
 | Demo, the flag's `alt` | the name of the country in Japanese from Hata (`カナダ`, `アメリカ合衆国`) | Canada, United States |
 
+## Japanese added in 0.17.0
+
+Not yet checked by a person who reads Japanese. Literal English renderings.
+
+| Pattern id | Japanese | Literal English |
+| --- | --- | --- |
+| `retired-club` | `{leadIn}{clubName}が{name}の背番号{number}を永久欠番にした。` | {leadIn}{club} made {name}'s uniform number {number} a permanently retired number. |
+| `retired-was` | `{name}の背番号{number}は{dateOn}{clubName}の永久欠番になった。` | {name}'s uniform number {number} became {club}'s permanently retired number {dateOn}. |
+| `retired-for` | `{leadIn}{clubName}は{name}にちなみ、背番号{number}を永久欠番とした。` | {leadIn}{club}, in connection with {name}, made uniform number {number} a permanently retired number. |
+| `retired-league` | `{leadIn}{leagueWide}が{name}の背番号{number}を全球団の永久欠番にした。` | {leadIn}the {league} made {name}'s uniform number {number} a permanently retired number for all clubs. |
+| `retired-league-was` | `{name}の背番号{number}は{dateOn}{leagueWide}全体の永久欠番になった。` | {name}'s uniform number {number} became a permanently retired number for the whole {league} {dateOn}. |
+| `retired-league-every` | `{leadIn}{leagueWide}は{name}をたたえ、背番号{number}を全球団で永久欠番とした。` | {leadIn}the {league}, honouring {name}, made uniform number {number} a permanently retired number at every club. |
+| Demo, the title banner's second line | 優勝 | Championship (won the title) |
+| Demo, the retired banner's years line | `2000年` | 2000 |
+
+Words: 背番号 (sebangō) is the number on the back of a jersey; 永久欠番 (eikyū-ketsuban) is a number no one will wear again.

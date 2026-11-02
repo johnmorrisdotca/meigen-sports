@@ -17,6 +17,9 @@ importers:
       '@johnmorrisdotca/hata':
         specifier: 1.7.2
         version: 1.7.2
+      '@johnmorrisdotca/senshu-jerseys':
+        specifier: 0.33.1
+        version: 0.33.1
       '@playwright/test':
         specifier: ^1.63.0
         version: 1.64.1
@@ -259,6 +262,10 @@ packages:
   '@johnmorrisdotca/hata@1.7.2':
     resolution: {integrity: sha512-ULxtLeW1n+GekfILrfFAaDbEegqFpmbc70rI1AzNksmftZvha95lthNmHZdgl6csrACUVZH5Kvqq5VixqYgiog==}
     engines: {node: '>=24'}
+
+  '@johnmorrisdotca/senshu-jerseys@0.33.1':
+    resolution: {integrity: sha512-zKjsq/TDw4ji3n3lJnI6GrtT0S+XJEs+SGn/houmgZhILEZlDHhBhwLr9UWhYrxGGz7QiOnd/55CNwQGp5IKmQ==}
+    engines: {node: '>=22'}
 
   '@playwright/test@1.64.1':
     resolution: {integrity: sha512-IaYGml/nSOiZWROfPtuIL7neuu9qDOZ3TNvNljUIrhDMxiGTgPjzj/g9p9RxpS2tSepPDRY+UwAaEeiKtUvIAg==}
@@ -830,6 +837,8 @@ snapshots:
   '@johnmorrisdotca/dougu-sports@0.14.0': {}
 
   '@johnmorrisdotca/hata@1.7.2': {}
+
+  '@johnmorrisdotca/senshu-jerseys@0.33.1': {}
 
   '@playwright/test@1.64.1':
     dependencies:

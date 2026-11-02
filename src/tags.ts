@@ -8,7 +8,7 @@ import type { OnThisDayRecord } from "./schema.ts";
  */
 export const TAG_NAMESPACES = [
   "sport", "league", "competition", "series", "country", "host", "birthcountry", "team", "person", "position", "venue", "decade", "century",
-  "phase", "stage", "award", "title", "honour", "source", "date",
+  "phase", "stage", "award", "title", "honour", "source", "date", "number",
 ] as const;
 export type TagNamespace = (typeof TAG_NAMESPACES)[number];
 
@@ -104,6 +104,8 @@ export function derivedTags(record: OnThisDayRecord): string[] {
   if (record.awards?.length) add(out, seen, "honour", "award-winner");
   if ((record.championships ?? 0) > 0) add(out, seen, "honour", "champion");
   if (record.hallOfFameYear) add(out, seen, "honour", "hall-of-fame");
+  if (record.category === "retired-number" || record.jerseyRetired) add(out, seen, "honour", "retired-number");
+  if (record.jerseyNumber != null) add(out, seen, "number", record.jerseyNumber);
   add(out, seen, "source", record.source?.sourceId);
   // Wikidata itself disagrees about a date of this fact (`dateAlternatives`): `date:disputed`.
   if (record.dateDisputed) add(out, seen, "date", "disputed");

@@ -46,7 +46,8 @@
 .mark-trophy{display:inline-flex;width:1.9em;height:1.9em;vertical-align:middle}.mark-trophy svg{width:100%;height:100%}
 .mark-trophy.generic{opacity:.85}
 html:not([data-flags="on"]) .mark-flag{display:none}
-html:not([data-trophies="on"]) .mark-trophy{display:none}
+html:not([data-trophies="on"]) .mark-trophy,html:not([data-trophies="on"]) .mark-banner{display:none}
+.mark-banner{display:inline-flex;height:3.1em;vertical-align:middle}.mark-banner svg{height:100%;width:auto}
 html:not([data-flags="on"]):not([data-trophies="on"]) .marks{display:none}
 
 /* 0.12.0: named calendar-page drawings. The CSS leaf stays until ?icon= names one. */
@@ -69,7 +70,7 @@ html:not([data-flags="on"]):not([data-trophies="on"]) .marks{display:none}
   .leaf[data-icon]{width:72px}
   .leaf[data-icon] .leaf-icon svg{width:72px}
 }
-html[data-flags="on"]:not([data-trophies="on"]) .marks:not(:has(.mark-flag)),html[data-trophies="on"]:not([data-flags="on"]) .marks:not(:has(.mark-trophy)){display:none}
+html[data-flags="on"]:not([data-trophies="on"]) .marks:not(:has(.mark-flag)),html[data-trophies="on"]:not([data-flags="on"]) .marks:not(:has(.mark-trophy)):not(:has(.mark-banner)){display:none}
 .today-options{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:8px}
 .today-options .opt-chip{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 16px;border:1px solid var(--rule);border-radius:999px;background:var(--surface);color:var(--ink);font-weight:600;cursor:pointer}
 .today-options .opt-chip:has(input:checked){background:var(--ink);color:var(--surface);border-color:var(--ink)}

@@ -42,7 +42,7 @@ TAG_INDEXES = (
 TAG_FIELDS = (
     "recordId", "category", "sport", "league", "competition", "eventLabel", "awardName", "countries", "nationality", "home", "away", "hostCountries",
     "birthCountry", "person", "position", "venueId", "eventDate", "draftYear", "seasonStartYear", "phase", "stage", "awards", "championships",
-    "championshipName", "hallOfFameYear", "source", "dateDisputed",
+    "championshipName", "hallOfFameYear", "source", "dateDisputed", "jerseyNumber", "jerseyRetired",
 )
 # Joseon-era general Q704476 (Myong-won Kim); never an athlete fact. The others are items of the priority list that are not the athlete the list
 # meant (the Wikidata item of a namesake, or of a politician, an actor or a doctor): Sun Yat-sen, Ronald Ross, the actress Jennifer Jones, the
@@ -388,6 +388,8 @@ def history_tags(row: dict) -> list[str]:
         tags.append("franchise-identity-change")
     if cat == "venue-opening":
         tags.append("venue-history")
+    if cat == "retired-number":
+        tags.append("ceremony-recognition")
     if cat in ("competition-start", "competition-end", "sport-event"):
         tags.append("competition-boundary")  # a single-day event began and ended that day
     tags.extend(row.get("extraTags") or [])
@@ -558,6 +560,7 @@ def finalize(row: dict) -> dict | None:
         "sitelinks", "priorityAthlete", "nationality", "epithet", "eventLabel", "eventPlace",
         "championships", "championshipName", "personAward", "awardCount", "hallOfFameYear",
         "seriesWinnerWins", "seriesLoserWins", "seriesGames", "winnerRecord", "winnerTitleNumber", "awards",
+        "jerseyNumber", "jerseyRetired", "jerseySource", "leagueWide",
     ):
         if row.get(key) not in (None, [], ""):
             out[key] = row[key]
@@ -1142,6 +1145,131 @@ def add_dump_events(chosen: dict[str, dict], rows: list[dict]) -> int:
     return added
 
 
+JERSEY_SOURCES = ("wikipedia", "wikidata", "wikidata_rosters", "nflverse")  # the order a number's source is named in when several give it
+
+
+def read_list(name: str) -> list:
+    """An extract that is a bare list of rows (the retired numbers, the jersey stints)."""
+    path = EXTRACT / name
+    if not path.exists():
+        print(f"missing {path}", file=sys.stderr)
+        return []
+    data = json.loads(path.read_text(encoding="utf-8"))
+    return data if isinstance(data, list) else data.get("records") or []
+
+
+def club_namer(rows: list[dict], fallback: dict[int, str]):
+    """The name a club went by on a day: the latest name given on or before it (a game of the club that day or earlier, or a rename event of its franchise), else
+    the earliest after it, else the name most rows use. A club that has moved or been renamed is not named by the name of another era ("Alberta Oilers" in 1999)."""
+    dated: dict[int, list[tuple[str, str]]] = defaultdict(list)
+    for row in rows:
+        day = row.get("eventDate") or ""
+        if not re.match(r"^\d{4}-\d{2}-\d{2}$", day):
+            continue
+        if row.get("category") == "rename-or-move":
+            fid, label = row.get("franchiseId"), (row.get("label") or "").strip()
+            # a league code (`nhl`, `wha`) is how the source marks a league change, not a name
+            if fid is not None and label and not re.match(r"^[a-z]{2,5}$", label):
+                dated[fid].append((day, label))
+            continue
+        for side in ("home", "away"):
+            obj = row.get(side) or {}
+            if obj.get("franchiseId") is not None and obj.get("name"):
+                dated[obj["franchiseId"]].append((day, obj["name"]))
+    for entries in dated.values():
+        entries.sort()
+
+    def name_in(fid, day: str):
+        entries = dated.get(fid)
+        if not entries:
+            return fallback.get(fid)
+        before = [name for when, name in entries if when <= day]
+        if before:
+            latest = max(when for when, _ in entries if when <= day)
+            names_then = [name for when, name in entries if when == latest]
+            return sorted(names_then)[0]
+        return entries[0][1]
+
+    return name_in
+
+
+def retired_rows(name_in, latest: str) -> list[dict]:
+    """A club's (or a league's) retired number as a fact, on the day the source gives for it: `api.retired_number` of DS1, read from English Wikipedia (CC BY-SA 4.0).
+    Left out: no day, a day on 1 January (a year written as a day), a day after the latest played game of the extract (a ceremony not yet held), no name, a club the games do
+    not name. A league-wide retirement has no club."""
+    out: list[dict] = []
+    for r in read_list("extract_retired_numbers.json"):
+        day, number = r.get("retired_on"), r.get("jersey_number")
+        if not day or not re.match(r"^\d{4}-\d{2}-\d{2}$", day) or day.endswith("-01-01") or day > latest:
+            continue
+        if not isinstance(number, int) or number < 0:
+            continue
+        name = clean_label(r.get("name") or r.get("honor_name"))
+        league = r.get("league")
+        wide = bool(r.get("league_wide"))
+        fid = r.get("franchise_id")
+        club = None if wide else name_in(fid, day)
+        if not name or not league or (not wide and not club):
+            continue
+        rec = {
+            "recordId": f"spx:retired-number:{r['retired_number_id']}", "category": "retired-number", "eventDate": day, "datePrecision": "day",
+            "sport": LEAGUE_SPORT.get(str(league).lower()), "league": league, "competition": None, "jerseyNumber": number, "basis": "source",
+            "person": {"personId": r.get("person_id"), "qid": r.get("wikidata_id"), "name": name, "leagueCodes": [league], "franchiseIds": [fid] if fid and not wide else [], "teamSeasonIds": []},
+            "sourceId": "wikipedia", "licence": "CC BY-SA 4.0", "attribution": "Wikipedia contributors, CC BY-SA 4.0.", "sourceUrl": "https://en.wikipedia.org/",
+        }
+        if club:
+            rec["clubName"] = club
+        if wide:
+            rec["leagueWide"] = True
+        out.append(rec)
+    return out
+
+
+def jersey_lookup() -> "callable":
+    """The jersey number of a person, only where it is unambiguous: the one number a club retired for him, else the one number his stints show, else the number he wore
+    longest when every stint has its years and one number wore the most. Two numbers with nothing to choose between them give none. Returns `(number, retired, source)` or None."""
+    retired: dict[tuple, set] = defaultdict(set)
+    for r in read_list("extract_retired_numbers.json"):
+        if isinstance(r.get("jersey_number"), int):
+            for key in (("p", r.get("person_id")), ("q", r.get("wikidata_id"))):
+                if key[1]:
+                    retired[key].add(r["jersey_number"])
+    stints: dict[tuple, list] = defaultdict(list)
+    for r in read_list("extract_person_jersey.json"):
+        if isinstance(r.get("jersey_number"), int):
+            for key in (("p", r.get("person_id")), ("q", r.get("wikidata_id"))):
+                if key[1]:
+                    stints[key].append(r)
+
+    def source_of_number(rows: list[dict], number: int) -> str:
+        found = {r.get("source") for r in rows if r["jersey_number"] == number}
+        return next((s for s in JERSEY_SOURCES if s in found), sorted(found)[0] if found else "wikipedia")
+
+    def lookup(pid, qid):
+        keys = [k for k in (("p", pid), ("q", qid)) if k[1]]
+        numbers = set().union(*(retired.get(k, set()) for k in keys)) if keys else set()
+        if len(numbers) == 1:
+            return next(iter(numbers)), True, "wikipedia"
+        if numbers:
+            return None
+        rows = [r for k in keys for r in stints.get(k, [])]
+        distinct = {r["jersey_number"] for r in rows}
+        if len(distinct) == 1:
+            number = next(iter(distinct))
+            return number, False, source_of_number(rows, number)
+        if distinct and all(isinstance(r.get("from_year"), int) and isinstance(r.get("to_year"), int) for r in rows):
+            span: dict[int, int] = defaultdict(int)
+            for r in rows:
+                span[r["jersey_number"]] += r["to_year"] - r["from_year"] + 1
+            top = sorted(span.items(), key=lambda kv: -kv[1])
+            if top[0][1] > top[1][1]:
+                return top[0][0], False, source_of_number(rows, top[0][0])
+        return None
+
+    return lookup
+
+
+
 def build_facts() -> tuple[list[dict], dict]:
     """Stage one: the extracts (DS1, the Wikidata dump, the priority list) become the facts, each worded and tagged, and the few numbers and
     names the layout needs besides them. Needs the extracts, which are not in git; its result is `data-sources/facts/` (`write_inputs`)."""
@@ -1371,6 +1499,21 @@ def build_facts() -> tuple[list[dict], dict]:
             continue
         chosen[rec["recordId"]] = rec
 
+    latest_played = max((r.get("eventDate") or "" for r in games), default="")
+    for rec in retired_rows(club_namer(games + finals + franchise, names), latest_played):
+        chosen[rec["recordId"]] = rec
+    jersey = jersey_lookup()
+    jerseyed = 0
+    for rec in chosen.values():
+        if rec.get("category") in ("player-birthday", "player-death"):
+            person = rec.get("person") or {}
+            found = jersey(person.get("personId"), person.get("qid"))
+            if found:
+                rec["jerseyNumber"], rec["jerseySource"] = found[0], found[2]
+                if found[1]:
+                    rec["jerseyRetired"] = True
+                jerseyed += 1
+
     # The bug that gave 148 non-pitchers a Cy Young Award: an award on a fact must be one of that person's own, by the row that names him.
     for rec in chosen.values():
         award, pid = rec.get("personAward"), (rec.get("person") or {}).get("personId")
@@ -1402,7 +1545,7 @@ def build_facts() -> tuple[list[dict], dict]:
         "wikidataDumpEvents": event_meta,
     }
     print(json.dumps({"priorityAdded": priority_added, "wikidataDumpAdded": dump_added, "listPeopleAdded": list_added, "wikidataDumpEventsAdded": events_added,
-                      "priorityRephrased": rephrased, "facts": len(facts), "droppedThin": dropped, "mergedSameEvent": merged_events}, indent=2))
+                      "priorityRephrased": rephrased, "retiredNumbers": sum(1 for f in facts if f.get("category") == "retired-number"), "jerseyNumbers": sum(1 for f in facts if f.get("jerseyNumber") is not None and f.get("category") != "retired-number"), "facts": len(facts), "droppedThin": dropped, "mergedSameEvent": merged_events}, indent=2))
     return facts, meta
 
 

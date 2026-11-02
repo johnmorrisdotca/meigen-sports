@@ -42,6 +42,8 @@ function fixtures(): OnThisDayRecord[] {
     { ...base, recordId: "event-end", category: "competition-end", eventDate: "2010-07-11", sport: "soccer", competition: null, league: null, eventLabel: "2010 FIFA World Cup", eventPlace: "Johannesburg", winnerName: "Spain", sitelinks: 150 },
     { ...base, recordId: "event-day", category: "sport-event", eventDate: "1966-07-30", sport: "soccer", competition: null, league: null, eventLabel: "1966 FIFA World Cup Final", eventPlace: "Wembley Stadium", winnerName: "England", sitelinks: 28 },
     { ...base, recordId: "event-lower", category: "sport-event", eventDate: "2026-02-21", sport: "biathlon", competition: null, league: null, eventLabel: "biathlon at the 2026 Winter Olympics – mass start", eventPlace: "South Tyrol Arena", sitelinks: 20 },
+    { ...base, recordId: "retired-club", category: "retired-number", eventDate: "1999-10-01", sport: "ice-hockey", competition: null, league: "nhl", jerseyNumber: 99, clubName: "Edmonton Oilers", person: person("Wayne Gretzky", "Q209518") },
+    { ...base, recordId: "retired-league", category: "retired-number", eventDate: "2000-02-06", sport: "ice-hockey", competition: null, league: "nhl", jerseyNumber: 99, leagueWide: true, person: person("Wayne Gretzky", "Q209518") },
     { ...base, recordId: "first", category: "first", eventDate: "1947-04-15", sport: "baseball", competition: "mlb", league: "mlb", person: person("Jackie Robinson", "Q1"), highlight: "first game in the major leagues" },
   ];
 }

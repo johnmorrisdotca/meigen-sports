@@ -102,9 +102,9 @@
 
 ## パッケージが言うすべての文
 
-種類は15あり、どれも英語と日本語で3つ以上の型を持ちます（`TEMPLATE_TYPES`）。`test/patterns.test.ts` は、足りない種類、決して使えない型、同じ型の重複があると失敗します。
+種類は16あり、どれも英語と日本語で3つ以上の型を持ちます（`TEMPLATE_TYPES`）。`test/patterns.test.ts` は、足りない種類、決して使えない型、同じ型の重複があると失敗します。
 
-- `birthday` 誕生日、`death` 死去、`game` 通常の試合、`final` 決勝、`record` 記録、`award` 賞、`draft` 指名、`venue` 会場、`franchise` クラブの名義、`first` 初めて
+- `birthday` 誕生日、`death` 死去、`game` 通常の試合、`final` 決勝、`record` 記録、`award` 賞、`draft` 指名、`venue` 会場、`franchise` クラブの名義、`retired` 永久欠番、`first` 初めて
 - `world-cup-match` ワールドカップの試合、`world-cup-final` ワールドカップ決勝、`competition-start` 大会の開幕、`competition-end` 大会の閉幕、`event-date` 日付のある出来事
 
 チームスポーツのクラブには英語で冠詞を付けます。代表チームとサッカーのクラブには付けません。日本語に冠詞はありません。

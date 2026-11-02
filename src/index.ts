@@ -21,6 +21,8 @@ export { bestOfDay, calendarDayInZone, factsFor, kindTagsOf, randomFacts, rankDa
 export type { RankOptions } from "./facts.ts";
 export { countriesOf, derivedTags, flagOf, isNamespaced, NAMESPACED_TAG, slugOf, TAG_NAMESPACES, tagValues, VALID_TAG } from "./tags.ts";
 export type { TagNamespace } from "./tags.ts";
+export { GEAR_BY_SPORT, visualOf } from "./visual.ts";
+export type { Visual } from "./visual.ts";
 export { wikipediaPageUrl, wikipediaUrl } from "./links.ts";
 export type { WikipediaLanguage } from "./links.ts";
 export { finalCaptionFromMatch, mergeHistoryEvents, uniqueHistoryIds } from "./mergeEvents.ts";

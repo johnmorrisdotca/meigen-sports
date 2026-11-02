@@ -51,7 +51,7 @@ export const HISTORY_TYPES: readonly HistoryType[] = [
  {"id": "rules-format-change", "label": "Rules, equipment and format changes", "modes": ["external", "manual"], "evidence": "Dated adoption of rules, equipment or competition formats", "readiness": "needs-source"},
  {"id": "league-federation-history", "label": "League and federation history", "modes": ["spx-derived", "external", "manual"], "evidence": "Founding, mergers, expansion and dissolution", "readiness": "needs-source"},
  {"id": "sporting-first", "label": "Sporting firsts and representation milestones", "modes": ["spx-derived", "external", "manual"], "evidence": "Verified first participation, medals and historic breakthroughs", "readiness": "needs-source"},
- {"id": "ceremony-recognition", "label": "Ceremonies and recognition", "modes": ["external", "manual"], "evidence": "Jersey retirements, Hall of Fame inductions and commemorations", "readiness": "needs-source"},
+ {"id": "ceremony-recognition", "label": "Ceremonies and recognition", "modes": ["external", "manual"], "evidence": "Jersey retirements, Hall of Fame inductions and commemorations", "readiness": "extractable-if-populated"},
  {"id": "attendance-audience", "label": "Attendance and audience milestones", "modes": ["spx-derived", "external", "manual"], "evidence": "Verified crowds and broadcast audience records", "readiness": "extractable-if-populated"},
  {"id": "cancelled-postponed", "label": "Cancelled, postponed or abandoned events", "modes": ["spx-derived", "external", "manual"], "evidence": "Cancellations, interruptions, strikes and lockouts", "readiness": "extractable-if-populated"},
 ];

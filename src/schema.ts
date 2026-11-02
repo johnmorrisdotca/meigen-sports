@@ -9,6 +9,7 @@ export const EXTRACT_CATEGORIES = [
   "award",
   "franchise-event",
   "venue-opening",
+  "retired-number",
   "competition-start",
   "competition-end",
   "sport-event",
@@ -231,6 +232,16 @@ export interface OnThisDayRecord {
   readonly awardCount?: number;
   /** The year the person went into the Hall of Fame of his own sport, when the source holds one. */
   readonly hallOfFameYear?: number | null;
+  /**
+   * The jersey number of the fact's person: the number a club retired for him, else the one number his stints show. Only where it is unambiguous (never the
+   * best of several numbers); on a `retired-number` fact it is the number retired. `jerseyRetired` says a club retired it and `jerseySource` which source gave it
+   * (`wikipedia`, `wikidata`, `wikidata_rosters` or `nflverse`; the licence is that source's, in NOTICE.md). The tag is `number:99`.
+   */
+  readonly jerseyNumber?: number;
+  readonly jerseyRetired?: boolean;
+  readonly jerseySource?: string;
+  /** On a `retired-number` fact: the league retired the number for every club (99 in the NHL, 42 in MLB, 6 in the NBA). `clubName` is then absent. */
+  readonly leagueWide?: boolean;
   readonly draftYear?: number | null;
   readonly round?: number | null;
   readonly overallPick?: number | null;

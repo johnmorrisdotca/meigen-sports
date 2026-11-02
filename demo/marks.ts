@@ -1,6 +1,8 @@
 import { flagCode } from "@johnmorrisdotca/hata";
 import { flagName } from "@johnmorrisdotca/hata/names";
-import { flagOf } from "../src/index.ts";
+import { flagOf, visualOf } from "../src/index.ts";
+import { championshipTitle } from "../src/templates/index.ts";
+import { renderBanner, renderTitleBanner } from "@johnmorrisdotca/senshu-jerseys";
 import type { OnThisDayRecord } from "../src/schema.ts";
 import { TROPHY_STANLEY_CUP } from "@johnmorrisdotca/dougu-sports/trophy/stanley-cup";
 import { TROPHY_HART_TROPHY } from "@johnmorrisdotca/dougu-sports/trophy/hart-trophy";
@@ -79,4 +81,23 @@ export function trophyMark(fact: OnThisDayRecord, size = 34): { svg: string; exa
   const emblem = id ? TROPHIES[id] : undefined;
   if (!id || !emblem) return null;
   return { svg: emblem.svg({ size }), exact: id !== "trophy:cup" };
+}
+
+/**
+ * The banner of a fact as SVG, or null when it has none (`visualOf`): a retired number hangs as a pennant with the number, the person's last name and the year it was
+ * retired; a championship fact hangs the title banner with the year. Drawn by senshu-jerseys in its own neutral colours: the data holds no club colours.
+ */
+export function bannerMark(fact: OnThisDayRecord, lang: "en" | "ja", size = 84): { svg: string; kind: "retired" | "title" } | null {
+  const visual = visualOf(fact);
+  if (visual.banner === "retired" && visual.number != null) {
+    const words = (fact.person?.name ?? "").trim().split(/\s+/);
+    const year = fact.category === "retired-number" ? fact.eventDate?.slice(0, 4) : undefined;
+    return { svg: renderBanner({ number: visual.number, ...(words[0] ? { name: words[words.length - 1]!.toUpperCase() } : {}), ...(year ? { years: lang === "ja" ? `${year}年` : `Retired ${year}` } : {}), size, language: lang }), kind: "retired" };
+  }
+  if (visual.banner === "title" && visual.year != null) {
+    const title = championshipTitle(fact, lang);
+    if (!title) return null;
+    return { svg: renderTitleBanner({ title: lang === "ja" ? title : title.toUpperCase(), subtitle: lang === "ja" ? "優勝" : "CHAMPIONS", years: [visual.year], size, language: lang }), kind: "title" };
+  }
+  return null;
 }

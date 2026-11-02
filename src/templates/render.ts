@@ -172,6 +172,7 @@ function factType(record: OnThisDayRecord): TemplateType | null {
     case "sport-event": return "event-date";
     case "venue-opening": return "venue";
     case "franchise-event": return "franchise";
+    case "retired-number": return "retired";
     case "first": return "first";
     default: return null;
   }
@@ -377,6 +378,9 @@ function fieldsOf(
     previous,
     draftYear: record.draftYear == null ? "" : String(record.draftYear),
     pick, clubBy, clubName: clubNameClean || cleanLabel(record.winnerName),
+    number: record.jerseyNumber == null ? "" : String(record.jerseyNumber),
+    leagueWide: record.category === "retired-number" && record.leagueWide ? league : "",
+    theClub: record.sport === "soccer" ? "" : say("article"),
     venueName: venueNameClean,
     cityIn,
     aged, agedJa: ja ? aged : "",

@@ -75,7 +75,7 @@
 | `rules-format-change` | 日付のある規則や方式の採用 | リーグの記録 | 予定 | 0 |
 | `league-federation-history` | 創設、合併、拡張 | リーグの歴史 | 予定 | 0 |
 | `sporting-first` | 確認した初出場または初メダル | 根拠のある「初めて」 | 予定 | 0 |
-| `ceremony-recognition` | 背番号の永久欠番、殿堂 | 式典 | 予定 | 0 |
+| `ceremony-recognition` | 背番号の永久欠番、殿堂 | `extract_retired_numbers`（永久欠番のみ） | 収録 | 255 |
 | `attendance-audience` | 確認した観客数または視聴 | 入場 | 予定 | 0 |
 | `cancelled-postponed` | 中止、延期、ロックアウト | 試合の状態 | 予定 | 0 |
 
