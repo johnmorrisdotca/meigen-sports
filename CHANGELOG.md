@@ -4,6 +4,12 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+## [0.19.2] - 2026-11-02
+
+- Demo: the header has the family's shared language picker and a theme switch (family template 2026-11-02): the English and Japanese buttons are `<kazoku-language-picker>`, which keeps the choice in the address (`?lang=`) and in the same `localStorage` key as before, so a reader's saved language stays, and `<kazoku-theme-switch>` (Light, Dark, Auto; `?theme=`) is new beside it. `familyLanguage` still fills the page's words and the `meigen-language` event is unchanged; the calendar icons still follow `data-theme`.
+- Demo: the choices written into the address by hand in six places (`demo/demo.ts`: flags, trophies, icon, weekend, Japanese calendar, layout, Play and the fact; `demo/explore.ts`: the favourites) use the shared address state from `@johnmorrisdotca/kazoku-ui` (a dev dependency used only by the demo; the library stays dependency-free). The same keys; the address is written a quarter of a second after the last change, and the tests wait for it.
+- Repository: `release.yml` calls kazoku-ui's shared `reusable-release.yml` (pinned to v0.7.3) with this package's own check (the build and live-data checks, the golden facts and the packed package), then tags, attaches the tarball and publishes by trusted publishing, as before; the trusted publisher entry stays `release.yml`. `AGENTS.md` is written from kazoku-ui's template.
+
 ## [0.19.1] - 2026-11-02
 
 - Docs: every picture of the README and docs/ is drawn again from the current demo, library and data (`pnpm images:all`: the screenshots, the moving pictures, the showcase and the calendar pages; the hero shows the "Japanese calendar" switch and the 0.15 to 0.19 changes), and a test now fails when one is older than its inputs: `test/pictures.test.ts` holds the calendar SVGs to what `calendarIcon` draws and the screenshots and moving pictures to `docs/images/stamp.json`, the hash of the demo, scripts, library and data they were drawn from.
