@@ -1,6 +1,14 @@
 // Built by scripts/data.ts from reviewed source records. Data rights: LICENSES/ and data-sources/.
 import type { MeigenRecord } from "../types.ts";
 
+/**
+ * The bundled history rows: dated events, each with its source.
+ * @example
+ * ```ts
+ * import { history } from "@johnmorrisdotca/meigen-sports/history";
+ * console.log(history.length > 0);
+ * ```
+ */
 export const history: readonly MeigenRecord[] = [
   {
     "id": "history:openfootball:worldcup/1930:01c1eca5f8041085",

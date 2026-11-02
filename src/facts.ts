@@ -32,6 +32,14 @@ function teamMatches(team: TeamRef | undefined, filter: NonNullable<FactFilters[
 /**
  * Every tag of a fact: the primary extract family, then the history tags and the namespaced tags the fact carries (`country:RO`, `sport:handball`,
  * `decade:1960s`, ...), then any namespaced tag its fields give that it does not carry yet. Unique, in that order.
+ * @param record - A fact.
+ * @returns Every tag of the fact, without repeats.
+ * @example
+ * ```ts
+ * import { tagsOf } from "@johnmorrisdotca/meigen-sports";
+ * import offline from "@johnmorrisdotca/meigen-sports/offline";
+ * console.log(tagsOf(offline[0]!).length > 0);
+ * ```
  */
 export function tagsOf(record: OnThisDayRecord): string[] {
   const seen = new Set<string>();
@@ -44,7 +52,17 @@ export function tagsOf(record: OnThisDayRecord): string[] {
   return out;
 }
 
-/** The kind of fact: the primary family and the history tags, without the namespaced tags. Ranking caps count these (two of one kind in a list), never a country or a decade. */
+/**
+ * The kind of fact: the primary family and the history tags, without the namespaced tags. Ranking caps count these (two of one kind in a list), never a country or a decade.
+ * @param record - A fact.
+ * @returns The kind tags of the fact: its primary family and its history tags.
+ * @example
+ * ```ts
+ * import { kindTagsOf } from "@johnmorrisdotca/meigen-sports";
+ * import offline from "@johnmorrisdotca/meigen-sports/offline";
+ * console.log(kindTagsOf(offline[0]!));
+ * ```
+ */
 export function kindTagsOf(record: OnThisDayRecord): string[] {
   const seen = new Set<string>();
   const out: string[] = [];
@@ -98,7 +116,18 @@ function matches(record: OnThisDayRecord, filters: FactFilters): boolean {
   return true;
 }
 
-/** Filter on-this-day facts. Multiple filters intersect. The input order is kept. */
+/**
+ * Filter on-this-day facts. Multiple filters intersect. The input order is kept.
+ * @param records - Facts to filter.
+ * @param filters - A date, a sport, a league, a category or the other filters; all of them must hold.
+ * @returns The matching facts in their original order, each once.
+ * @example
+ * ```ts
+ * import { factsFor } from "@johnmorrisdotca/meigen-sports";
+ * import offline from "@johnmorrisdotca/meigen-sports/offline";
+ * console.log(factsFor(offline, { date: "10-20" }).length > 0);
+ * ```
+ */
 export function factsFor(records: readonly OnThisDayRecord[], filters: FactFilters = {}): OnThisDayRecord[] {
   if (filters.date) monthDayOf(filters.date);
   if (filters.from != null && filters.to != null && filters.from > filters.to) return [];
@@ -115,6 +144,14 @@ export function factsFor(records: readonly OnThisDayRecord[], filters: FactFilte
 /**
  * Calendar month-day in an IANA time zone for an explicit instant.
  * The library does not read the clock; the caller supplies `nowIso`.
+ * @param timeZone - An IANA time zone such as `America/Toronto`.
+ * @param nowIso - An ISO instant, given by the caller: the package never reads the clock.
+ * @returns The month and day as `MM-DD`.
+ * @example
+ * ```ts
+ * import { calendarDayInZone } from "@johnmorrisdotca/meigen-sports";
+ * console.log(calendarDayInZone("Asia/Tokyo", "2026-10-20T20:00:00Z"));
+ * ```
  */
 export function calendarDayInZone(timeZone: string, nowIso: string): string {
   if (!timeZone || !nowIso) throw new RangeError("Expected a time zone and an ISO instant");
@@ -128,7 +165,20 @@ export function calendarDayInZone(timeZone: string, nowIso: string): string {
   return `${month}-${day}`;
 }
 
-/** Facts whose calendar day matches `nowIso` in `timeZone`, then any other filters. */
+/**
+ * Facts whose calendar day matches `nowIso` in `timeZone`, then any other filters.
+ * @param records - Facts to choose from.
+ * @param timeZone - An IANA time zone.
+ * @param nowIso - An ISO instant, given by the caller.
+ * @param filters - Other filters.
+ * @returns The facts of that calendar day.
+ * @example
+ * ```ts
+ * import { today } from "@johnmorrisdotca/meigen-sports";
+ * import offline from "@johnmorrisdotca/meigen-sports/offline";
+ * console.log(today(offline, "America/Toronto", "2026-10-20T15:00:00Z").length > 0);
+ * ```
+ */
 export function today(records: readonly OnThisDayRecord[], timeZone: string, nowIso: string, filters: FactFilters = {}): OnThisDayRecord[] {
   return factsFor(records, { ...filters, date: calendarDayInZone(timeZone, nowIso) });
 }
@@ -157,12 +207,33 @@ function competitionKey(record: OnThisDayRecord): string {
   return record.competition ?? record.league ?? record.category;
 }
 
+/**
+ * Whether every fact in a list has its own id.
+ * @param records - Facts to check.
+ * @returns `true` when no id appears twice.
+ * @example
+ * ```ts
+ * import { uniqueRecordIds } from "@johnmorrisdotca/meigen-sports";
+ * import offline from "@johnmorrisdotca/meigen-sports/offline";
+ * console.log(uniqueRecordIds(offline));
+ * ```
+ */
 export function uniqueRecordIds(records: readonly OnThisDayRecord[]): boolean {
   const ids = records.map((record) => record.recordId);
   return new Set(ids).size === ids.length;
 }
 
-/** How much a fact is worth showing: finals, famous people and playoff drama above routine results. A pure function of the fact's fields. */
+/**
+ * How much a fact is worth showing: finals, famous people and playoff drama above routine results. A pure function of the fact's fields.
+ * @param record - A fact.
+ * @returns A number that is higher for finals, famous people and playoff drama.
+ * @example
+ * ```ts
+ * import { significance } from "@johnmorrisdotca/meigen-sports";
+ * import offline from "@johnmorrisdotca/meigen-sports/offline";
+ * console.log(typeof significance(offline[0]!));
+ * ```
+ */
 export function significance(record: OnThisDayRecord): number {
   const tags = new Set(kindTagsOf(record));
   const reasons = new Set(record.featuredReasons ?? []);
@@ -233,7 +304,15 @@ function teamKeys(record: OnThisDayRecord): string[] {
   return keys;
 }
 
-/** How a ranked list is chosen. Every cap names what it counts: a tag (`championship-win`), a competition (`competition:nhl`), a person (`p:12`) or a club (`f:3`). */
+/**
+ * How a ranked list is chosen. Every cap names what it counts: a tag (`championship-win`), a competition (`competition:nhl`), a person (`p:12`) or a club (`f:3`).
+ * @example
+ * ```ts
+ * import type { RankOptions } from "@johnmorrisdotca/meigen-sports";
+ * const options: RankOptions = { maxPer: 2, personMax: 1, minimum: 3 };
+ * console.log(options.maxPer);
+ * ```
+ */
 export interface RankOptions {
   /** Most facts of one tag, and of one competition, in the list. Default 2. */
   readonly maxPer?: number;
@@ -253,6 +332,16 @@ const DAY_LIST: RankOptions = { maxPerSport: 3 };
 /**
  * Rank facts by `significance` and take the first `n` that keep to the caps, with no repeated fact. The same input always gives the
  * same list, and a list of `n` is the head of a longer list of the same facts. Facts are used as given: nothing is dropped for wording.
+ * @param records - Facts to rank.
+ * @param n - How many to take.
+ * @param options - The caps.
+ * @returns Up to `n` facts, the same list every time for the same input.
+ * @example
+ * ```ts
+ * import { rankRecords } from "@johnmorrisdotca/meigen-sports";
+ * import offline from "@johnmorrisdotca/meigen-sports/offline";
+ * console.log(rankRecords(offline, 3).length);
+ * ```
  */
 export function rankRecords(records: readonly OnThisDayRecord[], n: number, options: RankOptions = {}): OnThisDayRecord[] {
   const maxPer = options.maxPer ?? 2, personMax = options.personMax ?? 1, minimum = options.minimum ?? 3;
@@ -296,17 +385,50 @@ export function rankRecords(records: readonly OnThisDayRecord[], n: number, opti
   return list.length >= want ? list : pick(null, false);
 }
 
-/** `rankRecords` over the facts a default sentence can say (no name-and-year stubs, no Joseon-era general). `options` as a number is `maxPer`. */
+/**
+ * `rankRecords` over the facts a default sentence can say (no name-and-year stubs, no Joseon-era general). `options` as a number is `maxPer`.
+ * @param records - Facts to rank.
+ * @param n - How many to take.
+ * @param options - The caps, or a number for `maxPer`.
+ * @returns Up to `n` facts a default sentence can say.
+ * @example
+ * ```ts
+ * import { rankFeed } from "@johnmorrisdotca/meigen-sports";
+ * import offline from "@johnmorrisdotca/meigen-sports/offline";
+ * console.log(rankFeed(offline, 3).length);
+ * ```
+ */
 export function rankFeed(records: readonly OnThisDayRecord[], n: number, options: number | RankOptions = {}): OnThisDayRecord[] {
   return rankRecords(records.filter(isRichFact), n, typeof options === "number" ? { maxPer: options } : options);
 }
 
-/** A calendar day's list: `rankRecords` with at most three facts of one sport. The Pages day shards are `rankDay(facts, 12)`. */
+/**
+ * A calendar day's list: `rankRecords` with at most three facts of one sport. The Pages day shards are `rankDay(facts, 12)`.
+ * @param records - A day's facts.
+ * @param n - How many to take (12 by default).
+ * @returns The day's list, at most three facts of one sport.
+ * @example
+ * ```ts
+ * import { rankDay } from "@johnmorrisdotca/meigen-sports";
+ * import offline from "@johnmorrisdotca/meigen-sports/offline";
+ * console.log(rankDay(offline, 5).length);
+ * ```
+ */
 export function rankDay(records: readonly OnThisDayRecord[], n = 12): OnThisDayRecord[] {
   return rankRecords(records, n, DAY_LIST);
 }
 
-/** The facts worth keeping for one calendar day when only a few can be kept: the head of that day's ranking, three to five long. */
+/**
+ * The facts worth keeping for one calendar day when only a few can be kept: the head of that day's ranking, three to five long.
+ * @param records - A day's facts.
+ * @returns The three to five facts worth keeping for that day.
+ * @example
+ * ```ts
+ * import { bestOfDay } from "@johnmorrisdotca/meigen-sports";
+ * import offline from "@johnmorrisdotca/meigen-sports/offline";
+ * console.log(bestOfDay(offline.filter((record) => record.eventDate?.endsWith("-10-20"))).length);
+ * ```
+ */
 export function bestOfDay(records: readonly OnThisDayRecord[]): OnThisDayRecord[] {
   return rankFeed(records, 5, DAY_LIST).filter((record, index) => index < 4 || significance(record) >= 85);
 }
@@ -315,6 +437,17 @@ export function bestOfDay(records: readonly OnThisDayRecord[]): OnThisDayRecord[
  * Pick `n` facts after applying filters. The same seed always yields the same rows.
  * Each fact is counted once. Caps at two records per history tag and per competition.
  * A multi-tag fact is skipped if any of its tags is already at the cap.
+ * @param records - Facts to choose from.
+ * @param n - How many to take.
+ * @param filters - Filters applied first.
+ * @param seed - A seed: the same seed always gives the same facts.
+ * @returns Up to `n` facts, shuffled by the seed.
+ * @example
+ * ```ts
+ * import { randomFacts } from "@johnmorrisdotca/meigen-sports";
+ * import offline from "@johnmorrisdotca/meigen-sports/offline";
+ * console.log(randomFacts(offline, 3, {}, "card").length);
+ * ```
  */
 export function randomFacts(records: readonly OnThisDayRecord[], n: number, filters: FactFilters = {}, seed: string): OnThisDayRecord[] {
   if (!seed) throw new RangeError("randomFacts requires an explicit seed");
@@ -337,6 +470,17 @@ export function randomFacts(records: readonly OnThisDayRecord[], n: number, filt
   return picked;
 }
 
+/**
+ * A fact with its English and Japanese caption filled in where it had none.
+ * @param record - A fact.
+ * @returns The same fact with `text` and `textJa`.
+ * @example
+ * ```ts
+ * import { withCaptions } from "@johnmorrisdotca/meigen-sports";
+ * import offline from "@johnmorrisdotca/meigen-sports/offline";
+ * console.log(typeof withCaptions(offline[0]!).text);
+ * ```
+ */
 export function withCaptions(record: OnThisDayRecord): OnThisDayRecord {
   const text = record.text ?? captionFromFact(record, "en") ?? undefined;
   const textJa = record.textJa ?? captionFromFact(record, "ja") ?? undefined;

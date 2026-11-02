@@ -12,7 +12,14 @@ import type {
   RenderedSentence, RenderOptions, SentenceTemplate, TemplateLocale, TemplateType, Wording,
 } from "./types.ts";
 
-/** The name a sentence gives a league: the code in capitals (`NHL`) or the full name (`National Association`). */
+/**
+ * The name a sentence gives a league: the code in capitals (`NHL`) or the full name (`National Association`).
+ * @example
+ * ```ts
+ * import { LEAGUE_LABEL } from "@johnmorrisdotca/meigen-sports";
+ * console.log(LEAGUE_LABEL["nhl"]);
+ * ```
+ */
 export const LEAGUE_LABEL: Readonly<Record<string, string>> = {
   nhl: "NHL", nba: "NBA", mlb: "MLB", nfl: "NFL", cfl: "CFL", mls: "MLS",
   wc: "World Cup", wwc: "Women's World Cup", afl: "AFL", aafc: "AAFC",
@@ -118,7 +125,18 @@ function dateFields(
   };
 }
 
-/** The date a sentence about this record states, at the precision the record holds ("July 4, 1945", "July 1945", "1945"); null when it holds none. */
+/**
+ * The date a sentence about this record states, at the precision the record holds ("July 4, 1945", "July 1945", "1945"); null when it holds none.
+ * @param record - A fact or a history row.
+ * @param locale - `en` or `ja`.
+ * @returns The date as a sentence states it, at the precision the record holds, or `null` when it holds none.
+ * @example
+ * ```ts
+ * import { factDate } from "@johnmorrisdotca/meigen-sports";
+ * import offline from "@johnmorrisdotca/meigen-sports/offline";
+ * console.log(factDate(offline[0]!, "en"));
+ * ```
+ */
 export function factDate(record: OnThisDayRecord | MeigenRecord, locale: TemplateLocale = "en"): string | null {
   const when = "kind" in record ? whenOfHistory(record) : whenOfFact(record);
   return when ? formatDate(locale, when.year, when.month, when.day) : null;
@@ -128,6 +146,15 @@ export function factDate(record: OnThisDayRecord | MeigenRecord, locale: Templat
  * The short note that goes with a fact whose date Wikidata disputes (`dateDisputed`), or null for any other fact: one sentence for each disputed date
  * and one for an age the dates leave open. It is data, never part of the fact's sentence: "Date disputed: Wikidata also gives October 21, 1929."
  * (`日付に諸説あり：Wikidataにはほかに1929年10月21日の記載がある。`). It says only the days the record holds and never decides between them.
+ * @param record - A fact.
+ * @param locale - `en` or `ja`.
+ * @returns A short note when the fact's date is disputed, or `null` when it is not.
+ * @example
+ * ```ts
+ * import { dateNote } from "@johnmorrisdotca/meigen-sports";
+ * import offline from "@johnmorrisdotca/meigen-sports/offline";
+ * console.log(dateNote(offline[0]!, "en"));
+ * ```
  */
 export function dateNote(record: OnThisDayRecord, locale: TemplateLocale = "en"): string | null {
   if (!record.dateDisputed) return null;
@@ -145,7 +172,18 @@ export function dateNote(record: OnThisDayRecord, locale: TemplateLocale = "en")
   return parts.length ? parts.join(locale === "ja" ? "" : " ") : null;
 }
 
-/** Whether a sentence about this record is worded for the day it is shown on, or for anywhere. Exported so a caller can say which it is. */
+/**
+ * Whether a sentence about this record is worded for the day it is shown on, or for anywhere. Exported so a caller can say which it is.
+ * @param record - A fact or a history row.
+ * @param asOf - The day being shown, `YYYY-MM-DD`.
+ * @returns `onThisDay` when the record's month and day are the day shown, else `anywhere`.
+ * @example
+ * ```ts
+ * import { dayContext } from "@johnmorrisdotca/meigen-sports";
+ * import offline from "@johnmorrisdotca/meigen-sports/offline";
+ * console.log(dayContext(offline[0]!, "2026-10-20"));
+ * ```
+ */
 export function dayContext(record: OnThisDayRecord | MeigenRecord, asOf: string | undefined): "onThisDay" | "anywhere" {
   const when = "kind" in record ? whenOfHistory(record) : whenOfFact(record);
   return isOnDay(when, asOf, "kind" in record ? [] : record.dateAlternatives) ? "onThisDay" : "anywhere";
@@ -619,7 +657,18 @@ function guard(options: RenderOptions): void {
   }
 }
 
-/** Render a sentence from committed templates and the fact's fields. Never guesses a missing field. */
+/**
+ * Render a sentence from committed templates and the fact's fields. Never guesses a missing field.
+ * @param record - A fact.
+ * @param options - The language, wording, seed and the day being shown.
+ * @returns A sentence with the template that made it, or `null` when no template fits the fields the fact holds.
+ * @example
+ * ```ts
+ * import { render } from "@johnmorrisdotca/meigen-sports";
+ * import offline from "@johnmorrisdotca/meigen-sports/offline";
+ * console.log(render(offline[0]!, { locale: "en", seed: "card" })?.text);
+ * ```
+ */
 export function render(record: OnThisDayRecord, options: RenderOptions = {}): RenderedSentence | null {
   guard(options);
   const locale: TemplateLocale = options.locale ?? "en";
@@ -629,7 +678,18 @@ export function render(record: OnThisDayRecord, options: RenderOptions = {}): Re
   return prepared ? finish(prepared, record.recordId, locale, wording, seed, options.templateId) : null;
 }
 
-/** Render a bundled history row (a World Cup match, a competition's start or end, a dated event) in prose. `null` for quotations and lines it does not know. */
+/**
+ * Render a bundled history row (a World Cup match, a competition's start or end, a dated event) in prose. `null` for quotations and lines it does not know.
+ * @param record - A bundled history row.
+ * @param options - The language, wording, seed and the day being shown.
+ * @returns A sentence, or `null` for a quotation or a line the templates do not know.
+ * @example
+ * ```ts
+ * import { renderHistory } from "@johnmorrisdotca/meigen-sports";
+ * import history from "@johnmorrisdotca/meigen-sports/history";
+ * console.log(renderHistory(history[0]!, { locale: "en", seed: "card" })?.text);
+ * ```
+ */
 export function renderHistory(record: MeigenRecord, options: RenderOptions = {}): RenderedSentence | null {
   guard(options);
   const locale: TemplateLocale = options.locale ?? "en";
@@ -651,6 +711,17 @@ export function renderCaption(text: string, options: RenderOptions = {}): (Rende
   return prepared && done ? { ...done, type: prepared.type } : null;
 }
 
+/**
+ * The committed sentence templates of one statement type in one language.
+ * @param type - A statement type such as `birthday`.
+ * @param locale - `en` or `ja`.
+ * @returns The templates, in their committed order.
+ * @example
+ * ```ts
+ * import { templatesFor } from "@johnmorrisdotca/meigen-sports";
+ * console.log(templatesFor("birthday", "en").length > 0);
+ * ```
+ */
 export function templatesFor(type: TemplateType, locale: TemplateLocale = "en"): readonly SentenceTemplate[] {
   return TEMPLATES.filter((row) => row.type === type && row.locale === locale);
 }

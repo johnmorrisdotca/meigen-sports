@@ -3,6 +3,11 @@ import type { OnThisDayRecord } from "./schema.ts";
 /**
  * The sub-path of the dougu-sports emblem (0.28.0 or later: `@johnmorrisdotca/dougu-sports/gear/gear.baseballglove`) that goes with a sport, one for each sport that has one.
  * A sport that is not here has no gear; a consumer falls back to its sport icon. The library names the emblem and draws nothing.
+ * @example
+ * ```ts
+ * import { GEAR_BY_SPORT } from "@johnmorrisdotca/meigen-sports";
+ * console.log(GEAR_BY_SPORT["baseball"]);
+ * ```
  */
 export const GEAR_BY_SPORT: Readonly<Record<string, string>> = {
   "baseball": "gear/gear.baseballglove",
@@ -22,7 +27,15 @@ export const GEAR_BY_SPORT: Readonly<Record<string, string>> = {
   "speed-skating": "gear/gear.skates",
 };
 
-/** What a consumer may draw beside a fact. Colours are never given: the data holds none. */
+/**
+ * What a consumer may draw beside a fact. Colours are never given: the data holds none.
+ * @example
+ * ```ts
+ * import type { Visual } from "@johnmorrisdotca/meigen-sports";
+ * const visual: Visual = { banner: "title", year: 2022 };
+ * console.log(visual.banner);
+ * ```
+ */
 export interface Visual {
   /** `"retired"`: a retired-number banner for `number`. `"title"`: a championship banner for `year`. */
   readonly banner?: "retired" | "title";
@@ -32,7 +45,17 @@ export interface Visual {
   readonly gear?: string;
 }
 
-/** The banner and the gear a fact may be drawn with, from the fields it holds; an empty object when it has none. Pure: nothing is guessed. */
+/**
+ * The banner and the gear a fact may be drawn with, from the fields it holds; an empty object when it has none. Pure: nothing is guessed.
+ * @param record - A fact.
+ * @returns The banner and the gear, from the fields the fact holds; an empty object when it has none.
+ * @example
+ * ```ts
+ * import { visualOf } from "@johnmorrisdotca/meigen-sports";
+ * import offline from "@johnmorrisdotca/meigen-sports/offline";
+ * console.log(visualOf(offline[0]!));
+ * ```
+ */
 export function visualOf(record: OnThisDayRecord): Visual {
   const out: { banner?: "retired" | "title"; number?: number; year?: number; gear?: string } = {};
   const year = record.eventDate && /^\d{4}-/.test(record.eventDate) ? Number(record.eventDate.slice(0, 4)) : null;

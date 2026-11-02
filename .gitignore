@@ -13,3 +13,5 @@ docs/RESUME.md
 
 # Built by `pnpm shards` from data-sources/facts
 data/v1/0.1.0/facts/
+.usage/
+.docs-examples/

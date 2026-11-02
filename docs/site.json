@@ -1,0 +1,20 @@
+{
+  "job": "Sports quotations and on-this-day history for JavaScript",
+  "pitch": {
+    "en": "Source-verified sports quotations and on-this-day history: facts for every day of the year, calendar pages in seventeen looks, and four ways to lay a day out.",
+    "ja": "出典を確かめたスポーツの名言と「過去の今日」。一年のすべての日の出来事、17種類のカレンダーページ、日の見せ方4種類が使えます。"
+  },
+  "name": {
+    "en": "Meigen is the Japanese word 名言 for a memorable saying.",
+    "ja": "「名言」(めいげん) は、心に残る優れた言葉のことです。"
+  },
+  "icon": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231f3d33'/%3E%3Crect x='24' y='22' width='52' height='56' rx='6' fill='%23f4efe3'/%3E%3Crect x='24' y='22' width='52' height='14' rx='6' fill='%23c0392b'/%3E%3Cpath d='M36 52h28M36 62h18' stroke='%232f5d4a' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E",
+  "entries": {
+    ".": { "en": "Dates, facts, sentences, tags and calendar pages", "ja": "日付・事実・文・タグ・カレンダー", "platform": "node" },
+    "./load": { "en": "Loading the static JSON feeds", "ja": "静的JSONフィードの読み込み", "platform": "node" },
+    "./offline": { "en": "The bundled offline facts", "ja": "同梱のオフライン事実", "platform": "node" },
+    "./quotes": { "en": "The bundled quotations", "ja": "同梱の名言", "platform": "node" },
+    "./history": { "en": "The bundled history rows", "ja": "同梱の歴史データ", "platform": "node" },
+    "./categories": { "en": "The history tags", "ja": "歴史タグ", "platform": "node" }
+  }
+}

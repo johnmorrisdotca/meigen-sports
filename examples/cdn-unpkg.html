@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Meigen Sports from unpkg</title>
+  </head>
+  <body>
+    <div id="card"></div>
+    <script type="module">
+      import { calendarDayInZone, calendarIcon, displayMarkup, renderRun, today } from "https://unpkg.com/@johnmorrisdotca/meigen-sports/dist/index.js?module";
+      import offline from "https://unpkg.com/@johnmorrisdotca/meigen-sports/dist/data/offline.js?module";
+
+      const now = "2026-10-20T15:00:00Z";
+      const [month, day] = calendarDayInZone("America/Toronto", now).split("-").map(Number);
+      const facts = renderRun(today(offline, "America/Toronto", now).slice(0, 3), { seed: "card", locale: "en", asOf: "2026-10-20" });
+      document.getElementById("card").innerHTML = displayMarkup({ layout: "calendar", icon: calendarIcon({ theme: "pins", month, day, year: 2026 }), items: facts.map((fact) => ({ text: fact.text })) });
+    </script>
+  </body>
+</html>

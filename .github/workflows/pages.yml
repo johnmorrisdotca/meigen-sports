@@ -28,6 +28,7 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm check
       - run: pnpm site
+      - run: pnpm docs:site
       - name: The bundled offline data and the data about to be published are one build
         run: node scripts/check-build.ts site
       - name: The golden facts hold in the data about to be published

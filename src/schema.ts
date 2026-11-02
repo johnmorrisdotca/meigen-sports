@@ -1,4 +1,11 @@
-/** Categories a website should expect on an on-this-day record. */
+/**
+ * Categories a website should expect on an on-this-day record.
+ * @example
+ * ```ts
+ * import { EXTRACT_CATEGORIES } from "@johnmorrisdotca/meigen-sports";
+ * console.log(EXTRACT_CATEGORIES.length, EXTRACT_CATEGORIES[0]);
+ * ```
+ */
 export const EXTRACT_CATEGORIES = [
   "game-on-day",
   "championship-final",
@@ -17,9 +24,25 @@ export const EXTRACT_CATEGORIES = [
   "sport-event",
   "quotation",
 ] as const;
+/**
+ * One of the extract categories.
+ * @example
+ * ```ts
+ * import type { ExtractCategory } from "@johnmorrisdotca/meigen-sports";
+ * const category: ExtractCategory = "player-birthday";
+ * console.log(category);
+ * ```
+ */
 export type ExtractCategory = (typeof EXTRACT_CATEGORIES)[number];
 
-/** Editorial families a favourites feed may add when the structured inputs allow it. Empty until sourced. */
+/**
+ * Editorial families a favourites feed may add when the structured inputs allow it. Empty until sourced.
+ * @example
+ * ```ts
+ * import { FACT_CATEGORIES } from "@johnmorrisdotca/meigen-sports";
+ * console.log(FACT_CATEGORIES.includes("world-record"));
+ * ```
+ */
 export const FACT_CATEGORIES = [
   ...EXTRACT_CATEGORIES,
   "world-record",
@@ -33,13 +56,66 @@ export const FACT_CATEGORIES = [
   "first",
   "trade",
 ] as const;
+/**
+ * One of the categories of an on-this-day fact: the extract ones and the editorial families.
+ * @example
+ * ```ts
+ * import type { FactCategory } from "@johnmorrisdotca/meigen-sports";
+ * const category: FactCategory = "world-record";
+ * console.log(category);
+ * ```
+ */
 export type FactCategory = (typeof FACT_CATEGORIES)[number];
+/**
+ * How exactly a fact's date is known: to the day, the month, the year, or only roughly.
+ * @example
+ * ```ts
+ * import type { DatePrecision } from "@johnmorrisdotca/meigen-sports";
+ * const precision: DatePrecision = "day";
+ * console.log(precision);
+ * ```
+ */
 export type DatePrecision = "day" | "month" | "year" | "approximate";
+/**
+ * Whether a source states the fact (`source`) or it is computed from statistics (`derived`).
+ * @example
+ * ```ts
+ * import type { FactBasis } from "@johnmorrisdotca/meigen-sports";
+ * const basis: FactBasis = "source";
+ * console.log(basis);
+ * ```
+ */
 export type FactBasis = "source" | "derived";
+/**
+ * Whether the person a fact is about is known to be dead, alive, or neither.
+ * @example
+ * ```ts
+ * import type { LivingStatus } from "@johnmorrisdotca/meigen-sports";
+ * const status: LivingStatus = "unknown";
+ * console.log(status);
+ * ```
+ */
 export type LivingStatus = "deceased" | "living" | "unknown";
+/**
+ * What happened to a sporting record: set, held, equalled, surpassed, rescinded or reassigned.
+ * @example
+ * ```ts
+ * import type { RecordEventKind } from "@johnmorrisdotca/meigen-sports";
+ * const kind: RecordEventKind = "set";
+ * console.log(kind);
+ * ```
+ */
 export type RecordEventKind = "set" | "held" | "equalled" | "surpassed" | "rescinded" | "title-reassigned";
 
-/** A sporting record as a progression, not a mutable total. Broken records stay valid facts. */
+/**
+ * A sporting record as a progression, not a mutable total. Broken records stay valid facts.
+ * @example
+ * ```ts
+ * import type { RecordProgression } from "@johnmorrisdotca/meigen-sports";
+ * const holderOf = (record: RecordProgression): string => record.holderName;
+ * console.log(typeof holderOf);
+ * ```
+ */
 export interface RecordProgression {
   readonly metric: string;
   readonly scope: string;
@@ -62,6 +138,12 @@ export interface RecordProgression {
  * `franchiseId` and `teamSeasonId` are SPXN `core.franchise.franchise_id` and `core.team_season.team_season_id`.
  * National soccer teams set `soccerTeamId`, `fifaCode`, `flagCode` (Hata) and `countryCode` (ISO 3166-1 alpha-2).
  * Club rows leave FIFA null. Names are labels, never identity keys.
+ * @example
+ * ```ts
+ * import type { TeamRef } from "@johnmorrisdotca/meigen-sports";
+ * const team: TeamRef = { name: "Toronto Maple Leafs", franchiseId: null, teamSeasonId: null, soccerTeamId: null, countryCode: "CA", fifaCode: null, flagCode: "CA" };
+ * console.log(team.name);
+ * ```
  */
 export interface TeamRef {
   readonly name: string | null;
@@ -73,7 +155,15 @@ export interface TeamRef {
   readonly flagCode: string | null;
 }
 
-/** A person a site can link to SPXN and Wikidata. Team ids are roster or draft clubs, not a name match. */
+/**
+ * A person a site can link to SPXN and Wikidata. Team ids are roster or draft clubs, not a name match.
+ * @example
+ * ```ts
+ * import type { PersonRef } from "@johnmorrisdotca/meigen-sports";
+ * const person: PersonRef = { personId: null, qid: "Q1", name: "Alice", leagueCodes: [], franchiseIds: [], teamSeasonIds: [] };
+ * console.log(person.name);
+ * ```
+ */
 export interface PersonRef {
   readonly personId: number | null;
   readonly qid: string | null;
@@ -83,7 +173,15 @@ export interface PersonRef {
   readonly teamSeasonIds: readonly number[];
 }
 
-/** Source and reuse terms travel with every record. */
+/**
+ * Source and reuse terms travel with every record.
+ * @example
+ * ```ts
+ * import type { ExtractSource } from "@johnmorrisdotca/meigen-sports";
+ * const source: ExtractSource = { sourceId: "wikidata", licence: "CC0 1.0", attribution: "Wikidata contributors, CC0.", url: null };
+ * console.log(source.licence);
+ * ```
+ */
 export interface ExtractSource {
   readonly sourceId: string;
   readonly licence: string;
@@ -108,6 +206,16 @@ export interface WinnerRecord {
   readonly otLosses?: number | null;
 }
 
+/**
+ * One on-this-day fact for a website: its date, its category, its source and the people and teams it is about.
+ * @example
+ * ```ts
+ * import type { OnThisDayRecord } from "@johnmorrisdotca/meigen-sports";
+ * import offline from "@johnmorrisdotca/meigen-sports/offline";
+ * const fact: OnThisDayRecord = offline[0]!;
+ * console.log(fact.recordId, fact.category);
+ * ```
+ */
 export interface OnThisDayRecord {
   readonly recordId: string;
   readonly category: FactCategory;
@@ -281,7 +389,15 @@ export interface OnThisDayRecord {
   readonly textJa?: string;
 }
 
-/** Combinable filters for `factsFor`. Multiple fields intersect. Names are never identity keys. */
+/**
+ * Combinable filters for `factsFor`. Multiple fields intersect. Names are never identity keys.
+ * @example
+ * ```ts
+ * import type { FactFilters } from "@johnmorrisdotca/meigen-sports";
+ * const filters: FactFilters = { sport: "ice-hockey", country: "CA", date: "10-20" };
+ * console.log(filters.sport);
+ * ```
+ */
 export interface FactFilters {
   readonly sport?: string;
   readonly league?: string;

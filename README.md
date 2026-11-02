@@ -306,6 +306,69 @@ console.log(displayLayoutOf("years")); // years
 console.log(displayMarkup({ layout: "featured", items: [{ text: "A fact", year: "1995" }] }).includes("1995")); // true
 ```
 
+## Use it anywhere
+
+The demo is [live on GitHub Pages](https://johnmorrisdotca.github.io/meigen-sports/), the [documentation site](https://johnmorrisdotca.github.io/meigen-sports/docs/) has a page for every export and for each way of using the package, in English and in Japanese, and the [embed page](https://johnmorrisdotca.github.io/meigen-sports/embed.html) is made for an `<iframe>`. Every example below and in the guides is a file in [`examples/`](./examples) that `pnpm test:usage` builds or runs against the package as npm packs it, and opens in a browser.
+
+| How | Guide |
+|---|---|
+| A script tag from jsDelivr or unpkg | [Plain HTML and CDNs](./docs/guides/html-and-cdn.md) |
+| An ES module in Vite or webpack | [Vite and webpack](./docs/guides/bundlers.md) |
+| React, Vue, Svelte, Angular | [Frameworks](./docs/guides/frameworks.md) |
+| An iframe of the embed page | [Embed it in an iframe](./docs/guides/embed-in-an-iframe.md) |
+| TypeScript types, Node, a server | [TypeScript and Node](./docs/guides/typescript-and-node.md) |
+
+On a server or in a script, the same functions run with no DOM and no clock:
+
+```mjs
+import { calendarIcon, displayMarkup, renderRun, today } from "@johnmorrisdotca/meigen-sports";
+import offline from "@johnmorrisdotca/meigen-sports/offline";
+
+// A server draws the same card a browser does: pure functions, no DOM, no clock (the caller says what "now" is).
+const facts = renderRun(today(offline, "America/Toronto", "2026-10-20T15:00:00Z").slice(0, 3), { seed: "card", locale: "en", asOf: "2026-10-20" });
+const card = displayMarkup({ layout: "calendar", icon: calendarIcon({ theme: "pins", month: 10, day: 20, year: 2026 }), items: facts.map((fact) => ({ text: fact.text })) });
+const page = `<!doctype html><title>Sports history</title>${card}`;
+console.log(facts.length, page.includes("meigen-cal"));
+```
+
+In a page, an iframe of the embed page needs no code of your own; the address chooses the day (`date`), the calendar page (`theme`), the language (`lang`), the layout (`layout`) and the sport (`sport`):
+
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Meigen Sports in an iframe</title>
+  </head>
+  <body>
+    <iframe
+      src="https://johnmorrisdotca.github.io/meigen-sports/embed.html?date=10-20&theme=pins&lang=en"
+      title="Sports history for October 20"
+      width="420"
+      height="360"
+      loading="lazy"
+      style="border: 0"
+    ></iframe>
+  </body>
+</html>
+```
+
+In React, a component is the same few lines (Vue, Svelte and Angular are in the [frameworks guide](./docs/guides/frameworks.md)):
+
+```tsx
+import { calendarDayInZone, calendarIcon, displayMarkup, renderRun, today } from "@johnmorrisdotca/meigen-sports";
+import offline from "@johnmorrisdotca/meigen-sports/offline";
+
+export function TodayCard({ now = "2026-10-20T15:00:00Z", timeZone = "America/Toronto" }: { now?: string; timeZone?: string }) {
+  const [month, day] = calendarDayInZone(timeZone, now).split("-").map(Number);
+  const facts = renderRun(today(offline, timeZone, now).slice(0, 3), { seed: "card", locale: "en", asOf: now.slice(0, 10) });
+  const html = displayMarkup({ layout: "calendar", icon: calendarIcon({ theme: "pins", month, day, year: 2026 }), items: facts.map((fact) => ({ text: fact.text })) });
+  // displayMarkup escapes every fact's text, so its string is safe to set as HTML.
+  return <div dangerouslySetInnerHTML={{ __html: html }} />;
+}
+```
+
 ## Examples
 
 The snippets under **In 30 seconds** and **Use it in your project** are run by `pnpm test:readme` against the built package. A network load of the public feed is marked `no-run` until Pages is serving that version.

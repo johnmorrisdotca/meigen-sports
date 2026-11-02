@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Meigen Sports embed</title>
+    <meta name="robots" content="noindex" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      :root { color-scheme: light dark; --ink: #1b2a24; --muted: #5b6b64; --surface: transparent; --rule: #c9d3cd; --accent: #2f5d4a; }
+      @media (prefers-color-scheme: dark) { :root { --ink: #e8efeb; --muted: #a7b6af; --rule: #3a4a43; --accent: #7fc4a4; } }
+      html, body { margin: 0; background: transparent; }
+      body { padding: 12px; font: 16px/1.45 system-ui, sans-serif; color: var(--ink); }
+      #card[data-state="loading"], #card[data-state="failed"] { color: var(--muted); }
+      .meigen-calendar .meigen-cal svg { width: 6rem; }
+    </style>
+  </head>
+  <body>
+    <main id="card" data-testid="card" data-state="loading" aria-live="polite"></main>
+    <script type="module" src="embed.js"></script>
+  </body>
+</html>

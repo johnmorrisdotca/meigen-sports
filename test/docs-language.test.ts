@@ -21,7 +21,8 @@ const JAPANESE = /[\u3000-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uff00-\uffef]/;
 /** Four Latin words in a row are English prose; a name of one to three words (`Dougu Sports`, `World Aquatics Rules`) is not. */
 const ENGLISH_PROSE = /[A-Za-z][A-Za-z'’-]*(?:[ ,.;:!?]+[A-Za-z][A-Za-z'’-]*){3,}/;
 
-const SKIP_DIRECTORIES = new Set(["node_modules", "dist", "site", "test-results", "playwright-report", ".git", ".github", ".readme-examples", "scripts"]);
+// docs/guides/ja holds the documentation site's Japanese guides, one language to a page like the rest: test/docs-site.test.ts holds each to its English twin.
+const SKIP_DIRECTORIES = new Set(["node_modules", "dist", "site", "test-results", "playwright-report", ".git", ".github", ".readme-examples", ".usage", ".docs-examples", "scripts", "examples", "ja"]);
 
 /** The Markdown files whose language is held: the root's, and everything under docs/ and src/. */
 function pages(directory = ".", out: string[] = []): string[] {

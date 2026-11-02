@@ -23,6 +23,15 @@ interface Seen {
  * When a record has too few templates for all three, the rules are dropped in the reverse order, 3 first. The text of
  * two neighbours is never identical. The result is a pure function of the records, `seed`, `locale` and `asOf`;
  * a record with no sentence (a quotation, a fact missing its fields) is skipped.
+ * @param items - Facts or history rows.
+ * @param options - A required seed, the language and the day being shown.
+ * @returns One sentence for each item that has one, tied to its record; items with no sentence are skipped.
+ * @example
+ * ```ts
+ * import { renderRun } from "@johnmorrisdotca/meigen-sports";
+ * import offline from "@johnmorrisdotca/meigen-sports/offline";
+ * console.log(renderRun(offline.slice(0, 3), { seed: "card", locale: "en" }).length);
+ * ```
  */
 export function renderRun(items: readonly (OnThisDayRecord | MeigenRecord)[], options: RunOptions): RunSentence[] {
   if (!options.seed) throw new RangeError("renderRun needs an explicit seed");

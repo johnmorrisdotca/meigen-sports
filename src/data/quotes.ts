@@ -1,6 +1,14 @@
 // Built by scripts/data.ts from reviewed source records. Data rights: LICENSES/ and data-sources/.
 import type { MeigenRecord } from "../types.ts";
 
+/**
+ * The bundled quotations, each with its source and the reasoning for why its words may be published.
+ * @example
+ * ```ts
+ * import { quotes } from "@johnmorrisdotca/meigen-sports/quotes";
+ * console.log(quotes.length > 0);
+ * ```
+ */
 export const quotes: readonly MeigenRecord[] = [
   {
     "id": "quote:gutenberg:10717:4594f09c403d96d6",

@@ -1,4 +1,12 @@
-/** Curated history families. Availability describes implementation evidence, not live database coverage. */
+/**
+ * Curated history families. Availability describes implementation evidence, not live database coverage.
+ * @example
+ * ```ts
+ * import { HISTORY_TYPES, type HistoryType } from "@johnmorrisdotca/meigen-sports/categories";
+ * const first: HistoryType = HISTORY_TYPES[0]!;
+ * console.log(first.id);
+ * ```
+ */
 export interface HistoryType {
  readonly id: string;
  readonly label: string;
@@ -6,7 +14,14 @@ export interface HistoryType {
  readonly evidence: string;
  readonly readiness: "seeded" | "extractable-if-populated" | "validation-needed" | "needs-source";
 }
-/** Forty-six non-exclusive history tags (30 from the first catalogue, 16 planned). One fact may carry several. Quotation remains a separate kind. */
+/**
+ * Forty-six non-exclusive history tags (30 from the first catalogue, 16 planned). One fact may carry several. Quotation remains a separate kind.
+ * @example
+ * ```ts
+ * import { HISTORY_TYPES } from "@johnmorrisdotca/meigen-sports/categories";
+ * console.log(HISTORY_TYPES.length, HISTORY_TYPES[0]?.id);
+ * ```
+ */
 export const HISTORY_TYPES: readonly HistoryType[] = [
  {"id": "championship-win", "label": "Championship victory", "modes": ["spx-derived", "external", "manual"], "evidence": "Champion, competition edition and deciding result", "readiness": "validation-needed"},
  {"id": "historic-cup-series", "label": "Historic cup or series", "modes": ["spx-derived", "external", "manual"], "evidence": "Edition, participants and verified significance", "readiness": "validation-needed"},

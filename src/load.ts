@@ -3,9 +3,25 @@ import type { OnThisDayRecord } from "./schema.ts";
 import type { FeedShard, MeigenRecord } from "./types.ts";
 import { VALID_TAG } from "./tags.ts";
 
-/** A caller-provided fetch keeps network policy, caching and cancellation with the application. */
+/**
+ * A caller-provided fetch keeps network policy, caching and cancellation with the application.
+ * @example
+ * ```ts
+ * import type { FetchFeed } from "@johnmorrisdotca/meigen-sports/load";
+ * const fetchFeed: FetchFeed = async () => ({ ok: true, status: 200, json: async () => ({}) });
+ * console.log(typeof fetchFeed);
+ * ```
+ */
 export type FetchFeed = (url: string, init?: RequestInit) => Promise<Pick<Response, "ok" | "status" | "json">>;
-/** Explicit public feed location and immutable data version; no database URL or credential is needed. */
+/**
+ * Explicit public feed location and immutable data version; no database URL or credential is needed.
+ * @example
+ * ```ts
+ * import type { LoadOptions } from "@johnmorrisdotca/meigen-sports/load";
+ * const options: LoadOptions = { baseUrl: "https://example.test/", dataVersion: "0.1.0", fetch: async () => ({ ok: true, status: 200, json: async () => ({}) }) };
+ * console.log(options.dataVersion);
+ * ```
+ */
 export interface LoadOptions { readonly baseUrl: string; readonly dataVersion: string; readonly fetch: FetchFeed; readonly signal?: AbortSignal }
 
 function isSnapshot(value: unknown): boolean {
@@ -19,9 +35,15 @@ function isSnapshot(value: unknown): boolean {
   return true;
 }
 
-/** Reject malformed/uncleared public rows rather than letting an untrusted JSON response enter the feed.
+/**
+ * Reject malformed/uncleared public rows rather than letting an untrusted JSON response enter the feed.
  * @param value - Parsed JSON from a static file.
  * @returns Whether the record has the required public schema, source links and eligible rights.
+ * @example
+ * ```ts
+ * import { isRecord } from "@johnmorrisdotca/meigen-sports/load";
+ * console.log(isRecord({}));
+ * ```
  */
 export function isRecord(value: unknown): value is MeigenRecord {
   if (!value || typeof value !== "object") return false;
@@ -46,10 +68,19 @@ export function isRecord(value: unknown): value is MeigenRecord {
     || (source.licence === "CC-BY-SA-4.0" && source.rightsStatus === "cc-by-sa-4.0");
 }
 
-/** Load a versioned static shard. It performs one public file request, never a Turso/Supabase query.
+/**
+ * Load a versioned static shard. It performs one public file request, never a Turso/Supabase query.
  * @param path - Relative shard path such as days/10-14.json or quotes.json.
  * @param options - Explicit base URL, version, fetch implementation and optional AbortSignal.
  * @returns A validated schema-1 shard; bad URLs, HTTP responses, versions or records throw.
+ * @example
+ * ```ts
+ * import { loadShard, type FetchFeed } from "@johnmorrisdotca/meigen-sports/load";
+ * const fetchFeed: FetchFeed = async () => ({ ok: true, status: 200, json: async () => ({ schemaVersion: 1, dataVersion: "0.1.0", records: [] }) });
+ * const options = { baseUrl: "https://example.test/", dataVersion: "0.1.0", fetch: fetchFeed };
+ * const shard = await loadShard("days/10-20.json", options);
+ * console.log(shard.records.length);
+ * ```
  */
 export async function loadShard(path: string, options: LoadOptions): Promise<FeedShard> {
   if (!/^[a-zA-Z0-9][a-zA-Z0-9._-]*$/.test(options.dataVersion)) throw new RangeError("Invalid data version");
@@ -64,29 +95,56 @@ export async function loadShard(path: string, options: LoadOptions): Promise<Fee
   return value as FeedShard;
 }
 
-/** Load the historical facts for an explicit calendar day from static GitHub-hosted JSON.
+/**
+ * Load the historical facts for an explicit calendar day from static GitHub-hosted JSON.
  * @param date - YYYY-MM-DD or MM-DD.
  * @param options - Explicit public location/version/fetch; credentials never belong here.
  * @returns The day's validated shard; an empty records array is an honest coverage gap.
+ * @example
+ * ```ts
+ * import { loadDay, type FetchFeed } from "@johnmorrisdotca/meigen-sports/load";
+ * const fetchFeed: FetchFeed = async () => ({ ok: true, status: 200, json: async () => ({ schemaVersion: 1, dataVersion: "0.1.0", records: [] }) });
+ * const options = { baseUrl: "https://example.test/", dataVersion: "0.1.0", fetch: fetchFeed };
+ * const shard = await loadDay("10-20", options);
+ * console.log(shard.dataVersion);
+ * ```
  */
 export function loadDay(date: string, options: LoadOptions): Promise<FeedShard> {
   return loadShard(`days/${monthDayOf(date)}.json`, options);
 }
 
-/** Load a sport's static shard by its documented kebab-case slug.
+/**
+ * Load a sport's static shard by its documented kebab-case slug.
  * @param sport - A sport such as tennis, boxing or professional-wrestling.
  * @param options - Explicit public location/version/fetch.
  * @returns The validated sport shard; unknown sports report the file's HTTP status.
+ * @example
+ * ```ts
+ * import { loadSport, type FetchFeed } from "@johnmorrisdotca/meigen-sports/load";
+ * const fetchFeed: FetchFeed = async () => ({ ok: true, status: 200, json: async () => ({ schemaVersion: 1, dataVersion: "0.1.0", records: [] }) });
+ * const options = { baseUrl: "https://example.test/", dataVersion: "0.1.0", fetch: fetchFeed };
+ * const shard = await loadSport("boxing", options);
+ * console.log(shard.records.length);
+ * ```
  */
 export function loadSport(sport: string, options: LoadOptions): Promise<FeedShard> {
   if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(sport)) throw new RangeError("Invalid sport slug");
   return loadShard(`sports/${sport}.json`, options);
 }
 
-/** Load a known person's/team's/event's stable ID without a name-based identity guess.
+/**
+ * Load a known person's/team's/event's stable ID without a name-based identity guess.
  * @param entityId - The exact stable ID carried by record.entities.
  * @param options - Explicit public location/version/fetch.
  * @returns Its validated static shard. Unknown IDs report 404 rather than falling back to a different person.
+ * @example
+ * ```ts
+ * import { loadEntity, type FetchFeed } from "@johnmorrisdotca/meigen-sports/load";
+ * const fetchFeed: FetchFeed = async () => ({ ok: true, status: 200, json: async () => ({ schemaVersion: 1, dataVersion: "0.1.0", records: [] }) });
+ * const options = { baseUrl: "https://example.test/", dataVersion: "0.1.0", fetch: fetchFeed };
+ * const shard = await loadEntity("person:Q1", options);
+ * console.log(shard.records.length);
+ * ```
  */
 export function loadEntity(entityId: string, options: LoadOptions): Promise<FeedShard> {
   if (!entityId || entityId.length > 512) throw new RangeError("Expected a stable entity ID of 1–512 characters");
@@ -95,7 +153,15 @@ export function loadEntity(entityId: string, options: LoadOptions): Promise<Feed
   return loadShard(`entities/${key}.json`, options);
 }
 
-/** A facts shard uses `OnThisDayRecord` rows, not bundled `MeigenRecord` captions. */
+/**
+ * A facts shard uses `OnThisDayRecord` rows, not bundled `MeigenRecord` captions.
+ * @example
+ * ```ts
+ * import type { FactShard } from "@johnmorrisdotca/meigen-sports/load";
+ * const shard: FactShard = { schemaVersion: 1, dataVersion: "0.1.0", records: [] };
+ * console.log(shard.records.length);
+ * ```
+ */
 export interface FactShard { readonly schemaVersion: 1; readonly dataVersion: string; readonly records: readonly OnThisDayRecord[] }
 
 const BLOCKED_FACT_SOURCES = new Set(["nhl_api", "spx_database", "spx_files", "spxn_database"]);
@@ -104,7 +170,16 @@ function licenceOk(licence: string): boolean {
   return licence.includes("CC0") || licence.includes("CC BY-SA") || licence.includes("CC BY 4.0") || /retrosheet/i.test(licence);
 }
 
-/** Accept a public on-this-day fact. Drops NHL API and SPX-owned rows. */
+/**
+ * Accept a public on-this-day fact. Drops NHL API and SPX-owned rows.
+ * @param value - A parsed JSON value.
+ * @returns `true` when it is a public on-this-day fact; rows from the NHL API and from SPX-owned sources are refused.
+ * @example
+ * ```ts
+ * import { isFactRecord } from "@johnmorrisdotca/meigen-sports/load";
+ * console.log(isFactRecord({}));
+ * ```
+ */
 export function isFactRecord(value: unknown): value is OnThisDayRecord {
   if (!value || typeof value !== "object") return false;
   const row = value as Partial<OnThisDayRecord>;
@@ -130,7 +205,20 @@ async function fetchShard(path: string, options: LoadOptions): Promise<unknown> 
   return response.json();
 }
 
-/** Load a facts shard (`facts/days/10-16.json`, `facts/teams/f-12.json`, …). */
+/**
+ * Load a facts shard (`facts/days/10-16.json`, `facts/teams/f-12.json`, …).
+ * @param path - A path under `facts/` such as `days/10-16.json`.
+ * @param options - The public feed's base URL, its data version and the `fetch` to use.
+ * @returns The validated shard; a bad response throws.
+ * @example
+ * ```ts
+ * import { loadFactShard, type FetchFeed } from "@johnmorrisdotca/meigen-sports/load";
+ * const fetchFeed: FetchFeed = async () => ({ ok: true, status: 200, json: async () => ({ schemaVersion: 1, dataVersion: "0.1.0", records: [] }) });
+ * const options = { baseUrl: "https://example.test/", dataVersion: "0.1.0", fetch: fetchFeed };
+ * const shard = await loadFactShard("days/10-16.json", options);
+ * console.log(shard.records.length);
+ * ```
+ */
 export async function loadFactShard(path: string, options: LoadOptions): Promise<FactShard> {
   const rel = path.startsWith("facts/") ? path : `facts/${path}`;
   const value = await fetchShard(rel, options) as Partial<FactShard> | null;
@@ -140,41 +228,150 @@ export async function loadFactShard(path: string, options: LoadOptions): Promise
   return value as FactShard;
 }
 
+/**
+ * Loads the facts of a calendar day.
+ * @param date - `YYYY-MM-DD` or `MM-DD`.
+ * @param options - The public feed's base URL, its data version and the `fetch` to use.
+ * @returns The day's facts.
+ * @example
+ * ```ts
+ * import { loadFactDay, type FetchFeed } from "@johnmorrisdotca/meigen-sports/load";
+ * const fetchFeed: FetchFeed = async () => ({ ok: true, status: 200, json: async () => ({ schemaVersion: 1, dataVersion: "0.1.0", records: [] }) });
+ * const options = { baseUrl: "https://example.test/", dataVersion: "0.1.0", fetch: fetchFeed };
+ * const shard = await loadFactDay("2026-10-20", options);
+ * console.log(shard.records.length);
+ * ```
+ */
 export function loadFactDay(date: string, options: LoadOptions): Promise<FactShard> {
   return loadFactShard(`days/${monthDayOf(date)}.json`, options);
 }
 
-/** The people of a calendar day across sports: its births and deaths, up to forty, at most three of one sport (`people/MM-DD.json`). The day's own
- * list (`loadFactDay`) is mixed and holds two births and two deaths at most. */
+/**
+ * The people of a calendar day across sports: its births and deaths, up to forty, at most three of one sport (`people/MM-DD.json`). The day's own
+ * @param date - `YYYY-MM-DD` or `MM-DD`.
+ * @param options - The public feed's base URL, its data version and the `fetch` to use.
+ * @returns The day's births and deaths of sports people.
+ * @example
+ * ```ts
+ * import { loadFactPeopleDay, type FetchFeed } from "@johnmorrisdotca/meigen-sports/load";
+ * const fetchFeed: FetchFeed = async () => ({ ok: true, status: 200, json: async () => ({ schemaVersion: 1, dataVersion: "0.1.0", records: [] }) });
+ * const options = { baseUrl: "https://example.test/", dataVersion: "0.1.0", fetch: fetchFeed };
+ * const shard = await loadFactPeopleDay("10-20", options);
+ * console.log(shard.records.length);
+ * ```
+ */
 export function loadFactPeopleDay(date: string, options: LoadOptions): Promise<FactShard> {
   return loadFactShard(`people/${monthDayOf(date)}.json`, options);
 }
 
-/** The events and competition editions of a calendar day across sports: those that began, ended or took place on it, up to forty, at most three of one sport (`events/MM-DD.json`). */
+/**
+ * The events and competition editions of a calendar day across sports: those that began, ended or took place on it, up to forty, at most three of one sport (`events/MM-DD.json`).
+ * @param date - `YYYY-MM-DD` or `MM-DD`.
+ * @param options - The public feed's base URL, its data version and the `fetch` to use.
+ * @returns The day's events and competition editions.
+ * @example
+ * ```ts
+ * import { loadFactEventsDay, type FetchFeed } from "@johnmorrisdotca/meigen-sports/load";
+ * const fetchFeed: FetchFeed = async () => ({ ok: true, status: 200, json: async () => ({ schemaVersion: 1, dataVersion: "0.1.0", records: [] }) });
+ * const options = { baseUrl: "https://example.test/", dataVersion: "0.1.0", fetch: fetchFeed };
+ * const shard = await loadFactEventsDay("10-20", options);
+ * console.log(shard.records.length);
+ * ```
+ */
 export function loadFactEventsDay(date: string, options: LoadOptions): Promise<FactShard> {
   return loadFactShard(`events/${monthDayOf(date)}.json`, options);
 }
 
+/**
+ * Loads the best facts of a league.
+ * @param league - A league code such as `nhl`.
+ * @param options - The public feed's base URL, its data version and the `fetch` to use.
+ * @returns The league's ranked facts.
+ * @example
+ * ```ts
+ * import { loadLeague, type FetchFeed } from "@johnmorrisdotca/meigen-sports/load";
+ * const fetchFeed: FetchFeed = async () => ({ ok: true, status: 200, json: async () => ({ schemaVersion: 1, dataVersion: "0.1.0", records: [] }) });
+ * const options = { baseUrl: "https://example.test/", dataVersion: "0.1.0", fetch: fetchFeed };
+ * const shard = await loadLeague("nhl", options);
+ * console.log(shard.records.length);
+ * ```
+ */
 export function loadLeague(league: string, options: LoadOptions): Promise<FactShard> {
   if (!/^[a-z0-9-]+$/.test(league)) throw new RangeError("Invalid league code");
   return loadFactShard(`feeds/leagues/${league}.json`, options);
 }
 
+/**
+ * Loads the best facts of a club.
+ * @param franchiseId - The archive's franchise id.
+ * @param options - The public feed's base URL, its data version and the `fetch` to use.
+ * @returns The club's ranked facts.
+ * @example
+ * ```ts
+ * import { loadTeamFacts, type FetchFeed } from "@johnmorrisdotca/meigen-sports/load";
+ * const fetchFeed: FetchFeed = async () => ({ ok: true, status: 200, json: async () => ({ schemaVersion: 1, dataVersion: "0.1.0", records: [] }) });
+ * const options = { baseUrl: "https://example.test/", dataVersion: "0.1.0", fetch: fetchFeed };
+ * const shard = await loadTeamFacts(12, options);
+ * console.log(shard.records.length);
+ * ```
+ */
 export function loadTeamFacts(franchiseId: number, options: LoadOptions): Promise<FactShard> {
   if (!Number.isInteger(franchiseId) || franchiseId < 1) throw new RangeError("Invalid franchise id");
   return loadFactShard(`feeds/teams/f-${franchiseId}.json`, options);
 }
 
+/**
+ * Loads the file of facts about the players whose id ends in the same two digits.
+ * @param personId - The archive's person id.
+ * @param options - The public feed's base URL, its data version and the `fetch` to use.
+ * @returns The facts of that file; filter them by the person.
+ * @example
+ * ```ts
+ * import { loadPlayerBucket, type FetchFeed } from "@johnmorrisdotca/meigen-sports/load";
+ * const fetchFeed: FetchFeed = async () => ({ ok: true, status: 200, json: async () => ({ schemaVersion: 1, dataVersion: "0.1.0", records: [] }) });
+ * const options = { baseUrl: "https://example.test/", dataVersion: "0.1.0", fetch: fetchFeed };
+ * const shard = await loadPlayerBucket(1234, options);
+ * console.log(shard.records.length);
+ * ```
+ */
 export function loadPlayerBucket(personId: number, options: LoadOptions): Promise<FactShard> {
   if (!Number.isInteger(personId) || personId < 1) throw new RangeError("Invalid person id");
   return loadFactShard(`feeds/players/${String(personId % 100).padStart(2, "0")}.json`, options);
 }
 
+/**
+ * Loads the best facts of one history tag.
+ * @param category - A history tag such as `player-birthday`.
+ * @param options - The public feed's base URL, its data version and the `fetch` to use.
+ * @returns The tag's ranked facts.
+ * @example
+ * ```ts
+ * import { loadFactCategory, type FetchFeed } from "@johnmorrisdotca/meigen-sports/load";
+ * const fetchFeed: FetchFeed = async () => ({ ok: true, status: 200, json: async () => ({ schemaVersion: 1, dataVersion: "0.1.0", records: [] }) });
+ * const options = { baseUrl: "https://example.test/", dataVersion: "0.1.0", fetch: fetchFeed };
+ * const shard = await loadFactCategory("player-birthday", options);
+ * console.log(shard.records.length);
+ * ```
+ */
 export function loadFactCategory(category: string, options: LoadOptions): Promise<FactShard> {
   if (!/^[a-z0-9-]+$/.test(category)) throw new RangeError("Invalid category");
   return loadFactShard(`feeds/tags/${category}.json`, options);
 }
 
+/**
+ * Loads a facts index: the ids of the facts that have one tag or value.
+ * @param path - A path under `facts/` such as `indexes/countries/RO.json`.
+ * @param options - The public feed's base URL, its data version and the `fetch` to use.
+ * @returns The index with its list of fact ids.
+ * @example
+ * ```ts
+ * import { loadFactIndex, type FetchFeed } from "@johnmorrisdotca/meigen-sports/load";
+ * const fetchFeed: FetchFeed = async () => ({ ok: true, status: 200, json: async () => ({ schemaVersion: 1, dataVersion: "0.1.0", ids: ["a", "b"] }) });
+ * const options = { baseUrl: "https://example.test/", dataVersion: "0.1.0", fetch: fetchFeed };
+ * const index = await loadFactIndex("indexes/countries/RO.json", options);
+ * console.log(index.ids.length);
+ * ```
+ */
 export function loadFactIndex(path: string, options: LoadOptions): Promise<{ readonly schemaVersion: 1; readonly dataVersion: string; readonly ids: readonly string[] }> {
   return fetchShard(path.startsWith("facts/") ? path : `facts/${path}`, options).then((value) => {
     const row = value as { schemaVersion?: number; dataVersion?: string; ids?: unknown } | null;
@@ -191,13 +388,38 @@ async function indexIds(folder: string, name: string, options: LoadOptions): Pro
   return (await loadFactIndex(`indexes/${folder}/${name}.json`, options)).ids;
 }
 
-/** The ids of the facts about a country: the people or the teams of it (`country:RO`), an ISO 3166-1 alpha-2 code, or a former country's ISO 3166-3 code ("SUHH"). */
+/**
+ * The ids of the facts about a country: the people or the teams of it (`country:RO`), an ISO 3166-1 alpha-2 code, or a former country's ISO 3166-3 code ("SUHH").
+ * @param code - An ISO 3166-1 alpha-2 code such as `RO`, or an ISO 3166-3 code for a former country.
+ * @param options - The public feed's base URL, its data version and the `fetch` to use.
+ * @returns The ids of the country's facts.
+ * @example
+ * ```ts
+ * import { loadCountryIds, type FetchFeed } from "@johnmorrisdotca/meigen-sports/load";
+ * const fetchFeed: FetchFeed = async () => ({ ok: true, status: 200, json: async () => ({ schemaVersion: 1, dataVersion: "0.1.0", ids: ["a", "b"] }) });
+ * const options = { baseUrl: "https://example.test/", dataVersion: "0.1.0", fetch: fetchFeed };
+ * console.log(await loadCountryIds("RO", options));
+ * ```
+ */
 export function loadCountryIds(code: string, options: LoadOptions): Promise<readonly string[]> {
   if (!/^[A-Z]{2}(?:[A-Z]{2})?$/.test(code)) throw new RangeError("Expected a country code such as RO");
   return indexIds("countries", code, options);
 }
 
-/** A country's best forty facts, ranked (`feeds/countries/RO.json`): the ranked sample, where `loadCountryIds` is every id. */
+/**
+ * A country's best forty facts, ranked (`feeds/countries/RO.json`): the ranked sample, where `loadCountryIds` is every id.
+ * @param code - An ISO 3166-1 alpha-2 code such as `RO`.
+ * @param options - The public feed's base URL, its data version and the `fetch` to use.
+ * @returns The country's best forty facts.
+ * @example
+ * ```ts
+ * import { loadCountry, type FetchFeed } from "@johnmorrisdotca/meigen-sports/load";
+ * const fetchFeed: FetchFeed = async () => ({ ok: true, status: 200, json: async () => ({ schemaVersion: 1, dataVersion: "0.1.0", records: [] }) });
+ * const options = { baseUrl: "https://example.test/", dataVersion: "0.1.0", fetch: fetchFeed };
+ * const shard = await loadCountry("RO", options);
+ * console.log(shard.records.length);
+ * ```
+ */
 export function loadCountry(code: string, options: LoadOptions): Promise<FactShard> {
   if (!/^[A-Z]{2}(?:[A-Z]{2})?$/.test(code)) throw new RangeError("Expected a country code such as RO");
   return loadFactShard(`feeds/countries/${code}.json`, options);
@@ -206,6 +428,12 @@ export function loadCountry(code: string, options: LoadOptions): Promise<FactSha
 /**
  * A query over the facts' own tags: every field given must hold (`country` and `day` and `sport` together is "the Romanian facts for this calendar day").
  * `day` is a calendar day, `YYYY-MM-DD` or `MM-DD`. A `tag` is a history type (`player-birthday`).
+ * @example
+ * ```ts
+ * import type { FactQuery } from "@johnmorrisdotca/meigen-sports/load";
+ * const query: FactQuery = { country: "RO", day: "10-20" };
+ * console.log(query.country);
+ * ```
  */
 export interface FactQuery {
   readonly country?: string;
@@ -223,7 +451,16 @@ export interface FactQuery {
   readonly day?: string;
 }
 
-/** Where each field of a query is indexed: the folder under `indexes/` and the file's name. */
+/**
+ * Where each field of a query is indexed: the folder under `indexes/` and the file's name.
+ * @param query - A query over the facts' tags.
+ * @returns The index file each field of the query is read from; throws a `RangeError` for a value that cannot be a name.
+ * @example
+ * ```ts
+ * import { indexesFor } from "@johnmorrisdotca/meigen-sports/load";
+ * console.log(indexesFor({ country: "RO", day: "10-20" }));
+ * ```
+ */
 export function indexesFor(query: FactQuery): { readonly folder: string; readonly name: string }[] {
   const wanted: { folder: string; name: string }[] = [];
   const need = (folder: string, name: string | number | undefined, pattern: RegExp): void => {
@@ -250,6 +487,16 @@ export function indexesFor(query: FactQuery): { readonly folder: string; readonl
 /**
  * The ids of the facts that match every field of a query: the facts' indexes (ids only) read and intersected, smallest first. One file request for each field.
  * A value no fact has reports the file's HTTP status (404) rather than an empty answer, so a mistyped country is not "no facts".
+ * @param query - A query: every field given must hold.
+ * @param options - The public feed's base URL, its data version and the `fetch` to use.
+ * @returns The ids that match every field, smallest index first.
+ * @example
+ * ```ts
+ * import { queryFactIds, type FetchFeed } from "@johnmorrisdotca/meigen-sports/load";
+ * const fetchFeed: FetchFeed = async () => ({ ok: true, status: 200, json: async () => ({ schemaVersion: 1, dataVersion: "0.1.0", ids: ["a", "b"] }) });
+ * const options = { baseUrl: "https://example.test/", dataVersion: "0.1.0", fetch: fetchFeed };
+ * console.log(await queryFactIds({ country: "RO" }, options));
+ * ```
  */
 export async function queryFactIds(query: FactQuery, options: LoadOptions): Promise<string[]> {
   const wanted = indexesFor(query);
@@ -261,12 +508,33 @@ export async function queryFactIds(query: FactQuery, options: LoadOptions): Prom
   return first.filter((id) => others.every((set) => set.has(id)));
 }
 
-/** The facts' store holds every fact in 100 files by record id: the file a fact is in, `"00"` to `"99"`. */
+/**
+ * The facts' store holds every fact in 100 files by record id: the file a fact is in, `"00"` to `"99"`.
+ * @param recordId - A fact's record id.
+ * @returns The store file the fact is in, `00` to `99`.
+ * @example
+ * ```ts
+ * import { storeBucket } from "@johnmorrisdotca/meigen-sports/load";
+ * console.log(storeBucket("spx:game:1717443"));
+ * ```
+ */
 export function storeBucket(recordId: string): string {
   return String(sha256Prefix(recordId) % 100).padStart(2, "0");
 }
 
-/** Load the facts with these ids from the store: each store file needed is requested once. A fact the store does not hold is left out. Order follows `ids`. */
+/**
+ * Load the facts with these ids from the store: each store file needed is requested once. A fact the store does not hold is left out. Order follows `ids`.
+ * @param ids - Record ids.
+ * @param options - The public feed's base URL, its data version and the `fetch` to use.
+ * @returns The facts the store holds, in the order of `ids`.
+ * @example
+ * ```ts
+ * import { loadFactsById, type FetchFeed } from "@johnmorrisdotca/meigen-sports/load";
+ * const fetchFeed: FetchFeed = async () => ({ ok: true, status: 200, json: async () => ({ schemaVersion: 1, dataVersion: "0.1.0", records: [] }) });
+ * const options = { baseUrl: "https://example.test/", dataVersion: "0.1.0", fetch: fetchFeed };
+ * console.log(await loadFactsById(["spx:game:1717443"], options));
+ * ```
+ */
 export async function loadFactsById(ids: readonly string[], options: LoadOptions): Promise<OnThisDayRecord[]> {
   const buckets = [...new Set(ids.map(storeBucket))];
   const shards = await Promise.all(buckets.map((bucket) => loadFactShard(`store/${bucket}.json`, options)));
@@ -278,6 +546,17 @@ export async function loadFactsById(ids: readonly string[], options: LoadOptions
 /**
  * The facts that match a query, by id from the indexes and then from the store: "the Romanian facts for October 20" is
  * `queryFacts({ country: "RO", day: "10-20" }, options)`. `limit` keeps the first ids (sorted) so that a broad query does not fetch the whole store.
+ * @param query - A query: every field given must hold.
+ * @param options - The public feed's base URL, its data version and the `fetch` to use.
+ * @param limit - The most facts to fetch (50 by default).
+ * @returns The matching facts.
+ * @example
+ * ```ts
+ * import { queryFacts, type FetchFeed } from "@johnmorrisdotca/meigen-sports/load";
+ * const fetchFeed: FetchFeed = async (url) => ({ ok: true, status: 200, json: async () => (url.includes("/store/") ? { schemaVersion: 1, dataVersion: "0.1.0", records: [] } : { schemaVersion: 1, dataVersion: "0.1.0", ids: ["a", "b"] }) });
+ * const options = { baseUrl: "https://example.test/", dataVersion: "0.1.0", fetch: fetchFeed };
+ * console.log(await queryFacts({ country: "RO", day: "10-20" }, options, 5));
+ * ```
  */
 export async function queryFacts(query: FactQuery, options: LoadOptions, limit = 50): Promise<OnThisDayRecord[]> {
   const ids = (await queryFactIds(query, options)).slice(0, Math.max(0, limit));
@@ -323,22 +602,59 @@ function sha256Prefix(text: string): number {
   return h[0]! >>> 16;
 }
 
-/** A person a reader can look up by name: `n` the name (a label, never identity), `q` the Wikidata id, `p` the archive's person id, `ids` the ids of the person's facts. */
+/**
+ * A person a reader can look up by name: `n` the name (a label, never identity), `q` the Wikidata id, `p` the archive's person id, `ids` the ids of the person's facts.
+ * @example
+ * ```ts
+ * import type { NamedPerson } from "@johnmorrisdotca/meigen-sports/load";
+ * const person: NamedPerson = { n: "Wayne Gretzky", q: "Q5604", p: null, ids: [] };
+ * console.log(person.n);
+ * ```
+ */
 export interface NamedPerson { readonly n: string; readonly q: string | null; readonly p: number | null; readonly ids: readonly string[] }
 
-/** A name folded for searching: accents and case gone, split into its words (letters and digits). */
+/**
+ * A name folded for searching: accents and case gone, split into its words (letters and digits).
+ * @param text - A name.
+ * @returns The words of the name, lower case and without accents.
+ * @example
+ * ```ts
+ * import { nameWords } from "@johnmorrisdotca/meigen-sports/load";
+ * console.log(nameWords("Zdeno Chára"));
+ * ```
+ */
 export function nameWords(text: string): string[] {
   return text.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().match(/[\p{L}\p{N}]+/gu) ?? [];
 }
 
-/** The files of `index/names/` a name is in: the first letter of its first word and of its last (`a` to `z`, else `_`). A reader types either name. */
+/**
+ * The files of `index/names/` a name is in: the first letter of its first word and of its last (`a` to `z`, else `_`). A reader types either name.
+ * @param text - A name.
+ * @returns The letters of the name files the person is in: the first letters of the first and last words.
+ * @example
+ * ```ts
+ * import { nameLetters } from "@johnmorrisdotca/meigen-sports/load";
+ * console.log(nameLetters("Wayne Gretzky"));
+ * ```
+ */
 export function nameLetters(text: string): string[] {
   const words = nameWords(text);
   const letter = (word: string | undefined): string => (word && /^[a-z]/.test(word) ? word[0]! : "_");
   return [...new Set([letter(words[0]), letter(words.at(-1))])];
 }
 
-/** One file of people by name (`index/names/a.json`): everyone whose first or last name begins with that letter. */
+/**
+ * One file of people by name (`index/names/a.json`): everyone whose first or last name begins with that letter.
+ * @param letter - One letter, `a` to `z`, or `_`.
+ * @param options - The public feed's base URL, its data version and the `fetch` to use.
+ * @returns The people whose first or last name begins with that letter.
+ * @example
+ * ```ts
+ * import { loadPeopleNames, type FetchFeed } from "@johnmorrisdotca/meigen-sports/load";
+ * const fetchFeed: FetchFeed = async () => ({ ok: true, status: 200, json: async () => ({ schemaVersion: 1, dataVersion: "0.1.0", people: [{ n: "Wayne Gretzky", q: "Q5604", p: null, ids: [] }] }) });
+ * console.log(await loadPeopleNames("g", { baseUrl: "https://example.test/", dataVersion: "0.1.0", fetch: fetchFeed }));
+ * ```
+ */
 export async function loadPeopleNames(letter: string, options: LoadOptions): Promise<NamedPerson[]> {
   if (!/^(?:[a-z]|_)$/.test(letter)) throw new RangeError("Expected one letter, a to z, or _");
   const value = await fetchShard(`facts/index/names/${letter}.json`, options) as { schemaVersion?: number; dataVersion?: string; people?: unknown } | null;
@@ -349,6 +665,16 @@ export async function loadPeopleNames(letter: string, options: LoadOptions): Pro
 /**
  * People whose name matches what a reader typed: every word typed begins a word of the name ("wayne gr", "gretz", "ovech"). One file request, the file of the
  * first letter of the first word typed. Names are labels: two people may share one, and the Q id (`q`) tells them apart.
+ * @param query - What a reader typed: every word begins a word of the name.
+ * @param options - The public feed's base URL, its data version and the `fetch` to use.
+ * @param limit - The most people to return (20 by default).
+ * @returns The matching people; an empty list for an empty query.
+ * @example
+ * ```ts
+ * import { findPeopleByName, type FetchFeed } from "@johnmorrisdotca/meigen-sports/load";
+ * const fetchFeed: FetchFeed = async () => ({ ok: true, status: 200, json: async () => ({ schemaVersion: 1, dataVersion: "0.1.0", people: [{ n: "Wayne Gretzky", q: "Q5604", p: null, ids: [] }] }) });
+ * console.log(await findPeopleByName("wayne gr", { baseUrl: "https://example.test/", dataVersion: "0.1.0", fetch: fetchFeed }));
+ * ```
  */
 export async function findPeopleByName(query: string, options: LoadOptions, limit = 20): Promise<NamedPerson[]> {
   const typed = nameWords(query);
@@ -361,20 +687,56 @@ export async function findPeopleByName(query: string, options: LoadOptions, limi
   }).slice(0, Math.max(0, limit));
 }
 
-/** A club a reader can pick: the archive's franchise id, its name (null where no fact names it), its sport and league. */
+/**
+ * A club a reader can pick: the archive's franchise id, its name (null where no fact names it), its sport and league.
+ * @example
+ * ```ts
+ * import type { PickerTeam } from "@johnmorrisdotca/meigen-sports/load";
+ * const team: PickerTeam = { franchiseId: 12, name: "Toronto Maple Leafs", sport: "ice-hockey", league: "nhl" };
+ * console.log(team.name);
+ * ```
+ */
 export interface PickerTeam { readonly franchiseId: number; readonly name: string | null; readonly sport: string | null; readonly league: string | null }
 
-/** The clubs a reader can pick by name (`index/teams.json`, a few kilobytes). People are found by name with `findPeopleByName`. */
+/**
+ * The clubs a reader can pick by name (`index/teams.json`, a few kilobytes). People are found by name with `findPeopleByName`.
+ * @param options - The public feed's base URL, its data version and the `fetch` to use.
+ * @returns The clubs a reader can pick by name.
+ * @example
+ * ```ts
+ * import { loadTeamPicker, type FetchFeed } from "@johnmorrisdotca/meigen-sports/load";
+ * const fetchFeed: FetchFeed = async () => ({ ok: true, status: 200, json: async () => ({ schemaVersion: 1, dataVersion: "0.1.0", teams: [{ franchiseId: 12, name: "Toronto Maple Leafs", sport: "ice-hockey", league: "nhl" }] }) });
+ * console.log(await loadTeamPicker({ baseUrl: "https://example.test/", dataVersion: "0.1.0", fetch: fetchFeed }));
+ * ```
+ */
 export async function loadTeamPicker(options: LoadOptions): Promise<PickerTeam[]> {
   const value = await fetchShard("facts/index/teams.json", options) as { schemaVersion?: number; dataVersion?: string; teams?: unknown } | null;
   if (!value || value.schemaVersion !== 1 || value.dataVersion !== options.dataVersion || !Array.isArray(value.teams)) throw new TypeError("Invalid or incompatible picker");
   return value.teams.filter((team): team is PickerTeam => Boolean(team) && Number.isInteger((team as PickerTeam).franchiseId));
 }
 
-/** The values a reader can filter by, with the number of facts of each, by the folder of their index (`countries`, `sports`, `leagues`, `decades`, `awards`, `positions`, `honours`, `series`, `titles`, `birthcountries`, `hosts`), most facts first. */
+/**
+ * The values a reader can filter by, with the number of facts of each, by the folder of their index (`countries`, `sports`, `leagues`, `decades`, `awards`, `positions`, `honours`, `series`, `titles`, `birthcountries`, `hosts`), most facts first.
+ * @example
+ * ```ts
+ * import type { Vocabulary } from "@johnmorrisdotca/meigen-sports/load";
+ * const words = (vocabulary: Vocabulary) => Object.keys(vocabulary.sports);
+ * console.log(typeof words);
+ * ```
+ */
 export type Vocabulary = Readonly<Record<"countries" | "sports" | "leagues" | "decades" | "awards" | "positions" | "honours" | "series" | "titles" | "birthcountries" | "hosts", Readonly<Record<string, number>>>> & { readonly awardNames: Readonly<Record<string, string>> };
 
-/** The vocabulary of the facts (`index/vocabulary.json`): one small file, for a menu of what can be asked. */
+/**
+ * The vocabulary of the facts (`index/vocabulary.json`): one small file, for a menu of what can be asked.
+ * @param options - The public feed's base URL, its data version and the `fetch` to use.
+ * @returns The values a reader can filter by, with the number of facts of each.
+ * @example
+ * ```ts
+ * import { loadVocabulary, type FetchFeed } from "@johnmorrisdotca/meigen-sports/load";
+ * const fetchFeed: FetchFeed = async () => ({ ok: true, status: 200, json: async () => ({ schemaVersion: 1, dataVersion: "0.1.0", countries: { CA: 3 }, sports: { hockey: 2 } }) });
+ * console.log((await loadVocabulary({ baseUrl: "https://example.test/", dataVersion: "0.1.0", fetch: fetchFeed })).sports);
+ * ```
+ */
 export async function loadVocabulary(options: LoadOptions): Promise<Vocabulary> {
   const value = await fetchShard("facts/index/vocabulary.json", options) as (Partial<Vocabulary> & { schemaVersion?: number; dataVersion?: string }) | null;
   if (!value || value.schemaVersion !== 1 || value.dataVersion !== options.dataVersion || typeof value.countries !== "object" || typeof value.sports !== "object") throw new TypeError("Invalid or incompatible vocabulary");

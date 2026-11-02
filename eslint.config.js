@@ -2,7 +2,7 @@ import js from "@eslint/js";
 import tseslint from "typescript-eslint";
 
 export default tseslint.config(
-  { ignores: ["dist/", "site/", "node_modules/", "test-results/", "playwright-report/", ".readme-examples/"] },
+  { ignores: ["dist/", "site/", "node_modules/", "test-results/", "playwright-report/", ".readme-examples/", ".docs-examples/", ".usage/", "examples/"] },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   { files: ["scripts/**/*.mjs", "e2e/**/*.mjs", "playwright.config.mjs"], languageOptions: { globals: { console: "readonly", process: "readonly", URL: "readonly", Buffer: "readonly", document: "readonly", window: "readonly", fetch: "readonly", setTimeout: "readonly" } } },

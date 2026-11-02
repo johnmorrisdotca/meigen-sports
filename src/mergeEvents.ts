@@ -1,6 +1,15 @@
 import { renderCaption } from "./templates/render.ts";
 import type { Citation, EntityRef, MeigenRecord } from "./types.ts";
 
+/**
+ * What `mergeHistoryEvents` did: how many rows it read and merged.
+ * @example
+ * ```ts
+ * import { mergeHistoryEvents, type MergeReport } from "@johnmorrisdotca/meigen-sports";
+ * const report: MergeReport = mergeHistoryEvents([]).report;
+ * console.log(report.before, report.after);
+ * ```
+ */
 export interface MergeReport {
   readonly before: number;
   readonly after: number;
@@ -8,7 +17,16 @@ export interface MergeReport {
   readonly absorbedIds: readonly string[];
 }
 
-/** True when every record id appears once. */
+/**
+ * True when every record id appears once.
+ * @param records - History rows.
+ * @returns `true` when no id appears twice.
+ * @example
+ * ```ts
+ * import { uniqueHistoryIds } from "@johnmorrisdotca/meigen-sports";
+ * console.log(uniqueHistoryIds([]));
+ * ```
+ */
 export function uniqueHistoryIds(records: readonly MeigenRecord[]): boolean {
   const ids = records.map((row) => row.id);
   return new Set(ids).size === ids.length;
@@ -81,6 +99,13 @@ export function isFinalMatch(record: MeigenRecord): boolean {
 /**
  * Winner-and-result wording for a World Cup final caption, from the `world-cup-final` patterns (`fixed` wording).
  * Skips venue, host, and any other field the caption does not hold.
+ * @param text - The caption of a World Cup match.
+ * @returns The winner-and-result wording for a final, or `null` when the caption has no such pattern.
+ * @example
+ * ```ts
+ * import { finalCaptionFromMatch } from "@johnmorrisdotca/meigen-sports";
+ * console.log(finalCaptionFromMatch("not a final"));
+ * ```
  */
 export function finalCaptionFromMatch(text: string): string | null {
   const parsed = parseMatchCaption(text);
@@ -290,6 +315,13 @@ function withFinalWording(record: MeigenRecord): MeigenRecord {
  * A competition start/end on the same edition and date as a match is absorbed
  * into the richest match (a final, when the boundary is an ending).
  * Extra sources stay as `additionalSources`. Feeds never carry both rows.
+ * @param records - History rows, possibly several for one event.
+ * @returns The rows with each event once, and a report of what was merged.
+ * @example
+ * ```ts
+ * import { mergeHistoryEvents } from "@johnmorrisdotca/meigen-sports";
+ * console.log(mergeHistoryEvents([]).records.length);
+ * ```
  */
 export function mergeHistoryEvents(records: readonly MeigenRecord[]): {
   records: MeigenRecord[];

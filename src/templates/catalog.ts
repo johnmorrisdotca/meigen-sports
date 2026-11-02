@@ -1,6 +1,13 @@
 import type { SentenceTemplate } from "./types.ts";
 
-/** Committed sentence templates. Add a row; never invent fields the fact does not hold. */
+/**
+ * Committed sentence templates. Add a row; never invent fields the fact does not hold.
+ * @example
+ * ```ts
+ * import { TEMPLATES } from "@johnmorrisdotca/meigen-sports";
+ * console.log(TEMPLATES.length > 100);
+ * ```
+ */
 export const TEMPLATES: readonly SentenceTemplate[] = [
   {
     id: "birthday-on-this-day", type: "birthday", locale: "en", gate: "neutral", role: "default", day: true,

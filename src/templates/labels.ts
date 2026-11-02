@@ -3,7 +3,16 @@ const PLACEHOLDER_IN_PARENS = /\s*[(（]\s*(?:none|null|undefined|n\/a|nan)\s*[)
 const PLACEHOLDER_ALONE = /^(?:none|null|undefined|n\/a|nan)$/i;
 const PLACEHOLDER_LEFT = /\(\s*none\s*\)|（\s*none\s*）|\b(?:null|undefined|NaN)\b/i;
 
-/** A name or label with any placeholder for "no value" removed; "" when nothing real is left. */
+/**
+ * A name or label with any placeholder for "no value" removed; "" when nothing real is left.
+ * @param value - A name or label.
+ * @returns The label without a placeholder for no value; an empty string when nothing is left.
+ * @example
+ * ```ts
+ * import { cleanLabel } from "@johnmorrisdotca/meigen-sports";
+ * console.log(cleanLabel("Allegheny Club (none)"));
+ * ```
+ */
 export function cleanLabel(value: string | null | undefined): string {
   const text = (value ?? "").replace(PLACEHOLDER_IN_PARENS, "").replace(/\s{2,}/g, " ").trim();
   return PLACEHOLDER_ALONE.test(text) ? "" : text;

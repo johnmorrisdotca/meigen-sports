@@ -1,12 +1,47 @@
 // Four ways to show a day's facts. The helpers return HTML. They do not word a fact and they do not read the clock.
 // Colours come from the optional stylesheet (`styles.css`), which follows the page's own variables.
 
+/**
+ * The four layouts of a day's facts: calendar, years, compact and featured.
+ * @example
+ * ```ts
+ * import { DISPLAY_LAYOUTS } from "@johnmorrisdotca/meigen-sports";
+ * console.log(DISPLAY_LAYOUTS.join(" "));
+ * ```
+ */
 export const DISPLAY_LAYOUTS = ["calendar", "years", "compact", "featured"] as const;
 
+/**
+ * The name of one of the four layouts.
+ * @example
+ * ```ts
+ * import type { DisplayLayout } from "@johnmorrisdotca/meigen-sports";
+ * const layout: DisplayLayout = "compact";
+ * console.log(layout);
+ * ```
+ */
 export type DisplayLayout = (typeof DISPLAY_LAYOUTS)[number];
 
+/**
+ * The group a fact is shown under: an event, a birth or a death.
+ * @example
+ * ```ts
+ * import type { DisplayKind } from "@johnmorrisdotca/meigen-sports";
+ * const kind: DisplayKind = "birth";
+ * console.log(kind);
+ * ```
+ */
 export type DisplayKind = "event" | "birth" | "death";
 
+/**
+ * One fact to lay out: its sentence, the year to show and its group.
+ * @example
+ * ```ts
+ * import type { DisplayItem } from "@johnmorrisdotca/meigen-sports";
+ * const item: DisplayItem = { text: "The 2011 MLS Cup went to LA Galaxy.", year: "2011", kind: "event" };
+ * console.log(item.text);
+ * ```
+ */
 export interface DisplayItem {
   /** The sentence already worded for the reader. */
   text: string;
@@ -15,12 +50,30 @@ export interface DisplayItem {
   kind?: DisplayKind;
 }
 
+/**
+ * The words over the three groups of the years layout.
+ * @example
+ * ```ts
+ * import type { DisplayLabels } from "@johnmorrisdotca/meigen-sports";
+ * const labels: DisplayLabels = { events: "Events", births: "Births", deaths: "Deaths" };
+ * console.log(labels.births);
+ * ```
+ */
 export interface DisplayLabels {
   events: string;
   births: string;
   deaths: string;
 }
 
+/**
+ * What `displayMarkup` lays out: the layout, the facts and an optional calendar icon.
+ * @example
+ * ```ts
+ * import type { DisplayOptions } from "@johnmorrisdotca/meigen-sports";
+ * const options: DisplayOptions = { layout: "featured", items: [{ text: "A fact." }] };
+ * console.log(options.layout);
+ * ```
+ */
 export interface DisplayOptions {
   layout: DisplayLayout;
   items: readonly DisplayItem[];
@@ -33,20 +86,48 @@ export interface DisplayOptions {
 
 const DEFAULT_LABELS: DisplayLabels = { events: "Events", births: "Births", deaths: "Deaths" };
 
-/** The named layout, or null when the word is not one of ours. */
+/**
+ * The named layout, or null when the word is not one of ours.
+ * @param name - A layout's name.
+ * @returns The layout, or `null` when the word is not one of the four.
+ * @example
+ * ```ts
+ * import { displayLayoutOf } from "@johnmorrisdotca/meigen-sports";
+ * console.log(displayLayoutOf("years"), displayLayoutOf("grid"));
+ * ```
+ */
 export function displayLayoutOf(name: string | null | undefined): DisplayLayout | null {
   const id = name?.trim().toLowerCase();
   return id && (DISPLAY_LAYOUTS as readonly string[]).includes(id) ? (id as DisplayLayout) : null;
 }
 
-/** Birthdays and deaths are their own groups. Every other category is an event. */
+/**
+ * Birthdays and deaths are their own groups. Every other category is an event.
+ * @param category - A fact's category, such as `player-birthday`.
+ * @returns `birth` or `death` for a birthday or a death, `event` for every other category.
+ * @example
+ * ```ts
+ * import { displayKind } from "@johnmorrisdotca/meigen-sports";
+ * console.log(displayKind("player-birthday"), displayKind("championship-final"));
+ * ```
+ */
 export function displayKind(category: string): DisplayKind {
   if (category === "player-birthday") return "birth";
   if (category === "player-death") return "death";
   return "event";
 }
 
-/** HTML for one layout. Text is escaped. The calendar icon is included only when it is an SVG element. */
+/**
+ * HTML for one layout. Text is escaped. The calendar icon is included only when it is an SVG element.
+ * @param options - The layout, the items and, for the calendar layout, an icon.
+ * @returns HTML as a string, with the text escaped.
+ * @example
+ * ```ts
+ * import { displayMarkup } from "@johnmorrisdotca/meigen-sports";
+ * const html = displayMarkup({ layout: "featured", items: [{ text: "The 2011 MLS Cup went to LA Galaxy.", year: "2011" }] });
+ * console.log(html.includes("2011 MLS Cup"));
+ * ```
+ */
 export function displayMarkup(options: DisplayOptions): string {
   const layout = options.layout;
   if (!displayLayoutOf(layout)) throw new RangeError(`unknown display layout: ${layout}`);

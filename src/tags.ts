@@ -5,24 +5,70 @@ import type { OnThisDayRecord } from "./schema.ts";
  * "decade:1960s"); the history types (`player-birthday`, `championship-win`) have no colon and are the kind of fact. Nothing is guessed: a tag
  * exists only where a field says it. Never a tag for sex or gender, ethnicity, religion, politics, family or health: no field holds them, and
  * `test/tags.test.ts` holds the vocabulary to that.
+ * @example
+ * ```ts
+ * import { TAG_NAMESPACES } from "@johnmorrisdotca/meigen-sports";
+ * console.log(TAG_NAMESPACES.slice(0, 4).join(" "));
+ * ```
  */
 export const TAG_NAMESPACES = [
   "sport", "league", "competition", "series", "country", "host", "birthcountry", "team", "person", "position", "venue", "decade", "century",
   "phase", "stage", "award", "title", "honour", "source", "date", "number",
 ] as const;
+/**
+ * The name before the colon of a namespaced tag, such as `country`.
+ * @example
+ * ```ts
+ * import type { TagNamespace } from "@johnmorrisdotca/meigen-sports";
+ * const namespace: TagNamespace = "country";
+ * console.log(namespace);
+ * ```
+ */
 export type TagNamespace = (typeof TAG_NAMESPACES)[number];
 
-/** A tag with a namespace: lower-case letters and hyphens, a colon, then letters, digits, hyphens, dots and underscores. */
+/**
+ * A tag with a namespace: lower-case letters and hyphens, a colon, then letters, digits, hyphens, dots and underscores.
+ * @example
+ * ```ts
+ * import { NAMESPACED_TAG } from "@johnmorrisdotca/meigen-sports";
+ * console.log(NAMESPACED_TAG.test("country:RO"), NAMESPACED_TAG.test("player-birthday"));
+ * ```
+ */
 export const NAMESPACED_TAG = /^[a-z][a-z-]*:[A-Za-z0-9][A-Za-z0-9._-]*$/;
-/** A history type, or a namespaced tag. */
+/**
+ * A history type, or a namespaced tag.
+ * @example
+ * ```ts
+ * import { VALID_TAG } from "@johnmorrisdotca/meigen-sports";
+ * console.log(VALID_TAG.test("player-birthday"), VALID_TAG.test("Not A Tag"));
+ * ```
+ */
 export const VALID_TAG = /^[a-z][a-z0-9-]*(?::[A-Za-z0-9][A-Za-z0-9._-]*)?$/;
 
-/** The words a name becomes in an id: "Hart Memorial Trophy" is `hart-memorial-trophy`. */
+/**
+ * The words a name becomes in an id: "Hart Memorial Trophy" is `hart-memorial-trophy`.
+ * @param text - A name.
+ * @returns The name as an id: lower case, hyphens, no accents.
+ * @example
+ * ```ts
+ * import { slugOf } from "@johnmorrisdotca/meigen-sports";
+ * console.log(slugOf("Hart Memorial Trophy"));
+ * ```
+ */
 export function slugOf(text: string): string {
   return text.normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
 }
 
-/** True for a tag that has a namespace ("country:RO"): such a tag says what a fact is about, not what kind of fact it is. */
+/**
+ * True for a tag that has a namespace ("country:RO"): such a tag says what a fact is about, not what kind of fact it is.
+ * @param tag - A tag.
+ * @returns `true` when the tag has a namespace.
+ * @example
+ * ```ts
+ * import { isNamespaced } from "@johnmorrisdotca/meigen-sports";
+ * console.log(isNamespaced("country:RO"), isNamespaced("player-birthday"));
+ * ```
+ */
 export const isNamespaced = (tag: string): boolean => tag.includes(":");
 
 /** The year a fact is dated to, for its decade and century. */
@@ -49,7 +95,17 @@ const SERIES: readonly (readonly [string, RegExp])[] = [
   ["world-championships", /\bWorld Championships?\b/i],
 ];
 
-/** The countries of the people and the teams a fact is about: the stored `countries`, else the teams' country codes, else the person's nationality. Codes are ISO 3166-1 alpha-2, or ISO 3166-3 for a former country. */
+/**
+ * The countries of the people and the teams a fact is about: the stored `countries`, else the teams' country codes, else the person's nationality. Codes are ISO 3166-1 alpha-2, or ISO 3166-3 for a former country.
+ * @param record - A fact.
+ * @returns ISO country codes; an empty list when the data names none.
+ * @example
+ * ```ts
+ * import { countriesOf } from "@johnmorrisdotca/meigen-sports";
+ * import offline from "@johnmorrisdotca/meigen-sports/offline";
+ * console.log(countriesOf(offline[0]!));
+ * ```
+ */
 export function countriesOf(record: OnThisDayRecord): string[] {
   if (record.countries?.length) return [...new Set(record.countries)];
   const teams = [record.home?.countryCode, record.away?.countryCode].filter((code): code is string => Boolean(code));
@@ -60,6 +116,14 @@ export function countriesOf(record: OnThisDayRecord): string[] {
 /**
  * The flag a fact may show, by the code a flag set keys its flags by ("US", "GB-ENG", "SUHH"), only when it is unambiguous: one person of one country, or two teams of one country.
  * `null` when the fact is about two countries, a country with no flag, a person of two countries, or no country at all. A flag is never guessed.
+ * @param record - A fact.
+ * @returns The code of the one flag to show, or `null` when the fact is about two countries, a country with no flag or no country.
+ * @example
+ * ```ts
+ * import { flagOf } from "@johnmorrisdotca/meigen-sports";
+ * import offline from "@johnmorrisdotca/meigen-sports/offline";
+ * console.log(flagOf(offline[0]!));
+ * ```
  */
 export function flagOf(record: OnThisDayRecord): string | null {
   if (record.flag) return record.flag;
@@ -71,7 +135,17 @@ export function flagOf(record: OnThisDayRecord): string | null {
   return null;
 }
 
-/** Every namespaced tag the fact's own fields give, in a fixed order, without repeats. */
+/**
+ * Every namespaced tag the fact's own fields give, in a fixed order, without repeats.
+ * @param record - A fact.
+ * @returns The namespaced tags the fact's own fields give.
+ * @example
+ * ```ts
+ * import { derivedTags } from "@johnmorrisdotca/meigen-sports";
+ * import offline from "@johnmorrisdotca/meigen-sports/offline";
+ * console.log(derivedTags(offline[0]!).length > 0);
+ * ```
+ */
 export function derivedTags(record: OnThisDayRecord): string[] {
   const out: string[] = [];
   const seen = new Set<string>();
@@ -112,7 +186,17 @@ export function derivedTags(record: OnThisDayRecord): string[] {
   return out;
 }
 
-/** The namespaces of a list of tags, for a caller that wants "the countries of this fact". */
+/**
+ * The namespaces of a list of tags, for a caller that wants "the countries of this fact".
+ * @param tags - Tags.
+ * @param namespace - A namespace such as `country`.
+ * @returns The values of the tags in that namespace.
+ * @example
+ * ```ts
+ * import { tagValues } from "@johnmorrisdotca/meigen-sports";
+ * console.log(tagValues(["country:RO", "sport:handball", "country:HU"], "country"));
+ * ```
+ */
 export function tagValues(tags: readonly string[], namespace: TagNamespace): string[] {
   const prefix = `${namespace}:`;
   return tags.filter((tag) => tag.startsWith(prefix)).map((tag) => tag.slice(prefix.length));

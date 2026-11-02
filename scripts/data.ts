@@ -195,10 +195,17 @@ export function generate(check = false): { records: number; files: number; merge
   for (const [name, contents] of files) outputs.set(`data/v1/${DATA_VERSION}/${name}`, contents);
   const offline = buildOffline(DATA_VERSION);
   const packageVersion = (json("package.json") as { version: string }).version;
+  // The doc comments the docs site reads (scripts/docs-site.mjs): every export of the data entries has a summary and an @example.
+  const DOCS: Record<string, string> = {
+    build: "/**\n * The facts dataset this set was chosen from: `factsManifestSha256` must equal the one on GitHub Pages (scripts/check-build.ts).\n * @example\n * ```ts\n * import { OFFLINE_BUILD } from \"@johnmorrisdotca/meigen-sports/offline\";\n * console.log(OFFLINE_BUILD.dataVersion, OFFLINE_BUILD.days);\n * ```\n */\n",
+    offline: "/**\n * The best three to five facts for every calendar day, oldest first within a day.\n * @example\n * ```ts\n * import { offline } from \"@johnmorrisdotca/meigen-sports/offline\";\n * console.log(offline.length > 1000);\n * ```\n */\n",
+    quotes: "/**\n * The bundled quotations, each with its source and the reasoning for why its words may be published.\n * @example\n * ```ts\n * import { quotes } from \"@johnmorrisdotca/meigen-sports/quotes\";\n * console.log(quotes.length > 0);\n * ```\n */\n",
+    history: "/**\n * The bundled history rows: dated events, each with its source.\n * @example\n * ```ts\n * import { history } from \"@johnmorrisdotca/meigen-sports/history\";\n * console.log(history.length > 0);\n * ```\n */\n",
+  };
   outputs.set("data/v1/latest.json", format(latestPointer(offline.build, packageVersion)));
   outputs.set(`data/v1/${DATA_VERSION}/offline.json`, format({ schemaVersion: 1, dataVersion: DATA_VERSION, build: offline.build, records: offline.records }));
-  outputs.set("src/data/offline.ts", `// Built by scripts/offline.ts from the on-this-day facts under data/v1/${DATA_VERSION}/facts. Do not edit by hand.\nimport type { OnThisDayRecord } from "../schema.ts";\n\n/** The facts dataset this set was chosen from: \`factsManifestSha256\` must equal the one on GitHub Pages (scripts/check-build.ts). */\nexport const OFFLINE_BUILD = ${JSON.stringify(offline.build)} as const;\n\n/** The best three to five facts for every calendar day, oldest first within a day. */\nexport const offline: readonly OnThisDayRecord[] = [\n${offline.records.map((r) => JSON.stringify(r)).join(",\n")},\n];\nexport default offline;\n`);
-  for (const [name, rows] of [["quotes", quotes], ["history", history]] as const) outputs.set(`src/data/${name}.ts`, `// Built by scripts/data.ts from reviewed source records. Data rights: LICENSES/ and data-sources/.\nimport type { MeigenRecord } from "../types.ts";\n\nexport const ${name}: readonly MeigenRecord[] = ${JSON.stringify(rows, null, 2)};\nexport default ${name};\n`);
+  outputs.set("src/data/offline.ts", `// Built by scripts/offline.ts from the on-this-day facts under data/v1/${DATA_VERSION}/facts. Do not edit by hand.\nimport type { OnThisDayRecord } from "../schema.ts";\n\n${DOCS.build}export const OFFLINE_BUILD = ${JSON.stringify(offline.build)} as const;\n\n${DOCS.offline}export const offline: readonly OnThisDayRecord[] = [\n${offline.records.map((r) => JSON.stringify(r)).join(",\n")},\n];\nexport default offline;\n`);
+  for (const [name, rows] of [["quotes", quotes], ["history", history]] as const) outputs.set(`src/data/${name}.ts`, `// Built by scripts/data.ts from reviewed source records. Data rights: LICENSES/ and data-sources/.\nimport type { MeigenRecord } from "../types.ts";\n\n${DOCS[name]}export const ${name}: readonly MeigenRecord[] = ${JSON.stringify(rows, null, 2)};\nexport default ${name};\n`);
   const oldManifest = resolve(ROOT, `data/v1/${DATA_VERSION}/manifest.json`);
   if (existsSync(oldManifest)) {
     const previous = JSON.parse(readFileSync(oldManifest, "utf8")) as FeedManifest;
