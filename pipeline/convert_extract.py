@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import csv
+import gzip
 import hashlib
 import json
 import os
@@ -675,7 +676,7 @@ def stamp_tags(rows: list[dict]) -> None:
         row["tags"] = [*[t for t in row.get("tags") or [] if ":" not in t], *tags[row["recordId"]]]
 
 
-def name_map(rows: list[dict], persons: list[dict] | None = None) -> dict[int, str]:
+def name_votes(rows: list[dict], persons: list[dict] | None = None) -> dict[tuple[int, str], int]:
     votes: dict[tuple[int, str], int] = defaultdict(int)
     # A club no game names is named by a person who played for it alone: one franchise id and one club ("Gregg Popovich ... San Antonio Spurs (1996-2024)").
     for row in persons or []:
@@ -691,12 +692,20 @@ def name_map(rows: list[dict], persons: list[dict] | None = None) -> dict[int, s
                 votes[(fid, name)] += 1
         if row.get("category") == "rename-or-move" and row.get("franchiseId") and row.get("label"):
             votes[(row["franchiseId"], row["label"])] += 1
+    return votes
+
+
+def best_names(votes: dict[tuple[int, str], int]) -> dict[int, str]:
     best: dict[int, tuple[int, str]] = {}
     for (fid, name), n in votes.items():
         cur = best.get(fid)
         if cur is None or n > cur[0] or (n == cur[0] and name < cur[1]):
             best[fid] = (n, name)
     return {fid: name for fid, (_, name) in best.items()}
+
+
+def name_map(rows: list[dict], persons: list[dict] | None = None) -> dict[int, str]:
+    return best_names(name_votes(rows, persons))
 
 
 def shard(records: list[dict]) -> str:
@@ -1067,10 +1076,11 @@ def add_dump_events(chosen: dict[str, dict], rows: list[dict]) -> int:
     return added
 
 
-def main() -> int:
+def build_facts() -> tuple[list[dict], dict]:
+    """Stage one: the extracts (DS1, the Wikidata dump, the priority list) become the facts, each worded and tagged, and the few numbers and
+    names the layout needs besides them. Needs the extracts, which are not in git; its result is `data-sources/facts/` (`write_inputs`)."""
     if not EXTRACT.is_dir():
-        print(f"EXTRACT dir missing: {EXTRACT}", file=sys.stderr)
-        return 1
+        raise SystemExit(f"EXTRACT dir missing: {EXTRACT}")
     LINKS.update(load_links())
     DISPUTED.update(load_disputed())
     games = [r for r in load_records("extract_games_on_day.json") if allowed(r) and r.get("status") == "final"]
@@ -1307,6 +1317,75 @@ def main() -> int:
     facts = list(by_id.values())
     stamp_tags(facts)
 
+    famous_rank: dict[str, int] = {}
+    for extra in ("extract_wikidata_famous.json",):
+        for row in load_records(extra):
+            qid = ((row.get("person") or {}).get("qid"))
+            sits = row.get("sitelinks") or 0
+            if qid and sits > famous_rank.get(qid, 0):
+                famous_rank[qid] = sits
+    meta = {
+        "droppedThin": dropped,
+        "mergedSameEvent": merged_events,
+        "draftsOnDisk": len(drafts),
+        "topFamous": sorted(qid for qid, _ in sorted(famous_rank.items(), key=lambda kv: -kv[1])[:80]),
+        "awardNames": dict(sorted(AWARD_NAMES.items())),
+        "clubNameVotes": sorted([fid, name, n] for (fid, name), n in name_votes(games + finals + franchise).items()),
+        "wikidataDump": dump_meta,
+        "wikidataDumpEvents": event_meta,
+    }
+    print(json.dumps({"priorityAdded": priority_added, "wikidataDumpAdded": dump_added, "wikidataDumpEventsAdded": events_added,
+                      "priorityRephrased": rephrased, "facts": len(facts), "droppedThin": dropped, "mergedSameEvent": merged_events}, indent=2))
+    return facts, meta
+
+
+# The kinds of fact in the order the converter took them: games, finals, soccer, then people, then the priority list's, the dump's people and events, the rest.
+KIND_ORDER = ("spx:game", "spx:final", "spx:soccer-match", "spx:player-birthday", "spx:player-death", "meigen:", "wikidata:player-", "wikidata:")
+
+
+def layout_order(row: dict) -> tuple:
+    record_id = row["recordId"]
+    kind = next((i for i, prefix in enumerate(KIND_ORDER) if record_id.startswith(prefix)), len(KIND_ORDER))
+    return kind, row.get("eventDate") or "", record_id
+
+
+def facts_file(bucket: str) -> Path:
+    return ROOT / f"data-sources/facts/{bucket}.jsonl.gz"
+
+
+def write_inputs(facts: list[dict], meta: dict) -> None:
+    """The input of the layout, committed: every fact once, one gzip file for each store bucket (a rebuild changes only the buckets whose facts changed;
+    gzip's header holds no time), sorted by id, and `meta.json`."""
+    by_bucket: dict[str, list[dict]] = defaultdict(list)
+    for row in facts:
+        by_bucket[store_bucket(row["recordId"])].append(row)
+    folder = ROOT / "data-sources/facts"
+    folder.mkdir(parents=True, exist_ok=True)
+    for old in folder.glob("*.jsonl.gz"):
+        old.unlink()
+    for bucket, rows in by_bucket.items():
+        rows.sort(key=lambda r: r["recordId"])
+        body = "".join(json.dumps(r, ensure_ascii=False, separators=(",", ":")) + "\n" for r in rows).encode()
+        facts_file(bucket).write_bytes(gzip.compress(body, 9, mtime=0))
+    (folder / "meta.json").write_text(json.dumps(meta, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+
+
+def read_inputs() -> tuple[list[dict], dict]:
+    folder = ROOT / "data-sources/facts"
+    facts: list[dict] = []
+    for path in sorted(folder.glob("*.jsonl.gz")):
+        facts.extend(json.loads(line) for line in gzip.decompress(path.read_bytes()).decode("utf-8").splitlines())
+    return facts, json.loads((folder / "meta.json").read_text(encoding="utf-8"))
+
+
+def lay_out(facts: list[dict], meta: dict) -> int:
+    """Stage two: the shards of data/v1 (days, feeds, indexes, people, events, store, manifest) from the facts alone. Needs no extract and no
+    network, only node for the library's own ranking; it is what the Pages job and `pnpm check` run (`--layout`)."""
+    dropped, merged_events, dump_meta, event_meta = meta["droppedThin"], meta["mergedSameEvent"], meta["wikidataDump"], meta["wikidataDumpEvents"]
+    AWARD_NAMES.update(meta["awardNames"])
+    # The one order the layout reads the facts in (where a club or a person is described by several, the first or the last decides): the archive's
+    # own facts, then the priority list's, then the dump's, each by day.
+    facts = sorted(facts, key=layout_order)
     if OUT.exists():
         for old in OUT.rglob("*.json"):
             old.unlink()
@@ -1314,7 +1393,10 @@ def main() -> int:
     by_day, by_sport, by_league, by_cat = defaultdict(list), defaultdict(list), defaultdict(list), defaultdict(list)
     by_team, by_fifa, by_player = defaultdict(list), defaultdict(list), defaultdict(list)
     teams_index, players_index = {}, {}
-    picker_names = name_map(games + finals + franchise, [r for r in facts if r.get("person")])
+    votes = name_votes([], [r for r in facts if r.get("person")])
+    for fid, name, n in meta["clubNameVotes"]:
+        votes[(fid, name)] += n
+    picker_names = best_names(votes)
     for row in facts:
         day = (row.get("eventDate") or "")[5:]
         if day:
@@ -1462,14 +1544,7 @@ def main() -> int:
         write_index(f"indexes/players/{bucket}.json", [r["recordId"] for r in uniq_of(rows)], files)
         write_shard(f"feeds/players/{bucket}.json", feed_of(f"player:{bucket}"), files)
     write_shard("sample.json", feed_of("sample") or facts[:400], files)
-    famous_rank: dict[str, int] = {}
-    for extra in ("extract_wikidata_famous.json",):
-        for row in load_records(extra):
-            qid = ((row.get("person") or {}).get("qid"))
-            sits = row.get("sitelinks") or 0
-            if qid and sits > famous_rank.get(qid, 0):
-                famous_rank[qid] = sits
-    top_famous = {qid for qid, _ in sorted(famous_rank.items(), key=lambda kv: -kv[1])[:80]}
+    top_famous = set(meta["topFamous"])
     showcase = [r for r in facts if (r.get("person") or {}).get("qid") in {"Q209518", "Q311374"}]
     showcase += [r for r in facts if (r.get("person") or {}).get("qid") in top_famous and r.get("category") == "player-birthday"]
     showcase += feed_of("showcase-deaths")
@@ -1553,16 +1628,15 @@ def main() -> int:
         "extractOnDisk": {
             "game-on-day": 392898, "championship-final": 1867, "soccer-on-day": 10423,
             "player-birthday": 20532, "player-death": 4028, "award": 5181,
-            "franchise-event": 1207, "venue-opening": 203, "draft": len(drafts),
+            "franchise-event": 1207, "venue-opening": 203, "draft": meta["draftsOnDisk"],
         },
-        "files": files,
+        "files": dict(sorted(files.items())),
         "teams": len(teams_index),
         "players": len(players_index),
     }
     man_body = json.dumps(manifest, ensure_ascii=False, indent=2) + "\n"
     (OUT / "manifest.json").write_text(man_body, encoding="utf-8")
     summary = {
-        "priorityAdded": priority_added, "wikidataDumpAdded": dump_added, "wikidataDumpEventsAdded": events_added, "priorityRephrased": rephrased,
         "records": len(facts), "droppedThin": dropped, "coveredDays": len(covered),
         "daysWithFewerThan3": len(days_lt3), "uniqueRecords": len({r["recordId"] for r in facts}),
         "mergedSameEvent": merged_events,
@@ -1581,5 +1655,14 @@ def main() -> int:
     return 0
 
 
+def main(argv: list[str]) -> int:
+    if "--layout" in argv:
+        facts, meta = read_inputs()
+    else:
+        facts, meta = build_facts()
+        write_inputs(facts, meta)
+    return lay_out(facts, meta)
+
+
 if __name__ == "__main__":
-    raise SystemExit(main())
+    raise SystemExit(main(sys.argv[1:]))

@@ -1,14 +1,12 @@
-import { manifestDigest } from "./offline.ts";
 import { spawnSync } from "node:child_process";
 import { mkdtempSync, readFileSync, writeFileSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import process from "node:process";
 const root = process.cwd();
-const latest = JSON.parse(readFileSync("data/v1/latest.json", "utf8")) as { dataVersion: string };
-const factsManifest = readFileSync(`data/v1/${latest.dataVersion}/facts/manifest.json`);
-const factsSha = manifestDigest(factsManifest);
-const factsRecords = (JSON.parse(factsManifest.toString("utf8")) as { records: number }).records;
+const latest = JSON.parse(readFileSync("data/v1/latest.json", "utf8")) as { dataVersion: string; build: string; factRecords: number };
+const factsSha = latest.build;
+const factsRecords = latest.factRecords;
 const scratch = mkdtempSync(join(tmpdir(), "meigen-package-"));
 const pkg = JSON.parse(readFileSync("package.json", "utf8")) as { name: string; exports: Record<string, string | { import: string }> };
 function run(command: string, args: string[], cwd: string) {

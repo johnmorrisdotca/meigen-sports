@@ -4,6 +4,8 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+- Tooling: the 5,442 shard files of `data/v1/0.1.0/facts/` (215 MiB) are no longer committed. `pnpm shards` builds them from `data-sources/facts/` (every fact once, 14 MiB in 100 gzip files), in `pnpm check`, `pnpm site`, the Pages job and the Release job. The converter has two stages (`pipeline/convert_extract.py`: extracts to facts, facts to shards); every shard is byte for byte what was committed, except that `manifest.json` lists its files in sorted order (same content), so the build id changed. URLs under `data/v1` are the same. History is not rewritten.
+
 ## [0.15.0] - 2026-11-02
 
 - Feature: three tear-off calendar themes, `sun` (Sun disc), `roll` (Wall roll) and `plain` (Plain), light and dark, English and Japanese, 16 to 1024 pixels. `sun` is a square page with a grey strip to tear it off by, a huge black day over a red disc and the year on top; `roll` is a tall wall page with the torn-off pages curled above, a huge condensed day in the colour of its weekday (Saturday blue, Sunday and holiday red, other days black) and a dotted memo area; `plain` is a plain pad on a kraft stand with a small month, a big day, the weekday in capitals, the month and year, and the moon. The numerals are the package's stroke digits, narrowed and heavy (no font file). Bytes: a page is 1.8 kB (`sun`), 2.3 kB (`plain`) or 5.6 kB (`roll`) of SVG, a weekend page 4.3 kB (`sun`) or 7.4 kB (`roll`); `dist/calendarIcon.js` grows from 38.6 kB to 60.8 kB before minifying.

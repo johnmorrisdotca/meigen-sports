@@ -37,7 +37,8 @@ for a change a user would notice, and for one to the repository alone.
 ## Commands
 
 ```sh
-pnpm check          # lint, types, tests, the build and the packed package
+pnpm check          # the shards, then lint, types, tests, the build and the packed package
+pnpm shards         # build data/v1/0.1.0/facts (not in git) from data-sources/facts; needs python3 and node, no network
 pnpm test:package   # pack it as npm does, install it in an empty project, import every entry
 pnpm test:demo      # build the demo and play it in a real browser at a phone's width and a desk's
 pnpm test:readme    # run the examples of the README and of docs/ against the built package

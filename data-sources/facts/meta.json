@@ -1,0 +1,1763 @@
+{
+ "droppedThin": 14,
+ "mergedSameEvent": 0,
+ "draftsOnDisk": 0,
+ "topFamous": [],
+ "awardNames": {
+  "annis-stukus-trophy": "Annis Stukus Trophy",
+  "ap-nfl-defensive-player-of-the-year-award": "AP NFL Defensive Player of the Year Award",
+  "ap-nfl-most-valuable-player-award": "AP NFL Most Valuable Player Award",
+  "ap-nfl-offensive-player-of-the-year-award": "AP NFL Offensive Player of the Year Award",
+  "art-ross-trophy": "Art Ross Trophy",
+  "bill-masterton-memorial-trophy": "Bill Masterton Memorial Trophy",
+  "bill-russell-nba-finals-most-valuable-player-award": "Bill Russell NBA Finals Most Valuable Player Award",
+  "calder-memorial-trophy": "Calder Memorial Trophy",
+  "cfl-s-most-outstanding-canadian-award": "CFL's Most Outstanding Canadian Award",
+  "cfl-s-most-outstanding-defensive-player-award": "CFL's Most Outstanding Defensive Player Award",
+  "cfl-s-most-outstanding-lineman-award": "CFL's Most Outstanding Lineman Award",
+  "cfl-s-most-outstanding-player-award": "CFL's Most Outstanding Player Award",
+  "cfl-s-most-outstanding-rookie-award": "CFL's Most Outstanding Rookie Award",
+  "conn-smythe-trophy": "Conn Smythe Trophy",
+  "cy-young-award": "Cy Young Award",
+  "frank-j-selke-trophy": "Frank J. Selke Trophy",
+  "grey-cup-most-valuable-player": "Grey Cup Most Valuable Player",
+  "hank-aaron-award": "Hank Aaron Award",
+  "hart-memorial-trophy": "Hart Memorial Trophy",
+  "jack-adams-award": "Jack Adams Award",
+  "james-norris-memorial-trophy": "James Norris Memorial Trophy",
+  "john-agro-special-teams-award": "John Agro Special Teams Award",
+  "king-clancy-memorial-trophy": "King Clancy Memorial Trophy",
+  "lady-byng-memorial-trophy": "Lady Byng Memorial Trophy",
+  "major-league-baseball-manager-of-the-year-award": "Major League Baseball Manager of the Year Award",
+  "major-league-baseball-most-valuable-player-award": "Major League Baseball Most Valuable Player Award",
+  "major-league-baseball-rookie-of-the-year-award": "Major League Baseball Rookie of the Year Award",
+  "maurice-rocket-richard-trophy": "Maurice \"Rocket\" Richard Trophy",
+  "nba-coach-of-the-year-award": "NBA Coach of the Year Award",
+  "nba-defensive-player-of-the-year-award": "NBA Defensive Player of the Year Award",
+  "nba-most-improved-player-award": "NBA Most Improved Player Award",
+  "nba-most-valuable-player-award": "NBA Most Valuable Player Award",
+  "nba-rookie-of-the-year-award": "NBA Rookie of the Year Award",
+  "nba-sixth-man-of-the-year-award": "NBA Sixth Man of the Year Award",
+  "nhl-general-manager-of-the-year-award": "NHL General Manager of the Year Award",
+  "o-brien-cup": "O'Brien Cup",
+  "rawlings-gold-glove-award": "Rawlings Gold Glove Award",
+  "rolaids-relief-man-award": "Rolaids Relief Man Award",
+  "silver-slugger-award": "Silver Slugger Award",
+  "super-bowl": "Super Bowl",
+  "super-bowl-most-valuable-player-award": "Super Bowl Most Valuable Player Award",
+  "ted-lindsay-award": "Ted Lindsay Award",
+  "vezina-trophy": "Vezina Trophy",
+  "william-m-jennings-trophy": "William M. Jennings Trophy",
+  "world-series-most-valuable-player-award": "World Series Most Valuable Player Award"
+ },
+ "clubNameVotes": [
+  [
+   1404,
+   "Winnipeg Jets",
+   1
+  ],
+  [
+   1405,
+   "Boston Bruins",
+   1
+  ],
+  [
+   1406,
+   "Buffalo Sabres",
+   1
+  ],
+  [
+   1407,
+   "Calgary Flames",
+   1
+  ],
+  [
+   1408,
+   "Carolina Hurricanes",
+   1
+  ],
+  [
+   1409,
+   "Chicago Blackhawks",
+   1
+  ],
+  [
+   1410,
+   "Colorado Avalanche",
+   1
+  ],
+  [
+   1411,
+   "Dallas Stars",
+   1
+  ],
+  [
+   1412,
+   "Detroit Red Wings",
+   1
+  ],
+  [
+   1413,
+   "Edmonton Oilers",
+   1
+  ],
+  [
+   1414,
+   "Florida Panthers",
+   1
+  ],
+  [
+   1415,
+   "Los Angeles Kings",
+   1
+  ],
+  [
+   1416,
+   "Montreal Canadiens",
+   1
+  ],
+  [
+   1417,
+   "Nashville Predators",
+   1
+  ],
+  [
+   1418,
+   "New Jersey Devils",
+   1
+  ],
+  [
+   1419,
+   "New York Islanders",
+   1
+  ],
+  [
+   1420,
+   "New York Rangers",
+   1
+  ],
+  [
+   1422,
+   "Philadelphia Flyers",
+   1
+  ],
+  [
+   1423,
+   "Phoenix Coyotes",
+   1
+  ],
+  [
+   1424,
+   "Pittsburgh Penguins",
+   1
+  ],
+  [
+   1426,
+   "St. Louis Blues",
+   1
+  ],
+  [
+   1427,
+   "Tampa Bay Lightning",
+   1
+  ],
+  [
+   1428,
+   "Toronto Maple Leafs",
+   1
+  ],
+  [
+   1429,
+   "Vancouver Canucks",
+   1
+  ],
+  [
+   1430,
+   "Washington Capitals",
+   1
+  ],
+  [
+   1431,
+   "St. Louis Hawks",
+   1
+  ],
+  [
+   1432,
+   "Boston Celtics",
+   1
+  ],
+  [
+   1433,
+   "New Orleans Pelicans",
+   1
+  ],
+  [
+   1434,
+   "Chicago Bulls",
+   1
+  ],
+  [
+   1435,
+   "Cleveland Cavaliers",
+   1
+  ],
+  [
+   1436,
+   "Dallas Mavericks",
+   1
+  ],
+  [
+   1437,
+   "Denver Nuggets",
+   1
+  ],
+  [
+   1438,
+   "Detroit Pistons",
+   1
+  ],
+  [
+   1439,
+   "Golden State Warriors",
+   1
+  ],
+  [
+   1440,
+   "Houston Rockets",
+   1
+  ],
+  [
+   1441,
+   "Indiana Pacers",
+   1
+  ],
+  [
+   1442,
+   "Los Angeles Clippers",
+   1
+  ],
+  [
+   1443,
+   "Los Angeles Lakers",
+   1
+  ],
+  [
+   1444,
+   "Miami Heat",
+   1
+  ],
+  [
+   1445,
+   "Milwaukee Bucks",
+   1
+  ],
+  [
+   1446,
+   "Minnesota Timberwolves",
+   1
+  ],
+  [
+   1447,
+   "New Jersey Nets",
+   1
+  ],
+  [
+   1448,
+   "New York Knicks",
+   1
+  ],
+  [
+   1449,
+   "Orlando Magic",
+   1
+  ],
+  [
+   1450,
+   "Philadelphia 76ers",
+   1
+  ],
+  [
+   1451,
+   "Phoenix Suns",
+   1
+  ],
+  [
+   1452,
+   "Portland Trail Blazers",
+   1
+  ],
+  [
+   1453,
+   "Rochester Royals",
+   1
+  ],
+  [
+   1454,
+   "San Antonio Spurs",
+   1
+  ],
+  [
+   1455,
+   "Oklahoma City Thunder",
+   1
+  ],
+  [
+   1456,
+   "Toronto Raptors",
+   1
+  ],
+  [
+   1457,
+   "Utah Jazz",
+   1
+  ],
+  [
+   1458,
+   "Memphis Grizzlies",
+   1
+  ],
+  [
+   1459,
+   "Washington Bullets",
+   1
+  ],
+  [
+   1460,
+   "Los Angeles Angels",
+   1
+  ],
+  [
+   1461,
+   "Arizona Diamondbacks",
+   1
+  ],
+  [
+   1462,
+   "Atlanta Braves",
+   1
+  ],
+  [
+   1463,
+   "Baltimore Orioles",
+   1
+  ],
+  [
+   1464,
+   "Boston Red Sox",
+   1
+  ],
+  [
+   1465,
+   "Chicago Cubs",
+   1
+  ],
+  [
+   1466,
+   "Chicago White Sox",
+   1
+  ],
+  [
+   1467,
+   "Cincinnati Reds",
+   1
+  ],
+  [
+   1468,
+   "Cleveland Indians",
+   1
+  ],
+  [
+   1469,
+   "Colorado Rockies",
+   1
+  ],
+  [
+   1470,
+   "Detroit Tigers",
+   1
+  ],
+  [
+   1471,
+   "Florida Marlins",
+   1
+  ],
+  [
+   1472,
+   "Houston Astros",
+   1
+  ],
+  [
+   1473,
+   "Kansas City Royals",
+   1
+  ],
+  [
+   1474,
+   "Los Angeles Dodgers",
+   1
+  ],
+  [
+   1475,
+   "Milwaukee Brewers",
+   1
+  ],
+  [
+   1476,
+   "Minnesota Twins",
+   1
+  ],
+  [
+   1477,
+   "Washington Nationals",
+   1
+  ],
+  [
+   1478,
+   "New York Mets",
+   1
+  ],
+  [
+   1479,
+   "New York Yankees",
+   1
+  ],
+  [
+   1480,
+   "Oakland Athletics",
+   1
+  ],
+  [
+   1481,
+   "Philadelphia Phillies",
+   1
+  ],
+  [
+   1482,
+   "Pittsburgh Pirates",
+   1
+  ],
+  [
+   1483,
+   "San Diego Padres",
+   1
+  ],
+  [
+   1484,
+   "San Francisco Giants",
+   1
+  ],
+  [
+   1485,
+   "Seattle Mariners",
+   1
+  ],
+  [
+   1486,
+   "St. Louis Cardinals",
+   1
+  ],
+  [
+   1487,
+   "Tampa Bay Rays",
+   1
+  ],
+  [
+   1488,
+   "Texas Rangers",
+   1
+  ],
+  [
+   1489,
+   "Toronto Blue Jays",
+   1
+  ],
+  [
+   1490,
+   "Columbus Blue Jackets",
+   1
+  ],
+  [
+   1491,
+   "Minnesota Wild",
+   1
+  ],
+  [
+   1492,
+   "Buffalo Bills",
+   1
+  ],
+  [
+   1493,
+   "Miami Dolphins",
+   1
+  ],
+  [
+   1494,
+   "New England Patriots",
+   1
+  ],
+  [
+   1495,
+   "New York Jets",
+   1
+  ],
+  [
+   1496,
+   "Cincinnati Bengals",
+   1
+  ],
+  [
+   1497,
+   "Cleveland Browns",
+   1
+  ],
+  [
+   1498,
+   "Pittsburgh Steelers",
+   1
+  ],
+  [
+   1499,
+   "Baltimore Ravens",
+   1
+  ],
+  [
+   1500,
+   "Tennessee Titans",
+   1
+  ],
+  [
+   1501,
+   "Baltimore Colts",
+   1
+  ],
+  [
+   1502,
+   "Jacksonville Jaguars",
+   1
+  ],
+  [
+   1503,
+   "Houston Texans",
+   1
+  ],
+  [
+   1504,
+   "Denver Broncos",
+   1
+  ],
+  [
+   1505,
+   "Kansas City Chiefs",
+   1
+  ],
+  [
+   1506,
+   "Los Angeles Raiders",
+   1
+  ],
+  [
+   1507,
+   "San Diego Chargers",
+   1
+  ],
+  [
+   1508,
+   "Dallas Cowboys",
+   1
+  ],
+  [
+   1509,
+   "New York Giants",
+   1
+  ],
+  [
+   1510,
+   "Philadelphia Eagles",
+   1
+  ],
+  [
+   1511,
+   "Washington Redskins",
+   1
+  ],
+  [
+   1512,
+   "Chicago Bears",
+   1
+  ],
+  [
+   1513,
+   "Detroit Lions",
+   1
+  ],
+  [
+   1514,
+   "Green Bay Packers",
+   1
+  ],
+  [
+   1515,
+   "Minnesota Vikings",
+   1
+  ],
+  [
+   1516,
+   "Atlanta Falcons",
+   1
+  ],
+  [
+   1517,
+   "New Orleans Saints",
+   1
+  ],
+  [
+   1518,
+   "Tampa Bay Buccaneers",
+   1
+  ],
+  [
+   1519,
+   "Carolina Panthers",
+   1
+  ],
+  [
+   1520,
+   "Los Angeles Rams",
+   1
+  ],
+  [
+   1521,
+   "Arizona Cardinals",
+   1
+  ],
+  [
+   1522,
+   "San Francisco 49ers",
+   1
+  ],
+  [
+   1523,
+   "Seattle Seahawks",
+   1
+  ],
+  [
+   1524,
+   "Montreal Alouettes",
+   1
+  ],
+  [
+   1525,
+   "Hamilton Tiger-Cats",
+   1
+  ],
+  [
+   1526,
+   "Ottawa Renegades",
+   1
+  ],
+  [
+   1527,
+   "Toronto Argonauts",
+   1
+  ],
+  [
+   1528,
+   "Winnipeg Blue Bombers",
+   1
+  ],
+  [
+   1529,
+   "Edmonton Eskimos",
+   1
+  ],
+  [
+   1530,
+   "Saskatchewan Roughriders",
+   1
+  ],
+  [
+   1531,
+   "Calgary Stampeders",
+   1
+  ],
+  [
+   1532,
+   "BC Lions",
+   1
+  ],
+  [
+   1533,
+   "Charlotte Hornets",
+   1
+  ],
+  [
+   1534,
+   "Cincinnati Reds",
+   1
+  ],
+  [
+   1535,
+   "Washington Nationals",
+   1
+  ],
+  [
+   1536,
+   "Cincinnati Kelly's Killers",
+   1
+  ],
+  [
+   1537,
+   "Kansas City Cowboys",
+   1
+  ],
+  [
+   1538,
+   "Louisville Colonels",
+   1
+  ],
+  [
+   1539,
+   "Philadelphia Keystones",
+   1
+  ],
+  [
+   1540,
+   "Rochester Hop Bitters",
+   1
+  ],
+  [
+   1541,
+   "Middletown Mansfields",
+   1
+  ],
+  [
+   1542,
+   "Louisville Grays",
+   1
+  ],
+  [
+   1543,
+   "Richmond Virginias",
+   1
+  ],
+  [
+   1544,
+   "Baltimore Orioles",
+   1
+  ],
+  [
+   1545,
+   "Brooklyn Wonders",
+   1
+  ],
+  [
+   1546,
+   "Chicago-Pittsburgh Browns",
+   1
+  ],
+  [
+   1547,
+   "Brooklyn Eckfords",
+   1
+  ],
+  [
+   1549,
+   "Baltimore Terrapins",
+   1
+  ],
+  [
+   1550,
+   "Philadelphia Athletics",
+   1
+  ],
+  [
+   1551,
+   "Syracuse Stars",
+   1
+  ],
+  [
+   1552,
+   "Brooklyn Atlantics",
+   1
+  ],
+  [
+   1553,
+   "Cleveland Spiders",
+   1
+  ],
+  [
+   1554,
+   "Washington Olympics",
+   1
+  ],
+  [
+   1555,
+   "Syracuse Stars",
+   1
+  ],
+  [
+   1556,
+   "Chicago Pirates",
+   1
+  ],
+  [
+   1557,
+   "New York Mutuals",
+   1
+  ],
+  [
+   1558,
+   "Altoona Mountain Citys",
+   1
+  ],
+  [
+   1559,
+   "Cleveland Infants",
+   1
+  ],
+  [
+   1560,
+   "Buffalo Bisons",
+   1
+  ],
+  [
+   1561,
+   "Cincinnati Stars",
+   1
+  ],
+  [
+   1563,
+   "Troy Haymakers",
+   1
+  ],
+  [
+   1564,
+   "Cleveland Spiders",
+   1
+  ],
+  [
+   1565,
+   "Cincinnati Outlaw Reds",
+   1
+  ],
+  [
+   1566,
+   "Philadelphia Athletics",
+   1
+  ],
+  [
+   1567,
+   "Providence Grays",
+   1
+  ],
+  [
+   1569,
+   "Baltimore Marylands",
+   1
+  ],
+  [
+   1570,
+   "Buffalo Blues",
+   1
+  ],
+  [
+   1571,
+   "St. Louis Maroons",
+   1
+  ],
+  [
+   1572,
+   "New York Metropolitans",
+   1
+  ],
+  [
+   1573,
+   "Philadelphia White Stockings",
+   1
+  ],
+  [
+   1574,
+   "Washington Senators",
+   1
+  ],
+  [
+   1575,
+   "Washington Nationals",
+   1
+  ],
+  [
+   1576,
+   "St. Louis Maroons",
+   1
+  ],
+  [
+   1577,
+   "Buffalo Bisons",
+   1
+  ],
+  [
+   1578,
+   "Pittsburgh Burghers",
+   1
+  ],
+  [
+   1579,
+   "Indianapolis Hoosiers",
+   1
+  ],
+  [
+   1580,
+   "Worcester Ruby Legs",
+   1
+  ],
+  [
+   1581,
+   "Kansas City Cowboys",
+   1
+  ],
+  [
+   1582,
+   "New York Giants",
+   1
+  ],
+  [
+   1583,
+   "Indianapolis Blues",
+   1
+  ],
+  [
+   1584,
+   "St.Louis Terriers",
+   1
+  ],
+  [
+   1585,
+   "Hartford Dark Blues",
+   1
+  ],
+  [
+   1586,
+   "St. Louis Red Stockings",
+   1
+  ],
+  [
+   1587,
+   "Washington Nationals",
+   1
+  ],
+  [
+   1588,
+   "Columbus Colts",
+   1
+  ],
+  [
+   1589,
+   "St. Louis Brown Stockings",
+   1
+  ],
+  [
+   1590,
+   "Indianapolis Hoosiers",
+   1
+  ],
+  [
+   1591,
+   "Milwaukee Cream Citys",
+   1
+  ],
+  [
+   1592,
+   "Indianapolis Blues",
+   1
+  ],
+  [
+   1593,
+   "Baltimore Lord Baltimores",
+   1
+  ],
+  [
+   1594,
+   "Detroit Wolverines",
+   1
+  ],
+  [
+   1595,
+   "Pittsburgh Rebels",
+   1
+  ],
+  [
+   1596,
+   "Chicago Whales",
+   1
+  ],
+  [
+   1597,
+   "Rockford Forest Citys",
+   1
+  ],
+  [
+   1598,
+   "Washington Nationals",
+   1
+  ],
+  [
+   1599,
+   "Toledo Maumees",
+   1
+  ],
+  [
+   1600,
+   "Ft. Wayne Kekiongas",
+   1
+  ],
+  [
+   1601,
+   "Boston Reds",
+   1
+  ],
+  [
+   1602,
+   "Cleveland Forest Cities",
+   1
+  ],
+  [
+   1603,
+   "Newark Peppers",
+   1
+  ],
+  [
+   1604,
+   "Columbus Colts",
+   1
+  ],
+  [
+   1605,
+   "Philadelphia Centennials",
+   1
+  ],
+  [
+   1606,
+   "Brooklyn Tip-Tops",
+   1
+  ],
+  [
+   1607,
+   "Hartford Dark Blues",
+   1
+  ],
+  [
+   1608,
+   "Boston Reds",
+   1
+  ],
+  [
+   1609,
+   "Philadelphia Athletics",
+   1
+  ],
+  [
+   1610,
+   "St. Louis Cardinals",
+   1
+  ],
+  [
+   1611,
+   "St. Louis Brown Stockings",
+   1
+  ],
+  [
+   1613,
+   "Baltimore Orioles",
+   1
+  ],
+  [
+   1614,
+   "Philadelphia Quakers",
+   1
+  ],
+  [
+   1615,
+   "Milwaukee Brewers",
+   1
+  ],
+  [
+   1616,
+   "St. Paul Saints",
+   1
+  ],
+  [
+   1617,
+   "Elizabeth Resolutes",
+   1
+  ],
+  [
+   1618,
+   "Washington Senators",
+   1
+  ],
+  [
+   1619,
+   "Wilmington Quicksteps",
+   1
+  ],
+  [
+   1620,
+   "Troy Trojans",
+   1
+  ],
+  [
+   1621,
+   "Boston Reds",
+   1
+  ],
+  [
+   1622,
+   "Baltimore Monumentals",
+   1
+  ],
+  [
+   1623,
+   "Washington Olympics",
+   1
+  ],
+  [
+   1624,
+   "Kansas City Cowboys",
+   1
+  ],
+  [
+   1625,
+   "Louisville Colonels",
+   1
+  ],
+  [
+   1626,
+   "Kansas City Packers",
+   1
+  ],
+  [
+   1627,
+   "Baltimore Orioles",
+   1
+  ],
+  [
+   1628,
+   "Keokuk Westerns",
+   1
+  ],
+  [
+   1629,
+   "Toledo Blue Stockings",
+   1
+  ],
+  [
+   1630,
+   "Cleveland Spiders",
+   1
+  ],
+  [
+   1631,
+   "New Haven New Havens",
+   1
+  ],
+  [
+   1632,
+   "Washington Senators",
+   1
+  ],
+  [
+   1633,
+   "New York Mutuals",
+   1
+  ],
+  [
+   1637,
+   "Ottawa Senators",
+   1
+  ],
+  [
+   1639,
+   "Quebec Bulldogs",
+   1
+  ],
+  [
+   1640,
+   "Montreal Wanderers",
+   1
+  ],
+  [
+   1641,
+   "Seattle Kraken",
+   1
+  ],
+  [
+   1642,
+   "Victoria Cougars",
+   1
+  ],
+  [
+   1643,
+   "Calgary Tigers",
+   1
+  ],
+  [
+   1644,
+   "Seattle Metropolitans",
+   1
+  ],
+  [
+   1647,
+   "Vancouver Maroons",
+   1
+  ],
+  [
+   1666,
+   "Birmingham Barracudas",
+   1
+  ],
+  [
+   1667,
+   "Ottawa Redblacks",
+   1
+  ],
+  [
+   1668,
+   "Montreal Alouettes",
+   1
+  ],
+  [
+   1669,
+   "San Antonio Texans",
+   1
+  ],
+  [
+   1670,
+   "Las Vegas Posse",
+   1
+  ],
+  [
+   1671,
+   "Shreveport Pirates",
+   1
+  ],
+  [
+   1672,
+   "Ottawa Rough Riders",
+   1
+  ],
+  [
+   1673,
+   "Baltimore Stallions",
+   1
+  ],
+  [
+   1690,
+   "Denver Nuggets",
+   1
+  ],
+  [
+   1691,
+   "Pittsburgh Ironmen",
+   1
+  ],
+  [
+   1692,
+   "Cleveland Rebels",
+   1
+  ],
+  [
+   1693,
+   "Indianapolis Jets",
+   1
+  ],
+  [
+   1694,
+   "Anderson Packers",
+   1
+  ],
+  [
+   1695,
+   "Toronto Huskies",
+   1
+  ],
+  [
+   1696,
+   "Providence Steamrollers",
+   1
+  ],
+  [
+   1697,
+   "Washington Capitols",
+   1
+  ],
+  [
+   1698,
+   "Indianapolis Olympians",
+   1
+  ],
+  [
+   1699,
+   "Baltimore Bullets",
+   1
+  ],
+  [
+   1700,
+   "St. Louis Bombers",
+   1
+  ],
+  [
+   1701,
+   "Sheboygan Red Skins",
+   1
+  ],
+  [
+   1702,
+   "Waterloo Hawks",
+   1
+  ],
+  [
+   1703,
+   "Detroit Falcons",
+   1
+  ],
+  [
+   1704,
+   "Chicago Stags",
+   1
+  ],
+  [
+   1705,
+   "Evansville Crimson Giants",
+   1
+  ],
+  [
+   1706,
+   "Muncie Flyers",
+   1
+  ],
+  [
+   1707,
+   "Detroit Wolverines",
+   1
+  ],
+  [
+   1708,
+   "Racine Tornadoes",
+   1
+  ],
+  [
+   1709,
+   "Baltimore Colts",
+   1
+  ],
+  [
+   1710,
+   "Detroit Panthers",
+   1
+  ],
+  [
+   1711,
+   "Rochester Jeffersons",
+   1
+  ],
+  [
+   1713,
+   "Frankford Yellow Jackets",
+   1
+  ],
+  [
+   1714,
+   "Buffalo Bisons",
+   1
+  ],
+  [
+   1715,
+   "Chicago Tigers",
+   1
+  ],
+  [
+   1716,
+   "Providence Steam Roller",
+   1
+  ],
+  [
+   1717,
+   "New York Brickley Giants",
+   1
+  ],
+  [
+   1718,
+   "Brooklyn Lions",
+   1
+  ],
+  [
+   1719,
+   "Canton Bulldogs",
+   1
+  ],
+  [
+   1720,
+   "Minneapolis Red Jackets",
+   1
+  ],
+  [
+   1721,
+   "Milwaukee Badgers",
+   1
+  ],
+  [
+   1722,
+   "Dallas Texans",
+   1
+  ],
+  [
+   1723,
+   "Racine Legion",
+   1
+  ],
+  [
+   1724,
+   "Boston Bulldogs",
+   1
+  ],
+  [
+   1725,
+   "Hammond Pros",
+   1
+  ],
+  [
+   1726,
+   "Tonawanda Kardex",
+   1
+  ],
+  [
+   1727,
+   "New York Yankees",
+   1
+  ],
+  [
+   1728,
+   "Cleveland Tigers",
+   1
+  ],
+  [
+   1729,
+   "Cincinnati Celts",
+   1
+  ],
+  [
+   1730,
+   "Phil-Pitt Steagles",
+   1
+  ],
+  [
+   1731,
+   "Staten Island Stapletons",
+   1
+  ],
+  [
+   1732,
+   "Brooklyn Tigers",
+   1
+  ],
+  [
+   1733,
+   "Oorang Indians",
+   1
+  ],
+  [
+   1734,
+   "Cleveland Bulldogs",
+   1
+  ],
+  [
+   1735,
+   "Kansas City Cowboys",
+   1
+  ],
+  [
+   1736,
+   "Card-Pitt",
+   1
+  ],
+  [
+   1737,
+   "Rock Island Independents",
+   1
+  ],
+  [
+   1738,
+   "Cincinnati Reds",
+   1
+  ],
+  [
+   1739,
+   "Cleveland Indians",
+   1
+  ],
+  [
+   1740,
+   "Columbus Tigers",
+   1
+  ],
+  [
+   1741,
+   "Kenosha Maroons",
+   1
+  ],
+  [
+   1742,
+   "Detroit Tigers",
+   1
+  ],
+  [
+   1743,
+   "Louisville Brecks",
+   1
+  ],
+  [
+   1744,
+   "Louisville Colonels",
+   1
+  ],
+  [
+   1745,
+   "Duluth Eskimos",
+   1
+  ],
+  [
+   1746,
+   "Akron Indians",
+   1
+  ],
+  [
+   1747,
+   "Newark Tornadoes",
+   1
+  ],
+  [
+   1749,
+   "Hartford Blues",
+   1
+  ],
+  [
+   1750,
+   "Toledo Maroons",
+   1
+  ],
+  [
+   1752,
+   "Cleveland Indians",
+   1
+  ],
+  [
+   1753,
+   "Buffalo Bills",
+   1
+  ],
+  [
+   1754,
+   "New York Yankees",
+   1
+  ],
+  [
+   1755,
+   "Los Angeles Dons",
+   1
+  ],
+  [
+   1756,
+   "Miami Seahawks",
+   1
+  ],
+  [
+   1757,
+   "Chicago Hornets",
+   1
+  ],
+  [
+   1758,
+   "Brooklyn Dodgers",
+   1
+  ],
+  [
+   1760,
+   "Haileybury Comets",
+   1
+  ],
+  [
+   1762,
+   "Montreal Shamrocks",
+   1
+  ],
+  [
+   1763,
+   "Saskatoon Sheiks",
+   1
+  ],
+  [
+   1764,
+   "Calgary Cowboys",
+   1
+  ],
+  [
+   1768,
+   "Toronto 228th Battalion",
+   1
+  ],
+  [
+   1769,
+   "Toronto Blueshirts",
+   1
+  ],
+  [
+   1770,
+   "Renfrew Creamery Kings",
+   1
+  ],
+  [
+   1771,
+   "Cobalt Silver Kings",
+   1
+  ],
+  [
+   1772,
+   "Regina Capitals",
+   1
+  ],
+  [
+   1774,
+   "Indianapolis Racers",
+   1
+  ],
+  [
+   1776,
+   "Birmingham Bulls",
+   1
+  ],
+  [
+   1777,
+   "Toronto Ontarios-Shamrocks",
+   1
+  ],
+  [
+   1778,
+   "New York Golden Blades / Jersey Knights",
+   1
+  ],
+  [
+   1779,
+   "Houston Aeros",
+   1
+  ],
+  [
+   1780,
+   "Portland Rosebuds",
+   1
+  ]
+ ],
+ "wikidataDump": {
+  "source": "Wikidata (CC0 1.0), filtered by spx-stats scripts/wikidata_dump/filter.py",
+  "dumpName": "wikidata-20261012-all.json.gz",
+  "dumpDate": "2026-10-12",
+  "dumpMd5": "83b2d2e3f578e50209fd7d3ded7364b1",
+  "dumpSha256": "b4427e4e0948833f3f321951bc0189496fd34a03100d4bdbb17950b2e0c2e46a",
+  "filteredFilesSha256": {
+   "people.jsonl.gz": "8f92b93af2e64e709737b8bb2f1742a2b9a5c33655c0059f0315792781371d4b",
+   "items.jsonl.gz": "6f8b076a1bfd44607c80bdf42359ea9a3a921d6041a37461a58f9caa2f5c262e",
+   "events.jsonl.gz": "5868791e0b4621ced3e4fd60ec1c010707e6483c9f4ed1a29481768884560746",
+   "labels.jsonl.gz": "24f662885a5fc5fa2fdf6007e8eac29e328a0b6753c65137ec52d7e0515516e2"
+  },
+  "peopleInFilteredFile": 1427102,
+  "options": {
+   "minSitelinks": 30,
+   "perDaySport": 2,
+   "floor": 10
+  },
+  "report": {
+   "rows": 47084,
+   "births": 34616,
+   "deaths": 12468,
+   "phrase from the person's own description": 44216,
+   "phrase built from occupation and country": 2868,
+   "perDay": {
+    "min": 0,
+    "median": 129,
+    "max": 161,
+    "daysWithNone": [
+     "01-01"
+    ]
+   },
+   "sportsPerDay": {
+    "min": 0,
+    "median": 51,
+    "max": 62
+   },
+   "leftOut": {
+    "people read": 1427102,
+    "left out: not a sports person (first occupation or description says another trade)": 3960,
+    "left out: description names a crime, para sport or health": 1239,
+    "left out: no Gregorian day-precision birth or death": 3458,
+    "left out: no usable English name": 434,
+    "left out: a para or wheelchair sport or occupation": 211,
+    "left out: no publishable sport": 19,
+    "left out: no phrase to say who he is": 235,
+    "left out: dates do not agree (death before birth, or past 115 years)": 41
+   }
+  }
+ },
+ "wikidataDumpEvents": {
+  "source": "Wikidata (CC0 1.0), filtered by spx-stats scripts/wikidata_dump/filter.py",
+  "dumpName": "wikidata-20261012-all.json.gz",
+  "dumpDate": "2026-10-12",
+  "dumpMd5": "83b2d2e3f578e50209fd7d3ded7364b1",
+  "dumpSha256": "b4427e4e0948833f3f321951bc0189496fd34a03100d4bdbb17950b2e0c2e46a",
+  "filteredFilesSha256": {
+   "people.jsonl.gz": "8f92b93af2e64e709737b8bb2f1742a2b9a5c33655c0059f0315792781371d4b",
+   "items.jsonl.gz": "6f8b076a1bfd44607c80bdf42359ea9a3a921d6041a37461a58f9caa2f5c262e",
+   "events.jsonl.gz": "5868791e0b4621ced3e4fd60ec1c010707e6483c9f4ed1a29481768884560746",
+   "labels.jsonl.gz": "24f662885a5fc5fa2fdf6007e8eac29e328a0b6753c65137ec52d7e0515516e2"
+  },
+  "peopleInFilteredFile": 1427102,
+  "options": {
+   "minSitelinks": 20,
+   "perDaySport": 2,
+   "floor": 5
+  },
+  "report": {
+   "rows": 28206,
+   "byCategory": {
+    "competition-start": 11729,
+    "competition-end": 11615,
+    "sport-event": 4862
+   },
+   "withWinner": 5952,
+   "withPlace": 19205,
+   "perDay": {
+    "min": 0,
+    "median": 76,
+    "max": 153,
+    "daysWithNone": [
+     "01-01",
+     "12-31"
+    ]
+   },
+   "sportsPerDay": {
+    "min": 0,
+    "median": 27,
+    "max": 50
+   },
+   "leftOut": {
+    "events read": 406416,
+    "left out: no usable day (day precision, Gregorian, not January 1 or December 31)": 16762,
+    "left out: a season, a play-off, or an edition of a league SPX holds": 2061,
+    "left out: para, wheelchair, deaf or blind": 395,
+    "left out: no publishable sport": 126,
+    "left out: the end is before the start": 50,
+    "left out: no usable English name": 108,
+    "left out: a name that says today or tonight": 1
+   }
+  }
+ }
+}

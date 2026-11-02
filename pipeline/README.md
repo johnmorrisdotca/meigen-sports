@@ -22,12 +22,14 @@ python3 -I pipeline/extract_ds1.py
 
 File list and paging notes: [queries/README.md](queries/README.md). Source licences: [docs/sources-and-reviews.md](../docs/sources-and-reviews.md).
 
-Public on-this-day shards (no DS1 connection) from joined extracts:
+Public on-this-day shards (no DS1 connection) are made in two stages:
 
 ```sh
-pnpm data:facts
-# or: python3 -I pipeline/convert_extract.py
+pnpm data:facts     # stage one, then two: the extracts become the facts in data-sources/facts/, then the shards
+pnpm shards         # stage two alone: data/v1/0.1.0/facts/ from data-sources/facts/ (what CI, Pages and `pnpm check` run)
 ```
+
+Stage one needs the extracts (below), which are not in git, and writes `data-sources/facts/NN.jsonl.gz` (every fact once, gzip files by store bucket, sorted by id, with `meta.json`): this is the committed input. Commit it when the facts change. Stage two needs only that folder and node, takes about 12 seconds, and is deterministic (the facts are read in one fixed order, `layout_order`); `data/v1/0.1.0/facts/` is git-ignored and never committed. `facts/manifest.json` lists the SHA-256 of every shard, so a rebuild that differs from a published one is visible.
 
 Besides the DS1 extracts the converter reads `data-sources/priority-facts.jsonl` (priority athletes' birthdays and deaths, with the Wikidata descriptions and sitelinks of `pipeline/ds1-people/spx-stats/db/seed/wikidata_meigen_bio.csv`) and, when present, `extract_person_context.json` (clubs, own awards, titles and Hall of Fame years: see [queries/README.md](queries/README.md)). It never takes an award from the birthday or death extracts' own `personAward`, which was read through the team-season: an award is one the person's own rows name.
 
