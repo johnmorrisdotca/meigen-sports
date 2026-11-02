@@ -55,14 +55,14 @@ test("every fact that states a contested date is marked, with every other day th
     for (const alt of [...wantOwn, ...wantBirth, ...wantDeath]) assert.ok(isDate(alt) && alt !== r.eventDate && alt !== r.birthDate && alt !== r.deathDate, `${r.recordId}: ${alt}`);
   }
   assert.deepEqual(problems, []);
-  assert.equal(marked.length, 716);
-  assert.equal(own, 426, "facts whose own day is disputed");
-  assert.equal(marked.filter((r) => r.category === "player-birthday").length, 348);
+  assert.equal(marked.length, 717);
+  assert.equal(own, 427, "facts whose own day is disputed");
+  assert.equal(marked.filter((r) => r.category === "player-birthday").length, 349);
   assert.equal(marked.filter((r) => r.category === "player-death").length, 368);
   assert.equal(marked.filter((r) => r.birthDateAlternatives).length, 216);
   assert.equal(marked.filter((r) => r.deathDateAlternatives).length, 93);
   // A disputed fact stays where it was: nothing is dropped, and no fact is added.
-  assert.equal(facts.all.length, 103592);
+  assert.equal(facts.all.length, 103813);
 });
 
 test("a disputed fact carries the tag `date:disputed`, a note in both languages, and its sentence still names the date it always had", () => {

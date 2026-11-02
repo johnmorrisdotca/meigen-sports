@@ -1053,6 +1053,72 @@ def add_dump_people(chosen: dict[str, dict], rows: list[dict]) -> int:
     return added
 
 
+def add_list_people(chosen: dict[str, dict]) -> int:
+    """Birth and death of the people on the 2,000 list (data-sources/people.csv, pipeline/people) that no other source gave for that kind. A day the
+    list holds is one Wikidata states at day precision; 1 January is left out (a year-only date written as one is indistinguishable). What the
+    sentence says besides name and date is Wikidata's description (data-sources/people-profiles.csv), or "Olympic medallist" for a person the
+    English Wikipedia medallist lists name; a person with neither is not published. A para or wheelchair sport is left out, as in the dump."""
+    path, profile_path = ROOT / "data-sources/people.csv", ROOT / "data-sources/people-profiles.csv"
+    if not path.exists() or not profile_path.exists():
+        return 0
+    with profile_path.open(newline="", encoding="utf-8") as fh:
+        profiles = {r["qid"]: r for r in csv.DictReader(fh)}
+    held = {(rec.get("category"), (rec.get("person") or {}).get("qid")): rec for rec in chosen.values() if rec.get("category") in ("player-birthday", "player-death")}
+    added = 0
+    with path.open(newline="", encoding="utf-8") as fh:
+        people = list(csv.DictReader(fh))
+    for r in people:
+        qid, name, raw_sport = r["qid"], r["name"], r["sport"]
+        if not qid or not name or qid in BLOCKED_QIDS or PARA_SPORT.match(raw_sport) or raw_sport in NOT_A_SPORT:
+            continue
+        profile = profiles.get(qid, {})
+        medals = int(r["olympic_medals"]) if (r["olympic_medals"] or "").isdigit() else 0
+        highlight = short_description(profile.get("description_en")) or ("Olympic medallist" if medals > 0 else None)
+        if not highlight:
+            continue
+        for category, day in (("player-birthday", r["birth_on"]), ("player-death", r["death_on"])):
+            if not day or day.endswith("-01-01"):
+                continue
+            if (category, qid) in held:
+                # A row DS1 or the priority list already holds, which has nothing to say who the person was, says it with the list's phrase.
+                old = held[(category, qid)]
+                if not old.get("highlight") and not old.get("epithet") and old.get("eventDate") == day and not PARA_SPORT.match(str(old.get("sport") or "")):
+                    old["highlight"] = highlight
+                    added += 1
+                continue
+            row = {
+                "recordId": f"people:{category}:wikidata:{qid}:{day}", "category": category, "eventDate": day, "datePrecision": "day",
+                "sport": sport_slug(raw_sport), "league": None, "competition": None, "highlight": highlight, "basis": "source", "clubNames": [],
+                "person": {"personId": None, "qid": qid, "name": name, "leagueCodes": [], "franchiseIds": [], "teamSeasonIds": []},
+                "sourceId": "wikidata", "licence": "CC0 1.0", "attribution": "Wikidata contributors, CC0.", "sourceUrl": f"https://www.wikidata.org/wiki/{qid}",
+                "birthPlace": profile.get("birth_place") or None,
+            }
+            if (r["sitelinks"] or "").isdigit():
+                row["sitelinks"] = int(r["sitelinks"])
+            if category == "player-birthday":
+                row.update({"birthDate": day, "deathDate": r["death_on"] or None, "livingStatus": "deceased" if r["death_on"] else "unknown"})
+            else:
+                row.update({"deathDate": day, "livingStatus": "deceased"})
+                born = r["birth_on"]
+                if re.match(r"^\d{4}-\d{2}-\d{2}$", born or ""):
+                    by, bm, bd = map(int, born.split("-"))
+                    dy, dm, dd = map(int, day.split("-"))
+                    row.update({
+                        "birthDate": born, "bornYear": by, "ageYears": dy - by - (1 if (dm, dd) < (bm, bd) else 0),
+                        "derivedRule": "Completed years from sourced birthDate to sourced death eventDate (last birthday before death).",
+                        "derivedInputs": ["birthDate", "eventDate"],
+                    })
+            if not is_sport_person(row):
+                continue
+            chosen[row["recordId"]] = row
+            held[(category, qid)] = row
+            added += 1
+            if r["country"] and qid not in LINKS["people"]:
+                titles = {"en": r["enwiki_title"] or None, "fr": profile.get("frwiki") or None, "ja": profile.get("jawiki") or None}
+                LINKS["people"][qid] = {"c": [r["country"]], "f": r["country"], "w": {k: v for k, v in titles.items() if v}}
+    return added
+
+
 def load_dump_events() -> tuple[list[dict], dict]:
     """Events and competition editions from the Wikidata dump (pipeline/wikidata_dump_events.py): the rows and the dump's provenance. Empty when the extract is absent."""
     path = EXTRACT / "extract_wikidata_dump_events.json"
@@ -1252,6 +1318,7 @@ def build_facts() -> tuple[list[dict], dict]:
         priority_added += 1
     dump_rows, dump_meta, dump_sitelinks, dump_phrases = load_dump_people()
     dump_added = add_dump_people(chosen, dump_rows)
+    list_added = add_list_people(chosen)
     # A priority person's phrase is his Wikidata description. Where the description is not fit to show (a misspelling: "associaton fooball player")
     # the phrase built from his occupation and country takes its place; an honour ("Baseball Hall of Famer") stays.
     rephrased = 0
@@ -1334,13 +1401,13 @@ def build_facts() -> tuple[list[dict], dict]:
         "wikidataDump": dump_meta,
         "wikidataDumpEvents": event_meta,
     }
-    print(json.dumps({"priorityAdded": priority_added, "wikidataDumpAdded": dump_added, "wikidataDumpEventsAdded": events_added,
+    print(json.dumps({"priorityAdded": priority_added, "wikidataDumpAdded": dump_added, "listPeopleAdded": list_added, "wikidataDumpEventsAdded": events_added,
                       "priorityRephrased": rephrased, "facts": len(facts), "droppedThin": dropped, "mergedSameEvent": merged_events}, indent=2))
     return facts, meta
 
 
 # The kinds of fact in the order the converter took them: games, finals, soccer, then people, then the priority list's, the dump's people and events, the rest.
-KIND_ORDER = ("spx:game", "spx:final", "spx:soccer-match", "spx:player-birthday", "spx:player-death", "meigen:", "wikidata:player-", "wikidata:")
+KIND_ORDER = ("spx:game", "spx:final", "spx:soccer-match", "spx:player-birthday", "spx:player-death", "meigen:", "people:", "wikidata:player-", "wikidata:")
 
 
 def layout_order(row: dict) -> tuple:

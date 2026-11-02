@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { readdirSync, readFileSync } from "node:fs";
 import test from "node:test";
 
 /** Minimal CSV reader for the committed list: quoted fields with commas, no embedded newlines. */
@@ -103,5 +103,29 @@ test("the DS1 hand-off rows are exactly the added people, in the seed's own colu
   for (const row of handoff) {
     assert.equal(row.batch, "people-2000");
     assert.equal(row.birth_prec === "11", Boolean(row.birth_on));
+  }
+});
+
+test("the list is in the shards: most of its people have a birth or death fact, and each `people:` fact is about a listed person on a day Wikidata gives", () => {
+  const dir = "data/v1/0.1.0/facts/store";
+  const facts = readdirSync(dir).flatMap((name) => (JSON.parse(readFileSync(`${dir}/${name}`, "utf8")) as { records: { recordId: string; category: string; eventDate: string; sport?: string; highlight?: string; person?: { qid?: string }; source: { sourceId: string; licence: string } }[] }).records);
+  const held = new Set(facts.filter((r) => r.category === "player-birthday" || r.category === "player-death").map((r) => r.person?.qid));
+  const listed = people.filter((row) => row.qid);
+  assert.ok(listed.filter((row) => held.has(row.qid)).length >= 1850, "1,850 of the 2,000 have a fact");
+  for (const code of FIRST_FOURTEEN) {
+    const ofCountry = listed.filter((row) => row.country === code);
+    assert.ok(ofCountry.filter((row) => held.has(row.qid)).length / ofCountry.length > 0.85, `${code} is in the shards`);
+  }
+  const byQid = new Map(listed.map((row) => [row.qid, row]));
+  const fromList = facts.filter((r) => r.recordId.startsWith("people:"));
+  assert.ok(fromList.length >= 200, `${fromList.length} facts added from the list`);
+  for (const r of fromList) {
+    const row = byQid.get(r.person?.qid ?? "");
+    assert.ok(row, r.recordId);
+    assert.equal(r.eventDate, r.category === "player-birthday" ? row.birth_on : row.death_on, r.recordId);
+    assert.ok(!r.eventDate.endsWith("-01-01"), r.recordId);
+    assert.equal(`${r.source.sourceId} ${r.source.licence}`, "wikidata CC0 1.0", r.recordId);
+    assert.doesNotMatch(r.sport ?? "", /^(para|deaflympic|wheelchair|goalball|boccia|sitting)/, r.recordId);
+    assert.ok(r.highlight, r.recordId);
   }
 });

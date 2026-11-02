@@ -10,6 +10,7 @@ python3 -I pipeline/people/fetch_people.py cells        # Wikidata search per co
 python3 -I pipeline/people/fetch_people.py entities     # labels and language counts for every candidate
 python3 -I pipeline/people/select_people.py             # writes data-sources/people.csv; says which chosen people lack claims
 python3 -I pipeline/people/fetch_people.py claims       # human check, citizenship, day-precision birth and death dates for the chosen
+python3 -I pipeline/people/fetch_people.py profiles     # description, French and Japanese article titles, birthplace of the 2,000 -> data-sources/people-profiles.csv (committed)
 python3 -I pipeline/people/select_people.py             # repeat the last two steps until nothing is missing
 python3 -I pipeline/people/select_people.py --check     # people.csv equals what the evidence gives
 ```

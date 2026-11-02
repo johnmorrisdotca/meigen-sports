@@ -20,6 +20,10 @@
 
 Never recorded: sex or gender, ethnicity, religion, health (no para label, impairment class or classification code), family, politics.
 
+## In the shards
+
+From 0.16.0 the list is built into the on-this-day facts: 1,886 of its 2,000 people have a birth or death fact. Most were already there from the Wikidata dump; 217 facts are added from the list itself (their ids start with `people:`), for a person no other source gave for that kind, and 38 facts that DS1 held without any words about the person now have the list's phrase. Such a sentence says what Wikidata's English description says (`data-sources/people-profiles.csv`, read with `fetch_people.py profiles`, 69 requests), or "Olympic medallist" for a person the English Wikipedia medallist lists name. Left out, and why: 49 birth and death days of people with no usable phrase (a description that says sex or para sport, or is another trade: the first list holds ten wrong Wikidata items, such as politicians and a physician, and a few namesakes), 24 of stunt and high-wire performers, 11 of wheelchair, goalball, boccia and sitting-volleyball players, 8 on 1 January (a year-only date written as a day) and 3 before 1850. A listed person is not ranked higher for being listed: the facts rank by their own fame.
+
 ## Beyond the list
 
 The 2,000 are the people the package was built around. From 0.7.0 the births and deaths of other sports people come from the Wikidata dump (CC0), by Wikipedia editions, in every sport it covers: [coverage of people](coverage-people.md) says how many, by sport and by day, and [the pipeline](data-pipeline.md) how. The same rule holds there: never sex or gender, ethnicity, religion, politics, family or health.

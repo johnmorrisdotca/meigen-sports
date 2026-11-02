@@ -1,5 +1,5 @@
 {
- "droppedThin": 14,
+ "droppedThin": 10,
  "mergedSameEvent": 0,
  "draftsOnDisk": 0,
  "topFamous": [],
@@ -39,11 +39,9 @@
   "nba-rookie-of-the-year-award": "NBA Rookie of the Year Award",
   "nba-sixth-man-of-the-year-award": "NBA Sixth Man of the Year Award",
   "nhl-general-manager-of-the-year-award": "NHL General Manager of the Year Award",
-  "o-brien-cup": "O'Brien Cup",
   "rawlings-gold-glove-award": "Rawlings Gold Glove Award",
   "rolaids-relief-man-award": "Rolaids Relief Man Award",
   "silver-slugger-award": "Silver Slugger Award",
-  "super-bowl": "Super Bowl",
   "super-bowl-most-valuable-player-award": "Super Bowl Most Valuable Player Award",
   "ted-lindsay-award": "Ted Lindsay Award",
   "vezina-trophy": "Vezina Trophy",
@@ -52,48 +50,18 @@
  },
  "clubNameVotes": [
   [
-   1404,
-   "Winnipeg Jets",
-   1
-  ],
-  [
-   1405,
-   "Boston Bruins",
-   1
-  ],
-  [
-   1406,
-   "Buffalo Sabres",
-   1
-  ],
-  [
-   1407,
-   "Calgary Flames",
-   1
-  ],
-  [
    1408,
-   "Carolina Hurricanes",
-   1
-  ],
-  [
-   1409,
-   "Chicago Blackhawks",
+   "New England Whalers",
    1
   ],
   [
    1410,
-   "Colorado Avalanche",
+   "Quebec Nordiques",
    1
   ],
   [
-   1411,
-   "Dallas Stars",
-   1
-  ],
-  [
-   1412,
-   "Detroit Red Wings",
+   1413,
+   "Alberta Oilers",
    1
   ],
   [
@@ -102,1499 +70,2089 @@
    1
   ],
   [
-   1414,
-   "Florida Panthers",
-   1
-  ],
-  [
-   1415,
-   "Los Angeles Kings",
-   1
-  ],
-  [
    1416,
    "Montreal Canadiens",
-   1
-  ],
-  [
-   1417,
-   "Nashville Predators",
-   1
-  ],
-  [
-   1418,
-   "New Jersey Devils",
-   1
-  ],
-  [
-   1419,
-   "New York Islanders",
-   1
-  ],
-  [
-   1420,
-   "New York Rangers",
-   1
-  ],
-  [
-   1422,
-   "Philadelphia Flyers",
-   1
+   157
   ],
   [
    1423,
-   "Phoenix Coyotes",
-   1
-  ],
-  [
-   1424,
-   "Pittsburgh Penguins",
-   1
-  ],
-  [
-   1426,
-   "St. Louis Blues",
-   1
-  ],
-  [
-   1427,
-   "Tampa Bay Lightning",
-   1
-  ],
-  [
-   1428,
-   "Toronto Maple Leafs",
-   1
-  ],
-  [
-   1429,
-   "Vancouver Canucks",
-   1
-  ],
-  [
-   1430,
-   "Washington Capitals",
+   "Winnipeg Jets",
    1
   ],
   [
    1431,
+   "Atlanta Hawks",
+   2506
+  ],
+  [
+   1431,
+   "Milwaukee Hawks",
+   283
+  ],
+  [
+   1431,
    "St. Louis Hawks",
-   1
+   1149
+  ],
+  [
+   1431,
+   "Tri-Cities Blackhawks",
+   138
   ],
   [
    1432,
    "Boston Celtics",
-   1
+   4728
+  ],
+  [
+   1433,
+   "New Orleans Hornets",
+   40
   ],
   [
    1433,
    "New Orleans Pelicans",
-   1
+   1077
   ],
   [
    1434,
    "Chicago Bulls",
-   1
+   2697
   ],
   [
    1435,
    "Cleveland Cavaliers",
-   1
+   2142
   ],
   [
    1436,
    "Dallas Mavericks",
-   1
+   1861
   ],
   [
    1437,
    "Denver Nuggets",
-   1
+   1952
   ],
   [
    1438,
    "Detroit Pistons",
-   1
+   3776
+  ],
+  [
+   1438,
+   "Fort Wayne Pistons",
+   678
   ],
   [
    1439,
    "Golden State Warriors",
-   1
+   2267
+  ],
+  [
+   1439,
+   "Philadelphia Warriors",
+   1197
+  ],
+  [
+   1439,
+   "San Francisco Warriors",
+   791
   ],
   [
    1440,
    "Houston Rockets",
-   1
+   2425
+  ],
+  [
+   1440,
+   "San Diego Rockets",
+   336
   ],
   [
    1441,
    "Indiana Pacers",
-   1
+   1783
+  ],
+  [
+   1442,
+   "Buffalo Braves",
+   535
   ],
   [
    1442,
    "Los Angeles Clippers",
-   1
+   1597
+  ],
+  [
+   1442,
+   "San Diego Clippers",
+   259
   ],
   [
    1443,
    "Los Angeles Lakers",
-   1
+   4759
+  ],
+  [
+   1443,
+   "Minneapolis Lakers",
+   982
   ],
   [
    1444,
    "Miami Heat",
-   1
+   1742
   ],
   [
    1445,
    "Milwaukee Bucks",
-   1
+   2379
   ],
   [
    1446,
    "Minnesota Timberwolves",
-   1
+   1458
+  ],
+  [
+   1447,
+   "Brooklyn Nets",
+   1134
   ],
   [
    1447,
    "New Jersey Nets",
-   1
+   672
+  ],
+  [
+   1447,
+   "New York Nets",
+   13
   ],
   [
    1448,
    "New York Knicks",
-   1
+   4195
   ],
   [
    1449,
    "Orlando Magic",
-   1
+   1499
   ],
   [
    1450,
    "Philadelphia 76ers",
-   1
+   3098
+  ],
+  [
+   1450,
+   "Syracuse Nationals",
+   1134
   ],
   [
    1451,
    "Phoenix Suns",
-   1
+   2863
   ],
   [
    1452,
    "Portland Trail Blazers",
-   1
+   2598
+  ],
+  [
+   1453,
+   "Cincinnati Royals",
+   1234
+  ],
+  [
+   1453,
+   "Kansas City Kings",
+   204
+  ],
+  [
+   1453,
+   "Kansas City–Omaha Kings",
+   253
   ],
   [
    1453,
    "Rochester Royals",
-   1
+   668
+  ],
+  [
+   1453,
+   "Sacramento Kings",
+   1669
   ],
   [
    1454,
    "San Antonio Spurs",
-   1
+   2386
   ],
   [
    1455,
    "Oklahoma City Thunder",
-   1
+   1232
+  ],
+  [
+   1455,
+   "Seattle",
+   2
+  ],
+  [
+   1455,
+   "Seattle SuperSonics",
+   2478
   ],
   [
    1456,
    "Toronto Raptors",
-   1
+   1749
+  ],
+  [
+   1457,
+   "New Orleans Jazz",
+   127
   ],
   [
    1457,
    "Utah Jazz",
-   1
+   2151
   ],
   [
    1458,
    "Memphis Grizzlies",
-   1
+   1187
+  ],
+  [
+   1458,
+   "Vancouver Grizzlies",
+   461
+  ],
+  [
+   1459,
+   "Baltimore Bullets",
+   873
+  ],
+  [
+   1459,
+   "Capital Bullets",
+   71
+  ],
+  [
+   1459,
+   "Chicago Packers",
+   81
+  ],
+  [
+   1459,
+   "Chicago Zephyrs",
+   81
   ],
   [
    1459,
    "Washington Bullets",
-   1
+   763
+  ],
+  [
+   1459,
+   "Washington Wizards",
+   1236
+  ],
+  [
+   1460,
+   "Anaheim Angels",
+   817
+  ],
+  [
+   1460,
+   "California Angels",
+   5075
   ],
   [
    1460,
    "Los Angeles Angels",
-   1
+   2982
   ],
   [
    1461,
    "Arizona Diamondbacks",
-   1
+   3040
   ],
   [
    1462,
    "Atlanta Braves",
-   1
+   8254
+  ],
+  [
+   1462,
+   "Boston Beaneaters",
+   3265
+  ],
+  [
+   1462,
+   "Boston Bees",
+   767
+  ],
+  [
+   1462,
+   "Boston Braves",
+   5541
+  ],
+  [
+   1462,
+   "Boston Doves",
+   621
+  ],
+  [
+   1462,
+   "Boston Red Caps",
+   530
+  ],
+  [
+   1462,
+   "Boston Red Stockings",
+   293
+  ],
+  [
+   1462,
+   "Boston Rustlers",
+   157
+  ],
+  [
+   1462,
+   "Milwaukee Braves",
+   2073
   ],
   [
    1463,
    "Baltimore Orioles",
-   1
+   10057
+  ],
+  [
+   1463,
+   "Milwaukee Brewers",
+   140
+  ],
+  [
+   1463,
+   "St. Louis Browns",
+   7988
+  ],
+  [
+   1464,
+   "Boston Americans",
+   1054
   ],
   [
    1464,
    "Boston Red Sox",
-   1
+   17197
+  ],
+  [
+   1465,
+   "Chicago Colts",
+   1092
   ],
   [
    1465,
    "Chicago Cubs",
-   1
+   17956
+  ],
+  [
+   1465,
+   "Chicago Orphans",
+   734
+  ],
+  [
+   1465,
+   "Chicago White Stockings",
+   1532
   ],
   [
    1466,
    "Chicago White Sox",
-   1
+   18106
+  ],
+  [
+   1467,
+   "Cincinnati Red Stockings",
+   958
+  ],
+  [
+   1467,
+   "Cincinnati Redlegs",
+   926
   ],
   [
    1467,
    "Cincinnati Reds",
-   1
+   18816
+  ],
+  [
+   1468,
+   "Cleveland Blues",
+   139
+  ],
+  [
+   1468,
+   "Cleveland Broncos",
+   138
+  ],
+  [
+   1468,
+   "Cleveland Guardians",
+   838
   ],
   [
    1468,
    "Cleveland Indians",
-   1
+   15224
+  ],
+  [
+   1468,
+   "Cleveland Naps",
+   1861
   ],
   [
    1469,
    "Colorado Rockies",
-   1
+   3742
   ],
   [
    1470,
    "Detroit Tigers",
-   1
+   18230
   ],
   [
    1471,
    "Florida Marlins",
-   1
+   1431
+  ],
+  [
+   1471,
+   "Miami Marlins",
+   2334
   ],
   [
    1472,
    "Houston Astros",
-   1
+   8367
+  ],
+  [
+   1472,
+   "Houston Colt .45's",
+   487
   ],
   [
    1473,
    "Kansas City Royals",
-   1
+   7666
+  ],
+  [
+   1474,
+   "Brooklyn Atlantics",
+   110
+  ],
+  [
+   1474,
+   "Brooklyn Bridegrooms",
+   1626
+  ],
+  [
+   1474,
+   "Brooklyn Dodgers",
+   4427
+  ],
+  [
+   1474,
+   "Brooklyn Grays",
+   392
+  ],
+  [
+   1474,
+   "Brooklyn Robins",
+   2760
+  ],
+  [
+   1474,
+   "Brooklyn Superbas",
+   1944
   ],
   [
    1474,
    "Los Angeles Dodgers",
-   1
+   9629
   ],
   [
    1475,
    "Milwaukee Brewers",
-   1
+   7455
+  ],
+  [
+   1475,
+   "Seattle Pilots",
+   164
   ],
   [
    1476,
    "Minnesota Twins",
-   1
+   8917
+  ],
+  [
+   1476,
+   "Washington Senators",
+   9227
+  ],
+  [
+   1477,
+   "Montreal Expos",
+   5235
   ],
   [
    1477,
    "Washington Nationals",
-   1
+   2381
   ],
   [
    1478,
    "New York Mets",
-   1
+   8827
+  ],
+  [
+   1479,
+   "Baltimore Orioles",
+   277
+  ],
+  [
+   1479,
+   "New York Highlanders",
+   1521
   ],
   [
    1479,
    "New York Yankees",
-   1
+   16816
+  ],
+  [
+   1480,
+   "Kansas City Athletics",
+   2061
   ],
   [
    1480,
    "Oakland Athletics",
-   1
+   7527
+  ],
+  [
+   1480,
+   "Philadelphia Athletics",
+   8300
+  ],
+  [
+   1480,
+   "Sacramento Athletics",
+   325
+  ],
+  [
+   1481,
+   "Philadelphia Blue Jays",
+   312
   ],
   [
    1481,
    "Philadelphia Phillies",
-   1
+   19366
+  ],
+  [
+   1481,
+   "Philadelphia Quakers",
+   833
+  ],
+  [
+   1482,
+   "Allegheny Club (none)",
+   288
+  ],
+  [
+   1482,
+   "Pittsburgh Alleghenys",
+   789
   ],
   [
    1482,
    "Pittsburgh Pirates",
-   1
+   19603
   ],
   [
    1483,
    "San Diego Padres",
-   1
+   7629
+  ],
+  [
+   1484,
+   "New York Giants",
+   11071
+  ],
+  [
+   1484,
+   "New York Gothams",
+   215
   ],
   [
    1484,
    "San Francisco Giants",
-   1
+   9423
   ],
   [
    1485,
    "Seattle Mariners",
-   1
+   6317
+  ],
+  [
+   1486,
+   "St. Louis Browns",
+   978
   ],
   [
    1486,
    "St. Louis Cardinals",
-   1
+   18481
+  ],
+  [
+   1486,
+   "St. Louis Perfectos",
+   156
+  ],
+  [
+   1487,
+   "Tampa Bay Devil Rays",
+   658
   ],
   [
    1487,
    "Tampa Bay Rays",
-   1
+   2386
   ],
   [
    1488,
    "Texas Rangers",
-   1
+   7114
+  ],
+  [
+   1488,
+   "Washington Senators",
+   1774
   ],
   [
    1489,
    "Toronto Blue Jays",
-   1
-  ],
-  [
-   1490,
-   "Columbus Blue Jackets",
-   1
-  ],
-  [
-   1491,
-   "Minnesota Wild",
-   1
+   6375
   ],
   [
    1492,
    "Buffalo Bills",
-   1
+   913
   ],
   [
    1493,
    "Miami Dolphins",
-   1
+   825
+  ],
+  [
+   1494,
+   "Boston Patriots",
+   157
   ],
   [
    1494,
    "New England Patriots",
-   1
+   764
   ],
   [
    1495,
    "New York Jets",
-   1
+   835
+  ],
+  [
+   1495,
+   "New York Titans",
+   43
   ],
   [
    1496,
    "Cincinnati Bengals",
-   1
+   776
   ],
   [
    1497,
    "Cleveland Browns",
-   1
+   1041
+  ],
+  [
+   1498,
+   "Pittsburgh Pirates",
+   82
   ],
   [
    1498,
    "Pittsburgh Steelers",
-   1
+   1133
   ],
   [
    1499,
    "Baltimore Ravens",
-   1
+   355
+  ],
+  [
+   1500,
+   "Houston Oilers",
+   572
+  ],
+  [
+   1500,
+   "Tennessee Oilers",
+   33
   ],
   [
    1500,
    "Tennessee Titans",
-   1
+   296
   ],
   [
    1501,
    "Baltimore Colts",
-   1
+   443
+  ],
+  [
+   1501,
+   "Indianapolis Colts",
+   539
   ],
   [
    1502,
    "Jacksonville Jaguars",
-   1
+   362
   ],
   [
    1503,
    "Houston Texans",
-   1
+   249
   ],
   [
    1504,
    "Denver Broncos",
-   1
+   911
+  ],
+  [
+   1505,
+   "Dallas Texans",
+   44
   ],
   [
    1505,
    "Kansas City Chiefs",
-   1
+   870
+  ],
+  [
+   1506,
+   "Las Vegas Raiders",
+   108
   ],
   [
    1506,
    "Los Angeles Raiders",
-   1
+   214
+  ],
+  [
+   1506,
+   "Oakland Raiders",
+   591
+  ],
+  [
+   1507,
+   "Los Angeles Chargers",
+   176
   ],
   [
    1507,
    "San Diego Chargers",
-   1
+   717
   ],
   [
    1508,
    "Dallas Cowboys",
-   1
+   934
   ],
   [
    1509,
    "New York Giants",
-   1
+   1336
   ],
   [
    1510,
    "Philadelphia Eagles",
-   1
+   1211
+  ],
+  [
+   1511,
+   "Boston Braves",
+   11
+  ],
+  [
+   1511,
+   "Boston Redskins",
+   49
+  ],
+  [
+   1511,
+   "Washington Commanders",
+   77
+  ],
+  [
+   1511,
+   "Washington Football Team",
+   35
   ],
   [
    1511,
    "Washington Redskins",
-   1
+   1065
   ],
   [
    1512,
    "Chicago Bears",
-   1
+   1376
+  ],
+  [
+   1512,
+   "Chicago Staleys",
+   12
+  ],
+  [
+   1512,
+   "Decatur Staleys",
+   9
   ],
   [
    1513,
    "Detroit Lions",
-   1
+   1192
+  ],
+  [
+   1513,
+   "Portsmouth Spartans",
+   53
   ],
   [
    1514,
    "Green Bay Packers",
-   1
+   1379
   ],
   [
    1515,
    "Minnesota Vikings",
-   1
+   902
   ],
   [
    1516,
    "Atlanta Falcons",
-   1
+   799
   ],
   [
    1517,
    "New Orleans Saints",
-   1
+   781
   ],
   [
    1518,
    "Tampa Bay Buccaneers",
-   1
+   661
   ],
   [
    1519,
    "Carolina Panthers",
-   1
+   358
+  ],
+  [
+   1520,
+   "Cleveland Rams",
+   89
   ],
   [
    1520,
    "Los Angeles Rams",
-   1
+   910
+  ],
+  [
+   1520,
+   "St Louis Rams",
+   122
+  ],
+  [
+   1520,
+   "St. Louis Rams",
+   65
   ],
   [
    1521,
    "Arizona Cardinals",
-   1
+   372
+  ],
+  [
+   1521,
+   "Chicago Cardinals",
+   442
+  ],
+  [
+   1521,
+   "Phoenix Cardinals",
+   97
+  ],
+  [
+   1521,
+   "St. Louis Cardinals",
+   407
   ],
   [
    1522,
    "San Francisco 49ers",
-   1
+   1107
   ],
   [
    1523,
    "Seattle Seahawks",
-   1
+   673
   ],
   [
    1524,
    "Montreal Alouettes",
-   1
+   383
   ],
   [
    1525,
    "Hamilton Tiger-Cats",
-   1
-  ],
-  [
-   1526,
-   "Ottawa Renegades",
-   1
+   817
   ],
   [
    1527,
    "Toronto Argonauts",
-   1
+   803
   ],
   [
    1528,
    "Winnipeg Blue Bombers",
-   1
+   721
+  ],
+  [
+   1529,
+   "Edmonton Elks",
+   103
   ],
   [
    1529,
    "Edmonton Eskimos",
-   1
+   568
   ],
   [
    1530,
    "Saskatchewan Roughriders",
-   1
+   573
   ],
   [
    1531,
    "Calgary Stampeders",
+   720
+  ],
+  [
+   1532,
+   "B.C. Lions",
    1
   ],
   [
    1532,
    "BC Lions",
-   1
+   753
+  ],
+  [
+   1533,
+   "Charlotte Bobcats",
+   121
   ],
   [
    1533,
    "Charlotte Hornets",
-   1
+   1327
   ],
   [
    1534,
    "Cincinnati Reds",
-   1
+   266
   ],
   [
    1535,
    "Washington Nationals",
-   1
+   64
   ],
   [
    1536,
    "Cincinnati Kelly's Killers",
-   1
+   103
   ],
   [
    1537,
    "Kansas City Cowboys",
-   1
+   272
   ],
   [
    1538,
    "Louisville Colonels",
-   1
+   1232
   ],
   [
    1539,
    "Philadelphia Keystones",
-   1
+   68
   ],
   [
    1540,
    "Rochester Hop Bitters",
-   1
+   134
   ],
   [
    1541,
    "Middletown Mansfields",
-   1
+   22
   ],
   [
    1542,
    "Louisville Grays",
-   1
+   131
   ],
   [
    1543,
    "Richmond Virginias",
-   1
+   47
   ],
   [
    1544,
    "Baltimore Orioles",
-   1
+   178
   ],
   [
    1545,
    "Brooklyn Wonders",
-   1
+   134
   ],
   [
    1546,
    "Chicago-Pittsburgh Browns",
-   1
+   94
   ],
   [
    1547,
    "Brooklyn Eckfords",
-   1
+   27
   ],
   [
    1549,
    "Baltimore Terrapins",
-   1
+   315
   ],
   [
    1550,
    "Philadelphia Athletics",
-   1
+   1220
   ],
   [
    1551,
    "Syracuse Stars",
-   1
+   72
   ],
   [
    1552,
    "Brooklyn Atlantics",
-   1
+   192
   ],
   [
    1553,
    "Cleveland Spiders",
-   1
+   269
   ],
   [
    1554,
    "Washington Olympics",
-   1
+   42
   ],
   [
    1555,
    "Syracuse Stars",
-   1
+   129
   ],
   [
    1556,
    "Chicago Pirates",
-   1
+   139
   ],
   [
    1557,
    "New York Mutuals",
-   1
+   58
   ],
   [
    1558,
    "Altoona Mountain Citys",
-   1
+   26
   ],
   [
    1559,
    "Cleveland Infants",
-   1
+   132
   ],
   [
    1560,
    "Buffalo Bisons",
-   1
+   135
   ],
   [
    1561,
    "Cincinnati Stars",
-   1
+   84
   ],
   [
    1563,
    "Troy Haymakers",
-   1
+   55
   ],
   [
    1564,
    "Cleveland Spiders",
-   1
+   1535
   ],
   [
    1565,
    "Cincinnati Outlaw Reds",
-   1
+   106
   ],
   [
    1566,
    "Philadelphia Athletics",
-   1
+   61
   ],
   [
    1567,
    "Providence Grays",
-   1
+   726
+  ],
+  [
+   1568,
+   "Milwaukee Brewers",
+   13
   ],
   [
    1569,
    "Baltimore Marylands",
-   1
+   7
   ],
   [
    1570,
    "Buffalo Blues",
-   1
+   309
   ],
   [
    1571,
    "St. Louis Maroons",
-   1
+   238
   ],
   [
    1572,
    "New York Metropolitans",
-   1
+   593
   ],
   [
    1573,
    "Philadelphia White Stockings",
-   1
+   182
   ],
   [
    1574,
    "Washington Senators",
-   1
+   1127
   ],
   [
    1575,
    "Washington Nationals",
-   1
+   115
   ],
   [
    1576,
    "St. Louis Maroons",
-   1
+   115
   ],
   [
    1577,
    "Buffalo Bisons",
-   1
+   657
   ],
   [
    1578,
    "Pittsburgh Burghers",
-   1
+   132
   ],
   [
    1579,
    "Indianapolis Hoosiers",
-   1
+   399
   ],
   [
    1580,
    "Worcester Ruby Legs",
-   1
+   253
   ],
   [
    1581,
    "Kansas City Cowboys",
-   1
+   127
   ],
   [
    1582,
    "New York Giants",
-   1
+   133
   ],
   [
    1583,
    "Indianapolis Blues",
-   1
+   111
   ],
   [
    1584,
    "St.Louis Terriers",
-   1
+   314
   ],
   [
    1585,
    "Hartford Dark Blues",
-   1
+   140
   ],
   [
    1586,
    "St. Louis Red Stockings",
-   1
+   20
   ],
   [
    1587,
    "Washington Nationals",
-   1
+   40
   ],
   [
    1588,
    "Columbus Colts",
-   1
+   208
   ],
   [
    1589,
    "St. Louis Brown Stockings",
-   1
+   125
   ],
   [
    1590,
    "Indianapolis Hoosiers",
-   1
+   158
   ],
   [
    1591,
    "Milwaukee Cream Citys",
-   1
+   62
   ],
   [
    1592,
    "Indianapolis Blues",
-   1
+   64
   ],
   [
    1593,
    "Baltimore Lord Baltimores",
-   1
+   162
   ],
   [
    1594,
    "Detroit Wolverines",
-   1
+   881
   ],
   [
    1595,
    "Pittsburgh Rebels",
-   1
+   311
   ],
   [
    1596,
    "Chicago Whales",
-   1
+   313
   ],
   [
    1597,
    "Rockford Forest Citys",
-   1
+   26
   ],
   [
    1598,
    "Washington Nationals",
-   1
+   11
   ],
   [
    1599,
    "Toledo Maumees",
-   1
+   135
   ],
   [
    1600,
    "Ft. Wayne Kekiongas",
-   1
+   20
   ],
   [
    1601,
    "Boston Reds",
-   1
+   134
   ],
   [
    1602,
    "Cleveland Forest Cities",
-   1
+   52
   ],
   [
    1603,
    "Newark Peppers",
-   1
+   156
   ],
   [
    1604,
    "Columbus Colts",
-   1
+   419
   ],
   [
    1605,
    "Philadelphia Centennials",
-   1
+   15
   ],
   [
    1606,
    "Brooklyn Tip-Tops",
-   1
+   311
   ],
   [
    1607,
    "Hartford Dark Blues",
-   1
+   130
   ],
   [
    1608,
    "Boston Reds",
-   1
+   140
   ],
   [
    1609,
    "Philadelphia Athletics",
-   1
+   260
   ],
   [
    1610,
    "St. Louis Cardinals",
-   1
+   1234
   ],
   [
    1611,
    "St. Louis Brown Stockings",
-   1
+   71
   ],
   [
    1613,
    "Baltimore Orioles",
-   1
+   1116
   ],
   [
    1614,
    "Philadelphia Quakers",
-   1
+   133
   ],
   [
    1615,
    "Milwaukee Brewers",
-   1
+   37
   ],
   [
    1616,
    "St. Paul Saints",
-   1
+   10
   ],
   [
    1617,
    "Elizabeth Resolutes",
-   1
+   24
   ],
   [
    1618,
    "Washington Senators",
-   1
+   515
   ],
   [
    1619,
    "Wilmington Quicksteps",
-   1
+   19
   ],
   [
    1620,
    "Troy Trojans",
-   1
+   331
   ],
   [
    1621,
    "Boston Reds",
-   1
+   112
   ],
   [
    1622,
    "Baltimore Monumentals",
-   1
+   107
   ],
   [
    1623,
    "Washington Olympics",
-   1
+   29
   ],
   [
    1624,
    "Kansas City Cowboys",
-   1
+   83
   ],
   [
    1625,
    "Louisville Colonels",
-   1
+   1125
   ],
   [
    1626,
    "Kansas City Packers",
-   1
+   308
   ],
   [
    1627,
    "Baltimore Orioles",
-   1
+   871
   ],
   [
    1628,
    "Keokuk Westerns",
-   1
+   14
   ],
   [
    1629,
    "Toledo Blue Stockings",
-   1
+   111
   ],
   [
    1630,
    "Cleveland Spiders",
-   1
+   550
   ],
   [
    1631,
    "New Haven New Havens",
-   1
+   48
   ],
   [
    1632,
    "Washington Senators",
-   1
+   140
   ],
   [
    1633,
    "New York Mutuals",
-   1
+   278
+  ],
+  [
+   1637,
+   "Ottawa Hockey Club",
+   47
   ],
   [
    1637,
    "Ottawa Senators",
-   1
+   110
   ],
   [
    1639,
    "Quebec Bulldogs",
-   1
+   138
   ],
   [
    1640,
    "Montreal Wanderers",
-   1
+   151
   ],
   [
-   1641,
-   "Seattle Kraken",
-   1
+   1642,
+   "Spokane Canaries",
+   24
+  ],
+  [
+   1642,
+   "Victoria Aristocrats",
+   144
   ],
   [
    1642,
    "Victoria Cougars",
-   1
+   44
+  ],
+  [
+   1642,
+   "Victoria Senators",
+   32
   ],
   [
    1643,
    "Calgary Tigers",
-   1
+   6
   ],
   [
    1644,
    "Seattle Metropolitans",
-   1
+   196
+  ],
+  [
+   1646,
+   "Edmonton Eskimos",
+   4
   ],
   [
    1647,
    "Vancouver Maroons",
-   1
+   38
+  ],
+  [
+   1647,
+   "Vancouver Millionaires",
+   222
   ],
   [
    1666,
    "Birmingham Barracudas",
-   1
+   20
   ],
   [
    1667,
    "Ottawa Redblacks",
-   1
+   221
   ],
   [
    1668,
    "Montreal Alouettes",
-   1
+   137
+  ],
+  [
+   1668,
+   "Montreal Concordes",
+   54
+  ],
+  [
+   1669,
+   "Sacramento Gold Miners",
+   35
   ],
   [
    1669,
    "San Antonio Texans",
-   1
+   21
   ],
   [
    1670,
    "Las Vegas Posse",
-   1
+   17
   ],
   [
    1671,
    "Shreveport Pirates",
-   1
+   35
   ],
   [
    1672,
    "Ottawa Rough Riders",
-   1
+   433
+  ],
+  [
+   1673,
+   "Baltimore CFLers",
+   5
   ],
   [
    1673,
    "Baltimore Stallions",
-   1
+   23
+  ],
+  [
+   1674,
+   "Memphis Mad Dogs",
+   19
   ],
   [
    1690,
    "Denver Nuggets",
-   1
+   63
   ],
   [
    1691,
    "Pittsburgh Ironmen",
-   1
+   61
   ],
   [
    1692,
    "Cleveland Rebels",
-   1
+   64
   ],
   [
    1693,
    "Indianapolis Jets",
-   1
+   61
   ],
   [
    1694,
    "Anderson Packers",
-   1
+   75
   ],
   [
    1695,
    "Toronto Huskies",
-   1
+   61
   ],
   [
    1696,
    "Providence Steamrollers",
-   1
+   171
   ],
   [
    1697,
    "Washington Capitols",
-   1
+   299
   ],
   [
    1698,
    "Indianapolis Olympians",
-   1
+   283
   ],
   [
    1699,
    "Baltimore Bullets",
-   1
+   475
   ],
   [
    1700,
    "St. Louis Bombers",
-   1
+   252
   ],
   [
    1701,
    "Sheboygan Red Skins",
-   1
+   66
   ],
   [
    1702,
    "Waterloo Hawks",
-   1
+   63
   ],
   [
    1703,
    "Detroit Falcons",
-   1
+   61
   ],
   [
    1704,
    "Chicago Stags",
-   1
+   274
   ],
   [
    1705,
    "Evansville Crimson Giants",
-   1
+   9
   ],
   [
    1706,
    "Muncie Flyers",
-   1
+   4
   ],
   [
    1707,
    "Detroit Wolverines",
-   1
+   11
   ],
   [
    1708,
    "Racine Tornadoes",
-   1
+   6
   ],
   [
    1709,
    "Baltimore Colts",
-   1
+   54
   ],
   [
    1710,
    "Detroit Panthers",
-   1
+   25
   ],
   [
    1711,
    "Rochester Jeffersons",
-   1
+   30
+  ],
+  [
+   1712,
+   "St. Louis All-Stars",
+   8
   ],
   [
    1713,
    "Frankford Yellow Jackets",
-   1
+   133
+  ],
+  [
+   1714,
+   "Buffalo All-Americans",
+   41
   ],
   [
    1714,
    "Buffalo Bisons",
-   1
+   37
+  ],
+  [
+   1714,
+   "Buffalo Rangers",
+   11
   ],
   [
    1715,
    "Chicago Tigers",
-   1
+   8
   ],
   [
    1716,
    "Providence Steam Roller",
-   1
+   85
   ],
   [
    1717,
    "New York Brickley Giants",
-   1
+   3
   ],
   [
    1718,
    "Brooklyn Lions",
-   1
+   12
   ],
   [
    1719,
    "Canton Bulldogs",
-   1
+   65
+  ],
+  [
+   1720,
+   "Minneapolis Marines",
+   24
   ],
   [
    1720,
    "Minneapolis Red Jackets",
-   1
+   20
   ],
   [
    1721,
    "Milwaukee Badgers",
-   1
+   51
+  ],
+  [
+   1722,
+   "Boston Yanks",
+   56
   ],
   [
    1722,
    "Dallas Texans",
-   1
+   13
+  ],
+  [
+   1722,
+   "New York Bulldogs",
+   13
+  ],
+  [
+   1722,
+   "New York Yanks",
+   25
   ],
   [
    1723,
    "Racine Legion",
-   1
+   32
   ],
   [
    1724,
    "Boston Bulldogs",
-   1
+   9
+  ],
+  [
+   1724,
+   "Pottsville Maroons",
+   51
   ],
   [
    1725,
    "Hammond Pros",
-   1
+   36
   ],
   [
    1726,
    "Tonawanda Kardex",
-   1
+   2
   ],
   [
    1727,
    "New York Yankees",
-   1
+   30
   ],
   [
    1728,
    "Cleveland Tigers",
-   1
+   16
   ],
   [
    1729,
    "Cincinnati Celts",
-   1
+   5
   ],
   [
    1730,
    "Phil-Pitt Steagles",
-   1
+   11
   ],
   [
    1731,
    "Staten Island Stapletons",
-   1
+   46
+  ],
+  [
+   1732,
+   "Brooklyn Dodgers",
+   160
   ],
   [
    1732,
    "Brooklyn Tigers",
-   1
+   11
+  ],
+  [
+   1732,
+   "Dayton Triangles",
+   77
   ],
   [
    1733,
    "Oorang Indians",
-   1
+   21
   ],
   [
    1734,
    "Cleveland Bulldogs",
-   1
+   39
+  ],
+  [
+   1735,
+   "Kansas City Blues",
+   10
   ],
   [
    1735,
    "Kansas City Cowboys",
-   1
+   20
   ],
   [
    1736,
    "Card-Pitt",
-   1
+   11
   ],
   [
    1737,
    "Rock Island Independents",
-   1
+   52
   ],
   [
    1738,
    "Cincinnati Reds",
-   1
+   25
   ],
   [
    1739,
    "Cleveland Indians",
-   1
+   11
+  ],
+  [
+   1740,
+   "Columbus Panhandles",
+   23
   ],
   [
    1740,
    "Columbus Tigers",
-   1
+   35
   ],
   [
    1741,
    "Kenosha Maroons",
-   1
+   7
+  ],
+  [
+   1742,
+   "Detroit Heralds",
+   5
   ],
   [
    1742,
    "Detroit Tigers",
-   1
+   8
   ],
   [
    1743,
    "Louisville Brecks",
-   1
+   10
   ],
   [
    1744,
    "Louisville Colonels",
-   1
+   5
   ],
   [
    1745,
    "Duluth Eskimos",
-   1
+   24
+  ],
+  [
+   1745,
+   "Duluth Kelleys",
+   17
   ],
   [
    1746,
    "Akron Indians",
-   1
+   9
+  ],
+  [
+   1746,
+   "Akron Pros",
+   55
   ],
   [
    1747,
    "Newark Tornadoes",
-   1
+   13
+  ],
+  [
+   1747,
+   "Orange Tornadoes",
+   13
+  ],
+  [
+   1748,
+   "Los Angeles Buccaneers",
+   11
   ],
   [
    1749,
    "Hartford Blues",
-   1
+   11
   ],
   [
    1750,
    "Toledo Maroons",
-   1
+   18
+  ],
+  [
+   1751,
+   "Washington Senators",
+   4
   ],
   [
    1752,
    "Cleveland Indians",
-   1
+   8
   ],
   [
    1753,
    "Buffalo Bills",
-   1
+   45
+  ],
+  [
+   1753,
+   "Buffalo Bisons",
+   15
   ],
   [
    1754,
    "New York Yankees",
-   1
+   59
   ],
   [
    1755,
    "Los Angeles Dons",
-   1
+   55
   ],
   [
    1756,
    "Miami Seahawks",
-   1
+   15
   ],
   [
    1757,
    "Chicago Hornets",
-   1
+   13
+  ],
+  [
+   1757,
+   "Chicago Rockets",
+   43
   ],
   [
    1758,
    "Brooklyn Dodgers",
+   43
+  ],
+  [
+   1759,
+   "Minnesota Fighting Saints",
    1
   ],
   [
    1760,
    "Haileybury Comets",
+   13
+  ],
+  [
+   1761,
+   "Cincinnati Stingers",
    1
   ],
   [
    1762,
    "Montreal Shamrocks",
-   1
+   13
+  ],
+  [
+   1763,
+   "Saskatoon Crescents",
+   3
   ],
   [
    1763,
    "Saskatoon Sheiks",
-   1
+   3
   ],
   [
    1764,
@@ -1602,28 +2160,68 @@
    1
   ],
   [
+   1764,
+   "Philadelphia Blazers",
+   1
+  ],
+  [
+   1764,
+   "Vancouver Blazers",
+   1
+  ],
+  [
+   1765,
+   "Denver Spurs / Ottawa Civics",
+   1
+  ],
+  [
+   1766,
+   "Chicago Cougars",
+   1
+  ],
+  [
+   1767,
+   "Cleveland Crusaders",
+   1
+  ],
+  [
+   1767,
+   "Minnesota Fighting Saints",
+   1
+  ],
+  [
    1768,
    "Toronto 228th Battalion",
-   1
+   13
   ],
   [
    1769,
    "Toronto Blueshirts",
-   1
+   102
   ],
   [
    1770,
    "Renfrew Creamery Kings",
-   1
+   29
   ],
   [
    1771,
    "Cobalt Silver Kings",
+   13
+  ],
+  [
+   1772,
+   "Portland Rosebuds",
    1
   ],
   [
    1772,
    "Regina Capitals",
+   3
+  ],
+  [
+   1773,
+   "Phoenix Roadrunners",
    1
   ],
   [
@@ -1632,18 +2230,58 @@
    1
   ],
   [
+   1775,
+   "Los Angeles Sharks",
+   1
+  ],
+  [
+   1775,
+   "Michigan Stags / Baltimore Blades",
+   1
+  ],
+  [
    1776,
    "Birmingham Bulls",
    1
   ],
   [
+   1776,
+   "Ottawa Nationals",
+   1
+  ],
+  [
+   1776,
+   "Toronto Toros",
+   1
+  ],
+  [
+   1777,
+   "Toronto Ontarios",
+   21
+  ],
+  [
    1777,
    "Toronto Ontarios-Shamrocks",
-   1
+   20
+  ],
+  [
+   1777,
+   "Toronto Tecumsehs",
+   21
   ],
   [
    1778,
    "New York Golden Blades / Jersey Knights",
+   1
+  ],
+  [
+   1778,
+   "New York Raiders",
+   1
+  ],
+  [
+   1778,
+   "San Diego Mariners",
    1
   ],
   [
@@ -1653,8 +2291,148 @@
   ],
   [
    1780,
+   "New Westminster Royals",
+   47
+  ],
+  [
+   1780,
    "Portland Rosebuds",
+   80
+  ],
+  [
+   1781,
+   "Toronto Tempo",
    1
+  ],
+  [
+   1782,
+   "Chicago Sky",
+   3
+  ],
+  [
+   1783,
+   "Charlotte Sting",
+   3
+  ],
+  [
+   1784,
+   "Dallas Wings",
+   1
+  ],
+  [
+   1784,
+   "Detroit Shock",
+   4
+  ],
+  [
+   1784,
+   "Tulsa Shock",
+   1
+  ],
+  [
+   1785,
+   "Cleveland Rockers",
+   1
+  ],
+  [
+   1786,
+   "Indiana Fever",
+   4
+  ],
+  [
+   1787,
+   "Miami Sol",
+   1
+  ],
+  [
+   1788,
+   "Portland Fire",
+   1
+  ],
+  [
+   1789,
+   "Minnesota Lynx",
+   4
+  ],
+  [
+   1790,
+   "Portland Fire",
+   1
+  ],
+  [
+   1791,
+   "Seattle Storm",
+   4
+  ],
+  [
+   1792,
+   "Phoenix Mercury",
+   6
+  ],
+  [
+   1793,
+   "Golden State Valkyries",
+   1
+  ],
+  [
+   1794,
+   "Sacramento Monarchs",
+   4
+  ],
+  [
+   1795,
+   "Los Angeles Sparks",
+   4
+  ],
+  [
+   1796,
+   "New York Liberty",
+   3
+  ],
+  [
+   1797,
+   "Houston Comets",
+   3
+  ],
+  [
+   1798,
+   "Connecticut Sun",
+   4
+  ],
+  [
+   1798,
+   "Orlando Miracle",
+   2
+  ],
+  [
+   1799,
+   "Washington Mystics",
+   4
+  ],
+  [
+   1800,
+   "Las Vegas Aces",
+   1
+  ],
+  [
+   1800,
+   "San Antonio Silver Stars",
+   4
+  ],
+  [
+   1800,
+   "San Antonio Stars",
+   1
+  ],
+  [
+   1800,
+   "Utah Starzz",
+   2
+  ],
+  [
+   1801,
+   "Atlanta Dream",
+   2
   ]
  ],
  "wikidataDump": {

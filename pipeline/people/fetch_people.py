@@ -6,6 +6,7 @@
   python3 -I pipeline/people/fetch_people.py cells       # Wikidata search per (country, sport): P27 and P641
   python3 -I pipeline/people/fetch_people.py entities    # labels and sitelink counts for every candidate
   python3 -I pipeline/people/fetch_people.py claims      # birth and death dates for the chosen people only
+  python3 -I pipeline/people/fetch_people.py profiles    # description, French and Japanese article titles and birthplace of the 2,000 -> data-sources/people-profiles.csv
   python3 -I pipeline/people/fetch_people.py all
 
 Every response is kept under MEIGEN_PEOPLE_RAW (default data-sources/raw/people/, git-ignored); a rerun reads those
@@ -24,7 +25,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import people_config as cfg  # noqa: E402
-from wikimedia import ENWIKI, WIKIDATA, Client  # noqa: E402
+from wikimedia import ENWIKI, WIKIDATA, Client, get_entities  # noqa: E402
 
 ROOT = HERE.parent.parent
 RAW = Path(os.environ.get("MEIGEN_PEOPLE_RAW", str(ROOT / "data-sources/raw/people")))
@@ -330,7 +331,40 @@ def occupations(client: Client) -> None:
     print(f"occupations: {len(known)} labels, {len(todo)} read now")
 
 
-STEPS = {"verify": verify, "medals": medals, "cells": cells, "entities": entities, "claims": claims, "occupations": occupations, "lists": lists}
+def profiles(client: Client) -> None:
+    """What a birthday or death sentence of a person on the list can say besides his name and date: Wikidata's English description, the titles of his
+    French and Japanese Wikipedia articles and his birthplace (P19, the item's own label). Wikidata is CC0. Only people not in the file yet are read."""
+    out = ROOT / "data-sources/people-profiles.csv"
+    people = [row["qid"] for row in csv.DictReader((ROOT / "data-sources/people.csv").open(encoding="utf-8")) if row["qid"]]
+    kept: dict[str, list[str]] = {}
+    if out.exists():
+        with out.open(encoding="utf-8", newline="") as fh:
+            kept = {row[0]: row for row in csv.reader(fh) if row and row[0] != "qid"}
+    todo = [q for q in people if q not in kept]
+    found = get_entities(client, todo, "descriptions|sitelinks|claims")
+    place_of: dict[str, str] = {}
+    for qid, ent in found.items():
+        for st in (ent.get("claims") or {}).get("P19", []):
+            value = ((st.get("mainsnak") or {}).get("datavalue") or {}).get("value") or {}
+            if st.get("rank") != "deprecated" and value.get("id"):
+                place_of[qid] = value["id"]
+                break
+    labels = {qid: (ent.get("labels") or {}).get("en", {}).get("value", "") for qid, ent in get_entities(client, sorted(set(place_of.values())), "labels").items()}
+    for qid in todo:
+        ent = found.get(qid)
+        if not ent:
+            continue
+        links = ent.get("sitelinks") or {}
+        kept[qid] = [qid, (ent.get("descriptions") or {}).get("en", {}).get("value", ""), (links.get("frwiki") or {}).get("title", ""),
+                     (links.get("jawiki") or {}).get("title", ""), labels.get(place_of.get(qid, ""), "")]
+    with out.open("w", encoding="utf-8", newline="") as fh:
+        writer = csv.writer(fh, lineterminator="\n")
+        writer.writerow(["qid", "description_en", "frwiki", "jawiki", "birth_place"])
+        writer.writerows(kept[q] for q in sorted(kept, key=lambda q: int(q[1:])))
+    print(f"profiles: {len(kept)} people, {len(todo)} read now")
+
+
+STEPS = {"verify": verify, "medals": medals, "cells": cells, "entities": entities, "claims": claims, "occupations": occupations, "lists": lists, "profiles": profiles}
 
 
 def main(argv: list[str]) -> int:
