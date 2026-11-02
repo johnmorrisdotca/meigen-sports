@@ -34,7 +34,7 @@ The 46 identifiers in [categories.md](categories.md) are **tags, not exclusive c
 | `source.attribution` | string | Required credit line |
 | `source.url` | string or null | Source page when one exists |
 
-Public feeds still drop `nhl_api` ("No licence published") and rows licensed "Owned by SPX". Famous athletes are ranked by Wikidata sitelink count, never by guess. Women’s and para-sport facts come from the same CC0 fetch; empty sport rows are not published as coverage.
+Public feeds still drop `nhl_api` ("No licence published") and rows licensed "Owned by SPX". Famous athletes are ranked by Wikidata sitelink count, never by guess. Women’s and para-sport facts come from the same CC0 fetch (a para sport is named by its own name only, with no class and no health word: [para sports](para-sports.md)); empty sport rows are not published as coverage.
 
 ## Games
 

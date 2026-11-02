@@ -14,12 +14,13 @@ FACTS = ROOT / "data/v1/0.1.0/facts"
 OUT = ROOT / "docs/coverage-events.md"
 CALENDAR = [(date(2024, 1, 1) + timedelta(days=i)).strftime("%m-%d") for i in range(366)]
 CATEGORIES = ("competition-start", "competition-end", "sport-event")
+PARA = {s["slug"] for s in json.loads((ROOT / "data-sources/para-sports.json").read_text(encoding="utf-8"))["sports"]} | {"paralympics"}  # counted in docs/para-sports.md
 
 
 def load() -> list[dict]:
     rows: list[dict] = []
     for name in sorted(glob.glob(str(FACTS / "store/*.json"))):
-        rows.extend(r for r in json.loads(Path(name).read_text(encoding="utf-8"))["records"] if r["category"] in CATEGORIES and r.get("eventDate"))
+        rows.extend(r for r in json.loads(Path(name).read_text(encoding="utf-8"))["records"] if r["category"] in CATEGORIES and r.get("eventDate") and r.get("sport") not in PARA)
     return rows
 
 
@@ -50,7 +51,7 @@ def main() -> int:
         f"{sum(1 for r in events if r.get('winnerName')):,} name a winner and {sum(1 for r in events if r.get('eventPlace')):,} a place, as Wikidata states them. "
         "An event is ranked by the number of Wikipedia editions of its page: everything with 20 or more, and below that the best two of each day, sport and kind with 5 or more. "
         "A date that is January 1 or December 31 is left out (a season is written that way), and so is an edition named for a season or a play-off, a league SPX's own archive holds, "
-        "para, wheelchair, deaf and blind sport, and an edition whose end is before its start.", "",
+        "deaf and blind sport, and an edition whose end is before its start. Para sports are counted apart, in [para sports](para-sports.md).", "",
         "## By day", "",
         f"- Events per day: {spread([len(by_day.get(d, [])) for d in CALENDAR if d not in edges])} (the two edges of the year excepted).",
         f"- Sports per day: {spread([len({r['sport'] for r in by_day.get(d, [])}) for d in CALENDAR if d not in edges])}.",

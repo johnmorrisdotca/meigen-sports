@@ -86,6 +86,20 @@ python3 -I pipeline/golden/add_from_dump.py [--write]   # golden facts for famou
 
 `convert_extract.py` reads the extract after the others and adds a birth or death only for a person it does not already hold for that kind. The dump's name, date and hashes land in `data/v1/0.1.0/facts/manifest.json` under `sources.wikidataDump`.
 
+## Para sports (wheelchair sports, goalball, boccia and the rest)
+
+John's decision of 2026-11-02. Does not contact DS1 or the network: it reads the same filtered dump files as the two passes above and `data-sources/para-sports.json`, and writes `extract_wikidata_dump_para.json` to `MEIGEN_EXTRACT_DIR`. The rules, the fame test and the counts are in the header of `wikidata_dump_para.py` and in [docs/para-sports.md](../docs/para-sports.md); the sport's name is stored, never a class code, an impairment or a health word, and a person's own description is never used.
+
+```sh
+python3 -I pipeline/wikidata_dump_para.py --report
+python3 -I pipeline/wikidata_dump_para.py
+python3 -I pipeline/wikidata_links.py      # countries and Wikipedia titles of the new people and events
+python3 -I pipeline/test_wikidata_dump_para.py
+python3 -I pipeline/coverage_para.py       # docs/para-sports.md
+```
+
+`convert_extract.py` adds the rows after the other dump passes (a person already held for that kind keeps his fact) and writes `sources.wikidataDumpPara` into `facts/manifest.json`. The priority list and the 2,000 list still leave their para people to this pass.
+
 ## Birth and death dates against the dump
 
 A date is text (`+1929-10-22T00:00:00Z` is the day `1929-10-22`), never read through a clock or a time zone. When Wikidata holds several values for a birth or a death, the **preferred** statement is the one it means: the extractors take it (`fetch_priority_pages.py`, `fetch_wikidata_lists.py`, `priority_entities.py`, `people/fetch_people.py`), and the dump keeps only it. Lev Yashin has 21 and 22 October 1929, the 22nd preferred; taking the first statement published the 21st.
@@ -116,7 +130,7 @@ python3 -I pipeline/convert_extract.py
 python3 -I pipeline/coverage_matrix.py
 ```
 
-Famous = sitelink rank, top 500, by sport only. People are never selected by sex or gender. There are no para-sport batches: nobody is labelled para or given an impairment class.
+Famous = sitelink rank, top 500, by sport only. People are never selected by sex or gender. There are no para-sport batches here: para sports are a separate pass from the dump (below), by the sport's name only.
 
 ## Credentials
 

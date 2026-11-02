@@ -3,6 +3,7 @@ import { readdirSync, readFileSync } from "node:fs";
 import test from "node:test";
 import type { OnThisDayRecord } from "../src/schema.ts";
 import { render } from "../src/templates/index.ts";
+import { isParaSport } from "../scripts/para.ts";
 
 /**
  * The events and competition editions of every sport that the Wikidata dump (CC0) adds: each a fact with its Q id, a name, a date at day precision, and
@@ -13,7 +14,7 @@ const shard = (path: string): OnThisDayRecord[] => (JSON.parse(readFileSync(`${r
 const store = new Map<string, OnThisDayRecord>();
 for (const name of readdirSync(`${root}/store`)) for (const r of shard(`store/${name}`)) store.set(r.recordId, r);
 const EVENT = new Set(["competition-start", "competition-end", "sport-event"]);
-const events = [...store.values()].filter((r) => EVENT.has(r.category) && r.recordId.startsWith("wikidata:"));
+const events = [...store.values()].filter((r) => EVENT.has(r.category) && r.recordId.startsWith("wikidata:") && !isParaSport(r.sport));
 const manifest = JSON.parse(readFileSync(`${root}/manifest.json`, "utf8")) as { sources?: Record<string, Record<string, unknown>>; eventsDay?: number };
 const SEX = /\b(?:men['’]?s|women['’]?s|male|female|boys['’]?|girls['’]?|ladies['’]?|men|women)\b/i;
 const TIMELY = /\b(?:today|tonight|this day)\b/i;

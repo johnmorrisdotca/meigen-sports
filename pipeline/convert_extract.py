@@ -89,6 +89,15 @@ def slug_of_name(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", plain.lower()).strip("-")
 
 
+def load_para_slugs() -> frozenset[str]:
+    """The sport codes of the para sports (`data-sources/para-sports.json`, read by `pipeline/wikidata_dump_para.py`) and `paralympics`, the Games themselves."""
+    data = json.loads((ROOT / "data-sources/para-sports.json").read_text(encoding="utf-8"))
+    return frozenset({s["slug"] for s in data["sports"]} | {data["gamesSlug"]})
+
+
+PARA_SLUGS = load_para_slugs()
+
+
 def load_links() -> dict:
     path = EXTRACT / "extract_wikidata_links.json"
     if not path.exists():
@@ -1076,7 +1085,7 @@ def add_list_people(chosen: dict[str, dict]) -> int:
     """Birth and death of the people on the 2,000 list (data-sources/people.csv, pipeline/people) that no other source gave for that kind. A day the
     list holds is one Wikidata states at day precision; 1 January is left out (a year-only date written as one is indistinguishable). What the
     sentence says besides name and date is Wikidata's description (data-sources/people-profiles.csv), or "Olympic medallist" for a person the
-    English Wikipedia medallist lists name; a person with neither is not published. A para or wheelchair sport is left out, as in the dump."""
+    English Wikipedia medallist lists name; a person with neither is not published. A para or wheelchair sport is left out here: pipeline/wikidata_dump_para.py publishes it by its own fame rule."""
     path, profile_path = ROOT / "data-sources/people.csv", ROOT / "data-sources/people-profiles.csv"
     if not path.exists() or not profile_path.exists():
         return 0
@@ -1159,6 +1168,16 @@ def add_dump_events(chosen: dict[str, dict], rows: list[dict]) -> int:
         chosen[row["recordId"]] = rec
         added += 1
     return added
+
+
+def load_dump_para() -> tuple[list[dict], dict]:
+    """Births, deaths and events of the para sports from the Wikidata dump (pipeline/wikidata_dump_para.py): the rows and the dump's provenance. Empty when absent."""
+    path = EXTRACT / "extract_wikidata_dump_para.json"
+    if not path.exists():
+        print(f"missing {path}", file=sys.stderr)
+        return [], {}
+    data = json.loads(path.read_text(encoding="utf-8"))
+    return data.get("records") or [], data.get("meta") or {}
 
 
 JERSEY_SOURCES = ("wikipedia", "wikidata", "wikidata_rosters", "nflverse")  # the order a number's source is named in when several give it
@@ -1671,6 +1690,9 @@ def build_facts() -> tuple[list[dict], dict]:
             rephrased += 1
     event_rows, event_meta = load_dump_events()
     events_added = add_dump_events(chosen, event_rows)
+    para_rows, para_meta = load_dump_para()
+    para_added = add_dump_people(chosen, [r for r in para_rows if r["category"] in ("player-birthday", "player-death")])
+    para_events_added = add_dump_events(chosen, [r for r in para_rows if r["category"] in EVENT_CATEGORIES])
     for row in awards:
         if not row.get("eventDate") or not (row.get("winnerName") or (row.get("person") or {}).get("name")) or not row.get("awardName"):
             continue
@@ -1764,8 +1786,9 @@ def build_facts() -> tuple[list[dict], dict]:
         "clubNameVotes": sorted([fid, name, n] for (fid, name), n in name_votes(games + finals + franchise).items()),
         "wikidataDump": dump_meta,
         "wikidataDumpEvents": event_meta,
+        "wikidataDumpPara": para_meta,
     }
-    print(json.dumps({"priorityAdded": priority_added, "wikidataDumpAdded": dump_added, "listPeopleAdded": list_added, "wikidataDumpEventsAdded": events_added,
+    print(json.dumps({"priorityAdded": priority_added, "wikidataDumpAdded": dump_added, "listPeopleAdded": list_added, "wikidataDumpEventsAdded": events_added, "paraPeopleAdded": para_added, "paraEventsAdded": para_events_added,
                       "priorityRephrased": rephrased, "datedGameLeagues": DATED["leaguesChanged"], "retiredNumbers": sum(1 for f in facts if f.get("category") == "retired-number"), "allStarGames": sum(1 for f in facts if f.get("category") == "all-star"), "gameFeats": sum(1 for f in facts if f.get("category") == "game-feat"), "jerseyNumbers": sum(1 for f in facts if f.get("jerseyNumber") is not None and f.get("category") != "retired-number"), "facts": len(facts), "droppedThin": dropped, "mergedSameEvent": merged_events}, indent=2))
     return facts, meta
 
@@ -1813,6 +1836,7 @@ def lay_out(facts: list[dict], meta: dict) -> int:
     """Stage two: the shards of data/v1 (days, feeds, indexes, people, events, store, manifest) from the facts alone. Needs no extract and no
     network, only node for the library's own ranking; it is what the Pages job and `pnpm check` run (`--layout`)."""
     dropped, merged_events, dump_meta, event_meta = meta["droppedThin"], meta["mergedSameEvent"], meta["wikidataDump"], meta["wikidataDumpEvents"]
+    para_meta = meta.get("wikidataDumpPara") or {}
     AWARD_NAMES.update(meta["awardNames"])
     # The one order the layout reads the facts in (where a club or a person is described by several, the first or the last decides): the archive's
     # own facts, then the priority list's, then the dump's, each by day.
@@ -2053,8 +2077,9 @@ def lay_out(facts: list[dict], meta: dict) -> int:
         "peopleDay": PEOPLE_DAY,
         "eventsDay": EVENTS_DAY,
         "sources": {
-            **({"wikidataDump": {**dump_meta, "factsAdded": sum(1 for row in facts if row["recordId"].startswith("wikidata:player-"))}} if dump_meta else {}),
-            **({"wikidataDumpEvents": {**event_meta, "factsAdded": sum(1 for row in facts if row["recordId"].startswith("wikidata:") and row.get("category") in EVENT_CATEGORIES)}} if event_meta else {}),
+            **({"wikidataDump": {**dump_meta, "factsAdded": sum(1 for row in facts if row["recordId"].startswith("wikidata:player-") and row.get("sport") not in PARA_SLUGS)}} if dump_meta else {}),
+            **({"wikidataDumpEvents": {**event_meta, "factsAdded": sum(1 for row in facts if row["recordId"].startswith("wikidata:") and row.get("category") in EVENT_CATEGORIES and row.get("sport") not in PARA_SLUGS)}} if event_meta else {}),
+            **({"wikidataDumpPara": {**para_meta, "factsAdded": sum(1 for row in facts if row["recordId"].startswith("wikidata:") and row.get("sport") in PARA_SLUGS)}} if para_meta else {}),
         },
         "extractOnDisk": {
             "game-on-day": 392898, "championship-final": 1867, "soccer-on-day": 10423,

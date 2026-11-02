@@ -21,4 +21,8 @@ The demo is at <https://johnmorrisdotca.github.io/meigen-sports/>: today's facts
 <img alt="Facts of Canada's Hart Memorial Trophy winners in the favourites, each with Canada's flag, the Hart Trophy and the facts' tags under the sentence." src="images/marks-desktop.png" width="720"><br><em>A flag and a trophy beside each fact (<code>?flags=1&amp;trophies=1</code>).</em>
 </p>
 
+<p align="center">
+<img alt="The favourites for the sport wheelchair tennis: births and deaths of famous people, each with a flag and the phrase 'wheelchair tennis player' and nothing else about the body." src="images/para-desktop.png" width="720"><br><em>A para sport in the favourites (<code>?sport=wheelchair-tennis</code>): the sport's name, never a class or a health word.</em>
+</p>
+
 Every choice in the favourites is in the address (`?country=RO&decade=1990s&person=Q209518&day=1`), so a view can be sent. The flag is drawn only where the data says it is unambiguous (`flagOf`) and [Hata](https://github.com/johnmorrisdotca/hata) has it; the trophy is the very trophy where [Dougu Sports](https://github.com/johnmorrisdotca/dougu-sports) has a likeness and its plain cup where it has none ([which, in docs/tags.md](./tags.md#trophies)). Both are devDependencies of the demo: the library imports neither.

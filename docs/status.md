@@ -18,6 +18,7 @@ Version 0.20.2 on `main`. The work of ticket cmvfh0kqd0000i90665rmo7sw (SPX-610)
 | 0.19.3 | A retired number names the club of its day, a final or All-Star Game the building of its year, and a game of the National Association, American Association, Union Association, Players' League or Federal League says its own league, not MLB (`pipeline/extract_dated_names.py`). |
 | 0.20.1 | 142 more NHL retirements (397 retired numbers), the early leagues named on a club's identity, the demo's league menu in full names, and a rebuild that stops without a fresh `extract_dated_names.json`. |
 | 0.20.2 | Two games the database has corrected are left out until a fresh extract; eight finals no longer say "Kia Forum" before 2021. |
+| 0.21.0 | 961 facts of para sports (wheelchair sports, goalball, boccia, the Paralympic Games and the rest): famous people and the editions and team results, the sport's name only, never a class or a word for the body (`docs/para-sports.md`). |
 
 "One wording" (the Python converter's own sentences) was already finished in 0.6.0: `test/captions.test.ts` holds every stored sentence to the library's templates. The 0.4.0 audit's other open items are done or have a ticket below.
 

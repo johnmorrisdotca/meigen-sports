@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readdirSync, readFileSync } from "node:fs";
 import test from "node:test";
 import type { OnThisDayRecord } from "../src/schema.ts";
+import { isParaSport } from "../scripts/para.ts";
 
 /**
  * The births and deaths of sports people of every sport that the Wikidata dump (CC0) adds: each is a fact with its Q id, a short phrase from data
@@ -12,7 +13,7 @@ const shard = (path: string): OnThisDayRecord[] => (JSON.parse(readFileSync(`${r
 const store = new Map<string, OnThisDayRecord>();
 for (const name of readdirSync(`${root}/store`)) for (const r of shard(`store/${name}`)) store.set(r.recordId, r);
 const all = [...store.values()];
-const dump = all.filter((r) => r.recordId.startsWith("wikidata:player-"));
+const dump = all.filter((r) => r.recordId.startsWith("wikidata:player-") && !isParaSport(r.sport));
 const manifest = JSON.parse(readFileSync(`${root}/manifest.json`, "utf8")) as { sources?: { wikidataDump?: Record<string, unknown> }; peopleDay?: number };
 
 const SENSITIVE = /\b(?:female|male|woman|women|girl|boy|lady|gentleman|sportswoman|sportsman|gay|lesbian|bisexual|transgender|queer|lgbt\w*|son|daughter|father|mother|wife|husband|brother|sister|widow|spouse|married|partner|family|jewish|christian|catholic|muslim|islamic|hindu|buddhist|sikh|atheist|religious|priest|bishop|pastor|imam|rabbi|monk|nun|protestant|orthodox|anglican|lutheran|missionary|republican|democrat|conservative|liberal|socialist|communist|nationalist|ethnic|disabled|disability|deaf|blind|paralympic\w*|para|wheelchair|cancer|illness|convicted|criminal|murder\w*|terror\w*|nazi|fascist|doping|banned)\b/i;

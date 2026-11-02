@@ -48,9 +48,9 @@ OUT_NAME = "extract_wikidata_links.json"
 QID = re.compile(r"^Q[1-9]\d*$")
 # The extracts whose rows name a person (`person.qid`) or an event (`entityId`, or the Q id inside a Wikidata record id).
 PERSON_EXTRACTS = (
-    "extract_wikidata_dump_people.json", "player-birthday-candidates.json", "extract_deaths.json", "extract_person_context.json", "extract_awards_season.json",
+    "extract_wikidata_dump_people.json", "extract_wikidata_dump_para.json", "player-birthday-candidates.json", "extract_deaths.json", "extract_person_context.json", "extract_awards_season.json",
 )
-EVENT_EXTRACTS = ("extract_wikidata_dump_events.json",)
+EVENT_EXTRACTS = ("extract_wikidata_dump_events.json", "extract_wikidata_dump_para.json")
 WIKIS = (("en", "enwiki"), ("fr", "frwiki"), ("ja", "jawiki"))
 
 

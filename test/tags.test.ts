@@ -5,6 +5,7 @@ import { factsFor, kindTagsOf, tagsOf } from "../src/facts.ts";
 import { loadCountry, loadCountryIds, loadFactsById, queryFactIds, queryFacts, storeBucket } from "../src/load.ts";
 import { wikipediaPageUrl, wikipediaUrl } from "../src/links.ts";
 import type { OnThisDayRecord } from "../src/schema.ts";
+import { isParaSport } from "../scripts/para.ts";
 import { NAMESPACED_TAG, TAG_NAMESPACES, countriesOf, derivedTags, flagOf, isNamespaced, slugOf, tagValues, VALID_TAG } from "../src/tags.ts";
 
 const root = "data/v1/0.1.0/facts";
@@ -28,6 +29,8 @@ function diskFeed() {
 // short words are held only against the namespaces that are not names.
 const FORBIDDEN = /\b(?:sex|gender|female|male|woman|women|womens|ethnic\w*|racial|religio\w*|christian|catholic|muslim|jewish|hindu|buddhist|atheist|politic\w*|republican|democrat\w*|conservative|liberal|family|father|mother|daughter|wife|husband|spouse|health|disab\w*|illness|cancer|paralympic|deaf|blind|wheelchair)\b/i;
 const FORBIDDEN_IN_A_CODE = /\b(?:man|men|mens|girl|girls|boy|boys|ladies|race|black|white|party|son|para)\b/i;
+// A para sport is named by its own name (`wheelchair-tennis`, `para-swimming`); nothing else about the body is a tag.
+const FORBIDDEN_IN_A_PARA_SPORT = new RegExp(FORBIDDEN.source.replace("|paralympic", "").replace("|wheelchair", ""), "i");
 const NAMES = new Set(["award", "title", "team", "person", "venue", "competition", "sport"]);
 const SEX_IN_A_SPORT = /(?:^|-)(?:women|womens|men|mens|female|male|girls|boys|ladies|para|paralympic|wheelchair|deaf|blind)(?:-|$)/;
 
@@ -42,8 +45,8 @@ test("every tag is a history type or `namespace:value` from the vocabulary, with
       const [namespace = "", value = ""] = tag.split(":");
       assert.ok(namespaces.has(namespace), `${r.recordId}: ${tag} is not in the vocabulary`);
       const words = `${namespace} ${value.replaceAll("-", " ").replaceAll("_", " ")}`;
-      assert.doesNotMatch(words, FORBIDDEN, `${r.recordId}: ${tag} says what no tag may say`);
-      if (namespace === "sport") assert.doesNotMatch(value, SEX_IN_A_SPORT, `${r.recordId}: ${tag}`);
+      assert.doesNotMatch(words, namespace === "sport" && isParaSport(value) ? FORBIDDEN_IN_A_PARA_SPORT : FORBIDDEN, `${r.recordId}: ${tag} says what no tag may say`);
+      if (namespace === "sport" && !isParaSport(value)) assert.doesNotMatch(value, SEX_IN_A_SPORT, `${r.recordId}: ${tag}`);
       if (!NAMES.has(namespace)) assert.doesNotMatch(words, FORBIDDEN_IN_A_CODE, `${r.recordId}: ${tag} says what no tag may say`);
     }
   }

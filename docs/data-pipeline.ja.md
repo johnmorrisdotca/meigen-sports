@@ -4,7 +4,7 @@
 
 Meigen Sports は、原資料を DS1 に保存し、既存の Turso データベースで選別・確認し、審査済みの静的ファイルを GitHub Pages で公開します。npm パッケージにはオフラインで使える型付きデータも含まれます。利用者が公開フィードを読むとき、DS1 や Turso には接続しません。
 
-確認済みデータには、引用が30件（Gutenberg の抜粋22件と Wikiquote のスポーツ8件）、公開する日付の出来事（同梱フィード）が1052件あります（同じ出来事の重複10件を一つにまとめました）。同梱フィードは366日のうち142日をカバーし、224日は未収録です。別の「過去の今日」の事実フィードには104,833件があり、366日すべてをカバーします。長期的には SPX の DS1 にある歴史データを中心にし、権利を確認した公開データを補足として使います。データの利用条件は、パッケージコードの MIT ライセンスとは別です。
+確認済みデータには、引用が30件（Gutenberg の抜粋22件と Wikiquote のスポーツ8件）、公開する日付の出来事（同梱フィード）が1052件あります（同じ出来事の重複10件を一つにまとめました）。同梱フィードは366日のうち142日をカバーし、224日は未収録です。別の「過去の今日」の事実フィードには105,794件があり、366日すべてをカバーします。長期的には SPX の DS1 にある歴史データを中心にし、権利を確認した公開データを補足として使います。データの利用条件は、パッケージコードの MIT ライセンスとは別です。
 
 ## 1. データの再生成と照合
 
@@ -67,6 +67,20 @@ python3 pipeline/manual.py turso-export --out reviewed-export.json --apply
 版管理された静的ファイルは `data/v1/<dataVersion>/` にあります。`all.json`、`quotes.json`、`history.json`、日付別、競技別、安定したエンティティ ID 別のシャードを含みます。`manifest.json` は各ファイルのハッシュ、サイズ、件数と実際のカレンダー欠落日を記録します。存在しない日を埋めません。
 
 2026年10月15日、DS1 への初回アーカイブと候補データの読み込みが完了しました。取得履歴99件、異なる原資料ハッシュ95件、候補レコード184件を保存し、保存されたバイト列のハッシュと全件の読み戻しを検証しました。既存のローカル Dropbox 原資料フォルダーにもハッシュ確認済みのコピーがありますが、リモートへの同期完了は独立に確認していません。Turso への読み込み、審査、エクスポートは未実施で、実サーバーでの動作も未検証です。アーカイブ保存だけでは公開承認になりません。詳しい環境設定、SQL、審査条件は[手動パイプライン手順書](../pipeline/README.md)と[原資料一覧](../data-sources/README.md)を参照してください。
+
+## 5. パラ競技（同じダンプから）
+
+2026-11-02 の John の決定で、車いす競技、ゴールボール、ボッチャ、ほかのパラ競技、パラリンピック大会は、競技の名前だけで載せます。`pipeline/wikidata_dump_para.py` が、これまでと同じ絞り込み済みのファイルと `data-sources/para-sports.json`（競技の一覧。Wikidata の項目で指定）を読み、`extract_wikidata_dump_para.json` を書きます。`convert_extract.py` が、人と出来事をほかと同じように加えます（`facts/manifest.json` の `sources.wikidataDumpPara`）。国と Wikipedia の題名のために `wikidata_links.py` も新しい抽出を読むので、抽出のあと、`pnpm data:facts` の前に実行します。
+
+```sh
+python3 -I pipeline/wikidata_dump_para.py --report
+python3 -I pipeline/wikidata_dump_para.py
+python3 -I pipeline/wikidata_links.py
+python3 -I pipeline/test_wikidata_dump_para.py
+python3 -I pipeline/coverage_para.py     # docs/para-sports.md
+```
+
+有名さの決め方、件数、載せなかったものは [パラ競技](para-sports.ja.md) にあります。クラスの符号、障害、体に関する言葉は保存しません。人物の説明文も使いません。
 
 ## 古い版の原資料も利用できる
 

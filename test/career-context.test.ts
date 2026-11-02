@@ -3,6 +3,7 @@ import { readdirSync, readFileSync } from "node:fs";
 import test from "node:test";
 import { captionFromFact } from "../src/sentences.ts";
 import type { OnThisDayRecord } from "../src/schema.ts";
+import { isParaSport } from "../scripts/para.ts";
 
 const root = "data/v1/0.1.0/facts";
 const store: OnThisDayRecord[] = [];
@@ -43,10 +44,10 @@ test("a player with statistics but no roster row has his club, and a Hall of Fam
   assert.ok((jeter.awardCount ?? 0) >= 10, `Jeter has ${jeter.awardCount} awards`);
 });
 
-test("the facts of other sports are about their own sport, and no para sport is published", () => {
+test("the facts of other sports are about their own sport, and a para sport is only one of the listed ones", () => {
   const sports = new Set(people.map((r) => r.sport));
   for (const sport of ["tennis", "boxing", "athletics", "golf", "cricket", "formula-one", "professional-wrestling"]) assert.ok(sports.has(sport), `no ${sport} people`);
-  for (const sport of sports) assert.doesNotMatch(sport ?? "", /^(para|deaflympic|wheelchair|goalball|boccia|sitting)/, `${sport} is a para sport`);
+  for (const sport of sports) assert.ok(isParaSport(sport) || !/^(para|deaflympic|wheelchair|goalball|boccia|sitting|standing)/.test(sport ?? ""), `${sport} is a para sport that is not listed`);
 });
 
 test("a priority athlete's birthday says what he was, with no gender, para or year words", () => {

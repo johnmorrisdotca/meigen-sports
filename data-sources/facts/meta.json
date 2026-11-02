@@ -2537,5 +2537,60 @@
     "left out: a name that says today or tonight": 1
    }
   }
+ },
+ "wikidataDumpPara": {
+  "source": "Wikidata (CC0 1.0), filtered by spx-stats scripts/wikidata_dump/filter.py",
+  "dumpName": "wikidata-20261012-all.json.gz",
+  "dumpDate": "2026-10-12",
+  "dumpMd5": "83b2d2e3f578e50209fd7d3ded7364b1",
+  "dumpSha256": "b4427e4e0948833f3f321951bc0189496fd34a03100d4bdbb17950b2e0c2e46a",
+  "filteredFilesSha256": {
+   "people.jsonl.gz": "8f92b93af2e64e709737b8bb2f1742a2b9a5c33655c0059f0315792781371d4b",
+   "items.jsonl.gz": "6f8b076a1bfd44607c80bdf42359ea9a3a921d6041a37461a58f9caa2f5c262e",
+   "events.jsonl.gz": "5868791e0b4621ced3e4fd60ec1c010707e6483c9f4ed1a29481768884560746",
+   "labels.jsonl.gz": "24f662885a5fc5fa2fdf6007e8eac29e328a0b6753c65137ec52d7e0515516e2"
+  },
+  "peopleInFilteredFile": 1427102,
+  "options": {
+   "celebrityEditions": 10,
+   "medallistEditions": 1,
+   "veteranGames": 4,
+   "veteranEditions": 3,
+   "eventEditions": 1
+  },
+  "report": {
+   "rows": 963,
+   "byCategory": {
+    "player-birthday": 533,
+    "player-death": 116,
+    "competition-start": 134,
+    "competition-end": 135,
+    "sport-event": 45
+   },
+   "peoplePublished": 551,
+   "peopleByFameTest": {
+    "veteran": 192,
+    "celebrity": 57,
+    "deceased": 115,
+    "medallist": 170,
+    "listed": 17
+   },
+   "withWinner": 6,
+   "leftOut": {
+    "people in a para sport read": 5466,
+    "left out: not famous by the para rule (not listed, no medal or title, not deceased with an English article, under 4 Games, under 10 editions)": 2888,
+    "left out: no Gregorian day-precision birth or death": 1983,
+    "left out: no usable English name": 70,
+    "left out: dates do not agree (death before birth, or past 115 years)": 1,
+    "events in a para sport read": 1891,
+    "left out: no usable day (day precision, Gregorian, not January 1 or December 31)": 511,
+    "left out: a season, a play-off, a story about an event, or a name that says today": 77,
+    "left out: the name holds a class code or a health word": 1065,
+    "left out: Games for people chosen by a condition, not a sport": 8,
+    "left out: a multi-sport event that only includes a para sport": 3,
+    "left out: no Wikipedia article": 11,
+    "left out: the year in the name is not the year of the date": 10
+   }
+  }
  }
 }

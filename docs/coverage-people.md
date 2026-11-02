@@ -210,4 +210,4 @@ The package holds **58,019 births and deaths** with a day-precision date, of **1
 - **January 1**, as said above.
 - A sport below ten people has no more than the Wikipedia editions allow; a person with fewer than ten editions (five with an Olympic medal or a Hall of Fame) is not published, because a short article is not fame.
 - A person whose first occupation is not a sport one, or whose description opens with another trade (a president, an actor), is not published as a sports person; a Julian date is not converted, so it is left out.
-- Para and wheelchair sports, and a description that names a crime, are not published (John's rule: no para label, no health).
+- A description that names a crime is not used. Para sports are counted apart, in [para sports](para-sports.md): the sport's name only, never a class or a health word.

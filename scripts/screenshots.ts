@@ -45,6 +45,16 @@ try {
   await page.locator("#fav-facts").first().screenshot({ path: `${output}/marks-desktop.png` });
   await page.close();
  }
+ // A para sport in the favourites (`?sport=wheelchair-tennis`): the people of the sport, each with the sport's name and nothing else about the body.
+ {
+  const page = await browser.newPage({ viewport: { width: 1280, height: 900 }, deviceScaleFactor: 2, reducedMotion: "reduce" });
+  await page.goto(`http://127.0.0.1:${port}/?lang=en&flags=1&sport=wheelchair-tennis`);
+  await page.locator("#fav-facts .record").first().waitFor();
+  await page.waitForLoadState("networkidle");
+  const box = (await page.locator("#fav-facts").first().boundingBox())!;
+  await page.screenshot({ path: `${output}/para-desktop.png`, fullPage: true, clip: { x: box.x, y: box.y, width: box.width, height: Math.min(box.height, 1000) } });
+  await page.close();
+ }
  console.log(`Screenshots written to ${output}`);
 } finally {
  await browser?.close();

@@ -234,7 +234,7 @@ def main() -> int:
         "",
         f"Grid has {len(rows)} sport×decade×tag rows; table shows {len(shown)} nonempty cells. Full grid: [coverage-matrix.json](../data-sources/coverage-matrix.json).",
         "",
-        "People are never selected or labelled by sex, gender, para status or impairment.",
+        "People are never selected or labelled by sex, gender or impairment; a para sport is named by its own name only ([para sports](para-sports.md)).",
         "",
     ]
     OUT_MD.write_text("\n".join(lines), encoding="utf-8")

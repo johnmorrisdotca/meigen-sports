@@ -4,7 +4,7 @@
 
 Meigen Sports keeps original sources on DS1, uses the existing Turso database for curation, and serves reviewed static files through GitHub Pages. An npm installation also has typed offline records. Reading a public quote does not query DS1 or Turso.
 
-The reviewed source inputs have 30 quotations (22 Gutenberg excerpts and 8 Wikiquote sports lines) and 1052 published dated history rows (10 same-event duplicates merged) in the bundled feed. They cover 142 month-days, leaving 224 gaps. The separate on-this-day fact feeds hold 104,833 facts that cover all 366 days. The longer-term feed should draw primarily from SPX's existing historical facts on DS1; source-verified open data supplements those facts. A source's data rights remain distinct from the package's MIT code licence.
+The reviewed source inputs have 30 quotations (22 Gutenberg excerpts and 8 Wikiquote sports lines) and 1052 published dated history rows (10 same-event duplicates merged) in the bundled feed. They cover 142 month-days, leaving 224 gaps. The separate on-this-day fact feeds hold 105,794 facts that cover all 366 days. The longer-term feed should draw primarily from SPX's existing historical facts on DS1; source-verified open data supplements those facts. A source's data rights remain distinct from the package's MIT code licence.
 
 ## 1. Rebuild and verify
 
@@ -93,6 +93,20 @@ python3 -I pipeline/coverage_events.py     # docs/coverage-events.md
 ```
 
 An edition with a start and an end is two facts (`competition-start`, `competition-end` with its winner), a single day one (`sport-event`). A season, a play-off, an edition of a league SPX holds, para sport, a date on January 1 or December 31 and an end before its start are left out; the place and the winner are the item's own; the winner who is a person is not named where the event's name carries a sex marker, and a national team is named by its country. 28,205 events in 185 sports were added, by sport and by day in [coverage of events](coverage-events.md); `test/dump-events.test.ts` holds the rules.
+
+## 7. Para sports, from the same dump
+
+John's decision of 2026-11-02: wheelchair sports, goalball, boccia, the other para sports and the Paralympic Games are published, by the sport's name only. `pipeline/wikidata_dump_para.py` reads the same filtered files and `data-sources/para-sports.json` (the sports, by Wikidata item) and writes `extract_wikidata_dump_para.json`; `convert_extract.py` adds its people and events like the others (`sources.wikidataDumpPara` in `facts/manifest.json`). `wikidata_links.py` reads the new extract too, for countries and Wikipedia titles, so run it after the extract and before `pnpm data:facts`.
+
+```sh
+python3 -I pipeline/wikidata_dump_para.py --report
+python3 -I pipeline/wikidata_dump_para.py
+python3 -I pipeline/wikidata_links.py
+python3 -I pipeline/test_wikidata_dump_para.py
+python3 -I pipeline/coverage_para.py     # docs/para-sports.md
+```
+
+The fame rule, the counts and what is left out are in [para sports](para-sports.md). A class code, an impairment or any word for the body is never stored, and a person's own description is never used.
 
 ## Older sources remain useful
 

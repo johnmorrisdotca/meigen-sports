@@ -2,6 +2,7 @@ import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { resolve } from "node:path";
 import type { OnThisDayRecord } from "../src/schema.ts";
 import { factDate } from "../src/templates/index.ts";
+import { CLASS_CODE, HEALTH, isParaSport } from "./para.ts";
 
 /**
  * The golden facts: famous, well-sourced facts the published data MUST hold with the right date and key
@@ -139,8 +140,10 @@ export const NEVER: Rule[] = [
     violations: (rs) => rs.filter((r) => (r.league === "wc" || r.league === "wwc") && r.stage === "final" && r.homeScore != null && r.homeScore === r.awayScore && / tied /.test(r.text ?? "")).map((r) => r.recordId) },
   { id: "no-invented-day", says: "no franchise identity or award is dated on a placeholder day (Jan 1, Mar 1, Jul 1)",
     violations: (rs) => rs.filter((r) => r.category === "franchise-event" && /-(01-01|03-01|07-01)$/.test(r.eventDate ?? "")).map((r) => r.recordId) },
-  { id: "no-sex-or-para-labels", says: "no sport, tag or text carries a women- or para- batch label (John's rule: no sex, gender or para classification in the data)",
-    violations: (rs) => rs.filter((r) => /^(women|para)[-_]/.test(r.sport ?? "") || (r.tags ?? []).some((t) => /^(women|para)[-_]/.test(t))).map((r) => r.recordId) },
+  { id: "no-sex-or-para-labels", says: "no sport, tag or text carries a women- batch label, and a para- sport is only one of data-sources/para-sports.json (John's rule: no sex, gender or para classification in the data)",
+    violations: (rs) => rs.filter((r) => /^women[-_]/.test(r.sport ?? "") || (/^para[-_]/.test(r.sport ?? "") && !isParaSport(r.sport)) || (r.tags ?? []).some((t) => /^(women|para)[-_]/.test(t))).map((r) => r.recordId) },
+  { id: "para-facts-name-the-sport-only", says: "a fact about a para sport holds no class code (T54, S9, BC1, PR2 ...) and no word for the body (John, 2026-11-02: the sport name only)",
+    violations: (rs) => rs.filter((r) => isParaSport(r.sport) && (CLASS_CODE.test(JSON.stringify([r.text, r.textJa, r.highlight, r.epithet, r.eventLabel, r.eventPlace, r.winnerName, r.birthPlace, r.tags])) || HEALTH.test(JSON.stringify([r.text, r.textJa, r.highlight, r.epithet, r.eventLabel, r.eventPlace, r.winnerName, r.birthPlace, r.tags])))).map((r) => r.recordId) },
   { id: "unique-record-ids", says: "no fact is stored twice",
     violations: (rs) => { const seen = new Set<string>(); const dup: string[] = []; for (const r of rs) { if (seen.has(r.recordId)) dup.push(r.recordId); seen.add(r.recordId); } return dup; } },
   { id: "clean-sentences", says: "a sentence never holds undefined, null, NaN, \"(none)\" or a doubled space, and ends with a full stop",

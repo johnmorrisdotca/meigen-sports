@@ -112,7 +112,7 @@ def main() -> None:
         "## What is never a tag",
         "",
         "Sex or gender, ethnicity, religion, politics, family and health are not tags, and no field of a fact holds them: the Wikidata dump was filtered before the package saw it, "
-        "para, wheelchair, deaf and blind sport is left out, and `test/tags.test.ts` fails if a tag's namespace or value says any of those words. "
+        "deaf and blind sport is left out, and `test/tags.test.ts` fails if a tag's namespace or value says any of those words. A para sport is a sport tag (`sport:wheelchair-tennis`, `sport:goalball`) and nothing more: no class, no impairment ([para sports](para-sports.md)). "
         "A tag for a person's sex would be needed to say a sport is \"women's\"; the package does not, and a sport is its sport.",
         "",
         "## What a tag is not",

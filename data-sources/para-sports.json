@@ -1,0 +1,340 @@
+{
+ "note": "The para sports the package publishes, by Wikidata sport item (P641). The slug is the sport's own name; `who` is the phrase a person of that sport is called. A sport whose name states an impairment (blind, deaf, amputee) is not on the list. Never a class code.",
+ "sports": [
+  {
+   "qid": "Q1757181",
+   "slug": "para-athletics",
+   "label": "Para athletics",
+   "who": "para athlete",
+   "en": "Para athletics",
+   "ja": "パラ陸上競技"
+  },
+  {
+   "qid": "Q1753702",
+   "slug": "wheelchair-racing",
+   "label": "wheelchair athletics",
+   "who": "wheelchair racer",
+   "en": "Wheelchair racing",
+   "ja": "車いすレース"
+  },
+  {
+   "qid": "Q2021503",
+   "slug": "wheelchair-racing",
+   "label": "wheelchair racing",
+   "who": "wheelchair racer",
+   "en": "Wheelchair racing",
+   "ja": "車いすレース"
+  },
+  {
+   "qid": "Q2413978",
+   "slug": "para-swimming",
+   "label": "Para swimming",
+   "who": "para swimmer",
+   "en": "Para swimming",
+   "ja": "パラ水泳"
+  },
+  {
+   "qid": "Q3085248",
+   "slug": "para-table-tennis",
+   "label": "para table tennis",
+   "who": "para table tennis player",
+   "en": "Para table tennis",
+   "ja": "パラ卓球"
+  },
+  {
+   "qid": "Q18629677",
+   "slug": "para-badminton",
+   "label": "para badminton",
+   "who": "para badminton player",
+   "en": "Para badminton",
+   "ja": "パラバドミントン"
+  },
+  {
+   "qid": "Q2261949",
+   "slug": "para-cycling",
+   "label": "Para cycling",
+   "who": "para cyclist",
+   "en": "Para cycling",
+   "ja": "パラサイクリング"
+  },
+  {
+   "qid": "Q74542",
+   "slug": "para-alpine-skiing",
+   "label": "Para alpine skiing",
+   "who": "para alpine skier",
+   "en": "Para alpine skiing",
+   "ja": "パラアルペンスキー"
+  },
+  {
+   "qid": "Q82232",
+   "slug": "para-cross-country-skiing",
+   "label": "Para cross-country skiing",
+   "who": "para cross-country skier",
+   "en": "Para cross-country skiing",
+   "ja": "パラクロスカントリースキー"
+  },
+  {
+   "qid": "Q3952256",
+   "slug": "para-cross-country-skiing",
+   "label": "para Nordic skiing",
+   "who": "para cross-country skier",
+   "en": "Para cross-country skiing",
+   "ja": "パラクロスカントリースキー"
+  },
+  {
+   "qid": "Q2671658",
+   "slug": "para-biathlon",
+   "label": "Para biathlon",
+   "who": "para biathlete",
+   "en": "Para biathlon",
+   "ja": "パラバイアスロン"
+  },
+  {
+   "qid": "Q56345303",
+   "slug": "para-snowboard",
+   "label": "Para snowboard",
+   "who": "para snowboarder",
+   "en": "Para snowboard",
+   "ja": "パラスノーボード"
+  },
+  {
+   "qid": "Q963312",
+   "slug": "para-ice-hockey",
+   "label": "Para ice hockey",
+   "who": "para ice hockey player",
+   "en": "Para ice hockey",
+   "ja": "パラアイスホッケー"
+  },
+  {
+   "qid": "Q3126275",
+   "slug": "para-powerlifting",
+   "label": "Para powerlifting",
+   "who": "para powerlifter",
+   "en": "Para powerlifting",
+   "ja": "パラパワーリフティング"
+  },
+  {
+   "qid": "Q76762302",
+   "slug": "para-powerlifting",
+   "label": "para weightlifting",
+   "who": "para powerlifter",
+   "en": "Para powerlifting",
+   "ja": "パラパワーリフティング"
+  },
+  {
+   "qid": "Q2087929",
+   "slug": "para-judo",
+   "label": "Para judo",
+   "who": "para judoka",
+   "en": "Para judo",
+   "ja": "パラ柔道"
+  },
+  {
+   "qid": "Q3363711",
+   "slug": "para-triathlon",
+   "label": "Para triathlon",
+   "who": "para triathlete",
+   "en": "Para triathlon",
+   "ja": "パラトライアスロン"
+  },
+  {
+   "qid": "Q2735901",
+   "slug": "para-shooting",
+   "label": "shooting Para sport",
+   "who": "para shooter",
+   "en": "Para shooting",
+   "ja": "パラ射撃"
+  },
+  {
+   "qid": "Q4345014",
+   "slug": "para-taekwondo",
+   "label": "para taekwondo",
+   "who": "para taekwondo athlete",
+   "en": "Para taekwondo",
+   "ja": "パラテコンドー"
+  },
+  {
+   "qid": "Q7133630",
+   "slug": "para-equestrian",
+   "label": "Para equestrian",
+   "who": "para equestrian",
+   "en": "Para equestrian",
+   "ja": "パラ馬術"
+  },
+  {
+   "qid": "Q12043782",
+   "slug": "para-equestrian",
+   "label": "para dressage",
+   "who": "para equestrian",
+   "en": "Para equestrian",
+   "ja": "パラ馬術"
+  },
+  {
+   "qid": "Q10259864",
+   "slug": "para-archery",
+   "label": "Para archery",
+   "who": "para archer",
+   "en": "Para archery",
+   "ja": "パラアーチェリー"
+  },
+  {
+   "qid": "Q2506562",
+   "slug": "para-canoe",
+   "label": "Para canoe",
+   "who": "para canoeist",
+   "en": "Para canoe",
+   "ja": "パラカヌー"
+  },
+  {
+   "qid": "Q1575010",
+   "slug": "para-rowing",
+   "label": "Para rowing",
+   "who": "para rower",
+   "en": "Para rowing",
+   "ja": "パラボート"
+  },
+  {
+   "qid": "Q60982206",
+   "slug": "para-climbing",
+   "label": "paraclimbing",
+   "who": "para climber",
+   "en": "Para climbing",
+   "ja": "パラクライミング"
+  },
+  {
+   "qid": "Q85865742",
+   "slug": "para-bowls",
+   "label": "para bowls",
+   "who": "para bowls player",
+   "en": "Para bowls",
+   "ja": "パラボウルズ"
+  },
+  {
+   "qid": "Q10389571",
+   "slug": "para-sailing",
+   "label": "para sailing",
+   "who": "para sailor",
+   "en": "Para sailing",
+   "ja": "パラセーリング"
+  },
+  {
+   "qid": "Q115945899",
+   "slug": "para-surfing",
+   "label": "para surfing",
+   "who": "para surfer",
+   "en": "Para surfing",
+   "ja": "パラサーフィン"
+  },
+  {
+   "qid": "Q1128216",
+   "slug": "wheelchair-basketball",
+   "label": "wheelchair basketball",
+   "who": "wheelchair basketball player",
+   "en": "Wheelchair basketball",
+   "ja": "車いすバスケットボール"
+  },
+  {
+   "qid": "Q1153025",
+   "slug": "wheelchair-tennis",
+   "label": "wheelchair tennis",
+   "who": "wheelchair tennis player",
+   "en": "Wheelchair tennis",
+   "ja": "車いすテニス"
+  },
+  {
+   "qid": "Q1150656",
+   "slug": "wheelchair-curling",
+   "label": "wheelchair curling",
+   "who": "wheelchair curler",
+   "en": "Wheelchair curling",
+   "ja": "車いすカーリング"
+  },
+  {
+   "qid": "Q844443",
+   "slug": "wheelchair-rugby",
+   "label": "wheelchair rugby",
+   "who": "wheelchair rugby player",
+   "en": "Wheelchair rugby",
+   "ja": "ウィルチェアーラグビー"
+  },
+  {
+   "qid": "Q2440459",
+   "slug": "wheelchair-fencing",
+   "label": "wheelchair fencing",
+   "who": "wheelchair fencer",
+   "en": "Wheelchair fencing",
+   "ja": "車いすフェンシング"
+  },
+  {
+   "qid": "Q493742",
+   "slug": "wheelchair-dancesport",
+   "label": "Wheelchair dancesport",
+   "who": "wheelchair dancesport dancer",
+   "en": "Wheelchair dancesport",
+   "ja": "車いすダンススポーツ"
+  },
+  {
+   "qid": "Q10293684",
+   "slug": "wheelchair-handball",
+   "label": "wheelchair handball",
+   "who": "wheelchair handball player",
+   "en": "Wheelchair handball",
+   "ja": "車いすハンドボール"
+  },
+  {
+   "qid": "Q3452885",
+   "slug": "wheelchair-rugby-league",
+   "label": "wheelchair rugby league",
+   "who": "wheelchair rugby league player",
+   "en": "Wheelchair rugby league",
+   "ja": "車いすラグビーリーグ"
+  },
+  {
+   "qid": "Q647559",
+   "slug": "goalball",
+   "label": "goalball",
+   "who": "goalball player",
+   "en": "Goalball",
+   "ja": "ゴールボール"
+  },
+  {
+   "qid": "Q3285658",
+   "slug": "boccia",
+   "label": "boccia",
+   "who": "boccia player",
+   "en": "Boccia",
+   "ja": "ボッチャ"
+  },
+  {
+   "qid": "Q597628",
+   "slug": "sitting-volleyball",
+   "label": "sitting volleyball",
+   "who": "sitting volleyball player",
+   "en": "Sitting volleyball",
+   "ja": "シッティングバレーボール"
+  },
+  {
+   "qid": "Q15848915",
+   "slug": "standing-volleyball",
+   "label": "standing volleyball",
+   "who": "standing volleyball player",
+   "en": "Standing volleyball",
+   "ja": "スタンディングバレーボール"
+  }
+ ],
+ "games": [
+  {
+   "qid": "Q589184",
+   "label": "Paralympic sport"
+  },
+  {
+   "qid": "Q814517",
+   "label": "Para sport"
+  }
+ ],
+ "gamesSlug": "paralympics",
+ "gamesName": {
+  "en": "Paralympic Games",
+  "ja": "パラリンピック"
+ }
+}

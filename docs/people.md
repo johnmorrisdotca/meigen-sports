@@ -18,7 +18,7 @@
 | `birth_on`, `death_on` | Full date, only where Wikidata gives the day; empty otherwise |
 | `source` | Where the person comes from: the Wikidata item and the English Wikipedia article |
 
-Never recorded: sex or gender, ethnicity, religion, health (no para label, impairment class or classification code), family, politics.
+Never recorded: sex or gender, ethnicity, religion, health (no impairment, impairment class or classification code; a para sport is named by its own name only: [para sports](para-sports.md)), family, politics.
 
 ## In the shards
 
@@ -51,6 +51,6 @@ Wikidata is used as stated, and a few statements are wrong (a few people sit in 
 ## What the list is not yet
 
 - World champions and halls of fame are not separate sources; they are caught by the language count only.
-- Paralympic medallists are honours like any other, but their lists are not read yet. Nobody is selected by a para flag.
+- Paralympic medallists are honours like any other. Para sports are a separate pass, with their own fame rule ([para sports](para-sports.md)); nobody is selected by a para flag.
 - The wider top tier (about 20,000 to 40,000 people) is a rerun with `MEIGEN_SEARCH_PAGES` raised; see [pipeline/people/README.md](../pipeline/people/README.md).
 - Sources: Wikidata is CC0; the Olympic medallist lists are English Wikipedia, CC BY-SA 4.0 (the counts are facts read from them). Never Sports Reference or ESPN.
