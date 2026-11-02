@@ -4,6 +4,15 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+## [0.22.0] - 2026-11-02
+
+- Fix: a birth place in a state that no longer exists says the town alone: "London", "Hamburg", "Baku", not "London, Roman Empire", "Hamburg, Holy Roman Empire", "Baku, Russian Empire" (990 facts; empires, margraviates, kingdoms and principalities that are gone, the Soviet Union, East Germany and the like). Wikidata's first country of a place is not the country of the day. The rule is `PAST_STATE` in `pipeline/wikidata_dump_people.py` (the para pass uses it too); the priority list's own places keep the country of the day. Test: `test/places.test.ts`, `pipeline/test_wikidata_dump_people.py`.
+- Fix: the franchise identity of the Allegheny Club (1 May 1882) no longer reads "in Allegheny Club": a source city that is the club's own name is left out.
+- Docs: a documentation site at https://johnmorrisdotca.github.io/meigen-sports/docs/ in English and Japanese: a page for every export (TSDoc with a running example on each), nine guides (getting started, plain HTML and CDNs, Vite and webpack, React, Vue, Svelte and Angular, an iframe, TypeScript and Node, how the data is built, troubleshooting, upgrading). The calendar and Japanese-calendar exports that come from koyomi-calendars are now declared here with their own docs (same values).
+- Embed page: `embed.html`, a frame for an `<iframe>` that draws what its address says (`date`, `theme`, `lang`, `layout`, `sport`, `n`, `scheme`). Test: `e2e/embed.demo.ts`.
+- Usage, tested: `examples/` holds every way of using the package (a script tag from jsDelivr and unpkg, Vite, webpack, React with a server render, Vue, Svelte, Angular, an iframe, TypeScript, Node); `pnpm test:usage` builds or runs each against the package as npm packs it and opens the pages in a browser; CI runs it.
+- Family: `scripts/check-standard.mjs` (kazoku-ui's must-have list) with `test/standard.test.ts`; kazoku-ui 0.10.0 for the demo's header, language picker, theme switch and address state.
+
 ## [0.21.0] - 2026-11-02
 
 - Data: 961 facts of para sports, in 29 sports: wheelchair basketball, tennis, curling, rugby, fencing and racing, goalball, boccia, sitting and standing volleyball, para athletics, swimming, table tennis, badminton, cycling, alpine and cross-country skiing, biathlon, snowboard, ice hockey, powerlifting, judo, taekwondo, rowing, archery, equestrian, shooting, climbing, and the Paralympic Games themselves (`paralympics`). 533 births and 116 deaths of famous people, 133 starts and 134 ends of editions and 45 single days; 5 events say the winner, a national team by its country ("won by China"). John's decision of 2026-11-02 (MODULES-93): the sport's name only. From the Wikidata dump of 2026-10-12 (CC0), each fact with its Q id; `pipeline/wikidata_dump_para.py` reads the same filtered files as the other dump passes, and the new `data-sources/para-sports.json` lists the sports by Wikidata item. Counts per sport: [docs/para-sports.md](docs/para-sports.md).
