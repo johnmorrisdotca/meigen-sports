@@ -78,8 +78,6 @@ CLASS_CODE = re.compile(
 CLASS_TOKEN = re.compile(r"\b(?:[A-Z]{1,4}\d{1,2}(?:[-–/]\d{1,2})*[A-Z]?\b|(?:PR|SH|SL|SU|WH|LW|BC|SB|SM|MH|MC|RP|PT)\d)")
 # A page about one day of a Games ("2024 Summer Paralympic - September 3rd"): the Games' own start and end say it.
 DAY_PAGE = re.compile(r"\s[-–]\s(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d", re.I)
-# A place named for the empire it was in when Wikidata's first country of the place is a long-gone state ("London, Roman Empire"): the town alone is said.
-OLD_STATE = re.compile(r",\s*(?:Holy )?Roman Empire$")
 # A word for the body: never in a fact about a para sport, in a sentence, a name, a tag or a phrase.
 HEALTH = re.compile(
     r"\b(?:impair\w*|disab\w*|handicap\w*|blind\w*|deaf\w*|visual\w*|intellectual\w*|amput\w*|cerebral|palsy|paraplegi\w*|quadriplegi\w*|tetraplegi\w*|spinal|"
@@ -217,8 +215,6 @@ def person_rows(found: list[dict], labels: dict, demonyms: dict[str, str], stats
             row["fame"] = p["why"]
             if iso and not row.get("nationality"):
                 row["nationality"] = iso
-            if row.get("birthPlace"):
-                row["birthPlace"] = OLD_STATE.sub("", row["birthPlace"])
         rows.extend(made)
     return rows
 

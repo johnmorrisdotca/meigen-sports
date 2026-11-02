@@ -84,7 +84,7 @@ python3 -I pipeline/coverage_people.py     # docs/coverage-people.md, from the p
 python3 -I pipeline/golden/add_from_dump.py [--write]   # golden facts for famous athletes of every sport, checked against the dump
 ```
 
-`convert_extract.py` reads the extract after the others and adds a birth or death only for a person it does not already hold for that kind. The dump's name, date and hashes land in `data/v1/0.1.0/facts/manifest.json` under `sources.wikidataDump`.
+`convert_extract.py` reads the extract after the others and adds a birth or death only for a person it does not already hold for that kind. The dump's name, date and hashes land in `data/v1/0.1.0/facts/manifest.json` under `sources.wikidataDump`. A birth place is said as "Town, Country" with the place's first country (P17); when that is a state that no longer exists (`PAST_STATE` in `wikidata_dump_people.py`: an empire, a margraviate, the Soviet Union, East Germany and the like) the town is said alone, because P17 is not the country of the day. The priority list's own places keep the country of the day ("Tbilisi, Soviet Union").
 
 ## Para sports (wheelchair sports, goalball, boccia and the rest)
 

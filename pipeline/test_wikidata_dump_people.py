@@ -97,6 +97,19 @@ class DumpPeopleTest(unittest.TestCase):
         self.assertEqual(prov["dumpName"], "wikidata-20261012-all.json.gz")
         self.assertEqual(prov["dumpSha256"], "f" * 64)
 
+    def test_a_place_in_a_state_that_no_longer_exists_says_the_town_only(self) -> None:
+        labels = {"Q1": {"en": "London", "country": "Q2"}, "Q2": {"en": "Roman Empire"}, "Q3": {"en": "Hoofddorp", "country": "Q4"}, "Q4": {"en": "Kingdom of the Netherlands"},
+                  "Q5": {"en": "Beijing", "country": "Q6"}, "Q6": {"en": "People's Republic of China"}}
+        said = lambda town, country: wdp.place_of({"p19": [town]}, {**labels, "Q7": {"en": "Town", "country": "Q8"}, "Q8": {"en": country}})
+        self.assertEqual(wdp.place_of({"p19": ["Q1"]}, labels), "London")
+        self.assertEqual(wdp.place_of({"p19": ["Q3"]}, labels), "Hoofddorp, Kingdom of the Netherlands")
+        self.assertEqual(wdp.place_of({"p19": ["Q5"]}, labels), "Beijing, People's Republic of China")
+        for gone in ("Holy Roman Empire", "Russian Empire", "Margraviate of Brandenburg", "Kingdom of Hungary", "Principality of Wallachia", "Soviet Union", "East Germany", "Austria–Hungary",
+                     "United Kingdom of Great Britain and Ireland", "Polish People's Republic", "allied-occupied Germany"):
+            self.assertEqual(said("Q7", gone), "Town", gone)
+        for current in ("Germany", "Denmark", "Kingdom of Denmark", "Russia", "Ukraine"):
+            self.assertEqual(said("Q7", current), f"Town, {current}", current)
+
     def test_a_missing_death_is_unknown_never_living(self) -> None:
         rows, *_ = self.run_build([person("Q2", "Bob Costa", born=t("1990-05-05"))])
         mine = [r for r in rows if r["person"]["qid"] == "Q2"]

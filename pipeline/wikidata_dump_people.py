@@ -500,13 +500,22 @@ class Describer:
 
 
 # ---- the extract ---------------------------------------------------------------------------------------------------------------------
+# A place's first country (P17) is not the country of the day: when it is a state that no longer exists, the town is said alone ("London", not "London, Roman Empire").
+PAST_STATE = re.compile(
+    r"\bEmpire$|^(?:Margraviate|Electorate|Principality|Landgraviate|Archduchy|Grand Duchy|Duchy) of |^Kingdom of (?!the Netherlands$|Denmark$)|"
+    r"^(?:United Kingdom of Great Britain and Ireland|Soviet Union|USSR|East Germany|West Germany|Czechoslovakia|Yugoslavia|SFR Yugoslavia|Austria–Hungary|German Reich|Weimar Republic|"
+    r"Nazi Germany|allied-occupied Germany|Mandatory Palestine|British Raj|Dominion of India|Ceylon|Joseon|Union of South Africa|South Vietnam|West Pakistan|"
+    r"Socialist Ethiopia|Kirghiz SSR|Dutch East Indies|Dutch West Indies|British Leeward Islands|(?:Polish|Hungarian|Mongolian|Bulgarian|Romanian|Albanian) People's Republic)$"
+)
+
+
 def place_of(p: dict, labels: dict) -> str | None:
     q = p["p19"][0] if p["p19"] else None
     place = (labels.get(q) or {}).get("en") if q else None
     if not place or re.search(r"[\d()]", place):
         return None
     country = (labels.get((labels.get(q) or {}).get("country") or "") or {}).get("en")
-    return f"{place}, {country}" if country and country != place else place
+    return f"{place}, {country}" if country and country != place and not PAST_STATE.search(country) else place
 
 
 def rows_of(p: dict, phrase: str, labels: dict, kinds: set[str]) -> list[dict]:

@@ -1722,7 +1722,8 @@ def build_facts() -> tuple[list[dict], dict]:
         league = league_of_club_on(clean_label(label), row["eventDate"]) if row.get("league") == "mlb" else None
         if league:
             rec["league"] = rec["competition"] = league
-        if row.get("venueCity"):
+        # The source's city field holds the club's own name for some early identities ("Allegheny Club"): no city then.
+        if row.get("venueCity") and clean_label(row["venueCity"]) != clean_label(label):
             rec["venueCity"] = row["venueCity"]
         chosen[row["recordId"]] = rec
     for row in drafts:
