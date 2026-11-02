@@ -4,6 +4,8 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+## [0.15.2] - 2026-11-02
+
 - Fix: `pipeline/fetch_wikidata_open.py` and `fetch_wikidata_lists.py` no longer call `query.wikidata.org/sparql` or `Special:EntityData` (both disallowed by robots.txt). They use the documented Wikidata and MediaWiki APIs through `pipeline/people/wikimedia.py` (same User-Agent, 1.1 s between requests, every response kept so a rerun makes none), in batches of 50 items. The list reader keeps only items that are humans and drops the para-sport and wheelchair list pages and the `para_*` sport codes. Nothing published changes.
 
 ## [0.15.1] - 2026-11-02
