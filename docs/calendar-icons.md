@@ -122,6 +122,31 @@ Each is SVG from `calendarIcon`, drawn from shapes, gradients and a stroke-drawn
 
 A theme draws what its look has room for. A theme whose look has a month word draws it in capitals (`MARCH`, or `3月`); one that has a weekday draws it only when a year is given (without a year a weekday would be a guess), and shows the month instead. A small year is drawn where the page has room. Whatever a theme leaves off the picture is in its `<title>` and `aria-label` (`Friday Mar 20 2026`; in Japanese `2026年3月20日（金曜日）`). A day the month does not have (30 February) is drawn as given and has no weekday.
 
+## Where the day and the year sit
+
+The day is centred in its page by default, the same for 1, 9, 30 and 31, and it is one size in a theme: a one-digit day is not drawn bigger than a two-digit one. Every theme says so in its own layout data (`numeral: "centre"`); a look that places its numerals elsewhere, as some real calendars do, has to say so there, apply it the same way to every day, and be listed here. None does today. A day drawn as strokes (`flip`, `curl`, `soft`, `thin`) is centred by its ink; a day drawn as text is centred by its font, with a small move to the right when it ends in 1, because a font's 1 is narrow and sits left of its box.
+
+The year chip has a minimum size, 7% of the drawing's width as a font size, and keeps at least 3% of the width between its bottom and the bottom of the room it sits in. When there is no year, the layout is drawn again, not left with the year's gap: the day, and the month word where the page has one, are centred as one block. `shadow` and `flip` also drop the year's room (the shadow tile's page moves to the middle, the flip page loses its year bar). `loops` keeps its year in the header, so its page has no gap either way, and `desk` has no year chip: its page shows the month's dates.
+
+| Theme | The day | The year | With no year |
+| --- | --- | --- | --- |
+| `pins` | centred under the month | small line under the day | month and day centred |
+| `loops` | centred under the month | in the header, between the rings and the rule | the header holds only the rings |
+| `shadow` | centred in its circle | on the tile, under the page | the page moves to the middle of the tile |
+| `heavy` | centred under the month | line under the day | month and day centred |
+| `cartoon` | centred under the month | line under the day | month and day centred |
+| `flip` | centred on the tilted page, leaning with it | on a bar at the foot of the page | no bar; the day is centred in the whole page |
+| `stack` | centred on the white face | line under the day | the day is centred |
+| `line` | centred above the label | with the month in the label | the label is the month alone |
+| `curl` | centred on the page | under the day, clear of the foot | the day is centred |
+| `soft` | centred on the cream page | under the day | the day is centred |
+| `desk` | centred in the red banner | none | the same |
+| `thin` | centred under the weekday (or month) | under the day | weekday or month and day centred |
+| `frame` | centred in the pale square | under the day | the day is centred |
+| `badge` | centred on the blue page | under the day | the day is centred |
+
+The parts are marked in the SVG (`data-part="day"`, `"month"`, `"year"`), so a page can style them and the test that measures every theme can find them. `e2e/calendar-align.demo.ts` draws each theme in a browser for 1, 9, 30 and 31, light and dark, with and without a year, and measures the ink of the day against its page.
+
 ## Earlier names
 
 The ten themes of 0.12 and 0.13 are still accepted. Each name reads as the theme that replaced it (`CALENDAR_THEME_ALIASES`), and `calendarThemeOf("classic")` returns `pins`.

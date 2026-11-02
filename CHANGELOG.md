@@ -4,6 +4,12 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+- Fix: the calendar icons are aligned in every theme, light and dark, with and without a year. `loops` no longer has a see-through sliver between its header and its frame (the header runs under the outline, and the rings sit on the centre line). `flip` centres its day on the tilted page (it sat right of centre). `soft` and `thin` draw the day at one size for 1, 9, 30 and 31 (a two-digit day was drawn smaller), and a stroke-drawn number is centred by its ink, so 30 and 31 line up with 1 and 9. `frame` centres its day vertically when there is no year, and every theme re-centres the day, and the month word where the page has one, when the year is absent.
+- Fix: the year chip is at least 7% of the drawing's width as a font size and has its own margin from the bottom of its room (it touched the frame in several themes). `badge`, `heavy`, `loops`, `shadow`, `stack` and `thin` have a bigger year; `flip` has a bar for it; `desk` still has none.
+- Alignment: the day is centred in its page by default, the same for 1, 9, 30 and 31, and each theme says so in its layout data (`numeral: "centre"`); `docs/calendar-icons.md` lists where each theme puts the day and the year. Rings and hooks are on the page's centre line in `loops`, `heavy`, `curl`, `soft` and `flip`, `desk`'s box no longer cuts the pad, and the boxes of `loops`, `stack`, `desk`, `frame` and `badge` have equal margins, so the heights of `loops`, `stack`, `desk`, `frame` and `badge` change a little at the same width.
+- SVG: the day, the month word and the year are marked with `data-part="day"`, `"month"` and `"year"` (a few bytes each).
+- Tests: `e2e/calendar-align.demo.ts` draws every theme in a browser at 1, 9, 30 and 31, light and dark, with and without a year, and measures the ink of the day against its page, the one-size rule, the year's minimum size and margin, the headers and the margins of the box; `test/calendar-icon.test.ts` checks the layout data. Tooling: `scripts/calendar-contact.ts` draws a contact sheet of every theme.
+
 ## [0.14.4] - 2026-10-31
 
 - Docs: new `docs/uses.md`, a short design note on how a sports history site can use the package (what it exports, what a page calls, what is missing) and how a stats site could build a database of famous people from sports outside the major leagues from Wikidata, with the licence, freshness and duplicate risks and a recommended order of work. Linked from the README.

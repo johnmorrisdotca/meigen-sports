@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { CALENDAR_THEME_ALIASES, CALENDAR_THEME_LABELS, CALENDAR_THEMES, calendarIcon, calendarThemeOf } from "../src/calendarIcon.ts";
+import { CALENDAR_THEME_ALIASES, CALENDAR_THEME_LABELS, CALENDAR_THEMES, CALENDAR_YEAR_MIN, calendarIcon, calendarLayout, calendarThemeOf } from "../src/calendarIcon.ts";
 import type { CalendarTheme } from "../src/calendarIcon.ts";
 
 const FORBIDDEN = /google|apple|microsoft|android|ios|material|fluent|samsung|icons8|flaticon|shutterstock/i;
@@ -148,4 +148,36 @@ test("an unknown locale falls back to English and the clock is not read", () => 
 test("a month, day and year that would break out of the markup cannot", () => {
   const svg = calendarIcon({ theme: "thin", month: 3, day: 20, year: 2026, locale: 'en"><script>' });
   assert.ok(!svg.includes("<script"));
+});
+
+test("every theme says where its day sits: centred in a page inside its box, the same for 1, 9, 30 and 31", () => {
+  for (const theme of CALENDAR_THEMES) {
+    for (const withYear of [true, false]) {
+      const { box, page, yearZone, numeral } = calendarLayout(theme, withYear);
+      assert.equal(numeral, "centre", theme);
+      assert.ok(page[0] >= box[0] && page[1] >= box[1] && page[0] + page[2] <= box[0] + box[2] && page[1] + page[3] <= box[1] + box[3], `${theme}: the page is inside the box`);
+      if (yearZone) assert.ok(yearZone[1] + yearZone[3] <= box[1] + box[3], `${theme}: the year's room is inside the box`);
+    }
+    const marked = (day: number, year?: number) => {
+      const svg = calendarIcon({ theme, month: 10, day, year });
+      return [svg.includes('data-part="day"'), svg.includes('data-part="year"')];
+    };
+    for (const day of [1, 9, 30, 31]) {
+      assert.equal(marked(day)[0], true, `${theme} ${day}: the day is marked`);
+      assert.equal(marked(day)[1], false, `${theme} ${day}: no year, no year chip`);
+      assert.equal(marked(day, 2026)[1], theme !== "desk", `${theme} ${day}: the year chip is drawn when there is a year`);
+    }
+  }
+  assert.ok(CALENDAR_YEAR_MIN >= 0.07);
+});
+
+test("a year is drawn at the theme's minimum size or larger", () => {
+  for (const theme of CALENDAR_THEMES) {
+    if (theme === "desk") continue;
+    const svg = calendarIcon({ theme, month: 10, day: 31, year: 2026 });
+    const width = Number(svg.match(/viewBox="[-\d.]+ [-\d.]+ ([\d.]+) /)![1]);
+    const chip = svg.match(/<g data-part="year">.*?<\/g>|<text[^>]*><tspan data-part="month">.*?<\/text>/)![0];
+    const size = Number(chip.match(/font-size="([\d.]+)"/)![1]);
+    assert.ok(size >= CALENDAR_YEAR_MIN * width - 0.5, `${theme}: the year is ${size} in a drawing ${width} wide`);
+  }
 });
