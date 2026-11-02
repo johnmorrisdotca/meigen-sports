@@ -50,7 +50,23 @@ MEIGEN_RETROSHEET_DIR=<folder with gl/, CurrentNames.csv and TEAMABR.TXT> python
 MEIGEN_API_URL=<read-only API of the SPX database> MEIGEN_API_KEY=<its public key> python3 -I pipeline/extract_dated_names.py
 ```
 
-`extract_dated_names.py` reads `api.franchise_names`, `api.venue_name` and the games of the National Association, American Association, Union Association, Players' League and Federal League from `api.games`, and writes `extract_dated_names.json` (the raw responses go to `data-sources/raw/dated-names/`, git-ignored). `convert_extract.py` uses it for three things: a retired number names the club as it was called on the day (`club_on`: "Colorado Avalanche" for Adam Foote in 2013, not the franchise's first name); a final or an All-Star Game names its building as it was called that year (`venue_in`; a year two names share, or no name on record, leaves the building and its city out of the fact); and a game of those five leagues says its own league (`na`, `aa`, `ua`, `pl`, `fl`), not `mlb`. A new `extract_games_on_day.sql` run on DS1 already gives these games their own league code, and then the games part is a no-op. `pipeline/test_convert_extract.py` and `test/dated-names.test.ts` hold the rules.
+`extract_dated_names.py` reads `api.franchise_names`, `api.venue_name` and the games of the National Association, American Association, Union Association, Players' League and Federal League from `api.games`, and writes `extract_dated_names.json` (the raw responses go to `data-sources/raw/dated-names/`, git-ignored). `convert_extract.py` uses it for four things: a retired number names the club as it was called on the day (`club_on`: "Colorado Avalanche" for Adam Foote in 2013, not the franchise's first name), and a club no game names (the Rangers of Adam Graves in 2009) takes that name too, which added 142 NHL retirements (a retirement for the fans, the victims of 1 October 2017 or an owner is left out: `NOT_A_PLAYER`); a final or an All-Star Game names its building as it was called that year (`venue_in`; a year two names share, or no name on record, leaves the building and its city out of the fact); a game of those five leagues says its own league (`na`, `aa`, `ua`, `pl`, `fl`), not `mlb`; and a franchise identity that began with a game of one of them (Boston Red Stockings, 5 May 1871) says that league (`league_of_club_on`), not `mlb`. A new `extract_games_on_day.sql` run on DS1 already gives these games their own league code, and then the games part is a no-op. `pipeline/test_convert_extract.py` and `test/dated-names.test.ts` hold the rules.
+
+### Order of a rebuild
+
+`extract_dated_names.json` is part of every rebuild. `pnpm data:facts` stops, with the command to run, when it is missing, has an empty list (`clubs`, `venues`, `games`) or was fetched before one of the extracts it follows (`extract_games_on_day`, `extract_finals`, `extract_franchise_events`, `extract_retired_numbers`, `extract_all_star`); it used to print a warning and build facts with a club's first name and `mlb` for the early leagues. So the order is:
+
+1. The coordinating session runs the DS1 extracts (`python3 -I pipeline/extract_ds1.py` prints the commands) and the two other extractors (`extract_all_star.py`, `extract_mlb_feats.py`).
+2. **Last**, the dated names, from the public views (no DS1 connection; the API address is the SPX database's public REST address and its publishable key, both in the spx-stats `web/` defaults):
+
+   ```sh
+   MEIGEN_API_URL=<read-only API of the SPX database> MEIGEN_API_KEY=<its public key> python3 -I pipeline/extract_dated_names.py
+   ```
+
+3. `pnpm data:facts`, then `pnpm data`, then `pnpm check`.
+
+Whether the games part can go: the games extract takes `league` from `core.season.league_code`, the same column `api.games.league` shows, so a fresh `extract_games_on_day.sql` run on DS1 gives `na`, `aa`, `ua`, `pl` and `fl` itself (checked in the SQL, not yet run). After one, `pnpm data:facts` prints `"datedGameLeagues"`, the number of facts whose league the dated names changed: when it is 0, `dated_fixes` no longer needs the games. The `games` view is still read for the club of a franchise identity (`league_of_club_on`), so keep it until that reads the games extract.
+
 
 ## Wikidata dump: people of every sport
 

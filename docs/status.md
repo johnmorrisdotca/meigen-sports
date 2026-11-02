@@ -16,6 +16,7 @@ Version 0.20.0 on `main`. The work of ticket cmvfh0kqd0000i90665rmo7sw (SPX-610)
 | 0.19.2 | The demo's header has the family's shared language picker and a theme switch, the address is kept by the shared address state, `release.yml` calls the shared release workflow and `AGENTS.md` is from the family template (kazoku-ui 0.7.3). |
 | 0.20.0 | The calendar icons and Japanese calendar functions come from koyomi-calendars. |
 | 0.19.3 | A retired number names the club of its day, a final or All-Star Game the building of its year, and a game of the National Association, American Association, Union Association, Players' League or Federal League says its own league, not MLB (`pipeline/extract_dated_names.py`). |
+| 0.20.1 | 142 more NHL retirements (397 retired numbers), the early leagues named on a club's identity, the demo's league menu in full names, and a rebuild that stops without a fresh `extract_dated_names.json`. |
 
 "One wording" (the Python converter's own sentences) was already finished in 0.6.0: `test/captions.test.ts` holds every stored sentence to the library's templates. The 0.4.0 audit's other open items are done or have a ticket below.
 

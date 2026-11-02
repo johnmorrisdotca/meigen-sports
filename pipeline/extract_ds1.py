@@ -57,6 +57,8 @@ def main():
         print(f"# {name}")
         print(command(file, variables))
         print()
+    print("# Last, after every extract above (a rebuild stops if this file is older than one of them): the dated names, from the public views")
+    print("MEIGEN_API_URL=<read-only API> MEIGEN_API_KEY=<its public key> python3 -I pipeline/extract_dated_names.py")
 
 
 if __name__ == "__main__":

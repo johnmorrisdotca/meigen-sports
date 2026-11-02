@@ -28,7 +28,7 @@ The 46 identifiers in [categories.md](categories.md) are **tags, not exclusive c
 | `record` | object | Holder, value, scope, phase, date set, date surpassed, previous holder, recognition, and event (`set` / `held` / `equalled` / `surpassed` / `rescinded` / `title-reassigned`). A broken record remains a valid fact. |
 | `sport` | string or null | `ref.league.sport_code`, or `soccer` |
 | `competition` | string or null | League code, tournament id, or award code |
-| `league` | string or null | SPXN league code (`nhl`, `mls`, `wc`). A game of the National Association, American Association, Union Association, Players' League or Federal League has its own code (`na`, `aa`, `ua`, `pl`, `fl`), never `mlb`; its sentence says the league's name. |
+| `league` | string or null | SPXN league code (`nhl`, `mls`, `wc`). A game of the National Association, American Association, Union Association, Players' League or Federal League has its own code (`na`, `aa`, `ua`, `pl`, `fl`), never `mlb`; its sentence says the league's name. So does a club's identity (`franchise-event`) that began with a game of one of them. |
 | `source.sourceId` | string | `meta.source` code |
 | `source.licence` | string | Source licence as stored |
 | `source.attribution` | string | Required credit line |

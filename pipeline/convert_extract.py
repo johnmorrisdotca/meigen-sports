@@ -12,7 +12,7 @@ import subprocess
 import sys
 import unicodedata
 from collections import defaultdict
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -30,7 +30,7 @@ EVENT_CATEGORIES = ("competition-start", "competition-end", "sport-event")
 # The people and the events the facts are about, with their countries and Wikipedia titles (pipeline/wikidata_links.py); empty when that extract is absent.
 LINKS: dict = {"people": {}, "events": {}}
 # What a club or a building was called on a day, and the league of the 19th-century games the archive keeps apart from MLB (pipeline/extract_dated_names.py); filled in build_facts().
-DATED: dict = {"clubs": {}, "venueIds": {}, "venues": {}, "gameLeagues": {}, "gamesOnDay": {}}
+DATED: dict = {"clubs": {}, "venueIds": {}, "venues": {}, "gameLeagues": {}, "gamesOnDay": {}, "clubGames": {}, "leaguesChanged": 0}
 # People whose birth or death date Wikidata holds two or more equal-rank values of (pipeline/audit_dates.py --write-disputed); filled in main().
 DISPUTED: dict[str, dict] = {}
 TROPHIES: dict = json.loads((Path(__file__).resolve().parent.parent / "data-sources/trophies.json").read_text(encoding="utf-8"))
@@ -1203,14 +1203,26 @@ def plain(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", " ", "".join(c for c in unicodedata.normalize("NFD", text) if not unicodedata.combining(c)).lower()).strip()
 
 
+# The extracts whose rows `extract_dated_names.json` names and labels: it is read after them, so it is never older than one of them.
+DATED_AFTER = ("extract_games_on_day.json", "extract_finals.json", "extract_franchise_events.json", "extract_retired_numbers.json", "extract_all_star.json")
+
+
 def load_dated_names() -> None:
     """`extract_dated_names.json` (pipeline/extract_dated_names.py): the names a franchise and a building carried and when, and the league of each game of the
-    National Association, American Association, Union Association, Players' League and Federal League."""
+    National Association, American Association, Union Association, Players' League and Federal League. A rebuild stops when it is missing, has an empty list or is
+    older than one of the extracts it follows (`DATED_AFTER`): the facts would silently keep a club's first name and `mlb` for the early leagues."""
     path = EXTRACT / "extract_dated_names.json"
+    rerun = "run `python3 -I pipeline/extract_dated_names.py` after the DS1 extracts (pipeline/README.md, 'Order of a rebuild')"
     if not path.exists():
-        print(f"missing {path}: clubs and buildings are named as the other extracts name them, and 19th-century games keep their league", file=sys.stderr)
-        return
+        raise SystemExit(f"missing {path}: {rerun}")
     data = json.loads(path.read_text(encoding="utf-8"))
+    empty = [name for name in ("clubs", "venues", "games") if not data.get(name)]
+    if empty:
+        raise SystemExit(f"{path} has no {', '.join(empty)}: {rerun}")
+    fetched = datetime.fromisoformat(data["fetchedAt"]).timestamp()
+    newer = [name for name in DATED_AFTER if (EXTRACT / name).exists() and (EXTRACT / name).stat().st_mtime > fetched]
+    if newer:
+        raise SystemExit(f"{path} was fetched before {', '.join(newer)}: {rerun}")
     for row in data.get("clubs") or []:
         DATED["clubs"].setdefault((row["league"], row["franchise_id"]), []).append(row)
     for row in data.get("venues") or []:
@@ -1219,6 +1231,10 @@ def load_dated_names() -> None:
     for row in data.get("games") or []:
         DATED["gameLeagues"][row["game_id"]] = row["league"]
         DATED["gamesOnDay"].setdefault((row["game_date"], frozenset((plain(row["home"]), plain(row["away"])))), row["league"])
+        for side in ("home", "away"):
+            DATED["clubGames"].setdefault(plain(row[side]), []).append((row["game_date"], row["league"]))
+    for games in DATED["clubGames"].values():
+        games.sort()
 
 
 def club_on(league: str, franchise_id, day: str) -> str | None:
@@ -1227,6 +1243,15 @@ def club_on(league: str, franchise_id, day: str) -> str | None:
     names = {w["name"] for w in DATED["clubs"].get((league, franchise_id), [])
              if (not w.get("name_from") or w["name_from"] <= day) and (not w.get("name_to") or day < w["name_to"])}
     return next(iter(names)) if len(names) == 1 else None
+
+
+def league_of_club_on(name: str, day: str) -> str | None:
+    """The league a club played in when its identity began, if it was one of the five the archive keeps apart from MLB: the league of its first game of that league on the
+    day or in the 14 days after (a club of the National League or American League has none of these games and stays MLB)."""
+    for when, league in DATED["clubGames"].get(plain(name), []):
+        if when >= day:
+            return league if (date.fromisoformat(when) - date.fromisoformat(day)).days <= 14 else None
+    return None
 
 
 def venue_in(name: str, year: int) -> str | None:
@@ -1267,6 +1292,12 @@ def dated_fixes(rec: dict) -> None:
             league = DATED["gamesOnDay"].get((rec["eventDate"], frozenset((plain(rec.get("clubName") or ""), plain(rec.get("opponentName") or "")))))
         if league:
             rec["league"] = rec["competition"] = league
+            DATED["leaguesChanged"] += 1
+
+
+# Numbers a club retired for no player: the fans (Minnesota Wild 2000, Seattle Kraken 2021), the victims of 1 October 2017 (Vegas Golden Knights) and the owner Wayne Huizenga
+# (Florida Panthers); "retired Wayne Huizenga's No. 37" would say he wore it.
+NOT_A_PLAYER = {4914, 4958, 4997, 5017}
 
 
 def retired_rows(name_in, latest: str) -> list[dict]:
@@ -1279,15 +1310,15 @@ def retired_rows(name_in, latest: str) -> list[dict]:
         day, number = r.get("retired_on"), r.get("jersey_number")
         if not day or not re.match(r"^\d{4}-\d{2}-\d{2}$", day) or day.endswith("-01-01") or day > latest:
             continue
-        if not isinstance(number, int) or number < 0:
+        if not isinstance(number, int) or number < 0 or r.get("retired_number_id") in NOT_A_PLAYER:
             continue
         name = clean_label(r.get("name") or r.get("honor_name"))
         league = r.get("league")
         wide = bool(r.get("league_wide"))
         fid = r.get("franchise_id")
         club = None if wide else name_in(fid, day)
-        then = None if wide or not club else club_on(league, fid, day)
-        if then and plain(then) != plain(club):
+        then = None if wide else club_on(league, fid, day)
+        if then and (not club or plain(then) != plain(club)):
             club = then
         if not name or not league or (not wide and not club):
             continue
@@ -1649,6 +1680,9 @@ def build_facts() -> tuple[list[dict], dict]:
         if not label or label.lower() in {"mlb", "nhl", "nba", "nfl", "cfl"}:
             continue
         rec = {**row, "category": "franchise-event", "clubName": label, "basis": "source"}
+        league = league_of_club_on(clean_label(label), row["eventDate"]) if row.get("league") == "mlb" else None
+        if league:
+            rec["league"] = rec["competition"] = league
         if row.get("venueCity"):
             rec["venueCity"] = row["venueCity"]
         chosen[row["recordId"]] = rec
@@ -1715,7 +1749,7 @@ def build_facts() -> tuple[list[dict], dict]:
         "wikidataDumpEvents": event_meta,
     }
     print(json.dumps({"priorityAdded": priority_added, "wikidataDumpAdded": dump_added, "listPeopleAdded": list_added, "wikidataDumpEventsAdded": events_added,
-                      "priorityRephrased": rephrased, "retiredNumbers": sum(1 for f in facts if f.get("category") == "retired-number"), "allStarGames": sum(1 for f in facts if f.get("category") == "all-star"), "gameFeats": sum(1 for f in facts if f.get("category") == "game-feat"), "jerseyNumbers": sum(1 for f in facts if f.get("jerseyNumber") is not None and f.get("category") != "retired-number"), "facts": len(facts), "droppedThin": dropped, "mergedSameEvent": merged_events}, indent=2))
+                      "priorityRephrased": rephrased, "datedGameLeagues": DATED["leaguesChanged"], "retiredNumbers": sum(1 for f in facts if f.get("category") == "retired-number"), "allStarGames": sum(1 for f in facts if f.get("category") == "all-star"), "gameFeats": sum(1 for f in facts if f.get("category") == "game-feat"), "jerseyNumbers": sum(1 for f in facts if f.get("jerseyNumber") is not None and f.get("category") != "retired-number"), "facts": len(facts), "droppedThin": dropped, "mergedSameEvent": merged_events}, indent=2))
     return facts, meta
 
 

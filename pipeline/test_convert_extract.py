@@ -187,7 +187,7 @@ class ConvertExtractTests(unittest.TestCase):
         self.assertEqual(convert.team({"name": "Allegheny Club (none)", "franchiseId": 1})["name"], "Allegheny Club")
 
     def dated(self, **tables):
-        convert.DATED.update({"clubs": {}, "venueIds": {}, "venues": {}, "gameLeagues": {}, "gamesOnDay": {}})
+        convert.DATED.update({"clubs": {}, "venueIds": {}, "venues": {}, "gameLeagues": {}, "gamesOnDay": {}, "clubGames": {}})
         for row in tables.get("clubs", []):
             convert.DATED["clubs"].setdefault((row["league"], row["franchise_id"]), []).append(row)
         for row in tables.get("venues", []):
@@ -196,6 +196,8 @@ class ConvertExtractTests(unittest.TestCase):
         for row in tables.get("games", []):
             convert.DATED["gameLeagues"][row["game_id"]] = row["league"]
             convert.DATED["gamesOnDay"].setdefault((row["game_date"], frozenset((convert.plain(row["home"]), convert.plain(row["away"])))), row["league"])
+            for side in ("home", "away"):
+                convert.DATED["clubGames"].setdefault(convert.plain(row[side]), []).append((row["game_date"], row["league"]))
 
     def test_a_club_is_named_as_it_was_called_that_day(self):
         self.dated(clubs=[
@@ -226,6 +228,20 @@ class ConvertExtractTests(unittest.TestCase):
             convert.read_list = original
         self.assertEqual(made["Adam Foote"]["clubName"], "Colorado Avalanche")
         self.assertEqual(made["Maurice Richard"]["clubName"], "Montreal Canadiens")  # a spelling with an accent is not another name
+
+    def test_a_club_the_games_do_not_name_takes_its_dated_name_and_a_number_for_no_player_is_left_out(self):
+        self.dated(clubs=[{"league": "nhl", "franchise_id": 1420, "name": "New York Rangers", "name_from": "1926-05-15", "name_to": None}])
+        rows = [
+            {"retired_number_id": 4897, "league": "nhl", "franchise_id": 1420, "jersey_number": 9, "name": "Adam Graves", "retired_on": "2009-02-03", "league_wide": False},
+            {"retired_number_id": 4958, "league": "nhl", "franchise_id": 1491, "jersey_number": 1, "name": "fans", "retired_on": "2000-10-11", "league_wide": False},
+        ]
+        original = convert.read_list
+        convert.read_list = lambda name: rows
+        try:
+            made = convert.retired_rows(lambda fid, day: None, "2026-11-02")
+        finally:
+            convert.read_list = original
+        self.assertEqual([(r["person"]["name"], r["clubName"]) for r in made], [("Adam Graves", "New York Rangers")])
 
     def test_a_building_is_named_as_it_was_called_that_year(self):
         self.dated(venues=[
@@ -270,6 +286,49 @@ class ConvertExtractTests(unittest.TestCase):
         convert.dated_fixes(later)
         self.assertEqual(later["league"], "mlb")
         self.assertEqual({convert.LEAGUE_SPORT[c] for c in ("na", "aa", "ua", "pl", "fl")}, {"baseball"})
+
+    def test_a_franchise_identity_names_the_league_it_began_in(self):
+        self.dated(games=[
+            {"game_id": 20, "league": "aa", "game_date": "1882-05-02", "home": "Cincinnati Red Stockings", "away": "Allegheny Club"},
+            {"game_id": 21, "league": "aa", "game_date": "1888-04-10", "home": "Brooklyn Bridegrooms", "away": "Cleveland Blues"},
+            {"game_id": 22, "league": "pl", "game_date": "1890-04-19", "home": "New York Giants", "away": "Boston Reds"},
+        ])
+        self.assertEqual(convert.league_of_club_on("Cincinnati Red Stockings", "1882-05-02"), "aa")
+        self.assertEqual(convert.league_of_club_on("Allegheny Club", "1882-05-02"), "aa")
+        self.assertEqual(convert.league_of_club_on("Brooklyn Bridegrooms", "1888-04-08"), "aa")  # a first game two days later
+        self.assertIsNone(convert.league_of_club_on("New York Giants", "1885-05-02"))  # the Players' League club of 1890 is another club of that name
+        self.assertIsNone(convert.league_of_club_on("Chicago Colts", "1890-04-19"))  # a National League club has no game of the five leagues
+
+    def test_a_rebuild_stops_without_a_fresh_dated_names_extract(self):
+        import json
+        import tempfile
+        import time
+        from datetime import datetime, timezone
+        from pathlib import Path
+        good = {"category": "dated-names", "fetchedAt": datetime.now(timezone.utc).isoformat(),
+                "clubs": [{"league": "nhl", "franchise_id": 1, "name": "A", "name_from": None, "name_to": None}],
+                "venues": [{"wikidata_id": "Q1", "name": "B", "from_year": None, "until_year": None}],
+                "games": [{"game_id": 1, "league": "na", "game_date": "1871-05-04", "home": "A", "away": "B"}]}
+        original = convert.EXTRACT
+        try:
+            with tempfile.TemporaryDirectory() as folder:
+                convert.EXTRACT = Path(folder)
+                with self.assertRaisesRegex(SystemExit, "missing"):
+                    convert.load_dated_names()
+                (Path(folder) / "extract_dated_names.json").write_text(json.dumps({**good, "games": []}))
+                with self.assertRaisesRegex(SystemExit, "has no games"):
+                    convert.load_dated_names()
+                (Path(folder) / "extract_dated_names.json").write_text(json.dumps(good))
+                time.sleep(0.05)
+                (Path(folder) / "extract_games_on_day.json").write_text("{}")
+                with self.assertRaisesRegex(SystemExit, "fetched before extract_games_on_day.json"):
+                    convert.load_dated_names()
+                (Path(folder) / "extract_dated_names.json").write_text(json.dumps({**good, "fetchedAt": datetime.now(timezone.utc).isoformat()}))
+                convert.load_dated_names()
+                self.assertEqual(convert.club_on("nhl", 1, "2000-01-01"), "A")
+        finally:
+            convert.EXTRACT = original
+            self.dated()
 
 
 if __name__ == "__main__":
