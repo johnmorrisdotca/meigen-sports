@@ -12,7 +12,7 @@ test("the picker and the gallery list sun, roll and plain, in both languages, an
   await page.locator('[data-testid="icon-sun"]').click();
   await expect(page).toHaveURL(/icon=sun/);
   await page.goto("/?lang=ja&icon=plain");
-  expect(await page.locator("#opt-icon option").allTextContents()).toEqual(expect.arrayContaining(["日の丸", "壁掛け", "無地"]));
+  expect(await page.locator("#opt-icon option").allTextContents()).toEqual(expect.arrayContaining(["日の丸", "壁掛け日めくり", "無地"]));
 });
 
 test("the weekend switch draws the Saturday and the Sunday on one page, keeps its choice in the address, and is a finger-wide chip", async ({ page }) => {
