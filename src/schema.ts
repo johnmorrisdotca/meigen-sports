@@ -10,6 +10,8 @@ export const EXTRACT_CATEGORIES = [
   "franchise-event",
   "venue-opening",
   "retired-number",
+  "all-star",
+  "game-feat",
   "competition-start",
   "competition-end",
   "sport-event",
@@ -242,6 +244,28 @@ export interface OnThisDayRecord {
   readonly jerseySource?: string;
   /** On a `retired-number` fact: the league retired the number for every club (99 in the NHL, 42 in MLB, 6 in the NBA). `clubName` is then absent. */
   readonly leagueWide?: boolean;
+  /**
+   * On an `all-star` fact (an All-Star Game or the Pro Bowl): the side that won its deciding game (`winnerName`, `winnerScore`) and the side that lost (`loserName`,
+   * `loserScore`), `decidedBy` (`OT` or `SO`) when the game was not decided in regulation, the most valuable players by name (`mvpNames`; a name is a label, never
+   * an identity) and the crowd. A tied game has no winner and none of these but the MVPs. Read from English Wikipedia's articles (CC BY-SA 4.0).
+   */
+  /**
+   * On a `game-feat` fact (a no-hitter or a perfect game, counted from Retrosheet's game logs): `feat`, the club that pitched it (`clubName`) and the club held hitless
+   * (`opponentName`), the runs of each (`clubScore`, `opponentScore`; the club may have lost), the pitcher by name only when one pitcher pitched the whole game
+   * (`pitcherName`, `pitchersUsed` 1), and `phase` (`world-series`, `league-championship`, `division-series`, `wild-card`) for a postseason game.
+   */
+  readonly feat?: "no-hitter" | "perfect-game";
+  readonly pitcherName?: string | null;
+  readonly pitchersUsed?: number;
+  readonly opponentName?: string | null;
+  readonly clubScore?: number | null;
+  readonly opponentScore?: number | null;
+  readonly loserName?: string | null;
+  readonly winnerScore?: number | null;
+  readonly loserScore?: number | null;
+  readonly decidedBy?: "OT" | "SO" | null;
+  readonly mvpNames?: readonly string[];
+  readonly attendance?: number | null;
   readonly draftYear?: number | null;
   readonly round?: number | null;
   readonly overallPick?: number | null;

@@ -35,6 +35,15 @@ Besides the DS1 extracts the converter reads `data-sources/priority-facts.jsonl`
 
 Writes `data/v1/0.1.0/facts/`. One `recordId` per fact; `tags` are the 46 history identifiers and are not exclusive. Category shards copy the same fact into every matching tag file. Indexes hold ids only; `store/` holds each full record once.
 
+## All-Star Games and baseball feats
+
+```sh
+MEIGEN_API_URL=<read-only API of the SPX database> MEIGEN_API_KEY=<its public key> python3 -I pipeline/extract_all_star.py
+MEIGEN_RETROSHEET_DIR=<folder with gl/, CurrentNames.csv and TEAMABR.TXT> python3 -I pipeline/extract_mlb_feats.py
+```
+
+`extract_all_star.py` reads the public views `api.all_star_event`, `all_star_game` and `all_star_mvp` (English Wikipedia, parsed by spx-stats' `scripts/all_star/`, CC BY-SA 4.0) and writes `extract_all_star.json`; the raw responses go to `data-sources/raw/all-star/` (git-ignored) for the coordinating session to archive. `extract_mlb_feats.py` counts no-hitters and perfect games from Retrosheet's game logs (`extract_mlb_feats.json`; the rules are in its header). `convert_extract.py` reads both extracts when they are present.
+
 ## Wikidata dump: people of every sport
 
 Does not contact DS1 or the network. Reads the filtered files of spx-stats' `scripts/wikidata_dump/filter.py` (`people`, `items`, `events`, `labels`, read only, from `MEIGEN_WIKIDATA_DUMP_DIR`) and spx-stats' `occupations.tsv` (`MEIGEN_WIKIDATA_OCCUPATIONS`), and writes `extract_wikidata_dump_people.json` to `MEIGEN_EXTRACT_DIR` with the dump's provenance. The rules are in the header of the script and counted in its report (`--report` writes nothing):

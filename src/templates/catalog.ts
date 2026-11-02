@@ -479,6 +479,78 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
     needs: ["clubName", "date", "franchiseContext"],
     pattern: "{clubName}（{leagueIdentity}）は{dateOn}この名義で始まった{cityIn}。",
   },
+  // no-hitters and perfect games
+  {
+    id: "feat-pitcher", type: "feat", locale: "en", gate: "neutral", role: "default",
+    needs: ["pitcherName", "featDid", "opponentName", "leadIn"],
+    pattern: "{leadIn}{pitcherName}{featOfClub} {featDid} against the {opponentName}{featResult}{featStage}.",
+  },
+  {
+    id: "feat-pitcher-on", type: "feat", locale: "en", gate: "neutral", role: "variant",
+    needs: ["pitcherName", "featDid", "opponentName", "dateOn"],
+    pattern: "{pitcherName} {featDid} against the {opponentName} {dateOn}{featResult}{featStage}.",
+  },
+  {
+    id: "feat-club", type: "feat", locale: "en", gate: "neutral", role: "default",
+    needs: ["clubName", "featClubDid", "opponentName", "leadIn"],
+    pattern: "{leadIn}the {clubName} {featClubDid} {opponentName}{featResult}{featStage}.",
+  },
+  {
+    id: "feat-club-on", type: "feat", locale: "en", gate: "neutral", role: "variant",
+    needs: ["clubName", "featClubDid", "opponentName", "dateOn"],
+    pattern: "The {clubName} {featClubDid} {opponentName} {dateOn}{featResult}{featStage}.",
+  },
+  {
+    id: "feat-pitcher", type: "feat", locale: "ja", gate: "neutral", role: "default",
+    needs: ["pitcherName", "featDid", "opponentName", "leadIn"],
+    pattern: "{leadIn}{pitcherName}{featOfClub}が{opponentName}を相手に{featDid}{featResult}{featStage}。",
+  },
+  {
+    id: "feat-pitcher-on", type: "feat", locale: "ja", gate: "neutral", role: "variant",
+    needs: ["pitcherName", "featDid", "opponentName", "dateOn"],
+    pattern: "{pitcherName}は{dateOn}{opponentName}を相手に{featDid}{featResult}{featStage}。",
+  },
+  {
+    id: "feat-club", type: "feat", locale: "ja", gate: "neutral", role: "default",
+    needs: ["clubName", "featClubDid", "opponentName", "leadIn"],
+    pattern: "{leadIn}{clubName}は{opponentName}{featClubDid}{featResult}{featStage}。",
+  },
+  {
+    id: "feat-club-on", type: "feat", locale: "ja", gate: "neutral", role: "variant",
+    needs: ["clubName", "featClubDid", "opponentName", "dateOn"],
+    pattern: "{clubName}は{dateOn}{opponentName}{featClubDid}{featResult}{featStage}。",
+  },
+  // All-Star Games
+  {
+    id: "allstar-played", type: "all-star", locale: "en", gate: "neutral", role: "default",
+    needs: ["allStarName", "leadIn"],
+    pattern: "{leadIn}the {allStarName} was played{venue}{allStarResult}{allStarMvp}.",
+  },
+  {
+    id: "allstar-took-place", type: "all-star", locale: "en", gate: "neutral", role: "variant",
+    needs: ["allStarName", "dateOn"],
+    pattern: "The {allStarName} took place {dateOn}{venue}{allStarResult}{allStarMvp}.",
+  },
+  {
+    id: "allstar-hosted", type: "all-star", locale: "en", gate: "neutral", role: "variant",
+    needs: ["allStarName", "venueName", "leadIn"],
+    pattern: "{leadIn}{venueName} hosted the {allStarName}{allStarResult}{allStarMvp}.",
+  },
+  {
+    id: "allstar-played", type: "all-star", locale: "ja", gate: "neutral", role: "default",
+    needs: ["allStarName", "leadIn"],
+    pattern: "{leadIn}{allStarName}が行われた{venue}{allStarResult}{allStarMvp}。",
+  },
+  {
+    id: "allstar-took-place", type: "all-star", locale: "ja", gate: "neutral", role: "variant",
+    needs: ["allStarName", "dateOn"],
+    pattern: "{allStarName}は{dateOn}開催された{venue}{allStarResult}{allStarMvp}。",
+  },
+  {
+    id: "allstar-hosted", type: "all-star", locale: "ja", gate: "neutral", role: "variant",
+    needs: ["allStarName", "venueName", "leadIn"],
+    pattern: "{leadIn}{venueName}で{allStarName}が開かれた{allStarResult}{allStarMvp}。",
+  },
   // retired numbers
   {
     id: "retired-club", type: "retired", locale: "en", gate: "neutral", role: "default",

@@ -71,7 +71,7 @@ Status: **collected** = convert can attach this tag from extracts already on dis
 | `ranking` | Ranking peak or weeks at number one | ranking lists | planned | 0 |
 | `participation-longevity` | Appearance streak, youngest, oldest | appearance logs | planned | 0 |
 | `non-scoring-performance` | Assists, saves, strikeouts, defence | box stats | planned | 0 |
-| `exceptional-achievement` | Perfect game, no-hitter, maximum | official feat records | planned | 0 |
+| `exceptional-achievement` | Perfect game, no-hitter, maximum | Retrosheet game logs (`pipeline/extract_mlb_feats.py`) | collected | 290 |
 | `rules-format-change` | Dated rule or format adoption | league minutes | planned | 0 |
 | `league-federation-history` | Founding, merger, expansion | league history | planned | 0 |
 | `sporting-first` | Verified first participation or medal | firsts with evidence | planned | 0 |

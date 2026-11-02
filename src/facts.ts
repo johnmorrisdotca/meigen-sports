@@ -181,6 +181,10 @@ export function significance(record: OnThisDayRecord): number {
     }
     case "franchise-event": return 45;
     // A retired number: a league-wide retirement is a league's act; a club's counts for more when the person is known in other languages.
+    // An All-Star Game: a league's showpiece, but below a final or a famous person.
+    case "all-star": return 44 + ((record.league === "mlb" || record.league === "nba" || record.league === "nhl") ? 4 : 0);
+    // A no-hitter is rare; a perfect game rarer.
+    case "game-feat": return 38 + (record.feat === "perfect-game" ? 10 : 0) + (record.phase === "world-series" ? 4 : 0);
     case "retired-number": return 38 + (record.leagueWide ? 12 : 0) + ((record.sitelinks ?? 0) >= 20 ? 6 : 0) + ((record.sitelinks ?? 0) >= 50 ? 8 : 0);
     case "player-birthday":
     case "player-death": {

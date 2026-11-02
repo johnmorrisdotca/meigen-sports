@@ -3,7 +3,7 @@ export type TemplateGate = "neutral" | "living" | "deceased";
 export type TemplateRole = "default" | "variant";
 export type TemplateType =
   | "birthday" | "death" | "game" | "final" | "record" | "award"
-  | "first" | "draft" | "venue" | "franchise" | "retired"
+  | "first" | "draft" | "venue" | "franchise" | "retired" | "all-star" | "feat"
   | "world-cup-match" | "world-cup-final" | "competition-start" | "competition-end" | "event-date";
 export type Wording = "fixed" | "varied" | "seeded";
 
@@ -27,7 +27,7 @@ export interface SentenceTemplate {
 
 /** Every statement type the package says, in one list. A test holds each type to at least three patterns per language. */
 export const TEMPLATE_TYPES: readonly TemplateType[] = [
-  "birthday", "death", "game", "final", "record", "award", "first", "draft", "venue", "franchise", "retired",
+  "birthday", "death", "game", "final", "record", "award", "first", "draft", "venue", "franchise", "retired", "all-star", "feat",
   "world-cup-match", "world-cup-final", "competition-start", "competition-end", "event-date",
 ];
 

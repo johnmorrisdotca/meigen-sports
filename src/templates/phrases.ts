@@ -17,6 +17,9 @@ export type FragmentId =
   | "onDate" | "inDate" | "aroundDate" | "leadOnDate" | "leadInDate" | "leadAroundDate"
   | "placeIn" | "placeAt" | "wonBy" | "wonByTitle"
   | "noteDate" | "noteBirth" | "noteDeath" | "noteAge" | "listLast" | "ageUnit" | "ageOr"
+  | "allStarNhl" | "allStarNba" | "allStarMlb" | "allStarNfl" | "allStarCfl" | "allStarResult" | "allStarMvp" | "allStarMvps"
+  | "featNoHitter" | "featPerfect" | "featClubNoHit" | "featClubCombined" | "featClubPerfect" | "featWin" | "featLoss" | "featOfClub"
+  | "featWorldSeries" | "featLeagueChampionship" | "featDivisionSeries" | "featWildCard"
   | "recordSet" | "recordHeld" | "recordEqualled" | "recordSurpassed" | "recordSetBy" | "recordHeldBy" | "recordEqualledBy" | "recordBrokenBy";
 
 type Table = Record<FragmentId, { readonly en: readonly string[]; readonly ja: readonly string[] }>;
@@ -86,6 +89,28 @@ export const FRAGMENTS: Table = {
   listLast: { en: [" and "], ja: ["、"] },
   ageUnit: { en: ["{0}"], ja: ["{0}歳"] },
   ageOr: { en: [" or "], ja: ["または"] },
+  // An All-Star Game, named as the league names it; the Pro Bowl is the NFL's.
+  allStarNhl: { en: ["NHL All-Star Game"], ja: ["NHLオールスターゲーム"] },
+  allStarNba: { en: ["NBA All-Star Game"], ja: ["NBAオールスターゲーム"] },
+  allStarMlb: { en: ["MLB All-Star Game"], ja: ["MLBオールスターゲーム"] },
+  allStarNfl: { en: ["Pro Bowl"], ja: ["プロボウル"] },
+  allStarCfl: { en: ["CFL All-Star Game"], ja: ["CFLオールスターゲーム"] },
+  allStarResult: { en: ["; {0} beat {1} {2}\u2013{3}", "; the {0} won {2}\u2013{3} against the {1}"], ja: ["。{0}が{1}に{2}対{3}で勝った"] },
+  allStarMvp: { en: ["; {0} was named most valuable player", "; the most valuable player was {0}"], ja: ["。最優秀選手は{0}"] },
+  allStarMvps: { en: ["; {0} were named most valuable players", "; the most valuable players were {0}"], ja: ["。最優秀選手は{0}"] },
+  // A no-hitter or a perfect game: what the pitcher did, what the club did, the club's score and the round of a postseason game.
+  featNoHitter: { en: ["pitched a no-hitter"], ja: ["ノーヒットノーランを達成した"] },
+  featPerfect: { en: ["pitched a perfect game"], ja: ["完全試合を達成した"] },
+  featClubNoHit: { en: ["no-hit the"], ja: ["を無安打に抑えた"] },
+  featClubCombined: { en: ["combined to no-hit the"], ja: ["を継投で無安打に抑えた"] },
+  featClubPerfect: { en: ["pitched a perfect game against the"], ja: ["を相手に完全試合を達成した"] },
+  featWin: { en: [", winning {0}\u2013{1}"], ja: ["（{0}対{1}で勝利）"] },
+  featLoss: { en: [", losing {0}\u2013{1}"], ja: ["（{0}対{1}で敗戦）"] },
+  featOfClub: { en: [" of the {0}"], ja: ["（{0}）"] },
+  featWorldSeries: { en: [" in the World Series"], ja: ["（ワールドシリーズ）"] },
+  featLeagueChampionship: { en: [" in the League Championship Series"], ja: ["（リーグチャンピオンシップシリーズ）"] },
+  featDivisionSeries: { en: [" in the Division Series"], ja: ["（ディビジョンシリーズ）"] },
+  featWildCard: { en: [" in the Wild Card Series"], ja: ["（ワイルドカードシリーズ）"] },
   recordSet: { en: ["set"], ja: [""] },
   recordHeld: { en: ["held"], ja: [""] },
   recordEqualled: { en: ["equalled"], ja: [""] },

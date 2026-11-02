@@ -2,7 +2,7 @@
 import type { OnThisDayRecord } from "../schema.ts";
 
 /** The facts dataset this set was chosen from: `factsManifestSha256` must equal the one on GitHub Pages (scripts/check-build.ts). */
-export const OFFLINE_BUILD = {"dataVersion":"0.1.0","factsManifestSha256":"47e097f8531bdea63f98bfa05cd778c8cb0d4eb0fd636180cc30e46c92c198a0","factsRecords":104068,"records":1511,"days":366} as const;
+export const OFFLINE_BUILD = {"dataVersion":"0.1.0","factsManifestSha256":"1ee83f5e49fc22b1153066f3ea05dd784ff8d372d3486df01a6c6668f87cf462","factsRecords":104693,"records":1511,"days":366} as const;
 
 /** The best three to five facts for every calendar day, oldest first within a day. */
 export const offline: readonly OnThisDayRecord[] = [

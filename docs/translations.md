@@ -184,3 +184,25 @@ Not yet checked by a person who reads Japanese. Literal English renderings.
 | Demo, the retired banner's years line | `2000年` | 2000 |
 
 Words: 背番号 (sebangō) is the number on the back of a jersey; 永久欠番 (eikyū-ketsuban) is a number no one will wear again.
+
+## Japanese added in 0.18.0
+
+Not yet checked by a person who reads Japanese. Literal English renderings.
+
+| Pattern id | Japanese | Literal English |
+| --- | --- | --- |
+| `allstar-played` | `{leadIn}{allStarName}が行われた{venue}{allStarResult}{allStarMvp}。` | {leadIn}the {allstar game} was held (venue). {A} beat {B} {score}. The most valuable player was {name}. |
+| `allstar-took-place` | `{allStarName}は{dateOn}開催された{venue}{allStarResult}{allStarMvp}。` | The {allstar game} was held {dateOn}(venue). ... |
+| `allstar-hosted` | `{leadIn}{venueName}で{allStarName}が開かれた{allStarResult}{allStarMvp}。` | {leadIn}the {allstar game} was held at {venue}. ... |
+| `feat-pitcher` | `{leadIn}{pitcherName}{featOfClub}が{opponentName}を相手に{featDid}{featResult}{featStage}。` | {leadIn}{pitcher}(club) achieved {feat} against {opponent} (won {score}) (round). |
+| `feat-pitcher-on` | `{pitcherName}は{dateOn}{opponentName}を相手に{featDid}{featResult}{featStage}。` | {pitcher} achieved {feat} against {opponent} {dateOn} ... |
+| `feat-club` | `{leadIn}{clubName}は{opponentName}{featClubDid}{featResult}{featStage}。` | {leadIn}{club} held {opponent} hitless ... |
+| `feat-club-on` | `{clubName}は{dateOn}{opponentName}{featClubDid}{featResult}{featStage}。` | {club} held {opponent} hitless {dateOn} ... |
+| Fragment: league names | `NHLオールスターゲーム`, `NBAオールスターゲーム`, `MLBオールスターゲーム`, `プロボウル`, `CFLオールスターゲーム` | NHL All-Star Game, NBA All-Star Game, MLB All-Star Game, Pro Bowl, CFL All-Star Game |
+| Fragment: result | `。{0}が{1}に{2}対{3}で勝った` | {0} beat {1} {2} to {3}. |
+| Fragment: most valuable player | `。最優秀選手は{0}` | The most valuable player was {0}. |
+| Fragment: no-hitter and perfect game | `ノーヒットノーランを達成した`, `完全試合を達成した` | achieved a no-hitter, achieved a perfect game |
+| Fragment: club | `を無安打に抑えた`, `を継投で無安打に抑えた`, `を相手に完全試合を達成した` | held (it) hitless, held (it) hitless with several pitchers, achieved a perfect game against (it) |
+| Fragment: club's score | `（{0}対{1}で勝利）`, `（{0}対{1}で敗戦）` | (won {0} to {1}), (lost {0} to {1}) |
+| Fragment: round | `（ワールドシリーズ）`, `（リーグチャンピオンシップシリーズ）`, `（ディビジョンシリーズ）`, `（ワイルドカードシリーズ）` | (World Series), (League Championship Series), (Division Series), (Wild Card Series) |
+

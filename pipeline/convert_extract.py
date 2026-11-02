@@ -390,6 +390,8 @@ def history_tags(row: dict) -> list[str]:
         tags.append("venue-history")
     if cat == "retired-number":
         tags.append("ceremony-recognition")
+    if cat == "game-feat":
+        tags.append("exceptional-achievement")
     if cat in ("competition-start", "competition-end", "sport-event"):
         tags.append("competition-boundary")  # a single-day event began and ended that day
     tags.extend(row.get("extraTags") or [])
@@ -560,7 +562,8 @@ def finalize(row: dict) -> dict | None:
         "sitelinks", "priorityAthlete", "nationality", "epithet", "eventLabel", "eventPlace",
         "championships", "championshipName", "personAward", "awardCount", "hallOfFameYear",
         "seriesWinnerWins", "seriesLoserWins", "seriesGames", "winnerRecord", "winnerTitleNumber", "awards",
-        "jerseyNumber", "jerseyRetired", "jerseySource", "leagueWide",
+        "jerseyNumber", "jerseyRetired", "jerseySource", "leagueWide", "loserName", "winnerScore", "loserScore", "decidedBy", "mvpNames", "attendance",
+        "feat", "pitcherName", "pitchersUsed", "opponentName", "clubScore", "opponentScore",
     ):
         if row.get(key) not in (None, [], ""):
             out[key] = row[key]
@@ -1270,6 +1273,91 @@ def jersey_lookup() -> "callable":
 
 
 
+def unmarked(value) -> str | None:
+    """A name without the footnote marks (`**`, a dagger) the article's table puts after it."""
+    text = clean_label(value)
+    return re.sub(r"\s*[*\u2020\u2021\u00a7]+$", "", text).strip() if text else text
+
+
+def all_star_rows() -> list[dict]:
+    """The All-Star Games (and the Pro Bowl) of the NHL, NBA, MLB, NFL and CFL that were played, one fact each, on the first day of the event: pipeline/extract_all_star.py,
+    from English Wikipedia's articles (CC BY-SA 4.0). A game has a winner only when its deciding game (the final of a tournament, else the only game) was not tied."""
+    path = EXTRACT / "extract_all_star.json"
+    if not path.exists():
+        print(f"missing {path}", file=sys.stderr)
+        return []
+    data = json.loads(path.read_text(encoding="utf-8"))
+    games: dict[tuple, list[dict]] = defaultdict(list)
+    for g in data.get("games") or []:
+        games[(g["league"], g["year"], g["event_no"])].append(g)
+    mvps: dict[tuple, list[dict]] = defaultdict(list)
+    for m in data.get("mvps") or []:
+        mvps[(m["league"], m["year"], m["event_no"])].append(m)
+    out: list[dict] = []
+    for e in data.get("events") or []:
+        day = e.get("first_day")
+        if e.get("status") != "played" or not day or not re.match(r"^\d{4}-\d{2}-\d{2}$", day) or e.get("league") not in LEAGUE_SPORT:
+            continue
+        # The 2021 Pro Bowl is listed as played with a note in place of its venue: the game was cancelled.
+        if re.search(r"cancel|postpone", f"{e.get('venue_name') or ''} {e.get('city_text') or ''}", re.I):
+            continue
+        key = (e["league"], e["year"], e["event_no"])
+        played = sorted(games.get(key, []), key=lambda g: g.get("game_no") or 0)
+        deciding = next((g for g in played if (g.get("stage") or "") in ("final", "championship")), played[-1] if len(played) == 1 else None)
+        rec = {
+            "recordId": f"spx:all-star:{e['league']}:{e['year']}:{e['event_no']}", "category": "all-star", "eventDate": day, "datePrecision": "day",
+            "sport": LEAGUE_SPORT[e["league"]], "league": e["league"], "competition": "all-star", "basis": "source",
+            "sourceId": "wikipedia", "licence": "CC BY-SA 4.0", "attribution": "Wikipedia contributors, CC BY-SA 4.0.", "sourceUrl": "https://en.wikipedia.org/",
+        }
+        if unmarked(e.get("venue_name")):
+            rec["venueName"] = unmarked(e["venue_name"])
+        if unmarked(e.get("city_text")):
+            rec["venueCity"] = unmarked(e["city_text"])
+        if isinstance(e.get("attendance"), int) and e["attendance"] > 0:
+            rec["attendance"] = e["attendance"]
+        if deciding and deciding.get("side1_score") is not None and deciding.get("side2_score") is not None and deciding["side1_score"] != deciding["side2_score"]:
+            first_won = deciding["side1_score"] > deciding["side2_score"]
+            win, lose = ("side1", "side2") if first_won else ("side2", "side1")
+            if unmarked(deciding.get(f"{win}_name")) and unmarked(deciding.get(f"{lose}_name")):
+                rec.update({"winnerName": unmarked(deciding[f"{win}_name"]), "loserName": unmarked(deciding[f"{lose}_name"]),
+                            "winnerScore": deciding[f"{win}_score"], "loserScore": deciding[f"{lose}_score"]})
+                if deciding.get("decided_by") in ("OT", "SO"):
+                    rec["decidedBy"] = deciding["decided_by"]
+        names = [unmarked(m.get("name")) for m in sorted(mvps.get(key, []), key=lambda m: m.get("seq") or 0)]
+        names = [n for n in dict.fromkeys(names) if n]
+        if names:
+            rec["mvpNames"] = names
+        out.append(rec)
+    return out
+
+
+
+def mlb_feat_rows() -> list[dict]:
+    """No-hitters and perfect games of the major leagues, counted from Retrosheet's game logs (pipeline/extract_mlb_feats.py). The credit is Retrosheet's notice."""
+    path = EXTRACT / "extract_mlb_feats.json"
+    if not path.exists():
+        print(f"missing {path}", file=sys.stderr)
+        return []
+    out: list[dict] = []
+    for r in json.loads(path.read_text(encoding="utf-8")).get("records") or []:
+        day = r.get("gameDate")
+        if not day or not re.match(r"^\d{4}-\d{2}-\d{2}$", day) or not r.get("club") or not r.get("opponent") or r.get("feat") not in ("no-hitter", "perfect-game"):
+            continue
+        rec = {
+            "recordId": f"retrosheet:game-feat:{r['retrosheetGame']}:{r['feat']}", "category": "game-feat", "eventDate": day, "datePrecision": "day", "sport": "baseball",
+            "league": "mlb", "competition": "mlb", "basis": "source", "feat": r["feat"], "clubName": r["club"], "opponentName": r["opponent"],
+            "clubScore": r.get("clubScore"), "opponentScore": r.get("opponentScore"), "pitchersUsed": r.get("pitchersUsed"),
+            "sourceId": "retrosheet", "licence": "Retrosheet notice", "sourceUrl": "https://www.retrosheet.org/",
+        }
+        if r.get("round"):
+            rec["phase"] = r["round"]
+        if r.get("pitcher") and r.get("pitchersUsed") == 1:
+            rec["pitcherName"] = r["pitcher"]
+        out.append(rec)
+    return out
+
+
+
 def build_facts() -> tuple[list[dict], dict]:
     """Stage one: the extracts (DS1, the Wikidata dump, the priority list) become the facts, each worded and tagged, and the few numbers and
     names the layout needs besides them. Needs the extracts, which are not in git; its result is `data-sources/facts/` (`write_inputs`)."""
@@ -1499,6 +1587,8 @@ def build_facts() -> tuple[list[dict], dict]:
             continue
         chosen[rec["recordId"]] = rec
 
+    for rec in all_star_rows() + mlb_feat_rows():
+        chosen[rec["recordId"]] = rec
     latest_played = max((r.get("eventDate") or "" for r in games), default="")
     for rec in retired_rows(club_namer(games + finals + franchise, names), latest_played):
         chosen[rec["recordId"]] = rec
@@ -1545,7 +1635,7 @@ def build_facts() -> tuple[list[dict], dict]:
         "wikidataDumpEvents": event_meta,
     }
     print(json.dumps({"priorityAdded": priority_added, "wikidataDumpAdded": dump_added, "listPeopleAdded": list_added, "wikidataDumpEventsAdded": events_added,
-                      "priorityRephrased": rephrased, "retiredNumbers": sum(1 for f in facts if f.get("category") == "retired-number"), "jerseyNumbers": sum(1 for f in facts if f.get("jerseyNumber") is not None and f.get("category") != "retired-number"), "facts": len(facts), "droppedThin": dropped, "mergedSameEvent": merged_events}, indent=2))
+                      "priorityRephrased": rephrased, "retiredNumbers": sum(1 for f in facts if f.get("category") == "retired-number"), "allStarGames": sum(1 for f in facts if f.get("category") == "all-star"), "gameFeats": sum(1 for f in facts if f.get("category") == "game-feat"), "jerseyNumbers": sum(1 for f in facts if f.get("jerseyNumber") is not None and f.get("category") != "retired-number"), "facts": len(facts), "droppedThin": dropped, "mergedSameEvent": merged_events}, indent=2))
     return facts, meta
 
 

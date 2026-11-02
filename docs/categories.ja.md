@@ -71,7 +71,7 @@
 | `ranking` | 最高位または1位の期間 | ランキング | 予定 | 0 |
 | `participation-longevity` | 連続出場、最年少、最年長 | 出場の記録 | 予定 | 0 |
 | `non-scoring-performance` | アシスト、セーブ、奪三振、守備 | ボックス統計 | 予定 | 0 |
-| `exceptional-achievement` | 完全試合、ノーヒット、最高点 | 公式の偉業 | 予定 | 0 |
+| `exceptional-achievement` | 完全試合、ノーヒット、最高点 | Retrosheet の試合ログ（`pipeline/extract_mlb_feats.py`） | 収録 | 290 |
 | `rules-format-change` | 日付のある規則や方式の採用 | リーグの記録 | 予定 | 0 |
 | `league-federation-history` | 創設、合併、拡張 | リーグの歴史 | 予定 | 0 |
 | `sporting-first` | 確認した初出場または初メダル | 根拠のある「初めて」 | 予定 | 0 |

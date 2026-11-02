@@ -62,7 +62,7 @@ test("every fact that states a contested date is marked, with every other day th
   assert.equal(marked.filter((r) => r.birthDateAlternatives).length, 216);
   assert.equal(marked.filter((r) => r.deathDateAlternatives).length, 93);
   // A disputed fact stays where it was: nothing is dropped, and no fact is added.
-  assert.equal(facts.all.length, 104068);
+  assert.equal(facts.all.length, 104693);
 });
 
 test("a disputed fact carries the tag `date:disputed`, a note in both languages, and its sentence still names the date it always had", () => {

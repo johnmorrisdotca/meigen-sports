@@ -4,6 +4,13 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+## [0.18.0] - 2026-11-02
+
+- Data: 335 All-Star Games (`all-star`): the NHL, NBA and MLB All-Star Games, the Pro Bowl and the CFL All-Star Game, on the day each was played, with the venue, the deciding game's score (a tournament's final; never for a tie), the most valuable players and the facts' own tag `competition:all-star`. "On February 3, 2024, the NHL All-Star Game was played at Scotiabank Arena, Toronto, Ontario; Team Matthews beat Team McDavid 7–4; Auston Matthews was named most valuable player." From English Wikipedia's articles, parsed in the SPX database (CC BY-SA 4.0) and read through its public views by `pipeline/extract_all_star.py`. A cancelled game (the 2021 Pro Bowl, which the parsed rows list as played) and a footnote mark on a venue are left out.
+- Data: 290 no-hitters and perfect games of Major League Baseball (`game-feat`, history tag `exceptional-achievement`; 21 perfect games), counted from Retrosheet's game logs by `pipeline/extract_mlb_feats.py` (the Retrosheet notice travels with the fact). A no-hitter is a club with no hit in a game of nine innings or more; a perfect game, besides, has no walk, hit by pitch, catcher's interference, error, runner, steal or double play and 27 batters. A pitcher is named only when the log says one pitcher pitched the whole game (otherwise "combined to no-hit"). The 1880 perfect games and Cy Young's of 1904 (counted as a no-hitter) are not found as perfect games by this rule.
+- Wording: two more kinds of statement, `all-star` and `feat` (18 in all), with Japanese (`NHLオールスターゲーム`, `プロボウル`, `ノーヒットノーラン`, `完全試合`; English beside each in docs/translations.md). They rank below the famous births and deaths, so no golden fact moved.
+- Tests: `test/all-star-feats.test.ts`. Not done: the NHL and NBA milestones from Wikipedia's lists (5-goal games, 500th goals, 70-point games), and the cycles, 3-home-run games and NFL 400-yard games, which need play-by-play files this build does not read.
+
 ## [0.17.0] - 2026-11-02
 
 - Data: 255 retired numbers as facts (`retired-number`, tag `ceremony-recognition`, 220 baseball and 35 hockey): "On February 6, 2000, the NHL retired No. 99 across the league for Wayne Gretzky.", "On June 4, 1972, the Los Angeles Dodgers retired Jackie Robinson's No. 42." (`jerseyNumber`, `clubName` or `leagueWide`, English Wikipedia, CC BY-SA 4.0). Only a day the source gives, not 1 January, not after the extract's last game, and a club the facts name as it was named that day. 16th kind of statement `retired`, six patterns in English and Japanese; a rank below the famous births and deaths, so no golden fact moved.

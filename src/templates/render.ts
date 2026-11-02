@@ -63,7 +63,7 @@ export interface When {
 }
 
 /** Categories whose games are really played on January 1; for any other kind a January 1 date is how a source writes "some time that year". */
-const REAL_JANUARY_FIRST = new Set(["game-on-day", "soccer-on-day", "championship-final", "upset", "comeback"]);
+const REAL_JANUARY_FIRST = new Set(["game-on-day", "soccer-on-day", "championship-final", "upset", "comeback", "all-star", "game-feat"]);
 
 function whenOfFact(record: OnThisDayRecord): When | null {
   const iso = record.eventDate ?? "";
@@ -173,6 +173,8 @@ function factType(record: OnThisDayRecord): TemplateType | null {
     case "venue-opening": return "venue";
     case "franchise-event": return "franchise";
     case "retired-number": return "retired";
+    case "all-star": return "all-star";
+    case "game-feat": return "feat";
     case "first": return "first";
     default: return null;
   }
@@ -247,6 +249,46 @@ function recordLine(r: OnThisDayRecord["winnerRecord"]): string {
   if (!r || !Number.isInteger(r.wins) || !Number.isInteger(r.losses) || r.wins < 0 || r.losses < 0) return "";
   const extra = r.otLosses != null ? r.otLosses : r.ties;
   return [r.wins, r.losses, ...(extra != null && Number.isInteger(extra) && extra >= 0 ? [extra] : [])].join("\u2013");
+}
+
+const ALL_STAR_NAME: Record<string, FragmentId> = { nhl: "allStarNhl", nba: "allStarNba", mlb: "allStarMlb", nfl: "allStarNfl", cfl: "allStarCfl" };
+
+/** The parts of an All-Star Game sentence: its name as the league writes it, the deciding game's result (never for a tie) and the most valuable players. */
+function allStarFields(record: OnThisDayRecord, say: (id: FragmentId, ...args: string[]) => string): Record<string, string> {
+  const name = record.category === "all-star" ? ALL_STAR_NAME[record.league ?? ""] : undefined;
+  if (!name) return { allStarName: "", allStarResult: "", allStarMvp: "" };
+  const winner = cleanLabel(record.winnerName), loser = cleanLabel(record.loserName);
+  const ws = record.winnerScore, ls = record.loserScore;
+  const decided = winner && loser && ws != null && ls != null && ws > ls;
+  const extra = decided ? (record.decidedBy === "SO" ? say("shootout") : record.decidedBy === "OT" ? say("overtime") : "") : "";
+  const mvps = (record.mvpNames ?? []).map(cleanLabel).filter(Boolean);
+  return {
+    allStarName: say(name),
+    allStarResult: decided ? say("allStarResult", winner, loser, String(ws), String(ls)) + extra : "",
+    allStarMvp: mvps.length === 1 ? say("allStarMvp", mvps[0]!) : mvps.length > 1 ? say("allStarMvps", mvps.join(say("listLast"))) : "",
+  };
+}
+
+const FEAT_STAGE: Record<string, FragmentId> = {
+  "world-series": "featWorldSeries", "league-championship": "featLeagueChampionship", "division-series": "featDivisionSeries", "wild-card": "featWildCard",
+};
+
+/** The parts of a no-hitter or perfect-game sentence: what was done, by the pitcher or by the club, the club's score, and the round of a postseason game. */
+function featFields(record: OnThisDayRecord, say: (id: FragmentId, ...args: string[]) => string): Record<string, string> {
+  if (record.category !== "game-feat" || !record.feat) return { featDid: "", featClubDid: "", featResult: "", featStage: "", featOfClub: "", opponentName: "", pitcherName: "" };
+  const perfect = record.feat === "perfect-game";
+  const cs = record.clubScore, os = record.opponentScore;
+  const club = cleanLabel(record.clubName);
+  const pitcher = (record.pitchersUsed ?? 0) === 1 ? cleanLabel(record.pitcherName) : "";
+  return {
+    featDid: say(perfect ? "featPerfect" : "featNoHitter"),
+    featClubDid: say(perfect ? "featClubPerfect" : (record.pitchersUsed ?? 1) > 1 ? "featClubCombined" : "featClubNoHit"),
+    featResult: cs != null && os != null && cs !== os ? say(cs > os ? "featWin" : "featLoss", String(cs), String(os)) : "",
+    featStage: FEAT_STAGE[record.phase ?? ""] ? say(FEAT_STAGE[record.phase ?? ""]!) : "",
+    featOfClub: pitcher && club ? say("featOfClub", club) : "",
+    opponentName: cleanLabel(record.opponentName),
+    pitcherName: pitcher,
+  };
 }
 
 function fieldsOf(
@@ -379,6 +421,8 @@ function fieldsOf(
     draftYear: record.draftYear == null ? "" : String(record.draftYear),
     pick, clubBy, clubName: clubNameClean || cleanLabel(record.winnerName),
     number: record.jerseyNumber == null ? "" : String(record.jerseyNumber),
+    ...allStarFields(record, say),
+    ...featFields(record, say),
     leagueWide: record.category === "retired-number" && record.leagueWide ? league : "",
     theClub: record.sport === "soccer" ? "" : say("article"),
     venueName: venueNameClean,
