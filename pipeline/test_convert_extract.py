@@ -186,6 +186,91 @@ class ConvertExtractTests(unittest.TestCase):
         self.assertIsNone(convert.clean_label(None))
         self.assertEqual(convert.team({"name": "Allegheny Club (none)", "franchiseId": 1})["name"], "Allegheny Club")
 
+    def dated(self, **tables):
+        convert.DATED.update({"clubs": {}, "venueIds": {}, "venues": {}, "gameLeagues": {}, "gamesOnDay": {}})
+        for row in tables.get("clubs", []):
+            convert.DATED["clubs"].setdefault((row["league"], row["franchise_id"]), []).append(row)
+        for row in tables.get("venues", []):
+            convert.DATED["venues"].setdefault(row["wikidata_id"], []).append(row)
+            convert.DATED["venueIds"].setdefault(convert.plain(row["name"]), set()).add(row["wikidata_id"])
+        for row in tables.get("games", []):
+            convert.DATED["gameLeagues"][row["game_id"]] = row["league"]
+            convert.DATED["gamesOnDay"].setdefault((row["game_date"], frozenset((convert.plain(row["home"]), convert.plain(row["away"])))), row["league"])
+
+    def test_a_club_is_named_as_it_was_called_that_day(self):
+        self.dated(clubs=[
+            {"league": "nhl", "franchise_id": 1410, "name": "Quebec Nordiques", "name_from": "1979-07-01", "name_to": "1995-07-01"},
+            {"league": "nhl", "franchise_id": 1410, "name": "Colorado Avalanche", "name_from": "1995-07-01", "name_to": None},
+        ])
+        self.assertEqual(convert.club_on("nhl", 1410, "2013-11-02"), "Colorado Avalanche")
+        self.assertEqual(convert.club_on("nhl", 1410, "1995-06-30"), "Quebec Nordiques")
+        self.assertEqual(convert.club_on("nhl", 1410, "1995-07-01"), "Colorado Avalanche")
+        self.assertIsNone(convert.club_on("nhl", 1410, "1970-01-01"))
+        self.assertIsNone(convert.club_on("wha", 1410, "2013-11-02"))
+
+    def test_a_retired_number_names_the_club_of_the_day_not_the_first_name(self):
+        self.dated(clubs=[
+            {"league": "nhl", "franchise_id": 1410, "name": "Quebec Nordiques", "name_from": "1979-07-01", "name_to": "1995-07-01"},
+            {"league": "nhl", "franchise_id": 1410, "name": "Colorado Avalanche", "name_from": "1995-07-01", "name_to": None},
+            {"league": "nhl", "franchise_id": 7, "name": "Montréal Canadiens", "name_from": None, "name_to": None},
+        ])
+        rows = [
+            {"retired_number_id": 1, "league": "nhl", "franchise_id": 1410, "jersey_number": 52, "name": "Adam Foote", "retired_on": "2013-11-02", "league_wide": False},
+            {"retired_number_id": 2, "league": "nhl", "franchise_id": 7, "jersey_number": 9, "name": "Maurice Richard", "retired_on": "1960-10-06", "league_wide": False},
+        ]
+        original = convert.read_list
+        convert.read_list = lambda name: rows
+        try:
+            made = {r["person"]["name"]: r for r in convert.retired_rows(lambda fid, day: "Quebec Nordiques" if fid == 1410 else "Montreal Canadiens", "2026-11-02")}
+        finally:
+            convert.read_list = original
+        self.assertEqual(made["Adam Foote"]["clubName"], "Colorado Avalanche")
+        self.assertEqual(made["Maurice Richard"]["clubName"], "Montreal Canadiens")  # a spelling with an accent is not another name
+
+    def test_a_building_is_named_as_it_was_called_that_year(self):
+        self.dated(venues=[
+            {"wikidata_id": "Q1", "name": "The Summit", "from_year": 1975, "until_year": 1998},
+            {"wikidata_id": "Q1", "name": "Compaq Center", "from_year": 1998, "until_year": 2003},
+            {"wikidata_id": "Q1", "name": "Lakewood Church Central Campus", "from_year": 2003, "until_year": None},
+            {"wikidata_id": "Q2", "name": "Air Canada Centre", "from_year": 1999, "until_year": 2018},
+            {"wikidata_id": "Q2", "name": "Air Canada Centre (ACC)", "from_year": 1999, "until_year": 2018},
+            {"wikidata_id": "Q2", "name": "Scotiabank Arena", "from_year": 2018, "until_year": None},
+            {"wikidata_id": "Q3", "name": "Kia Forum", "from_year": None, "until_year": None},
+        ])
+        self.assertEqual(convert.venue_in("Lakewood Church Central Campus", 1995), "The Summit")
+        self.assertEqual(convert.venue_in("Lakewood Church Central Campus", 2010), "Lakewood Church Central Campus")
+        self.assertEqual(convert.venue_in("Scotiabank Arena", 2016), "Air Canada Centre")
+        self.assertIsNone(convert.venue_in("Lakewood Church Central Campus", 1998))  # a year two names share: neither is said
+        self.assertIsNone(convert.venue_in("Lakewood Church Central Campus", 1960))  # no name that year
+        self.assertEqual(convert.venue_in("Kia Forum", 1968), "Kia Forum")
+        self.assertEqual(convert.venue_in("Some Unknown Park", 1900), "Some Unknown Park")
+        final = {"category": "championship-final", "eventDate": "1995-06-14", "league": "nba", "venueName": "Lakewood Church Central Campus", "venueCity": "Houston"}
+        convert.dated_fixes(final)
+        self.assertEqual((final["venueName"], final["venueCity"]), ("The Summit", "Houston"))
+        star = {"category": "all-star", "eventDate": "1960-07-01", "league": "mlb", "venueName": "Lakewood Church Central Campus", "venueCity": "Houston"}
+        convert.dated_fixes(star)
+        self.assertNotIn("venueName", star)
+        self.assertNotIn("venueCity", star)
+
+    def test_a_game_of_the_early_baseball_leagues_says_its_own_league(self):
+        self.dated(games=[
+            {"game_id": 10, "league": "na", "game_date": "1874-06-01", "home": "Brooklyn Atlantics", "away": "Philadelphia White Stockings"},
+            {"game_id": 11, "league": "fl", "game_date": "1914-09-19", "home": "Brooklyn Tip-Tops", "away": "Buffalo Blues"},
+        ])
+        game = {"category": "game-on-day", "eventDate": "1874-06-01", "league": "mlb", "competition": "mlb", "sport": "baseball", "gameId": 10}
+        convert.dated_fixes(game)
+        self.assertEqual((game["league"], game["competition"]), ("na", "na"))
+        feat = {"category": "game-feat", "eventDate": "1914-09-19", "league": "mlb", "competition": "mlb", "sport": "baseball", "clubName": "Brooklyn Tip-Tops", "opponentName": "Buffalo Blues"}
+        convert.dated_fixes(feat)
+        self.assertEqual(feat["league"], "fl")
+        national = {"category": "game-on-day", "eventDate": "1900-05-01", "league": "mlb", "competition": "mlb", "sport": "baseball", "gameId": 99}
+        convert.dated_fixes(national)
+        self.assertEqual(national["league"], "mlb")
+        later = {"category": "game-on-day", "eventDate": "1950-05-01", "league": "mlb", "competition": "mlb", "sport": "baseball", "gameId": 10}
+        convert.dated_fixes(later)
+        self.assertEqual(later["league"], "mlb")
+        self.assertEqual({convert.LEAGUE_SPORT[c] for c in ("na", "aa", "ua", "pl", "fl")}, {"baseball"})
+
 
 if __name__ == "__main__":
     unittest.main()

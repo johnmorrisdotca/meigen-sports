@@ -94,7 +94,7 @@
 
 `1990年10月20日、Cincinnati Redsが1990年のワールドシリーズでOakland Athleticsに4勝0敗で勝った（第4戦は2対1）。`
 
-どの決勝も、アーカイブが持つ文脈を、その欄があるときだけ足します。決着の試合の会場、そのクラブの何回目の優勝か（そのリーグの優勝者の一覧が完全なときだけ）、優勝チームのレギュラーシーズンの成績（勝・敗、リーグによって引き分けまたは延長負）です。欄: `seriesWinnerWins`、`seriesLoserWins`、`seriesGames`、`venueName`、`venueCity`、`winnerTitleNumber`、`winnerRecord`。
+どの決勝も、アーカイブが持つ文脈を、その欄があるときだけ足します。決着の試合の会場、そのクラブの何回目の優勝か（そのリーグの優勝者の一覧が完全なときだけ）、優勝チームのレギュラーシーズンの成績（勝・敗、リーグによって引き分けまたは延長負）です。欄: `seriesWinnerWins`、`seriesLoserWins`、`seriesGames`、`venueName`、`venueCity`、`winnerTitleNumber`、`winnerRecord`。会場の名前はその年の呼び名です（1995年は今の名前ではなく The Summit）。2つの名前が重なる年や、その年の名前の記録がない年は、会場を文から外します。オールスターゲームの会場も同じで、永久欠番のクラブ名はその日の名前です（2013年は Colorado Avalanche）。
 
 同じ大会・同じ日の「始まった／終わった」は、より詳しい試合があるときは出しません。
 

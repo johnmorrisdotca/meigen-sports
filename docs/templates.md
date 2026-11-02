@@ -105,7 +105,7 @@ Venue openings need a city, home club or hosted final. Franchise identity change
 
 ## Games
 
-A regular result uses at least three patterns. `varied` / `seeded` pick among those that are eligible:
+A regular result uses at least three patterns. `varied` / `seeded` pick among those that are eligible. A game of the National Association, American Association, Union Association, Players' League or Federal League says its own league in the parenthesis (“(National Association)”, “(Federal League)”), not “(MLB)”:
 
 - `game-beat`: “On June 1, 1900, Pittsburgh Pirates beat Brooklyn Superbas 10–0 (MLB).”
 - `game-defeated`: “On June 1, 1900, the Pittsburgh Pirates defeated the Brooklyn Superbas 10–0 (MLB).”
@@ -132,7 +132,7 @@ A final decided over several games (the World Series and the NBA Finals) says th
 - `final-series-went-to`: “On October 20, 1990, the 1990 World Series went to Cincinnati Reds, who swept the Oakland Athletics 4–0 with a 2–1 win in Game 4.”
 - A series that went the distance reads “beating the Boston Red Sox 4 games to 3 with a 3–2 win in Game 7”; a tied game counts as played, not won (1912: Game 8, 4 games to 3).
 
-Every final also takes the context the archive holds, each clause only when its field is there: the deciding game's venue (“at Oakland–Alameda County Coliseum, Oakland”), which title it was for the franchise (“It was their 5th title.”, only where the archive's list of that league's champions is complete) and the winner's regular season (“They had finished the regular season 91–71.”, wins, losses, then ties or overtime losses as the league writes them). Fields: `seriesWinnerWins`, `seriesLoserWins`, `seriesGames`, `venueName`, `venueCity`, `winnerTitleNumber`, `winnerRecord`.
+Every final also takes the context the archive holds, each clause only when its field is there: the deciding game's venue (“at Oakland–Alameda County Coliseum, Oakland”), which title it was for the franchise (“It was their 5th title.”, only where the archive's list of that league's champions is complete) and the winner's regular season (“They had finished the regular season 91–71.”, wins, losses, then ties or overtime losses as the league writes them). Fields: `seriesWinnerWins`, `seriesLoserWins`, `seriesGames`, `venueName`, `venueCity`, `winnerTitleNumber`, `winnerRecord`. The venue is named as the building was called in that year (“Game 4 at The Summit, Houston” in 1995, not today's name); a year that two names share, or one with no name on record, leaves the venue out of the sentence. An All-Star Game's venue follows the same rule, and a retired number names the club as it was called on the day (“the Colorado Avalanche retired Adam Foote's No. 52” in 2013).
 
 A World Cup match caption in the bundled history feed is rewritten the same way from its own published score line (“On December 18, 2022, Argentina won the 2022 World Cup, beating France 4–2 on penalties after a 3–3 draw.”, the row's own `date`). Venue is included only when the fact holds it.
 

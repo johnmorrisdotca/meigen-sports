@@ -143,20 +143,21 @@ test("every title sentence of a series in the data carries a tally that agrees w
 
 test("Cincinnati Reds, 1990: the series, not the last game", () => {
   const reds = records.find((r) => r.category === "championship-final" && r.league === "mlb" && r.seasonStartYear === 1990)!;
-  assert.equal(reds.text, "On October 20, 1990, Cincinnati Reds won the 1990 World Series, sweeping the Oakland Athletics 4–0 with a 2–1 win in Game 4 at Oakland Coliseum, Oakland.");
+  assert.equal(reds.text, "On October 20, 1990, Cincinnati Reds won the 1990 World Series, sweeping the Oakland Athletics 4–0 with a 2–1 win in Game 4 at Oakland–Alameda County Coliseum, Oakland.");
 });
 
-test("the context the archive held is in the facts: every final has its venue, and a title number or record only where DS1 stated one", () => {
+test("the context the archive held is in the facts: a final has its venue as it was called that year or none, and a title number or record only where DS1 stated one", () => {
   const finals = records.filter((r) => r.category === "championship-final");
   assert.ok(finals.length > 300);
   for (const r of finals) {
-    assert.ok(r.venueName && r.venueCity, `${r.recordId} has no venue`);
-    assert.ok((r.text ?? "").includes(`at ${r.venueName}`), r.recordId);
+    if (r.venueName) assert.ok(r.venueCity && (r.text ?? "").includes(`at ${r.venueName}`), r.recordId);
+    else assert.ok(!r.venueCity && !/ at /.test(r.text ?? ""), `${r.recordId} names a building with no name for its year`);
     if (r.winnerTitleNumber != null) assert.match(r.text ?? "", /It was their \d+(st|nd|rd|th) title\./, r.recordId);
     else assert.doesNotMatch(r.text ?? "", /their \d+(st|nd|rd|th) title/, r.recordId);
     if (r.winnerRecord != null) assert.match(r.text ?? "", /They had finished the regular season \d+–\d+(–\d+)?\./, r.recordId);
     else assert.doesNotMatch(r.text ?? "", /regular season/, r.recordId);
   }
+  assert.ok(finals.filter((r) => !r.venueName).length < finals.length / 10, "a few finals have no building named for their year");
   const bears = finals.find((r) => r.league === "nfl" && r.eventDate === "1986-01-26")!;
   assert.equal(bears.text, "On January 26, 1986, Chicago Bears won the 1986 Super Bowl, beating New England Patriots 46–10 at Louisiana Superdome, New Orleans. It was their 9th title. They had finished the regular season 15–1–0.");
 });

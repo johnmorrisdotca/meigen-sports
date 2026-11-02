@@ -44,6 +44,14 @@ MEIGEN_RETROSHEET_DIR=<folder with gl/, CurrentNames.csv and TEAMABR.TXT> python
 
 `extract_all_star.py` reads the public views `api.all_star_event`, `all_star_game` and `all_star_mvp` (English Wikipedia, parsed by spx-stats' `scripts/all_star/`, CC BY-SA 4.0) and writes `extract_all_star.json`; the raw responses go to `data-sources/raw/all-star/` (git-ignored) for the coordinating session to archive. `extract_mlb_feats.py` counts no-hitters and perfect games from Retrosheet's game logs (`extract_mlb_feats.json`; the rules are in its header). `convert_extract.py` reads both extracts when they are present.
 
+## Clubs, buildings and leagues as of the day
+
+```sh
+MEIGEN_API_URL=<read-only API of the SPX database> MEIGEN_API_KEY=<its public key> python3 -I pipeline/extract_dated_names.py
+```
+
+`extract_dated_names.py` reads `api.franchise_names`, `api.venue_name` and the games of the National Association, American Association, Union Association, Players' League and Federal League from `api.games`, and writes `extract_dated_names.json` (the raw responses go to `data-sources/raw/dated-names/`, git-ignored). `convert_extract.py` uses it for three things: a retired number names the club as it was called on the day (`club_on`: "Colorado Avalanche" for Adam Foote in 2013, not the franchise's first name); a final or an All-Star Game names its building as it was called that year (`venue_in`; a year two names share, or no name on record, leaves the building and its city out of the fact); and a game of those five leagues says its own league (`na`, `aa`, `ua`, `pl`, `fl`), not `mlb`. A new `extract_games_on_day.sql` run on DS1 already gives these games their own league code, and then the games part is a no-op. `pipeline/test_convert_extract.py` and `test/dated-names.test.ts` hold the rules.
+
 ## Wikidata dump: people of every sport
 
 Does not contact DS1 or the network. Reads the filtered files of spx-stats' `scripts/wikidata_dump/filter.py` (`people`, `items`, `events`, `labels`, read only, from `MEIGEN_WIKIDATA_DUMP_DIR`) and spx-stats' `occupations.tsv` (`MEIGEN_WIKIDATA_OCCUPATIONS`), and writes `extract_wikidata_dump_people.json` to `MEIGEN_EXTRACT_DIR` with the dump's provenance. The rules are in the header of the script and counted in its report (`--report` writes nothing):

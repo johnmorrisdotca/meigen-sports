@@ -16,6 +16,7 @@ const LEAGUE_LABEL: Record<string, string> = {
   nhl: "NHL", nba: "NBA", mlb: "MLB", nfl: "NFL", cfl: "CFL", mls: "MLS",
   wc: "World Cup", wwc: "Women's World Cup", afl: "AFL", aafc: "AAFC",
   nha: "NHA", pcha: "PCHA", wchl: "WCHL", wha: "WHA",
+  na: "National Association", aa: "American Association", ua: "Union Association", pl: "Players' League", fl: "Federal League",
 };
 
 /** A record's `event` is a closed list; only the four that read as a verb are rendered. */

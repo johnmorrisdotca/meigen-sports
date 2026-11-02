@@ -9,7 +9,7 @@ Every one of the 104,693 facts carries its tags in `tags`: the history types tha
 | Namespace | It says | Built from | Values | Facts | Index | Example |
 | --- | --- | --- | ---: | ---: | --- | --- |
 | `sport` | the sport | `sport` | 255 | 104,493 | `indexes/sports/<value>.json` | `sport:handball` |
-| `league` | the league | `league` | 13 | 30,237 | `indexes/leagues/<value>.json` | `league:nhl` |
+| `league` | the league | `league` | 18 | 30,237 | `indexes/leagues/<value>.json` | `league:nhl` |
 | `competition` | the competition, where it is not the league | `competition` | 65 | 702 | in `tags` only | `competition:wc1954` |
 | `series` | an Olympic Games, a World Cup or a World Championships | the name of the event or the competition | 3 | 5,926 | `indexes/series/<value>.json` | `series:olympics` |
 | `country` | the countries of the people or the teams the fact is about | `countries` (a person: every country he represents in sport or holds; a game: its teams' `countryCode`) | 210 | 74,502 | `indexes/countries/<value>.json` | `country:RO` |

@@ -29,6 +29,8 @@ EVENTS_DAY = 40  # facts in a day's events shard (`events/MM-DD.json`)
 EVENT_CATEGORIES = ("competition-start", "competition-end", "sport-event")
 # The people and the events the facts are about, with their countries and Wikipedia titles (pipeline/wikidata_links.py); empty when that extract is absent.
 LINKS: dict = {"people": {}, "events": {}}
+# What a club or a building was called on a day, and the league of the 19th-century games the archive keeps apart from MLB (pipeline/extract_dated_names.py); filled in build_facts().
+DATED: dict = {"clubs": {}, "venueIds": {}, "venues": {}, "gameLeagues": {}, "gamesOnDay": {}}
 # People whose birth or death date Wikidata holds two or more equal-rank values of (pipeline/audit_dates.py --write-disputed); filled in main().
 DISPUTED: dict[str, dict] = {}
 TROPHIES: dict = json.loads((Path(__file__).resolve().parent.parent / "data-sources/trophies.json").read_text(encoding="utf-8"))
@@ -56,7 +58,7 @@ NUMBER_WORD = {
 # The sport a league is played in. A person's sport can come from a Wikidata statement about another sport
 # (Michael Jordan baseball, Jackie Robinson football); a fact about a league club is about that league's sport.
 LEAGUE_SPORT = {
-    "mlb": "baseball", "nba": "basketball", "wnba": "basketball", "nhl": "ice-hockey", "nha": "ice-hockey",
+    "mlb": "baseball", "na": "baseball", "aa": "baseball", "ua": "baseball", "pl": "baseball", "fl": "baseball", "nba": "basketball", "wnba": "basketball", "nhl": "ice-hockey", "nha": "ice-hockey",
     "pcha": "ice-hockey", "wchl": "ice-hockey", "wha": "ice-hockey", "nfl": "american-football",
     "afl": "american-football", "aafc": "american-football", "cfl": "canadian-football",
     "mls": "soccer", "wc": "soccer", "wwc": "soccer",
@@ -1196,10 +1198,82 @@ def club_namer(rows: list[dict], fallback: dict[int, str]):
     return name_in
 
 
+def plain(text: str) -> str:
+    """A name without its accents, case and punctuation: how two spellings of one name are matched."""
+    return re.sub(r"[^a-z0-9]+", " ", "".join(c for c in unicodedata.normalize("NFD", text) if not unicodedata.combining(c)).lower()).strip()
+
+
+def load_dated_names() -> None:
+    """`extract_dated_names.json` (pipeline/extract_dated_names.py): the names a franchise and a building carried and when, and the league of each game of the
+    National Association, American Association, Union Association, Players' League and Federal League."""
+    path = EXTRACT / "extract_dated_names.json"
+    if not path.exists():
+        print(f"missing {path}: clubs and buildings are named as the other extracts name them, and 19th-century games keep their league", file=sys.stderr)
+        return
+    data = json.loads(path.read_text(encoding="utf-8"))
+    for row in data.get("clubs") or []:
+        DATED["clubs"].setdefault((row["league"], row["franchise_id"]), []).append(row)
+    for row in data.get("venues") or []:
+        DATED["venues"].setdefault(row["wikidata_id"], []).append(row)
+        DATED["venueIds"].setdefault(plain(row["name"]), set()).add(row["wikidata_id"])
+    for row in data.get("games") or []:
+        DATED["gameLeagues"][row["game_id"]] = row["league"]
+        DATED["gamesOnDay"].setdefault((row["game_date"], frozenset((plain(row["home"]), plain(row["away"])))), row["league"])
+
+
+def club_on(league: str, franchise_id, day: str) -> str | None:
+    """The one name a franchise carried in a league on a day (`api.franchise_names`: from the day it began to the day it ended), else None.
+    "Colorado Avalanche" on 2013-11-02, never the franchise's first name, "Quebec Nordiques"."""
+    names = {w["name"] for w in DATED["clubs"].get((league, franchise_id), [])
+             if (not w.get("name_from") or w["name_from"] <= day) and (not w.get("name_to") or day < w["name_to"])}
+    return next(iter(names)) if len(names) == 1 else None
+
+
+def venue_in(name: str, year: int) -> str | None:
+    """What a building was called in a year (`api.venue_name`: from year, until year), given the name a fact uses (usually today's). The name unchanged when the
+    database knows no history for it or it is the name of that year; the name of that year when it differs; None when no one name covers that year (a year both names
+    shared, a gap) or the name could be two buildings that disagree."""
+    ids = DATED["venueIds"].get(plain(name))
+    if not ids:
+        return name
+    answers: set[str] = set()
+    for wid in ids:
+        # a name the database also holds with an abbreviation ("Air Canada Centre (ACC)") is one name
+        covering = {re.sub(r" \([^)]*\)$", "", r["name"]) for r in DATED["venues"][wid]
+                    if (r.get("from_year") is None or r["from_year"] <= year) and (r.get("until_year") is None or year <= r["until_year"])}
+        if len(covering) != 1:
+            return None
+        answers.add(next(iter(covering)))
+    if len(answers) != 1:
+        return None
+    there = answers.pop()
+    return name if plain(there) == plain(name) else there
+
+
+def dated_fixes(rec: dict) -> None:
+    """A fact says what a building was called in its year, and a 19th-century game says its own league (National Association, American Association, ...), not MLB.
+    A building with no one name that year is left out of the fact, with its city; the fact stands without it."""
+    year = int((rec.get("eventDate") or "0")[:4])
+    if rec.get("category") in ("championship-final", "all-star") and rec.get("venueName"):
+        name = venue_in(rec["venueName"], year)
+        if name is None:
+            rec.pop("venueName", None)
+            rec.pop("venueCity", None)
+        else:
+            rec["venueName"] = name
+    if rec.get("league") == "mlb" and rec.get("sport") == "baseball" and year < 1916:
+        league = DATED["gameLeagues"].get(rec.get("gameId"))
+        if league is None and rec.get("category") == "game-feat":
+            league = DATED["gamesOnDay"].get((rec["eventDate"], frozenset((plain(rec.get("clubName") or ""), plain(rec.get("opponentName") or "")))))
+        if league:
+            rec["league"] = rec["competition"] = league
+
+
 def retired_rows(name_in, latest: str) -> list[dict]:
     """A club's (or a league's) retired number as a fact, on the day the source gives for it: `api.retired_number` of DS1, read from English Wikipedia (CC BY-SA 4.0).
     Left out: no day, a day on 1 January (a year written as a day), a day after the latest played game of the extract (a ceremony not yet held), no name, a club the games do
-    not name. A league-wide retirement has no club."""
+    not name. A league-wide retirement has no club. The club is named as it was called that day (`club_on`), not by the name its games gave it most: "the Colorado Avalanche
+    retired Adam Foote's No. 52" in 2013, not the franchise's first name, "Quebec Nordiques"."""
     out: list[dict] = []
     for r in read_list("extract_retired_numbers.json"):
         day, number = r.get("retired_on"), r.get("jersey_number")
@@ -1212,6 +1286,9 @@ def retired_rows(name_in, latest: str) -> list[dict]:
         wide = bool(r.get("league_wide"))
         fid = r.get("franchise_id")
         club = None if wide else name_in(fid, day)
+        then = None if wide or not club else club_on(league, fid, day)
+        if then and plain(then) != plain(club):
+            club = then
         if not name or not league or (not wide and not club):
             continue
         rec = {
@@ -1365,6 +1442,7 @@ def build_facts() -> tuple[list[dict], dict]:
         raise SystemExit(f"EXTRACT dir missing: {EXTRACT}")
     LINKS.update(load_links())
     DISPUTED.update(load_disputed())
+    load_dated_names()
     games = [r for r in load_records("extract_games_on_day.json") if allowed(r) and r.get("status") == "final"]
     finals = [r for r in load_records("extract_finals.json") if allowed(r)]
     soccer = [r for r in load_records("extract_soccer_on_day.json") if allowed(r)]
@@ -1592,6 +1670,8 @@ def build_facts() -> tuple[list[dict], dict]:
     latest_played = max((r.get("eventDate") or "" for r in games), default="")
     for rec in retired_rows(club_namer(games + finals + franchise, names), latest_played):
         chosen[rec["recordId"]] = rec
+    for rec in chosen.values():
+        dated_fixes(rec)
     jersey = jersey_lookup()
     jerseyed = 0
     for rec in chosen.values():
