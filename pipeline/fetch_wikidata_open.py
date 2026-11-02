@@ -1,31 +1,35 @@
 #!/usr/bin/env python3
-"""Download Wikidata CC0 athlete facts (famous by sitelinks).
+"""Download Wikidata CC0 athlete facts (famous by sitelinks) through the documented Wikidata API.
+
+  python3 -I pipeline/fetch_wikidata_open.py [--sports tennis,golf] [--pool 120] [--top 80] [--no-olympics]
 
 No para-sport batches: nobody is labelled para or given an impairment class (health data). A sport that is a sport in its own right is a plain sport code.
 People are selected by sport and fame (sitelink count) only. Never by sex or gender (P21): AGENTS.md section 3.
 
-Writes raw SPARQL JSON and convert-shaped extracts. Does not contact DS1 or production.
-Respects a 2s gap. User-Agent names this package. Never ESPN / Sports Reference / NHL.
+Uses only https://www.wikidata.org/w/api.php (search and wbgetentities), the client of pipeline/people/wikimedia.py: one request at a time, 1.1 s apart,
+the same User-Agent, gzip, back-off, every response kept under MEIGEN_RAW_DIR so a rerun makes no request. Never query.wikidata.org (its robots.txt
+disallows /sparql). Writes convert-shaped extracts. Does not contact DS1 or production. Never ESPN / Sports Reference / NHL.
 """
 from __future__ import annotations
 
+import argparse
 import json
 import os
-import time
-import urllib.parse
-import urllib.request
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "pipeline/people"))
+from wikimedia import Client, day_claim, get_entities, search_ids, wiki_count  # noqa: E402
+
 EXTRACT = Path(os.environ.get(
     "MEIGEN_EXTRACT_DIR",
     str(Path.home() / "Projects/backups/spx-stats/meigen-extract"),
 ))
 RAW = Path(os.environ.get("MEIGEN_RAW_DIR", str(ROOT / "data-sources/raw/wikidata")))
-ENDPOINT = "https://query.wikidata.org/sparql"
-UA = "MeigenSports/0.1.0 (https://github.com/johnmorrisdotca/meigen-sports; john@johnmorris.ca)"
-GAP = 3.5
+# Wikidata's "Summer Olympic Games edition" class; its instances are the Games.
+SUMMER_EDITION = "Q135976384"
 
 SPORTS = {
     "tennis": ("Q847", "tennis"),
@@ -47,41 +51,6 @@ SPORTS = {
     "horse-racing": ("Q187916", "horse_racing"),
     "alpine-skiing": ("Q186222", "alpine_skiing"),
 }
-
-def sparql(query: str) -> dict:
-    body = urllib.parse.urlencode({"query": query, "format": "json"}).encode()
-    req = urllib.request.Request(
-        ENDPOINT, data=body, method="POST",
-        headers={"User-Agent": UA, "Accept": "application/sparql-results+json",
-                 "Content-Type": "application/x-www-form-urlencoded"},
-    )
-    last: Exception | None = None
-    for attempt in range(4):
-        try:
-            with urllib.request.urlopen(req, timeout=90) as resp:
-                return json.loads(resp.read().decode())
-        except Exception as exc:
-            last = exc
-            time.sleep(GAP * (attempt + 2))
-    assert last is not None
-    raise last
-
-
-def qid_of(uri: str) -> str:
-    return uri.rsplit("/", 1)[-1]
-
-
-def day_of(value: str) -> str | None:
-    if not value or len(value) < 10:
-        return None
-    day = value[:10]
-    if day.endswith("-01-01"):
-        return None
-    y, m, d = day.split("-")
-    if not (y.isdigit() and 1800 <= int(y) <= 2100):
-        return None
-    return day
-
 
 def person_rec(qid: str, name: str, sport: str, league: str | None = None) -> dict:
     return {
@@ -146,109 +115,60 @@ def award_row(qid: str, name: str, award: str, day: str, sport: str) -> dict:
     }
 
 
-def parse_bindings(data: dict, sport: str, league: str | None, into: dict) -> None:
-    for b in data.get("results", {}).get("bindings", []):
-        uri = (b.get("person") or {}).get("value") or ""
-        qid = qid_of(uri)
-        name = (b.get("personLabel") or {}).get("value") or ""
-        dob = day_of((b.get("dob") or {}).get("value") or "")
-        dod = day_of((b.get("dod") or {}).get("value") or "")
-        award = (b.get("awardLabel") or {}).get("value")
-        award_day = day_of((b.get("awardDate") or {}).get("value") or "")
-        try:
-            sits = int(float((b.get("sitelinks") or {}).get("value") or 0))
-        except (TypeError, ValueError):
-            sits = 0
-        place = (b.get("placeLabel") or {}).get("value") or ""
-        if place.startswith("Q") and place[1:].isdigit():
-            place = ""
-        if not qid or not name:
+
+def api_label(client: Client, qids: set[str]) -> dict[str, str]:
+    return {qid: (ent.get("labels") or {}).get("en", {}).get("value", "") for qid, ent in get_entities(client, sorted(qids), "labels").items()}
+
+
+def claim_ids(claims: dict, prop: str) -> list[str]:
+    out = []
+    for c in claims.get(prop) or []:
+        value = ((c.get("mainsnak") or {}).get("datavalue") or {}).get("value") or {}
+        if c.get("rank") != "deprecated" and value.get("id"):
+            out.append(value["id"])
+    return out
+
+
+def add_people(client: Client, entities: dict[str, dict], top: int, sport: str, league: str | None, into: dict, awards: bool) -> None:
+    """The `top` best-linked of these items as birthday, death and (if asked) award rows."""
+    ranked = sorted(((wiki_count(e.get("sitelinks") or {}), qid) for qid, e in entities.items()), key=lambda t: (-t[0], int(t[1][1:])))
+    chosen = [(sits, qid) for sits, qid in ranked if "Q5" in claim_ids(entities[qid].get("claims") or {}, "P31")][:top]
+    places = {qid: claim_ids(entities[qid].get("claims") or {}, "P19") for _, qid in chosen}
+    award_ids = {i for _, qid in chosen for st in (entities[qid].get("claims") or {}).get("P166", []) for i in claim_ids({"P166": [st]}, "P166")} if awards else set()
+    names = api_label(client, {p for ids in places.values() for p in ids[:1]} | award_ids)
+    for sits, qid in chosen:
+        ent = entities[qid]
+        name = (ent.get("labels") or {}).get("en", {}).get("value") or ""
+        if not name:
             continue
-        if dob:
+        claims = ent.get("claims") or {}
+        dob, dob_precision = day_claim(claims, "P569")
+        dod, dod_precision = day_claim(claims, "P570")
+        place = names.get(places[qid][0], "") if places[qid] else ""
+        if dob and dob_precision == 11:
             into.setdefault("birthdays", []).append(birthday_row(qid, name, dob, sport, sits, league, place or None))
-        if dod:
+        if dod and dod_precision == 11:
             into.setdefault("deaths", []).append(death_row(qid, name, dod, sport))
-        if award and award_day:
-            into.setdefault("awards", []).append(award_row(qid, name, award, award_day, sport))
+        for st in claims.get("P166", []) if awards else []:
+            award = next(iter(claim_ids({"P166": [st]}, "P166")), None)
+            when = day_claim({"P585": [{"mainsnak": snak, "rank": "normal"} for snak in (st.get("qualifiers") or {}).get("P585", [])]}, "P585")
+            if award and names.get(award) and when[0] and when[1] == 11 and st.get("rank") != "deprecated":
+                into.setdefault("awards", []).append(award_row(qid, name, names[award], when[0], sport))
 
 
-def query_sport(sport_qid: str, limit: int) -> str:
-    return f"""
-SELECT ?person ?personLabel ?dob ?dod ?sitelinks ?placeLabel WHERE {{
-  ?person wdt:P31 wd:Q5;
-          wdt:P641 wd:{sport_qid};
-          wdt:P569 ?dob.
-  ?person wikibase:sitelinks ?sitelinks.
-  OPTIONAL {{ ?person wdt:P570 ?dod. }}
-  OPTIONAL {{ ?person wdt:P19 ?place. }}
-  SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
-  FILTER (DATATYPE(?dob) = xsd:dateTime)
-}}
-ORDER BY DESC(?sitelinks)
-LIMIT {limit}
-"""
+def famous(client: Client, slug: str, sport_qid: str, sport: str, pool: int, top: int, into: dict) -> None:
+    ids = search_ids(client, f"haswbstatement:P31=Q5 haswbstatement:P641={sport_qid}", pool, sort="incoming_links_desc")
+    add_people(client, get_entities(client, ids, "labels|sitelinks|claims"), top, sport, None, into, awards=True)
 
 
-def query_olympic(limit: int) -> str:
-    return f"""
-SELECT ?person ?personLabel ?dob ?dod ?sitelinks WHERE {{
-  ?person wdt:P31 wd:Q5;
-          wdt:P1344 ?games;
-          wdt:P569 ?dob.
-  ?games wdt:P31/wdt:P279* wd:Q159821.
-  ?person wikibase:sitelinks ?sitelinks.
-  OPTIONAL {{ ?person wdt:P570 ?dod. }}
-  SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
-  FILTER (DATATYPE(?dob) = xsd:dateTime)
-}}
-ORDER BY DESC(?sitelinks)
-LIMIT {limit}
-"""
-
-
-def query_award(sport_qid: str, limit: int) -> str:
-    return f"""
-SELECT ?person ?personLabel ?dob ?awardLabel ?awardDate ?sitelinks WHERE {{
-  ?person wdt:P31 wd:Q5;
-          wdt:P641 wd:{sport_qid};
-          wdt:P569 ?dob;
-          p:P166 ?st.
-  ?st ps:P166 ?award.
-  OPTIONAL {{ ?st pq:P585 ?awardDate. }}
-  ?person wikibase:sitelinks ?sitelinks.
-  ?award rdfs:label ?awardLabel. FILTER (LANG(?awardLabel) = "en")
-  FILTER (DATATYPE(?dob) = xsd:dateTime)
-}}
-ORDER BY DESC(?sitelinks)
-LIMIT {limit}
-"""
-
-
-def save_raw(name: str, payload: dict) -> Path:
-    RAW.mkdir(parents=True, exist_ok=True)
-    path = RAW / name
-    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    return path
-
-
-def run_named(name: str, query: str) -> dict:
-    path = RAW / f"{name}.json"
-    err = RAW / f"{name}.error.json"
-    if path.exists() and path.stat().st_size > 200:
-        print(f"# resume {name}", flush=True)
-        return json.loads(path.read_text(encoding="utf-8"))
-    print(f"# SPARQL {name}", flush=True)
-    try:
-        data = sparql(query)
-    except Exception as exc:
-        print(f"# FAIL {name}: {exc}", flush=True)
-        save_raw(f"{name}.error.json", {"error": str(exc), "at": datetime.now(timezone.utc).isoformat()})
-        return {}
-    save_raw(f"{name}.json", data)
-    if err.exists():
-        err.unlink()
-    time.sleep(GAP)
-    return data
+def olympic(client: Client, pool: int, top: int, into: dict) -> None:
+    editions = search_ids(client, f"haswbstatement:P31={SUMMER_EDITION}", 60)
+    labels = api_label(client, set(editions))
+    games = [qid for qid in editions if labels.get(qid, "").endswith("Summer Olympics")]
+    ids: list[str] = []
+    for qid in games:
+        ids += search_ids(client, f"haswbstatement:P31=Q5 haswbstatement:P1344={qid}", pool, sort="incoming_links_desc")
+    add_people(client, get_entities(client, ids, "labels|sitelinks|claims"), top, "olympics", None, into, awards=False)
 
 
 def uniq(rows: list[dict]) -> list[dict]:
@@ -272,23 +192,30 @@ def write_extract(name: str, records: list[dict]) -> None:
     print(f"# wrote {path} n={len(records)}", flush=True)
 
 
-def main() -> int:
-    famous: dict[str, list] = {"birthdays": [], "deaths": [], "awards": []}
-
+def main(argv: list[str]) -> int:
+    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--sports", default="", help="comma-separated sport names to read (default: all)")
+    parser.add_argument("--pool", type=int, default=120, help="search hits read for each sport (and each Games)")
+    parser.add_argument("--top", type=int, default=80, help="best-linked people kept for each sport")
+    parser.add_argument("--no-olympics", action="store_true")
+    args = parser.parse_args(argv)
+    wanted = {name for name in args.sports.split(",") if name}
+    client = Client(RAW / "api")
+    famous_rows: dict[str, list] = {"birthdays": [], "deaths": [], "awards": []}
     for slug, (qid, sport) in SPORTS.items():
-        data = run_named(f"famous-{slug}", query_sport(qid, 80))
-        parse_bindings(data, sport, None, famous)
-        data = run_named(f"award-{slug}", query_award(qid, 80))
-        parse_bindings(data, sport, None, famous)
+        if wanted and slug not in wanted:
+            continue
+        print(f"# {slug}", flush=True)
+        famous(client, slug, qid, sport, args.pool, args.top, famous_rows)
+    if not args.no_olympics:
+        print("# olympic summer games", flush=True)
+        olympic(client, max(10, args.pool // 4), 200, famous_rows)
 
-    data = run_named("olympic-summer-games", query_olympic(200))
-    parse_bindings(data, "olympics", None, famous)
-
-    fb = uniq(famous["birthdays"])
+    fb = uniq(famous_rows["birthdays"])
     fb.sort(key=lambda r: -(r.get("sitelinks") or 0))
     fb = fb[:500]
-    fd = uniq(famous["deaths"])
-    fa = uniq(famous["awards"])
+    fd = uniq(famous_rows["deaths"])
+    fa = uniq(famous_rows["awards"])
 
     write_extract("extract_wikidata_famous", fb + fd + fa)
     holes = []
@@ -297,9 +224,10 @@ def main() -> int:
     print(json.dumps({
         "famousBirthdays": len(fb), "famousDeaths": len(fd), "famousAwards": len(fa),
         "rawDir": str(RAW), "extractDir": str(EXTRACT), "holes": holes,
+        "requests": client.requests, "fromFiles": client.cached,
     }, indent=2))
-    return 0 if famous["birthdays"] else 1
+    return 0 if famous_rows["birthdays"] else 1
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    raise SystemExit(main(sys.argv[1:]))

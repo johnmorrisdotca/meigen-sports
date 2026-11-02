@@ -4,7 +4,7 @@
 
 Licence is checked **before** a download. A source that forbids automated collection, or whose data is not CC0 / CC BY-SA 4.0 / CC BY 4.0 / Retrosheet, is skipped. Wikidata (CC0) and Wikipedia (CC BY-SA 4.0, with attribution) are the fallback for every sport. Never ESPN, Sports Reference, or NHL endpoints.
 
-Fetch: `python3 -I pipeline/fetch_wikidata_open.py` (2 s gap, User-Agent `MeigenSports/0.1.0`). Raw SPARQL JSON is gitignored under `data-sources/raw/wikidata/`. Convert-shaped extracts go to `MEIGEN_EXTRACT_DIR`. This package does not write DS1.
+Fetch: `python3 -I pipeline/fetch_wikidata_open.py` and `pipeline/fetch_wikidata_lists.py`, through the documented Wikidata and MediaWiki APIs only (search, `wbgetentities`, `parse`), one request at a time, 1.1 s apart, User-Agent `MeigenSports/0.4`. `query.wikidata.org` (SPARQL) and `Special:EntityData` are never used: their robots.txt disallows them. Raw API JSON is gitignored under `data-sources/raw/wikidata/api/`. Convert-shaped extracts go to `MEIGEN_EXTRACT_DIR`. This package does not write DS1.
 
 ## Motor racing
 

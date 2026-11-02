@@ -131,6 +131,7 @@
     "test:disputed": "python3 -I pipeline/test_disputed_dates.py",
     "test:datesrank": "python3 -I pipeline/test_dates_rank.py",
     "test:people": "python3 -I pipeline/people/test_select_people.py",
+    "test:fetchers": "python3 -I pipeline/test_wikimedia.py",
     "site": "pnpm shards && pnpm build && node scripts/site.ts",
     "dev": "pnpm site && node scripts/dev.ts",
     "images": "pnpm site && node scripts/screenshots.ts",

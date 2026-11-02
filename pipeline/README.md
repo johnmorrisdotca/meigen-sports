@@ -71,7 +71,7 @@ python3 -I pipeline/test_disputed_dates.py                                      
 
 ## Wikidata open fetch (famous)
 
-Does not contact DS1. SPARQL only, 2 s gap, User-Agent `MeigenSports/0.1.0`. Writes gitignored raw JSON under `data-sources/raw/wikidata/` and convert-shaped extracts under `MEIGEN_EXTRACT_DIR` (default `~/Projects/backups/spx-stats/meigen-extract/`). The coordinating session archives those files to DS1/Dropbox.
+Does not contact DS1. The documented Wikidata API only (search by `haswbstatement`, then `wbgetentities`; never query.wikidata.org), through the client of `pipeline/people/wikimedia.py`: one request at a time, 1.1 s apart, User-Agent `MeigenSports/0.4`. `--sports tennis,golf --pool 12 --top 5 --no-olympics` keeps a trial to a handful of requests. `pipeline/fetch_wikidata_lists.py` does the same for the Wikipedia list pages (`parse`, page titles to items, items), with `MEIGEN_LISTS` naming one list to read. Writes gitignored raw JSON under `data-sources/raw/wikidata/api/` and convert-shaped extracts under `MEIGEN_EXTRACT_DIR` (default `~/Projects/backups/spx-stats/meigen-extract/`). The coordinating session archives those files to DS1/Dropbox.
 
 ```sh
 python3 -I pipeline/fetch_wikidata_open.py
