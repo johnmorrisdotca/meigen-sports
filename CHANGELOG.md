@@ -4,6 +4,8 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+## [0.14.5] - 2026-11-01
+
 - Fix: the calendar icons are aligned in every theme, light and dark, with and without a year. `loops` no longer has a see-through sliver between its header and its frame (the header runs under the outline, and the rings sit on the centre line). `flip` centres its day on the tilted page (it sat right of centre). `soft` and `thin` draw the day at one size for 1, 9, 30 and 31 (a two-digit day was drawn smaller), and a stroke-drawn number is centred by its ink, so 30 and 31 line up with 1 and 9. `frame` centres its day vertically when there is no year, and every theme re-centres the day, and the month word where the page has one, when the year is absent.
 - Fix: the year chip is at least 7% of the drawing's width as a font size and has its own margin from the bottom of its room (it touched the frame in several themes). `badge`, `heavy`, `loops`, `shadow`, `stack` and `thin` have a bigger year; `flip` has a bar for it; `desk` still has none.
 - Alignment: the day is centred in its page by default, the same for 1, 9, 30 and 31, and each theme says so in its layout data (`numeral: "centre"`); `docs/calendar-icons.md` lists where each theme puts the day and the year. Rings and hooks are on the page's centre line in `loops`, `heavy`, `curl`, `soft` and `flip`, `desk`'s box no longer cuts the pad, and the boxes of `loops`, `stack`, `desk`, `frame` and `badge` have equal margins, so the heights of `loops`, `stack`, `desk`, `frame` and `badge` change a little at the same width.
