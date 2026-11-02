@@ -19,7 +19,7 @@ Version 0.19.1 on `main`. The work of ticket cmvfh0kqd0000i90665rmo7sw (SPX-610)
 ## What is left, and where
 
 - **DS1 and production (machine1).** The people hand-off (project spx-stats, ticket cmvfh0kqd0000i90665rmo7sw: migrations 190 and 191, builds 215, 217 and 239, the two loaders, the release) and archiving the raw files (Dropbox hand-off `meigenarchiveraw`). Nothing here writes DS1.
-- **Data not in the shards.** NHL and NBA milestones from Wikipedia's lists (SPX-858); cycles, 3-home-run games and NFL 400-yard games, which need play-by-play and nflverse weekly files archived first (SPX-859); the wider top tier of 20,000 to 40,000 people (`MEIGEN_SEARCH_PAGES`, a higher `TARGET_TOTAL`); Paralympic medallists and wheelchair sports, which wait for John's decision in the 0.16.0 hand-off; club colours for the banners (the data holds none); 87 people of the list with no fact (wrong Wikidata items among the first list, stunt performers, para sports, days on 1 January).
+- **Data not in the shards.** NHL and NBA milestones from Wikipedia's lists (SPX-858); cycles, 3-home-run games and NFL 400-yard games, which need play-by-play and nflverse weekly files archived first (SPX-859); the wider top tier of 20,000 to 40,000 people (`MEIGEN_SEARCH_PAGES`, a higher `TARGET_TOTAL`); Paralympic medallists and wheelchair sports, which wait for John's decision in the 0.16.0 hand-off; club colours for the banners (the data holds none); 114 people of the list with no fact (30 have no Wikidata id; the others are wrong Wikidata items among the first list, stunt performers, para sports and days on 1 January).
 - **spx-stats.** The 2021 Pro Bowl is listed as played (SPX-860). A bad CRC in Dropbox's `gl1871_2025.zip` (gl1923.txt). The bio seeds cover the first list only; the claims fetch for the 873 new people (`scripts/wikidata_meigen/fetch_claims.py`) is not run.
 - **Other packages.** kazoku-ui parts on npm (SPX-861 address, SPX-862 theme and language; the demo's own code stays until they exist); dougu-sports gear for boxing, golf, cycling, swimming, athletics, rugby and volleyball (SPX-863).
 - **Reading.** Nobody who reads Japanese has checked the Japanese added since 0.4.0 (SPX-864; the English renderings are in `docs/translations.md`).
@@ -28,4 +28,4 @@ Version 0.19.1 on `main`. The work of ticket cmvfh0kqd0000i90665rmo7sw (SPX-610)
 
 ## Checks run on 0.19.1
 
-`pnpm check` (shards, lint, typecheck, 269 tests, build, package check), `pnpm test:readme` (30 examples, 68 exports, 90 pictures), `pnpm test:demo`; CI and Pages on every release commit.
+`pnpm check` (shards, lint, typecheck, 269 tests, build, package check), `pnpm test:readme` (30 examples, 68 exports, 88 pictures), `pnpm test:demo`; CI and Pages on every release commit.
