@@ -4,6 +4,14 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+## [0.19.3] - 2026-11-02
+
+- Fix: a retired number names the club as it was called on the day, not the franchise's first name. "On November 2, 2013, the Colorado Avalanche retired Adam Foote's No. 52." (it said the Quebec Nordiques; the same for Hejduk 2018, Sakic 2009, Bourque 2001 and Roy 2003, and the New England Whalers for Brind'Amour 2011, Staal 2025 and Francis 2006). The names and the days they applied come from `api.franchise_names`; a club whose games name it the same apart from an accent ("Montréal") keeps the name it had. 8 of the 255 changed.
+- Fix: the building in a final or an All-Star Game is the name it had that year, from `api.venue_name`, not today's: "1995 NBA Finals, Game 4 at The Summit" (was Lakewood Church Central Campus), "1989 Grey Cup at SkyDome" (was Rogers Centre), "1995 Super Bowl at Joe Robbie Stadium" (was Hard Rock Stadium), "1917 World Series at Brush Stadium" (was Polo Grounds). 74 changed: 41 take the name of their year, and in 33 the database has no one name for that year (a year two names share, or none on record), so the sentence leaves the building and its city out, as a clause the fact does without. A building the database holds with no dated history (Kia Forum) is kept as it is: the database says nothing to correct it with.
+- Fix: games of the National Association, American Association, Union Association, Players' League and Federal League are labelled by their own league (`na`, `aa`, `ua`, `pl`, `fl`; "(National Association)", "(Federal League)") and no longer "(MLB)": 840 game facts and 5 no-hitters of the Federal League (Ed Lafitte's among them), now with the tag `league:na` and so on. League tags: 13 to 18.
+- Pipeline: `pipeline/extract_dated_names.py` reads the three public views for this (`extract_dated_names.json`; one request a page, a second apart); `convert_extract.py` uses it (`club_on`, `venue_in`, `dated_fixes`). The extract of games already gives these leagues their own code on a fresh DS1 run, and then the league part does nothing.
+- Tests: `test/dated-names.test.ts` (the Foote retirement and no first-name club after 1995, five buildings, the five league codes and labels, no MLB game before 1876) and four cases in `pipeline/test_convert_extract.py`. `test/positions-series.test.ts` now expects a final's venue only where one is named for its year.
+
 ## [0.19.2] - 2026-11-02
 
 - Demo: the header has the family's shared language picker and a theme switch (family template 2026-11-02): the English and Japanese buttons are `<kazoku-language-picker>`, which keeps the choice in the address (`?lang=`) and in the same `localStorage` key as before, so a reader's saved language stays, and `<kazoku-theme-switch>` (Light, Dark, Auto; `?theme=`) is new beside it. `familyLanguage` still fills the page's words and the `meigen-language` event is unchanged; the calendar icons still follow `data-theme`.
