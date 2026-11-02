@@ -168,9 +168,9 @@ Three themes look like the Japanese tear-off calendar, where each day is its own
 | --- | --- |
 | The day, the month and the weekday (English or Japanese, by `locale`) | the date. The weekday needs a year, so without one the weekday cell is left empty. |
 | The colour of the day (`roll`, and the weekday cells of `sun` and `plain`) | Saturday blue, Sunday and a holiday red, every other day black. |
-| A holiday name | the `holidays` option. The library knows no holidays. |
+| A holiday name | the `holidays` option, or computed with `japanese` (2000 to 2099, [the Japanese calendar](japanese-calendar.md)). |
 | The moon (`plain`) | `calendarMoon`, a mean lunation from a known new moon: it can be a day out near the turn of a phase. It needs a year. `moon: false` leaves it off. |
-| The old-calendar date and the six-day cycle (rokuyō) | not drawn: the package does not compute them. |
+| The old-calendar date and the six-day cycle (rokuyō) | computed with `japanese` (1900 to 2100): [the Japanese calendar](japanese-calendar.md) says how and when a cell stays empty. |
 
 ```js
 import { calendarIcon } from "@johnmorrisdotca/meigen-sports";

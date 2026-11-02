@@ -8,6 +8,8 @@ export { EXTRACT_CATEGORIES, FACT_CATEGORIES } from "./schema.ts";
 export { SCHEMA_VERSION, VERSION } from "./version.ts";
 export { CALENDAR_THEMES, CALENDAR_THEME_ALIASES, CALENDAR_THEME_LABELS, calendarIcon, calendarMoon, calendarThemeOf, calendarWeekend } from "./calendarIcon.ts";
 export type { CalendarDate, CalendarIconOptions, CalendarTheme } from "./calendarIcon.ts";
+export { japaneseHoliday, japaneseHolidaysOf, JAPANESE_HOLIDAY_YEARS, OLD_CALENDAR_YEARS, oldCalendarDate, ROKUYO, rokuyoOf } from "./japaneseCalendar.ts";
+export type { JapaneseHoliday, OldDate, Rokuyo } from "./japaneseCalendar.ts";
 export { DISPLAY_LAYOUTS, displayKind, displayLayoutOf, displayMarkup } from "./display.ts";
 export type { DisplayItem, DisplayKind, DisplayLabels, DisplayLayout, DisplayOptions } from "./display.ts";
 export { isDate, monthDayOf } from "./dates.ts";

@@ -2,6 +2,8 @@
 // Every drawing is our own: shapes, gradients and a stroke-drawn digit set. No image, font file or product art is used,
 // and theme names are generic: never a company or product name.
 
+import { japaneseHoliday, oldCalendarDate, ROKUYO } from "./japaneseCalendar.ts";
+
 export const CALENDAR_THEMES = ["pins", "loops", "shadow", "heavy", "cartoon", "flip", "stack", "line", "curl", "soft", "desk", "thin", "frame", "badge", "sun", "roll", "plain"] as const;
 
 export type CalendarTheme = (typeof CALENDAR_THEMES)[number];
@@ -61,6 +63,12 @@ export interface CalendarIconOptions {
   mark?: string;
   /** The side columns of `sun` and `roll` (weekday, month, holiday). Default true. */
   columns?: boolean;
+  /**
+   * What the side columns add from the Japanese calendar, computed (`src/japaneseCalendar.ts`), never looked up: `holidays` the day's public holiday (国民の祝日, 2000 to 2099; a name in
+   * `holidays` above wins), `oldDate` the old calendar date (旧暦, 1900 to 2100) and `rokuyo` the day of the six-day cycle (六曜). `true` is all three; a cell the method cannot settle is
+   * left empty. Off by default, so a page drawn without it is as before. A weekend page shows the holiday only.
+   */
+  japanese?: boolean | { readonly holidays?: boolean; readonly oldDate?: boolean; readonly rokuyo?: boolean };
   /** The moon phase on `plain`, drawn when a year is given. Default true. */
   moon?: boolean;
 }
@@ -203,7 +211,8 @@ export function calendarIcon(options: CalendarIconOptions): string {
   if (options.mark !== undefined && UNSAFE_MARK.test(options.mark)) throw new RangeError("mark must be plain SVG shapes: no script, style, event attribute or foreign object");
   const parts = dateParts(month, day, options.year, locale);
   const ja = new Intl.Locale(locale).language === "ja";
-  const dayInfo = (year: number | undefined, m: number, d: number): DayInfo => dayInfoOf(year, m, d, locale, ja, options.holidays);
+  const jp = typeof options.japanese === "object" ? options.japanese : { holidays: options.japanese === true, oldDate: options.japanese === true, rokuyo: options.japanese === true };
+  const dayInfo = (year: number | undefined, m: number, d: number): DayInfo => dayInfoOf(year, m, d, locale, ja, options.holidays, jp);
   const pair = options.weekend === "split" && WEEKEND_THEMES.has(theme) && options.year !== undefined ? calendarWeekend(options.year, month, day) : null;
   const split = pair ? { saturday: dayInfo(pair.saturday.year, pair.saturday.month, pair.saturday.day), sunday: dayInfo(pair.sunday.year, pair.sunday.month, pair.sunday.day) } : null;
   const label = split ? `${split.saturday.label}${ja ? "と" : " and "}${split.sunday.label}` : parts.label;
@@ -226,6 +235,9 @@ interface DayInfo {
   weekday: string;
   monthShortUp: string;
   holiday: string;
+  /** The old calendar date and the rokuyō, as the side column writes them; empty where not asked for or not sure. */
+  oldDate: string;
+  rokuyo: string;
   /** The ink the day is written in: Saturday blue, Sunday and a holiday red, any other day black. */
   ink: "black" | "blue" | "red";
   label: string;
@@ -233,16 +245,22 @@ interface DayInfo {
 
 const UNSAFE_MARK = /<\s*(script|style|foreignObject|iframe|object|embed)|\son[a-z]+\s*=|javascript:/i;
 
-function dayInfoOf(year: number | undefined, month: number, day: number, locale: string, ja: boolean, holidays: CalendarIconOptions["holidays"]): DayInfo {
+function dayInfoOf(year: number | undefined, month: number, day: number, locale: string, ja: boolean, holidays: CalendarIconOptions["holidays"], jp: { readonly holidays?: boolean; readonly oldDate?: boolean; readonly rokuyo?: boolean }): DayInfo {
   const p = dateParts(month, day, year, locale);
   const real = year !== undefined && p.weekday !== "";
   const weekdayNo = real ? utc(year, month, day).getUTCDay() : undefined;
   const pad = (n: number) => String(n).padStart(2, "0");
   const named = (key: string) => (holidays && Object.hasOwn(holidays, key) ? holidays[key] : undefined);
   const found = (year === undefined ? undefined : named(`${String(year).padStart(4, "0")}-${pad(month)}-${pad(day)}`)) ?? named(`${pad(month)}-${pad(day)}`);
-  const holiday = (typeof found === "string" ? found : (ja ? found?.ja : found?.en) ?? found?.en ?? found?.ja ?? "").trim();
+  const given = (typeof found === "string" ? found : (ja ? found?.ja : found?.en) ?? found?.en ?? found?.ja ?? "").trim();
+  const known = real && jp.holidays && !given ? japaneseHoliday(year, month, day) : null;
+  const holiday = given || (known ? (ja ? known.ja : known.en) : "");
   const ink = holiday || weekdayNo === 0 ? "red" : weekdayNo === 6 ? "blue" : "black";
-  return { year, month, day, weekdayNo, weekday: p.weekday, monthShortUp: p.monthShortUp, holiday, ink, label: p.label };
+  const old = real && (jp.oldDate || jp.rokuyo) ? oldCalendarDate(year, month, day) : null;
+  const oldDate = old && jp.oldDate ? (ja ? `旧${old.leap ? "閏" : ""}${old.month}.${old.day}` : `OLD ${old.leap ? "L" : ""}${old.month}.${old.day}`) : "";
+  const six = old && jp.rokuyo ? ROKUYO[(old.month + old.day) % 6]! : null;
+  const rokuyo = six ? (ja ? six.ja : six.reading.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase()) : "";
+  return { year, month, day, weekdayNo, weekday: p.weekday, monthShortUp: p.monthShortUp, holiday, oldDate, rokuyo, ink, label: p.label };
 }
 
 function localeOf(value: string | undefined): string {
@@ -506,6 +524,36 @@ function monthCell(box: Rect, d: DayInfo, ja: boolean, k: TearColours, size: num
   return { markup: tx(cx, top + num * 0.86, String(d.month), num, fill, 900) + unit.markup, end: unit.end };
 }
 
+/** The room the rokuyō and the old calendar date need at the foot of the left column (0 when neither is asked for or sure). */
+function japaneseHeight(d: DayInfo, ja: boolean): number {
+  return (d.rokuyo ? (ja ? 56 : 24) : 0) + (d.oldDate ? 42 : 0) + (d.rokuyo || d.oldDate ? 10 : 0);
+}
+
+/** The rokuyō and the old calendar date, small and muted, at the foot of the left column: the six-day word, then 旧暦 (or OLD) over the month and day. */
+function japaneseCells(box: Rect, d: DayInfo, ja: boolean, k: TearColours): string {
+  const cx = box[0] + box[2] / 2;
+  const bottom = box[1] + box[3];
+  let y = bottom;
+  let markup = "";
+  if (d.oldDate) {
+    const value = d.oldDate.replace(/^(旧|OLD )/, "");
+    const size = fit(value, 20, box[2] - 2, 0.62);
+    markup += tx(cx, y - 2, value, size, k.muted, 900);
+    markup += tx(cx, y - 2 - size * 1.2, ja ? "旧暦" : "OLD", 11, k.muted, 800);
+    y -= 42;
+  }
+  if (d.rokuyo) {
+    y -= 8;
+    if (ja) {
+      const cell = stacked(cx, y - 52, [...d.rokuyo], Math.min(24, box[2] * 0.5), k.muted, 800);
+      markup += cell.markup;
+    } else {
+      markup += tx(cx, y - 4, d.rokuyo, fit(d.rokuyo, 14, box[2] - 2, 0.68), k.muted, 800);
+    }
+  }
+  return markup;
+}
+
 /** The holiday of a side column, in red, in whatever room is left (a day with none leaves it empty). */
 function holidayCell(box: Rect, d: DayInfo, ja: boolean, k: TearColours, size: number, top: number): string {
   if (!d.holiday) return "";
@@ -564,7 +612,9 @@ function sideColumns(c: Ctx, k: TearColours, left: Rect, right: Rect, date: bool
     };
     return `<g data-part="side">${side(left, c.x.split.saturday, "blue")}${side(right, c.x.split.sunday, "red")}</g>`;
   }
-  const w = weekdayCell(left, day, ja, k, size);
+  const used = japaneseHeight(day, ja);
+  const w = weekdayCell(used ? [left[0], left[1], left[2], left[3] - used] : left, day, ja, k, size);
+  const japanese = japaneseCells(left, day, ja, k);
   const m = monthCell(right, day, ja, k, 36);
   let end = m.end;
   let dateText = "";
@@ -574,7 +624,7 @@ function sideColumns(c: Ctx, k: TearColours, left: Rect, right: Rect, date: bool
     dateText = at.markup;
     end = at.end;
   }
-  return `<g data-part="side">${w.markup}${m.markup}${dateText}${holidayCell(right, day, ja, k, 22, end + 14)}</g>`;
+  return `<g data-part="side">${w.markup}${japanese}${m.markup}${dateText}${holidayCell(right, day, ja, k, 22, end + 14)}</g>`;
 }
 
 // ---------- the themes ----------

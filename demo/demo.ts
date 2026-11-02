@@ -155,6 +155,8 @@ const leaf = document.querySelector<HTMLElement>(".leaf")!;
 const optIcon = document.querySelector<HTMLSelectElement>("#opt-icon")!;
 const optWeekend = document.querySelector<HTMLInputElement>("#opt-weekend")!;
 optWeekend.checked = addressed.get("weekend") === "split";
+const optJapanese = document.querySelector<HTMLInputElement>("#opt-japanese")!;
+optJapanese.checked = addressed.get("jp") === "1";
 // The fixed-date holidays of Japan, as an example of what a page passes in `holidays`: the package knows none of its own.
 const DEMO_HOLIDAYS = {
   "01-01": { en: "New Year's Day", ja: "元日" }, "02-11": { en: "Foundation Day", ja: "建国記念の日" }, "02-23": { en: "Emperor's Birthday", ja: "天皇誕生日" },
@@ -173,7 +175,7 @@ function pageOf(date: { month: number; day: number; year: number }): { month: nu
   }
   return date;
 }
-const iconExtras = () => ({ holidays: DEMO_HOLIDAYS, ...(optWeekend.checked ? { weekend: "split" as const } : {}) });
+const iconExtras = () => ({ holidays: DEMO_HOLIDAYS, ...(optWeekend.checked ? { weekend: "split" as const } : {}), ...(optJapanese.checked ? { japanese: true } : {}) });
 const iconGallery = document.querySelector<HTMLElement>("#icon-gallery")!;
 // Flags and trophies beside the facts: two switches on the card, kept in the address (`?flags=1&trophies=1`), clickable while the card turns.
 const optFlags = document.querySelector<HTMLInputElement>("#opt-flags")!;
@@ -239,6 +241,7 @@ function applyIcon(keep: boolean) {
     const theme = calendarThemeOf(optIcon.value);
     if (theme) query.set("icon", theme); else query.delete("icon");
     if (optWeekend.checked) query.set("weekend", "split"); else query.delete("weekend");
+    if (optJapanese.checked) query.set("jp", "1"); else query.delete("jp");
     try { history.replaceState(null, "", `${location.pathname}${query.size ? `?${query}` : ""}${location.hash}`); } catch { /* the address stays as it is */ }
   }
   drawLeaf();
@@ -248,6 +251,7 @@ fillIconSelect();
 optIcon.value = calendarThemeOf(addressed.get("icon")) ?? "";
 optIcon.addEventListener("change", () => applyIcon(true));
 optWeekend.addEventListener("change", () => { applyIcon(true); drawLayout(); });
+optJapanese.addEventListener("change", () => applyIcon(true));
 window.addEventListener("meigen-language", () => { fillIconSelect(); applyIcon(false); fillLayoutSelect(); applyLayout(false); });
 new MutationObserver(() => applyIcon(false)).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
 window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => applyIcon(false));

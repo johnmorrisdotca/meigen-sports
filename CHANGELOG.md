@@ -4,6 +4,13 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+## [0.19.0] - 2026-11-02
+
+- Feature: Japanese public holidays, the old calendar date and the six-day cycle, computed and never stored: `japaneseHoliday(year, month, day)` and `japaneseHolidaysOf(year)` (2000 to 2099, the Act on National Holidays with the Happy Monday changes, Showa Day, Mountain Day, the 2019 accession days, the Olympic moves of 2020 and 2021, substitute holidays and Citizens' Holidays; the equinoxes by the National Astronomical Observatory's formula), `oldCalendarDate(year, month, day)` (1900 to 2100: months from the new moon and the principal terms in Japan Standard Time, the leap month by the first month without a principal term; Meeus, Astronomical Algorithms, chapters 49 and 25) and `rokuyoOf` / `ROKUYO` ((old month + old day) mod 6). A new moon or principal term within 30 minutes of midnight in Japan that could change the date gives `null`, so a cell stays empty rather than guessed (the new moon of 26 January 2028 is 12 minutes after midnight in Japan).
+- Feature: `calendarIcon({ japanese: true })` (or `{ holidays, oldDate, rokuyo }`) draws the holiday, the six-day word and the old calendar date in the side columns of `sun` and `roll`, in Japanese and in English; off by default, so no page drawn before changes. The demo has a "Japanese calendar" switch (`?jp=1`).
+- Tests: `test/japanese-calendar.test.ts` holds the holidays of 2019 to 2026 to the Cabinet Office's lists, the equinoxes of 2020 to 2030, the old calendar's new years of 2000 and 2020 to 2030, the leap months of 2020, 2023 and 2025, the seventh of the seventh month of 2023 to 2026, the `null` cases, and over 1901 to 2099 the range of the new year and the rate of leap months; `e2e/tearoff.demo.ts` the switch.
+- Docs: [the Japanese calendar](docs/japanese-calendar.md) (English and Japanese) and two pictures.
+
 ## [0.18.0] - 2026-11-02
 
 - Data: 335 All-Star Games (`all-star`): the NHL, NBA and MLB All-Star Games, the Pro Bowl and the CFL All-Star Game, on the day each was played, with the venue, the deciding game's score (a tournament's final; never for a tie), the most valuable players and the facts' own tag `competition:all-star`. "On February 3, 2024, the NHL All-Star Game was played at Scotiabank Arena, Toronto, Ontario; Team Matthews beat Team McDavid 7–4; Auston Matthews was named most valuable player." From English Wikipedia's articles, parsed in the SPX database (CC BY-SA 4.0) and read through its public views by `pipeline/extract_all_star.py`. A cancelled game (the 2021 Pro Bowl, which the parsed rows list as played) and a footnote mark on a venue are left out.

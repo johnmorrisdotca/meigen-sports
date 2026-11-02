@@ -32,3 +32,32 @@ test("the weekend switch draws the Saturday and the Sunday on one page, keeps it
   await page.goto("/?lang=en&icon=pins&weekend=split");
   await expect(page.locator('[data-testid="leaf-icon"] svg [data-part="saturday"]')).toHaveCount(0);
 });
+
+test("the Japanese calendar switch adds the holiday, the old calendar date and the rokuyō to a tear-off page, is a finger-wide chip and keeps its choice in the address", async ({ page }) => {
+  await page.clock.setFixedTime(new Date(2026, 1, 11, 12, 0, 0));
+  await page.goto("/?lang=ja&icon=sun");
+  const chip = page.locator("#opt-japanese");
+  await expect(chip).not.toBeChecked();
+  const svg = page.locator('[data-testid="leaf-icon"] svg');
+  await expect(svg).toBeVisible();
+  expect(await svg.textContent()).not.toContain("旧暦");
+  const box = await chip.locator("xpath=..").boundingBox();
+  expect(box!.height).toBeGreaterThanOrEqual(48);
+  await chip.locator("xpath=..").click();
+  await expect(chip).toBeChecked();
+  expect(page.url()).toContain("jp=1");
+  const text = (await svg.textContent()) ?? "";
+  expect(text).toContain("旧暦");
+  expect(text).toMatch(/\d{1,2}\.\d{1,2}閏?旧暦|旧暦/);
+  expect(text).toMatch(/\d{1,2}\.\d{1,2}/);
+  expect(text).toMatch(/大安|赤口|先勝|友引|先負|仏滅/);
+  await page.clock.setFixedTime(new Date(2025, 6, 25, 12, 0, 0));
+  await page.goto("/?lang=en&icon=roll&jp=1");
+  await expect(chip).toBeChecked();
+  const english = (await svg.textContent()) ?? "";
+  expect(english).toContain("OLD");
+  expect(english).toMatch(/L?\d{1,2}\.\d{1,2}/);
+  expect(english).toMatch(/TAIAN|SHAKKO|SENSHO|TOMOBIKI|SENBU|BUTSUMETSU/);
+  await chip.locator("xpath=..").click();
+  expect(page.url()).not.toContain("jp=1");
+});
