@@ -4,6 +4,11 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+## [0.19.1] - 2026-11-02
+
+- Docs: every picture of the README and docs/ is drawn again from the current demo, library and data (`pnpm images:all`: the screenshots, the moving pictures, the showcase and the calendar pages; the hero shows the "Japanese calendar" switch and the 0.15 to 0.19 changes), and a test now fails when one is older than its inputs: `test/pictures.test.ts` holds the calendar SVGs to what `calendarIcon` draws and the screenshots and moving pictures to `docs/images/stamp.json`, the hash of the demo, scripts, library and data they were drawn from.
+- Docs: `docs/calendar-icons.md` and `docs/display-layouts.md` describe every option, and `test/docs-options.test.ts` fails when an option or a theme is added without a line in them.
+
 ## [0.19.0] - 2026-11-02
 
 - Feature: Japanese public holidays, the old calendar date and the six-day cycle, computed and never stored: `japaneseHoliday(year, month, day)` and `japaneseHolidaysOf(year)` (2000 to 2099, the Act on National Holidays with the Happy Monday changes, Showa Day, Mountain Day, the 2019 accession days, the Olympic moves of 2020 and 2021, substitute holidays and Citizens' Holidays; the equinoxes by the National Astronomical Observatory's formula), `oldCalendarDate(year, month, day)` (1900 to 2100: months from the new moon and the principal terms in Japan Standard Time, the leap month by the first month without a principal term; Meeus, Astronomical Algorithms, chapters 49 and 25) and `rokuyoOf` / `ROKUYO` ((old month + old day) mod 6). A new moon or principal term within 30 minutes of midnight in Japan that could change the date gives `null`, so a cell stays empty rather than guessed (the new moon of 26 January 2028 is 12 minutes after midnight in Japan).

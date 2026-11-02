@@ -24,6 +24,18 @@ console.log(html[0].includes("meigen-cal"), html[3].includes("The 2022 FIFA")); 
 
 Four ways to show facts that are already worded. `displayMarkup` returns HTML. It does not read the clock and it does not write a sentence. Colours come from `@johnmorrisdotca/meigen-sports/styles.css`, which follows the page (`--ink`, `--muted`, `--surface`, `--rule`, `--accent`). The stylesheet is optional.
 
+`displayMarkup(options)` takes:
+
+| Option | Meaning |
+| --- | --- |
+| `layout` | one of `DISPLAY_LAYOUTS` |
+| `items` | the facts to show, each a `DisplayItem`: `text` (already worded), `year` and `kind` |
+| `icon` | an SVG from `calendarIcon`, used by the calendar layout; anything else is ignored |
+| `labels` | the words for the three groups of the year list (`events`, `births`, `deaths`) |
+| `name` | makes the year list's radio group unique when more than one is on a page |
+
+`displayLayoutOf(name)` turns a word into a layout or `null`, and `displayKind(category)` says whether a fact is a birth, a death or an event.
+
 | Id | English | Japanese | Picture |
 | --- | --- | --- | --- |
 | `calendar` | Calendar card | 日付カード | ![Calendar card](images/layout-calendar.svg) |

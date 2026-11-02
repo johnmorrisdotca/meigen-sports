@@ -121,6 +121,28 @@ Each is SVG from `calendarIcon`, drawn from shapes, gradients and a stroke-drawn
 | `roll` | Wall roll | 壁掛け | ![Wall roll](images/calendar-roll.svg) | a tall wall tear-off page: the pages already torn off curl above, a huge condensed day in the colour of its weekday, side columns and a dotted memo area |
 | `plain` | Plain | 無地 | ![Plain](images/calendar-plain.svg) | a plain tear-off pad on a kraft stand: a small month, a big day, the weekday in capitals, the month and year, and the moon |
 
+## Options
+
+`calendarIcon(options)` returns an SVG string. Every option but `month` and `day` is optional.
+
+| Option | Meaning | Default |
+| --- | --- | --- |
+| `month` | the month, 1 to 12 | required |
+| `day` | the day of the month, 1 to 31 | required |
+| `year` | a four-digit year: names the weekday and a small year where a theme draws them; without it both are left off | none |
+| `theme` | one of the seventeen looks below, or one of the ten earlier names (`CALENDAR_THEME_ALIASES`) | `pins` |
+| `locale` | `en`, or any locale `Intl` accepts; `ja` writes the Japanese forms | `en` |
+| `scheme` | `light` or `dark` | `light` |
+| `size` | the width in CSS pixels, 16 to 1024; the height follows the theme | 96 |
+| `weekend` | `"split"`: a Saturday and the Sunday after it on one page (`sun` and `roll`, with a `year`) | one day a page |
+| `holidays` | holiday names for the side columns, by date or by day of every year | none |
+| `japanese` | `true` (or `{ holidays, oldDate, rokuyo }`): the Japanese holiday, old calendar date and six-day word, computed ([the Japanese calendar](japanese-calendar.md)) | off |
+| `mark` | your own SVG shapes in place of the sun's red disc (`sun` only) | the disc |
+| `columns` | `false` leaves the side columns of `sun` and `roll` off | on |
+| `moon` | `false` leaves the moon of `plain` off | on |
+
+The other functions of the calendar are `calendarThemeOf(name)` (a name or an old alias to a theme, or `null`), `CALENDAR_THEMES`, `CALENDAR_THEME_LABELS` (the English and Japanese label of each), `CALENDAR_THEME_ALIASES`, `calendarWeekend(year, month, day)` (the Saturday and Sunday a page shows) and `calendarMoon` (the moon's phase by a mean lunation, which can be a day out near the turn of a phase).
+
 ## What each drawing says
 
 A theme draws what its look has room for. A theme whose look has a month word draws it in capitals (`MARCH`, or `3月`); one that has a weekday draws it only when a year is given (without a year a weekday would be a guess), and shows the month instead. A small year is drawn where the page has room. Whatever a theme leaves off the picture is in its `<title>` and `aria-label` (`Friday Mar 20 2026`; in Japanese `2026年3月20日（金曜日）`). A day the month does not have (30 February) is drawn as given and has no weekday.

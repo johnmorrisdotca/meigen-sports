@@ -1,6 +1,6 @@
 {
   "name": "@johnmorrisdotca/meigen-sports",
-  "version": "0.19.0",
+  "version": "0.19.1",
   "description": "Meigen Sports 名言, source-verified sports quotations and on-this-day history: typed offline data and pure date, sport and entity selectors, with static JSON feeds. Zero runtime dependencies.",
   "keywords": [
     "sports",
@@ -137,6 +137,8 @@
     "images": "pnpm site && node scripts/screenshots.ts",
     "animations": "pnpm site && node scripts/animations.ts",
     "images:calendar": "node scripts/calendar-images.ts",
+    "images:stamp": "node scripts/images-stamp.ts --write",
+    "images:all": "pnpm images:calendar && pnpm images && pnpm animations && pnpm images:showcase && pnpm images:stamp",
     "images:showcase": "pnpm site && node scripts/showcase-images.ts",
     "screenshots": "pnpm images"
   },
