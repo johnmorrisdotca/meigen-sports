@@ -12,7 +12,8 @@ import type {
   RenderedSentence, RenderOptions, SentenceTemplate, TemplateLocale, TemplateType, Wording,
 } from "./types.ts";
 
-const LEAGUE_LABEL: Record<string, string> = {
+/** The name a sentence gives a league: the code in capitals (`NHL`) or the full name (`National Association`). */
+export const LEAGUE_LABEL: Readonly<Record<string, string>> = {
   nhl: "NHL", nba: "NBA", mlb: "MLB", nfl: "NFL", cfl: "CFL", mls: "MLS",
   wc: "World Cup", wwc: "Women's World Cup", afl: "AFL", aafc: "AAFC",
   nha: "NHA", pcha: "PCHA", wchl: "WCHL", wha: "WHA",

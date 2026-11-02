@@ -14,7 +14,7 @@ export { DISPLAY_LAYOUTS, displayKind, displayLayoutOf, displayMarkup } from "./
 export type { DisplayItem, DisplayKind, DisplayLabels, DisplayLayout, DisplayOptions } from "./display.ts";
 export { isDate, monthDayOf } from "./dates.ts";
 export { captionFromFact, isRichFact } from "./sentences.ts";
-export { cleanLabel, dateNote, dayContext, factDate, render, renderHistory, renderRun, templatesFor, TEMPLATES, TEMPLATE_TYPES } from "./templates/index.ts";
+export { cleanLabel, dateNote, dayContext, factDate, LEAGUE_LABEL, render, renderHistory, renderRun, templatesFor, TEMPLATES, TEMPLATE_TYPES } from "./templates/index.ts";
 export type {
   RenderedSentence, RenderOptions, RunOptions, RunSentence, SentenceTemplate, TemplateGate, TemplateLocale,
   TemplateRole, TemplateType, Wording,

@@ -118,6 +118,17 @@ test("a country, a decade and a day filter the favourites, and every choice is i
   await expect(page.locator("#fav-facts .record").first()).toBeVisible();
 });
 
+test("the league menu names every league in full, in English and in Japanese, never a bare code", async ({ page }) => {
+  for (const lang of ["en", "ja"]) {
+    await page.goto(`/?lang=${lang}`);
+    await page.locator(".fav-panel").scrollIntoViewIfNeeded();
+    await expect.poll(() => page.locator("#fav-league option").count()).toBeGreaterThan(10);
+    const labels = (await page.locator("#fav-league option").allTextContents()).map((text) => text.replace(/ \([\d,]+\)$/, ""));
+    for (const name of ["National Association", "American Association", "Union Association", "Players' League", "Federal League", "World Cup", "NHL"]) expect(labels, lang).toContain(name);
+    for (const code of ["NA", "AA", "UA", "PL", "FL"]) expect(labels, lang).not.toContain(code);
+  }
+});
+
 test("a person and a club are picked by name, and the address keeps them", async ({ page }) => {
   await page.goto("/?lang=en");
   await page.locator(".fav-panel").scrollIntoViewIfNeeded();

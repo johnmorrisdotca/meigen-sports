@@ -1,4 +1,4 @@
-import { factsFor } from "../src/index.ts";
+import { factsFor, LEAGUE_LABEL } from "../src/index.ts";
 import { findPeopleByName, loadCountry, loadFactShard, loadFactsById, loadTeamPicker, loadVocabulary, queryFactIds } from "../src/load.ts";
 import type { FactQuery, LoadOptions, NamedPerson, PickerTeam, Vocabulary } from "../src/load.ts";
 import type { FactFilters, OnThisDayRecord } from "../src/schema.ts";
@@ -138,7 +138,7 @@ export function startExplore(host: ExploreHost): { restore: () => Promise<void>;
     const any = host.word("favAny");
     const byName = (a: readonly [string, string], b: readonly [string, string]): number => a[1].localeCompare(b[1], lang);
     fill(sport, host.word("allSports"), Object.entries(vocabulary.sports).map(([slug, n]) => [slug, `${host.word(slug) === slug ? titleOf(slug) : host.word(slug)} (${n.toLocaleString(lang)})`] as const).sort(byName));
-    fill(league, any, Object.entries(vocabulary.leagues).map(([code, n]) => [code, `${code.toUpperCase()} (${n.toLocaleString(lang)})`] as const).sort(byName));
+    fill(league, any, Object.entries(vocabulary.leagues).map(([code, n]) => [code, `${LEAGUE_LABEL[code] ?? code.toUpperCase()} (${n.toLocaleString(lang)})`] as const).sort(byName));
     fill(country, any, Object.entries(vocabulary.countries).map(([code, n]) => [code, `${countryName(code, lang)} (${n.toLocaleString(lang)})`] as const).sort(byName));
     fill(decade, any, Object.entries(vocabulary.decades).map(([code, n]) => [code, `${code} (${n.toLocaleString(lang)})`] as const).sort((a, b) => a[0].localeCompare(b[0])));
     fill(award, any, Object.entries(vocabulary.awards).map(([slug, n]) => [slug, `${vocabulary!.awardNames[slug] ?? titleOf(slug)} (${n.toLocaleString(lang)})`] as const).sort(byName));
@@ -215,7 +215,7 @@ export function startExplore(host: ExploreHost): { restore: () => Promise<void>;
       const typed = text.toLocaleLowerCase(host.lang()).split(/\s+/).filter(Boolean);
       return teams.filter((t) => t.name && typed.every((w) => t.name!.toLocaleLowerCase(host.lang()).includes(w))).slice(0, 12);
     },
-    (t) => ({ label: t.name ?? String(t.franchiseId), hint: [t.league?.toUpperCase(), t.sport && host.word(t.sport) !== t.sport ? host.word(t.sport) : t.sport].filter(Boolean).join(" · ") }),
+    (t) => ({ label: t.name ?? String(t.franchiseId), hint: [t.league && (LEAGUE_LABEL[t.league] ?? t.league.toUpperCase()), t.sport && host.word(t.sport) !== t.sport ? host.word(t.sport) : t.sport].filter(Boolean).join(" · ") }),
     (t) => { team = t; void run(); });
   combo<NamedPerson>(personInput, personList,
     (text) => findPeopleByName(text, host.feed(), 12),
