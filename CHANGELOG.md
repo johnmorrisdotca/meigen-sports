@@ -4,6 +4,7 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+- The demo's header takes `@johnmorrisdotca/kazoku-ui` ^0.12 (a dev dependency, used by the demo only): the language picker and theme switch, with the zoom slider and Centre button of 0.11 and 0.12 not used here (no turnable view). Nothing in the package changes.
 - Source files over 500 lines are being split by what they do (the sentence renderer first), with the same exports and no change to the package. `pnpm check` now runs `scripts/check-max-lines.mjs`, which fails a file over 500 lines and lists the ones not yet split.
 
 ## [0.27.0] - 2026-11-03
