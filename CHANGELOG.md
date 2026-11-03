@@ -4,6 +4,8 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+- Docs only (MODULES-247): two more guides, with Japanese twins: architecture (code, the package's data and the published feed kept apart; the path from a date to a sentence; the rules and the checks) and from a date to a sentence; `demo/builder.html` and `demo/builder.ts`, a page where the day, the calendar page, the layout, the language and the number of facts are chosen and the code that makes the card is copied, with `e2e/builder.demo.ts`; eleven more README examples. The pictures' stamp (`docs/images/stamp.json`) is written again because `demo/` and `scripts/site.ts` are among its inputs; no picture is drawn differently.
+
 ## [0.26.0] - 2026-11-03
 
 - The README opens with the package's thumbnail, and the demo carries it as its link preview (og:image) and publishes the card, a dark card and an icon on Pages at `thumbnail.png`, `thumbnail-dark.png` and `icon.png`.

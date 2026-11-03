@@ -34,5 +34,8 @@ await build({ stdin: { contents: 'import "@johnmorrisdotca/kazoku-ui/language-pi
 await build({ entryPoints: ["demo/catalogue.ts"], outfile: "site/catalogue.js", bundle: true, format: "esm", target: "es2022", minify: true });
 // The frame a page puts in an iframe: its own page and script, drawing what its address says.
 cpSync("demo/embed.html", "site/embed.html");
+// The builder: a page that writes the code for a card, with its own script.
+cpSync("demo/builder.html", "site/builder.html");
+await build({ entryPoints: ["demo/builder.ts"], outfile: "site/builder.js", bundle: true, format: "esm", target: "es2022", minify: true });
 await build({ entryPoints: ["demo/embed.ts"], outfile: "site/embed.js", bundle: true, format: "esm", target: "es2022", minify: true });
 console.log("Built the family demo and versioned static feed into site/.");

@@ -390,7 +390,104 @@ export function TodayCard({ now = "2026-10-20T15:00:00Z", timeZone = "America/To
 
 ## Examples
 
-The snippets under **In 30 seconds** and **Use it in your project** are run by `pnpm test:readme` against the built package. A network load of the public feed is marked `no-run` until Pages is serving that version.
+The snippets under **In 30 seconds** and **Use it in your project** are run by `pnpm test:readme` against the built package. A network load of the public feed is marked `no-run` until Pages is serving that version. The shorter ones below are the steps of a card, each a pure function of what you pass in: [From a date to a sentence](./docs/guides/from-a-date-to-a-sentence.md) walks through them.
+
+### Which day, in a time zone
+
+```js
+import { calendarDayInZone, isDate, monthDayOf } from "@johnmorrisdotca/meigen-sports";
+
+// 03:00 UTC on 21 October is still the 20th in Toronto and already the 21st in Tokyo.
+console.log(calendarDayInZone("America/Toronto", "2026-10-21T03:00:00Z"), calendarDayInZone("Asia/Tokyo", "2026-10-21T03:00:00Z")); // 10-20 10-21
+console.log(isDate("2026-10-20"), monthDayOf("2022-11-20")); // true 11-20
+```
+
+### Which facts of the day
+
+```js
+import { factsFor } from "@johnmorrisdotca/meigen-sports";
+import offline from "@johnmorrisdotca/meigen-sports/offline";
+
+const all = factsFor(offline, { date: "11-20" });
+const soccer = factsFor(offline, { date: "11-20", sport: "soccer" });
+console.log(all.length > 0, soccer.every((fact) => fact.sport === "soccer")); // true true
+```
+
+### In Japanese
+
+```js
+import { factsFor, renderRun } from "@johnmorrisdotca/meigen-sports";
+import offline from "@johnmorrisdotca/meigen-sports/offline";
+
+const facts = factsFor(offline, { date: "10-20" }).slice(0, 3);
+const sentences = renderRun(facts, { seed: "card", locale: "ja", asOf: "2026-10-20" });
+console.log(sentences.length, /[぀-ヿ一-鿿]/.test(sentences[0].text)); // 3 true
+```
+
+### A quotation for a date
+
+```js
+import { quoteForDate } from "@johnmorrisdotca/meigen-sports";
+import quotes from "@johnmorrisdotca/meigen-sports/quotes";
+
+// The same date always gives the same quotation; a quotation has no utterance date, so it is never given an anniversary.
+console.log(quoteForDate(quotes, "2026-10-14")?.speaker); // James Dwight
+```
+
+### Typed
+
+```ts
+import { factsFor, type OnThisDayRecord } from "@johnmorrisdotca/meigen-sports";
+import offline from "@johnmorrisdotca/meigen-sports/offline";
+
+const facts: OnThisDayRecord[] = factsFor(offline, { date: "10-20" });
+console.log(facts.length > 0); // true
+```
+
+### The layouts and the calendar pages
+
+```js
+import { CALENDAR_THEMES, DISPLAY_LAYOUTS } from "@johnmorrisdotca/meigen-sports";
+
+console.log(DISPLAY_LAYOUTS.join(" ")); // calendar years compact featured
+console.log(CALENDAR_THEMES.length, CALENDAR_THEMES.slice(0, 3).join(" ")); // 18 pins loops shadow
+```
+
+### With a script tag
+
+```html
+<div id="card"></div>
+<script type="module">
+  import { calendarIcon, displayMarkup } from "https://cdn.jsdelivr.net/npm/@johnmorrisdotca/meigen-sports/+esm";
+  document.getElementById("card").innerHTML = displayMarkup({ layout: "calendar", icon: calendarIcon({ theme: "pins", month: 10, day: 20, year: 2026 }), items: [{ text: "A fact", year: "1995" }] });
+</script>
+```
+
+### In Vue, Svelte and Angular
+
+```vue
+<script setup>
+import { computed } from "vue";
+import { calendarIcon, displayMarkup } from "@johnmorrisdotca/meigen-sports";
+const html = computed(() => displayMarkup({ layout: "calendar", icon: calendarIcon({ theme: "pins", month: 10, day: 20, year: 2026 }), items: [{ text: "A fact" }] }));
+</script>
+<template><div v-html="html"></div></template>
+```
+
+```svelte
+<script>
+  import { calendarIcon, displayMarkup } from "@johnmorrisdotca/meigen-sports";
+  const html = displayMarkup({ layout: "calendar", icon: calendarIcon({ theme: "pins", month: 10, day: 20, year: 2026 }), items: [{ text: "A fact" }] });
+</script>
+<div>{@html html}</div>
+```
+
+```ts no-check
+// Angular: displayMarkup escapes every fact's text, but Angular's own sanitiser would strip the calendar's SVG, so the string is trusted explicitly.
+this.html = this.sanitizer.bypassSecurityTrustHtml(displayMarkup({ layout: "calendar", icon: calendarIcon({ theme: "pins", month: 10, day: 20, year: 2026 }), items: [] }));
+```
+
+The full components, with the facts of the day, are in the [frameworks guide](./docs/guides/frameworks.md).
 
 ## API
 

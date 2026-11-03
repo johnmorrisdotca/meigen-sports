@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Meigen Sports: build a card and copy the code</title>
+  <meta name="description" content="Choose the day, the calendar page, the layout, the language and how many facts, see the card, and copy the code that puts it in a page: a module, a frame or the card's HTML." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root { color-scheme: light dark; --bg: #f6f4ee; --ink: #1b2a24; --muted: #4a5a53; --card: #fff; --line: #b9b3a3; --accent: #2f5d4a; --tab: #1b2a24; --tab-ink: #fff; }
+    @media (prefers-color-scheme: dark) { :root { --bg: #0f1613; --ink: #e8efeb; --muted: #a7b6af; --card: #18221e; --line: #3a4a43; --accent: #7fc4a4; --tab: #e8efeb; --tab-ink: #0f1613; } }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", "Hiragino Sans", "Noto Sans JP", sans-serif; }
+    main { max-width: 1100px; margin: 0 auto; padding: 12px 16px 32px; }
+    h1 { font-size: 1.6rem; margin: 0 0 4px; }
+    p { margin: 0 0 10px; max-width: 70ch; }
+    .lede, .note { color: var(--muted); }
+    a { color: var(--accent); }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+    .layout { display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); }
+    @media (min-width: 900px) { .layout { grid-template-columns: 320px minmax(0, 1fr); align-items: start; } .controls { position: sticky; top: 8px; } }
+    .controls { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; }
+    .row { margin: 0 0 8px; }
+    .row b { display: block; font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin: 0 0 3px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+    .chips button { font: inherit; font-size: .88rem; font-weight: 700; min-height: 44px; padding: 0 12px; border-radius: 999px; border: 2px solid var(--line); background: var(--card); color: var(--ink); cursor: pointer; }
+    .chips button[aria-pressed="true"] { border-color: var(--tab); background: var(--tab); color: var(--tab-ink); }
+    .fields { display: flex; gap: 8px; }
+    .fields label { display: grid; gap: 2px; font-size: .8rem; color: var(--muted); flex: 1; }
+    .fields input { font: inherit; color: var(--ink); background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 6px 8px; min-height: 44px; width: 100%; }
+    .stage { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px; min-height: 240px; overflow-x: auto; }
+    .stage .meigen-calendar .meigen-cal svg { width: 6rem; }
+    .tabs { display: inline-flex; flex-wrap: wrap; gap: 4px; padding: 3px; background: var(--card); border: 1px solid var(--line); border-radius: 999px; margin: 12px 0 8px; }
+    .tabs button { font: inherit; font-weight: 700; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 0; background: transparent; color: var(--ink); cursor: pointer; }
+    .tabs button[aria-selected="true"] { background: var(--tab); color: var(--tab-ink); }
+    pre { margin: 0 0 8px; padding: 12px 14px; background: var(--card); border: 1px solid var(--line); border-radius: 10px; overflow-x: auto; font-size: .82rem; max-height: 20rem; }
+    .copy { font: inherit; font-weight: 800; min-height: 48px; padding: 0 22px; border-radius: 999px; border: 0; background: var(--tab); color: var(--tab-ink); cursor: pointer; }
+    #status { margin-left: 10px; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main>
+    <p><a href="./">← The demo</a></p>
+    <h1>Build a card, copy the code</h1>
+    <p class="lede">Choose what you want and the card is drawn here by the package, from the facts bundled in it. The code under it makes the same card in your page.</p>
+    <div class="layout">
+      <div class="controls" id="controls" data-testid="controls"></div>
+      <div>
+        <div class="stage" id="stage" data-testid="stage"></div>
+        <div class="tabs" role="tablist" id="tabs" aria-label="The code"></div>
+        <pre><code id="code" data-testid="code"></code></pre>
+        <button type="button" class="copy" id="copy" data-testid="copy">Copy the code</button><span id="status" role="status" aria-live="polite"></span>
+        <p class="note" style="margin-top:12px"><a href="https://github.com/johnmorrisdotca/meigen-sports/blob/main/docs/guides/getting-started.md">Getting started</a> · <a href="https://github.com/johnmorrisdotca/meigen-sports/blob/main/docs/guides/architecture.md">Architecture</a> · <a href="./embed.html">The embed page</a> · <a href="./catalogue.html">What is inside</a></p>
+      </div>
+    </div>
+  </main>
+  <script type="module" src="builder.js"></script>
+</body>
+</html>
