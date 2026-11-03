@@ -19,6 +19,7 @@ export const EXTRACT_CATEGORIES = [
   "retired-number",
   "all-star",
   "game-feat",
+  "player-feat",
   "competition-start",
   "competition-end",
   "sport-event",
@@ -363,6 +364,18 @@ export interface OnThisDayRecord {
    * (`pitcherName`, `pitchersUsed` 1), and `phase` (`world-series`, `league-championship`, `division-series`, `wild-card`) for a postseason game.
    */
   readonly feat?: "no-hitter" | "perfect-game";
+  /**
+   * On a `player-feat` fact (from English Wikipedia's complete lists, CC BY-SA 4.0): `playerName` (a label, never an identity), `featKind` (`goals-in-game`: five or more NHL goals
+   * in one game; `career-goals`: the 500th NHL goal; `points-in-game`: 70 or more points in one NBA game), `featAmount` (the goals, the 500 or the points), `featNth` (how many times
+   * this player has done the same by that day, counted from the whole list), the club (`clubName`), for a game of points the opponent and both scores (`opponentName`, `clubScore`,
+   * `opponentScore`), for a 500th goal the career game it came in (`careerGame`), the club the goaltender played for (`opponentName`) and `emptyNet`, and `phase` `playoffs` for a playoff game.
+   */
+  readonly playerName?: string | null;
+  readonly featKind?: "goals-in-game" | "career-goals" | "points-in-game";
+  readonly featAmount?: number;
+  readonly featNth?: number;
+  readonly careerGame?: number;
+  readonly emptyNet?: boolean;
   readonly pitcherName?: string | null;
   readonly pitchersUsed?: number;
   readonly opponentName?: string | null;

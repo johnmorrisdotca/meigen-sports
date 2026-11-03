@@ -208,3 +208,18 @@ Not yet checked by a person who reads Japanese. Literal English renderings.
 | Fragment: club's score | `（{0}対{1}で勝利）`, `（{0}対{1}で敗戦）` | (won {0} to {1}), (lost {0} to {1}) |
 | Fragment: round | `（ワールドシリーズ）`, `（リーグチャンピオンシップシリーズ）`, `（ディビジョンシリーズ）`, `（ワイルドカードシリーズ）` | (World Series), (League Championship Series), (Division Series), (Wild Card Series) |
 
+## Japanese added in 0.24.0
+
+Not yet checked by a person who reads Japanese. Literal English renderings.
+
+| Pattern id | Japanese | Literal English |
+| --- | --- | --- |
+| `pfeat-lead` | `{leadIn}{clubName}の{playerName}が{pfAgainst}{pfDid}{pfTail}。` | {leadIn}{player} of {club} (against {opponent}) did {feat} (tail). |
+| `pfeat-on` | `{clubName}の{playerName}は{dateOn}{pfAgainst}{pfDid}{pfTail}。` | {player} of {club} did {feat} {dateOn} (against {opponent}) (tail). |
+| `pfeat-player` | `{leadIn}{playerName}（{clubName}）が{pfAgainst}{pfDid}{pfTail}。` | {leadIn}{player} ({club}) did {feat} (against {opponent}) (tail). |
+| Fragment: goals in a game | `NHLの1試合で{0}ゴールを決めた`, `NHLのプレーオフの1試合で{0}ゴールを決めた` | scored {0} goals in an NHL game, scored {0} goals in an NHL playoff game |
+| Fragment: 500th goal | `NHL通算{0}ゴール目を決めた` | scored his {0} NHL goal |
+| Fragment: points | `{0}得点を挙げた` | scored {0} points |
+| Fragment: against | `{0}戦で`, `{0}戦で無人のゴールに`, `無人のゴールに` | in the game against {0}, into an empty net in the game against {0}, into an empty net |
+| Fragment: how many times | `（5ゴール以上の試合は通算{0}度目）`, `（70得点以上の試合は通算{0}度目）` | (the {0} game of five or more goals), (the {0} game of 70 or more points) |
+| Fragment: career game | `（通算{0}試合目）` | (his {0} career game) |

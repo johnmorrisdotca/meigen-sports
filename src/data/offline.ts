@@ -9,7 +9,7 @@ import type { OnThisDayRecord } from "../schema.ts";
  * console.log(OFFLINE_BUILD.dataVersion, OFFLINE_BUILD.days);
  * ```
  */
-export const OFFLINE_BUILD = {"dataVersion":"0.1.0","factsManifestSha256":"d91467241543dd06ce000cde32845537c3f806822a5fc7a8fe4d7548ec9b7e05","factsRecords":105794,"records":1511,"days":366} as const;
+export const OFFLINE_BUILD = {"dataVersion":"0.1.0","factsManifestSha256":"eedb39f00b3baf76046d8aaa26db93adf4968220da89aefb1b51fc616d5cc2c6","factsRecords":105924,"records":1511,"days":366} as const;
 
 /**
  * The best three to five facts for every calendar day, oldest first within a day.

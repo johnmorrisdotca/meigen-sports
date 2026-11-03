@@ -44,6 +44,15 @@ MEIGEN_RETROSHEET_DIR=<folder with gl/, CurrentNames.csv and TEAMABR.TXT> python
 
 `extract_all_star.py` reads the public views `api.all_star_event`, `all_star_game` and `all_star_mvp` (English Wikipedia, parsed by spx-stats' `scripts/all_star/`, CC BY-SA 4.0) and writes `extract_all_star.json`; the raw responses go to `data-sources/raw/all-star/` (git-ignored) for the coordinating session to archive. `extract_mlb_feats.py` counts no-hitters and perfect games from Retrosheet's game logs (`extract_mlb_feats.json`; the rules are in its header). `convert_extract.py` reads both extracts when they are present.
 
+## NHL and NBA milestones
+
+```sh
+python3 -I pipeline/extract_milestones.py
+python3 -I pipeline/test_milestones.py
+```
+
+`extract_milestones.py` reads three complete lists from English Wikipedia (CC BY-SA 4.0): five or more goals in an NHL game, the 500th NHL goal, and the NBA's games of 60 or more points (the extract keeps 70 or more). It fetches one page at a time, over a second apart, with a User-Agent that names the project, keeps every response in `$MEIGEN_EXTRACT_DIR/raw/wikipedia-milestones/` (outside git; the coordinating session archives it to DS1 and Dropbox) and writes `extract_milestones.json`, each row with its source `enwiki:<title>@<revision id>`. Only the tables are read, never a page's references. The 600th goal and the four-goal games have no complete list on Wikipedia, so they are not there. `convert_extract.py` turns the rows into `player-feat` facts.
+
 ## Clubs, buildings and leagues as of the day
 
 ```sh

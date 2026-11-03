@@ -39,7 +39,7 @@ export type TemplateRole = "default" | "variant";
  */
 export type TemplateType =
   | "birthday" | "death" | "game" | "final" | "record" | "award"
-  | "first" | "draft" | "venue" | "franchise" | "retired" | "all-star" | "feat"
+  | "first" | "draft" | "venue" | "franchise" | "retired" | "all-star" | "feat" | "player-feat"
   | "world-cup-match" | "world-cup-final" | "competition-start" | "competition-end" | "event-date";
 /**
  * How a sentence is chosen from the templates: always the same, varied, or by the seed.
@@ -87,7 +87,7 @@ export interface SentenceTemplate {
  * ```
  */
 export const TEMPLATE_TYPES: readonly TemplateType[] = [
-  "birthday", "death", "game", "final", "record", "award", "first", "draft", "venue", "franchise", "retired", "all-star", "feat",
+  "birthday", "death", "game", "final", "record", "award", "first", "draft", "venue", "franchise", "retired", "all-star", "feat", "player-feat",
   "world-cup-match", "world-cup-final", "competition-start", "competition-end", "event-date",
 ];
 

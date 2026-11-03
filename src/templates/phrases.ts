@@ -20,6 +20,7 @@ export type FragmentId =
   | "allStarNhl" | "allStarNba" | "allStarMlb" | "allStarNfl" | "allStarCfl" | "allStarResult" | "allStarMvp" | "allStarMvps"
   | "featNoHitter" | "featPerfect" | "featClubNoHit" | "featClubCombined" | "featClubPerfect" | "featWin" | "featLoss" | "featOfClub"
   | "featWorldSeries" | "featLeagueChampionship" | "featDivisionSeries" | "featWildCard"
+  | "pfWord5" | "pfWord6" | "pfWord7" | "pfGoals" | "pfGoalsPlayoff" | "pfCareer" | "pfPoints" | "pfAgainst" | "pfAgainstEmpty" | "pfEmptyNet" | "pfNthGoals" | "pfNthPoints" | "pfGameNo"
   | "recordSet" | "recordHeld" | "recordEqualled" | "recordSurpassed" | "recordSetBy" | "recordHeldBy" | "recordEqualledBy" | "recordBrokenBy";
 
 type Table = Record<FragmentId, { readonly en: readonly string[]; readonly ja: readonly string[] }>;
@@ -111,6 +112,20 @@ export const FRAGMENTS: Table = {
   featLeagueChampionship: { en: [" in the League Championship Series"], ja: ["（リーグチャンピオンシップシリーズ）"] },
   featDivisionSeries: { en: [" in the Division Series"], ja: ["（ディビジョンシリーズ）"] },
   featWildCard: { en: [" in the Wild Card Series"], ja: ["（ワイルドカードシリーズ）"] },
+  // A player's own feat: goals in a game, a 500th goal, points in a game, and what is true of it besides.
+  pfWord5: { en: ["five"], ja: ["5"] },
+  pfWord6: { en: ["six"], ja: ["6"] },
+  pfWord7: { en: ["seven"], ja: ["7"] },
+  pfGoals: { en: ["scored {0} goals in an NHL game"], ja: ["NHLの1試合で{0}ゴールを決めた"] },
+  pfGoalsPlayoff: { en: ["scored {0} goals in an NHL playoff game"], ja: ["NHLのプレーオフの1試合で{0}ゴールを決めた"] },
+  pfCareer: { en: ["scored his {0} NHL goal"], ja: ["NHL通算{0}ゴール目を決めた"] },
+  pfPoints: { en: ["scored {0} points"], ja: ["{0}得点を挙げた"] },
+  pfAgainst: { en: [" against the {0}"], ja: ["{0}戦で"] },
+  pfAgainstEmpty: { en: [" into an empty net against the {0}"], ja: ["{0}戦で無人のゴールに"] },
+  pfEmptyNet: { en: [" into an empty net"], ja: ["無人のゴールに"] },
+  pfNthGoals: { en: [", his {0} game of five or more goals"], ja: ["（5ゴール以上の試合は通算{0}度目）"] },
+  pfNthPoints: { en: [", his {0} game of seventy or more points"], ja: ["（70得点以上の試合は通算{0}度目）"] },
+  pfGameNo: { en: [", in his {0} game"], ja: ["（通算{0}試合目）"] },
   recordSet: { en: ["set"], ja: [""] },
   recordHeld: { en: ["held"], ja: [""] },
   recordEqualled: { en: ["equalled"], ja: [""] },

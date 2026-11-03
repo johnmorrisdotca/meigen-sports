@@ -527,6 +527,37 @@ export const TEMPLATES: readonly SentenceTemplate[] = [
     needs: ["clubName", "featClubDid", "opponentName", "dateOn"],
     pattern: "{clubName}は{dateOn}{opponentName}{featClubDid}{featResult}{featStage}。",
   },
+  // a player's own feat: five goals in a game, a 500th goal, 70 points in a game
+  {
+    id: "pfeat-lead", type: "player-feat", locale: "en", gate: "neutral", role: "default",
+    needs: ["playerName", "pfOfClub", "pfDid", "leadIn"],
+    pattern: "{leadIn}{playerName}{pfOfClub} {pfDid}{pfAgainst}{pfTail}.",
+  },
+  {
+    id: "pfeat-on", type: "player-feat", locale: "en", gate: "neutral", role: "variant",
+    needs: ["playerName", "pfOfClub", "pfDid", "dateOn"],
+    pattern: "{playerName}{pfOfClub} {pfDid}{pfAgainst} {dateOn}{pfTail}.",
+  },
+  {
+    id: "pfeat-player", type: "player-feat", locale: "en", gate: "neutral", role: "variant",
+    needs: ["playerName", "clubName", "pfDid", "leadIn"],
+    pattern: "{leadIn}{playerName}, a {clubName} player, {pfDid}{pfAgainst}{pfTail}.",
+  },
+  {
+    id: "pfeat-lead", type: "player-feat", locale: "ja", gate: "neutral", role: "default",
+    needs: ["clubName", "playerName", "pfDid", "leadIn"],
+    pattern: "{leadIn}{clubName}の{playerName}が{pfAgainst}{pfDid}{pfTail}。",
+  },
+  {
+    id: "pfeat-on", type: "player-feat", locale: "ja", gate: "neutral", role: "variant",
+    needs: ["clubName", "playerName", "pfDid", "dateOn"],
+    pattern: "{clubName}の{playerName}は{dateOn}{pfAgainst}{pfDid}{pfTail}。",
+  },
+  {
+    id: "pfeat-player", type: "player-feat", locale: "ja", gate: "neutral", role: "variant",
+    needs: ["clubName", "playerName", "pfDid", "leadIn"],
+    pattern: "{leadIn}{playerName}（{clubName}）が{pfAgainst}{pfDid}{pfTail}。",
+  },
   // All-Star Games
   {
     id: "allstar-played", type: "all-star", locale: "en", gate: "neutral", role: "default",

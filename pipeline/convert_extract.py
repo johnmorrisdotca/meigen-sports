@@ -412,7 +412,7 @@ def history_tags(row: dict) -> list[str]:
         tags.append("venue-history")
     if cat == "retired-number":
         tags.append("ceremony-recognition")
-    if cat == "game-feat":
+    if cat in ("game-feat", "player-feat"):
         tags.append("exceptional-achievement")
     if cat in ("competition-start", "competition-end", "sport-event"):
         tags.append("competition-boundary")  # a single-day event began and ended that day
@@ -586,6 +586,7 @@ def finalize(row: dict) -> dict | None:
         "seriesWinnerWins", "seriesLoserWins", "seriesGames", "winnerRecord", "winnerTitleNumber", "awards",
         "jerseyNumber", "jerseyRetired", "jerseySource", "leagueWide", "loserName", "winnerScore", "loserScore", "decidedBy", "mvpNames", "attendance",
         "feat", "pitcherName", "pitchersUsed", "opponentName", "clubScore", "opponentScore",
+        "playerName", "featKind", "featAmount", "featNth", "careerGame", "emptyNet",
     ):
         if row.get(key) not in (None, [], ""):
             out[key] = row[key]
@@ -1502,6 +1503,43 @@ def mlb_feat_rows() -> list[dict]:
 
 
 
+def player_feat_rows() -> list[dict]:
+    """Five goals in an NHL game, a 500th NHL goal and 70 points in an NBA game, from English Wikipedia's complete lists (CC BY-SA 4.0): pipeline/extract_milestones.py.
+    `featNth` is how many times that player had done it by that day, counted over the whole list."""
+    path = EXTRACT / "extract_milestones.json"
+    if not path.exists():
+        print(f"missing {path}", file=sys.stderr)
+        return []
+    data = json.loads(path.read_text(encoding="utf-8"))
+    pages = {p["title"]: p for p in data.get("pages") or []}
+    out: list[dict] = []
+    for r in data.get("records") or []:
+        day = r.get("date")
+        kind = r.get("kind")
+        if not day or not re.match(r"^\d{4}-\d{2}-\d{2}$", day) or not r.get("player") or not r.get("club") or kind not in ("goals-in-game", "career-goal", "points-in-game") or r.get("league") not in LEAGUE_SPORT:
+            continue
+        title = r["source"].split(":", 1)[1].rsplit("@", 1)[0] if r.get("source") else ""
+        rec = {
+            "recordId": f"wikipedia:player-feat:{kind}:{day}:{re.sub(r'[^a-z0-9]+', '-', r['player'].lower()).strip('-')}", "category": "player-feat", "eventDate": day, "datePrecision": "day",
+            "sport": LEAGUE_SPORT[r["league"]], "league": r["league"], "competition": r["league"], "basis": "source",
+            "featKind": "career-goals" if kind == "career-goal" else kind, "featAmount": r["amount"], "featNth": r.get("nth") or 1, "playerName": r["player"], "clubName": r["club"],
+            "sourceId": "wikipedia", "licence": "CC BY-SA 4.0", "attribution": "Wikipedia contributors, CC BY-SA 4.0.",
+            "sourceUrl": "https://en.wikipedia.org/wiki/" + title.replace(" ", "_") if title in pages else "https://en.wikipedia.org/",
+        }
+        if r.get("playoffs"):
+            rec["phase"] = "playoffs"
+        if kind == "career-goal":
+            rec["careerGame"] = r["gameNumber"]
+            if r.get("opponent"):
+                rec["opponentName"] = r["opponent"]
+            if r.get("emptyNet"):
+                rec["emptyNet"] = True
+        if kind == "points-in-game":
+            rec.update({"opponentName": r["opponent"], "clubScore": r["clubScore"], "opponentScore": r["opponentScore"]})
+        out.append(rec)
+    return out
+
+
 def build_facts() -> tuple[list[dict], dict]:
     """Stage one: the extracts (DS1, the Wikidata dump, the priority list) become the facts, each worded and tagged, and the few numbers and
     names the layout needs besides them. Needs the extracts, which are not in git; its result is `data-sources/facts/` (`write_inputs`)."""
@@ -1739,7 +1777,7 @@ def build_facts() -> tuple[list[dict], dict]:
             continue
         chosen[rec["recordId"]] = rec
 
-    for rec in all_star_rows() + mlb_feat_rows():
+    for rec in all_star_rows() + mlb_feat_rows() + player_feat_rows():
         chosen[rec["recordId"]] = rec
     latest_played = max((r.get("eventDate") or "" for r in games), default="")
     for rec in retired_rows(club_namer(games + finals + franchise, names), latest_played):
@@ -1790,7 +1828,7 @@ def build_facts() -> tuple[list[dict], dict]:
         "wikidataDumpPara": para_meta,
     }
     print(json.dumps({"priorityAdded": priority_added, "wikidataDumpAdded": dump_added, "listPeopleAdded": list_added, "wikidataDumpEventsAdded": events_added, "paraPeopleAdded": para_added, "paraEventsAdded": para_events_added,
-                      "priorityRephrased": rephrased, "datedGameLeagues": DATED["leaguesChanged"], "retiredNumbers": sum(1 for f in facts if f.get("category") == "retired-number"), "allStarGames": sum(1 for f in facts if f.get("category") == "all-star"), "gameFeats": sum(1 for f in facts if f.get("category") == "game-feat"), "jerseyNumbers": sum(1 for f in facts if f.get("jerseyNumber") is not None and f.get("category") != "retired-number"), "facts": len(facts), "droppedThin": dropped, "mergedSameEvent": merged_events}, indent=2))
+                      "priorityRephrased": rephrased, "datedGameLeagues": DATED["leaguesChanged"], "retiredNumbers": sum(1 for f in facts if f.get("category") == "retired-number"), "allStarGames": sum(1 for f in facts if f.get("category") == "all-star"), "gameFeats": sum(1 for f in facts if f.get("category") == "game-feat"), "playerFeats": sum(1 for f in facts if f.get("category") == "player-feat"), "jerseyNumbers": sum(1 for f in facts if f.get("jerseyNumber") is not None and f.get("category") != "retired-number"), "facts": len(facts), "droppedThin": dropped, "mergedSameEvent": merged_events}, indent=2))
     return facts, meta
 
 

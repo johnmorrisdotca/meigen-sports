@@ -72,7 +72,7 @@ export interface When {
 }
 
 /** Categories whose games are really played on January 1; for any other kind a January 1 date is how a source writes "some time that year". */
-const REAL_JANUARY_FIRST = new Set(["game-on-day", "soccer-on-day", "championship-final", "upset", "comeback", "all-star", "game-feat"]);
+const REAL_JANUARY_FIRST = new Set(["game-on-day", "soccer-on-day", "championship-final", "upset", "comeback", "all-star", "game-feat", "player-feat"]);
 
 function whenOfFact(record: OnThisDayRecord): When | null {
   const iso = record.eventDate ?? "";
@@ -215,6 +215,7 @@ function factType(record: OnThisDayRecord): TemplateType | null {
     case "retired-number": return "retired";
     case "all-star": return "all-star";
     case "game-feat": return "feat";
+    case "player-feat": return "player-feat";
     case "first": return "first";
     default: return null;
   }
@@ -328,6 +329,32 @@ function featFields(record: OnThisDayRecord, say: (id: FragmentId, ...args: stri
     featOfClub: pitcher && club ? say("featOfClub", club) : "",
     opponentName: cleanLabel(record.opponentName),
     pitcherName: pitcher,
+  };
+}
+
+const PF_WORD: Record<number, FragmentId> = { 5: "pfWord5", 6: "pfWord6", 7: "pfWord7" };
+
+/** The parts of a player's feat sentence: what he did, against whom, and the tail (the score, how many times he has done it, the career game of a 500th goal). */
+function playerFeatFields(record: OnThisDayRecord, locale: TemplateLocale, say: (id: FragmentId, ...args: string[]) => string): Record<string, string> {
+  const empty = { playerName: "", pfOfClub: "", pfDid: "", pfAgainst: "", pfTail: "" };
+  const kind = record.featKind, amount = record.featAmount;
+  if (record.category !== "player-feat" || !kind || amount == null) return empty;
+  const club = cleanLabel(record.clubName), opponent = cleanLabel(record.opponentName);
+  const count = PF_WORD[amount] ? say(PF_WORD[amount]!) : String(amount);
+  const did = kind === "goals-in-game" ? say(record.phase === "playoffs" ? "pfGoalsPlayoff" : "pfGoals", count)
+    : kind === "career-goals" ? say("pfCareer", ordinal(amount, locale)) : say("pfPoints", String(amount));
+  const nth = (record.featNth ?? 1) > 1 && kind !== "career-goals" ? say(kind === "goals-in-game" ? "pfNthGoals" : "pfNthPoints", ordinal(record.featNth!, locale)) : "";
+  const cs = record.clubScore, os = record.opponentScore;
+  const result = kind === "points-in-game" && cs != null && os != null && cs !== os ? say(cs > os ? "featWin" : "featLoss", String(cs), String(os)) : "";
+  const gameNo = kind === "career-goals" && record.careerGame ? say("pfGameNo", ordinal(record.careerGame, locale)) : "";
+  const net = kind === "career-goals" && record.emptyNet === true;
+  return {
+    playerName: cleanLabel(record.playerName),
+    pfOfClub: club ? say("featOfClub", club) : "",
+    pfDid: did,
+    pfAgainst: net ? (opponent ? say("pfAgainstEmpty", opponent) : say("pfEmptyNet")) : opponent ? say("pfAgainst", opponent) : "",
+    pfTail: `${result}${nth}${gameNo}`,
+    opponentName: opponent,
   };
 }
 
@@ -463,6 +490,7 @@ function fieldsOf(
     number: record.jerseyNumber == null ? "" : String(record.jerseyNumber),
     ...allStarFields(record, say),
     ...featFields(record, say),
+    ...playerFeatFields(record, locale, say),
     leagueWide: record.category === "retired-number" && record.leagueWide ? league : "",
     theClub: record.sport === "soccer" ? "" : say("article"),
     venueName: venueNameClean,
