@@ -122,10 +122,18 @@ test("every template can render: none is dead, none leaves a hole", () => {
   }
 });
 
-test("render.ts and mergeEvents.ts write no sentence words of their own", () => {
+test("the renderer and mergeEvents.ts write no sentence words of their own", () => {
   // Every phrase a reader sees is a row in catalog.ts or phrases.ts. A string literal with sentence words in these files is a hard-coded phrasing.
   const words = /\b(the|was|were|and|of|won|beat|beating|died|born|opened|aged|began|ended|drew|lost|defeated|played|hosted|took place|draft|overall)\b/i;
-  for (const file of ["src/templates/render.ts", "src/templates/run.ts", "src/mergeEvents.ts", "src/sentences.ts"]) {
+  for (const file of [
+    "src/templates/render.ts",
+    "src/templates/render-dates.ts",
+    "src/templates/render-fields.ts",
+    "src/templates/render-subject.ts",
+    "src/templates/run.ts",
+    "src/mergeEvents.ts",
+    "src/sentences.ts",
+  ]) {
     const code = readFileSync(file, "utf8").replace(/\/\*[\s\S]*?\*\//g, "").replace(/^\s*\/\/.*$/gm, "");
     for (const match of code.matchAll(/"((?:[^"\\\n]|\\.)*)"|`((?:[^`\\]|\\.)*)`/g)) {
       const literal = match[1] ?? match[2] ?? "";

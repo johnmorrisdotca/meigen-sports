@@ -187,7 +187,7 @@ Known gap: the default sentences stored in the published fact shards (`text`, `t
 ## Adding a template
 
 1. Add a row to `TEMPLATES` in `src/templates/catalog.ts` (a new kind also goes into `TEMPLATE_TYPES` and needs three rows per language) with a new `id` (unique per type+locale), `needs`, `gate`, and `pattern`.
-2. Tokens are `{field}` names from `fieldsOf` in `src/templates/render.ts`. If the fact lacks a field, omit it from the pattern or list it in `needs` so the row is skipped.
+2. Tokens are `{field}` names from `fieldsOf` in `src/templates/render-fields.ts`. If the fact lacks a field, omit it from the pattern or list it in `needs` so the row is skipped.
 3. Mark at most one `role: "default"` per type+locale+gate and context. `fixed` prefers a matching non-neutral default, else the neutral default. A pattern that says “today”, “on this day”, “N years ago today” or “turns N” takes `day: true`; every other pattern must hold `{dateLead}`, `{leadIn}`, `{dateOn}` or `{date}` so it names the fact's date when it is read on another day.
 4. Add tests in `test/templates.test.ts` for living, deceased, unknown, and the missing-field skip.
 5. Put Japanese in the `locale: "ja"` rows only. Keep `docs/templates.md` English and `docs/templates.ja.md` Japanese.
