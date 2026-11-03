@@ -4,6 +4,8 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+- Source files over 500 lines are being split by what they do (the sentence renderer first), with the same exports and no change to the package. `pnpm check` now runs `scripts/check-max-lines.mjs`, which fails a file over 500 lines and lists the ones not yet split.
+
 ## [0.27.0] - 2026-11-03
 
 - Feature (MODULES-250): one fame list. `data-sources/priority-people.csv` (was `people.csv`) ranks all 2,000 people 1 to 2000 by world fame: the score is the person's Wikipedia language editions, plus 2 for each Olympic medal (5 count), 4 for each world title (3 count) and 8 for each hall of fame (2 count), so the editions lead and the rest adds at most 38 (`docs/fame.md`, the weights in `data-sources/fame-rule.json`, `pipeline/people/fame.py`). The old 999 order is only a tie-break, never a floor: 232 of the first 999 are at or above their old place, 767 below it. 39 people cannot be scored (30 have no Wikidata item yet, 9 are listed under another person's item) and keep their place from the first list. No sport or country holds more than 35 or 45 places of any block of 100 ranks; the score alone keeps inside, so nobody was moved. The first twenty: Lionel Messi, Cristiano Ronaldo, Muhammad Ali, Michael Schumacher, Pelé, Roger Federer, Diego Maradona, Jackie Chan, Novak Djokovic, Rafael Nadal, Michael Jordan, Edmund Hillary, Usain Bolt, Zinedine Zidane, Serena Williams, Mike Tyson, Kylian Mbappé, Ronaldo Nazário, Franz Beckenbauer, The Rock.
