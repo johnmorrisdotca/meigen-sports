@@ -1,5 +1,5 @@
 // The calendar-page drawings live in their own package now, @johnmorrisdotca/koyomi-calendars (the same code, the same bytes: its test compares 2,704 drawings with the ones
-// this file used to make). This file keeps meigen-sports' own names and its seventeen themes: koyomi's eighteenth design, `squircle`, is not offered here yet.
+// this file used to make). This file keeps meigen-sports' own names and offers all eighteen themes.
 
 import {
   CALENDAR_THEME_ALIASES as KOYOMI_ALIASES, CALENDAR_THEMES as KOYOMI_THEMES, CALENDAR_THEME_LABELS as KOYOMI_LABELS, calendarIcon as koyomiIcon, calendarMoon as koyomiMoon,
@@ -67,7 +67,7 @@ export const calendarMoon: typeof koyomiMoon = koyomiMoon;
 export const calendarWeekend: typeof koyomiWeekend = koyomiWeekend;
 
 /**
- * The themes of this package: the seventeen it has always had.
+ * The eighteen themes of this package.
  * @example
  * ```ts
  * import type { CalendarTheme } from "@johnmorrisdotca/meigen-sports";
@@ -75,16 +75,16 @@ export const calendarWeekend: typeof koyomiWeekend = koyomiWeekend;
  * console.log(theme);
  * ```
  */
-export type CalendarTheme = Exclude<KoyomiTheme, "squircle">;
+export type CalendarTheme = KoyomiTheme;
 /**
- * The seventeen calendar-page themes, in the order the package has always listed them.
+ * The eighteen calendar-page themes, the seventeen of earlier versions first and `squircle` last.
  * @example
  * ```ts
  * import { CALENDAR_THEMES } from "@johnmorrisdotca/meigen-sports";
  * console.log(CALENDAR_THEMES.length, CALENDAR_THEMES.slice(0, 4).join(" "));
  * ```
  */
-export const CALENDAR_THEMES = KOYOMI_THEMES.filter((theme): theme is CalendarTheme => theme !== "squircle");
+export const CALENDAR_THEMES: readonly CalendarTheme[] = KOYOMI_THEMES;
 /**
  * The name of each theme in English and in Japanese, for a menu.
  * @example
@@ -93,7 +93,7 @@ export const CALENDAR_THEMES = KOYOMI_THEMES.filter((theme): theme is CalendarTh
  * console.log(CALENDAR_THEME_LABELS.pins.en, CALENDAR_THEME_LABELS.pins.ja);
  * ```
  */
-export const CALENDAR_THEME_LABELS = Object.fromEntries(CALENDAR_THEMES.map((theme) => [theme, KOYOMI_LABELS[theme]])) as Record<CalendarTheme, { en: string; ja: string }>;
+export const CALENDAR_THEME_LABELS: Record<CalendarTheme, { en: string; ja: string }> = KOYOMI_LABELS;
 
 /**
  * The named theme (or an older name for one), or null when the word is not one of ours.
@@ -106,8 +106,7 @@ export const CALENDAR_THEME_LABELS = Object.fromEntries(CALENDAR_THEMES.map((the
  * ```
  */
 export function calendarThemeOf(name: string | null | undefined): CalendarTheme | null {
-  const theme = koyomiThemeOf(name);
-  return theme === "squircle" ? null : theme;
+  return koyomiThemeOf(name);
 }
 
 /**
@@ -122,6 +121,5 @@ export function calendarThemeOf(name: string | null | undefined): CalendarTheme 
  * ```
  */
 export function calendarIcon(options: CalendarIconOptions): string {
-  if (options.theme !== undefined && calendarThemeOf(options.theme) === null && koyomiThemeOf(options.theme) !== null) throw new RangeError(`unknown calendar theme: ${options.theme}`);
   return koyomiIcon(options);
 }

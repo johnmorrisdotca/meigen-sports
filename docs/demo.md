@@ -1,6 +1,6 @@
 # The demo
 
-The demo is at <https://johnmorrisdotca.github.io/meigen-sports/>: today's facts as a calendar card in any of seventeen calendar pages and four layouts (`?icon=pins&layout=calendar`, with a gallery of all seventeen on the page and links to the [gallery](calendar-gallery.md) and the [Japanese gallery](calendar-gallery.ja.md)), ten mixed facts, the showcase, favourites by sport, league, tag, country, decade, award, honour, years, a club or a person picked by name, and a day, with a flag and a trophy beside a fact when you ask (`?flags=1&trophies=1`), and a date, sport and source picker for a quotation and the facts of any day, in English and Japanese. Its pictures:
+The demo is at <https://johnmorrisdotca.github.io/meigen-sports/>: today's facts as a calendar card in any of eighteen calendar pages and four layouts (`?icon=pins&layout=calendar`, with a gallery of all seventeen on the page and links to the [gallery](calendar-gallery.md) and the [Japanese gallery](calendar-gallery.ja.md)), ten mixed facts, the showcase, favourites by sport, league, tag, country, decade, award, honour, years, a club or a person picked by name, and a day, with a flag and a trophy beside a fact when you ask (`?flags=1&trophies=1`), and a date, sport and source picker for a quotation and the facts of any day, in English and Japanese. Its pictures:
 
 <p align="center">
 <img alt="The Meigen Sports demo on a desk: a date, a sport, a quotation and on-this-day facts." src="images/hero-desktop.png" width="720">

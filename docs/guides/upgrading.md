@@ -17,4 +17,4 @@ New: a documentation site, an embed page (`embed.html`) and usage examples for e
 
 ## To 0.20: the calendar pages come from koyomi-calendars
 
-The calendar icons and the Japanese calendar functions now come from `@johnmorrisdotca/koyomi-calendars`, the package's one runtime dependency. The API and the seventeen themes are unchanged, and the same options draw the same icons. A package that said "no dependencies" must now allow this one.
+The calendar icons and the Japanese calendar functions now come from `@johnmorrisdotca/koyomi-calendars`, the package's one runtime dependency. The API and the seventeen themes are unchanged (0.23.0 adds `squircle`, the eighteenth), and the same options draw the same icons. A package that said "no dependencies" must now allow this one.

@@ -33,7 +33,7 @@ description: 埋め込みページの iframe で、どのページにもその�
 | キー | 値 | 省略したとき |
 |---|---|---|
 | `date` | `10-20` または `2026-10-20` | 読む人のタイムゾーンでの今日 |
-| `theme` | [カレンダーのテーマ](api:CALENDAR_THEMES) 17種類のどれか (`pins`、`desk`、`flip` など) | `pins` |
+| `theme` | [カレンダーのテーマ](api:CALENDAR_THEMES) 18種類のどれか (`pins`、`desk`、`flip` など) | `pins` |
 | `lang` | `en` または `ja` | `en` |
 | `layout` | `calendar`、`years`、`compact`、`featured` ([並べ方](api:DISPLAY_LAYOUTS)) | `calendar` |
 | `sport` | `ice-hockey` のような競技 | すべての競技 |

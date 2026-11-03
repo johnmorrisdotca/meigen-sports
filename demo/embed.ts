@@ -1,6 +1,6 @@
 // The frame a page puts in an iframe. The address says what it shows, and the frame fetches nothing but this site's own feed files:
 //   ?date=10-20 or 2026-10-20   the calendar day (today in the reader's time zone by default)
-//   &theme=pins                 the calendar page (one of the seventeen; pins by default)
+//   &theme=pins                 the calendar page (one of the eighteen; pins by default)
 //   &lang=en|ja                 the language of the sentences and the page
 //   &layout=calendar|years|compact|featured
 //   &sport=ice-hockey           only the facts of one sport

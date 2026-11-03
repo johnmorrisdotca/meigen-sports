@@ -8,7 +8,7 @@ A typed data package with one small runtime dependency, koyomi-calendars, for th
   <a href="https://www.npmjs.com/package/@johnmorrisdotca/meigen-sports"><img alt="npm" src="https://img.shields.io/npm/v/@johnmorrisdotca/meigen-sports?color=2f5d4a"></a>
   <a href="./LICENSE"><img alt="MIT licence" src="https://img.shields.io/badge/licence-MIT-2f5d4a"></a>
   <a href="./NOTICE.md"><img alt="Data keeps its own licences" src="https://img.shields.io/badge/data-source%20licences-2f5d4a"></a>
-  <img alt="No dependencies" src="https://img.shields.io/badge/dependencies-0-2f5d4a">
+  <img alt="One small dependency" src="https://img.shields.io/badge/dependencies-1-2f5d4a">
   <img alt="TypeScript" src="https://img.shields.io/badge/types-TypeScript-3178c6">
 </p>
 
@@ -17,31 +17,31 @@ A typed data package with one small runtime dependency, koyomi-calendars, for th
 <p align="center">
 <picture>
 <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/hero-icons-dark.webp">
-<img alt="A today card for October 20 with a red pinned calendar page and the sentence for Mickey Mantle's birthday, over all seventeen calendar-page themes in a grid: pins, loops, long shadow, heavy, cartoon, flip, stack, line, curl, soft, desk, thin, frame, badge, sun disc, wall roll and plain." src="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/hero-icons-light.webp" width="760">
+<img alt="A today card for October 20 with a red pinned calendar page and the sentence for Mickey Mantle's birthday, over all eighteen calendar-page themes in a grid: pins, loops, long shadow, heavy, cartoon, flip, stack, line, curl, soft, desk, thin, frame, badge, sun disc, wall roll, plain and squircle." src="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/hero-icons-light.webp" width="760">
 </picture>
-<br><em>A today card, and the seventeen calendar pages, all drawn by <code>calendarIcon</code>: the same fact on October 20.</em>
+<br><em>A today card, and the eighteen calendar pages, all drawn by <code>calendarIcon</code>: the same fact on October 20.</em>
 </p>
 
 ## The best of it
 
 The pictures of calendar pages, layouts, cards, banners and sports are drawn by the package's own functions (`pnpm images:showcase` draws them again), each in light and dark.
 
-- **Seventeen calendar pages** (`calendarIcon`): pins, loops, long shadow, heavy, cartoon, flip, stack, line, curl, soft, desk, thin, frame, badge, and the three tear-off pages sun disc, wall roll and plain (with a weekend page of a Saturday and a Sunday on one page, `calendarWeekend`, and a moon phase, `calendarMoon`), each in light and dark, in English and Japanese, from 16 to 1024 pixels wide. [Every theme at every size and date](./docs/calendar-gallery.md) · [Gallery in Japanese](./docs/calendar-gallery.ja.md) · [how each is drawn](./docs/calendar-icons.md).
+- **Eighteen calendar pages** (`calendarIcon`): pins, loops, long shadow, heavy, cartoon, flip, stack, line, curl, soft, desk, thin, frame, badge, squircle, and the three tear-off pages sun disc, wall roll and plain (with a weekend page of a Saturday and a Sunday on one page, `calendarWeekend`, and a moon phase, `calendarMoon`), each in light and dark, in English and Japanese, from 16 to 1024 pixels wide. [Every theme at every size and date](./docs/calendar-gallery.md) · [Gallery in Japanese](./docs/calendar-gallery.ja.md) · [how each is drawn](./docs/calendar-icons.md).
 
 <p align="center">
 <picture>
 <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/themes-dark.webp">
-<img alt="All seventeen calendar pages in rows of six, each named under its picture: pins, loops, long shadow, heavy, cartoon, flip, stack, line, curl, soft, desk, thin, frame, badge, sun disc, wall roll and plain, for March 20, 2026." src="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/themes-light.webp" width="760">
+<img alt="All eighteen calendar pages in rows of six, each named under its picture: pins, loops, long shadow, heavy, cartoon, flip, stack, line, curl, soft, desk, thin, frame, badge, sun disc, wall roll, plain and squircle, for March 20, 2026." src="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/themes-light.webp" width="760">
 </picture>
-<br><em>Seventeen themes, one call each.</em>
+<br><em>Eighteen themes, one call each.</em>
 </p>
 
 ```js
 import { CALENDAR_THEMES, calendarIcon } from "@johnmorrisdotca/meigen-sports";
 
 const row = CALENDAR_THEMES.map((theme) => calendarIcon({ theme, month: 3, day: 20, year: 2026, scheme: "dark", size: 96 }));
-console.log(row.length); // 17
-console.log(CALENDAR_THEMES.join(" ")); // pins loops shadow heavy cartoon flip stack line curl soft desk thin frame badge sun roll plain
+console.log(row.length); // 18
+console.log(CALENDAR_THEMES.join(" ")); // pins loops shadow heavy cartoon flip stack line curl soft desk thin frame badge sun roll plain squircle
 ```
 
 - **Tear-off pages and weekend pages**: `sun`, `roll` and `plain` look like a day-by-day tear-off calendar, with the weekday, month and holiday in side columns (the holiday names are yours: `holidays`), a slot in the sun for any mark (`mark`), a moon phase on `plain`, and a Saturday and the Sunday after it on one page for `sun` and `roll` (`weekend: "split"`, `calendarWeekend`, `calendarMoon`). [How they work](./docs/calendar-icons.md#tear-off-pages-sun-roll-and-plain).
@@ -192,7 +192,7 @@ Use Meigen Sports in a site, app or research tool that needs cited historical sp
 - Versioned static JSON shards for calendar days, sports and stable entities, validated by an explicit loader.
 - Source rights and provenance travel with each row. The package's MIT code licence does not relicense its data. Source lifecycle and usage notes ship in `data-sources/sources.json` and `data-sources/README.md`.
 - Initial coverage includes all 964 matches from 22 FIFA World Cup editions (1930–2022), plus 88 published Wikidata event facts (10 World Cup start/end rows merged into the same-day match). The included sample does not contain collected player milestones or world records.
-- Seventeen original calendar-page drawings (`calendarIcon`, `CALENDAR_THEMES`, `CALENDAR_THEME_ALIASES`, `calendarWeekend`, `calendarMoon`): pins, loops, shadow, heavy, cartoon, flip, stack, line, curl, soft, desk, thin, frame, badge, sun, roll and plain; the ten names of 0.12 still work. Each names the date in the way its look does, in light or dark. Optional CSS lives at `@johnmorrisdotca/meigen-sports/styles.css`. See [docs/calendar-icons.md](./docs/calendar-icons.md).
+- Eighteen original calendar-page drawings (`calendarIcon`, `CALENDAR_THEMES`, `CALENDAR_THEME_ALIASES`, `calendarWeekend`, `calendarMoon`): pins, loops, shadow, heavy, cartoon, flip, stack, line, curl, soft, desk, thin, frame, badge, sun, roll, plain and squircle; the ten names of 0.12 still work. Each names the date in the way its look does, in light or dark. Optional CSS lives at `@johnmorrisdotca/meigen-sports/styles.css`. See [docs/calendar-icons.md](./docs/calendar-icons.md).
 
 ## Moving pictures
 
@@ -209,7 +209,7 @@ Slow on purpose (half speed), and in a row only the centre one moves.
 <p align="center">
 <picture>
 <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/centre-themes-dark.webp">
-<img alt="A row of seven calendar pages for March 20, where only the centre page changes, through all seventeen themes in turn." src="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/centre-themes-light.webp" width="760">
+<img alt="A row of seven calendar pages for March 20, where only the centre page changes, through all eighteen themes in turn." src="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/centre-themes-light.webp" width="760">
 </picture>
 <br><em>The centre page changes theme; the others stay.</em>
 </p>
@@ -293,7 +293,7 @@ A calendar page is drawn as SVG. Pass the month, day and year; the library never
 
 ```js
 import { CALENDAR_THEMES, calendarIcon, calendarThemeOf } from "@johnmorrisdotca/meigen-sports";
-console.log(CALENDAR_THEMES.length); // 17
+console.log(CALENDAR_THEMES.length); // 18
 console.log(calendarThemeOf("classic")); // pins
 console.log(calendarIcon({ month: 3, day: 20, year: 2026, theme: "pins" }).includes("2026")); // true
 ```

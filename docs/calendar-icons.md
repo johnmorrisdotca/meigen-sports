@@ -5,11 +5,11 @@
 <p align="center">
 <picture>
 <source media="(prefers-color-scheme: dark)" srcset="./images/hero-icons-dark.webp">
-<img alt="A calendar page for October 20 beside a sentence, over all seventeen themes." src="./images/hero-icons-light.webp" width="720">
+<img alt="A calendar page for October 20 beside a sentence, over all eighteen themes." src="./images/hero-icons-light.webp" width="720">
 </picture>
 </p>
 
-Seventeen themes, one call each. The picture above is `calendarIcon` called once for each theme (light and dark are the same call with `scheme`).
+Eighteen themes, one call each. The picture above is `calendarIcon` called once for each theme (light and dark are the same call with `scheme`).
 
 ```js
 import { CALENDAR_THEMES, calendarIcon } from "@johnmorrisdotca/meigen-sports";
@@ -17,7 +17,7 @@ import { CALENDAR_THEMES, calendarIcon } from "@johnmorrisdotca/meigen-sports";
 const svg = calendarIcon({ theme: "flip", month: 3, day: 20, year: 2026, locale: "en", scheme: "light", size: 96 });
 console.log(svg.startsWith("<svg")); // true
 console.log(svg.includes("Friday Mar 20 2026")); // true
-console.log(CALENDAR_THEMES.length); // 17
+console.log(CALENDAR_THEMES.length); // 18
 ```
 
 ## Examples
@@ -27,7 +27,7 @@ console.log(CALENDAR_THEMES.length); // 17
 <p align="center">
 <picture>
 <source media="(prefers-color-scheme: dark)" srcset="./images/themes-dark.webp">
-<img alt="All seventeen themes in rows of six for March 20, 2026." src="./images/themes-light.webp" width="720">
+<img alt="All eighteen themes in rows of six for March 20, 2026." src="./images/themes-light.webp" width="720">
 </picture>
 </p>
 
@@ -53,7 +53,7 @@ console.log(calendarIcon({ theme: "pins", month: 3, day: 20, locale: "ja" }).inc
 <p align="center">
 <picture>
 <source media="(prefers-color-scheme: dark)" srcset="./images/themes-ja-dark.webp">
-<img alt="All seventeen themes for March 20, 2026 with Japanese month and weekday words." src="./images/themes-ja-light.webp" width="720">
+<img alt="All eighteen themes for March 20, 2026 with Japanese month and weekday words." src="./images/themes-ja-light.webp" width="720">
 </picture>
 </p>
 
@@ -97,7 +97,7 @@ const whole = CALENDAR_THEMES.every((theme) => calendarIcon({ theme, month: 2, d
 console.log(whole); // true
 ```
 
-## The seventeen looks
+## The eighteen looks
 
 Each is SVG from `calendarIcon`, drawn from shapes, gradients and a stroke-drawn digit set, so it looks the same on every device and needs no font file or picture. Each theme follows one of the looks John collected as references (a flat page with pins, a heavy black outline, a flip calendar, a thin large number and so on); the shapes are our own, no company's artwork is copied or shipped, no logo is used and no theme is named after a company or product.
 
@@ -120,6 +120,7 @@ Each is SVG from `calendarIcon`, drawn from shapes, gradients and a stroke-drawn
 | `sun` | Sun disc | 日の丸 | ![Sun disc](images/calendar-sun.svg) | a square tear-off page: a grey strip to tear it off by, a huge black day over a red disc, the year on top and a side column on each side |
 | `roll` | Wall roll | 壁掛け | ![Wall roll](images/calendar-roll.svg) | a tall wall tear-off page: the pages already torn off curl above, a huge condensed day in the colour of its weekday, side columns and a dotted memo area |
 | `plain` | Plain | 無地 | ![Plain](images/calendar-plain.svg) | a plain tear-off pad on a kraft stand: a small month, a big day, the weekday in capitals, the month and year, and the moon |
+| `squircle` | Squircle | 角丸 | ![Squircle](images/calendar-squircle.svg) | a soft rounded tile in a teal-to-blue gradient, a white page with a coloured band and two binding tabs, and a large bold day (drawn by koyomi-calendars) |
 
 ## Options
 
@@ -130,7 +131,7 @@ Each is SVG from `calendarIcon`, drawn from shapes, gradients and a stroke-drawn
 | `month` | the month, 1 to 12 | required |
 | `day` | the day of the month, 1 to 31 | required |
 | `year` | a four-digit year: names the weekday and a small year where a theme draws them; without it both are left off | none |
-| `theme` | one of the seventeen looks below, or one of the ten earlier names (`CALENDAR_THEME_ALIASES`) | `pins` |
+| `theme` | one of the eighteen looks below, or one of the ten earlier names (`CALENDAR_THEME_ALIASES`) | `pins` |
 | `locale` | `en`, or any locale `Intl` accepts; `ja` writes the Japanese forms | `en` |
 | `scheme` | `light` or `dark` | `light` |
 | `size` | the width in CSS pixels, 16 to 1024; the height follows the theme | 96 |

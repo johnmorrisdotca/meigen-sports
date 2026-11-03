@@ -48,7 +48,7 @@ This repo is one of the family of John Morris's npm packages. The rules every pa
 
 ## This repo
 
-Open sports quotations and calendar facts, published as static data and a zero-dependency typed library. Rules true only here (the long form is `CONTRIBUTING.md`):
+Open sports quotations and calendar facts, published as static data and a typed library with one small runtime dependency (koyomi-calendars, for the calendar pages). Rules true only here (the long form is `CONTRIBUTING.md`):
 
 - Core functions are pure: dates and selection seeds are explicit arguments. No clock, random number, I/O or runtime dependency in core. The family's shared parts (`@johnmorrisdotca/kazoku-ui`) are dev dependencies used by the demo only.
 - Source data licences are separate from the MIT code licence. Preserve provenance and notices; unknown rights or ambiguous dates stay out of public exports. Never invent quotations or attribution.

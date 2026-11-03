@@ -9,7 +9,7 @@ import { CALENDAR_THEMES, calendarIcon } from "@johnmorrisdotca/meigen-sports";
 
 const dates = [[1, 1], [2, 9], [9, 9], [11, 30], [12, 31]];
 const sheet = CALENDAR_THEMES.map((theme) => dates.map(([month, day]) => calendarIcon({ theme, month, day, year: 2026, locale: "ja", scheme: "light", size: 112 })));
-console.log(sheet.length, sheet[0].length); // 17 5
+console.log(sheet.length, sheet[0].length); // 18 5
 const sizes = [16, 24, 32, 48, 64, 96].map((size) => calendarIcon({ theme: "pins", month: 12, day: 31, locale: "ja", scheme: "dark", size }));
 console.log(sizes.length); // 6
 ```
@@ -115,3 +115,9 @@ console.log(sizes.length); // 6
 `plain`: 無地の日めくり。クラフト紙の台に、小さな月、大きな数字、大文字の曜日、月と年、月の満ち欠けがあります。
 
 ![無地：五つの日付（明るい色と暗い色）と六つの大きさ](images/gallery-plain-ja.webp)
+
+## 角丸
+
+`squircle`: やわらかい角丸の板に、青緑から青へのグラデーション。白いページに色つきの帯と、とじ具が二つ、大きな太い数字があります。
+
+![角丸：五つの日付（明るい色と暗い色）と六つの大きさ](images/gallery-squircle-ja.webp)

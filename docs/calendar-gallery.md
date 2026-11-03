@@ -9,7 +9,7 @@ import { CALENDAR_THEMES, calendarIcon } from "@johnmorrisdotca/meigen-sports";
 
 const dates = [[1, 1], [2, 9], [9, 9], [11, 30], [12, 31]];
 const sheet = CALENDAR_THEMES.map((theme) => dates.map(([month, day]) => calendarIcon({ theme, month, day, year: 2026, locale: "en", scheme: "light", size: 112 })));
-console.log(sheet.length, sheet[0].length); // 17 5
+console.log(sheet.length, sheet[0].length); // 18 5
 const sizes = [16, 24, 32, 48, 64, 96].map((size) => calendarIcon({ theme: "pins", month: 12, day: 31, locale: "en", scheme: "dark", size }));
 console.log(sizes.length); // 6
 ```
@@ -115,3 +115,9 @@ console.log(sizes.length); // 6
 `plain`: A plain tear-off pad on a kraft stand: a small month, a big day, the weekday in capitals, the month and year, and the moon.
 
 ![Plain at five dates in light and dark, and at six sizes](images/gallery-plain-en.webp)
+
+## Squircle
+
+`squircle`: A soft rounded tile in a teal-to-blue gradient, a white page with a coloured band and two binding tabs, and a large bold day.
+
+![Squircle at five dates in light and dark, and at six sizes](images/gallery-squircle-en.webp)

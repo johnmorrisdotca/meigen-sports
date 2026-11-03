@@ -13,6 +13,8 @@ const CAP = 0.716;
 const ANGLED: ReadonlySet<CalendarTheme> = new Set(["desk"]);
 /** Themes whose day is stroke-drawn are centred to the pixel; a day drawn as text is held to a looser rule (3% of the page, or 6% of the font size), because each font draws its 1 narrow and a little left of its box by its own amount. */
 const STROKED: ReadonlySet<CalendarTheme> = new Set(["flip", "curl", "soft", "thin", "sun", "roll", "plain"]);
+/** A theme whose year sits closer to the bottom of its page than the family rule (koyomi-calendars draws squircle so; 4.5 units of 256). */
+const YEAR_CLEAR_OF: Partial<Record<CalendarTheme, number>> = { squircle: 0.017 };
 /** Where a header must run edge to edge (a flat colour block that meets the frame): x, y, width, height. */
 const HEADERS: Partial<Record<CalendarTheme, readonly [number, number, number, number]>> = {
   pins: [35, 70, 243, 30],
@@ -49,7 +51,7 @@ for (const theme of CALENDAR_THEMES) {
             expect(y, `${at}: the year is drawn`).not.toBeNull();
             const [zx, zy, zw, zh] = layout.yearZone;
             expect(y!.y1 - y!.y0, `${at}: the year is too small`).toBeGreaterThanOrEqual(CAP * CALENDAR_YEAR_MIN * bw * 0.9);
-            expect(zy + zh - y!.y1, `${at}: the year is too near the bottom`).toBeGreaterThanOrEqual(CALENDAR_YEAR_CLEAR * bw);
+            expect(zy + zh - y!.y1, `${at}: the year is too near the bottom`).toBeGreaterThanOrEqual((YEAR_CLEAR_OF[theme] ?? CALENDAR_YEAR_CLEAR) * bw);
             expect(y!.x0 >= zx - 0.5 && y!.x1 <= zx + zw + 0.5, `${at}: the year is outside its room`).toBe(true);
           }
         }

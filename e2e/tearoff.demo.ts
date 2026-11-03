@@ -7,7 +7,7 @@ test("the picker and the gallery list sun, roll and plain, in both languages, an
   await expect(page.locator("#opt-icon")).toHaveValue("roll");
   await expect(page.locator('[data-testid="leaf-icon"] svg')).toBeVisible();
   for (const id of ["sun", "roll", "plain"]) await expect(page.locator(`[data-testid="icon-${id}"]`)).toBeVisible();
-  expect(await page.locator("#icon-gallery .icon-swatch").count()).toBe(17);
+  expect(await page.locator("#icon-gallery .icon-swatch").count()).toBe(18);
   expect(await page.locator("#opt-icon option").allTextContents()).toEqual(expect.arrayContaining(["Sun disc", "Wall roll", "Plain"]));
   await page.locator('[data-testid="icon-sun"]').click();
   await expect(page).toHaveURL(/icon=sun/);

@@ -39,9 +39,9 @@ function drawsDay(svg: string, day: number): boolean {
   return groups >= String(day).length;
 }
 
-test("seventeen generic themes, each with an English and a short Japanese name", () => {
-  assert.equal(CALENDAR_THEMES.length, 17);
-  assert.deepEqual([...CALENDAR_THEMES], ["pins", "loops", "shadow", "heavy", "cartoon", "flip", "stack", "line", "curl", "soft", "desk", "thin", "frame", "badge", "sun", "roll", "plain"]);
+test("eighteen generic themes, each with an English and a short Japanese name", () => {
+  assert.equal(CALENDAR_THEMES.length, 18);
+  assert.deepEqual([...CALENDAR_THEMES], ["pins", "loops", "shadow", "heavy", "cartoon", "flip", "stack", "line", "curl", "soft", "desk", "thin", "frame", "badge", "sun", "roll", "plain", "squircle"]);
   for (const theme of CALENDAR_THEMES) {
     assert.equal(calendarThemeOf(theme), theme);
     assert.equal(calendarThemeOf(theme.toUpperCase()), theme);
@@ -50,6 +50,8 @@ test("seventeen generic themes, each with an English and a short Japanese name",
     assert.ok([...ja].length >= 2 && [...ja].length <= 12, ja);
     assert.ok(!FORBIDDEN.test(theme) && !FORBIDDEN.test(en) && !FORBIDDEN.test(ja));
   }
+  assert.equal(calendarThemeOf("squircle"), "squircle");
+  assert.ok(calendarIcon({ theme: "squircle", month: 11, day: 3, year: 2026 }).startsWith("<svg"));
   assert.equal(calendarThemeOf("google"), null);
   assert.equal(calendarThemeOf(""), null);
   assert.equal(calendarThemeOf("constructor"), null);

@@ -33,7 +33,7 @@ The embed page is made for an `<iframe>`: one card and nothing else. The address
 | Key | Value | Default |
 |---|---|---|
 | `date` | `10-20` or `2026-10-20` | today, in the reader's time zone |
-| `theme` | one of the seventeen [calendar themes](api:CALENDAR_THEMES), such as `pins`, `desk`, `flip` | `pins` |
+| `theme` | one of the eighteen [calendar themes](api:CALENDAR_THEMES), such as `pins`, `desk`, `flip` | `pins` |
 | `lang` | `en` or `ja` | `en` |
 | `layout` | `calendar`, `years`, `compact` or `featured` ([the layouts](api:DISPLAY_LAYOUTS)) | `calendar` |
 | `sport` | a sport such as `ice-hockey` | all sports |
