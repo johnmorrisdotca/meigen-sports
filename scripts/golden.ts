@@ -13,7 +13,7 @@ export type Path = "full" | "offline" | "day" | "team" | "player";
 
 export interface GoldenEntry {
   id: string; kind: string; sport: string; league: string | null; fame: "icon" | "star"; label: string; date: string;
-  era: "pre-1920" | "1920-1969" | "1970-"; /** Set by the network builder from its seed; never set for an entry checked against the Wikidata dump, which holds no sex or gender. */ women?: boolean; para?: boolean; reason?: string;
+  era: "pre-1920" | "1920-1969" | "1970-"; /** A locked path the data cannot hold now, with the board ticket that owns the cause: `{ "team": "SPX-904" }`. Nothing else may drop a locked path. */ relocked?: Partial<Record<Path, string>>; /** Set by the network builder from its seed; never set for an entry checked against the Wikidata dump, which holds no sex or gender. */ women?: boolean; para?: boolean; reason?: string;
   match?: { category: string; qid?: string; league?: string; winner?: string | null };
   source: { wikidata?: string | null; wikipedia?: string | null; verifiedBy: string; checkedOn: string };
 }
@@ -163,6 +163,27 @@ export function loadLocked(root = "."): Record<string, Path[]> {
   const file = resolve(root, "test/golden/locked-paths.json");
   return existsSync(file) ? JSON.parse(readFileSync(file, "utf8")) as Record<string, Path[]> : {};
 }
+/** Every path any golden fact has ever been locked on: it only grows (`--lock` adds, never removes), so a path taken out of `locked-paths.json` is seen. */
+export function loadEverLocked(root = "."): Record<string, Path[]> {
+  const file = resolve(root, "test/golden/ever-locked.json");
+  return existsSync(file) ? JSON.parse(readFileSync(file, "utf8")) as Record<string, Path[]> : {};
+}
+export const TICKET = /^[A-Z][A-Z0-9-]*-\d+$/;
+
+/** Paths of the ever-locked list that are neither locked now nor excused by a ticket the golden entry names; and tickets that are not tickets. */
+export function relockProblems(golden: Golden, locked: Record<string, Path[]>, ever: Record<string, Path[]>): string[] {
+  const problems: string[] = [];
+  const entries = new Map(golden.must.map((e) => [e.id, e]));
+  for (const [id, paths] of Object.entries(ever)) {
+    for (const path of paths) {
+      if ((locked[id] ?? []).includes(path)) continue;
+      const ticket = entries.get(id)?.relocked?.[path];
+      if (!ticket) problems.push(`RELOCKED without a ticket: ${id} no longer locked on ${path}; name the ticket in the golden entry's "relocked", or restore the path`);
+    }
+  }
+  for (const e of golden.must) for (const [path, ticket] of Object.entries(e.relocked ?? {})) if (!TICKET.test(ticket ?? "")) problems.push(`${e.id}: relocked ${path} names "${ticket}", which is not a ticket id`);
+  return problems;
+}
 
 export interface Report {
   readonly present: number; readonly missing: string[]; readonly wrong: string[]; readonly gapsNowPresent: string[];
@@ -190,7 +211,7 @@ export function run(golden: Golden, facts: Facts, offlineIds: ReadonlySet<string
     byKind[entry.kind] = (byKind[entry.kind] ?? 0) + 1;
     if (entry.women) women += 1;
     if (entry.fame === "icon" && !found.paths.includes("offline")) rankingGaps.push(`${entry.id} ${entry.label}`);
-    for (const p of locked[entry.id] ?? []) if (!found.paths.includes(p)) lost.push(`${entry.id} ${entry.label}: no longer on ${p}`);
+    for (const p of locked[entry.id] ?? []) if (!found.paths.includes(p) && !entry.relocked?.[p]) lost.push(`${entry.id} ${entry.label}: no longer on ${p}`);
   }
   const gapsNowPresent: string[] = [];
   for (const entry of golden.gaps) {
@@ -214,9 +235,9 @@ export function describe(golden: Golden, report: Report): string {
 }
 
 /** Every reason the golden suite fails, empty when it passes. */
-export function failures(golden: Golden, facts: Facts, offlineIds: ReadonlySet<string>, locked: Record<string, Path[]>, offlineRecords: readonly OnThisDayRecord[]): { report: Report; problems: string[] } {
+export function failures(golden: Golden, facts: Facts, offlineIds: ReadonlySet<string>, locked: Record<string, Path[]>, offlineRecords: readonly OnThisDayRecord[], ever: Record<string, Path[]> = locked): { report: Report; problems: string[] } {
   const report = run(golden, facts, offlineIds, locked);
-  const problems: string[] = [];
+  const problems: string[] = relockProblems(golden, locked, ever);
   for (const m of report.missing) problems.push(`MISSING from the published data: ${m}`);
   for (const w of report.wrong) problems.push(`WRONG: ${w}`);
   for (const g of report.gapsNowPresent) problems.push(`A known gap is now present, move it to the must list: ${g}`);

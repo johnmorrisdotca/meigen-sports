@@ -4,7 +4,11 @@ Every list the package or the Pages feeds hands out is chosen by one function, `
 
 ## Significance
 
-`significance(fact)` is a pure function of the fact's own fields. A record or a sport record is 100; a title game 95; an award 85; a World Cup final 100, a semi-final 90, a quarter-final 80; a venue opening 55; a club's change of identity 45. A birth or death starts at 30 and gains 45 for a name on the committed priority list (20 when the list's own fill is known to have under twenty Wikipedia language editions), 30 for an individual award the person won himself, 8 for five or more of them and 15 for ten or more (`awardCount`), 25 for a Hall of Fame year (`hallOfFameYear`), 10 for a career honour, 10 for a championship, 15 for twenty or more Wikipedia language editions, and 20 more for fifty or more and 25 more for a hundred or more (a name the priority list does not hold gets by its editions alone what the list gives: 45 and 15). A phrase that says who someone is (`epithet`) is not an honour and adds nothing; `highlight` adds 10. An event or a competition edition from the dump starts at 30 and gains by the editions of its page (5 for ten, 10 for twenty, 16 for thirty, 28 for fifty, 45 for a hundred) and 6 for a winner named, so a Games opening ranks with a person known in fifty languages and a routine race below a stadium's opening. A routine result starts at 20 and gains 25 in the playoffs, 15 for overtime, 12 to 20 for a shutout, 8 for a large margin. Among equal scores the more recent fact comes first.
+`significance(fact)` is a pure function of the fact's own fields. A record or a sport record is 100; a title game 95 (98 with a shutout); an award 90; a World Cup final 105, a semi-final 90, a quarter-final 80; a venue opening 100 (the 200 venues the data holds are all well known; the data has no edition count for a building); a club's change of identity 45. A birth or death starts at 30 and gains 45 for a name on the committed priority list (20 when the list's own fill is known to have under twenty Wikipedia language editions), 30 for an individual award the person won himself, 8 for five or more of them and 15 for ten or more (`awardCount`), 25 for a Hall of Fame year (`hallOfFameYear`), 10 for a career honour, 10 for a championship and 6 more for three or more, 20 when a club retired his number (`jerseyRetired`: a club has named him a legend, in a league the world follows in few languages), and for the editions of his Wikipedia page, the one fame every sport shares: 15 for twenty, 28 for thirty, 55 for fifty, 65 for eighty and 75 for a hundred. A phrase that says who someone is (`epithet`) is not an honour and adds nothing; `highlight` adds 10. An event or a competition edition from the dump starts at 30 and gains by the editions of its page (6 for ten, 14 for twenty, 24 for thirty, 55 for fifty, 70 for eighty, 75 for a hundred) and 6 for a winner named, so a Games opening ranks with a person known in fifty languages and a routine race below a stadium's opening. A routine result starts at 20 (0 in the AHL, ECHL, NCAAF, PWHL and NWSL) and gains 25 in the playoffs, 15 for overtime, 12 to 20 for a shutout, 8 for a large margin: it never outranks a famous person or a big event. Among equal scores the better known comes first (more Wikipedia editions), then the more recent.
+
+## Legends
+
+A fact of significance `LEGEND` (85) or more is a legend. The caps below keep a list varied; they never hold a legend back, only the list's own length does (`rankRecords` with `strictSport` holds the sport cap for a legend too: the people and the events of a day, which exist to show many sports). Without this, a day with four famous births in four sports would show two of them and a quiet game would fill the rest. Ten thousand added lower-league games and people once pushed famous people and big events off the day lists (0.25.0); the golden suite (`test/golden/locked-paths.json`, `ever-locked.json`) now keeps every golden fact where it was.
 
 ## The caps
 
@@ -14,9 +18,10 @@ A list about one thing does not cap that thing (`exempt`): a tag feed does not c
 
 | List | Size | Caps |
 | --- | --- | --- |
-| `days/MM-DD.json` | up to 12 | two per tag and competition, three per sport |
-| the bundled offline set | three to five per day | the head of the same ranking, with the same caps: four, and a fifth only at significance 85 or more |
-| `feeds/sports`, `leagues`, `tags`, `teams` | up to 40 | eight per tag and competition, the subject of the feed exempt |
+| `days/MM-DD.json` | up to 16 | two per tag and competition, three per sport, legends exempt |
+| the bundled offline set | three to eight per day | the head of the same ranking, with the same caps: four, a fifth at significance 85 or more, a sixth to an eighth at 90 or more |
+| `feeds/sports`, `leagues`, `tags` | up to 40 | eight per tag and competition, the subject of the feed exempt |
+| `feeds/teams` | up to 80 | eight per tag and competition, the subject of the feed exempt |
 | `feeds/players/NN.json` | up to 40 | each person twice |
 
 Because a list of `n` is the head of a longer list of the same facts, the offline facts for a day are the first facts of that day's shard. `test/ranking.test.ts` holds this, and holds the caps, the minimum and the determinism.

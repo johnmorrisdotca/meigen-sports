@@ -8,7 +8,7 @@ A design note, not an API reference. Two questions: what a sports history websit
 
 | Need | Call | Notes |
 | --- | --- | --- |
-| Facts for today, offline | `today(offline, timeZone, nowIso)` | The bundled set: 1,525 facts, 3 to 5 for every day. No network. |
+| Facts for today, offline | `today(offline, timeZone, nowIso)` | The bundled set: 2,337 facts, 3 to 8 for every day. No network. |
 | All facts for a day | `loadFactDay("10-20", options)`, `loadFactPeopleDay`, `loadFactEventsDay` | One small static file each. `options` is `{ baseUrl, dataVersion, fetch }`. |
 | Facts for one thing | `queryFacts({ country: "RO", sport: "handball", day: "03-04" }, options)` | Static id indexes, intersected in the browser. `tag`, `award`, `decade`, `team`, `league` too. |
 | Find a person | `findPeopleByName("wayne gr", options)` | One file per first letter. Returns the Q id; a name is a label, never identity. |

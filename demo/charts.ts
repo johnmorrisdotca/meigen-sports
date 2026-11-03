@@ -18,10 +18,10 @@ export function barChart(rows: readonly { key: string; label: string; value: num
 
 /** Columns for an ordered series (the decades). */
 export function columnChart(rows: readonly { label: string; value: number }[], title: string): string {
-  const max = Math.max(1, ...rows.map((r) => r.value)), width = 640, height = 240, base = 200, gap = 6, slot = (width - 20) / rows.length;
+  const max = Math.max(1, ...rows.map((r) => r.value)), width = 640, height = 250, base = 200, gap = 6, slot = (width - 20) / rows.length;
   const cols = rows.map((r, i) => {
     const h = Math.round((base - 24) * r.value / max), x = 10 + i * slot + gap / 2;
-    return `<g><title>${esc(`${r.label}: ${fmt(r.value)}`)}</title><rect x="${x.toFixed(1)}" y="${base - h}" width="${(slot - gap).toFixed(1)}" height="${h}" rx="2" class="ch-bar"/><text x="${(x + (slot - gap) / 2).toFixed(1)}" y="${base + 14}" text-anchor="middle" class="ch-tick">${esc(r.label.replace(/^\d\d(\d\d)s$/, "'$1s"))}</text></g>`;
+    return `<g><title>${esc(`${r.label}: ${fmt(r.value)}`)}</title><rect x="${x.toFixed(1)}" y="${base - h}" width="${(slot - gap).toFixed(1)}" height="${h}" rx="2" class="ch-bar"/><text x="${(x + (slot - gap) / 2 + 4).toFixed(1)}" y="${base + 12}" text-anchor="end" transform="rotate(-45 ${(x + (slot - gap) / 2 + 4).toFixed(1)} ${base + 12})" class="ch-tick">${esc(r.label)}</text></g>`;
   }).join("");
   return `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${esc(title)}" class="chart"><title>${esc(title)}</title>${cols}</svg>`;
 }

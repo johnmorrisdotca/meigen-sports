@@ -5,19 +5,19 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import test from "node:test";
 import { OFFLINE_BUILD, offline } from "../src/data/offline.ts";
-import { factsFor, today } from "../src/facts.ts";
+import { LEGEND, factsFor, significance, today } from "../src/facts.ts";
 import { isFactRecord } from "../src/load.ts";
 import { VERSION } from "../src/version.ts";
 import type { OnThisDayRecord } from "../src/schema.ts";
 
 const dataDir = `data/v1/${OFFLINE_BUILD.dataVersion}`;
 
-test("the offline set has three to five facts for every one of the 366 days", () => {
+test("the offline set has three to eight facts for every one of the 366 days: five, and more only for facts of the top fame", () => {
   const perDay = new Map<string, number>();
   for (const r of offline) perDay.set(r.eventDate!.slice(5), (perDay.get(r.eventDate!.slice(5)) ?? 0) + 1);
   assert.equal(perDay.size, 366);
-  for (const [day, n] of perDay) assert.ok(n >= 3 && n <= 5, `${day} has ${n}`);
-  assert.ok(offline.length >= 1300 && offline.length <= 1830, `${offline.length} offline facts`);
+  for (const [day, n] of perDay) assert.ok(n >= 3 && n <= 8, `${day} has ${n}`);
+  assert.ok(offline.length >= 1300 && offline.length <= 2500, `${offline.length} offline facts`);
   assert.equal(offline.length, OFFLINE_BUILD.records);
   assert.equal(OFFLINE_BUILD.days, 366);
 });
@@ -49,7 +49,7 @@ test("most days keep to two facts of a kind", () => {
     const rows = factsFor(offline, { date: day });
     i += rows.length;
     const kinds = new Map<string, number>();
-    for (const r of rows) kinds.set(r.category, (kinds.get(r.category) ?? 0) + 1);
+    for (const r of rows.filter((x) => significance(x) < LEGEND)) kinds.set(r.category, (kinds.get(r.category) ?? 0) + 1);
     if ([...kinds.values()].every((n) => n <= 2)) strict += 1;
   }
   assert.ok(strict >= 300, `${strict} days keep to two per kind`);

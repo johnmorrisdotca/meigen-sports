@@ -3,7 +3,7 @@
  "package": "0.25.0",
  "dataVersion": "0.1.0",
  "builtOn": "2026-11-03",
- "factsManifestSha256": "a27bbf18d6d8f52664e1590f5358b39a0c0dc2c873ae8834fc2ab978d73e4dde",
+ "factsManifestSha256": "bb086b82e8907fcbf3903ebb935d1010e72dbb58c4481c3e9dbc944308213685",
  "totals": {
   "facts": 126810,
   "quotations": 30,
@@ -2287,11 +2287,11 @@
   }
  },
  "offline": {
-  "records": 1525,
+  "records": 2337,
   "days": 366,
   "minPerDay": 4,
-  "maxPerDay": 5,
-  "shareOfFacts": 0.012
+  "maxPerDay": 8,
+  "shareOfFacts": 0.0184
  },
  "gaps": {
   "thresholds": {

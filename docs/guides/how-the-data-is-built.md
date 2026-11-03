@@ -21,7 +21,7 @@ A birth place is a town and, when the place's country still exists, that country
 
 ## Bundled and fed
 
-The offline set is the best three to five facts of every day, so "today" works with no network. The full set is static JSON on GitHub Pages: [one file for a day](api:loadFactDay), [for a sport](api:loadSport), [for a country](api:loadCountry), with [indexes](api:queryFacts) to ask for the Romanian facts of October 20. A reader needs no key, and no per-reader database call is made.
+The offline set is the best three to eight facts of every day, so "today" works with no network. The full set is static JSON on GitHub Pages: [one file for a day](api:loadFactDay), [for a sport](api:loadSport), [for a country](api:loadCountry), with [indexes](api:queryFacts) to ask for the Romanian facts of October 20. A reader needs no key, and no per-reader database call is made.
 
 ## A rebuild that loses nothing
 

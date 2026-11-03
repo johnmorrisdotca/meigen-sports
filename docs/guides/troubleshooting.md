@@ -13,7 +13,7 @@ description: Why a page shows nothing, why a day has few facts, and the errors p
 
 ## A day has few facts
 
-The offline set keeps three to five facts for each day. For more, load that day's feed ([loadFactDay](api:loadFactDay)) or ask the indexes ([queryFacts](api:queryFacts)). A sport or a league narrows a day further, and a quiet day may have fewer.
+The offline set keeps three to eight facts for each day. For more, load that day's feed ([loadFactDay](api:loadFactDay)) or ask the indexes ([queryFacts](api:queryFacts)). A sport or a league narrows a day further, and a quiet day may have fewer.
 
 ## A sentence says "today" or "turns 65" on the wrong day
 

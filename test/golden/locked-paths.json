@@ -303,6 +303,8 @@
   "player"
  ],
  "birth-Q257980": [
+  "offline",
+  "day",
   "player"
  ],
  "birth-Q270683": [
@@ -504,6 +506,7 @@
  "birth-Q358519": [
   "offline",
   "day",
+  "team",
   "player"
  ],
  "birth-Q36107": [
@@ -617,6 +620,8 @@
   "player"
  ],
  "birth-Q5212802": [
+  "offline",
+  "day",
   "player"
  ],
  "birth-Q52651": [
@@ -709,7 +714,8 @@
   "player"
  ],
  "birth-Q6848465": [
-  "team"
+  "team",
+  "player"
  ],
  "birth-Q715566": [
   "offline",
@@ -727,6 +733,7 @@
   "player"
  ],
  "birth-Q7381158": [
+  "team",
   "player"
  ],
  "birth-Q7407": [
@@ -1123,6 +1130,7 @@
   "day"
  ],
  "start-Q8403": [
+  "offline",
   "day"
  ],
  "start-Q8411": [
@@ -1177,9 +1185,11 @@
   "day"
  ],
  "venue-msg": [
+  "offline",
   "day"
  ],
  "venue-polo": [
+  "offline",
   "day"
  ],
  "venue-soldier": [
@@ -1192,6 +1202,7 @@
   "day"
  ],
  "venue-yankee": [
+  "offline",
   "day"
  ],
  "wc-1930": [

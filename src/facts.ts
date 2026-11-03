@@ -223,6 +223,12 @@ export function uniqueRecordIds(records: readonly OnThisDayRecord[]): boolean {
   return new Set(ids).size === ids.length;
 }
 
+/** The significance from which a fact is a legend: the caps of a list never hold it back. */
+export const LEGEND = 85;
+
+/** The significance from which a sixth fact or a later one joins a day's best: a fame that fills the day. */
+const LEGEND_FULL = 90;
+
 /** Leagues whose games count for less in `significance`: minor, college and developmental ones. */
 const MINOR_LEAGUES: ReadonlySet<string> = new Set(["ahl", "echl", "ncaaf", "pwhl", "nwsl"]);
 
@@ -243,15 +249,15 @@ export function significance(record: OnThisDayRecord): number {
   if (tags.has("sport-record") || tags.has("career-stat-milestone") || reasons.has("record")) return 100;
   switch (record.category) {
     case "championship-final": return 95 + (tags.has("shutout") ? 3 : 0);
-    case "award": return 85;
-    case "soccer-on-day": return 70 + (/^final$/i.test(record.stage ?? "") ? 30 : /semi/i.test(record.stage ?? "") ? 20 : /quarter/i.test(record.stage ?? "") ? 10 : 0);
-    case "venue-opening": return 55;
+    case "award": return 90;
+    case "soccer-on-day": return 70 + (/^final$/i.test(record.stage ?? "") ? 35 : /semi/i.test(record.stage ?? "") ? 20 : /quarter/i.test(record.stage ?? "") ? 10 : 0);
+    case "venue-opening": return 100;
     // An event or a competition edition: by the editions of its page, as a person is. A winner named adds a little: the fact says who.
     case "competition-start":
     case "competition-end":
     case "sport-event": {
       const editions = record.sitelinks ?? 0;
-      return 30 + (editions >= 100 ? 45 : editions >= 50 ? 28 : editions >= 30 ? 16 : editions >= 20 ? 10 : editions >= 10 ? 5 : 0) + (record.winnerName ? 6 : 0);
+      return 30 + (editions >= 100 ? 75 : editions >= 80 ? 70 : editions >= 50 ? 55 : editions >= 30 ? 24 : editions >= 20 ? 14 : editions >= 10 ? 6 : 0) + (record.winnerName ? 6 : 0);
     }
     case "franchise-event": return 45;
     // A retired number: a league-wide retirement is a league's act; a club's counts for more when the person is known in other languages.
@@ -273,11 +279,13 @@ export function significance(record: OnThisDayRecord): number {
       score += (record.awardCount ?? 0) >= 10 ? 15 : (record.awardCount ?? 0) >= 5 ? 8 : 0;
       if (record.highlight) score += 10;
       if ((record.championships ?? 0) > 0) score += 10;
-      if ((record.sitelinks ?? 0) >= 20) score += 15;
-      // Editions beyond twenty: a name known in fifty languages outranks one known in twenty, and one known in a hundred is known everywhere (the
-      // priority list gives such a name 45 and the twenty-edition bonus 15; a name the list does not hold gets the same by its editions alone).
-      if ((record.sitelinks ?? 0) >= 50) score += 20;
-      if ((record.sitelinks ?? 0) >= 100) score += 25;
+      if ((record.championships ?? 0) >= 3) score += 6;
+      // A club that retired his number has named him a legend, whatever the number of Wikipedia editions of a league the world follows less.
+      if (record.jerseyRetired) score += 20;
+      // Editions of the person's Wikipedia page are the one fame every sport shares: a name known in fifty languages outranks a long list of club honours,
+      // and one known in a hundred is known everywhere.
+      const editions = record.sitelinks ?? 0;
+      score += editions >= 100 ? 75 : editions >= 80 ? 65 : editions >= 50 ? 55 : editions >= 30 ? 28 : editions >= 20 ? 15 : 0;
       if (record.category === "player-death") score += 5;
       return score;
     }
@@ -328,6 +336,8 @@ export interface RankOptions {
   readonly minimum?: number;
   /** Most facts of one sport in the list (no cap when left out). Relaxed together with `maxPer`, so a quiet day still reaches its minimum. */
   readonly maxPerSport?: number;
+  /** Hold the sport cap for a legend too. Left out, a legend (`LEGEND`) is held back by no cap: a list about people of many sports sets it. */
+  readonly strictSport?: boolean;
   /** Keys the list is already about (a tag feed's tag, a league feed's league, a team feed's club, `sport:<sport>`): they are not counted. */
   readonly exempt?: readonly string[];
 }
@@ -352,9 +362,10 @@ const DAY_LIST: RankOptions = { maxPerSport: 3 };
 export function rankRecords(records: readonly OnThisDayRecord[], n: number, options: RankOptions = {}): OnThisDayRecord[] {
   const maxPer = options.maxPer ?? 2, personMax = options.personMax ?? 1, minimum = options.minimum ?? 3;
   const exempt = new Set(options.exempt ?? []);
-  // Equal significance: the more recent first (a reader knows the 2022 final better than the 1932 championship), then by id.
-  const ordered = records.map((record) => ({ record, score: significance(record) })).sort((a, b) =>
-    b.score - a.score || `${b.record.eventDate ?? ""}\t${a.record.recordId}`.localeCompare(`${a.record.eventDate ?? ""}\t${b.record.recordId}`)).map((item) => item.record);
+  // Equal significance: the better known first (more Wikipedia editions), then the more recent (a reader knows the 2022 final better than the 1932 championship), then by id.
+  const scores = new Map<string, number>();
+  const ordered = records.map((record) => { const score = significance(record); scores.set(record.recordId, score); return { record, score }; }).sort((a, b) =>
+    b.score - a.score || (b.record.sitelinks ?? 0) - (a.record.sitelinks ?? 0) || `${b.record.eventDate ?? ""}\t${a.record.recordId}`.localeCompare(`${a.record.eventDate ?? ""}\t${b.record.recordId}`)).map((item) => item.record);
   const pick = (cap: number | null, people: boolean): OnThisDayRecord[] => {
     const picked: OnThisDayRecord[] = [];
     const seen = new Set<string>();
@@ -367,13 +378,15 @@ export function rankRecords(records: readonly OnThisDayRecord[], n: number, opti
       if (picked.length >= n) break;
       if (seen.has(record.recordId)) continue;
       const keys = [...kindTagsOf(record), `competition:${competitionKey(record)}`].filter((key) => !exempt.has(key));
-      if (cap !== null && keys.some((key) => (counts.get(key) ?? 0) >= cap)) continue;
+      // The caps keep a list varied; a legend (a fact of the top fame) is never held back by them, only by the list's own length.
+      const legend = scores.get(record.recordId)! >= LEGEND;
+      if (!legend && cap !== null && keys.some((key) => (counts.get(key) ?? 0) >= cap)) continue;
       const sport = record.sport && !exempt.has(`sport:${record.sport}`) ? `sport:${record.sport}` : null;
-      if (sportCap !== null && sport && (counts.get(sport) ?? 0) >= sportCap) continue;
+      if ((!legend || options.strictSport) && sportCap !== null && sport && (counts.get(sport) ?? 0) >= sportCap) continue;
       const person = personKey(record);
-      if (people && person && !exempt.has(person) && (persons.get(person) ?? 0) >= personMax) continue;
+      if (people && person && !exempt.has(person) && (persons.get(person) ?? 0) >= personMax + (legend ? 1 : 0)) continue;
       const clubs = teamKeys(record).filter((key) => !exempt.has(key));
-      if (people && clubs.some((key) => teams.has(key))) continue;
+      if (people && !legend && clubs.some((key) => teams.has(key))) continue;
       picked.push(record);
       seen.add(record.recordId);
       for (const key of keys) counts.set(key, (counts.get(key) ?? 0) + 1);
@@ -409,7 +422,7 @@ export function rankFeed(records: readonly OnThisDayRecord[], n: number, options
 }
 
 /**
- * A calendar day's list: `rankRecords` with at most three facts of one sport. The Pages day shards are `rankDay(facts, 12)`.
+ * A calendar day's list: `rankRecords` with at most three facts of one sport. The Pages day shards are `rankDay(facts, 16)`.
  * @param records - A day's facts.
  * @param n - How many to take (12 by default).
  * @returns The day's list, at most three facts of one sport.
@@ -425,9 +438,9 @@ export function rankDay(records: readonly OnThisDayRecord[], n = 12): OnThisDayR
 }
 
 /**
- * The facts worth keeping for one calendar day when only a few can be kept: the head of that day's ranking, three to five long.
+ * The facts worth keeping for one calendar day when only a few can be kept: the head of that day's ranking, three to eight long.
  * @param records - A day's facts.
- * @returns The three to five facts worth keeping for that day.
+ * @returns The three to eight facts worth keeping for that day.
  * @example
  * ```ts
  * import { bestOfDay } from "@johnmorrisdotca/meigen-sports";
@@ -436,7 +449,7 @@ export function rankDay(records: readonly OnThisDayRecord[], n = 12): OnThisDayR
  * ```
  */
 export function bestOfDay(records: readonly OnThisDayRecord[]): OnThisDayRecord[] {
-  return rankFeed(records, 5, DAY_LIST).filter((record, index) => index < 4 || significance(record) >= 85);
+  return rankFeed(records, 8, DAY_LIST).filter((record, index) => index < 4 || significance(record) >= (index < 5 ? 85 : LEGEND_FULL));
 }
 
 /**

@@ -28,7 +28,7 @@ const sentences = renderRun(facts.slice(0, 3), { seed: "first", locale: "en", as
 for (const sentence of sentences) console.log(sentence.text);
 ```
 
-The bundled offline set holds the best three to five facts of every day, so this works with no network. `asOf` is the day being shown: a fact whose day is that day may say "today" or "turns 65"; any other fact says its full date.
+The bundled offline set holds the best three to eight facts of every day, so this works with no network. `asOf` is the day being shown: a fact whose day is that day may say "today" or "turns 65"; any other fact says its full date.
 
 ## Narrow it down, and say it in Japanese
 

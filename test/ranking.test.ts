@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readdirSync, readFileSync } from "node:fs";
 import test from "node:test";
 import { offline } from "../src/data/offline.ts";
-import { bestOfDay, factsFor, kindTagsOf, rankDay, rankRecords, significance } from "../src/facts.ts";
+import { LEGEND, bestOfDay, factsFor, kindTagsOf, rankDay, rankRecords, significance } from "../src/facts.ts";
 import type { OnThisDayRecord } from "../src/schema.ts";
 
 const root = "data/v1/0.1.0/facts";
@@ -11,12 +11,12 @@ const store: OnThisDayRecord[] = [];
 for (const name of readdirSync(`${root}/store`)) store.push(...shard(`store/${name}`));
 const competition = (r: OnThisDayRecord): string => r.competition ?? r.league ?? r.category;
 
-test("every day shard keeps to two facts of a tag and two of a competition, when the day allows", () => {
+test("every day shard keeps to two facts of a tag and two of a competition, when the day allows; a legend is held back by no cap", () => {
   let strict = 0;
   for (const name of readdirSync(`${root}/days`)) {
     const records = shard(`days/${name}`);
     const tags = new Map<string, number>(), comps = new Map<string, number>();
-    for (const r of records) { for (const t of kindTagsOf(r)) tags.set(t, (tags.get(t) ?? 0) + 1); comps.set(competition(r), (comps.get(competition(r)) ?? 0) + 1); }
+    for (const r of records.filter((x) => significance(x) < LEGEND)) { for (const t of kindTagsOf(r)) tags.set(t, (tags.get(t) ?? 0) + 1); comps.set(competition(r), (comps.get(competition(r)) ?? 0) + 1); }
     if ([...tags.values(), ...comps.values()].every((n) => n <= 2)) strict += 1;
   }
   assert.ok(strict >= 340, `${strict} of 366 days keep to two`);
@@ -39,7 +39,7 @@ test("a day's ranking is the same however its facts are ordered, and a list of n
   const a = rankRecords(day, 12), b = rankRecords([...day].reverse(), 12);
   assert.deepEqual(a.map((r) => r.recordId), b.map((r) => r.recordId));
   assert.deepEqual(rankRecords(day, 5).map((r) => r.recordId), a.slice(0, 5).map((r) => r.recordId));
-  assert.deepEqual(bestOfDay(day).map((r) => r.recordId), a.slice(0, 5).filter((r, i) => i < 4 || significance(r) >= 85).map((r) => r.recordId));
+  assert.deepEqual(bestOfDay(day).map((r) => r.recordId), rankRecords(day, 8, { maxPerSport: 3 }).filter((r, i) => i < 4 || significance(r) >= (i < 5 ? 85 : 90)).map((r) => r.recordId));
 });
 
 test("famous outranks routine: a world cup final, a title game and a priority athlete beat a plain result", () => {
@@ -52,10 +52,10 @@ test("famous outranks routine: a world cup final, a title game and a priority at
 });
 
 test("a list about one thing does not cap it, and the caps relax only to reach the minimum", () => {
-  const nba = store.filter((r) => r.league === "nba" && r.category === "championship-final");
+  const nba = store.filter((r) => r.league === "nba" && r.category === "game-on-day" && significance(r) < LEGEND);
   assert.ok(nba.length > 20);
   const clubs = [...new Set(nba.flatMap((r) => [r.home?.franchiseId, r.away?.franchiseId]).map((id) => `f:${id}`))];
-  assert.equal(rankRecords(nba, 12, { exempt: ["championship-final", "championship-win", "match-result", "shutout", "competition:nba", ...clubs] }).length, 12);
+  assert.equal(rankRecords(nba, 12, { exempt: [...new Set(nba.flatMap((r) => kindTagsOf(r))), "competition:nba", ...clubs] }).length, 12);
   assert.ok(rankRecords(nba, 12).length >= 3 && rankRecords(nba, 12).length < 12);
   assert.equal(rankRecords(nba.slice(0, 2), 12).length, 2);
 });
@@ -91,7 +91,9 @@ test("the sport cap is on every day shard and every offline day, whenever the da
     for (const r of records) bySport.set(r.sport ?? "", (bySport.get(r.sport ?? "") ?? 0) + 1);
     capped += 1;
     const sports = new Set(store.filter((r) => r.eventDate?.slice(5) === name.slice(0, 5)).map((r) => r.sport));
-    if (Math.max(...bySport.values()) > 3 && sports.size >= 3 && records.length >= 6) over += 1;
+    const plain = new Map<string, number>();
+    for (const r of records.filter((x) => significance(x) < LEGEND)) plain.set(r.sport ?? "", (plain.get(r.sport ?? "") ?? 0) + 1);
+    if (Math.max(0, ...plain.values()) > 3 && sports.size >= 3 && records.length >= 6) over += 1;
   }
   assert.equal(capped, 366);
   assert.ok(over <= 6, `${over} days list more than three facts of one sport although the day has other sports`);
@@ -107,14 +109,21 @@ test("a Hall of Fame year, a long list of own awards and a name on the priority 
   assert.equal(significance(person({ awardCount: 1 })) - plain, 0);
   assert.equal(significance(person({ priorityAthlete: true })) - plain, 45);
   assert.equal(significance(person({ priorityAthlete: true, sitelinks: 6 })) - plain, 20);
-  assert.equal(significance(person({ priorityAthlete: true, sitelinks: 60 })) - plain, 45 + 15 + 20);
-  // Editions beyond twenty: fifty is known in many languages, a hundred everywhere.
+  assert.equal(significance(person({ priorityAthlete: true, sitelinks: 60 })) - plain, 45 + 55);
+  // Editions: the one fame every sport shares. Fifty is known in many languages, a hundred everywhere.
   assert.equal(significance(person({ sitelinks: 19 })) - plain, 0);
   assert.equal(significance(person({ sitelinks: 20 })) - plain, 15);
-  assert.equal(significance(person({ sitelinks: 49 })) - plain, 15);
-  assert.equal(significance(person({ sitelinks: 50 })) - plain, 35);
-  assert.equal(significance(person({ sitelinks: 99 })) - plain, 35);
-  assert.equal(significance(person({ sitelinks: 100 })) - plain, 60);
+  assert.equal(significance(person({ sitelinks: 29 })) - plain, 15);
+  assert.equal(significance(person({ sitelinks: 30 })) - plain, 28);
+  assert.equal(significance(person({ sitelinks: 49 })) - plain, 28);
+  assert.equal(significance(person({ sitelinks: 50 })) - plain, 55);
+  assert.equal(significance(person({ sitelinks: 80 })) - plain, 65);
+  assert.equal(significance(person({ sitelinks: 99 })) - plain, 65);
+  assert.equal(significance(person({ sitelinks: 100 })) - plain, 75);
+  // A club that retired his number, and three titles, name a legend where the world's editions are few.
+  assert.equal(significance(person({ jerseyRetired: true })) - plain, 20);
+  assert.equal(significance(person({ championships: 3 })) - plain, 16);
+  assert.equal(significance(person({ championships: 1 })) - plain, 10);
   // A phrase that says who someone is (`epithet`) is not an honour: it adds nothing, where `highlight` adds ten.
   assert.equal(significance(person({ epithet: "Brazilian footballer" })) - plain, 0);
   assert.equal(significance(person({ highlight: "Hockey Hall of Famer" })) - plain, 10);

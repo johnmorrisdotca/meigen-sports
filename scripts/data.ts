@@ -199,7 +199,7 @@ export function generate(check = false): { records: number; files: number; merge
   // The doc comments the docs site reads (scripts/docs-site.mjs): every export of the data entries has a summary and an @example.
   const DOCS: Record<string, string> = {
     build: "/**\n * The facts dataset this set was chosen from: `factsManifestSha256` must equal the one on GitHub Pages (scripts/check-build.ts).\n * @example\n * ```ts\n * import { OFFLINE_BUILD } from \"@johnmorrisdotca/meigen-sports/offline\";\n * console.log(OFFLINE_BUILD.dataVersion, OFFLINE_BUILD.days);\n * ```\n */\n",
-    offline: "/**\n * The best three to five facts for every calendar day, oldest first within a day.\n * @example\n * ```ts\n * import { offline } from \"@johnmorrisdotca/meigen-sports/offline\";\n * console.log(offline.length > 1000);\n * ```\n */\n",
+    offline: "/**\n * The best three to eight facts for every calendar day, oldest first within a day.\n * @example\n * ```ts\n * import { offline } from \"@johnmorrisdotca/meigen-sports/offline\";\n * console.log(offline.length > 1000);\n * ```\n */\n",
     quotes: "/**\n * The bundled quotations, each with its source and the reasoning for why its words may be published.\n * @example\n * ```ts\n * import { quotes } from \"@johnmorrisdotca/meigen-sports/quotes\";\n * console.log(quotes.length > 0);\n * ```\n */\n",
     history: "/**\n * The bundled history rows: dated events, each with its source.\n * @example\n * ```ts\n * import { history } from \"@johnmorrisdotca/meigen-sports/history\";\n * console.log(history.length > 0);\n * ```\n */\n",
   };

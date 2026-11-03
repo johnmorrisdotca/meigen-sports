@@ -7,6 +7,7 @@ import { convertSeed } from "../scripts/data.ts";
 import { OFFLINE_BUILD, offline } from "../src/data/offline.ts";
 import { VERSION } from "../src/version.ts";
 import type { Catalogue } from "../src/catalogue.ts";
+import { columnChart } from "../demo/charts.ts";
 
 const file = `data/v1/${OFFLINE_BUILD.dataVersion}/catalogue.json`;
 const catalogue = JSON.parse(readFileSync(file, "utf8")) as Catalogue;
@@ -86,4 +87,16 @@ test("the package carries the catalogue and names it as an entry", () => {
   const pkg = JSON.parse(readFileSync("package.json", "utf8")) as { exports: Record<string, string>; files: string[] };
   assert.equal(pkg.exports["./catalogue.json"], `./${file}`);
   assert.ok(pkg.files.includes(file));
+});
+
+test("the decade axis says full years: 1850s to 2020s, each label once, no '20s that could be 1920s or 2020s", () => {
+  const labels = Object.keys(catalogue.byDecade);
+  const svg = columnChart(labels.map((label) => ({ label, value: 1 })), "Facts by decade");
+  const ticks = [...svg.matchAll(/class="ch-tick">([^<]*)<\/text>/g)].map((m) => m[1]);
+  assert.deepEqual(ticks, labels);
+  assert.equal(new Set(ticks).size, ticks.length);
+  for (const tick of ticks) assert.match(tick!, /^\d{3}0s$/);
+  assert.ok(!svg.includes("'"));
+  assert.equal(ticks[0], "1850s");
+  assert.equal(ticks.at(-1), "2020s");
 });

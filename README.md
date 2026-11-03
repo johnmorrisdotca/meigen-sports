@@ -128,7 +128,7 @@ console.log(facts.length, card.includes("meigen-cal")); // 3 true
 
 - **Birthdays, deaths and finals as sentences**, with the club and honours, the score and venue, the title and the season's record; neighbours in a list never share a template (`renderRun`). A fact read on a day that is not its own says its full date ("On July 4, 1945, …", "born on July 7, 1960"); "today" and "on this day" are for its own day only, and a missing value is never printed as "(none)".
 
-- **An offline set in the package**: 1,525 facts, three to five for every day, so `today()` works with no network ([offline](#what-is-bundled-and-what-loads-from-pages)).
+- **An offline set in the package**: 2,337 facts, three to eight for every day, so `today()` works with no network ([offline](#what-is-bundled-and-what-loads-from-pages)).
 
 - **The Japanese calendar on a page**: `japaneseHoliday` and `japaneseHolidaysOf` (the public holidays, `JAPANESE_HOLIDAY_YEARS` 2000 to 2099, by the Act on National Holidays), `oldCalendarDate` (the old lunisolar calendar, `OLD_CALENDAR_YEARS` 1900 to 2100, from the new moon and the principal terms in Japan Standard Time) and `rokuyoOf` and `ROKUYO` (the six-day cycle) are computed from the date, never looked up, and a date they cannot settle is `null`; `calendarIcon({ japanese: true })` draws them in the side columns of `sun` and `roll` ([how, and when a cell stays empty](./docs/japanese-calendar.md)).
 - **All-Star Games and baseball feats**: 335 All-Star Games (the NHL, NBA and MLB games, the Pro Bowl, the CFL game) with day, venue, score and most valuable players, and 290 no-hitters and perfect games counted from Retrosheet's game logs ("Don Larsen of the New York Yankees pitched a perfect game against the Brooklyn Dodgers, winning 2–0 in the World Series."); with 397 retired numbers (the NHL's named by the club of the day), `visualOf` says which banner and gear a fact may be drawn with.
@@ -175,7 +175,7 @@ One build ships both places. The package and the GitHub Pages site are made from
 
 | | In the npm package, works offline | On GitHub Pages, needs a network |
 | --- | --- | --- |
-| On-this-day facts | **1,525 facts**: the best three to five for each of the 366 calendar days, chosen by significance and fame and varied by kind, sport, person and club (`@johnmorrisdotca/meigen-sports/offline`) | **126,810 facts** on all 366 days, in static JSON under `data/v1/0.1.0/facts/` (days, the people and the events of each day across sports, teams, players, leagues, sports, tags, 100 `store/` files that together hold every fact), read through the `load*` functions |
+| On-this-day facts | **2,337 facts**: the best three to eight for each of the 366 calendar days, chosen by significance and fame and varied by kind, sport, person and club (`@johnmorrisdotca/meigen-sports/offline`) | **126,810 facts** on all 366 days, in static JSON under `data/v1/0.1.0/facts/` (days, the people and the events of each day across sports, teams, players, leagues, sports, tags, 100 `store/` files that together hold every fact), read through the `load*` functions |
 | Quotations | 30 (22 Gutenberg excerpts, 8 Wikiquote sports lines tagged `famous-quotes`) | the same 30 in `quotes.json` |
 | History starter | 1,052 dated rows on 142 days (`@johnmorrisdotca/meigen-sports/history`; World Cup matches and Wikidata events), kept for compatibility | `all.json`, `days/`, `sports/`, `entities/` |
 
@@ -236,7 +236,7 @@ Slow on purpose (half speed), and in a row only the centre one moves.
 <p align="center">
 <picture>
 <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/offline-dark.webp">
-<img alt="A year as twelve rows of days filling in month by month, each day shaded by how many bundled facts it holds, with a count rising to 1,525 facts." src="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/offline-light.webp" width="720">
+<img alt="A year as twelve rows of days filling in month by month, each day shaded by how many bundled facts it holds, with a count rising to 2,337 facts." src="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/offline-light.webp" width="720">
 </picture>
 <br><em>The bundled offline set, a month at a time.</em>
 </p>
@@ -399,7 +399,7 @@ The root export provides `isDate`, `monthDayOf`, `selectRecords`, `historyOnDate
 | `@johnmorrisdotca/meigen-sports` | Date helpers, deterministic selectors and public types |
 | `@johnmorrisdotca/meigen-sports/quotes` | Bundled quotation records |
 | `@johnmorrisdotca/meigen-sports/history` | Bundled dated history records (the starter) |
-| `@johnmorrisdotca/meigen-sports/offline` | `offline`, the best three to five facts for every calendar day, and `OFFLINE_BUILD`, the build they were chosen from |
+| `@johnmorrisdotca/meigen-sports/offline` | `offline`, the best three to eight facts for every calendar day, and `OFFLINE_BUILD`, the build they were chosen from |
 | `@johnmorrisdotca/meigen-sports/load` | `loadShard`, `loadDay`, `loadSport`, `loadEntity`, the facts loaders (`loadFactDay`, `loadCountry`, `queryFacts`, `queryFactIds`, `loadFactsById`, `findPeopleByName`, `loadVocabulary`, `loadTeamPicker`) and loader types |
 | `@johnmorrisdotca/meigen-sports/categories` | `HISTORY_TYPES` and its evidence/readiness descriptions |
 | `@johnmorrisdotca/meigen-sports/styles.css` | Optional rules for a `calendarIcon` SVG (`.meigen-cal`) and the four fact layouts |

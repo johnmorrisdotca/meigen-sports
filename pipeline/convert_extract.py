@@ -883,7 +883,7 @@ def merge_same_event(chosen: dict[str, dict]) -> tuple[dict[str, dict], int]:
 
 RANK_FIELDS = (
     "recordId", "category", "tags", "eventDate", "competition", "league", "sport", "person", "home", "away", "featuredReasons", "winnerName",
-    "stage", "phase", "priorityAthlete", "personAward", "awardCount", "hallOfFameYear", "highlight", "championships", "sitelinks", "record",
+    "stage", "phase", "priorityAthlete", "personAward", "awardCount", "hallOfFameYear", "highlight", "championships", "sitelinks", "record", "jerseyRetired",
 )
 
 
@@ -2036,7 +2036,7 @@ def lay_out(facts: list[dict], meta: dict) -> int:
     specs: list[dict] = []
     for day in calendar:
         rows = uniq_of(by_day.get(day, []))
-        specs.append({"key": f"day:{day}", "ids": [r["recordId"] for r in rows], "n": 12, "day": True})
+        specs.append({"key": f"day:{day}", "ids": [r["recordId"] for r in rows], "n": 16, "day": True})
     for sport, rows in by_sport.items():
         rows = uniq_of(rows)
         specs.append({"key": f"sport:{sport}", "ids": [r["recordId"] for r in rows], "n": 40, "options": {"maxPer": 8, "exempt": competitions(rows)}})
@@ -2058,7 +2058,7 @@ def lay_out(facts: list[dict], meta: dict) -> int:
         specs.append({"key": f"country:{code}", "ids": [r["recordId"] for r in rows], "n": 40, "options": {"maxPer": 16, "exempt": [*competitions(rows)]}})
     for fid, rows in by_team.items():
         rows = uniq_of(rows)
-        specs.append({"key": f"team:{fid}", "ids": [r["recordId"] for r in rows], "n": 40, "options": {"maxPer": 8, "exempt": [f"f:{fid}", *competitions(rows)]}})
+        specs.append({"key": f"team:{fid}", "ids": [r["recordId"] for r in rows], "n": 80, "options": {"maxPer": 8, "exempt": [f"f:{fid}", *competitions(rows)]}})
     for bucket, rows in by_player.items():
         rows = uniq_of(rows)
         specs.append({"key": f"player:{bucket}", "ids": [r["recordId"] for r in rows], "n": 40, "options": {"personMax": 2, "exempt": [*tags_in(rows), *competitions(rows), *clubs_in(rows)]}})
@@ -2070,14 +2070,14 @@ def lay_out(facts: list[dict], meta: dict) -> int:
             people_by_day[row["eventDate"][5:]].append(row)
     for day in calendar:
         rows = uniq_of(people_by_day.get(day, []))
-        specs.append({"key": f"people:{day}", "ids": [r["recordId"] for r in rows], "n": PEOPLE_DAY, "options": {"maxPer": PEOPLE_DAY, "personMax": 1, "maxPerSport": 3}})
+        specs.append({"key": f"people:{day}", "ids": [r["recordId"] for r in rows], "n": PEOPLE_DAY, "options": {"maxPer": PEOPLE_DAY, "personMax": 1, "maxPerSport": 3, "strictSport": True}})
     events_by_day: dict[str, list[dict]] = defaultdict(list)
     for row in facts:
         if row.get("category") in EVENT_CATEGORIES and row.get("eventDate"):
             events_by_day[row["eventDate"][5:]].append(row)
     for day in calendar:
         rows = uniq_of(events_by_day.get(day, []))
-        specs.append({"key": f"events:{day}", "ids": [r["recordId"] for r in rows], "n": EVENTS_DAY, "options": {"maxPer": EVENTS_DAY, "personMax": 1, "maxPerSport": 3}})
+        specs.append({"key": f"events:{day}", "ids": [r["recordId"] for r in rows], "n": EVENTS_DAY, "options": {"maxPer": EVENTS_DAY, "personMax": 1, "maxPerSport": 3, "strictSport": True}})
     deaths = [r["recordId"] for r in facts if r.get("category") == "player-death"]
     specs.append({"key": "showcase-deaths", "ids": deaths, "n": 8})
     specs.append({"key": "sample", "ids": [r["recordId"] for r in shuffle(facts, "meigen-sample-0.1.0")], "n": 400, "options": {"maxPer": 60, "personMax": 1, "minimum": 400}})

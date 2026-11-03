@@ -2,12 +2,12 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { OFFLINE_BUILD, offline } from "../src/data/offline.ts";
 import type { OnThisDayRecord } from "../src/schema.ts";
-import { COVERED_SPORTS, Facts, MIN_PER_SPORT, NEVER, describe as describeGolden, failures, loadGolden, loadLocked } from "../scripts/golden.ts";
+import { COVERED_SPORTS, type Path, Facts, MIN_PER_SPORT, NEVER, describe as describeGolden, failures, loadEverLocked, loadGolden, loadLocked, relockProblems } from "../scripts/golden.ts";
 
 const golden = loadGolden();
 const facts = new Facts(`data/v1/${OFFLINE_BUILD.dataVersion}/facts`);
 const offlineIds = new Set(offline.map((r) => r.recordId));
-const result = failures(golden, facts, offlineIds, loadLocked(), offline);
+const result = failures(golden, facts, offlineIds, loadLocked(), offline, loadEverLocked());
 
 test("the golden list is sourced, dated and large enough", () => {
   assert.ok(golden.must.length + golden.gaps.length >= 240, `${golden.must.length + golden.gaps.length} golden facts`);
@@ -87,4 +87,29 @@ test("a missing, wrong or lost golden fact is reported", () => {
   assert.ok(failures(thin, facts, offlineIds, {}, offline).problems.some((p) => p.includes("golden facts for soccer")));
   const notOffline = result.report.rankingGaps[0]!.split(" ")[0]!;
   assert.ok(failures(golden, facts, offlineIds, { [notOffline]: ["offline"] }, offline).problems.some((p) => p.startsWith("LOST") && p.includes(notOffline)));
+});
+
+test("a golden path is never relocked: one taken out of the floor needs a ticket named in the golden entry", () => {
+  const locked = loadLocked(), ever = loadEverLocked();
+  for (const [id, paths] of Object.entries(locked)) for (const p of paths) assert.ok((ever[id] ?? []).includes(p), `${id} ${p} is locked but not in ever-locked.json: run pnpm test:golden -- --lock`);
+  assert.deepEqual(relockProblems(golden, locked, ever), []);
+  const id = Object.keys(ever).find((key) => ever[key]!.includes("day"))!;
+  const dropped = { ...locked, [id]: (locked[id] ?? []).filter((p) => p !== "day") };
+  assert.equal(relockProblems(golden, dropped, ever).length, 1, "a path removed from the floor goes unseen");
+  const excused = { ...golden, must: golden.must.map((e) => e.id === id ? { ...e, relocked: { day: "SPX-904" } } : e) };
+  assert.deepEqual(relockProblems(excused, dropped, ever), []);
+  const named = { ...golden, must: golden.must.map((e) => e.id === id ? { ...e, relocked: { day: "later" } } : e) };
+  assert.equal(relockProblems(named, locked, ever).length, 1, "a word is not a ticket");
+});
+
+test("the floor holds the paths of before the 0.25.0 relock: Lisa Leslie, Damon Allen, Gordie Howe, Russ Jackson, Mike Pringle, the 1948 Olympics and three venue openings", () => {
+  const ever = loadEverLocked(), locked = loadLocked();
+  const must: Record<string, Path[]> = {
+    "birth-Q257980": ["offline", "day"], "birth-Q5212802": ["offline", "day"], "birth-Q358519": ["team"], "birth-Q7381158": ["team"], "birth-Q6848465": ["player"],
+    "start-Q8403": ["offline"], "venue-msg": ["offline"], "venue-polo": ["offline"], "venue-yankee": ["offline"],
+  };
+  for (const [id, paths] of Object.entries(must)) for (const p of paths) {
+    assert.ok((ever[id] ?? []).includes(p), `${id} ${p} was dropped from ever-locked.json`);
+    assert.ok((locked[id] ?? []).includes(p), `${id} ${p} was taken out of locked-paths.json`);
+  }
 });
