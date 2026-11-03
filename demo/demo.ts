@@ -8,6 +8,7 @@ import { bannerMark, flagMark, trophyMark } from "./marks.ts";
 import type { OnThisDayRecord } from "../src/schema.ts";
 import { pickVariedFacts } from "./variety.ts";
 import type { MeigenRecord } from "../src/types.ts";
+import type { Catalogue } from "../src/catalogue.ts";
 interface Language { lang: "en" | "ja"; word: (key: string) => string }
 declare const familyLang: Language;
 const DATA_VERSION = "0.1.0";
@@ -470,3 +471,23 @@ void render();
 void renderRandom();
 void renderShowcase();
 void explore.restore();
+// The "what is inside" panel: the totals and the gaps, counted by the build (catalogue.json); the charts are on catalogue.html.
+const catText = document.querySelector<HTMLElement>("#cat-panel-text")!;
+const catToggle = document.querySelector<HTMLButtonElement>("#cat-gaps-toggle")!;
+const catGaps = document.querySelector<HTMLElement>("#cat-panel-gaps")!;
+let catalogue: Catalogue | null = null;
+function drawCatalogue() {
+  if (!catalogue) return;
+  const say = (key: string, values: Record<string, string | number> = {}) => Object.entries(values).reduce((text, [name, value]) => text.replaceAll(`{${name}}`, String(value)), familyLang.word(key) ?? key);
+  const n = (value: number) => value.toLocaleString("en-US");
+  catText.textContent = say("catPanelText", { facts: n(catalogue.totals.facts), people: n(catalogue.people.total), events: n(catalogue.events.total), sources: catalogue.sources.length, thin: catalogue.days.thin.length, n: catalogue.gaps.thresholds.day });
+  catToggle.textContent = say(catGaps.hidden ? "catPanelGaps" : "catPanelGapsHide");
+  const ja = familyLang.lang === "ja";
+  catGaps.replaceChildren(...catalogue.gaps.notes.map((note) => { const p = document.createElement("p"); p.textContent = `${say(`status-${note.status}`)}: ${ja ? note.ja : note.en}`; return p; }));
+}
+catToggle.addEventListener("click", () => { catGaps.hidden = !catGaps.hidden; catToggle.setAttribute("aria-expanded", String(!catGaps.hidden)); drawCatalogue(); });
+window.addEventListener("meigen-language", drawCatalogue);
+try {
+  const response = await fetch(`data/v1/${DATA_VERSION}/catalogue.json`);
+  if (response.ok) { catalogue = await response.json() as Catalogue; catToggle.hidden = false; drawCatalogue(); }
+} catch { /* The panel stays empty when the file cannot be read; the rest of the demo does not need it. */ }

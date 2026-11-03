@@ -23,6 +23,14 @@ A birth place is a town and, when the place's country still exists, that country
 
 The offline set is the best three to five facts of every day, so "today" works with no network. The full set is static JSON on GitHub Pages: [one file for a day](api:loadFactDay), [for a sport](api:loadSport), [for a country](api:loadCountry), with [indexes](api:queryFacts) to ask for the Romanian facts of October 20. A reader needs no key, and no per-reader database call is made.
 
+## A rebuild that loses nothing
+
+The facts are made from extracts that are not in git. `pnpm data:facts` refuses to run, naming each file, when an extract is missing, empty or older than an extract it follows, and records the SHA-256 of every input in `data-sources/facts/inputs.json`. Then a guard compares the new facts with those of the last release and stops, writing nothing, on a lost fact, a changed id, a category with fewer facts or a field that changed on a fact that kept its id, unless `data-sources/rebuild-allow.json` lists it with a reason. The order of a rebuild is in `pipeline/README.md`.
+
+## What is inside
+
+`catalogue.json` counts everything the data holds, in the build, from the facts: [the type](api:Catalogue) says what each number is. The page of charts that draws it is [catalogue.html](https://johnmorrisdotca.github.io/meigen-sports/catalogue.html).
+
 ## More
 
 - [Data pipeline](../data-pipeline.md), [record schema](../record-schema.md) and [history model](../history-model.md) in the repository.

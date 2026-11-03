@@ -1,0 +1,2534 @@
+{
+ "schemaVersion": 1,
+ "package": "0.25.0",
+ "dataVersion": "0.1.0",
+ "builtOn": "2026-11-03",
+ "factsManifestSha256": "a27bbf18d6d8f52664e1590f5358b39a0c0dc2c873ae8834fc2ab978d73e4dde",
+ "totals": {
+  "facts": 126810,
+  "quotations": 30,
+  "historyRows": 1052
+ },
+ "byKind": {
+  "player-birthday": 51068,
+  "game-on-day": 26930,
+  "player-death": 18143,
+  "competition-start": 11862,
+  "competition-end": 11748,
+  "sport-event": 4907,
+  "retired-number": 397,
+  "soccer-on-day": 363,
+  "championship-final": 336,
+  "all-star": 335,
+  "game-feat": 290,
+  "venue-opening": 200,
+  "player-feat": 130,
+  "franchise-event": 89,
+  "award": 12
+ },
+ "bySport": {
+  "american-football": 22662,
+  "basketball": 12134,
+  "baseball": 11768,
+  "soccer": 11208,
+  "canadian-football": 5237,
+  "ice-hockey": 4133,
+  "cycling": 3484,
+  "tennis": 3094,
+  "athletics": 2828,
+  "auto-racing": 2805,
+  "volleyball": 1828,
+  "chess": 1602,
+  "rowing": 1594,
+  "figure-skating": 1544,
+  "handball": 1533,
+  "rugby-union": 1503,
+  "swimming": 1496,
+  "boxing": 1414,
+  "badminton": 1375,
+  "wrestling": 1317,
+  "gymnastics": 1316,
+  "judo": 1230,
+  "track-cycling": 1214,
+  "cricket": 1182,
+  "fencing": 1158,
+  "field-hockey": 1112,
+  "professional-wrestling": 1039,
+  "motorcycle-racing": 1002,
+  "mma": 945,
+  "alpine-skiing": 943,
+  "sailing": 934,
+  "shooting": 930,
+  "canoeing": 850,
+  "weightlifting": 830,
+  "water-polo": 823,
+  "cross-country-skiing": 818,
+  "snooker": 770,
+  "biathlon": 736,
+  "archery": 703,
+  "speed-skating": 670,
+  "table-tennis": 619,
+  "equestrian": 586,
+  "curling": 533,
+  "bobsleigh": 529,
+  "diving": 514,
+  "ski-jumping": 489,
+  "golf": 433,
+  "rallying": 425,
+  "long-track-speed-skating": 363,
+  "freestyle-skiing": 335,
+  "rhythmic-gymnastics": 324,
+  "taekwondo": 309,
+  "nordic-combined": 299,
+  "short-track-speed-skating": 290,
+  "snowboarding": 287,
+  "cyclo-cross": 262,
+  "beach-volleyball": 251,
+  "luge": 247,
+  "roller-hockey-quad": 239,
+  "para-athletics": 229,
+  "modern-pentathlon": 227,
+  "mountaineering": 216,
+  "artistic-swimming": 206,
+  "none": 200,
+  "freestyle-wrestling": 199,
+  "mountain-biking": 173,
+  "triathlon": 173,
+  "formula-one": 157,
+  "greco-roman-wrestling": 155,
+  "sport-climbing": 147,
+  "multi-sport": 140,
+  "olympics": 127,
+  "futsal": 124,
+  "rugby-sevens": 120,
+  "skeleton": 117,
+  "karate": 115,
+  "bandy": 98,
+  "paralympics": 97,
+  "tug-of-war": 91,
+  "orienteering": 89,
+  "horse-racing": 83,
+  "para-badminton": 79,
+  "polo": 77,
+  "wheelchair-tennis": 77,
+  "bodybuilding": 74,
+  "trampoline-gymnastics": 70,
+  "lacrosse": 68,
+  "para-swimming": 67,
+  "softball": 65,
+  "skateboarding": 63,
+  "rugby-league": 56,
+  "go": 53,
+  "motocross": 50,
+  "skiing": 50,
+  "para-table-tennis": 49,
+  "windsurfing": 47,
+  "para-alpine-skiing": 46,
+  "surfing": 44,
+  "australian-rules-football": 43,
+  "bmx": 40,
+  "darts": 39,
+  "wheelchair-curling": 39,
+  "para-judo": 38,
+  "sumo": 38,
+  "wushu": 37,
+  "counter-strike-global-offensive": 36,
+  "rugby": 34,
+  "wheelchair-basketball": 34,
+  "kickboxing": 30,
+  "endurance-racing": 28,
+  "martial-arts": 28,
+  "para-powerlifting": 28,
+  "ski-mountaineering": 28,
+  "squash": 28,
+  "aikido": 27,
+  "nordic-skiing": 21,
+  "beach-soccer": 19,
+  "para-rowing": 19,
+  "professional-boxing": 19,
+  "wheelchair-fencing": 19,
+  "canoe-sprint": 18,
+  "open-water-swimming": 17,
+  "boccia": 15,
+  "floorball": 15,
+  "para-taekwondo": 15,
+  "breakdance": 14,
+  "para-ice-hockey": 14,
+  "acrobatic-gymnastics": 13,
+  "basque-pelota": 13,
+  "sitting-volleyball": 13,
+  "para-snowboard": 12,
+  "brazilian-jiu-jitsu": 11,
+  "sled-dog-racing": 11,
+  "stock-car-racing": 11,
+  "croquet": 10,
+  "dota-2": 10,
+  "eventing": 10,
+  "gravel-cycling": 10,
+  "para-cycling": 10,
+  "powerlifting": 10,
+  "roller-speed-skating": 10,
+  "cue-sports": 9,
+  "para-biathlon": 9,
+  "standing-volleyball": 9,
+  "wheelchair-rugby": 9,
+  "beach-handball": 8,
+  "cross-country-running": 8,
+  "freediving": 8,
+  "goalball": 8,
+  "indoor-athletics": 8,
+  "muay-thai": 8,
+  "powerboating": 8,
+  "rallycross": 8,
+  "roller-hockey": 8,
+  "show-jumping": 8,
+  "skydiving": 8,
+  "combat-sport": 7,
+  "full-contact-karate": 7,
+  "jujutsu": 7,
+  "aerobic-gymnastics": 6,
+  "canoe-slalom": 6,
+  "dressage": 6,
+  "field-lacrosse": 6,
+  "hurdling": 6,
+  "hurling": 6,
+  "kabaddi": 6,
+  "korfball": 6,
+  "netball": 6,
+  "sambo": 6,
+  "ten-pin-bowling": 6,
+  "tenpin-bowling": 6,
+  "air-racing": 5,
+  "carom-billiards": 5,
+  "gaelic-football": 5,
+  "kite-surfing": 5,
+  "para-archery": 5,
+  "para-equestrian": 5,
+  "parkour": 5,
+  "wheelchair-racing": 5,
+  "beach-sports": 4,
+  "high-diving": 4,
+  "jeu-de-paume": 4,
+  "league-of-legends": 4,
+  "padel": 4,
+  "para-climbing": 4,
+  "para-shooting": 4,
+  "pool": 4,
+  "rackets": 4,
+  "roque": 4,
+  "ski-flying": 4,
+  "strongman": 4,
+  "artistic-roller-skating": 3,
+  "collegiate-wrestling": 3,
+  "freerunning": 3,
+  "freestyle-motocross": 3,
+  "para-cross-country-skiing": 3,
+  "speedway": 3,
+  "trail-running": 3,
+  "ultra-trail": 3,
+  "aeronautics": 2,
+  "arm-wrestling": 2,
+  "beach-games": 2,
+  "beach-tennis": 2,
+  "bocce": 2,
+  "capoeira": 2,
+  "counter-strike-2": 2,
+  "downhill-mountain-biking": 2,
+  "drag-racing": 2,
+  "endurance-motor-racing": 2,
+  "fistball": 2,
+  "free-climbing": 2,
+  "freeskiing": 2,
+  "freestyle-bmx": 2,
+  "grappling": 2,
+  "ice-climbing": 2,
+  "indoor-soccer": 2,
+  "indycar": 2,
+  "international-draughts": 2,
+  "karuta": 2,
+  "lifesaving": 2,
+  "minifootball": 2,
+  "motorcycle-trials": 2,
+  "multisport-sport": 2,
+  "pickleball": 2,
+  "professional-bodybuilding": 2,
+  "race-walking": 2,
+  "real-tennis": 2,
+  "robot-combat": 2,
+  "rodeo": 2,
+  "running": 2,
+  "savate": 2,
+  "sepak-takraw": 2,
+  "seven-a-side-football": 2,
+  "shogi": 2,
+  "ski-orienteering": 2,
+  "slap": 2,
+  "snowboard-cross": 2,
+  "supercross": 2,
+  "teqball": 2,
+  "three-cushion-billiards": 2,
+  "trials-cycling": 2,
+  "ultrarunning": 2,
+  "water-sport": 2,
+  "wing-chun": 2,
+  "winter-pentathlon": 2,
+  "aerobatics": 1,
+  "australian-drivers-championship": 1,
+  "ball-hockey": 1,
+  "ballooning": 1,
+  "box-lacrosse": 1,
+  "channel-one-cup-football": 1,
+  "cp-football": 1,
+  "crossfit": 1,
+  "cycling-esports": 1,
+  "dancesport": 1,
+  "english-billiards": 1,
+  "finswimming": 1,
+  "fishing": 1,
+  "flat-racing": 1,
+  "grand-prix-motor-racing": 1,
+  "heliskiing": 1,
+  "indoor-rowing": 1,
+  "jet-wing": 1,
+  "military-patrol": 1,
+  "mountain-bike-trials": 1,
+  "muscle-propelled-water-sport": 1,
+  "obstacle-course-racing": 1,
+  "petanque": 1,
+  "racquetball": 1,
+  "sanda": 1,
+  "ski-jumping-coach": 1,
+  "snowmobile": 1,
+  "speed-climbing": 1,
+  "sprint-canoe": 1,
+  "street-hockey": 1,
+  "submission-grappling": 1,
+  "summer-biathlon": 1,
+  "tumbling": 1,
+  "twenty20-cricket": 1,
+  "ultra-distance-cycling": 1,
+  "water-skiing": 1,
+  "waterskiing": 1,
+  "wingsuit": 1,
+  "yacht-racing": 1
+ },
+ "byLeague": {
+  "none": 76560,
+  "nfl": 10858,
+  "mlb": 10129,
+  "nba": 10049,
+  "ncaaf": 8244,
+  "cfl": 5230,
+  "afl": 1019,
+  "nhl": 949,
+  "aafc": 588,
+  "wha": 547,
+  "aa": 466,
+  "wnba": 445,
+  "ahl": 436,
+  "echl": 308,
+  "na": 252,
+  "mls": 189,
+  "nha": 111,
+  "wc": 106,
+  "wwc": 68,
+  "pl": 64,
+  "nwsl": 52,
+  "ua": 47,
+  "pcha": 45,
+  "fl": 32,
+  "pwhl": 11,
+  "wchl": 5
+ },
+ "byDecade": {
+  "1850s": 71,
+  "1860s": 176,
+  "1870s": 875,
+  "1880s": 1546,
+  "1890s": 1916,
+  "1900s": 1940,
+  "1910s": 2725,
+  "1920s": 3742,
+  "1930s": 4557,
+  "1940s": 6161,
+  "1950s": 6022,
+  "1960s": 8474,
+  "1970s": 11045,
+  "1980s": 15565,
+  "1990s": 16473,
+  "2000s": 12978,
+  "2010s": 18976,
+  "2020s": 13568
+ },
+ "byYear": {
+  "1850": 5,
+  "1851": 8,
+  "1852": 7,
+  "1853": 3,
+  "1854": 9,
+  "1855": 4,
+  "1856": 7,
+  "1857": 9,
+  "1858": 7,
+  "1859": 12,
+  "1860": 8,
+  "1861": 15,
+  "1862": 19,
+  "1863": 11,
+  "1864": 17,
+  "1865": 18,
+  "1866": 26,
+  "1867": 24,
+  "1868": 20,
+  "1869": 18,
+  "1870": 33,
+  "1871": 61,
+  "1872": 101,
+  "1873": 91,
+  "1874": 98,
+  "1875": 137,
+  "1876": 93,
+  "1877": 72,
+  "1878": 80,
+  "1879": 109,
+  "1880": 75,
+  "1881": 78,
+  "1882": 142,
+  "1883": 160,
+  "1884": 241,
+  "1885": 146,
+  "1886": 168,
+  "1887": 203,
+  "1888": 157,
+  "1889": 176,
+  "1890": 249,
+  "1891": 168,
+  "1892": 161,
+  "1893": 167,
+  "1894": 229,
+  "1895": 195,
+  "1896": 183,
+  "1897": 199,
+  "1898": 181,
+  "1899": 184,
+  "1900": 162,
+  "1901": 182,
+  "1902": 174,
+  "1903": 196,
+  "1904": 184,
+  "1905": 189,
+  "1906": 200,
+  "1907": 214,
+  "1908": 226,
+  "1909": 213,
+  "1910": 270,
+  "1911": 239,
+  "1912": 280,
+  "1913": 251,
+  "1914": 261,
+  "1915": 291,
+  "1916": 251,
+  "1917": 304,
+  "1918": 305,
+  "1919": 273,
+  "1920": 370,
+  "1921": 433,
+  "1922": 356,
+  "1923": 392,
+  "1924": 395,
+  "1925": 350,
+  "1926": 328,
+  "1927": 367,
+  "1928": 379,
+  "1929": 372,
+  "1930": 444,
+  "1931": 424,
+  "1932": 406,
+  "1933": 399,
+  "1934": 411,
+  "1935": 455,
+  "1936": 469,
+  "1937": 492,
+  "1938": 553,
+  "1939": 504,
+  "1940": 485,
+  "1941": 509,
+  "1942": 534,
+  "1943": 560,
+  "1944": 660,
+  "1945": 602,
+  "1946": 661,
+  "1947": 708,
+  "1948": 744,
+  "1949": 698,
+  "1950": 684,
+  "1951": 567,
+  "1952": 557,
+  "1953": 536,
+  "1954": 568,
+  "1955": 575,
+  "1956": 645,
+  "1957": 591,
+  "1958": 665,
+  "1959": 634,
+  "1960": 748,
+  "1961": 709,
+  "1962": 783,
+  "1963": 813,
+  "1964": 867,
+  "1965": 838,
+  "1966": 873,
+  "1967": 880,
+  "1968": 961,
+  "1969": 1002,
+  "1970": 1004,
+  "1971": 927,
+  "1972": 1106,
+  "1973": 1152,
+  "1974": 1075,
+  "1975": 1127,
+  "1976": 1155,
+  "1977": 1115,
+  "1978": 1145,
+  "1979": 1239,
+  "1980": 1309,
+  "1981": 1352,
+  "1982": 1327,
+  "1983": 1470,
+  "1984": 1535,
+  "1985": 1686,
+  "1986": 1710,
+  "1987": 1683,
+  "1988": 1712,
+  "1989": 1781,
+  "1990": 1753,
+  "1991": 1678,
+  "1992": 1739,
+  "1993": 1728,
+  "1994": 1695,
+  "1995": 1653,
+  "1996": 1648,
+  "1997": 1620,
+  "1998": 1509,
+  "1999": 1450,
+  "2000": 1693,
+  "2001": 1535,
+  "2002": 1370,
+  "2003": 1214,
+  "2004": 1130,
+  "2005": 1122,
+  "2006": 1179,
+  "2007": 1168,
+  "2008": 1270,
+  "2009": 1297,
+  "2010": 1439,
+  "2011": 1484,
+  "2012": 1703,
+  "2013": 1824,
+  "2014": 1816,
+  "2015": 1964,
+  "2016": 2153,
+  "2017": 2142,
+  "2018": 2251,
+  "2019": 2200,
+  "2020": 1474,
+  "2021": 2384,
+  "2022": 2137,
+  "2023": 2011,
+  "2024": 2433,
+  "2025": 1909,
+  "2026": 1220
+ },
+ "days": {
+  "perDay": [
+   154,
+   287,
+   255,
+   289,
+   272,
+   255,
+   279,
+   276,
+   257,
+   281,
+   265,
+   286,
+   277,
+   277,
+   298,
+   310,
+   288,
+   287,
+   307,
+   272,
+   329,
+   291,
+   290,
+   286,
+   304,
+   313,
+   305,
+   304,
+   296,
+   316,
+   300,
+   332,
+   327,
+   301,
+   309,
+   351,
+   304,
+   322,
+   341,
+   302,
+   326,
+   328,
+   319,
+   302,
+   357,
+   335,
+   320,
+   292,
+   347,
+   333,
+   302,
+   284,
+   309,
+   304,
+   299,
+   315,
+   306,
+   272,
+   311,
+   122,
+   312,
+   307,
+   290,
+   307,
+   343,
+   333,
+   296,
+   295,
+   309,
+   325,
+   297,
+   304,
+   291,
+   302,
+   305,
+   323,
+   301,
+   315,
+   286,
+   287,
+   312,
+   262,
+   324,
+   303,
+   295,
+   281,
+   270,
+   300,
+   285,
+   267,
+   260,
+   298,
+   294,
+   316,
+   304,
+   308,
+   303,
+   329,
+   321,
+   325,
+   311,
+   312,
+   333,
+   310,
+   329,
+   325,
+   329,
+   346,
+   350,
+   361,
+   341,
+   316,
+   317,
+   332,
+   343,
+   345,
+   336,
+   334,
+   363,
+   327,
+   333,
+   344,
+   338,
+   328,
+   333,
+   357,
+   321,
+   346,
+   338,
+   361,
+   363,
+   327,
+   345,
+   326,
+   323,
+   348,
+   319,
+   354,
+   347,
+   304,
+   359,
+   338,
+   363,
+   345,
+   318,
+   348,
+   357,
+   327,
+   323,
+   346,
+   356,
+   313,
+   322,
+   322,
+   333,
+   316,
+   313,
+   338,
+   328,
+   320,
+   316,
+   346,
+   331,
+   335,
+   339,
+   316,
+   339,
+   325,
+   336,
+   317,
+   336,
+   319,
+   353,
+   339,
+   324,
+   328,
+   330,
+   321,
+   317,
+   336,
+   334,
+   348,
+   335,
+   340,
+   330,
+   360,
+   354,
+   302,
+   366,
+   309,
+   320,
+   310,
+   345,
+   335,
+   307,
+   338,
+   322,
+   326,
+   346,
+   324,
+   316,
+   339,
+   335,
+   331,
+   325,
+   370,
+   385,
+   374,
+   404,
+   385,
+   372,
+   394,
+   357,
+   379,
+   381,
+   381,
+   361,
+   377,
+   395,
+   397,
+   394,
+   391,
+   398,
+   370,
+   377,
+   372,
+   378,
+   349,
+   363,
+   354,
+   348,
+   355,
+   377,
+   353,
+   337,
+   377,
+   369,
+   357,
+   349,
+   406,
+   361,
+   416,
+   517,
+   514,
+   552,
+   504,
+   490,
+   468,
+   451,
+   520,
+   555,
+   506,
+   484,
+   546,
+   486,
+   469,
+   482,
+   495,
+   462,
+   484,
+   494,
+   431,
+   442,
+   449,
+   467,
+   468,
+   436,
+   436,
+   405,
+   416,
+   413,
+   419,
+   439,
+   443,
+   447,
+   413,
+   420,
+   427,
+   436,
+   436,
+   435,
+   472,
+   412,
+   449,
+   409,
+   428,
+   436,
+   436,
+   416,
+   391,
+   375,
+   396,
+   400,
+   411,
+   399,
+   416,
+   381,
+   395,
+   406,
+   425,
+   395,
+   361,
+   373,
+   363,
+   354,
+   407,
+   394,
+   386,
+   364,
+   407,
+   370,
+   361,
+   374,
+   377,
+   417,
+   392,
+   410,
+   348,
+   346,
+   381,
+   358,
+   380,
+   417,
+   422,
+   404,
+   353,
+   412,
+   424,
+   404,
+   341,
+   379,
+   382,
+   364,
+   366,
+   352,
+   323,
+   315,
+   295,
+   295,
+   322,
+   331,
+   299,
+   316,
+   298,
+   298,
+   276,
+   296,
+   302,
+   301,
+   276,
+   294,
+   295,
+   270,
+   290,
+   278,
+   268,
+   288,
+   257,
+   201,
+   215,
+   258,
+   270,
+   249,
+   254,
+   254,
+   252
+  ],
+  "first": "01-01",
+  "min": {
+   "day": "02-29",
+   "facts": 122
+  },
+  "max": {
+   "day": "09-07",
+   "facts": 555
+  },
+  "empty": [],
+  "thin": [
+   "02-29"
+  ]
+ },
+ "languages": {
+  "en": 126810,
+  "ja": 126810,
+  "both": 126810
+ },
+ "people": {
+  "total": 56710,
+  "deceased": 18639,
+  "notKnownDeceased": 38071,
+  "bySport": {
+   "american-football": {
+    "total": 6706,
+    "deceased": 4590
+   },
+   "soccer": {
+    "total": 6467,
+    "deceased": 817
+   },
+   "basketball": {
+    "total": 5330,
+    "deceased": 1267
+   },
+   "canadian-football": {
+    "total": 4126,
+    "deceased": 197
+   },
+   "ice-hockey": {
+    "total": 1703,
+    "deceased": 701
+   },
+   "baseball": {
+    "total": 1414,
+    "deceased": 432
+   },
+   "athletics": {
+    "total": 1334,
+    "deceased": 705
+   },
+   "cycling": {
+    "total": 1205,
+    "deceased": 600
+   },
+   "rowing": {
+    "total": 1104,
+    "deceased": 615
+   },
+   "tennis": {
+    "total": 1092,
+    "deceased": 410
+   },
+   "boxing": {
+    "total": 1008,
+    "deceased": 573
+   },
+   "swimming": {
+    "total": 958,
+    "deceased": 429
+   },
+   "auto-racing": {
+    "total": 923,
+    "deceased": 519
+   },
+   "gymnastics": {
+    "total": 897,
+    "deceased": 561
+   },
+   "chess": {
+    "total": 883,
+    "deceased": 435
+   },
+   "fencing": {
+    "total": 836,
+    "deceased": 422
+   },
+   "wrestling": {
+    "total": 826,
+    "deceased": 360
+   },
+   "field-hockey": {
+    "total": 790,
+    "deceased": 322
+   },
+   "handball": {
+    "total": 752,
+    "deceased": 130
+   },
+   "track-cycling": {
+    "total": 752,
+    "deceased": 269
+   },
+   "cricket": {
+    "total": 713,
+    "deceased": 199
+   },
+   "volleyball": {
+    "total": 696,
+    "deceased": 97
+   },
+   "judo": {
+    "total": 656,
+    "deceased": 65
+   },
+   "alpine-skiing": {
+    "total": 632,
+    "deceased": 121
+   },
+   "professional-wrestling": {
+    "total": 626,
+    "deceased": 199
+   },
+   "sailing": {
+    "total": 622,
+    "deceased": 378
+   },
+   "cross-country-skiing": {
+    "total": 615,
+    "deceased": 163
+   },
+   "water-polo": {
+    "total": 605,
+    "deceased": 229
+   },
+   "canoeing": {
+    "total": 602,
+    "deceased": 190
+   },
+   "figure-skating": {
+    "total": 586,
+    "deceased": 151
+   },
+   "shooting": {
+    "total": 574,
+    "deceased": 283
+   },
+   "speed-skating": {
+    "total": 555,
+    "deceased": 123
+   },
+   "weightlifting": {
+    "total": 528,
+    "deceased": 192
+   },
+   "biathlon": {
+    "total": 511,
+    "deceased": 46
+   },
+   "badminton": {
+    "total": 443,
+    "deceased": 44
+   },
+   "rugby-union": {
+    "total": 440,
+    "deceased": 83
+   },
+   "motorcycle-racing": {
+    "total": 403,
+    "deceased": 125
+   },
+   "equestrian": {
+    "total": 398,
+    "deceased": 192
+   },
+   "ski-jumping": {
+    "total": 387,
+    "deceased": 56
+   },
+   "archery": {
+    "total": 386,
+    "deceased": 73
+   },
+   "mma": {
+    "total": 386,
+    "deceased": 7
+   },
+   "table-tennis": {
+    "total": 341,
+    "deceased": 60
+   },
+   "bobsleigh": {
+    "total": 324,
+    "deceased": 129
+   },
+   "diving": {
+    "total": 313,
+    "deceased": 83
+   },
+   "golf": {
+    "total": 292,
+    "deceased": 111
+   },
+   "freestyle-skiing": {
+    "total": 250,
+    "deceased": 10
+   },
+   "taekwondo": {
+    "total": 229,
+    "deceased": 2
+   },
+   "curling": {
+    "total": 227,
+    "deceased": 22
+   },
+   "nordic-combined": {
+    "total": 224,
+    "deceased": 56
+   },
+   "snowboarding": {
+    "total": 224,
+    "deceased": 7
+   },
+   "rallying": {
+    "total": 201,
+    "deceased": 54
+   },
+   "luge": {
+    "total": 188,
+    "deceased": 20
+   },
+   "artistic-swimming": {
+    "total": 181,
+    "deceased": 1
+   },
+   "beach-volleyball": {
+    "total": 176,
+    "deceased": 7
+   },
+   "para-athletics": {
+    "total": 172,
+    "deceased": 46
+   },
+   "freestyle-wrestling": {
+    "total": 165,
+    "deceased": 33
+   },
+   "rhythmic-gymnastics": {
+    "total": 155,
+    "deceased": 2
+   },
+   "cyclo-cross": {
+    "total": 146,
+    "deceased": 23
+   },
+   "triathlon": {
+    "total": 144,
+    "deceased": 2
+   },
+   "mountaineering": {
+    "total": 138,
+    "deceased": 94
+   },
+   "modern-pentathlon": {
+    "total": 134,
+    "deceased": 45
+   },
+   "greco-roman-wrestling": {
+    "total": 131,
+    "deceased": 22
+   },
+   "short-track-speed-skating": {
+    "total": 91,
+    "deceased": 0
+   },
+   "sport-climbing": {
+    "total": 88,
+    "deceased": 16
+   },
+   "mountain-biking": {
+    "total": 85,
+    "deceased": 3
+   },
+   "karate": {
+    "total": 79,
+    "deceased": 21
+   },
+   "skeleton": {
+    "total": 79,
+    "deceased": 4
+   },
+   "rugby-sevens": {
+    "total": 64,
+    "deceased": 0
+   },
+   "softball": {
+    "total": 58,
+    "deceased": 1
+   },
+   "horse-racing": {
+    "total": 52,
+    "deceased": 29
+   },
+   "para-swimming": {
+    "total": 51,
+    "deceased": 15
+   },
+   "skateboarding": {
+    "total": 51,
+    "deceased": 2
+   },
+   "wheelchair-tennis": {
+    "total": 51,
+    "deceased": 4
+   },
+   "bodybuilding": {
+    "total": 48,
+    "deceased": 19
+   },
+   "tug-of-war": {
+    "total": 48,
+    "deceased": 47
+   },
+   "orienteering": {
+    "total": 45,
+    "deceased": 4
+   },
+   "windsurfing": {
+    "total": 44,
+    "deceased": 3
+   },
+   "polo": {
+    "total": 42,
+    "deceased": 38
+   },
+   "lacrosse": {
+    "total": 37,
+    "deceased": 33
+   },
+   "para-badminton": {
+    "total": 34,
+    "deceased": 0
+   },
+   "go": {
+    "total": 33,
+    "deceased": 11
+   },
+   "para-table-tennis": {
+    "total": 33,
+    "deceased": 13
+   },
+   "sumo": {
+    "total": 31,
+    "deceased": 6
+   },
+   "motocross": {
+    "total": 30,
+    "deceased": 6
+   },
+   "australian-rules-football": {
+    "total": 29,
+    "deceased": 15
+   },
+   "para-alpine-skiing": {
+    "total": 29,
+    "deceased": 4
+   },
+   "trampoline-gymnastics": {
+    "total": 29,
+    "deceased": 0
+   },
+   "surfing": {
+    "total": 27,
+    "deceased": 2
+   },
+   "darts": {
+    "total": 26,
+    "deceased": 1
+   },
+   "kickboxing": {
+    "total": 26,
+    "deceased": 4
+   },
+   "rugby-league": {
+    "total": 25,
+    "deceased": 9
+   },
+   "wheelchair-curling": {
+    "total": 24,
+    "deceased": 11
+   },
+   "squash": {
+    "total": 23,
+    "deceased": 1
+   },
+   "para-powerlifting": {
+    "total": 22,
+    "deceased": 2
+   },
+   "rugby": {
+    "total": 19,
+    "deceased": 12
+   },
+   "wheelchair-fencing": {
+    "total": 17,
+    "deceased": 2
+   },
+   "aikido": {
+    "total": 16,
+    "deceased": 12
+   },
+   "wheelchair-basketball": {
+    "total": 16,
+    "deceased": 10
+   },
+   "para-taekwondo": {
+    "total": 14,
+    "deceased": 0
+   },
+   "ski-mountaineering": {
+    "total": 14,
+    "deceased": 3
+   },
+   "formula-one": {
+    "total": 13,
+    "deceased": 6
+   },
+   "para-judo": {
+    "total": 13,
+    "deceased": 0
+   },
+   "boccia": {
+    "total": 11,
+    "deceased": 3
+   },
+   "brazilian-jiu-jitsu": {
+    "total": 9,
+    "deceased": 2
+   },
+   "para-ice-hockey": {
+    "total": 9,
+    "deceased": 4
+   },
+   "snooker": {
+    "total": 9,
+    "deceased": 3
+   },
+   "breakdance": {
+    "total": 8,
+    "deceased": 0
+   },
+   "martial-arts": {
+    "total": 8,
+    "deceased": 6
+   },
+   "para-snowboard": {
+    "total": 8,
+    "deceased": 1
+   },
+   "powerlifting": {
+    "total": 8,
+    "deceased": 1
+   },
+   "sitting-volleyball": {
+    "total": 8,
+    "deceased": 1
+   },
+   "futsal": {
+    "total": 7,
+    "deceased": 0
+   },
+   "sled-dog-racing": {
+    "total": 7,
+    "deceased": 4
+   },
+   "carom-billiards": {
+    "total": 5,
+    "deceased": 0
+   },
+   "croquet": {
+    "total": 5,
+    "deceased": 5
+   },
+   "freediving": {
+    "total": 5,
+    "deceased": 3
+   },
+   "full-contact-karate": {
+    "total": 5,
+    "deceased": 2
+   },
+   "hurdling": {
+    "total": 5,
+    "deceased": 1
+   },
+   "kite-surfing": {
+    "total": 5,
+    "deceased": 0
+   },
+   "muay-thai": {
+    "total": 5,
+    "deceased": 0
+   },
+   "netball": {
+    "total": 5,
+    "deceased": 0
+   },
+   "para-equestrian": {
+    "total": 5,
+    "deceased": 0
+   },
+   "roller-speed-skating": {
+    "total": 5,
+    "deceased": 0
+   },
+   "skydiving": {
+    "total": 5,
+    "deceased": 3
+   },
+   "tenpin-bowling": {
+    "total": 5,
+    "deceased": 1
+   },
+   "wheelchair-racing": {
+    "total": 5,
+    "deceased": 0
+   },
+   "wheelchair-rugby": {
+    "total": 5,
+    "deceased": 0
+   },
+   "bmx": {
+    "total": 4,
+    "deceased": 0
+   },
+   "gaelic-football": {
+    "total": 4,
+    "deceased": 1
+   },
+   "open-water-swimming": {
+    "total": 4,
+    "deceased": 0
+   },
+   "para-shooting": {
+    "total": 4,
+    "deceased": 0
+   },
+   "pool": {
+    "total": 4,
+    "deceased": 0
+   },
+   "powerboating": {
+    "total": 4,
+    "deceased": 4
+   },
+   "standing-volleyball": {
+    "total": 4,
+    "deceased": 3
+   },
+   "strongman": {
+    "total": 4,
+    "deceased": 0
+   },
+   "basque-pelota": {
+    "total": 3,
+    "deceased": 2
+   },
+   "collegiate-wrestling": {
+    "total": 3,
+    "deceased": 0
+   },
+   "freerunning": {
+    "total": 3,
+    "deceased": 0
+   },
+   "freestyle-motocross": {
+    "total": 3,
+    "deceased": 0
+   },
+   "hurling": {
+    "total": 3,
+    "deceased": 1
+   },
+   "para-archery": {
+    "total": 3,
+    "deceased": 1
+   },
+   "para-biathlon": {
+    "total": 3,
+    "deceased": 0
+   },
+   "para-cycling": {
+    "total": 3,
+    "deceased": 1
+   },
+   "para-rowing": {
+    "total": 3,
+    "deceased": 0
+   },
+   "skiing": {
+    "total": 3,
+    "deceased": 0
+   },
+   "stock-car-racing": {
+    "total": 3,
+    "deceased": 0
+   },
+   "trail-running": {
+    "total": 3,
+    "deceased": 0
+   },
+   "ultra-trail": {
+    "total": 3,
+    "deceased": 0
+   },
+   "acrobatic-gymnastics": {
+    "total": 2,
+    "deceased": 0
+   },
+   "arm-wrestling": {
+    "total": 2,
+    "deceased": 0
+   },
+   "canoe-slalom": {
+    "total": 2,
+    "deceased": 0
+   },
+   "canoe-sprint": {
+    "total": 2,
+    "deceased": 0
+   },
+   "cross-country-running": {
+    "total": 2,
+    "deceased": 0
+   },
+   "drag-racing": {
+    "total": 2,
+    "deceased": 0
+   },
+   "dressage": {
+    "total": 2,
+    "deceased": 0
+   },
+   "endurance-motor-racing": {
+    "total": 2,
+    "deceased": 0
+   },
+   "floorball": {
+    "total": 2,
+    "deceased": 0
+   },
+   "goalball": {
+    "total": 2,
+    "deceased": 0
+   },
+   "gravel-cycling": {
+    "total": 2,
+    "deceased": 0
+   },
+   "high-diving": {
+    "total": 2,
+    "deceased": 0
+   },
+   "indycar": {
+    "total": 2,
+    "deceased": 0
+   },
+   "jeu-de-paume": {
+    "total": 2,
+    "deceased": 2
+   },
+   "kabaddi": {
+    "total": 2,
+    "deceased": 0
+   },
+   "motorcycle-trials": {
+    "total": 2,
+    "deceased": 0
+   },
+   "padel": {
+    "total": 2,
+    "deceased": 0
+   },
+   "pickleball": {
+    "total": 2,
+    "deceased": 0
+   },
+   "race-walking": {
+    "total": 2,
+    "deceased": 0
+   },
+   "rackets": {
+    "total": 2,
+    "deceased": 2
+   },
+   "rallycross": {
+    "total": 2,
+    "deceased": 0
+   },
+   "real-tennis": {
+    "total": 2,
+    "deceased": 0
+   },
+   "roque": {
+    "total": 2,
+    "deceased": 2
+   },
+   "shogi": {
+    "total": 2,
+    "deceased": 0
+   },
+   "show-jumping": {
+    "total": 2,
+    "deceased": 2
+   },
+   "speedway": {
+    "total": 2,
+    "deceased": 1
+   },
+   "supercross": {
+    "total": 2,
+    "deceased": 0
+   },
+   "trials-cycling": {
+    "total": 2,
+    "deceased": 0
+   },
+   "ultrarunning": {
+    "total": 2,
+    "deceased": 0
+   },
+   "air-racing": {
+    "total": 1,
+    "deceased": 0
+   },
+   "australian-drivers-championship": {
+    "total": 1,
+    "deceased": 0
+   },
+   "bandy": {
+    "total": 1,
+    "deceased": 1
+   },
+   "beach-soccer": {
+    "total": 1,
+    "deceased": 0
+   },
+   "box-lacrosse": {
+    "total": 1,
+    "deceased": 0
+   },
+   "capoeira": {
+    "total": 1,
+    "deceased": 1
+   },
+   "crossfit": {
+    "total": 1,
+    "deceased": 0
+   },
+   "cycling-esports": {
+    "total": 1,
+    "deceased": 0
+   },
+   "english-billiards": {
+    "total": 1,
+    "deceased": 0
+   },
+   "fishing": {
+    "total": 1,
+    "deceased": 0
+   },
+   "free-climbing": {
+    "total": 1,
+    "deceased": 1
+   },
+   "grappling": {
+    "total": 1,
+    "deceased": 1
+   },
+   "ice-climbing": {
+    "total": 1,
+    "deceased": 1
+   },
+   "jet-wing": {
+    "total": 1,
+    "deceased": 0
+   },
+   "jujutsu": {
+    "total": 1,
+    "deceased": 1
+   },
+   "lifesaving": {
+    "total": 1,
+    "deceased": 0
+   },
+   "long-track-speed-skating": {
+    "total": 1,
+    "deceased": 0
+   },
+   "mountain-bike-trials": {
+    "total": 1,
+    "deceased": 0
+   },
+   "muscle-propelled-water-sport": {
+    "total": 1,
+    "deceased": 0
+   },
+   "obstacle-course-racing": {
+    "total": 1,
+    "deceased": 0
+   },
+   "para-cross-country-skiing": {
+    "total": 1,
+    "deceased": 0
+   },
+   "parkour": {
+    "total": 1,
+    "deceased": 0
+   },
+   "petanque": {
+    "total": 1,
+    "deceased": 0
+   },
+   "racquetball": {
+    "total": 1,
+    "deceased": 0
+   },
+   "rodeo": {
+    "total": 1,
+    "deceased": 1
+   },
+   "sambo": {
+    "total": 1,
+    "deceased": 1
+   },
+   "sanda": {
+    "total": 1,
+    "deceased": 0
+   },
+   "savate": {
+    "total": 1,
+    "deceased": 0
+   },
+   "ski-jumping-coach": {
+    "total": 1,
+    "deceased": 0
+   },
+   "snowmobile": {
+    "total": 1,
+    "deceased": 0
+   },
+   "speed-climbing": {
+    "total": 1,
+    "deceased": 0
+   },
+   "sprint-canoe": {
+    "total": 1,
+    "deceased": 0
+   },
+   "submission-grappling": {
+    "total": 1,
+    "deceased": 0
+   },
+   "tumbling": {
+    "total": 1,
+    "deceased": 0
+   },
+   "ultra-distance-cycling": {
+    "total": 1,
+    "deceased": 0
+   },
+   "waterskiing": {
+    "total": 1,
+    "deceased": 0
+   },
+   "wing-chun": {
+    "total": 1,
+    "deceased": 1
+   },
+   "wingsuit": {
+    "total": 1,
+    "deceased": 0
+   }
+  }
+ },
+ "events": {
+  "total": 17234,
+  "bySport": {
+   "soccer": 2276,
+   "auto-racing": 1390,
+   "cycling": 1362,
+   "tennis": 969,
+   "athletics": 822,
+   "volleyball": 573,
+   "basketball": 563,
+   "mma": 553,
+   "rugby-union": 513,
+   "badminton": 451,
+   "figure-skating": 441,
+   "motorcycle-racing": 437,
+   "snooker": 382,
+   "handball": 365,
+   "ice-hockey": 325,
+   "judo": 292,
+   "chess": 274,
+   "professional-wrestling": 260,
+   "cricket": 254,
+   "swimming": 218,
+   "long-track-speed-skating": 217,
+   "track-cycling": 171,
+   "curling": 169,
+   "wrestling": 166,
+   "rowing": 160,
+   "alpine-skiing": 148,
+   "archery": 138,
+   "table-tennis": 129,
+   "roller-hockey-quad": 123,
+   "rallying": 122,
+   "biathlon": 120,
+   "short-track-speed-skating": 117,
+   "shooting": 108,
+   "baseball": 95,
+   "boxing": 95,
+   "weightlifting": 94,
+   "diving": 93,
+   "gymnastics": 86,
+   "rhythmic-gymnastics": 86,
+   "american-football": 83,
+   "field-hockey": 82,
+   "canoeing": 74,
+   "formula-one": 74,
+   "fencing": 72,
+   "multi-sport": 70,
+   "olympics": 67,
+   "futsal": 66,
+   "cross-country-skiing": 65,
+   "cyclo-cross": 65,
+   "taekwondo": 54,
+   "bandy": 50,
+   "bobsleigh": 50,
+   "paralympics": 50,
+   "mountain-biking": 49,
+   "freestyle-skiing": 48,
+   "snowboarding": 39,
+   "water-polo": 38,
+   "ski-jumping": 36,
+   "beach-volleyball": 34,
+   "sailing": 33,
+   "modern-pentathlon": 31,
+   "rugby-sevens": 31,
+   "trampoline-gymnastics": 31,
+   "luge": 28,
+   "orienteering": 26,
+   "skiing": 24,
+   "bmx": 23,
+   "para-badminton": 23,
+   "sport-climbing": 23,
+   "speed-skating": 22,
+   "endurance-racing": 21,
+   "triathlon": 21,
+   "golf": 20,
+   "skeleton": 19,
+   "wushu": 19,
+   "counter-strike-global-offensive": 18,
+   "nordic-combined": 18,
+   "professional-boxing": 18,
+   "artistic-swimming": 17,
+   "equestrian": 16,
+   "martial-arts": 16,
+   "rugby-league": 15,
+   "para-alpine-skiing": 14,
+   "para-athletics": 13,
+   "para-judo": 13,
+   "nordic-skiing": 12,
+   "canoe-sprint": 11,
+   "karate": 11,
+   "wheelchair-tennis": 11,
+   "beach-soccer": 9,
+   "open-water-swimming": 9,
+   "skateboarding": 9,
+   "floorball": 8,
+   "para-rowing": 8,
+   "surfing": 8,
+   "darts": 7,
+   "motocross": 7,
+   "ski-mountaineering": 7,
+   "acrobatic-gymnastics": 6,
+   "cross-country-running": 6,
+   "eventing": 6,
+   "indoor-athletics": 6,
+   "para-biathlon": 6,
+   "wheelchair-basketball": 6,
+   "bodybuilding": 5,
+   "cue-sports": 5,
+   "dota-2": 5,
+   "go": 5,
+   "horse-racing": 5,
+   "basque-pelota": 4,
+   "beach-handball": 4,
+   "breakdance": 4,
+   "combat-sport": 4,
+   "goalball": 4,
+   "gravel-cycling": 4,
+   "para-powerlifting": 4,
+   "roller-hockey": 4,
+   "stock-car-racing": 4,
+   "ten-pin-bowling": 4,
+   "aerobic-gymnastics": 3,
+   "dressage": 3,
+   "field-lacrosse": 3,
+   "freestyle-wrestling": 3,
+   "greco-roman-wrestling": 3,
+   "jujutsu": 3,
+   "korfball": 3,
+   "para-cycling": 3,
+   "para-snowboard": 3,
+   "para-swimming": 3,
+   "rallycross": 3,
+   "roller-speed-skating": 3,
+   "rugby": 3,
+   "show-jumping": 3,
+   "sitting-volleyball": 3,
+   "softball": 3,
+   "squash": 3,
+   "air-racing": 2,
+   "artistic-roller-skating": 2,
+   "beach-sports": 2,
+   "canoe-slalom": 2,
+   "kabaddi": 2,
+   "league-of-legends": 2,
+   "muay-thai": 2,
+   "para-climbing": 2,
+   "para-cross-country-skiing": 2,
+   "para-table-tennis": 2,
+   "parkour": 2,
+   "sambo": 2,
+   "ski-flying": 2,
+   "wheelchair-curling": 2,
+   "wheelchair-rugby": 2,
+   "aerobatics": 1,
+   "aeronautics": 1,
+   "ball-hockey": 1,
+   "ballooning": 1,
+   "beach-games": 1,
+   "beach-tennis": 1,
+   "bocce": 1,
+   "boccia": 1,
+   "channel-one-cup-football": 1,
+   "counter-strike-2": 1,
+   "cp-football": 1,
+   "croquet": 1,
+   "dancesport": 1,
+   "downhill-mountain-biking": 1,
+   "finswimming": 1,
+   "fistball": 1,
+   "flat-racing": 1,
+   "freeskiing": 1,
+   "freestyle-bmx": 1,
+   "grand-prix-motor-racing": 1,
+   "heliskiing": 1,
+   "high-diving": 1,
+   "hurling": 1,
+   "indoor-rowing": 1,
+   "indoor-soccer": 1,
+   "international-draughts": 1,
+   "karuta": 1,
+   "lifesaving": 1,
+   "military-patrol": 1,
+   "minifootball": 1,
+   "mountaineering": 1,
+   "multisport-sport": 1,
+   "netball": 1,
+   "padel": 1,
+   "para-archery": 1,
+   "para-ice-hockey": 1,
+   "para-taekwondo": 1,
+   "polo": 1,
+   "powerlifting": 1,
+   "professional-bodybuilding": 1,
+   "robot-combat": 1,
+   "running": 1,
+   "savate": 1,
+   "sepak-takraw": 1,
+   "seven-a-side-football": 1,
+   "ski-orienteering": 1,
+   "slap": 1,
+   "snowboard-cross": 1,
+   "standing-volleyball": 1,
+   "street-hockey": 1,
+   "summer-biathlon": 1,
+   "sumo": 1,
+   "teqball": 1,
+   "three-cushion-billiards": 1,
+   "twenty20-cricket": 1,
+   "water-skiing": 1,
+   "water-sport": 1,
+   "winter-pentathlon": 1,
+   "yacht-racing": 1
+  },
+  "factsByKind": {
+   "competition-start": 11862,
+   "competition-end": 11748,
+   "sport-event": 4907
+  }
+ },
+ "sources": [
+  {
+   "sourceId": "wikidata",
+   "licence": "CC0 1.0",
+   "attribution": "Wikidata contributors, CC0.",
+   "facts": 97928,
+   "share": 0.7722
+  },
+  {
+   "sourceId": "wikipedia",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia contributors, CC BY-SA 4.0.",
+   "facts": 18130,
+   "share": 0.143
+  },
+  {
+   "sourceId": "retrosheet",
+   "licence": "LicenseRef-Retrosheet",
+   "attribution": "The information used here was obtained free of charge from and is copyrighted by Retrosheet. Interested parties may contact Retrosheet at www.retrosheet.org.",
+   "facts": 9439,
+   "share": 0.0744
+  },
+  {
+   "sourceId": "nflverse",
+   "licence": "CC BY 4.0",
+   "attribution": "nflverse contributors, CC BY 4.0.",
+   "facts": 814,
+   "share": 0.0064
+  },
+  {
+   "sourceId": "jfjelstul_worldcup",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Joshua C. Fjelstul, The Fjelstul World Cup Database, CC BY-SA 4.0.",
+   "facts": 159,
+   "share": 0.0013
+  },
+  {
+   "sourceId": "wikipedia_daily",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia contributors, CC BY-SA 4.0.",
+   "facts": 144,
+   "share": 0.0011
+  },
+  {
+   "sourceId": "openfootball_mls",
+   "licence": "CC0 1.0",
+   "attribution": "openfootball contributors, CC0.",
+   "facts": 128,
+   "share": 0.001
+  },
+  {
+   "sourceId": "wikipedia_mls",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia contributors, CC BY-SA 4.0.",
+   "facts": 61,
+   "share": 0.0005
+  },
+  {
+   "sourceId": "openfootball_worldcup",
+   "licence": "CC0 1.0",
+   "attribution": "openfootball contributors, CC0.",
+   "facts": 7,
+   "share": 0.0001
+  }
+ ],
+ "extracts": [
+  {
+   "name": "data-sources/disputed-dates.json",
+   "sha256": "fa778a0bac2648a3c378bcc0af72f7696b64b8f6eb44e025c9ffe87e37ee3867",
+   "bytes": 60824,
+   "modified": null
+  },
+  {
+   "name": "data-sources/game-corrections.json",
+   "sha256": "cef03355e4ee0b0c5f35c435613cde1265f49fe1c7912be95c67f7ed277ab984",
+   "bytes": 555,
+   "modified": null
+  },
+  {
+   "name": "data-sources/para-sports.json",
+   "sha256": "e6555b96c35f1029af4371a98fbf6ddda160b2eddc35a73614752fac05424fd9",
+   "bytes": 8053,
+   "modified": null
+  },
+  {
+   "name": "data-sources/people-profiles.csv",
+   "sha256": "42c5f3dd1e88919ff0b31319cef3c99f6cf7332235c40d2d2ec5210e89e21121",
+   "bytes": 163542,
+   "modified": null
+  },
+  {
+   "name": "data-sources/people.csv",
+   "sha256": "a6a9b44f7eac04318ff6378ddd25bfd3b11b2ae06c5b0818b0b18e794c4a9681",
+   "bytes": 300101,
+   "modified": null
+  },
+  {
+   "name": "data-sources/priority-athletes.csv",
+   "sha256": "f6bb20209b2ae18a874550b75a8162304c87cd58307f728c8519fa7c7cf36dd6",
+   "bytes": 42869,
+   "modified": null
+  },
+  {
+   "name": "data-sources/priority-facts.jsonl",
+   "sha256": "306d70608c765cc190c93ee9183ecb74953e9ae0aac6b8f53dd158f02e51e759",
+   "bytes": 970344,
+   "modified": null
+  },
+  {
+   "name": "data-sources/trophies.json",
+   "sha256": "11ffaaf1b11996b4844a51ffc5750dd39050aa6d4ad60297097071777ba5adb7",
+   "bytes": 1958,
+   "modified": null
+  },
+  {
+   "name": "extract_all_star.json",
+   "sha256": "66eb9c083871fda0d0b03fe20764042eeafa6f0a7da5361e9fa7905a8f9e305d",
+   "bytes": 257759,
+   "modified": "2026-11-03"
+  },
+  {
+   "name": "extract_awards_season.json",
+   "sha256": "8a87d7d3160c64b8024a99d3343d5fb917847fa806929e7b256a916250276c49",
+   "bytes": 10992933,
+   "modified": "2026-11-03"
+  },
+  {
+   "name": "extract_dated_names.json",
+   "sha256": "1c379bc9a3b5f6d0846e7eaf8b841d2e8d42449cc6e93b0fda551b5b5eef8429",
+   "bytes": 1284237,
+   "modified": "2026-11-03"
+  },
+  {
+   "name": "extract_deaths.json",
+   "sha256": "220dce7813def35f5da1766af61813590147aaa3ac0f897fc7fdca77b067a531",
+   "bytes": 6738820,
+   "modified": "2026-11-03"
+  },
+  {
+   "name": "extract_drafts.json",
+   "sha256": "da269a67dd3dd50fdaaa69d34629b7722d685bc35ba4f2031b30d0bdc9854b8d",
+   "bytes": 43,
+   "modified": "2026-11-03"
+  },
+  {
+   "name": "extract_final_context.json",
+   "sha256": "0a5e7ce4d3b2756c00a0aa63bef94d69bc22d7747e51018471c1637e228b22fc",
+   "bytes": 507286,
+   "modified": "2026-11-03"
+  },
+  {
+   "name": "extract_finals.json",
+   "sha256": "41bde9928bed03845dfdbb8b4601b074523133b48593f45fabf862a11c690ef7",
+   "bytes": 3108857,
+   "modified": "2026-11-03"
+  },
+  {
+   "name": "extract_franchise_events.json",
+   "sha256": "66c2e3ab22a7e62eced4ede5a9edb7e4c2a0130a18f0c69aeca4e6d0d34249b6",
+   "bytes": 4778564,
+   "modified": "2026-11-03"
+  },
+  {
+   "name": "extract_games_on_day.json",
+   "sha256": "fd21cc6448c4ad88934e449d932cf89de4f803fe0f0015d43bd0fbef5442463f",
+   "bytes": 640805751,
+   "modified": "2026-11-03"
+  },
+  {
+   "name": "extract_milestones.json",
+   "sha256": "32542bea8a589cc341f47e3988ce42a16918def340fe00df60e8c49c6695b0b7",
+   "bytes": 34790,
+   "modified": "2026-11-03"
+  },
+  {
+   "name": "extract_mlb_feats.json",
+   "sha256": "25a3fd2c5cba54f9e66f42f2dc29a6a69bfe445c7fa349081b07058eb4c01410",
+   "bytes": 81786,
+   "modified": "2026-11-03"
+  },
+  {
+   "name": "extract_nhl_career_records.json",
+   "sha256": "5945afa9d992e04fef615e2d7587bb5e24dd455083939040ee8fe90b3e06ec9c",
+   "bytes": 287196,
+   "modified": "2026-11-03"
+  },
+  {
+   "name": "extract_person_context.json",
+   "sha256": "1da1879368bbe16e75431a8ae51c33347d61a1831e0ca62deb963b77d0396bb8",
+   "bytes": 11172092,
+   "modified": "2026-11-03"
+  },
+  {
+   "name": "extract_person_jersey.json",
+   "sha256": "b153c37977902d68a1ef4bd4b0acfc5076bd73a1587d2138448b3e5eecfd32fb",
+   "bytes": 10583705,
+   "modified": "2026-11-02"
+  },
+  {
+   "name": "extract_retired_numbers.json",
+   "sha256": "00cb7cabd85a5c2c1a11abc5fcf6d4e00281b3fee44286814fff08ee72d93727",
+   "bytes": 210642,
+   "modified": "2026-11-02"
+  },
+  {
+   "name": "extract_soccer_on_day.json",
+   "sha256": "3b7a2cb5bfc3c9cfae8bcf898ede03e1ad358bb2dde66f565a6840ac4d0cc689",
+   "bytes": 33045796,
+   "modified": "2026-11-03"
+  },
+  {
+   "name": "extract_venue_openings.json",
+   "sha256": "06a8d8e476a79b3dd53531c4f02f12fd21a386d9b337cd4c3c34f0f4c7b13e98",
+   "bytes": 120404,
+   "modified": "2026-11-03"
+  },
+  {
+   "name": "extract_wikidata_dump_events.json",
+   "sha256": "607a068a9c17d34d943e6477758a70147e43a6475df3d46c55f583b0c33280e1",
+   "bytes": 13119825,
+   "modified": "2026-11-03"
+  },
+  {
+   "name": "extract_wikidata_dump_para.json",
+   "sha256": "f962aac920b43cfea5ae0fe54ea99152231ad6528df9745a2dfdcb380e9c6d03",
+   "bytes": 585883,
+   "modified": "2026-11-03"
+  },
+  {
+   "name": "extract_wikidata_dump_people.json",
+   "sha256": "0dda929551c5e7b1e4ff5c7a6dba4823cbda9174d1090f270f3a680ee687bf41",
+   "bytes": 38314316,
+   "modified": "2026-11-03"
+  },
+  {
+   "name": "extract_wikidata_links.json",
+   "sha256": "7ead7018051f57f48fb52eb9ff196d7f2f4f7b96992b7daafbd7a818c41d472f",
+   "bytes": 8654195,
+   "modified": "2026-11-03"
+  },
+  {
+   "name": "pipeline/ds1-people/spx-stats/db/seed/wikidata_meigen_bio.csv",
+   "sha256": "b12a99ed51e0d2fc0c3c1b6096f214952681b9326b4cdbc784472a1848a81e4b",
+   "bytes": 258316,
+   "modified": null
+  },
+  {
+   "name": "pipeline/ds1-people/spx-stats/db/seed/wikidata_meigen_wiki_page.csv",
+   "sha256": "db431afa983739881f20056c8945326ba76f0961f0ac7868e6b945bb547119e9",
+   "bytes": 619900,
+   "modified": null
+  },
+  {
+   "name": "pipeline/golden/finals-check.json",
+   "sha256": "b07254e2cae648add046a6bff8a0163f00188712dcae0a0b6a59e9e558abc816",
+   "bytes": 41004,
+   "modified": null
+  },
+  {
+   "name": "player-birthday-candidates.json",
+   "sha256": "700d8572c26c4b381afff87edac420081520c9835f963fcb45ab8e01110571fa",
+   "bytes": 21416095,
+   "modified": "2026-11-03"
+  }
+ ],
+ "quotations": {
+  "total": 30,
+  "bySource": {
+   "gitenberg": 22,
+   "wikiquote": 8
+  }
+ },
+ "offline": {
+  "records": 1525,
+  "days": 366,
+  "minPerDay": 4,
+  "maxPerDay": 5,
+  "shareOfFacts": 0.012
+ },
+ "gaps": {
+  "thresholds": {
+   "day": 150,
+   "sport": 10,
+   "league": 100,
+   "decade": 500
+  },
+  "thinSports": {
+   "aerobatics": 1,
+   "australian-drivers-championship": 1,
+   "ball-hockey": 1,
+   "ballooning": 1,
+   "box-lacrosse": 1,
+   "channel-one-cup-football": 1,
+   "cp-football": 1,
+   "crossfit": 1,
+   "cycling-esports": 1,
+   "dancesport": 1,
+   "english-billiards": 1,
+   "finswimming": 1,
+   "fishing": 1,
+   "flat-racing": 1,
+   "grand-prix-motor-racing": 1,
+   "heliskiing": 1,
+   "indoor-rowing": 1,
+   "jet-wing": 1,
+   "military-patrol": 1,
+   "mountain-bike-trials": 1,
+   "muscle-propelled-water-sport": 1,
+   "obstacle-course-racing": 1,
+   "petanque": 1,
+   "racquetball": 1,
+   "sanda": 1,
+   "ski-jumping-coach": 1,
+   "snowmobile": 1,
+   "speed-climbing": 1,
+   "sprint-canoe": 1,
+   "street-hockey": 1,
+   "submission-grappling": 1,
+   "summer-biathlon": 1,
+   "tumbling": 1,
+   "twenty20-cricket": 1,
+   "ultra-distance-cycling": 1,
+   "water-skiing": 1,
+   "waterskiing": 1,
+   "wingsuit": 1,
+   "yacht-racing": 1,
+   "aeronautics": 2,
+   "arm-wrestling": 2,
+   "beach-games": 2,
+   "beach-tennis": 2,
+   "bocce": 2,
+   "capoeira": 2,
+   "counter-strike-2": 2,
+   "downhill-mountain-biking": 2,
+   "drag-racing": 2,
+   "endurance-motor-racing": 2,
+   "fistball": 2,
+   "free-climbing": 2,
+   "freeskiing": 2,
+   "freestyle-bmx": 2,
+   "grappling": 2,
+   "ice-climbing": 2,
+   "indoor-soccer": 2,
+   "indycar": 2,
+   "international-draughts": 2,
+   "karuta": 2,
+   "lifesaving": 2,
+   "minifootball": 2,
+   "motorcycle-trials": 2,
+   "multisport-sport": 2,
+   "pickleball": 2,
+   "professional-bodybuilding": 2,
+   "race-walking": 2,
+   "real-tennis": 2,
+   "robot-combat": 2,
+   "rodeo": 2,
+   "running": 2,
+   "savate": 2,
+   "sepak-takraw": 2,
+   "seven-a-side-football": 2,
+   "shogi": 2,
+   "ski-orienteering": 2,
+   "slap": 2,
+   "snowboard-cross": 2,
+   "supercross": 2,
+   "teqball": 2,
+   "three-cushion-billiards": 2,
+   "trials-cycling": 2,
+   "ultrarunning": 2,
+   "water-sport": 2,
+   "wing-chun": 2,
+   "winter-pentathlon": 2,
+   "artistic-roller-skating": 3,
+   "collegiate-wrestling": 3,
+   "freerunning": 3,
+   "freestyle-motocross": 3,
+   "para-cross-country-skiing": 3,
+   "speedway": 3,
+   "trail-running": 3,
+   "ultra-trail": 3,
+   "beach-sports": 4,
+   "high-diving": 4,
+   "jeu-de-paume": 4,
+   "league-of-legends": 4,
+   "padel": 4,
+   "para-climbing": 4,
+   "para-shooting": 4,
+   "pool": 4,
+   "rackets": 4,
+   "roque": 4,
+   "ski-flying": 4,
+   "strongman": 4,
+   "air-racing": 5,
+   "carom-billiards": 5,
+   "gaelic-football": 5,
+   "kite-surfing": 5,
+   "para-archery": 5,
+   "para-equestrian": 5,
+   "parkour": 5,
+   "wheelchair-racing": 5,
+   "aerobic-gymnastics": 6,
+   "canoe-slalom": 6,
+   "dressage": 6,
+   "field-lacrosse": 6,
+   "hurdling": 6,
+   "hurling": 6,
+   "kabaddi": 6,
+   "korfball": 6,
+   "netball": 6,
+   "sambo": 6,
+   "ten-pin-bowling": 6,
+   "tenpin-bowling": 6,
+   "combat-sport": 7,
+   "full-contact-karate": 7,
+   "jujutsu": 7,
+   "beach-handball": 8,
+   "cross-country-running": 8,
+   "freediving": 8,
+   "goalball": 8,
+   "indoor-athletics": 8,
+   "muay-thai": 8,
+   "powerboating": 8,
+   "rallycross": 8,
+   "roller-hockey": 8,
+   "show-jumping": 8,
+   "skydiving": 8,
+   "cue-sports": 9,
+   "para-biathlon": 9,
+   "standing-volleyball": 9,
+   "wheelchair-rugby": 9
+  },
+  "thinLeagues": {
+   "wchl": 5,
+   "pwhl": 11,
+   "fl": 32,
+   "pcha": 45,
+   "ua": 47,
+   "nwsl": 52,
+   "pl": 64,
+   "wwc": 68
+  },
+  "thinDecades": {
+   "1850s": 71,
+   "1860s": 176
+  },
+  "notes": [
+   {
+    "id": "nhl-600th-goal",
+    "status": "waiting",
+    "en": "The 600th NHL goal and four-goal games are not published: English Wikipedia has no complete list of either.",
+    "ja": "NHLの通算600号ゴールと、1試合4ゴールの試合は載せていません。英語版ウィキペディアに、どちらも全部をそろえた一覧がないためです。"
+   },
+   {
+    "id": "para-second-pass",
+    "status": "partial",
+    "en": "Para sports have a first pass only (29 sports, famous people and dated events). Records and results are not in the filtered Wikidata dump, so no one is chosen by a record alone.",
+    "ja": "パラスポーツは第1段階だけです（29競技、有名な人と日付のある大会）。記録と結果はWikidataの絞り込みデータにないため、記録だけで人を選ぶことはしていません。"
+   },
+   {
+    "id": "drafts",
+    "status": "waiting",
+    "en": "No draft facts: the SPX database holds no draft rows yet.",
+    "ja": "ドラフトの事実はありません。SPXのデータベースに、ドラフトのデータがまだないためです。"
+   },
+   {
+    "id": "awards",
+    "status": "partial",
+    "en": "Only a few award facts (the awards of the SPX database that carry a date). Most awards appear on the winner's birthday facts, not as facts of their own.",
+    "ja": "賞の事実は少しだけです（日付のあるSPXデータベースの賞のみ）。多くの賞は、受賞者の誕生日の事実の中に出ます。"
+   },
+   {
+    "id": "before-1850",
+    "status": "not-planned",
+    "en": "Nothing before 1850: the oldest fact is from the 1850s and the 1850s and 1860s hold very few.",
+    "ja": "1850年より前のものはありません。いちばん古い事実は1850年代で、1850年代と1860年代はとても少ないです。"
+   },
+   {
+    "id": "quotations",
+    "status": "partial",
+    "en": "The quotations are a small starter collection; no modern quotation is invented or used without its rights checked.",
+    "ja": "名言は少ない初期データだけです。現代の発言をつくることや、権利を確認しないで使うことはしません。"
+   },
+   {
+    "id": "merged-games",
+    "status": "partial",
+    "en": "About a dozen MLB and NBA games of 2004 to 2008 (second games of doubleheaders, a suspended World Series game) are not published: DS1 merged their Retrosheet rows into SPX rows, and an SPX row is not a publishable source here.",
+    "ja": "2004年から2008年のMLBとNBAの試合のうち十数件（ダブルヘッダーの2試合目、中断されたワールドシリーズの試合）は載せていません。DS1でRetrosheetの行がSPXの行にまとめられ、SPXの行は、ここでは公開できる出典ではないためです。"
+   }
+  ]
+ },
+ "rules": [
+  {
+   "id": "fame",
+   "en": "A person is published when Wikipedia (and other wikis) have at least 30 editions about him, or, below that, he is among the best two of his sport on that calendar day and kind (birth or death) with at least 10 editions. An Olympic medal or a Hall of Fame counts five editions more. Para sports: a medal, a title, a Hall of Fame, or many Games, with fewer editions needed.",
+   "ja": "ウィキペディア（ほかの言語版も含む）に30以上の版がある人を載せます。それより少なくても、その日・その競技・誕生か死去ごとに上位2人までは、10以上の版があれば載せます。五輪のメダルや殿堂入りは、版が5つ多いものとして数えます。パラスポーツは、メダル・タイトル・殿堂入り・出場回数などで、必要な版の数が少なくなります。"
+  },
+  {
+   "id": "sensitive",
+   "en": "Never recorded: sex or gender, ethnicity, religion, health (no impairment, class code or diagnosis), family, politics. A para sport is named by its own name only.",
+   "ja": "次のことは記録しません。性別、民族、宗教、健康（障がいの種類、クラス記号、診断）、家族、政治。パラスポーツは競技の名前だけを書きます。"
+  },
+  {
+   "id": "death-unknown",
+   "en": "A person without a death date is shown as not known to be deceased, never as living.",
+   "ja": "死去の日付がない人は「亡くなったことが分かっていない人」として扱い、「存命」とは書きません。"
+  },
+  {
+   "id": "dates",
+   "en": "Only exact days (Gregorian, from 1850, not 1 January from Wikidata alone). Where Wikidata holds two equal dates, the fact is marked as disputed.",
+   "ja": "載せるのは正確な日だけです（グレゴリオ暦、1850年から。Wikidataだけの1月1日は載せません）。Wikidataに同じ重みの日付が2つあるときは、「諸説あり」と示します。"
+  },
+  {
+   "id": "sources",
+   "en": "Open sources only, each with its licence kept: Wikidata (CC0), Wikipedia (CC BY-SA 4.0), Retrosheet (its notice), nflverse (CC BY 4.0), openfootball (CC0). Never Sports Reference, ESPN or NHL endpoints.",
+   "ja": "公開されたデータだけを使い、ライセンスはそれぞれ守ります。Wikidata（CC0）、ウィキペディア（CC BY-SA 4.0）、Retrosheet（その表示）、nflverse（CC BY 4.0）、openfootball（CC0）。Sports Reference、ESPN、NHLのAPIは使いません。"
+  }
+ ]
+}

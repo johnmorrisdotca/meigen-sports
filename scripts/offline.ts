@@ -34,7 +34,7 @@ export function manifestDigest(bytes: Uint8Array): string {
   return digest(Buffer.from(Buffer.from(bytes).toString("utf8").replaceAll("\r\n", "\n")));
 }
 
-function loadFacts(dataVersion: string): { records: OnThisDayRecord[]; manifest: string } {
+export function loadFacts(dataVersion: string): { records: OnThisDayRecord[]; manifest: string } {
   const dir = resolve(ROOT, `data/v1/${dataVersion}/facts`);
   const manifest = readFileSync(resolve(dir, "manifest.json"));
   const records: OnThisDayRecord[] = [];

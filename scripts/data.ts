@@ -3,7 +3,8 @@ import { mkdirSync, readFileSync, writeFileSync, existsSync, unlinkSync } from "
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { mergeHistoryEvents } from "../src/mergeEvents.ts";
-import { buildOffline } from "./offline.ts";
+import { buildOffline, loadFacts } from "./offline.ts";
+import { buildCatalogue, readCatalogueSources } from "./catalogue.ts";
 import type { OfflineBuild } from "./offline.ts";
 import type { Citation, EntityRef, FeedManifest, FeedShard, MeigenRecord } from "../src/types.ts";
 
@@ -202,6 +203,7 @@ export function generate(check = false): { records: number; files: number; merge
     quotes: "/**\n * The bundled quotations, each with its source and the reasoning for why its words may be published.\n * @example\n * ```ts\n * import { quotes } from \"@johnmorrisdotca/meigen-sports/quotes\";\n * console.log(quotes.length > 0);\n * ```\n */\n",
     history: "/**\n * The bundled history rows: dated events, each with its source.\n * @example\n * ```ts\n * import { history } from \"@johnmorrisdotca/meigen-sports/history\";\n * console.log(history.length > 0);\n * ```\n */\n",
   };
+  outputs.set(`data/v1/${DATA_VERSION}/catalogue.json`, `${JSON.stringify(buildCatalogue({ facts: loadFacts(DATA_VERSION).records, records: [...quotes, ...history], offline: offline.records, offlineBuild: offline.build, packageVersion, ...(readCatalogueSources()) }), null, 1)}\n`);
   outputs.set("data/v1/latest.json", format(latestPointer(offline.build, packageVersion)));
   outputs.set(`data/v1/${DATA_VERSION}/offline.json`, format({ schemaVersion: 1, dataVersion: DATA_VERSION, build: offline.build, records: offline.records }));
   outputs.set("src/data/offline.ts", `// Built by scripts/offline.ts from the on-this-day facts under data/v1/${DATA_VERSION}/facts. Do not edit by hand.\nimport type { OnThisDayRecord } from "../schema.ts";\n\n${DOCS.build}export const OFFLINE_BUILD = ${JSON.stringify(offline.build)} as const;\n\n${DOCS.offline}export const offline: readonly OnThisDayRecord[] = [\n${offline.records.map((r) => JSON.stringify(r)).join(",\n")},\n];\nexport default offline;\n`);

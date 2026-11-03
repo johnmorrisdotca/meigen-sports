@@ -5,6 +5,7 @@ export type {
   OnThisDayRecord, PersonRef, RecordEventKind, RecordProgression, TeamRef,
 } from "./schema.ts";
 export { EXTRACT_CATEGORIES, FACT_CATEGORIES } from "./schema.ts";
+export type { Catalogue, CatalogueCounts } from "./catalogue.ts";
 export { SCHEMA_VERSION, VERSION } from "./version.ts";
 export { CALENDAR_THEMES, CALENDAR_THEME_ALIASES, CALENDAR_THEME_LABELS, calendarIcon, calendarMoon, calendarThemeOf, calendarWeekend } from "./calendarIcon.ts";
 export type { CalendarDate, CalendarIconOptions, CalendarTheme } from "./calendarIcon.ts";

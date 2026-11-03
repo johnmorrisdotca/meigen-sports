@@ -6,7 +6,7 @@
 // served: the pages are written straight into the browser, so no port is used.
 //
 //   node scripts/showcase-images.ts                    all of them (needs the site built, for its fact files: `pnpm images:showcase` builds it first)
-//   ONLY=hero-icons,themes node scripts/showcase-images.ts   some of them (hero-icons, themes, tearoff, layouts, today, banners, sports, gallery, centre)
+//   ONLY=hero-icons,themes node scripts/showcase-images.ts   some of them (hero-icons, themes, tearoff, layouts, today, banners, sports, gallery, centre, catalogue)
 //   THEMES=sun,roll                                    the gallery sheets of these themes only
 //   IMAGES_OUT=dir                                     writes somewhere else than docs/images
 //   SLOW=2                                             how many times longer than a scene says each step of a moving picture stays (2: half the speed)
@@ -19,6 +19,10 @@ import { chromium } from "@playwright/test";
 import type { Page } from "@playwright/test";
 import { CALENDAR_THEME_LABELS, CALENDAR_THEMES, calendarIcon, calendarWeekend, displayMarkup, rankFeed, renderRun } from "../src/index.ts";
 import type { CalendarTheme, OnThisDayRecord } from "../src/index.ts";
+import type { Catalogue } from "../src/catalogue.ts";
+import { barChart, columnChart, dayHeatmap, shareBar } from "../demo/charts.ts";
+import type { Labels } from "../demo/charts.ts";
+import { catalogueWords } from "./catalogue-words.ts";
 
 const root = new URL("..", import.meta.url).pathname;
 const facts = join(root, "site", "data", "v1", "0.1.0", "facts");
@@ -88,6 +92,7 @@ h3{margin:0 0 12px;font-size:20px;letter-spacing:-.01em}
 .card p.s{font-size:22px;line-height:1.4;margin:6px 0 8px}
 .small .card p.s{font-size:17px}
 .dark-band{background:#161816;color:#ece8dc;--ink:#ece8dc;--muted:#a09d93;--rule:#3a3d38;--surface:#1d201e;border-radius:16px;padding:16px 18px}
+${readFileSync(new URL("../demo/site.css", import.meta.url), "utf8").split("\n").filter((line) => /^\.(chart|ch-|cat-)|^figure|^\.chart/.test(line)).join("\n")}
 .light-band{background:#fbf8f1;color:#1f2320;--ink:#1f2320;--muted:#6b6f68;--rule:#ddd6c6;--surface:#fbf8f1;border-radius:16px;padding:16px 18px;border:1px solid #ddd6c6}
 `;
 const CSS = readFileSync(join(root, "styles.css"), "utf8");
@@ -284,6 +289,20 @@ async function centre(): Promise<void> {
   }
 }
 
+// ----- What is inside: four of the catalogue page's charts, drawn by the page's own chart code from catalogue.json.
+async function catalogue(): Promise<void> {
+  const data = JSON.parse(readFileSync(join(root, "data/v1/0.1.0/catalogue.json"), "utf8")) as Catalogue;
+  const words = catalogueWords("en");
+  const labels: Labels = { name: (kind, key) => words[`${kind}-${key}`] ?? key.replaceAll("-", " "), month: (m) => new Date(Date.UTC(2024, m, 1)).toLocaleDateString("en", { month: "short", timeZone: "UTC" }), other: "", facts: "" };
+  const kinds = Object.entries(data.byKind).slice(0, 8).map(([key, value]) => ({ key, label: labels.name("kind", key), value }));
+  const decades = Object.entries(data.byDecade).map(([label, value]) => ({ label, value }));
+  const parts = data.sources.slice(0, 4).map((s) => ({ label: labels.name("source", s.sourceId), value: s.facts }));
+  const panel = (title: string, svg: string): string => `<div class="panel"><h3>${escape(title)}</h3>${svg}</div>`;
+  await twin("catalogue", () => `<div class="catalogue-sheet"><p class="kind">${data.totals.facts.toLocaleString("en-US")} facts, ${data.people.total.toLocaleString("en-US")} people, ${data.sources.length} sources</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">${panel(words["chKinds"]!, barChart(kinds, "Facts by kind"))}${panel(words["chDecades"]!, columnChart(decades, "Facts by decade"))}</div>
+<div style="margin-top:14px">${panel(words["chDays"]!, dayHeatmap(data, labels, "Facts on each day"))}</div><div style="margin-top:14px">${panel(words["chSources"]!, `${shareBar(parts, "Sources")}<p class="cat-legend-list">${data.sources.slice(0, 4).map((src, i) => `<span><span class="ch-key ch-s${i}"></span>${escape(labels.name("source", src.sourceId))} ${(src.share * 100).toFixed(1)}%</span>`).join(" ")}</p>`)}</div></div>`);
+}
+
 const work = mkdtempSync(join(tmpdir(), "meigen-showcase-"));
 try {
   if (wanted("hero-icons")) await heroIcons();
@@ -295,6 +314,7 @@ try {
   if (wanted("sports")) await sports();
   if (wanted("gallery")) await gallery();
   if (wanted("centre")) await centre();
+  if (wanted("catalogue")) await catalogue();
 } finally {
   await browser.close();
   rmSync(work, { recursive: true, force: true });

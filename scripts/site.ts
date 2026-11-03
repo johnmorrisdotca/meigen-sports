@@ -1,8 +1,9 @@
 import { cpSync, existsSync, mkdirSync, rmSync, writeFileSync, readFileSync } from "node:fs";
 import { build } from "esbuild";
-import { renderIndex, renderSources } from "./page.ts";
+import { renderCatalogue, renderIndex, renderSources } from "./page.ts";
 rmSync("site", { recursive: true, force: true }); mkdirSync("site", { recursive: true });
 writeFileSync("site/index.html", renderIndex());
+writeFileSync("site/catalogue.html", renderCatalogue());
 for (const file of ["family.css", "site.css"]) cpSync(`demo/${file}`, `site/${file}`);
 cpSync("styles.css", "site/styles.css");
 cpSync("data", "site/data", { recursive: true }); cpSync("LICENSES", "site/LICENSES", { recursive: true });
@@ -24,6 +25,7 @@ writeFileSync("site/sources.html", renderSources(readFileSync("NOTICE.md", "utf8
 await build({ entryPoints: ["demo/demo.ts"], outfile: "site/demo.js", bundle: true, format: "esm", target: "es2022", minify: true });
 // The family header's language picker and theme switch as one small module, for the documentation site's pages (scripts/docs-site.mjs loads /kazoku-parts.js).
 await build({ stdin: { contents: 'import "@johnmorrisdotca/kazoku-ui/language-picker/define";\nimport "@johnmorrisdotca/kazoku-ui/theme-switch/define";\n', resolveDir: process.cwd() }, outfile: "site/kazoku-parts.js", bundle: true, format: "esm", minify: true, logLevel: "silent" });
+await build({ entryPoints: ["demo/catalogue.ts"], outfile: "site/catalogue.js", bundle: true, format: "esm", target: "es2022", minify: true });
 // The frame a page puts in an iframe: its own page and script, drawing what its address says.
 cpSync("demo/embed.html", "site/embed.html");
 await build({ entryPoints: ["demo/embed.ts"], outfile: "site/embed.js", bundle: true, format: "esm", target: "es2022", minify: true });

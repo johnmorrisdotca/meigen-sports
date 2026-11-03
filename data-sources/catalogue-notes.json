@@ -1,0 +1,73 @@
+{
+  "gaps": [
+    {
+      "id": "nhl-600th-goal",
+      "status": "waiting",
+      "en": "The 600th NHL goal and four-goal games are not published: English Wikipedia has no complete list of either.",
+      "ja": "NHLの通算600号ゴールと、1試合4ゴールの試合は載せていません。英語版ウィキペディアに、どちらも全部をそろえた一覧がないためです。"
+    },
+    {
+      "id": "para-second-pass",
+      "status": "partial",
+      "en": "Para sports have a first pass only (29 sports, famous people and dated events). Records and results are not in the filtered Wikidata dump, so no one is chosen by a record alone.",
+      "ja": "パラスポーツは第1段階だけです（29競技、有名な人と日付のある大会）。記録と結果はWikidataの絞り込みデータにないため、記録だけで人を選ぶことはしていません。"
+    },
+    {
+      "id": "drafts",
+      "status": "waiting",
+      "en": "No draft facts: the SPX database holds no draft rows yet.",
+      "ja": "ドラフトの事実はありません。SPXのデータベースに、ドラフトのデータがまだないためです。"
+    },
+    {
+      "id": "awards",
+      "status": "partial",
+      "en": "Only a few award facts (the awards of the SPX database that carry a date). Most awards appear on the winner's birthday facts, not as facts of their own.",
+      "ja": "賞の事実は少しだけです（日付のあるSPXデータベースの賞のみ）。多くの賞は、受賞者の誕生日の事実の中に出ます。"
+    },
+    {
+      "id": "before-1850",
+      "status": "not-planned",
+      "en": "Nothing before 1850: the oldest fact is from the 1850s and the 1850s and 1860s hold very few.",
+      "ja": "1850年より前のものはありません。いちばん古い事実は1850年代で、1850年代と1860年代はとても少ないです。"
+    },
+    {
+      "id": "quotations",
+      "status": "partial",
+      "en": "The quotations are a small starter collection; no modern quotation is invented or used without its rights checked.",
+      "ja": "名言は少ない初期データだけです。現代の発言をつくることや、権利を確認しないで使うことはしません。"
+    },
+    {
+      "id": "merged-games",
+      "status": "partial",
+      "en": "About a dozen MLB and NBA games of 2004 to 2008 (second games of doubleheaders, a suspended World Series game) are not published: DS1 merged their Retrosheet rows into SPX rows, and an SPX row is not a publishable source here.",
+      "ja": "2004年から2008年のMLBとNBAの試合のうち十数件（ダブルヘッダーの2試合目、中断されたワールドシリーズの試合）は載せていません。DS1でRetrosheetの行がSPXの行にまとめられ、SPXの行は、ここでは公開できる出典ではないためです。"
+    }
+  ],
+  "rules": [
+    {
+      "id": "fame",
+      "en": "A person is published when Wikipedia (and other wikis) have at least 30 editions about him, or, below that, he is among the best two of his sport on that calendar day and kind (birth or death) with at least 10 editions. An Olympic medal or a Hall of Fame counts five editions more. Para sports: a medal, a title, a Hall of Fame, or many Games, with fewer editions needed.",
+      "ja": "ウィキペディア（ほかの言語版も含む）に30以上の版がある人を載せます。それより少なくても、その日・その競技・誕生か死去ごとに上位2人までは、10以上の版があれば載せます。五輪のメダルや殿堂入りは、版が5つ多いものとして数えます。パラスポーツは、メダル・タイトル・殿堂入り・出場回数などで、必要な版の数が少なくなります。"
+    },
+    {
+      "id": "sensitive",
+      "en": "Never recorded: sex or gender, ethnicity, religion, health (no impairment, class code or diagnosis), family, politics. A para sport is named by its own name only.",
+      "ja": "次のことは記録しません。性別、民族、宗教、健康（障がいの種類、クラス記号、診断）、家族、政治。パラスポーツは競技の名前だけを書きます。"
+    },
+    {
+      "id": "death-unknown",
+      "en": "A person without a death date is shown as not known to be deceased, never as living.",
+      "ja": "死去の日付がない人は「亡くなったことが分かっていない人」として扱い、「存命」とは書きません。"
+    },
+    {
+      "id": "dates",
+      "en": "Only exact days (Gregorian, from 1850, not 1 January from Wikidata alone). Where Wikidata holds two equal dates, the fact is marked as disputed.",
+      "ja": "載せるのは正確な日だけです（グレゴリオ暦、1850年から。Wikidataだけの1月1日は載せません）。Wikidataに同じ重みの日付が2つあるときは、「諸説あり」と示します。"
+    },
+    {
+      "id": "sources",
+      "en": "Open sources only, each with its licence kept: Wikidata (CC0), Wikipedia (CC BY-SA 4.0), Retrosheet (its notice), nflverse (CC BY 4.0), openfootball (CC0). Never Sports Reference, ESPN or NHL endpoints.",
+      "ja": "公開されたデータだけを使い、ライセンスはそれぞれ守ります。Wikidata（CC0）、ウィキペディア（CC BY-SA 4.0）、Retrosheet（その表示）、nflverse（CC BY 4.0）、openfootball（CC0）。Sports Reference、ESPN、NHLのAPIは使いません。"
+    }
+  ]
+}
