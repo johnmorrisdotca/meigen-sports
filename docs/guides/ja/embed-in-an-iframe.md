@@ -36,7 +36,11 @@ description: 埋め込みページの iframe で、どのページにもその�
 | `theme` | [カレンダーのテーマ](api:CALENDAR_THEMES) 18種類のどれか (`pins`、`desk`、`flip` など) | `pins` |
 | `lang` | `en` または `ja` | `en` |
 | `layout` | `calendar`、`years`、`compact`、`featured` ([並べ方](api:DISPLAY_LAYOUTS)) | `calendar` |
-| `sport` | `ice-hockey` のような競技 | すべての競技 |
+| `sport` | `ice-hockey` のような競技 (その競技の、この日の上位の事実) | すべての競技 |
+| `league` | `nhl` や `cfl` のようなリーグ (そのリーグの、この日の上位の事実) | すべてのリーグ |
+| `mode` | `ranked` (有名な順)、`random` (ランダム)、`mixed` (有名な順に数件＋ランダム)。[事実の選び方](picking-facts.md)を見てください | `ranked` |
+| `fixed` | `mixed` のときだけ。有名な順に出す件数 | `n` の半分 (切り上げ) |
+| `seed` | `random` と `mixed` のとき。同じシードなら同じ事実 | 読み込むたびに新しいシード |
 | `n` | 1〜12 | 3 |
 | `scheme` | `light` または `dark` | 読む人の設定 |
 

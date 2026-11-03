@@ -76,7 +76,8 @@ export function kindTagsOf(record: OnThisDayRecord): string[] {
 
 function matches(record: OnThisDayRecord, filters: FactFilters): boolean {
   if (filters.sport && sportSlug(record.sport) !== sportSlug(filters.sport) && !(record.sport === filters.sport)) return false;
-  if (filters.league && record.league !== filters.league) return false;
+  // A person who played in several leagues (Gordie Howe: NHL and WHA) has no one league on his fact but belongs to each of them.
+  if (filters.league && record.league !== filters.league && !(record.person?.leagueCodes ?? []).includes(filters.league)) return false;
   if (filters.competition && record.competition !== filters.competition && record.league !== filters.competition) return false;
   if (filters.category && !tagsOf(record).includes(filters.category)) return false;
   if (filters.country) {
@@ -223,7 +224,15 @@ export function uniqueRecordIds(records: readonly OnThisDayRecord[]): boolean {
   return new Set(ids).size === ids.length;
 }
 
-/** The significance from which a fact is a legend: the caps of a list never hold it back. */
+/**
+ * The significance from which a fact is a legend: the caps of a list never hold it back, only the list's own length does.
+ * @example
+ * ```ts
+ * import { LEGEND, significance } from "@johnmorrisdotca/meigen-sports";
+ * import offline from "@johnmorrisdotca/meigen-sports/offline";
+ * console.log(offline.filter((record) => significance(record) >= LEGEND).length > 0);
+ * ```
+ */
 export const LEGEND = 85;
 
 /** The significance from which a sixth fact or a later one joins a day's best: a fame that fills the day. */
@@ -487,6 +496,94 @@ export function randomFacts(records: readonly OnThisDayRecord[], n: number, filt
     byCompetition.set(competition, (byCompetition.get(competition) ?? 0) + 1);
   }
   return picked;
+}
+
+/**
+ * How a pick is made: `ranked` takes the most famous, `random` a seeded draw from the whole pool, `mixed` the most famous `fixed` of them and a seeded draw for the rest.
+ * @example
+ * ```ts
+ * import type { PickMode } from "@johnmorrisdotca/meigen-sports";
+ * const mode: PickMode = "mixed";
+ * console.log(mode);
+ * ```
+ */
+export type PickMode = "ranked" | "random" | "mixed";
+
+/**
+ * The modes `pickFacts` knows, in the order a picker lists them.
+ * @example
+ * ```ts
+ * import { PICK_MODES } from "@johnmorrisdotca/meigen-sports";
+ * console.log(PICK_MODES.join(", "));
+ * ```
+ */
+export const PICK_MODES: readonly PickMode[] = ["ranked", "random", "mixed"];
+
+/**
+ * What `pickFacts` is asked for.
+ * @example
+ * ```ts
+ * import type { PickOptions } from "@johnmorrisdotca/meigen-sports";
+ * const options: PickOptions = { date: "2026-11-03", filters: { league: "nhl" }, n: 5, mode: "mixed", fixed: 2, seed: "morning" };
+ * console.log(options.n);
+ * ```
+ */
+export interface PickOptions {
+  /** The day: `YYYY-MM-DD` or `MM-DD`. Left out, every day of the records is in the pool. */
+  readonly date?: string;
+  /** Narrow the pool first (a sport, a league, a club, a person, a country ...); the pick is ranked within what is left. */
+  readonly filters?: FactFilters;
+  /** How many facts. Default 5. */
+  readonly n?: number;
+  /** Default `ranked`. */
+  readonly mode?: PickMode;
+  /** `mixed` only: how many of the `n` are the most famous, the same every time. Default half of `n`, rounded up. */
+  readonly fixed?: number;
+  /** `random` and `mixed`: the same seed gives the same facts. The package never reads a clock or a random number, so the caller makes a new seed for a fresh pick. */
+  readonly seed?: string;
+}
+
+/**
+ * Pick the facts of a day or of a filter. The pool is narrowed by the filters first and ranked after, so a fact far down the overall ranking
+ * (a CFL legend, a club's own hero) comes out on top of its narrow filter. `ranked` is the head of that ranking, `random` a seeded draw
+ * from the whole pool, `mixed` the `fixed` most famous and a seeded draw for the rest. The same input and seed always give the same facts.
+ * @param records - Facts to pick from: the offline set, or a day's facts from the Pages feeds.
+ * @param options - The day, the filters, how many, the mode, how many are fixed and the seed.
+ * @returns Up to `n` facts, the famous ones first.
+ * @example
+ * ```ts
+ * import { pickFacts } from "@johnmorrisdotca/meigen-sports";
+ * import offline from "@johnmorrisdotca/meigen-sports/offline";
+ * const famous = pickFacts(offline, { date: "2026-07-07", filters: { league: "nhl" }, n: 3 });
+ * const mixed = pickFacts(offline, { date: "2026-07-07", n: 5, mode: "mixed", fixed: 2, seed: "morning" });
+ * console.log(famous.length, mixed.length);
+ * ```
+ */
+export function pickFacts(records: readonly OnThisDayRecord[], options: PickOptions = {}): OnThisDayRecord[] {
+  const n = options.n ?? 5, mode = options.mode ?? "ranked", filters = options.filters ?? {};
+  if (!Number.isInteger(n) || n < 0) throw new RangeError("Expected n to be a whole number from zero");
+  if (!PICK_MODES.includes(mode)) throw new RangeError(`Expected a mode of ${PICK_MODES.join(", ")}`);
+  const fixed = mode === "mixed" ? options.fixed ?? Math.ceil(n / 2) : 0;
+  if (!Number.isInteger(fixed) || fixed < 0 || fixed > n) throw new RangeError("Expected fixed to be a whole number from zero to n");
+  if (mode !== "ranked" && !options.seed) throw new RangeError(`pickFacts in ${mode} mode requires an explicit seed`);
+  // In one fixed order, so the same seed picks the same facts however the caller's records are ordered.
+  const pool = factsFor(records, options.date ? { ...filters, date: options.date } : filters).filter(isRichFact).sort((a, b) => a.recordId.localeCompare(b.recordId));
+  // What the pool is already about is not capped: a league's pick may hold several facts of that league, a sport's several of that sport, a club's several of its own.
+  const exempt: string[] = [
+    ...(filters.league ? [`competition:${filters.league}`] : []),
+    ...(filters.competition ? [`competition:${filters.competition}`] : []),
+    ...(filters.sport ? [`sport:${filters.sport}`] : []),
+    ...(filters.team?.franchiseId != null ? [`f:${filters.team.franchiseId}`] : []),
+  ];
+  const filtered = Object.keys(filters).length > 0;
+  const sports = new Set(pool.map((record) => record.sport));
+  if (sports.size === 1 && pool[0]?.sport) exempt.push(`sport:${pool[0].sport}`);
+  const head = (count: number, among: readonly OnThisDayRecord[]): OnThisDayRecord[] => rankRecords(among, count, { ...DAY_LIST, exempt, minimum: filtered ? count : Math.min(3, count) });
+  if (mode === "ranked") return head(n, pool);
+  if (mode === "random") return randomFacts(pool, n, {}, options.seed!);
+  const top = head(fixed, pool);
+  const chosen = new Set(top.map((record) => record.recordId));
+  return [...top, ...randomFacts(pool.filter((record) => !chosen.has(record.recordId)), n - top.length, {}, options.seed!)];
 }
 
 /**

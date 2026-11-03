@@ -389,6 +389,33 @@ async function indexIds(folder: string, name: string, options: LoadOptions): Pro
 }
 
 /**
+ * The best facts of one league or one sport on a calendar day, as full facts, most famous first (`picks/`): up to twenty-four. The pool was narrowed to the league or the
+ * sport first and ranked after, so a fact far down the day's overall ranking (a CFL legend) leads its own league. A league or a sport with too few facts to have its own
+ * list (under 1,500 facts for a sport) answers with an empty list: read the day's feed and filter it. Feed it to `pickFacts` to take a mode and a seed.
+ * @param filter - A league code (`nhl`) or a sport slug (`ice-hockey`).
+ * @param date - `YYYY-MM-DD` or `MM-DD`.
+ * @param options - The public feed's base URL, its data version and the `fetch` to use.
+ * @returns The league's or the sport's best facts of that day, most famous first; empty when it has no list.
+ * @example
+ * ```ts
+ * import { loadFactPicks, type FetchFeed } from "@johnmorrisdotca/meigen-sports/load";
+ * const fetchFeed: FetchFeed = async (url) => ({ ok: true, status: 200, json: async () => (url.includes("/picks/") ? { schemaVersion: 1, dataVersion: "0.1.0", ids: [] } : { schemaVersion: 1, dataVersion: "0.1.0", records: [] }) });
+ * const options = { baseUrl: "https://example.test/", dataVersion: "0.1.0", fetch: fetchFeed };
+ * console.log(await loadFactPicks({ league: "nhl" }, "03-31", options));
+ * ```
+ */
+export async function loadFactPicks(filter: { readonly league?: string; readonly sport?: string }, date: string, options: LoadOptions): Promise<OnThisDayRecord[]> {
+  const kind = filter.league ? "league" : "sport", value = filter.league ?? filter.sport;
+  if (!value || !/^[A-Za-z0-9][A-Za-z0-9._-]*$/.test(value)) throw new RangeError("Expected a league code or a sport slug");
+  let ids: readonly string[];
+  try { ids = (await loadFactIndex(`picks/${kind}/${value}/${monthDayOf(date)}.json`, options)).ids; } catch (error) {
+    if (error instanceof RangeError || error instanceof TypeError) throw error;
+    return [];
+  }
+  return loadFactsById(ids, options);
+}
+
+/**
  * The ids of the facts about a country: the people or the teams of it (`country:RO`), an ISO 3166-1 alpha-2 code, or a former country's ISO 3166-3 code ("SUHH").
  * @param code - An ISO 3166-1 alpha-2 code such as `RO`, or an ISO 3166-3 code for a former country.
  * @param options - The public feed's base URL, its data version and the `fetch` to use.

@@ -1,11 +1,12 @@
 import { createAddressState } from "@johnmorrisdotca/kazoku-ui/address-state";
-import { CALENDAR_THEME_LABELS, CALENDAR_THEMES, calendarIcon, calendarThemeOf, calendarWeekend, dateNote, displayKind, displayLayoutOf, displayMarkup, DISPLAY_LAYOUTS, factsFor, quoteForDate, rankFeed, renderRun, tagsOf, wikipediaUrl } from "../src/index.ts";
+import { CALENDAR_THEME_LABELS, CALENDAR_THEMES, calendarIcon, calendarThemeOf, calendarWeekend, dateNote, displayKind, displayLayoutOf, displayMarkup, DISPLAY_LAYOUTS, factsFor, PICK_MODES, pickFacts, quoteForDate, rankFeed, renderRun, tagsOf, wikipediaUrl } from "../src/index.ts";
 import { quotes } from "../src/data/quotes.ts";
 import { OFFLINE_BUILD, offline } from "../src/data/offline.ts";
-import { loadFactDay, loadFactEventsDay, loadFactPeopleDay, loadFactShard, loadShard } from "../src/load.ts";
+import { loadFactDay, loadFactEventsDay, loadFactPeopleDay, loadFactPicks, loadFactShard, loadShard } from "../src/load.ts";
 import { startExplore } from "./explore.ts";
 import { bannerMark, flagMark, trophyMark } from "./marks.ts";
 import type { OnThisDayRecord } from "../src/schema.ts";
+import type { PickMode } from "../src/index.ts";
 import { pickVariedFacts } from "./variety.ts";
 import type { MeigenRecord } from "../src/types.ts";
 import type { Catalogue } from "../src/catalogue.ts";
@@ -27,6 +28,9 @@ const FAV_TAGS = [
 const date = document.querySelector<HTMLInputElement>("#date")!;
 const sport = document.querySelector<HTMLSelectElement>("#sport")!;
 const mode = document.querySelector<HTMLSelectElement>("#mode")!;
+const pick = document.querySelector<HTMLSelectElement>("#pick")!;
+const reshuffle = document.querySelector<HTMLButtonElement>("#reshuffle")!;
+const pickNote = document.querySelector<HTMLElement>("#pick-note")!;
 const includeSource = document.querySelector<HTMLSelectElement>("#include-source")!;
 const excludeSource = document.querySelector<HTMLSelectElement>("#exclude-source")!;
 const includeType = document.querySelector<HTMLSelectElement>("#include-type")!;
@@ -144,6 +148,11 @@ function localFeed() {
 // nothing else on the page stops it. A reader who prefers reduced motion is never played to by the pointer. `?gap=` is how long each fact stays, in milliseconds (12,000 unless it says; the tests shorten it).
 const addressed = new URLSearchParams(location.search);
 const address = createAddressState();
+// How the day's facts are chosen: Fixed (the most famous), Random or Mixed (the most famous few, then a random draw). The same `?seed=` gives the same picks; without one every load draws afresh.
+const PICK_FIXED = 3;
+const freshSeed = (): string => Math.random().toString(36).slice(2, 10);
+let pickSeed = /^[A-Za-z0-9_-]{1,40}$/.test(addressed.get("seed") ?? "") ? addressed.get("seed")! : freshSeed();
+pick.value = (PICK_MODES as readonly string[]).includes(addressed.get("pick") ?? "") ? addressed.get("pick")! : "mixed";
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const FACT_MS = Math.min(Math.max(Number(addressed.get("gap")) || 12000, 150), 60000);
 const todayPlay = document.querySelector<HTMLButtonElement>("#today-play")!;
@@ -436,7 +445,17 @@ async function render() {
     if (mode.value === "static") noteFeeds("find", fellBack);
     if (generation !== ownGeneration) return;
     const q = quoteForDate(quoteRecords, date.value, context);
-    const facts = rankFeed(sport.value ? factsFor(dayFacts, { sport: sport.value }) : dayFacts, FIND_COUNT);
+    // Filter first, rank after: the sport's own best of the day, never the day's best cut down to a sport.
+    let pool: readonly OnThisDayRecord[] = dayFacts, ownBest = false;
+    if (sport.value) {
+      pool = factsFor(dayFacts, { sport: sport.value });
+      if (mode.value === "static" && !fellBack) {
+        try { const best = await loadFactPicks({ sport: sport.value }, date.value, localFeed()); if (best.length) { pool = best; ownBest = true; } } catch { /* the day's own feed, filtered */ }
+      }
+      if (generation !== ownGeneration) return;
+    }
+    const facts = pickFacts(pool, { date: date.value, ...(sport.value ? { filters: { sport: sport.value } } : {}), n: FIND_COUNT, mode: pick.value as PickMode, fixed: PICK_FIXED, seed: pickSeed });
+    pickNote.textContent = [pick.value === "ranked" ? "" : familyLang.word("pickSeed").replaceAll("{seed}", pickSeed), ownBest ? familyLang.word("pickFiltered") : ""].filter(Boolean).join(" ");
     quoteBox.replaceChildren();
     if (q) { const block = document.createElement("blockquote"); block.textContent = q.text; quoteBox.append(block, credit(q)); } else quoteBox.textContent = familyLang.word("emptyQuote");
     if (facts.length) drawFacts(historyBox, facts, date.value); else { historyBox.replaceChildren(); historyBox.textContent = familyLang.word("emptyHistory"); }
@@ -444,6 +463,8 @@ async function render() {
   } catch { if (generation === ownGeneration) status.textContent = familyLang.word("error"); }
 }
 for (const input of [date, sport, mode, includeSource, excludeSource, includeType, excludeType]) input.addEventListener("change", () => { void render(); });
+pick.addEventListener("change", () => { address.setMany({ pick: pick.value === "mixed" ? null : pick.value }); void render(); });
+reshuffle.addEventListener("click", () => { pickSeed = freshSeed(); address.setMany({ seed: pickSeed }); void render(); });
 document.querySelector("#find")!.addEventListener("click", () => { void render(); });
 async function renderShowcase() {
   try {

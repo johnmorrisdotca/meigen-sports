@@ -36,7 +36,11 @@ The embed page is made for an `<iframe>`: one card and nothing else. The address
 | `theme` | one of the eighteen [calendar themes](api:CALENDAR_THEMES), such as `pins`, `desk`, `flip` | `pins` |
 | `lang` | `en` or `ja` | `en` |
 | `layout` | `calendar`, `years`, `compact` or `featured` ([the layouts](api:DISPLAY_LAYOUTS)) | `calendar` |
-| `sport` | a sport such as `ice-hockey` | all sports |
+| `sport` | a sport such as `ice-hockey`: the sport's own best facts of the day | all sports |
+| `league` | a league such as `nhl` or `cfl`: the league's own best facts of the day | all leagues |
+| `mode` | `ranked` (the most famous), `random` (a draw) or `mixed` (the most famous few, then a draw): see [picking facts](picking-facts.md) | `ranked` |
+| `fixed` | `mixed` only: how many facts are the most famous | half of `n`, rounded up |
+| `seed` | `random` and `mixed`: the same seed shows the same facts | a new seed on every load |
 | `n` | 1 to 12 | 3 |
 | `scheme` | `light` or `dark` | the reader's own |
 

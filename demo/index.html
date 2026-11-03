@@ -32,6 +32,8 @@
 <section class="controls panel" aria-label="Feed context">
 <div class="fam-row" data-help-en="Choose the date to look up. Quotes are a repeatable daily selection, not an anniversary claim." data-help-ja="日付を選びます。引用は日付に応じて選びますが、その日に語られたという意味ではありません。"><label><span data-say="date"></span><input id="date" type="date" value="2026-12-18"></label></div>
 <div class="fam-row" data-help-en="Match a sport without mixing in unrelated records." data-help-ja="競技に合う記録だけを表示します。"><label><span data-say="sport"></span><select id="sport"><option value="" data-say="allSports"></option></select></label></div>
+<div class="fam-row" data-help-en="How the facts of the day are chosen: the most famous, a random draw, or the most famous first and a random draw after them." data-help-ja="その日の事実の選び方です。有名な順、ランダム、有名な順に数件＋ランダムから選べます。"><label><span data-say="pickMode"></span><select id="pick"><option value="ranked" data-say="pickFixed"></option><option value="random" data-say="pickRandom"></option><option value="mixed" data-say="pickMixed"></option></select></label></div>
+<div class="fam-row"><button type="button" id="reshuffle" data-say="pickReshuffle"></button></div>
 <div class="fam-row" data-help-en="Use bundled records or fetch cacheable public JSON files. Neither option queries a database." data-help-ja="同梱データか公開JSONファイルを使います。データベースへの問い合わせはありません。"><label><span data-say="mode"></span><select id="mode"><option value="static" data-say="staticFiles"></option><option value="bundled" data-say="bundled"></option></select></label></div>
 <button id="find" data-say="find"></button>
 <details class="feed-filters"><summary data-say="advancedFilters"></summary><div class="filter-grid">
@@ -41,6 +43,7 @@
 <div class="fam-row"><label><span data-say="excludeType"></span><select id="exclude-type"><option value="" data-say="none"></option><option value="quotation">quotation</option><option value="competition-boundary">competition-boundary</option><option value="event-date">event-date</option><option value="match-result">match-result</option></select></label></div>
 </div></details></section>
 <p id="status" class="status" role="status" aria-live="polite"></p>
+<p id="pick-note" class="status" role="status" aria-live="polite" data-testid="pick-note"></p>
 <section class="results"><div class="panel quote-panel"><h2 data-say="quoteHeading"></h2><div id="quote"></div></div><div class="panel history-panel"><h2 data-say="historyHeading"></h2><div id="history"></div></div></section>
 <section class="panel people-panel"><h2 data-say="peopleHeading"></h2><p data-say="peopleIntro"></p><p id="people-status" class="status" role="status" aria-live="polite"></p><div id="people-facts" data-testid="people-facts"></div></section>
 <section class="panel events-panel"><h2 data-say="eventsHeading"></h2><p data-say="eventsIntro"></p><p id="events-status" class="status" role="status" aria-live="polite"></p><div id="events-facts" data-testid="events-facts"></div></section>

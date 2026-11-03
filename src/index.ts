@@ -20,8 +20,8 @@ export type {
   RenderedSentence, RenderOptions, RunOptions, RunSentence, SentenceTemplate, TemplateGate, TemplateLocale,
   TemplateRole, TemplateType, Wording,
 } from "./templates/index.ts";
-export { bestOfDay, calendarDayInZone, factsFor, kindTagsOf, randomFacts, rankDay, rankFeed, rankRecords, significance, tagsOf, today, uniqueRecordIds, withCaptions } from "./facts.ts";
-export type { RankOptions } from "./facts.ts";
+export { bestOfDay, calendarDayInZone, factsFor, kindTagsOf, LEGEND, PICK_MODES, pickFacts, randomFacts, rankDay, rankFeed, rankRecords, significance, tagsOf, today, uniqueRecordIds, withCaptions } from "./facts.ts";
+export type { PickMode, PickOptions, RankOptions } from "./facts.ts";
 export { countriesOf, derivedTags, flagOf, isNamespaced, NAMESPACED_TAG, slugOf, TAG_NAMESPACES, tagValues, VALID_TAG } from "./tags.ts";
 export type { TagNamespace } from "./tags.ts";
 export { GEAR_BY_SPORT, visualOf } from "./visual.ts";

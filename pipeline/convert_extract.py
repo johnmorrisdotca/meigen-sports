@@ -910,6 +910,20 @@ def write_index(rel: str, ids: list[str], files: dict) -> None:
     files[rel] = {"sha256": hashlib.sha256(body.encode()).hexdigest(), "bytes": len(body.encode()), "records": len(uniq)}
 
 
+PICK_DAY = 24  # the best facts of a league or a sport on a day, in rank order (`picks/`)
+PICK_SPORT_MIN = 1500  # a sport with fewer facts has no picks of its own: its day is short enough to read whole
+
+
+def write_ranked_ids(rel: str, ids: list[str], files: dict) -> None:
+    """The ids of a list in the order of the ranking (write_index sorts; a pick list must not)."""
+    payload = {"schemaVersion": 1, "dataVersion": VERSION, "ids": ids}
+    body = json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + "\n"
+    path = OUT / rel
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(body, encoding="utf-8")
+    files[rel] = {"sha256": hashlib.sha256(body.encode()).hexdigest(), "bytes": len(body.encode()), "records": len(ids)}
+
+
 def store_bucket(record_id: str) -> str:
     return f"{int(hashlib.sha256(record_id.encode()).hexdigest()[:4], 16) % 100:02d}"
 
@@ -2078,6 +2092,25 @@ def lay_out(facts: list[dict], meta: dict) -> int:
     for day in calendar:
         rows = uniq_of(events_by_day.get(day, []))
         specs.append({"key": f"events:{day}", "ids": [r["recordId"] for r in rows], "n": EVENTS_DAY, "options": {"maxPer": EVENTS_DAY, "personMax": 1, "maxPerSport": 3, "strictSport": True}})
+    # A reader who filters a day to a league or a sport gets that filter's own best facts: the pool is narrowed first and ranked after, never a day's
+    # best cut down to a league (`pickFacts`). The ids of the best PICK_DAY of each league and each sport, for each day.
+    picks_by: dict[tuple[str, str, str], list[dict]] = defaultdict(list)
+    for row in uniq_of(facts):
+        day = (row.get("eventDate") or "")[5:]
+        if not day or not row.get("text"):
+            continue
+        for league in {row.get("league"), *((row.get("person") or {}).get("leagueCodes") or [])} - {None}:
+            picks_by[("league", league, day)].append(row)
+        if row.get("sport"):
+            picks_by[("sport", row["sport"], day)].append(row)
+    big_sports = {sport for sport, rows in by_sport.items() if len(rows) >= PICK_SPORT_MIN}
+    for key in [k for k in picks_by if k[0] == "sport" and k[1] not in big_sports]:
+        del picks_by[key]
+    for (kind, value, day), rows in picks_by.items():
+        exempt = [f"competition:{value}"] if kind == "league" else [f"sport:{value}"]
+        if kind == "league" and len({r.get("sport") for r in rows}) == 1:
+            exempt.append(f"sport:{rows[0].get('sport')}")
+        specs.append({"key": f"pick:{kind}:{value}:{day}", "ids": [r["recordId"] for r in rows], "n": PICK_DAY, "options": {"maxPerSport": 3, "exempt": exempt, "minimum": PICK_DAY}})
     deaths = [r["recordId"] for r in facts if r.get("category") == "player-death"]
     specs.append({"key": "showcase-deaths", "ids": deaths, "n": 8})
     specs.append({"key": "sample", "ids": [r["recordId"] for r in shuffle(facts, "meigen-sample-0.1.0")], "n": 400, "options": {"maxPer": 60, "personMax": 1, "minimum": 400}})
@@ -2096,6 +2129,8 @@ def lay_out(facts: list[dict], meta: dict) -> int:
             days_lt3.append(day)
         write_shard(f"days/{day}.json", feed, files, allow_empty=True)
         write_index(f"indexes/days/{day}.json", [r["recordId"] for r in rows], files)
+    for (kind, value, day) in picks_by:
+        write_ranked_ids(f"picks/{kind}/{value}/{day}.json", ranked[f"pick:{kind}:{value}:{day}"], files)
     for day in calendar:
         write_shard(f"people/{day}.json", feed_of(f"people:{day}"), files, allow_empty=True)
         write_shard(f"events/{day}.json", feed_of(f"events:{day}"), files, allow_empty=True)
