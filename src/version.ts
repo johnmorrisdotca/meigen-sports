@@ -6,7 +6,7 @@
  * console.log(VERSION);
  * ```
  */
-export const VERSION = "0.26.0";
+export const VERSION = "0.27.0";
 /**
  * The version of the record schema (1).
  * @example
