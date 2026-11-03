@@ -4,6 +4,8 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+- The README opens with the package's thumbnail, and the demo carries it as its link preview (og:image) and publishes the card, a dark card and an icon on Pages at `thumbnail.png`, `thumbnail-dark.png` and `icon.png`.
+
 ## [0.25.0] - 2026-11-03
 
 - Data: the first full rebuild from the complete set of extracts, made on 2026-11-03 after DS1 took the SPX-901 person merge and the SPX-890 game dates. 126,810 facts (was 105,924): 20,886 more, 84 gone, 1,062 with another id. The new facts are games of leagues the database now holds (8,244 college football, 445 WNBA, 436 AHL, 308 ECHL, 252 WHA, 163 CFL, 52 NWSL, 11 PWHL, 468 NBA), 27 championship finals and 10,543 more people with a birthday or a death (the database now holds persons that only the dump or the priority list gave before). All from Wikipedia (CC BY-SA 4.0), Wikidata (CC0), Retrosheet and nflverse as before.

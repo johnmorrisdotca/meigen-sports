@@ -1,8 +1,14 @@
 import { cpSync, existsSync, mkdirSync, rmSync, writeFileSync, readFileSync } from "node:fs";
 import { build } from "esbuild";
+import { publishThumbnails, thumbnailHead } from "./family-thumbnail.mjs";
 import { renderCatalogue, renderIndex, renderSources } from "./page.ts";
+/** What the family's card shows (scripts/screenshots.ts makes it): the words of og:image:alt and of the README's top picture. */
+const ALT = "Meigen Sports: the package's calendar card for 20 October, a calendar page beside three facts of that day in sports history.";
 rmSync("site", { recursive: true, force: true }); mkdirSync("site", { recursive: true });
-writeFileSync("site/index.html", renderIndex());
+// The demo's page carries the family's card in its <head> (og:image, twitter:image, the icon); the three pictures are published beside it.
+const pkg = JSON.parse(readFileSync("package.json", "utf8")) as { name: string };
+writeFileSync("site/index.html", renderIndex().replace("</head>", `${thumbnailHead(pkg, { alt: ALT })}</head>`));
+publishThumbnails(".", "site");
 writeFileSync("site/catalogue.html", renderCatalogue());
 for (const file of ["family.css", "site.css"]) cpSync(`demo/${file}`, `site/${file}`);
 cpSync("styles.css", "site/styles.css");

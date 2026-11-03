@@ -1,3 +1,5 @@
+<p align="center"><a href="https://johnmorrisdotca.github.io/meigen-sports/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/thumbnail-dark.png"><img src="https://raw.githubusercontent.com/johnmorrisdotca/meigen-sports/main/docs/images/thumbnail.png" alt="Meigen Sports: the package's calendar card for 20 October, a calendar page beside three facts of that day in sports history." width="1200"></picture></a></p>
+
 <h1 align="center">Meigen Sports <sub>名言</sub></h1>
 
 <p align="center"><strong>Source-verified sports quotations and dated events in sports history.</strong><br>
