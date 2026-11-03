@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fetch Special:EntityData for priority-athletes.csv QIDs. Writes athlete seed CSV.
+"""Fetch Special:EntityData for priority-people.csv QIDs. Writes athlete seed CSV.
 
 No SPARQL. No DS1. Resumes existing entity-Q*.json files.
 """
@@ -13,7 +13,7 @@ import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-CSV_IN = ROOT / "data-sources/priority-athletes.csv"
+CSV_IN = ROOT / "data-sources/priority-people.csv"
 RAW = Path(os.environ.get("MEIGEN_RAW_DIR", str(ROOT / "data-sources/raw/wikidata")))
 OUT = Path(os.environ.get(
     "MEIGEN_ATHLETES_CSV",

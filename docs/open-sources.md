@@ -4,7 +4,7 @@
 
 Licence is checked **before** a download. A source that forbids automated collection, or whose data is not CC0 / CC BY-SA 4.0 / CC BY 4.0 / Retrosheet, is skipped. Wikidata (CC0) and Wikipedia (CC BY-SA 4.0, with attribution) are the fallback for every sport. Never ESPN, Sports Reference, or NHL endpoints.
 
-Fetch: `python3 -I pipeline/fetch_wikidata_open.py` and `pipeline/fetch_wikidata_lists.py`, through the documented Wikidata and MediaWiki APIs only (search, `wbgetentities`, `parse`), one request at a time, 1.1 s apart, User-Agent `MeigenSports/0.4`. `query.wikidata.org` (SPARQL) and `Special:EntityData` are never used: their robots.txt disallows them. Raw API JSON is gitignored under `data-sources/raw/wikidata/api/`. Convert-shaped extracts go to `MEIGEN_EXTRACT_DIR`. This package does not write DS1.
+Fetch: `pipeline/fetch_wikidata_lists.py` (`pipeline/fetch_wikidata_open.py`, the older fetch of about 500 famous people, is retired: the fame list covers them), through the documented Wikidata and MediaWiki APIs only (search, `wbgetentities`, `parse`), one request at a time, 1.1 s apart, User-Agent `MeigenSports/0.4`. `query.wikidata.org` (SPARQL) and `Special:EntityData` are never used: their robots.txt disallows them. Raw API JSON is gitignored under `data-sources/raw/wikidata/api/`. Convert-shaped extracts go to `MEIGEN_EXTRACT_DIR`. This package does not write DS1.
 
 ## Motor racing
 
@@ -20,7 +20,7 @@ UFC official stats are not an open dataset (**skip**). Boxing, MMA, golf majors,
 
 ## Women’s leagues
 
-WNBA.com, NWSL, PWHL official sites: not open datasets (**skip**). Wikidata: league and competition membership plus sport (WNBA, NWSL, PWHL, Women’s World Cup). People are never selected by sex (P21); the older `fetch_wikidata_open.py` still does, and [status.md](status.md) lists it as a finding to replace. Women’s World Cup matches already sit in `extract_soccer_on_day` from openfootball (CC0).
+WNBA.com, NWSL, PWHL official sites: not open datasets (**skip**). Wikidata: league and competition membership plus sport (WNBA, NWSL, PWHL, Women’s World Cup). People are never selected by sex (P21); the older `fetch_wikidata_open.py`, which did, is retired. Women’s World Cup matches already sit in `extract_soccer_on_day` from openfootball (CC0).
 
 ## Quotations
 

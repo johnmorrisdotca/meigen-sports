@@ -55,7 +55,8 @@ WIKIS = (("en", "enwiki"), ("fr", "frwiki"), ("ja", "jawiki"))
 
 
 def wanted(extract_dir: Path, priority_csv: Path | None) -> tuple[set[str], set[str]]:
-    """(person Q ids, event Q ids) named by the extracts and the priority list."""
+    """(person Q ids, event Q ids) named by the extracts and the first list (`priority` 1 in data-sources/priority-people.csv: the 999 names John chose, which no extract need hold).
+    The 1,001 people added after it carry their own country and Wikipedia titles in the list (`add_list_people`)."""
     persons: set[str] = set()
     events: set[str] = set()
     for name in PERSON_EXTRACTS:
@@ -77,7 +78,7 @@ def wanted(extract_dir: Path, priority_csv: Path | None) -> tuple[set[str], set[
     if priority_csv and priority_csv.exists():
         with priority_csv.open(encoding="utf-8") as fh:
             for row in csv.DictReader(fh):
-                if QID.match(row.get("qid") or ""):
+                if QID.match(row.get("qid") or "") and row.get("priority") == "1":
                     persons.add(row["qid"])
     return persons, events
 
@@ -238,7 +239,7 @@ def main() -> int:
     args = ap.parse_args()
     dump = Path(args.dump)
     out = Path(args.out)
-    persons, events = wanted(out, ROOT / "data-sources/priority-athletes.csv")
+    persons, events = wanted(out, ROOT / "data-sources/priority-people.csv")
     found, event_rows, stats = build(dump, persons, events)
     print(json.dumps(dict(stats), indent=1))
     if args.report:

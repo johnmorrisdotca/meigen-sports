@@ -35,10 +35,6 @@ EXTRACTS: dict[str, dict] = {
     "extract_all_star.json": {"script": "pipeline/extract_all_star.py", "made": "`python3 -I pipeline/extract_all_star.py`", "lists": ("games", "events")},
     "extract_mlb_feats.json": {"script": "pipeline/extract_mlb_feats.py", "made": "`python3 -I pipeline/extract_mlb_feats.py`", "lists": ("records",)},
     "extract_milestones.json": {"script": "pipeline/extract_milestones.py", "made": "`pnpm data:milestones`", "lists": ("records",)},
-    "extract_wikidata_famous.json": {
-        "script": "pipeline/fetch_wikidata_open.py", "made": "`python3 -I pipeline/fetch_wikidata_open.py`", "lists": ("records",),
-        "absent_ok": "no published fact comes from it (the facts' meta has had no topFamous since the dump passes took over; a rebuild without it, checked 2026-11-03, lost nothing); its 500 birthdays, deaths and awards would add unreviewed facts",
-    },
     "extract_wikidata_dump_people.json": {"script": "pipeline/wikidata_dump_people.py", "made": "`pnpm data:dump`; " + DUMP, "lists": ("records",)},
     "extract_wikidata_dump_events.json": {"script": "pipeline/wikidata_dump_events.py", "made": "`pnpm data:events`; " + DUMP, "lists": ("records",)},
     "extract_wikidata_dump_para.json": {"script": "pipeline/wikidata_dump_para.py", "made": "`pnpm data:para`; " + DUMP, "lists": ("records",), "after": ("extract_wikidata_dump_people.json",)},
@@ -56,7 +52,7 @@ EXTRACTS: dict[str, dict] = {
 # Files in the repository the converter reads (a missing or empty one is a broken checkout, not a missing extract).
 REPO_FILES = (
     "data-sources/trophies.json", "data-sources/para-sports.json", "data-sources/disputed-dates.json", "data-sources/game-corrections.json",
-    "data-sources/priority-athletes.csv", "data-sources/priority-facts.jsonl", "data-sources/people.csv", "data-sources/people-profiles.csv",
+    "data-sources/priority-people.csv", "data-sources/priority-facts.jsonl", "data-sources/people-profiles.csv",
     "pipeline/golden/finals-check.json",
     "pipeline/ds1-people/spx-stats/db/seed/wikidata_meigen_bio.csv", "pipeline/ds1-people/spx-stats/db/seed/wikidata_meigen_wiki_page.csv",
 )

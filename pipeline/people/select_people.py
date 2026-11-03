@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Choose the people list (1,000 -> 2,000) from the fetched evidence by a fixed, reproducible rule. No network, no DS1.
 
-  python3 -I pipeline/people/select_people.py            # read MEIGEN_PEOPLE_WORK, write data-sources/people.csv
-  python3 -I pipeline/people/select_people.py --check    # fail if the committed people.csv differs from what the evidence gives
+  python3 -I pipeline/people/select_people.py            # read MEIGEN_PEOPLE_WORK, write data-sources/priority-people.csv
+  python3 -I pipeline/people/select_people.py --check    # fail if the committed priority-people.csv differs from what the evidence gives
 
-THE RULE (docs/people.md says the same in words)
+THE RULE (docs/priority-people.md says the same in words)
 
 1. Key: a person is a Wikidata item (QID). Names never identify anyone. Each person is listed once.
 2. Candidates, per (country, sport) cell:
@@ -38,8 +38,8 @@ import people_config as cfg  # noqa: E402
 
 ROOT = HERE.parent.parent
 WORK = Path(os.environ.get("MEIGEN_PEOPLE_WORK", str(ROOT / "data-sources/raw/people-work")))
-PRIORITY = ROOT / "data-sources/priority-athletes.csv"
-OUT = ROOT / "data-sources/people.csv"
+OUT = ROOT / "data-sources/priority-people.csv"
+PRIORITY = OUT
 OUT_ATHLETES = ROOT / "pipeline/ds1-people/people-2000-athlete-rows.csv"
 OUT_REJECTED = ROOT / "data-sources/people-rejected.csv"
 OUT_COVERAGE = ROOT / "data-sources/people-coverage.csv"
@@ -60,6 +60,7 @@ OUTSIDE_SPORT = re.compile(
     r"teacher|scientist|aristocrat|nobleman|noble|royal|economist|banker|spy|criminal|murderer|war criminal|physician|academic|historian)", re.I)
 
 COLUMNS = ["qid", "name", "sport", "country", "priority", "tier", "sitelinks", "olympic_medals", "enwiki_title", "birth_on", "death_on", "source"]
+FAME_COLUMNS = ["old_rank", "editions", "plays_for", "world_titles", "hall_of_fame", "fame_score", "fame_rank", "fame_note"]  # filled by fame.py, never by the selection
 COUNTRY = {c[0]: c for c in cfg.COUNTRIES}
 COUNTRY_BY_QID: dict[str, str] = {}
 for _c in cfg.COUNTRIES:
@@ -105,7 +106,8 @@ class Evidence:
         self.lists: dict[str, list[str]] = defaultdict(list)
         for r in sorted(read_csv(work / "honour-lists.csv"), key=lambda r: (r["list"], int(r["order"]))):
             self.lists[r["list"]].append(r["qid"])
-        self.priority = read_csv(priority)
+        # the first list: the rows of the committed file marked `priority` 1 (its 999 people are never re-chosen)
+        self.priority = [r for r in read_csv(priority) if r.get("priority") == "1"]
 
     def claimed(self, qid: str) -> bool:
         return qid in self.claims or qid in self.read
@@ -195,7 +197,7 @@ def select(ev: Evidence, target: int = cfg.TARGET_TOTAL) -> tuple[list[dict], li
             "qid": qid, "name": row["name"], "sport": sport, "country": country, "priority": 1, "tier": "existing",
             "sitelinks": ent.get("sitelinks", ""), "olympic_medals": ev.medals.get((qid, country, sport), 0) or "",
             "enwiki_title": ent.get("enwiki", ""), "birth_on": ev.day(qid, "P569") if qid else "", "death_on": ev.day(qid, "P570") if qid else "",
-            "source": f"priority-athletes.csv; https://www.wikidata.org/wiki/{qid}" if qid else "priority-athletes.csv (no Wikidata item yet)",
+            "source": f"first list; https://www.wikidata.org/wiki/{qid}" if qid else "first list (no Wikidata item yet)",
         })
         if qid:
             taken.add(qid)
@@ -306,10 +308,14 @@ def select(ev: Evidence, target: int = cfg.TARGET_TOTAL) -> tuple[list[dict], li
 
 
 def write(people: list[dict], rejected: list[dict], athletes_path: Path = OUT_ATHLETES, out: Path = OUT) -> None:
+    # the fame columns (pipeline/people/fame.py) belong to the people already listed: carried over by Wikidata id, or by name and sport where there is none
+    kept = {(r["qid"] or f"{r['name']}|{r['sport']}"): r for r in read_csv(out)}
     with out.open("w", encoding="utf-8", newline="") as fh:
-        writer = csv.DictWriter(fh, fieldnames=COLUMNS, lineterminator="\n")
+        writer = csv.DictWriter(fh, fieldnames=COLUMNS + FAME_COLUMNS, lineterminator="\n")
         writer.writeheader()
-        writer.writerows(people)
+        for p in people:
+            old = kept.get(p["qid"] or f"{p['name']}|{p['sport']}", {})
+            writer.writerow({**p, **{k: old.get(k, "") for k in FAME_COLUMNS}})
     with OUT_REJECTED.open("w", encoding="utf-8", newline="") as fh:
         writer = csv.DictWriter(fh, fieldnames=["qid", "country", "sport", "reason"], lineterminator="\n")
         writer.writeheader()

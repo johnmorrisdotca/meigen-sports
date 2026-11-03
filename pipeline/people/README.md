@@ -1,6 +1,6 @@
 # People list: fetch, select, hand off
 
-Grows the list from 1,000 to 2,000 people, by country and sport, with a stated rule ([docs/people.md](../../docs/people.md)). Nothing here writes DS1, production or any database, and nothing here contacts anything but the Wikimedia APIs.
+Grows the list from 1,000 to 2,000 people, by country and sport, with a stated rule ([docs/priority-people.md](../../docs/priority-people.md)). Nothing here writes DS1, production or any database, and nothing here contacts anything but the Wikimedia APIs.
 
 ```sh
 python3 -I pipeline/people/test_select_people.py        # the rule, on made-up evidence
@@ -8,11 +8,14 @@ python3 -I pipeline/people/fetch_people.py verify       # every country and spor
 python3 -I pipeline/people/fetch_people.py medals       # Olympic medallist lists (English Wikipedia, CC BY-SA)
 python3 -I pipeline/people/fetch_people.py cells        # Wikidata search per country and sport (CC0), about 50 minutes
 python3 -I pipeline/people/fetch_people.py entities     # labels and language counts for every candidate
-python3 -I pipeline/people/select_people.py             # writes data-sources/people.csv; says which chosen people lack claims
+python3 -I pipeline/people/select_people.py             # writes data-sources/priority-people.csv; says which chosen people lack claims
 python3 -I pipeline/people/fetch_people.py claims       # human check, citizenship, day-precision birth and death dates for the chosen
 python3 -I pipeline/people/fetch_people.py profiles     # description, French and Japanese article titles, birthplace of the 2,000 -> data-sources/people-profiles.csv (committed)
 python3 -I pipeline/people/select_people.py             # repeat the last two steps until nothing is missing
-python3 -I pipeline/people/select_people.py --check     # people.csv equals what the evidence gives
+python3 -I pipeline/people/select_people.py --check     # priority-people.csv equals what the evidence gives
+python3 -I pipeline/people/test_fame.py                 # the fame score and rank, on made-up rows and on the committed list
+python3 -I pipeline/people/fame.py fetch                # Wikipedia language count, world titles and halls of fame of the 2,000 (Wikidata, CC0), files kept under MEIGEN_PEOPLE_RAW
+python3 -I pipeline/people/fame.py rank                 # fame_score and fame_rank from the columns (docs/fame.md); `report` prints the spread, `check` fails if the file is not what the columns give
 ```
 
 One request at a time, 1.1 s apart, a User-Agent naming this project, gzip, back-off on errors. Every response is a file under `data-sources/raw/people/` (git-ignored; `MEIGEN_PEOPLE_RAW` moves it); a rerun answers from those files and makes no request. Derived tables go to `data-sources/raw/people-work/`. query.wikidata.org is never used (its robots.txt disallows `/sparql`).

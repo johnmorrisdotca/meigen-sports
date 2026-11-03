@@ -123,7 +123,6 @@
     "test:rebuild": "python3 -I pipeline/test_rebuild_guard.py && python3 -I pipeline/test_convert_extract.py",
     "shards": "python3 -I pipeline/convert_extract.py --layout",
     "data:coverage": "python3 -I pipeline/coverage_matrix.py",
-    "data:wikidata": "python3 -I pipeline/fetch_wikidata_open.py",
     "data:people": "python3 -I pipeline/people/select_people.py",
     "data:dump": "python3 -I pipeline/wikidata_dump_people.py",
     "test:dump": "python3 -I pipeline/test_wikidata_dump_people.py",

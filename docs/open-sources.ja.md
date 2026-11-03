@@ -4,7 +4,7 @@
 
 ダウンロードの前にライセンスを確認します。自動収集を禁じる出典、または CC0 / CC BY-SA 4.0 / CC BY 4.0 / Retrosheet でないデータは使いません。どの競技も Wikidata（CC0）と Wikipedia（CC BY-SA 4.0、クレジット付き）を控えにします。ESPN、Sports Reference、NHL の端点は使いません。
 
-取得: `python3 -I pipeline/fetch_wikidata_open.py` と `pipeline/fetch_wikidata_lists.py`。公開されている Wikidata と MediaWiki の API（検索、`wbgetentities`、`parse`）だけを使い、1 回に 1 リクエスト、1.1 秒あけ、User-Agent は `MeigenSports/0.4` です。`query.wikidata.org`（SPARQL）と `Special:EntityData` は robots.txt が禁じているので使いません。生の API 応答は `data-sources/raw/wikidata/api/`（git 対象外）。変換用の抽出は `MEIGEN_EXTRACT_DIR`。このパッケージは DS1 に書きません。
+取得: `pipeline/fetch_wikidata_lists.py`（有名な約500人を取る古い `pipeline/fetch_wikidata_open.py` はなくなりました。有名さのリストが代わりです）。公開されている Wikidata と MediaWiki の API（検索、`wbgetentities`、`parse`）だけを使い、1 回に 1 リクエスト、1.1 秒あけ、User-Agent は `MeigenSports/0.4` です。`query.wikidata.org`（SPARQL）と `Special:EntityData` は robots.txt が禁じているので使いません。生の API 応答は `data-sources/raw/wikidata/api/`（git 対象外）。変換用の抽出は `MEIGEN_EXTRACT_DIR`。このパッケージは DS1 に書きません。
 
 ## モータースポーツ
 

@@ -134,7 +134,6 @@ def main() -> int:
         ("extract_venue_openings.json", "venue-history"),
         ("extract_drafts.json", "draft-selection"),
         ("extract_nhl_career_records.json", "sport-record"),
-        ("extract_wikidata_famous.json", "player-birthday"),
     ]
     downloaded: dict[tuple, int] = defaultdict(int)
     archived: dict[tuple, int] = defaultdict(int)

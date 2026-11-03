@@ -67,11 +67,11 @@ MEIGEN_API_URL=<read-only API of the SPX database> MEIGEN_API_KEY=<its public ke
 
 ### Order of a rebuild
 
-`pnpm data:facts` reads 23 extracts and 11 files of the repository (the list, with how each is made, is `pipeline/rebuild_inputs.py`). It **stops, naming each file**, when an extract is missing, is an empty file, has an empty list (`extract_drafts.json` alone may be empty: DS1 holds no draft rows), is older than an extract it follows (`extract_dated_names.json` after the DB extracts, `extract_wikidata_dump_para.json` after the people pass, `extract_wikidata_links.json` after every extract that names a person or an event) or was made for other people than the extracts now name (`extract_wikidata_links.json`). A file older than the last commit of its own script is a warning. Copy extracts with `cp -p` so their times stay true.
+`pnpm data:facts` reads 22 extracts and 10 files of the repository (the list, with how each is made, is `pipeline/rebuild_inputs.py`). It **stops, naming each file**, when an extract is missing, is an empty file, has an empty list (`extract_drafts.json` alone may be empty: DS1 holds no draft rows), is older than an extract it follows (`extract_dated_names.json` after the DB extracts, `extract_wikidata_dump_para.json` after the people pass, `extract_wikidata_links.json` after every extract that names a person or an event) or was made for other people than the extracts now name (`extract_wikidata_links.json`). A file older than the last commit of its own script is a warning. Copy extracts with `cp -p` so their times stay true.
 
 The order:
 
-1. The release-master runs the DS1 extracts (`python3 -I pipeline/extract_ds1.py` prints the commands, plus `queries/extract_nhl_career_records.sql`) and the other extractors (`extract_all_star.py`, `extract_mlb_feats.py`, `pnpm data:milestones`, `fetch_wikidata_open.py`). The Wikidata dump passes (`pnpm data:dump`, `data:events`, `data:para`) need the filtered dump files and run where they are, then `python3 -I pipeline/wikidata_links.py`. All of it lands in `MEIGEN_EXTRACT_DIR`.
+1. The release-master runs the DS1 extracts (`python3 -I pipeline/extract_ds1.py` prints the commands, plus `queries/extract_nhl_career_records.sql`) and the other extractors (`extract_all_star.py`, `extract_mlb_feats.py`, `pnpm data:milestones`). The Wikidata dump passes (`pnpm data:dump`, `data:events`, `data:para`) need the filtered dump files and run where they are, then `python3 -I pipeline/wikidata_links.py`. All of it lands in `MEIGEN_EXTRACT_DIR`.
 2. **Last** of the database extracts, the dated names, from the public views (no DS1 connection; the API address is the SPX database's public REST address and its publishable key, both in the spx-stats `web/` defaults):
 
    ```sh
@@ -133,17 +133,9 @@ python3 -I pipeline/test_disputed_dates.py                                      
 
 `convert_extract.py` reads that committed list (no dump needed to rebuild) and marks each fact that states one of those dates: `dateDisputed`, `dateAlternatives`, `birthDateAlternatives`, `deathDateAlternatives`, `ageAlternatives`, the tag `date:disputed`, and the note `dateNote` / `dateNoteJa` the library writes. The date a fact had is never changed; a published date that is not one of Wikidata's stops the build.
 
-## Wikidata open fetch (famous)
+## The fame list, and the retired famous fetch
 
-Does not contact DS1. The documented Wikidata API only (search by `haswbstatement`, then `wbgetentities`; never query.wikidata.org), through the client of `pipeline/people/wikimedia.py`: one request at a time, 1.1 s apart, User-Agent `MeigenSports/0.4`. `--sports tennis,golf --pool 12 --top 5 --no-olympics` keeps a trial to a handful of requests. `pipeline/fetch_wikidata_lists.py` does the same for the Wikipedia list pages (`parse`, page titles to items, items), with `MEIGEN_LISTS` naming one list to read. Writes gitignored raw JSON under `data-sources/raw/wikidata/api/` and convert-shaped extracts under `MEIGEN_EXTRACT_DIR` (default `~/Projects/backups/spx-stats/meigen-extract/`). The coordinating session archives those files to DS1/Dropbox.
-
-```sh
-python3 -I pipeline/fetch_wikidata_open.py
-python3 -I pipeline/convert_extract.py
-python3 -I pipeline/coverage_matrix.py
-```
-
-Famous = sitelink rank, top 500, by sport only. People are never selected by sex or gender. There are no para-sport batches here: para sports are a separate pass from the dump (below), by the sport's name only.
+`data-sources/priority-people.csv` is the one list of people (2,000), ranked 1 to 2000 by `pipeline/people/fame.py` ([docs/fame.md](../docs/fame.md)); `convert_extract.py` reads each person's `fame_rank` and writes it on his births and deaths as `fameRank`, and takes `meta.topFamous` and the showcase feed's birthdays from its first 80 people. `pipeline/fetch_wikidata_open.py` (about 500 famous people by sitelink rank, sex-blind but a subset of the list) and its extract `extract_wikidata_famous.json` are retired; so is `priority-athletes.csv` (its 999 people are the rows with `priority` 1, in the same order, `old_rank`). `pipeline/fetch_wikidata_lists.py` stays: it reads Wikipedia list pages through `pipeline/people/wikimedia.py`.
 
 ## Credentials
 

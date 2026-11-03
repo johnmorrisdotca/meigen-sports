@@ -21,7 +21,7 @@ function rows(path: string): Record<string, string>[] {
   return lines.slice(1).map((line) => Object.fromEntries(split(line).map((value, index) => [header[index]!, value])));
 }
 
-const people = rows("data-sources/people.csv");
+const people = rows("data-sources/priority-people.csv");
 const added = people.filter((row) => row.priority === "2");
 const FIRST_FOURTEEN = ["JP", "CA", "US", "DE", "FR", "IT", "GB", "BR", "AU", "CN", "KR", "RU", "ES", "NL"];
 
@@ -92,7 +92,7 @@ test("nothing sensitive: no such column, no para or sex label, dates only as ful
     if (row.birth_on) assert.match(row.birth_on, /^\d{4}-\d{2}-\d{2}$/);
     if (row.death_on) assert.match(row.death_on, /^\d{4}-\d{2}-\d{2}$/);
   }
-  const text = readFileSync("data-sources/people.csv", "utf8");
+  const text = readFileSync("data-sources/priority-people.csv", "utf8");
   assert.equal(/espn|sports-reference|basketball-reference/i.test(text), false);
 });
 

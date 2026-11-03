@@ -1,0 +1,16 @@
+{
+ "score": "editions + 2 * min(olympicMedals, 5) + 4 * min(worldTitles, 3) + 8 * min(hallsOfFame, 2)",
+ "editionPoints": 1,
+ "olympicMedalPoints": 2,
+ "olympicMedalCap": 5,
+ "worldTitlePoints": 4,
+ "worldTitleCap": 3,
+ "hallOfFamePoints": 8,
+ "hallOfFameCap": 2,
+ "blockSize": 100,
+ "sportShare": 35,
+ "countryShare": 45,
+ "blocksWithSpreadRule": 20,
+ "bands": [20, 100, 500, 2000],
+ "bonusBands": [[100, 50], [300, 45], [700, 38], [1200, 28], [2000, 18]]
+}

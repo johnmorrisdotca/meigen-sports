@@ -1,8 +1,8 @@
-[English](people.md) · 日本語
+[English](priority-people.md) · 日本語
 
 # 人物リスト（国と競技ごとに2,000人）
 
-[`data-sources/people.csv`](../data-sources/people.csv) は、このパッケージが事実を組み立てる人物のリストです。[priority-athletes.ja.md](priority-athletes.ja.md) の最初のリスト（1,000行、重複が1人いて999人）に、さらに1,001人を足し、46か国のどの国の読者も、米国だけでなく、たいていの競技で知っている人に出会えるようにします。人物は Wikidata の項目（QID）です。名前では人物を特定せず、1人は1回だけ載せます。
+[`data-sources/priority-people.csv`](../data-sources/priority-people.csv) は、このパッケージが事実を組み立てる、たった一つの人物のリストです。世界での有名さで1位から2000位まで順位がついています（[fame.ja.md](fame.ja.md)）。John が選んだ最初のリスト（1,000行、重複が1人いて999人。ファイル `priority-athletes.csv` は 0.27.0 でなくなり、このリストに入りました）に、さらに1,001人を足し、46か国のどの国の読者も、米国だけでなく、たいていの競技で知っている人に出会えるようにします。人物は Wikidata の項目（QID）です。名前では人物を特定せず、1人は1回だけ載せます。
 
 | 列 | 意味 |
 | --- | --- |
@@ -17,6 +17,9 @@
 | `enwiki_title` | 英語版 Wikipedia の記事 |
 | `birth_on`、`death_on` | Wikidata に日まであるときだけ、完全な日付。なければ空 |
 | `source` | 出どころ。Wikidata の項目と英語版 Wikipedia の記事 |
+| `old_rank` | 最初のリストでの位置（1〜999）。有名さの順位が同点のときの順番にだけ使います。あとから足した人は空 |
+| `editions`、`plays_for`、`world_titles`、`hall_of_fame` | 有名さの点数のもと。2026年11月3日に Wikidata から読みました（[fame.ja.md](fame.ja.md)） |
+| `fame_score`、`fame_rank`、`fame_note` | 点数、1〜2000の順位、点数がつかなかった理由や順位を下げた理由 |
 
 記録しないもの: 性別、民族、宗教、健康（障害、障害の区分、分類の符号を含む。パラ競技は競技の名前だけを載せます: [パラ競技](para-sports.ja.md)）、家族、政治。
 

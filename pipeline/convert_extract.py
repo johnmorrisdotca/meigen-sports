@@ -593,7 +593,7 @@ def finalize(row: dict) -> dict | None:
         "clubNames", "clubName", "bornYear", "ageYears", "highlight", "draftYear", "round",
         "overallPick", "awardName", "awardKind", "winnerName", "birthDate", "deathDate", "birthPlace", "livingStatus",
         "announcedDate", "awardDate", "ratifiedDate", "featuredReasons", "record",
-        "sitelinks", "priorityAthlete", "nationality", "epithet", "eventLabel", "eventPlace",
+        "sitelinks", "priorityAthlete", "fameRank", "nationality", "epithet", "eventLabel", "eventPlace",
         "championships", "championshipName", "personAward", "awardCount", "hallOfFameYear",
         "seriesWinnerWins", "seriesLoserWins", "seriesGames", "winnerRecord", "winnerTitleNumber", "awards",
         "jerseyNumber", "jerseyRetired", "jerseySource", "leagueWide", "loserName", "winnerScore", "loserScore", "decidedBy", "mvpNames", "attendance",
@@ -765,20 +765,32 @@ def write_shard(rel: str, records: list[dict], files: dict, allow_empty: bool = 
     files[rel] = {"sha256": hashlib.sha256(body.encode()).hexdigest(), "bytes": len(body.encode()), "records": len(records)}
 
 
-def load_priority_qids() -> set[str]:
-    path = ROOT / "data-sources/priority-athletes.csv"
-    qids: set[str] = set()
+def load_first_list_qids() -> set[str]:
+    """The 999 people of John's first list (`priority` 1 in data-sources/priority-people.csv), whose rows are kept even when DS1 holds no club or league for them."""
+    path = ROOT / "data-sources/priority-people.csv"
     if not path.exists():
-        return qids
+        return set()
+    with path.open(newline="", encoding="utf-8") as fh:
+        return {r["qid"] for r in csv.DictReader(fh) if r.get("priority") == "1" and (r.get("qid") or "").startswith("Q")}
+
+
+def load_fame_ranks() -> dict[str, int]:
+    """Q id -> fame rank (1 to 2000) of the people on data-sources/priority-people.csv, ranked by `pipeline/people/fame.py` (docs/fame.md)."""
+    path = ROOT / "data-sources/priority-people.csv"
+    ranks: dict[str, int] = {}
+    if not path.exists():
+        return ranks
     with path.open(newline="", encoding="utf-8") as fh:
         for row in csv.DictReader(fh):
             qid = (row.get("qid") or "").strip()
-            if qid.startswith("Q"):
-                qids.add(qid)
-    return qids
+            if qid.startswith("Q") and (row.get("fame_rank") or "").isdigit():
+                ranks[qid] = int(row["fame_rank"])
+    return ranks
 
 
-PRIORITY_QIDS = load_priority_qids()
+FAME_RANKS = load_fame_ranks()
+TOP_FAMOUS = 80  # the showcase feed holds the birthdays of this many of the most famous people
+PRIORITY_QIDS = load_first_list_qids()
 
 
 def is_sport_person(row: dict) -> bool:
@@ -883,7 +895,7 @@ def merge_same_event(chosen: dict[str, dict]) -> tuple[dict[str, dict], int]:
 
 RANK_FIELDS = (
     "recordId", "category", "tags", "eventDate", "competition", "league", "sport", "person", "home", "away", "featuredReasons", "winnerName",
-    "stage", "phase", "priorityAthlete", "personAward", "awardCount", "hallOfFameYear", "highlight", "championships", "sitelinks", "record", "jerseyRetired",
+    "stage", "phase", "priorityAthlete", "fameRank", "personAward", "awardCount", "hallOfFameYear", "highlight", "championships", "sitelinks", "record", "jerseyRetired",
 )
 
 
@@ -1164,11 +1176,11 @@ def lend_person_facts(chosen: dict[str, dict], rows: list[dict]) -> int:
 
 
 def add_list_people(chosen: dict[str, dict]) -> int:
-    """Birth and death of the people on the 2,000 list (data-sources/people.csv, pipeline/people) that no other source gave for that kind. A day the
+    """Birth and death of the people on the 2,000 list (data-sources/priority-people.csv, pipeline/people) that no other source gave for that kind. A day the
     list holds is one Wikidata states at day precision; 1 January is left out (a year-only date written as one is indistinguishable). What the
     sentence says besides name and date is Wikidata's description (data-sources/people-profiles.csv), or "Olympic medallist" for a person the
     English Wikipedia medallist lists name; a person with neither is not published. A para or wheelchair sport is left out here: pipeline/wikidata_dump_para.py publishes it by its own fame rule."""
-    path, profile_path = ROOT / "data-sources/people.csv", ROOT / "data-sources/people-profiles.csv"
+    path, profile_path = ROOT / "data-sources/priority-people.csv", ROOT / "data-sources/people-profiles.csv"
     if not path.exists() or not profile_path.exists():
         return 0
     with profile_path.open(newline="", encoding="utf-8") as fh:
@@ -1634,7 +1646,7 @@ def build_facts() -> tuple[list[dict], dict]:
     names the layout needs besides them. Needs the extracts, which are not in git; its result is `data-sources/facts/` (`write_inputs`)."""
     wrong = rebuild_inputs.problems(EXTRACT, ROOT)
     if not wrong:
-        wanted = _sibling("wikidata_links").wanted(EXTRACT, ROOT / "data-sources/priority-athletes.csv")
+        wanted = _sibling("wikidata_links").wanted(EXTRACT, ROOT / "data-sources/priority-people.csv")
         wrong = rebuild_inputs.links_problems(EXTRACT, wanted)
     for line in rebuild_inputs.warnings(EXTRACT, ROOT):
         print(line, file=sys.stderr)
@@ -1653,17 +1665,6 @@ def build_facts() -> tuple[list[dict], dict]:
     franchise = [r for r in load_records("extract_franchise_events.json") if allowed(r)]
     drafts = [r for r in load_records("extract_drafts.json") if allowed(r)]
     names = name_map(games + finals + franchise)
-    for extra in ("extract_wikidata_famous.json",):
-        for row in load_records(extra):
-            if not allowed(row):
-                continue
-            cat = row.get("category")
-            if cat in {"player-birthday", "wikidata-birthday"}:
-                birthdays.append({**row, "category": "player-birthday"})
-            elif cat in {"player-death", "wikidata-death"}:
-                deaths.append({**row, "category": "player-death"})
-            elif cat in {"award", "wikidata-award"}:
-                awards.append({**row, "category": "award"})
     # Individual awards belong to the person a row names. A person's own awards come from the awards extract (rows that name him) and
     # from the person-context extract (core.award_winner.person_id), never from the birthday and death extracts' `personAward`: those were
     # read through the team-season, so every teammate of a Cy Young winner carried a Cy Young Award (148 published facts, 0.6.0).
@@ -1899,6 +1900,11 @@ def build_facts() -> tuple[list[dict], dict]:
         award, pid = rec.get("personAward"), (rec.get("person") or {}).get("personId")
         if award and award not in {a.get("name") for a in person_awards.get(pid, [])}:
             raise SystemExit(f"{rec['recordId']}: personAward {award!r} is not one of person {pid}'s own awards")
+    for rec in chosen.values():
+        rank = FAME_RANKS.get((rec.get("person") or {}).get("qid") or "")
+        if rank and rec.get("category") in ("player-birthday", "player-death"):
+            rec["priorityAthlete"] = True
+            rec["fameRank"] = rank
     shaped = [done for done in (finalize(row) for row in chosen.values()) if done]
     facts = add_captions(shaped)
     dropped = len(chosen) - len(facts)
@@ -1907,18 +1913,11 @@ def build_facts() -> tuple[list[dict], dict]:
     facts = list(by_id.values())
     stamp_tags(facts)
 
-    famous_rank: dict[str, int] = {}
-    for extra in ("extract_wikidata_famous.json",):
-        for row in load_records(extra):
-            qid = ((row.get("person") or {}).get("qid"))
-            sits = row.get("sitelinks") or 0
-            if qid and sits > famous_rank.get(qid, 0):
-                famous_rank[qid] = sits
     meta = {
         "droppedThin": dropped,
         "mergedSameEvent": merged_events,
         "draftsOnDisk": len(drafts),
-        "topFamous": sorted(qid for qid, _ in sorted(famous_rank.items(), key=lambda kv: -kv[1])[:80]),
+        "topFamous": [qid for qid, _ in sorted(FAME_RANKS.items(), key=lambda kv: kv[1])[:TOP_FAMOUS]],
         "awardNames": dict(sorted(AWARD_NAMES.items())),
         "clubNameVotes": sorted([fid, name, n] for (fid, name), n in name_votes(games + finals + franchise).items()),
         "wikidataDump": dump_meta,

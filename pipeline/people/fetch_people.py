@@ -232,7 +232,7 @@ def entities(client: Client) -> None:
         wanted.update(row["qid"] for row in csv.DictReader(fh))
     with (OUT / "medals.csv").open(encoding="utf-8") as fh:
         wanted.update(row["qid"] for row in csv.DictReader(fh))
-    priority = ROOT / "data-sources/priority-athletes.csv"
+    priority = ROOT / "data-sources/priority-people.csv"
     with priority.open(encoding="utf-8") as fh:
         wanted.update(row["qid"] for row in csv.DictReader(fh) if row.get("qid"))
     if (OUT / "honour-lists.csv").exists():
@@ -335,7 +335,7 @@ def profiles(client: Client) -> None:
     """What a birthday or death sentence of a person on the list can say besides his name and date: Wikidata's English description, the titles of his
     French and Japanese Wikipedia articles and his birthplace (P19, the item's own label). Wikidata is CC0. Only people not in the file yet are read."""
     out = ROOT / "data-sources/people-profiles.csv"
-    people = [row["qid"] for row in csv.DictReader((ROOT / "data-sources/people.csv").open(encoding="utf-8")) if row["qid"]]
+    people = [row["qid"] for row in csv.DictReader((ROOT / "data-sources/priority-people.csv").open(encoding="utf-8")) if row["qid"]]
     kept: dict[str, list[str]] = {}
     if out.exists():
         with out.open(encoding="utf-8", newline="") as fh:

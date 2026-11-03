@@ -67,9 +67,10 @@ class InputsTests(unittest.TestCase):
         self.assertTrue(any("missing" in p and "extract_nhl_career_records.json" in p for p in found))
         self.assertTrue(any("missing" in p and "extract_deaths.json" in p for p in found))
 
-    def test_the_famous_extract_may_be_absent_for_a_stated_reason(self):
-        self.assertEqual(self.extract_problems(self.make_dir(skip=("extract_wikidata_famous.json",))), [])
-        self.assertIn("no published fact comes from it", inputs.EXTRACTS["extract_wikidata_famous.json"]["absent_ok"])
+    def test_the_retired_famous_extract_is_no_input(self):
+        self.assertNotIn("extract_wikidata_famous.json", inputs.EXTRACTS)
+        self.assertFalse((HERE / "fetch_wikidata_open.py").exists())
+        self.assertEqual(self.extract_problems(self.make_dir()), [])
 
     def test_an_empty_list_is_named(self):
         found = self.extract_problems(self.make_dir(empty=("extract_deaths.json",)))

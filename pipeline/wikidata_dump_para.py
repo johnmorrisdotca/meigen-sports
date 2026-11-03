@@ -107,13 +107,12 @@ def load_sports(path: Path = SPORTS_FILE) -> dict:
 
 
 def listed_qids() -> set[str]:
-    """The Q ids on John's priority list and the 2,000 list: public figures by his own choice."""
+    """The Q ids on the priority list of 2,000 people: public figures by his own choice."""
     out: set[str] = set()
-    for name in ("priority-athletes.csv", "people.csv"):
-        path = ROOT / "data-sources" / name
-        if path.exists():
-            with path.open(newline="", encoding="utf-8") as fh:
-                out.update(r["qid"] for r in csv.DictReader(fh) if (r.get("qid") or "").startswith("Q"))
+    path = ROOT / "data-sources/priority-people.csv"
+    if path.exists():
+        with path.open(newline="", encoding="utf-8") as fh:
+            out.update(r["qid"] for r in csv.DictReader(fh) if (r.get("qid") or "").startswith("Q"))
     return out
 
 

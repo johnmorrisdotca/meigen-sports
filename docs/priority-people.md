@@ -1,8 +1,8 @@
-[日本語](people.ja.md) · English
+[日本語](priority-people.ja.md) · English
 
-# People list, 2,000 by country and sport
+# Priority people: 2,000 by country and sport, ranked by fame
 
-[`data-sources/people.csv`](../data-sources/people.csv) is the list of people the package builds its facts around: the first list of [priority-athletes.md](priority-athletes.md) (1,000 rows, 999 people: one person was listed twice), then 1,001 more added so that a reader from any of 46 countries finds people they know in most sports, not only in the United States. A person is a Wikidata item (QID); names never identify anyone, and each person is listed once.
+[`data-sources/priority-people.csv`](../data-sources/priority-people.csv) is the one list of people the package builds its facts around, ranked 1 to 2000 by world fame ([how: fame.md](fame.md)). It is the first list John chose (1,000 rows, 999 people: one person was listed twice; the file `priority-athletes.csv`, retired in 0.27.0 and folded into this one), then 1,001 more added so that a reader from any of 46 countries finds people they know in most sports, not only in the United States. A person is a Wikidata item (QID); names never identify anyone, and each person is listed once.
 
 | Column | Meaning |
 | --- | --- |
@@ -16,7 +16,10 @@
 | `olympic_medals` | Medal entries found in the Olympic medallist lists for that country and sport |
 | `enwiki_title` | English Wikipedia article |
 | `birth_on`, `death_on` | Full date, only where Wikidata gives the day; empty otherwise |
-| `source` | Where the person comes from: the Wikidata item and the English Wikipedia article |
+| `source` | Where the person comes from: the Wikidata item and the English Wikipedia article ("first list" for John's own names) |
+| `old_rank` | Place in the first list (1 to 999), kept only as the tie-break of the fame rank; empty for the added people |
+| `editions`, `plays_for`, `world_titles`, `hall_of_fame` | What the fame score is made of, read from Wikidata on 3 November 2026 ([fame.md](fame.md)) |
+| `fame_score`, `fame_rank`, `fame_note` | The score, the place from 1 to 2000, and why a person was not scored or was moved |
 
 Never recorded: sex or gender, ethnicity, religion, health (no impairment, impairment class or classification code; a para sport is named by its own name only: [para sports](para-sports.md)), family, politics.
 
@@ -50,7 +53,7 @@ Wikidata is used as stated, and a few statements are wrong (a few people sit in 
 
 ## What the list is not yet
 
-- World champions and halls of fame are not separate sources; they are caught by the language count only.
+- World champions and halls of fame count in the fame score, from Wikidata's "award received" statements, which are thin for some sports ([fame.md](fame.md)).
 - Paralympic medallists are honours like any other. Para sports are a separate pass, with their own fame rule ([para sports](para-sports.md)); nobody is selected by a para flag.
 - The wider top tier (about 20,000 to 40,000 people) is a rerun with `MEIGEN_SEARCH_PAGES` raised; see [pipeline/people/README.md](../pipeline/people/README.md).
 - Sources: Wikidata is CC0; the Olympic medallist lists are English Wikipedia, CC BY-SA 4.0 (the counts are facts read from them). Never Sports Reference or ESPN.

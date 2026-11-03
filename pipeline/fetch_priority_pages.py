@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Full English Wikipedia pages + Wikidata EntityData for priority athletes.
 
-Only QIDs in data-sources/priority-athletes.csv. One request at a time.
+Only QIDs in data-sources/priority-people.csv. One request at a time.
 Allowed paths: /wiki/Title, /wiki/Title?action=raw, Wikidata Special:EntityData.
 No SPARQL, no /w/, no ESPN, no Sports Reference, no NHL endpoints.
 Never writes DS1 or production. Resume: skip files already on disk.
@@ -20,7 +20,7 @@ import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-CSV_IN = ROOT / "data-sources/priority-athletes.csv"
+CSV_IN = ROOT / "data-sources/priority-people.csv"
 RAW_WD = Path(os.environ.get("MEIGEN_RAW_DIR", str(ROOT / "data-sources/raw/wikidata")))
 RAW_WP = Path(os.environ.get("MEIGEN_WP_DIR", str(ROOT / "data-sources/raw/wikipedia/en")))
 SEED = Path(os.environ.get(

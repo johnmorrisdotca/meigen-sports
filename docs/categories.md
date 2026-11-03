@@ -104,4 +104,4 @@ Sentences come from [templates](templates.md), not a baked English string. Neutr
 
 ## Famous players (all sports)
 
-Rank “famous” by evidence: Wikidata sitelink count, then awards and Hall of Fame membership when those rows exist. Never guess a ranking. The fetch `pipeline/fetch_wikidata_open.py` keeps the top 500 sitelink athletes across hockey, baseball, basketball, American and Canadian football, soccer (men’s and women’s), tennis, boxing, athletics, golf, motor racing, cricket, Olympics and Paralympics. Holes stay holes.
+Rank “famous” by evidence: the fame list ([fame](fame.md)) ranks the 2,000 people the package is built around by Wikipedia language count, then Olympic medals, world titles and halls of fame; for everyone else the language count of the Wikidata dump decides. Never guess a ranking. Holes stay holes.

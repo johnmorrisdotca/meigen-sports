@@ -61,7 +61,7 @@ class Search(unittest.TestCase):
 
 class NoDisallowedEndpoint(unittest.TestCase):
     def test_scripts_make_requests_only_through_the_client(self):
-        for name in ("fetch_wikidata_open.py", "fetch_wikidata_lists.py"):
+        for name in ("fetch_wikidata_lists.py",):
             code = (HERE / name).read_text(encoding="utf-8")
             self.assertNotIn("urlopen", code, name)
             self.assertIsNone(re.search(r"https?://query\.wikidata\.org", code), name)
