@@ -2,7 +2,8 @@
 import { expect, test } from "@playwright/test";
 
 const history = (page: import("@playwright/test").Page) => page.locator("#history article.record");
-const texts = async (page: import("@playwright/test").Page): Promise<string[]> => history(page).allInnerTexts();
+// The facts, by id: the words of a sentence change from one load to the next, the facts picked do not.
+const texts = async (page: import("@playwright/test").Page): Promise<(string | null)[]> => history(page).evaluateAll((rows) => rows.map((row) => (row as HTMLElement).dataset["id"] ?? null));
 
 test("the same seed in the address shows the same picks; a reshuffle puts a new seed in the address", async ({ page }) => {
   await page.goto("/?pick=mixed&seed=abc");

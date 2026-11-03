@@ -100,6 +100,7 @@ function drawFacts(box: HTMLElement, records: readonly OnThisDayRecord[], asOf?:
     if (!text) continue;
     const article = document.createElement("article"); article.className = "record";
     if (fact.eventDate) article.dataset.year = fact.eventDate.slice(0, 4);
+    article.dataset.id = fact.recordId;
     const p = document.createElement("p");
     // The flag of its country (where the data says it is unambiguous) and the trophy it is about: drawn always, shown by the two switches, so a switch redraws nothing.
     const flag = flagMark(fact, locale), trophy = trophyMark(fact), banner = bannerMark(fact, locale);
