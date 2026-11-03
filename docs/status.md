@@ -1,6 +1,6 @@
 # Status of meigen-sports, 2026-11-02
 
-Version 0.25.0 on `main`. The work of ticket cmvfh0kqd0000i90665rmo7sw (SPX-610) and the tickets that followed it is finished in this repository: what is left is elsewhere, and is listed at the end. Tags v0.15.1 to v0.19.1 are the coordinating session's to push (v0.12.0, v0.14.4 and v0.14.5 were also never tagged). `pnpm check` is green (285 tests), and so are `pnpm test:readme` and `pnpm test:demo`.
+Version 0.26.0 on `main`. The work of ticket cmvfh0kqd0000i90665rmo7sw (SPX-610) and the tickets that followed it is finished in this repository: what is left is elsewhere, and is listed at the end. Tags v0.15.1 to v0.19.1 are the coordinating session's to push (v0.12.0, v0.14.4 and v0.14.5 were also never tagged). `pnpm check` is green (285 tests), and so are `pnpm test:readme` and `pnpm test:demo`.
 
 ## What changed since the 0.15.0 audit
 
@@ -23,6 +23,7 @@ Version 0.25.0 on `main`. The work of ticket cmvfh0kqd0000i90665rmo7sw (SPX-610)
 | 0.23.0 | `squircle`, the eighteenth calendar page, from koyomi-calendars; every count and picture says eighteen. |
 | 0.24.0 | 130 facts of NHL and NBA feats from English Wikipedia's complete lists: five or more goals in a game, the 500th goal, 70 or more points in a game; a new kind of sentence, `player-feat`. |
 | 0.25.0 | The first full rebuild from the complete extract set of 2026-11-03 (126,810 facts, up from 105,924), made by a converter that refuses a missing, empty or stale input and a guard that compares with the last release; `catalogue.json` and its charts page. |
+| 0.26.0 | Famous people and big events win the top picks again (MODULES-249): fame by Wikipedia editions, a retired number and titles, legends held back by no cap, day shards of sixteen and an offline set of three to eight per day; the golden paths of before 0.25.0 are back and cannot be relocked without a ticket; `pickFacts` with `ranked`, `random` and `mixed` modes and a seed, the pool filtered first and ranked after, per-league and per-sport picks on Pages; decade labels in full years (MODULES-248). |
 
 "One wording" (the Python converter's own sentences) was already finished in 0.6.0: `test/captions.test.ts` holds every stored sentence to the library's templates. The 0.4.0 audit's other open items are done or have a ticket below.
 
