@@ -4,6 +4,13 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+## [0.23.0] - 2026-11-03
+
+- Feature: `squircle`, the eighteenth calendar page (drawn by koyomi-calendars 0.1.0): a soft rounded tile in a teal-to-blue gradient, a white page with a coloured band and two binding tabs, a large bold day; light and dark, English and Japanese. `CALENDAR_THEMES` has 18 entries and `CalendarTheme` and `calendarThemeOf` accept `squircle`; the other seventeen are unchanged, in the same order.
+- Docs: every count says eighteen (README, calendar icons, uses, demo, embed page, guides in both languages); the gallery has a squircle sheet in both languages and `docs/images` are redrawn (`pnpm images:all`).
+- Wording: the README badge and AGENTS.md say one small runtime dependency (koyomi-calendars) in place of zero; the `zero-dependencies` keyword is gone.
+- Tests: the theme list and count (18), the demo picker and gallery (18 swatches), the alignment of squircle in a browser. The year of squircle sits 4.5 of 256 units above the bottom of its page where the family rule asks for 7.7: the browser test holds squircle to 4.4 until koyomi-calendars moves it.
+
 ## [0.22.0] - 2026-11-02
 
 - Fix: a birth place in a state that no longer exists says the town alone: "London", "Hamburg", "Baku", not "London, Roman Empire", "Hamburg, Holy Roman Empire", "Baku, Russian Empire" (990 facts; empires, margraviates, kingdoms and principalities that are gone, the Soviet Union, East Germany and the like). Wikidata's first country of a place is not the country of the day. The rule is `PAST_STATE` in `pipeline/wikidata_dump_people.py` (the para pass uses it too); the priority list's own places keep the country of the day. Test: `test/places.test.ts`, `pipeline/test_wikidata_dump_people.py`.

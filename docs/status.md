@@ -1,6 +1,6 @@
 # Status of meigen-sports, 2026-11-02
 
-Version 0.22.0 on `main`. The work of ticket cmvfh0kqd0000i90665rmo7sw (SPX-610) and the tickets that followed it is finished in this repository: what is left is elsewhere, and is listed at the end. Tags v0.15.1 to v0.19.1 are the coordinating session's to push (v0.12.0, v0.14.4 and v0.14.5 were also never tagged). `pnpm check` is green (285 tests), and so are `pnpm test:readme` and `pnpm test:demo`.
+Version 0.23.0 on `main`. The work of ticket cmvfh0kqd0000i90665rmo7sw (SPX-610) and the tickets that followed it is finished in this repository: what is left is elsewhere, and is listed at the end. Tags v0.15.1 to v0.19.1 are the coordinating session's to push (v0.12.0, v0.14.4 and v0.14.5 were also never tagged). `pnpm check` is green (285 tests), and so are `pnpm test:readme` and `pnpm test:demo`.
 
 ## What changed since the 0.15.0 audit
 
@@ -20,6 +20,7 @@ Version 0.22.0 on `main`. The work of ticket cmvfh0kqd0000i90665rmo7sw (SPX-610)
 | 0.20.2 | Two games the database has corrected are left out until a fresh extract; eight finals no longer say "Kia Forum" before 2021. |
 | 0.21.0 | 961 facts of para sports (wheelchair sports, goalball, boccia, the Paralympic Games and the rest): famous people and the editions and team results, the sport's name only, never a class or a word for the body (`docs/para-sports.md`). |
 | 0.22.0 | Birth places without gone states ("London", not "London, Roman Empire"), the Allegheny Club identity without a city, a documentation site in English and Japanese, an embed page, and every way of using the package written and tested. |
+| 0.23.0 | `squircle`, the eighteenth calendar page, from koyomi-calendars; every count and picture says eighteen. |
 
 "One wording" (the Python converter's own sentences) was already finished in 0.6.0: `test/captions.test.ts` holds every stored sentence to the library's templates. The 0.4.0 audit's other open items are done or have a ticket below.
 

@@ -65,5 +65,5 @@ unpkg serves the package's own files; `?module` makes it rewrite the imports ins
 
 - Use `<script type="module">`. A classic script cannot `import`.
 - The offline set is about a megabyte. A page that shows a day does not need it: [load one day's feed](api:loadFactDay) instead, which is a few kilobytes.
-- Pin a version in the address (`@johnmorrisdotca/meigen-sports@0.22.0`) when you want the page to stay as it is.
+- Pin a version in the address (`@johnmorrisdotca/meigen-sports@0.23.0`) when you want the page to stay as it is.
 - If nothing appears, see [troubleshooting](troubleshooting.md).

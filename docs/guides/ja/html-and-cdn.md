@@ -65,5 +65,5 @@ unpkg はパッケージのファイルをそのまま配ります。`?module` �
 
 - `<script type="module">` を使います。普通の script では `import` できません。
 - オフライン版は約1MBあります。1日分を出すだけなら要りません。代わりに [1日分のフィードを読み込む](api:loadFactDay) と、数KBで済みます。
-- ページを変えたくないときは、アドレスにバージョンを書きます (`@johnmorrisdotca/meigen-sports@0.22.0`)。
+- ページを変えたくないときは、アドレスにバージョンを書きます (`@johnmorrisdotca/meigen-sports@0.23.0`)。
 - 何も表示されないときは、[困ったとき](troubleshooting.md) を見てください。
