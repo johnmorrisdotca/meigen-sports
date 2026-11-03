@@ -241,6 +241,11 @@ const LEGEND_FULL = 90;
 /** Leagues whose games count for less in `significance`: minor, college and developmental ones. */
 const MINOR_LEAGUES: ReadonlySet<string> = new Set(["ahl", "echl", "ncaaf", "pwhl", "nwsl"]);
 
+/** What a place on the fame list adds to a person's significance: 50 for the first hundred, 45 to 300, 38 to 700, 28 to 1,200, 18 after that. */
+function fameBonus(fameRank: number): number {
+  return fameRank <= 100 ? 50 : fameRank <= 300 ? 45 : fameRank <= 700 ? 38 : fameRank <= 1200 ? 28 : 18;
+}
+
 /**
  * How much a fact is worth showing: finals, famous people and playoff drama above routine results. A pure function of the fact's fields.
  * @param record - A fact.
@@ -280,8 +285,9 @@ export function significance(record: OnThisDayRecord): number {
     case "player-birthday":
     case "player-death": {
       let score = 30;
-      // A name on the priority list is famous; a list fill known to have under 20 Wikipedia editions counts for less than a major award.
-      if (record.priorityAthlete) score += record.sitelinks != null && record.sitelinks < 20 ? 20 : 45;
+      // A place on the fame list of 2,000 people (1 is the most famous in the world) adds more the nearer the top; a fact made before the list was ranked adds the flat 45.
+      if (record.fameRank != null) score += fameBonus(record.fameRank);
+      else if (record.priorityAthlete) score += 45;
       if (record.personAward) score += 30;
       if (record.hallOfFameYear) score += 25;
       // The number of individual awards he won himself: a long list of them is fame that one flagship award is not.
@@ -394,7 +400,7 @@ export function rankRecords(records: readonly OnThisDayRecord[], n: number, opti
       const sport = record.sport && !exempt.has(`sport:${record.sport}`) ? `sport:${record.sport}` : null;
       if (!bypass && sportCap !== null && sport && (counts.get(sport) ?? 0) >= sportCap) continue;
       const person = personKey(record);
-      if (people && person && !exempt.has(person) && (persons.get(person) ?? 0) >= personMax + (legend ? 1 : 0)) continue;
+      if (people && person && !exempt.has(person) && (persons.get(person) ?? 0) >= personMax + (bypass ? 1 : 0)) continue;
       const clubs = teamKeys(record).filter((key) => !exempt.has(key));
       if (people && !legend && clubs.some((key) => teams.has(key))) continue;
       picked.push(record);

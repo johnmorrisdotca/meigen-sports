@@ -256,8 +256,10 @@ export interface OnThisDayRecord {
   readonly featuredReasons?: readonly string[];
   /** Wikidata sitelink count when the extract supplied one. Used to rank famous people, never as identity. */
   readonly sitelinks?: number;
-  /** True when the person's QID is on the committed 1,000-name priority list. */
+  /** True when the person's QID is on the committed priority list of 2,000 people (`data-sources/priority-people.csv`). */
   readonly priorityAthlete?: boolean;
+  /** The person's place on that list, ranked by world fame (1 is the most famous, 2000 the last; docs/fame.md). Present on a birth or a death of a listed person; `significance` adds more the nearer the top. */
+  readonly fameRank?: number;
   readonly nationality?: string | null;
   /**
    * The countries of the person the fact is about: every country he represents in sport or is a citizen of, as ISO 3166-1 alpha-2 codes ("RO"),

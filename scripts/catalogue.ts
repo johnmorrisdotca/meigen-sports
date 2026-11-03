@@ -12,6 +12,7 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 export const THRESHOLDS = { day: 150, sport: 10, league: 100, decade: 500 } as const;
 
 interface Notes { gaps: Catalogue["gaps"]["notes"]; rules: Catalogue["rules"] }
+export interface FameRow { rank: number; qid: string | null; name: string; sport: string; country: string; score: number | null }
 interface Inputs { builtOn?: string; inputs?: Record<string, { sha256: string; bytes: number; modified?: string }> }
 
 const sorted = (counts: Map<string, number>, by: "count" | "key" = "count"): Record<string, number> =>
@@ -26,7 +27,7 @@ export const CALENDAR_DAYS: readonly string[] = Array.from({ length: 366 }, (_, 
 /** The catalogue, a pure function of the facts and what is passed in: no clock, nothing random. Every number is counted here from the facts. */
 export function buildCatalogue(args: {
   facts: readonly OnThisDayRecord[]; records: readonly MeigenRecord[]; offline: readonly OnThisDayRecord[]; offlineBuild: OfflineBuild;
-  packageVersion: string; notes: Notes; inputs: Inputs;
+  packageVersion: string; notes: Notes; inputs: Inputs; fame: { rule: Catalogue["fame"]["rule"]; rows: readonly FameRow[] };
 }): Catalogue {
   const { facts, records, offline, offlineBuild } = args;
   const kinds = new Map<string, number>(), sports = new Map<string, number>(), leagues = new Map<string, number>();
@@ -91,7 +92,48 @@ export function buildCatalogue(args: {
     offline: { records: offline.length, days: offlineBuild.days, minPerDay: Math.min(...offlineCounts), maxPerDay: Math.max(...offlineCounts), shareOfFacts: Math.round((offline.length / facts.length) * 10000) / 10000 },
     gaps: { thresholds: THRESHOLDS, thinSports: below(bySport, THRESHOLDS.sport), thinLeagues: below(byLeague, THRESHOLDS.league), thinDecades: below(byDecade, THRESHOLDS.decade), notes: args.notes.gaps },
     rules: args.notes.rules,
+    fame: fameOf(args.fame.rule, args.fame.rows),
   };
+}
+
+/** The fame list for the catalogue: the people in rank order and the spread of the first 20, 100, 500 and all. */
+export function fameOf(rule: Catalogue["fame"]["rule"], rows: readonly FameRow[]): Catalogue["fame"] {
+  const ranked = [...rows].sort((a, b) => a.rank - b.rank);
+  const top = (counts: Map<string, number>): [string, number][] => [...counts].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).slice(0, 8);
+  const spread: Record<string, { countries: [string, number][]; sports: [string, number][] }> = {};
+  for (const size of rule["bands"] as readonly number[]) {
+    const countries = new Map<string, number>(), sports = new Map<string, number>();
+    for (const r of ranked.slice(0, size)) { bump(countries, r.country || "none"); bump(sports, r.sport); }
+    spread[size >= ranked.length ? "all" : `top${size}`] = { countries: top(countries), sports: top(sports) };
+  }
+  return {
+    rule, total: ranked.length, scored: ranked.filter((r) => r.score != null).length, spread,
+    columns: ["rank", "qid", "name", "sport", "country", "score"], people: ranked.map((r) => [r.rank, r.qid, r.name, r.sport, r.country, r.score]),
+  };
+}
+
+/** One CSV line into cells (quoted cells with commas and doubled quotes; no newline inside a cell). */
+function cells(line: string): string[] {
+  const out: string[] = [];
+  let cell = "", quoted = false;
+  for (let i = 0; i < line.length; i += 1) {
+    const c = line[i]!;
+    if (quoted) { if (c === '"' && line[i + 1] === '"') { cell += '"'; i += 1; } else if (c === '"') quoted = false; else cell += c; }
+    else if (c === '"') quoted = true;
+    else if (c === ",") { out.push(cell); cell = ""; } else cell += c;
+  }
+  out.push(cell);
+  return out;
+}
+
+/** The fame list as the committed file gives it (`data-sources/priority-people.csv`), with the rule file. A namesake item is not published as an id. */
+export function readFame(): { rule: Catalogue["fame"]["rule"]; rows: FameRow[] } {
+  const lines = readFileSync(resolve(ROOT, "data-sources/priority-people.csv"), "utf8").split(/\r?\n/).filter(Boolean);
+  const header = cells(lines[0]!);
+  const rows = lines.slice(1).map((line) => Object.fromEntries(cells(line).map((value, i) => [header[i]!, value])) as Record<string, string>).map((r) => ({
+    rank: Number(r.fame_rank), qid: r.fame_score && r.qid ? r.qid : null, name: r.name!, sport: r.sport!, country: r.plays_for || r.country || "", score: r.fame_score ? Number(r.fame_score) : null,
+  }));
+  return { rule: JSON.parse(readFileSync(resolve(ROOT, "data-sources/fame-rule.json"), "utf8")), rows };
 }
 
 /** The notes and the inputs record the build reads, from the committed files. */

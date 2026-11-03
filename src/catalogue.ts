@@ -74,4 +74,17 @@ export interface Catalogue {
     readonly notes: readonly { readonly id: string; readonly status: "partial" | "waiting" | "not-planned"; readonly en: string; readonly ja: string }[];
   };
   readonly rules: readonly { readonly id: string; readonly en: string; readonly ja: string }[];
+  /**
+   * The fame list: the 2,000 people the package is built around, ranked 1 to 2000 by world fame (`docs/fame.md`). `rule` holds the weights of the score
+   * (Wikipedia language editions first, then Olympic medals, world titles and halls of fame), `spread` the countries and sports of the first 20, 100, 500 and all,
+   * and `people` every person once, as `[rank, Wikidata id or null, name, sport, country or "", score or null]` (no score: Wikidata cannot score the person, who keeps the place from the first list).
+   */
+  readonly fame: {
+    readonly rule: Readonly<Record<string, number | string | readonly number[] | readonly (readonly number[])[]>>;
+    readonly total: number;
+    readonly scored: number;
+    readonly spread: Readonly<Record<string, { readonly countries: readonly (readonly [string, number])[]; readonly sports: readonly (readonly [string, number])[] }>>;
+    readonly columns: readonly ["rank", "qid", "name", "sport", "country", "score"];
+    readonly people: readonly (readonly [number, string | null, string, string, string, number | null])[];
+  };
 }

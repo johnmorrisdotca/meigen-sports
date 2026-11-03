@@ -22,6 +22,8 @@ export const catalogueWords = (language: "en" | "ja"): Record<string, string> =>
     gapsTitle: "Gaps", gapsIntro: "What is thin or missing, said plainly. Below these numbers a day, sport, league or decade counts as thin: {day} facts for a day, {sport} for a sport, {league} for a league, {decade} for a decade.",
     gapsShow: "Show the list", gapsDays: "Thin days ({n})", gapsSports: "Sports with few facts ({n})", gapsLeagues: "Thin leagues ({n})", gapsDecades: "Thin decades ({n})", gapsNone: "None.", gapsNotes: "Partial or waiting", "status-partial": "partial", "status-waiting": "waiting", "status-not-planned": "not planned",
     rulesTitle: "Rules in force", extractsTitle: "Made from these extracts", extractsIntro: "The facts were rebuilt from these files. The SHA-256 names each one exactly.", colFile: "File", colModified: "Changed", colSha: "SHA-256",
+    fameTitle: "The 100 most famous people", fameIntro: "The package is built around 2,000 people, ranked by world fame. The score is the number of Wikipedia languages the person has an article in, plus a few points for Olympic medals, world titles and halls of fame. A tie goes to the older list. The full list of 2,000 is in catalogue.json.", fameSum: "{n} people ranked, {scored} scored. In the first 100: {sports}; {countries}.", fameJson: "The full list (catalogue.json)",
+    colRank: "Rank", colName: "Name", colCountry: "Country", colScore: "Score",
     catPanelText: "{facts} facts about {people} people and {events} events, from {sources} sources, counted by the build. {thin} days have fewer than {n} facts.", catPanelLink: "See the charts", catPanelGaps: "Show the gaps", catPanelGapsHide: "Hide the gaps",
   } : {
     catalogue: "中身の一覧", catTitle: "データの中身", catIntro: "ここにある数字はすべて、ビルドがデータそのものから数えたもので、手で書いたものではありません。同じ数字が catalogue.json にあり、npmパッケージとこのサイトにも入っています。",
@@ -34,6 +36,8 @@ export const catalogueWords = (language: "en" | "ja"): Record<string, string> =>
     gapsTitle: "足りないところ", gapsIntro: "少ないところ、ないところを、そのまま示します。次の数より少ないと「少ない」とします：日は{day}件、競技は{sport}件、リーグは{league}件、年代は{decade}件。",
     gapsShow: "一覧を見る", gapsDays: "事実の少ない日（{n}）", gapsSports: "事実の少ない競技（{n}）", gapsLeagues: "事実の少ないリーグ（{n}）", gapsDecades: "事実の少ない年代（{n}）", gapsNone: "ありません。", gapsNotes: "一部だけ・待ち", "status-partial": "一部だけ", "status-waiting": "待ち", "status-not-planned": "予定なし",
     rulesTitle: "守っているルール", extractsTitle: "作るのに使ったファイル", extractsIntro: "事実は、これらのファイルから作り直しました。SHA-256 でファイルを正確に特定できます。", colFile: "ファイル", colModified: "更新日", colSha: "SHA-256",
+    fameTitle: "世界でいちばん有名な100人", fameIntro: "このパッケージは2,000人の選手を中心に作られていて、世界での有名さの順に並べています。点数は、その人の記事があるウィキペディアの言語の数に、オリンピックのメダル、世界タイトル、殿堂入りの点を少し足したものです。同点のときは、前からあるリストの順です。2,000人の全部は catalogue.json にあります。", fameSum: "{n}人を順位づけ（点数がついたのは{scored}人）。上位100人では：{sports}、{countries}。", fameJson: "全員のリスト（catalogue.json）",
+    colRank: "順位", colName: "名前", colCountry: "国", colScore: "点数",
     catPanelText: "{sources}の出典から、{people}人と{events}の大会・行事について、事実が{facts}件あります（ビルドが数えた数字です）。事実が{n}件より少ない日が{thin}日あります。", catPanelLink: "グラフを見る", catPanelGaps: "足りないところを見る", catPanelGapsHide: "足りないところを隠す",
   }),
 });

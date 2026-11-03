@@ -66,6 +66,13 @@ function draw(c: Catalogue): void {
 <h3>${say("gapsSports", { n: Object.keys(c.gaps.thinSports).length })}</h3><details class="cat-table" data-testid="thin-sports"><summary>${say("gapsShow")}</summary><p class="cat-days">${counted(c.gaps.thinSports, "sport").join(", ")}</p></details>
 <h3>${say("gapsLeagues", { n: Object.keys(c.gaps.thinLeagues).length })}</h3>${list(counted(c.gaps.thinLeagues, "league"))}
 <h3>${say("gapsDecades", { n: Object.keys(c.gaps.thinDecades).length })}</h3>${list(Object.entries(c.gaps.thinDecades).map(([decade, n]) => `${decade}: ${fmt(n)}`))}`;
+  const fame = c.fame, top = fame.people.slice(0, 100);
+  const spread = fame.spread["top100"]!;
+  document.querySelector<HTMLElement>("#cat-fame-sum")!.textContent = say("fameSum", {
+    n: fmt(fame.total), scored: fmt(fame.scored), sports: spread.sports.slice(0, 3).map(([k, v]) => `${name("sport", k)} ${v}`).join(", "), countries: spread.countries.slice(0, 3).map(([k, v]) => `${k === "none" ? say("other") : k} ${v}`).join(", "),
+  });
+  document.querySelector<HTMLElement>("#cat-fame-body")!.innerHTML = table([say("colRank"), say("colName"), say("colSport"), say("colCountry"), say("colScore")],
+    top.map(([rank, , person, sport, country, score]) => [String(rank), person, name("sport", sport), country, score ?? "–"]));
   document.querySelector<HTMLElement>("#cat-rules-body")!.innerHTML = c.rules.map((r) => `<li>${ja ? r.ja : r.en}</li>`).join("");
   document.querySelector<HTMLElement>("#cat-extracts-body")!.innerHTML = c.extracts.length
     ? table([say("colFile"), say("colModified"), say("colSha")], c.extracts.map((e) => [e.name, e.modified ?? "", e.sha256])) : `<p>${say("gapsNone")}</p>`;

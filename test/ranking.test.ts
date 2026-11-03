@@ -100,7 +100,7 @@ test("the sport cap is on every day shard and every offline day, whenever the da
   assert.ok(offline.length >= 3 * 366 - 10);
 });
 
-test("a Hall of Fame year, a long list of own awards and a name on the priority list are fame; a thin priority fill counts for less", () => {
+test("a Hall of Fame year, a long list of own awards and a place on the fame list are fame; the nearer the top the more", () => {
   const person = (over: Partial<OnThisDayRecord>): OnThisDayRecord => fact("p", "ice-hockey", { category: "player-birthday", ...over });
   const plain = significance(person({}));
   assert.equal(significance(person({ hallOfFameYear: 1999 })) - plain, 25);
@@ -108,8 +108,8 @@ test("a Hall of Fame year, a long list of own awards and a name on the priority 
   assert.equal(significance(person({ awardCount: 5 })) - plain, 8);
   assert.equal(significance(person({ awardCount: 1 })) - plain, 0);
   assert.equal(significance(person({ priorityAthlete: true })) - plain, 45);
-  assert.equal(significance(person({ priorityAthlete: true, sitelinks: 6 })) - plain, 20);
-  assert.equal(significance(person({ priorityAthlete: true, sitelinks: 60 })) - plain, 45 + 55);
+  assert.equal(significance(person({ priorityAthlete: true, fameRank: 40 })) - plain, 50);
+  assert.equal(significance(person({ priorityAthlete: true, fameRank: 1500, sitelinks: 60 })) - plain, 18 + 55);
   // Editions: the one fame every sport shares. Fifty is known in many languages, a hundred everywhere.
   assert.equal(significance(person({ sitelinks: 19 })) - plain, 0);
   assert.equal(significance(person({ sitelinks: 20 })) - plain, 15);

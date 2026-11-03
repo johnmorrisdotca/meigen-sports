@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
-import { buildCatalogue, CALENDAR_DAYS, readCatalogueSources, THRESHOLDS } from "../scripts/catalogue.ts";
+import { buildCatalogue, CALENDAR_DAYS, readCatalogueSources, readFame, THRESHOLDS } from "../scripts/catalogue.ts";
 import { loadFacts } from "../scripts/offline.ts";
 import { convertSeed } from "../scripts/data.ts";
 import { OFFLINE_BUILD, offline } from "../src/data/offline.ts";
@@ -16,7 +16,7 @@ const sum = (counts: Readonly<Record<string, number>>): number => Object.values(
 
 test("the committed catalogue is exactly what the build counts from the facts", () => {
   const { quotes, history } = convertSeed();
-  const built = buildCatalogue({ facts, records: [...quotes, ...history], offline, offlineBuild: OFFLINE_BUILD, packageVersion: VERSION, ...readCatalogueSources() });
+  const built = buildCatalogue({ facts, records: [...quotes, ...history], offline, offlineBuild: OFFLINE_BUILD, packageVersion: VERSION, ...readCatalogueSources(), fame: readFame() });
   assert.deepEqual(JSON.parse(JSON.stringify(built)), catalogue, "run `pnpm data` and commit data/v1/0.1.0/catalogue.json");
 });
 

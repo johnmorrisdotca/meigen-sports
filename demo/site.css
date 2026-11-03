@@ -102,3 +102,5 @@ html[data-flags="on"]:not([data-trophies="on"]) .marks:not(:has(.mark-flag)),htm
 
 /* 0.26.0: the pick menu and the seed note never push a phone's page wider than its screen. */
 .controls select{max-width:100%;min-width:0}#pick-note{overflow-wrap:anywhere}
+
+.cat-scroll{max-height:30rem;overflow:auto;border:1px solid var(--rule);border-radius:12px}.cat-scroll table{border-collapse:collapse;width:100%;font-size:.85rem}.cat-scroll th,.cat-scroll td{border-top:1px solid var(--rule);padding:6px 8px;text-align:left;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}.cat-scroll thead th{position:sticky;top:0;background:var(--surface)}

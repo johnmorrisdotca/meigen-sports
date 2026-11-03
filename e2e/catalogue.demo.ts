@@ -28,6 +28,18 @@ test("every chart is drawn from the current catalogue, with its numbers in a tab
   expect(kindRows).toBe(Object.keys(catalogue.byKind).length);
 });
 
+test("the fame panel shows the first 100 of the 2,000 as the catalogue ranks them, in English and in Japanese", async ({ page }) => {
+  await page.goto("/catalogue.html?lang=en");
+  const fame = page.locator('[data-testid="fame"]');
+  await expect(fame.locator("tbody tr")).toHaveCount(100);
+  await expect(fame.locator("tbody tr").first()).toContainText(catalogue.fame.people[0]![2]);
+  await expect(fame.locator("tbody tr").nth(99)).toContainText(catalogue.fame.people[99]![2]);
+  await expect(fame).toContainText(`${catalogue.fame.total.toLocaleString("en-US")} people ranked`);
+  await page.goto("/catalogue.html?lang=ja");
+  await expect(page.locator('[data-testid="fame"] h2')).toContainText("有名");
+  await expect(page.locator('[data-testid="fame"] tbody tr')).toHaveCount(100);
+});
+
 test("the gaps panel lists the thin days and the notes, and the rules are stated", async ({ page }) => {
   await page.goto("/catalogue.html?lang=en");
   const gaps = page.locator('[data-testid="gaps"]');

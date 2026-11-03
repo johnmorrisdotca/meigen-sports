@@ -127,17 +127,13 @@
    "sha256": "cef03355e4ee0b0c5f35c435613cde1265f49fe1c7912be95c67f7ed277ab984",
    "bytes": 555
   },
-  "data-sources/priority-athletes.csv": {
-   "sha256": "f6bb20209b2ae18a874550b75a8162304c87cd58307f728c8519fa7c7cf36dd6",
-   "bytes": 42869
+  "data-sources/priority-people.csv": {
+   "sha256": "1003ded364b3e04ac67083fb35b7dbc38adb95321891af538b540744db1b192c",
+   "bytes": 331773
   },
   "data-sources/priority-facts.jsonl": {
    "sha256": "306d70608c765cc190c93ee9183ecb74953e9ae0aac6b8f53dd158f02e51e759",
    "bytes": 970344
-  },
-  "data-sources/people.csv": {
-   "sha256": "a6a9b44f7eac04318ff6378ddd25bfd3b11b2ae06c5b0818b0b18e794c4a9681",
-   "bytes": 300101
   },
   "data-sources/people-profiles.csv": {
    "sha256": "42c5f3dd1e88919ff0b31319cef3c99f6cf7332235c40d2d2ec5210e89e21121",
