@@ -4,6 +4,14 @@ Changes to the package are recorded here. Dates use ISO 8601.
 
 ## [Unreleased]
 
+## [0.24.0] - 2026-11-03
+
+- Data: 130 facts of NHL and NBA feats, read from English Wikipedia's complete lists (CC BY-SA 4.0): 64 games of five or more goals in the NHL (from Joe Malone on 19 December 1917 to Tage Thompson on 7 December 2022; five in the playoffs), the 500th NHL goal of each of the 50 players who scored one (with the career game, the opposing goaltender's club and an empty net where the list says so), and 16 NBA games of 70 or more points (Wilt Chamberlain's 100 on 2 March 1962, Bam Adebayo's 83, Kobe Bryant's 81). Facts are now 105,924 (was 105,794).
+- A new kind of fact, `player-feat` (`featKind`, `featAmount`, `featNth`, `playerName`, `careerGame`, `emptyNet`), and a new kind of sentence with three patterns in English and in Japanese: "On November 22, 1986, Wayne Gretzky of the Edmonton Oilers scored his 500th NHL goal into an empty net against the Canucks, in his 575th game." "His 3rd game of five or more goals" is counted from the whole list, which is complete, and is said only for a second time or later. A name is a label, never an identity.
+- Not published: the 600th goal and the four-goal NHL games, because Wikipedia has no complete list of either.
+- Pipeline: `pnpm data:milestones` (`pipeline/extract_milestones.py`: three requests, over a second apart, with a User-Agent that names the project; every response kept outside git in `raw/wikipedia-milestones/`; only the tables are read, never a page's references) and `pnpm test:milestones`. The facts are the old ones plus these 130: the converter, run on this Mac, lacks two extracts (`extract_wikidata_famous.json`, `extract_nhl_career_records.json`) and would have undone 0.22.0's 990 birth-place fixes, so only the new facts were merged into `data-sources/facts`.
+- Tests: `test/player-feats.test.ts` (the counts, the credit, the counts of each player, the worded facts), `pipeline/test_milestones.py` (the parsers on samples), the patterns test (three new fixtures), the schema test. Docs: NOTICE, README, categories, templates, translations (both languages), the pipeline README.
+
 ## [0.23.0] - 2026-11-03
 
 - Feature: `squircle`, the eighteenth calendar page (drawn by koyomi-calendars 0.1.0): a soft rounded tile in a teal-to-blue gradient, a white page with a coloured band and two binding tabs, a large bold day; light and dark, English and Japanese. `CALENDAR_THEMES` has 18 entries and `CalendarTheme` and `calendarThemeOf` accept `squircle`; the other seventeen are unchanged, in the same order.

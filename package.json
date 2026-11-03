@@ -1,6 +1,6 @@
 {
   "name": "@johnmorrisdotca/meigen-sports",
-  "version": "0.23.0",
+  "version": "0.24.0",
   "description": "Meigen Sports 名言 — Sports quotations and on-this-day history for JavaScript: source-verified, typed offline data and pure date, sport and entity selectors, with static JSON feeds. One small runtime dependency.",
   "keywords": [
     "sports",
@@ -138,6 +138,8 @@
     "test:datesrank": "python3 -I pipeline/test_dates_rank.py",
     "test:people": "python3 -I pipeline/people/test_select_people.py",
     "test:fetchers": "python3 -I pipeline/test_wikimedia.py",
+    "data:milestones": "python3 -I pipeline/extract_milestones.py",
+    "test:milestones": "python3 -I pipeline/test_milestones.py",
     "site": "pnpm shards && pnpm build && node scripts/site.ts",
     "dev": "pnpm site && node scripts/dev.ts",
     "images": "pnpm site && node scripts/screenshots.ts",
