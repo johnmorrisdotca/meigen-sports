@@ -2072,7 +2072,7 @@ def lay_out(facts: list[dict], meta: dict) -> int:
         specs.append({"key": f"country:{code}", "ids": [r["recordId"] for r in rows], "n": 40, "options": {"maxPer": 16, "exempt": [*competitions(rows)]}})
     for fid, rows in by_team.items():
         rows = uniq_of(rows)
-        specs.append({"key": f"team:{fid}", "ids": [r["recordId"] for r in rows], "n": 80, "options": {"maxPer": 8, "exempt": [f"f:{fid}", *competitions(rows)]}})
+        specs.append({"key": f"team:{fid}", "ids": [r["recordId"] for r in rows], "n": 80, "options": {"maxPer": 8, "keepLegends": True, "exempt": [f"f:{fid}", *competitions(rows)]}})
     for bucket, rows in by_player.items():
         rows = uniq_of(rows)
         specs.append({"key": f"player:{bucket}", "ids": [r["recordId"] for r in rows], "n": 40, "options": {"personMax": 2, "exempt": [*tags_in(rows), *competitions(rows), *clubs_in(rows)]}})
@@ -2084,14 +2084,14 @@ def lay_out(facts: list[dict], meta: dict) -> int:
             people_by_day[row["eventDate"][5:]].append(row)
     for day in calendar:
         rows = uniq_of(people_by_day.get(day, []))
-        specs.append({"key": f"people:{day}", "ids": [r["recordId"] for r in rows], "n": PEOPLE_DAY, "options": {"maxPer": PEOPLE_DAY, "personMax": 1, "maxPerSport": 3, "strictSport": True}})
+        specs.append({"key": f"people:{day}", "ids": [r["recordId"] for r in rows], "n": PEOPLE_DAY, "options": {"maxPer": PEOPLE_DAY, "personMax": 1, "maxPerSport": 3}})
     events_by_day: dict[str, list[dict]] = defaultdict(list)
     for row in facts:
         if row.get("category") in EVENT_CATEGORIES and row.get("eventDate"):
             events_by_day[row["eventDate"][5:]].append(row)
     for day in calendar:
         rows = uniq_of(events_by_day.get(day, []))
-        specs.append({"key": f"events:{day}", "ids": [r["recordId"] for r in rows], "n": EVENTS_DAY, "options": {"maxPer": EVENTS_DAY, "personMax": 1, "maxPerSport": 3, "strictSport": True}})
+        specs.append({"key": f"events:{day}", "ids": [r["recordId"] for r in rows], "n": EVENTS_DAY, "options": {"maxPer": EVENTS_DAY, "personMax": 1, "maxPerSport": 3}})
     # A reader who filters a day to a league or a sport gets that filter's own best facts: the pool is narrowed first and ranked after, never a day's
     # best cut down to a league (`pickFacts`). The ids of the best PICK_DAY of each league and each sport, for each day.
     picks_by: dict[tuple[str, str, str], list[dict]] = defaultdict(list)

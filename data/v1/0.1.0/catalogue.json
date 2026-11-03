@@ -3,7 +3,7 @@
  "package": "0.26.0",
  "dataVersion": "0.1.0",
  "builtOn": "2026-11-03",
- "factsManifestSha256": "ec1864d0f5941f728db32b36a5cbe8cdc1a32d5898ebaf458cd00bc325c75036",
+ "factsManifestSha256": "01e792bc4c8175af6b2d375f5c72a3bcf30f6db3efbf3bfb61bc12817ae8df93",
  "totals": {
   "facts": 126810,
   "quotations": 30,

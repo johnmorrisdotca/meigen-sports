@@ -39,7 +39,7 @@ test("a day's ranking is the same however its facts are ordered, and a list of n
   const a = rankRecords(day, 12), b = rankRecords([...day].reverse(), 12);
   assert.deepEqual(a.map((r) => r.recordId), b.map((r) => r.recordId));
   assert.deepEqual(rankRecords(day, 5).map((r) => r.recordId), a.slice(0, 5).map((r) => r.recordId));
-  assert.deepEqual(bestOfDay(day).map((r) => r.recordId), rankRecords(day, 8, { maxPerSport: 3 }).filter((r, i) => i < 4 || significance(r) >= (i < 5 ? 85 : 90)).map((r) => r.recordId));
+  assert.deepEqual(bestOfDay(day).map((r) => r.recordId), rankDay(day, 8).filter((r, i) => i < 4 || significance(r) >= (i < 5 ? 85 : 90)).map((r) => r.recordId));
 });
 
 test("famous outranks routine: a world cup final, a title game and a priority athlete beat a plain result", () => {

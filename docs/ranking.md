@@ -8,7 +8,7 @@ Every list the package or the Pages feeds hands out is chosen by one function, `
 
 ## Legends
 
-A fact of significance `LEGEND` (85) or more is a legend. The caps below keep a list varied; they never hold a legend back, only the list's own length does (`rankRecords` with `strictSport` holds the sport cap for a legend too: the people and the events of a day, which exist to show many sports). Without this, a day with four famous births in four sports would show two of them and a quiet game would fill the rest. Ten thousand added lower-league games and people once pushed famous people and big events off the day lists (0.25.0); the golden suite (`test/golden/locked-paths.json`, `ever-locked.json`) now keeps every golden fact where it was.
+A fact of significance `LEGEND` (85) or more is a legend. The caps below keep a list varied. In a short list where a place is scarce (a day's list, the offline set, a club's page, `pickFacts`: option `keepLegends`) they never hold a legend back, only the list's own length does. A deep feed about one thing (a league, a sport, a tag, a country) keeps its caps, so it stays varied. Without this, a day with four famous births in four sports would show two of them and a quiet game would fill the rest. Ten thousand added lower-league games and people once pushed famous people and big events off the day lists (0.25.0); the golden suite (`test/golden/locked-paths.json`, `ever-locked.json`) now keeps every golden fact where it was.
 
 ## The caps
 
@@ -21,7 +21,7 @@ A list about one thing does not cap that thing (`exempt`): a tag feed does not c
 | `days/MM-DD.json` | up to 16 | two per tag and competition, three per sport, legends exempt |
 | the bundled offline set | three to eight per day | the head of the same ranking, with the same caps: four, a fifth at significance 85 or more, a sixth to an eighth at 90 or more |
 | `feeds/sports`, `leagues`, `tags` | up to 40 | eight per tag and competition, the subject of the feed exempt |
-| `feeds/teams` | up to 80 | eight per tag and competition, the subject of the feed exempt |
+| `feeds/teams` | up to 80 | eight per tag and competition, the subject of the feed exempt, legends held by no cap |
 | `feeds/players/NN.json` | up to 40 | each person twice |
 
 Because a list of `n` is the head of a longer list of the same facts, the offline facts for a day are the first facts of that day's shard. `test/ranking.test.ts` holds this, and holds the caps, the minimum and the determinism.

@@ -345,14 +345,14 @@ export interface RankOptions {
   readonly minimum?: number;
   /** Most facts of one sport in the list (no cap when left out). Relaxed together with `maxPer`, so a quiet day still reaches its minimum. */
   readonly maxPerSport?: number;
-  /** Hold the sport cap for a legend too. Left out, a legend (`LEGEND`) is held back by no cap: a list about people of many sports sets it. */
-  readonly strictSport?: boolean;
+  /** A legend (`LEGEND`) is held back by no cap, only by the list's own length: for a short list where a place is scarce (a day's list, the offline set, a pick). A deep feed about one thing keeps its caps, so it stays varied. */
+  readonly keepLegends?: boolean;
   /** Keys the list is already about (a tag feed's tag, a league feed's league, a team feed's club, `sport:<sport>`): they are not counted. */
   readonly exempt?: readonly string[];
 }
 
 /** How a calendar day's list is chosen: at most three facts of one sport, so a day is not all baseball or all basketball. */
-const DAY_LIST: RankOptions = { maxPerSport: 3 };
+const DAY_LIST: RankOptions = { maxPerSport: 3, keepLegends: true };
 
 /**
  * Rank facts by `significance` and take the first `n` that keep to the caps, with no repeated fact. The same input always gives the
@@ -389,9 +389,10 @@ export function rankRecords(records: readonly OnThisDayRecord[], n: number, opti
       const keys = [...kindTagsOf(record), `competition:${competitionKey(record)}`].filter((key) => !exempt.has(key));
       // The caps keep a list varied; a legend (a fact of the top fame) is never held back by them, only by the list's own length.
       const legend = scores.get(record.recordId)! >= LEGEND;
-      if (!legend && cap !== null && keys.some((key) => (counts.get(key) ?? 0) >= cap)) continue;
+      const bypass = legend && options.keepLegends === true;
+      if (!bypass && cap !== null && keys.some((key) => (counts.get(key) ?? 0) >= cap)) continue;
       const sport = record.sport && !exempt.has(`sport:${record.sport}`) ? `sport:${record.sport}` : null;
-      if ((!legend || options.strictSport) && sportCap !== null && sport && (counts.get(sport) ?? 0) >= sportCap) continue;
+      if (!bypass && sportCap !== null && sport && (counts.get(sport) ?? 0) >= sportCap) continue;
       const person = personKey(record);
       if (people && person && !exempt.has(person) && (persons.get(person) ?? 0) >= personMax + (legend ? 1 : 0)) continue;
       const clubs = teamKeys(record).filter((key) => !exempt.has(key));
