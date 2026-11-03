@@ -118,6 +118,7 @@
     "test:extract": "bash pipeline/test_person_context_sql.sh",
     "test:finalcontext": "bash pipeline/test_final_context_sql.sh",
     "data:facts": "python3 -I pipeline/convert_extract.py",
+    "test:rebuild": "python3 -I pipeline/test_rebuild_guard.py && python3 -I pipeline/test_convert_extract.py",
     "shards": "python3 -I pipeline/convert_extract.py --layout",
     "data:coverage": "python3 -I pipeline/coverage_matrix.py",
     "data:wikidata": "python3 -I pipeline/fetch_wikidata_open.py",

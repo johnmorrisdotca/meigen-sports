@@ -5,6 +5,7 @@ from __future__ import annotations
 import csv
 import gzip
 import hashlib
+import importlib.util
 import json
 import os
 import re
@@ -16,6 +17,17 @@ from datetime import date, datetime, timedelta
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+
+
+def _sibling(name: str):
+    spec = importlib.util.spec_from_file_location(name, Path(__file__).with_name(f"{name}.py"))
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+rebuild_inputs = _sibling("rebuild_inputs")
+rebuild_guard = _sibling("rebuild_guard")
 EXTRACT = Path(os.environ.get(
     "MEIGEN_EXTRACT_DIR",
     str(Path.home() / "Projects/backups/spx-stats/meigen-extract"),
@@ -1540,11 +1552,23 @@ def player_feat_rows() -> list[dict]:
     return out
 
 
+def drop_own_name_city(rec: dict, label: str) -> None:
+    """The source's city field holds the club's own name for some early identities ("Allegheny Club"): no city then. The row's city was copied into the fact, so it is removed here."""
+    if rec.get("venueCity") and clean_label(rec["venueCity"]) == clean_label(label):
+        del rec["venueCity"]
+
+
 def build_facts() -> tuple[list[dict], dict]:
     """Stage one: the extracts (DS1, the Wikidata dump, the priority list) become the facts, each worded and tagged, and the few numbers and
     names the layout needs besides them. Needs the extracts, which are not in git; its result is `data-sources/facts/` (`write_inputs`)."""
-    if not EXTRACT.is_dir():
-        raise SystemExit(f"EXTRACT dir missing: {EXTRACT}")
+    wrong = rebuild_inputs.problems(EXTRACT, ROOT)
+    if not wrong:
+        wanted = _sibling("wikidata_links").wanted(EXTRACT, ROOT / "data-sources/priority-athletes.csv")
+        wrong = rebuild_inputs.links_problems(EXTRACT, wanted)
+    for line in rebuild_inputs.warnings(EXTRACT, ROOT):
+        print(line, file=sys.stderr)
+    if wrong:
+        raise SystemExit("data:facts needs every input (pipeline/README.md, 'Order of a rebuild'):\n  " + "\n  ".join(wrong))
     LINKS.update(load_links())
     DISPUTED.update(load_disputed())
     load_dated_names()
@@ -1760,9 +1784,7 @@ def build_facts() -> tuple[list[dict], dict]:
         league = league_of_club_on(clean_label(label), row["eventDate"]) if row.get("league") == "mlb" else None
         if league:
             rec["league"] = rec["competition"] = league
-        # The source's city field holds the club's own name for some early identities ("Allegheny Club"): no city then.
-        if row.get("venueCity") and clean_label(row["venueCity"]) != clean_label(label):
-            rec["venueCity"] = row["venueCity"]
+        drop_own_name_city(rec, label)
         chosen[row["recordId"]] = rec
     for row in drafts:
         person = row.get("person") or {}
@@ -2150,12 +2172,23 @@ def lay_out(facts: list[dict], meta: dict) -> int:
     return 0
 
 
+def option(argv: list[str], name: str) -> str | None:
+    return argv[argv.index(name) + 1] if name in argv and argv.index(name) + 1 < len(argv) else None
+
+
 def main(argv: list[str]) -> int:
     if "--layout" in argv:
         facts, meta = read_inputs()
     else:
         facts, meta = build_facts()
+        report = option(argv, "--report")
+        if rebuild_guard.check(ROOT, facts, option(argv, "--baseline"), Path(report) if report else None):
+            return 1
+        if "--dry-run" in argv:
+            print("--dry-run: nothing written")
+            return 0
         write_inputs(facts, meta)
+        (ROOT / "data-sources/facts/inputs.json").write_text(json.dumps(rebuild_inputs.checksums(EXTRACT, ROOT), indent=1) + "\n", encoding="utf-8")
     return lay_out(facts, meta)
 
 

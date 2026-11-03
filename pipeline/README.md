@@ -67,16 +67,20 @@ MEIGEN_API_URL=<read-only API of the SPX database> MEIGEN_API_KEY=<its public ke
 
 ### Order of a rebuild
 
-`extract_dated_names.json` is part of every rebuild. `pnpm data:facts` stops, with the command to run, when it is missing, has an empty list (`clubs`, `venues`, `games`) or was fetched before one of the extracts it follows (`extract_games_on_day`, `extract_finals`, `extract_franchise_events`, `extract_retired_numbers`, `extract_all_star`); it used to print a warning and build facts with a club's first name and `mlb` for the early leagues. So the order is:
+`pnpm data:facts` reads 23 extracts and 11 files of the repository (the list, with how each is made, is `pipeline/rebuild_inputs.py`). It **stops, naming each file**, when an extract is missing, is an empty file, has an empty list (`extract_drafts.json` alone may be empty: DS1 holds no draft rows), is older than an extract it follows (`extract_dated_names.json` after the DB extracts, `extract_wikidata_dump_para.json` after the people pass, `extract_wikidata_links.json` after every extract that names a person or an event) or was made for other people than the extracts now name (`extract_wikidata_links.json`). A file older than the last commit of its own script is a warning. Copy extracts with `cp -p` so their times stay true.
 
-1. The coordinating session runs the DS1 extracts (`python3 -I pipeline/extract_ds1.py` prints the commands) and the two other extractors (`extract_all_star.py`, `extract_mlb_feats.py`).
-2. **Last**, the dated names, from the public views (no DS1 connection; the API address is the SPX database's public REST address and its publishable key, both in the spx-stats `web/` defaults):
+The order:
+
+1. The release-master runs the DS1 extracts (`python3 -I pipeline/extract_ds1.py` prints the commands, plus `queries/extract_nhl_career_records.sql`) and the other extractors (`extract_all_star.py`, `extract_mlb_feats.py`, `pnpm data:milestones`, `fetch_wikidata_open.py`). The Wikidata dump passes (`pnpm data:dump`, `data:events`, `data:para`) need the filtered dump files and run where they are, then `python3 -I pipeline/wikidata_links.py`. All of it lands in `MEIGEN_EXTRACT_DIR`.
+2. **Last** of the database extracts, the dated names, from the public views (no DS1 connection; the API address is the SPX database's public REST address and its publishable key, both in the spx-stats `web/` defaults):
 
    ```sh
    MEIGEN_API_URL=<read-only API of the SPX database> MEIGEN_API_KEY=<its public key> python3 -I pipeline/extract_dated_names.py
    ```
 
-3. `pnpm data:facts`, then `pnpm data`, then `pnpm check`.
+3. `pnpm data:facts --dry-run` builds the facts and runs the **rebuild guard** (`pipeline/rebuild_guard.py`) without writing; `pnpm data:facts` writes `data-sources/facts/` and `inputs.json` (the SHA-256 of every input), then the shards; `pnpm check`. `--baseline <git ref>` and `--report <file>` (the full lists as JSON) are the options.
+
+**The guard.** The new facts are compared with the facts of the last release tag (`git`: `data-sources/facts` and the ids of `src/data/offline.ts` at that tag). It prints, per category, the facts before and after, added, changed (same id, other content), removed and id-changed, and **stops, writing nothing**, on: a lost fact; a fact whose id changed (a lost id with a new one for the same day, kind and subject); a category with fewer facts; a field that changed on facts that keep their id (a rebuild from an extract made before a fix would undo the fix quietly: this is how 990 birth places and the Allegheny Club were caught); a fact of the published offline set that is lost. Intended differences go in `data-sources/rebuild-allow.json`, one entry each with a reason of 10 characters or more (`removed`, `id-changed`, `count-drop` and `changed`, by recordId or by category with a `max`; see the header of `rebuild_guard.py`). The file names the release it is written against (`baseline`) and every entry must match something, so it is emptied and written again for the next release. `pnpm test:rebuild` holds the rules.
 
 Whether the games part can go: the games extract takes `league` from `core.season.league_code`, the same column `api.games.league` shows, so a fresh `extract_games_on_day.sql` run on DS1 gives `na`, `aa`, `ua`, `pl` and `fl` itself (checked in the SQL, not yet run). After one, `pnpm data:facts` prints `"datedGameLeagues"`, the number of facts whose league the dated names changed: when it is 0, `dated_fixes` no longer needs the games. The `games` view is still read for the club of a franchise identity (`league_of_club_on`), so keep it until that reads the games extract.
 

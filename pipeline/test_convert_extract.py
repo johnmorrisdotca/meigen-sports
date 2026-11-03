@@ -339,6 +339,28 @@ class ConvertExtractTests(unittest.TestCase):
         ]
         self.assertEqual(convert.without_stale_games(rows), rows[1:])
 
+    def test_a_city_that_is_the_clubs_own_name_is_dropped_from_the_fact(self):
+        rec = {"venueCity": "Allegheny Club", "clubName": "Allegheny Club (none)"}
+        convert.drop_own_name_city(rec, "Allegheny Club (none)")
+        self.assertNotIn("venueCity", rec)
+        other = {"venueCity": "Boston"}
+        convert.drop_own_name_city(other, "Boston Red Stockings")
+        self.assertEqual(other["venueCity"], "Boston")
+
+    def test_a_rebuild_with_a_missing_extract_stops_and_names_the_file(self):
+        import tempfile
+        original = convert.EXTRACT
+        with tempfile.TemporaryDirectory() as empty:
+            convert.EXTRACT = Path(empty)
+            try:
+                with self.assertRaises(SystemExit) as stop:
+                    convert.build_facts()
+            finally:
+                convert.EXTRACT = original
+        message = str(stop.exception)
+        self.assertIn("extract_wikidata_famous.json", message)
+        self.assertIn("extract_nhl_career_records.json", message)
+
 
 if __name__ == "__main__":
     unittest.main()
