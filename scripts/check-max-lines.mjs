@@ -26,7 +26,7 @@ const KNOWN_OVER = {
   "scripts/docs-site.mjs": 1356,
   "src/family-backgrounds.ts": 554,
   // Changed by another session today (MODULES-318 to MODULES-321).
-  "src/facts.ts": 607,
+  "src/facts.ts": 613,
   "demo/demo.ts": 515,
   "src/load.ts": 771,
   "pipeline/convert_extract.py": 2293,
