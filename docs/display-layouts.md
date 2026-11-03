@@ -123,7 +123,7 @@ import offline from "@johnmorrisdotca/meigen-sports/offline";
 const baseball = factsFor(offline, { date: "10-20", sports: ["baseball"] });
 const words = renderRun(baseball.slice(0, 1), { seed: "sport", locale: "en", asOf: "2026-10-30" });
 const card = displayMarkup({ layout: "calendar", icon: calendarIcon({ theme: "cartoon", month: 10, day: 20, year: 1931 }), items: words.map((one) => ({ text: one.text })) });
-console.log(baseball.length, baseball[0]?.sport); // 5 baseball
+console.log(baseball.length, baseball[0]?.sport); // 8 baseball
 console.log(card.includes("Mickey Mantle")); // true
 ```
 
