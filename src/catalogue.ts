@@ -83,8 +83,9 @@ export interface Catalogue {
     readonly rule: Readonly<Record<string, number | string | readonly number[] | readonly (readonly number[])[]>>;
     readonly total: number;
     readonly scored: number;
-    readonly spread: Readonly<Record<string, { readonly countries: readonly (readonly [string, number])[]; readonly sports: readonly (readonly [string, number])[] }>>;
-    readonly columns: readonly ["rank", "qid", "name", "sport", "country", "score"];
-    readonly people: readonly (readonly [number, string | null, string, string, string, number | null])[];
+    readonly spread: Readonly<Record<string, { readonly countries: readonly (readonly (string | number)[])[]; readonly sports: readonly (readonly (string | number)[])[] }>>;
+    /** The order of the values in each row of `people`. */
+    readonly columns: readonly string[];
+    readonly people: readonly (readonly (string | number | null)[])[];
   };
 }

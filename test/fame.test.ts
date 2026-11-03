@@ -98,16 +98,16 @@ test("the catalogue publishes the whole list, the top 100 are those of the file"
   const { fame } = catalogue;
   assert.equal(fame.total, 2000);
   assert.equal(fame.people.length, 2000);
-  assert.deepEqual(fame.people.map((p) => p[0]), Array.from({ length: 2000 }, (_, i) => i + 1));
+  assert.deepEqual(fame.people.map((p) => p[0] as number), Array.from({ length: 2000 }, (_, i) => i + 1));
   const byRank = new Map(people.map((r) => [Number(r.fame_rank), r]));
   for (const [rank, qid, name, , , score] of fame.people.slice(0, 100)) {
-    const r = byRank.get(rank)!;
+    const r = byRank.get(Number(rank))!;
     assert.equal(name, r.name);
     assert.equal(qid, r.qid || null);
     assert.equal(score, num(r.fame_score));
   }
   assert.equal(fame.scored, people.filter((r) => r.fame_score).length);
-  assert.equal(fame.spread.top100!.sports.reduce((a, [, n]) => a + n, 0) <= 100, true);
+  assert.equal(fame.spread.top100!.sports.reduce((a, [, n]) => a + Number(n), 0) <= 100, true);
   assert.deepEqual(fame.rule, rule);
 });
 

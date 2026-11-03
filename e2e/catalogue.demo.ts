@@ -32,8 +32,8 @@ test("the fame panel shows the first 100 of the 2,000 as the catalogue ranks the
   await page.goto("/catalogue.html?lang=en");
   const fame = page.locator('[data-testid="fame"]');
   await expect(fame.locator("tbody tr")).toHaveCount(100);
-  await expect(fame.locator("tbody tr").first()).toContainText(catalogue.fame.people[0]![2]);
-  await expect(fame.locator("tbody tr").nth(99)).toContainText(catalogue.fame.people[99]![2]);
+  await expect(fame.locator("tbody tr").first()).toContainText(String(catalogue.fame.people[0]![2]));
+  await expect(fame.locator("tbody tr").nth(99)).toContainText(String(catalogue.fame.people[99]![2]));
   await expect(fame).toContainText(`${catalogue.fame.total.toLocaleString("en-US")} people ranked`);
   await page.goto("/catalogue.html?lang=ja");
   await expect(page.locator('[data-testid="fame"] h2')).toContainText("有名");
