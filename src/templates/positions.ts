@@ -73,6 +73,8 @@ const FOOTBALL: Readonly<Record<string, Position>> = {
   DB: { en: "defensive back", ja: "ディフェンシブバック" },
   K: { en: "kicker", ja: "キッカー" },
   P: { en: "punter", ja: "パンター" },
+  LN: { en: "lineman", ja: "ラインマン" },
+  LS: { en: "long snapper", ja: "ロングスナッパー" },
 };
 
 /** The table of each sport, by the sport code the facts carry (`sport`). */

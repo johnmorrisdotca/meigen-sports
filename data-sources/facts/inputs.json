@@ -1,0 +1,159 @@
+{
+ "builtOn": "2026-11-03",
+ "inputs": {
+  "player-birthday-candidates.json": {
+   "sha256": "700d8572c26c4b381afff87edac420081520c9835f963fcb45ab8e01110571fa",
+   "bytes": 21416095,
+   "modified": "2026-11-03"
+  },
+  "extract_deaths.json": {
+   "sha256": "220dce7813def35f5da1766af61813590147aaa3ac0f897fc7fdca77b067a531",
+   "bytes": 6738820,
+   "modified": "2026-11-03"
+  },
+  "extract_games_on_day.json": {
+   "sha256": "fd21cc6448c4ad88934e449d932cf89de4f803fe0f0015d43bd0fbef5442463f",
+   "bytes": 640805751,
+   "modified": "2026-11-03"
+  },
+  "extract_soccer_on_day.json": {
+   "sha256": "3b7a2cb5bfc3c9cfae8bcf898ede03e1ad358bb2dde66f565a6840ac4d0cc689",
+   "bytes": 33045796,
+   "modified": "2026-11-03"
+  },
+  "extract_finals.json": {
+   "sha256": "41bde9928bed03845dfdbb8b4601b074523133b48593f45fabf862a11c690ef7",
+   "bytes": 3108857,
+   "modified": "2026-11-03"
+  },
+  "extract_final_context.json": {
+   "sha256": "0a5e7ce4d3b2756c00a0aa63bef94d69bc22d7747e51018471c1637e228b22fc",
+   "bytes": 507286,
+   "modified": "2026-11-03"
+  },
+  "extract_awards_season.json": {
+   "sha256": "8a87d7d3160c64b8024a99d3343d5fb917847fa806929e7b256a916250276c49",
+   "bytes": 10992933,
+   "modified": "2026-11-03"
+  },
+  "extract_person_context.json": {
+   "sha256": "1da1879368bbe16e75431a8ae51c33347d61a1831e0ca62deb963b77d0396bb8",
+   "bytes": 11172092,
+   "modified": "2026-11-03"
+  },
+  "extract_person_jersey.json": {
+   "sha256": "b153c37977902d68a1ef4bd4b0acfc5076bd73a1587d2138448b3e5eecfd32fb",
+   "bytes": 10583705,
+   "modified": "2026-11-02"
+  },
+  "extract_retired_numbers.json": {
+   "sha256": "00cb7cabd85a5c2c1a11abc5fcf6d4e00281b3fee44286814fff08ee72d93727",
+   "bytes": 210642,
+   "modified": "2026-11-02"
+  },
+  "extract_franchise_events.json": {
+   "sha256": "66c2e3ab22a7e62eced4ede5a9edb7e4c2a0130a18f0c69aeca4e6d0d34249b6",
+   "bytes": 4778564,
+   "modified": "2026-11-03"
+  },
+  "extract_venue_openings.json": {
+   "sha256": "06a8d8e476a79b3dd53531c4f02f12fd21a386d9b337cd4c3c34f0f4c7b13e98",
+   "bytes": 120404,
+   "modified": "2026-11-03"
+  },
+  "extract_nhl_career_records.json": {
+   "sha256": "5945afa9d992e04fef615e2d7587bb5e24dd455083939040ee8fe90b3e06ec9c",
+   "bytes": 287196,
+   "modified": "2026-11-03"
+  },
+  "extract_drafts.json": {
+   "sha256": "da269a67dd3dd50fdaaa69d34629b7722d685bc35ba4f2031b30d0bdc9854b8d",
+   "bytes": 43,
+   "modified": "2026-11-03"
+  },
+  "extract_all_star.json": {
+   "sha256": "66eb9c083871fda0d0b03fe20764042eeafa6f0a7da5361e9fa7905a8f9e305d",
+   "bytes": 257759,
+   "modified": "2026-11-03"
+  },
+  "extract_mlb_feats.json": {
+   "sha256": "25a3fd2c5cba54f9e66f42f2dc29a6a69bfe445c7fa349081b07058eb4c01410",
+   "bytes": 81786,
+   "modified": "2026-11-03"
+  },
+  "extract_milestones.json": {
+   "sha256": "32542bea8a589cc341f47e3988ce42a16918def340fe00df60e8c49c6695b0b7",
+   "bytes": 34790,
+   "modified": "2026-11-03"
+  },
+  "extract_wikidata_dump_people.json": {
+   "sha256": "0dda929551c5e7b1e4ff5c7a6dba4823cbda9174d1090f270f3a680ee687bf41",
+   "bytes": 38314316,
+   "modified": "2026-11-03"
+  },
+  "extract_wikidata_dump_events.json": {
+   "sha256": "607a068a9c17d34d943e6477758a70147e43a6475df3d46c55f583b0c33280e1",
+   "bytes": 13119825,
+   "modified": "2026-11-03"
+  },
+  "extract_wikidata_dump_para.json": {
+   "sha256": "f962aac920b43cfea5ae0fe54ea99152231ad6528df9745a2dfdcb380e9c6d03",
+   "bytes": 585883,
+   "modified": "2026-11-03"
+  },
+  "extract_wikidata_links.json": {
+   "sha256": "7ead7018051f57f48fb52eb9ff196d7f2f4f7b96992b7daafbd7a818c41d472f",
+   "bytes": 8654195,
+   "modified": "2026-11-03"
+  },
+  "extract_dated_names.json": {
+   "sha256": "1c379bc9a3b5f6d0846e7eaf8b841d2e8d42449cc6e93b0fda551b5b5eef8429",
+   "bytes": 1284237,
+   "modified": "2026-11-03"
+  },
+  "data-sources/trophies.json": {
+   "sha256": "11ffaaf1b11996b4844a51ffc5750dd39050aa6d4ad60297097071777ba5adb7",
+   "bytes": 1958
+  },
+  "data-sources/para-sports.json": {
+   "sha256": "e6555b96c35f1029af4371a98fbf6ddda160b2eddc35a73614752fac05424fd9",
+   "bytes": 8053
+  },
+  "data-sources/disputed-dates.json": {
+   "sha256": "fa778a0bac2648a3c378bcc0af72f7696b64b8f6eb44e025c9ffe87e37ee3867",
+   "bytes": 60824
+  },
+  "data-sources/game-corrections.json": {
+   "sha256": "cef03355e4ee0b0c5f35c435613cde1265f49fe1c7912be95c67f7ed277ab984",
+   "bytes": 555
+  },
+  "data-sources/priority-athletes.csv": {
+   "sha256": "f6bb20209b2ae18a874550b75a8162304c87cd58307f728c8519fa7c7cf36dd6",
+   "bytes": 42869
+  },
+  "data-sources/priority-facts.jsonl": {
+   "sha256": "306d70608c765cc190c93ee9183ecb74953e9ae0aac6b8f53dd158f02e51e759",
+   "bytes": 970344
+  },
+  "data-sources/people.csv": {
+   "sha256": "a6a9b44f7eac04318ff6378ddd25bfd3b11b2ae06c5b0818b0b18e794c4a9681",
+   "bytes": 300101
+  },
+  "data-sources/people-profiles.csv": {
+   "sha256": "42c5f3dd1e88919ff0b31319cef3c99f6cf7332235c40d2d2ec5210e89e21121",
+   "bytes": 163542
+  },
+  "pipeline/golden/finals-check.json": {
+   "sha256": "b07254e2cae648add046a6bff8a0163f00188712dcae0a0b6a59e9e558abc816",
+   "bytes": 41004
+  },
+  "pipeline/ds1-people/spx-stats/db/seed/wikidata_meigen_bio.csv": {
+   "sha256": "b12a99ed51e0d2fc0c3c1b6096f214952681b9326b4cdbc784472a1848a81e4b",
+   "bytes": 258316
+  },
+  "pipeline/ds1-people/spx-stats/db/seed/wikidata_meigen_wiki_page.csv": {
+   "sha256": "db431afa983739881f20056c8945326ba76f0961f0ac7868e6b945bb547119e9",
+   "bytes": 619900
+  }
+ }
+}

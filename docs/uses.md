@@ -8,7 +8,7 @@ A design note, not an API reference. Two questions: what a sports history websit
 
 | Need | Call | Notes |
 | --- | --- | --- |
-| Facts for today, offline | `today(offline, timeZone, nowIso)` | The bundled set: 1,511 facts, 3 to 5 for every day. No network. |
+| Facts for today, offline | `today(offline, timeZone, nowIso)` | The bundled set: 1,525 facts, 3 to 5 for every day. No network. |
 | All facts for a day | `loadFactDay("10-20", options)`, `loadFactPeopleDay`, `loadFactEventsDay` | One small static file each. `options` is `{ baseUrl, dataVersion, fetch }`. |
 | Facts for one thing | `queryFacts({ country: "RO", sport: "handball", day: "03-04" }, options)` | Static id indexes, intersected in the browser. `tag`, `award`, `decade`, `team`, `league` too. |
 | Find a person | `findPeopleByName("wayne gr", options)` | One file per first letter. Returns the Q id; a name is a label, never identity. |
@@ -48,7 +48,7 @@ The loaders are in the `/load` subpath. The data version is the one `data/v1/lat
 
 ## 2. SPXN: famous people outside the five leagues
 
-SPXN holds about 31,600 people (`core.person`), almost all from NHL, NBA, MLB, NFL and CFL. It will eventually serve famous people from every sport. The package already has the hard part of the selection: 44,922 births and deaths of sports people in 146 sports from the Wikidata dump (CC0), ranked by Wikipedia editions, and a 2,000-person list balanced by country and sport.
+SPXN holds about 31,600 people (`core.person`), almost all from NHL, NBA, MLB, NFL and CFL. It will eventually serve famous people from every sport. The package already has the hard part of the selection: 44,570 births and deaths of sports people in 146 sports from the Wikidata dump (CC0), ranked by Wikipedia editions, and a 2,000-person list balanced by country and sport.
 
 ### What to hold
 
@@ -92,7 +92,7 @@ Estimates, to be measured on a scratch copy before any load.
 | --- | ---: | --- |
 | Start | about 2,000 | The package's list, 46 countries, tier A (Olympic medal) or B (20+ editions). |
 | First release | about 15,000 | Wikipedia articles in at least 20 languages, or an Olympic medal. |
-| Ceiling | about 45,000 | The 44,922 births and deaths already in the package; more would need a lower edition floor. |
+| Ceiling | about 45,000 | The 44,570 births and deaths already in the package; more would need a lower edition floor. |
 
 At 45,000 people, `core.person` plus its indexes comes to roughly 10 MB (`core.person` is 6.4 MB for 31,578 rows), the identifier rows about 15 MB, the two small tables 5 MB, honours about 10 MB: **roughly 40 MB**. Production was at 347 of 500 MB on 2026-10-11, and the storage plan moved bulky tables out since: check `docs/storage-plan.md` and production's current size first. If the headroom is under 100 MB, hold the first release to 15,000 people (about 15 MB) and put honours in Turso.
 
@@ -122,7 +122,7 @@ At 45,000 people, `core.person` plus its indexes comes to roughly 10 MB (`core.p
 
 ## 4. Recommended order
 
-1. **Measure.** Count the package's 44,922 against SPXN's `core.external_id` (Wikidata) on a scratch Postgres: how many already exist, how many collide. Check production's free space.
+1. **Measure.** Count the package's 44,570 against SPXN's `core.external_id` (Wikidata) on a scratch Postgres: how many already exist, how many collide. Check production's free space.
 2. **The model.** One migration: the `athlete` kind, the person-sport and person-country tables. Name-check them first.
 3. **Load the 2,000** from the package list, link by Q id, run the duplicate check.
 4. **One page**: `/person/<id>` for those 2,000, plus the credit lines. Look at it next to a league player's page.

@@ -68,5 +68,5 @@ test("a missing field is left out, never filled in", () => {
   const noClub = records.find((r) => r.category === "player-birthday" && !r.clubNames?.length && !r.position && r.highlight);
   assert.ok(noClub);
   assert.ok(!(noClub.text ?? "").includes(" the "), noClub.text);
-  assert.equal(captionFromFact({ ...noClub, clubNames: [], position: undefined, highlight: undefined }, "en"), null);
+  assert.equal(captionFromFact({ ...noClub, clubNames: [], position: undefined, highlight: undefined, epithet: undefined, birthPlace: undefined }, "en"), null);
 });

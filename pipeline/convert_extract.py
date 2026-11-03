@@ -794,6 +794,8 @@ def is_sport_person(row: dict) -> bool:
                 return False
         except ValueError:
             return False
+    if row.get("sport") and PARA_SPORT.match(str(row["sport"])) and row["sport"] not in PARA_SLUGS:
+        return False
     if row.get("sport") or row.get("league") or person.get("leagueCodes") or person.get("franchiseIds"):
         return True
     if qid and qid in PRIORITY_QIDS:
@@ -926,6 +928,16 @@ def shuffle(records: list[dict], seed: str) -> list[dict]:
     return copy
 
 
+POSITION_SPORTS = {"baseball", "basketball", "ice-hockey", "american-football", "canadian-football"}  # the sports `src/templates/positions.ts` has a table for
+BASKETBALL_ONLY = {"PG", "SG", "SF", "PF", "GF"}
+
+
+def position_fits(sport: str | None, code: str) -> bool:
+    """A position code belongs to the sport it was read from. A person of two sports (a basketball player of the 1940s who also played football) can carry the code of one under the
+    sport of the other, and a sport with no position table (athletics) has none: the code is then left out, as a sentence never prints a code its sport does not have."""
+    return sport in POSITION_SPORTS and not (code in BASKETBALL_ONLY and sport != "basketball")
+
+
 def person_record(row: dict, context: dict, awards_by_person: dict, person_awards: dict, names: dict, priority: dict) -> dict:
     """A birthday or death row with the career context that is really the person's: his clubs (rosters and statistics), his own best award,
     his club titles and his Hall of Fame year. The extract's own `personAward` is dropped: see main()."""
@@ -951,7 +963,7 @@ def person_record(row: dict, context: dict, awards_by_person: dict, person_award
     rec["clubNames"] = extract_clubs or [names[i] for i in (person.get("franchiseIds") or []) if i in names]
     league = str(rec.get("league") or "").lower()
     rec["sport"] = LEAGUE_SPORT.get(league) or sport_slug(rec.get("sport")) or rec.get("sport")
-    if rec.get("position") in (None, ""):
+    if rec.get("position") in (None, "") or not position_fits(rec.get("sport"), rec["position"]):
         rec.pop("position", None)
     award = awards_by_person.get(pid)
     if award:
@@ -1075,23 +1087,66 @@ def load_dump_people() -> tuple[list[dict], dict, dict[str, int], dict[str, str]
     return data.get("records") or [], data.get("meta") or {}, data.get("sitelinks") or {}, data.get("builtPhrases") or {}
 
 
-def add_dump_people(chosen: dict[str, dict], rows: list[dict]) -> int:
+def add_dump_people(chosen: dict[str, dict], rows: list[dict], para: bool = False) -> int:
     """Add the dump's births and deaths of people the package does not already hold for that kind (a person with a birthday fact from DS1,
     the priority list or an earlier extract keeps it). The rows come with their words and Q id; nothing is worded here."""
-    held = {(rec.get("category"), (rec.get("person") or {}).get("qid")) for rec in chosen.values() if rec.get("category") in ("player-birthday", "player-death")}
+    held = {(rec.get("category"), (rec.get("person") or {}).get("qid")): rec for rec in chosen.values() if rec.get("category") in ("player-birthday", "player-death")}
     added = 0
     for row in rows:
         qid = (row.get("person") or {}).get("qid")
-        if not qid or qid in BLOCKED_QIDS or (row["category"], qid) in held:
+        if not qid or qid in BLOCKED_QIDS:
+            continue
+        if (row["category"], qid) in held:
+            # A row DS1 holds for the same day that has no words for who the person was (no epithet, no highlight) takes the dump's, or the template has no sentence and the fact is lost.
+            own = held[(row["category"], qid)]
+            if own.get("eventDate") == row.get("eventDate") and not own.get("epithet") and not own.get("highlight") and row.get("epithet") and (own.get("sport") in PARA_SLUGS) == para:
+                own["epithet"] = row["epithet"]
+                if para:
+                    own["sport"] = sport_slug(row.get("sport"))
+                if not own.get("birthPlace") and row.get("birthPlace"):
+                    own["birthPlace"] = row["birthPlace"]
             continue
         rec = {**row, "basis": "source", "clubNames": []}
         rec["sport"] = sport_slug(rec.get("sport"))
         if not is_sport_person(rec):
             continue
         chosen[row["recordId"]] = rec
-        held.add((row["category"], qid))
+        held[(row["category"], qid)] = rec
         added += 1
     return added
+
+
+LENT = {"player-birthday": ("birthPlace", "deathDate", "sitelinks"), "player-death": ("sitelinks", "birthDate", "deathDate", "bornYear", "ageYears", "derivedRule", "derivedInputs")}
+
+
+def lend_person_facts(chosen: dict[str, dict], rows: list[dict]) -> int:
+    """A birth or death fact DS1 builds (its id starts `spx:`) lacks what the priority list and the dump hold for the same person and day: a birth place, the death
+    date of a birthday, the birth and age of a death. The fact those rows made said it, so DS1's row takes it when it has none of its own. The priority list's place
+    (the country of the day) comes first, then the dump's (a state that no longer exists is left out of it, `PAST_STATE`)."""
+    first: dict[tuple, dict] = {}
+    for row in priority_rows({}) + rows:
+        key = (row.get("category"), (row.get("person") or {}).get("qid"), row.get("eventDate"))
+        if key[1]:
+            first.setdefault(key, row)
+    places = {}
+    for key, row in first.items():
+        if key[0] == "player-birthday" and row.get("birthPlace"):
+            places[key[1]] = row["birthPlace"]
+    lent = 0
+    for rec in chosen.values():
+        category, qid = rec.get("category"), (rec.get("person") or {}).get("qid")
+        if category not in LENT or not rec["recordId"].startswith("spx:") or not qid:
+            continue
+        other = first.get((category, qid, rec.get("eventDate")))
+        if not (rec.get("clubNames") or rec.get("position") or rec.get("highlight") or rec.get("epithet")):
+            continue  # a birthday with nothing but a name is dropped, and a birth place does not change that
+        for field in LENT[category]:
+            if rec.get(field) in (None, "") and ((other or {}).get(field) not in (None, "") or (field == "birthPlace" and qid in places)):
+                rec[field] = (other or {}).get(field) if (other or {}).get(field) not in (None, "") else places[qid]
+                lent += 1
+        if category == "player-birthday" and rec.get("deathDate") and rec.get("livingStatus") != "deceased":
+            rec["livingStatus"] = "deceased"
+    return lent
 
 
 def add_list_people(chosen: dict[str, dict]) -> int:
@@ -1126,6 +1181,8 @@ def add_list_people(chosen: dict[str, dict]) -> int:
                 if not old.get("highlight") and not old.get("epithet") and old.get("eventDate") == day and not PARA_SPORT.match(str(old.get("sport") or "")):
                     old["highlight"] = highlight
                     added += 1
+                if category == "player-birthday" and old.get("eventDate") == day and not old.get("birthPlace") and profile.get("birth_place"):
+                    old["birthPlace"] = profile["birth_place"]
                 continue
             row = {
                 "recordId": f"people:{category}:wikidata:{qid}:{day}", "category": category, "eventDate": day, "datePrecision": "day",
@@ -1753,8 +1810,13 @@ def build_facts() -> tuple[list[dict], dict]:
     event_rows, event_meta = load_dump_events()
     events_added = add_dump_events(chosen, event_rows)
     para_rows, para_meta = load_dump_para()
-    para_added = add_dump_people(chosen, [r for r in para_rows if r["category"] in ("player-birthday", "player-death")])
+    para_added = add_dump_people(chosen, [r for r in para_rows if r["category"] in ("player-birthday", "player-death")], para=True)
     para_events_added = add_dump_events(chosen, [r for r in para_rows if r["category"] in EVENT_CATEGORIES])
+    # A person DS1 holds in a para sport is published only when the para pass chose him (its fame rule, John's decision of 2026-11-02): DS1 holds many more.
+    para_people = {(row["category"], (row.get("person") or {}).get("qid")) for row in para_rows if row["category"] in ("player-birthday", "player-death")}
+    for record_id in [i for i, rec in chosen.items() if rec.get("category") in ("player-birthday", "player-death") and rec.get("sport") in PARA_SLUGS and (rec["category"], (rec.get("person") or {}).get("qid")) not in para_people]:
+        del chosen[record_id]
+    lend_person_facts(chosen, dump_rows + para_rows)
     for row in awards:
         if not row.get("eventDate") or not (row.get("winnerName") or (row.get("person") or {}).get("name")) or not row.get("awardName"):
             continue
@@ -2140,7 +2202,7 @@ def lay_out(facts: list[dict], meta: dict) -> int:
         "sources": {
             **({"wikidataDump": {**dump_meta, "factsAdded": sum(1 for row in facts if row["recordId"].startswith("wikidata:player-") and row.get("sport") not in PARA_SLUGS)}} if dump_meta else {}),
             **({"wikidataDumpEvents": {**event_meta, "factsAdded": sum(1 for row in facts if row["recordId"].startswith("wikidata:") and row.get("category") in EVENT_CATEGORIES and row.get("sport") not in PARA_SLUGS)}} if event_meta else {}),
-            **({"wikidataDumpPara": {**para_meta, "factsAdded": sum(1 for row in facts if row["recordId"].startswith("wikidata:") and row.get("sport") in PARA_SLUGS)}} if para_meta else {}),
+            **({"wikidataDumpPara": {**para_meta, "factsAdded": sum(1 for row in facts if row.get("sport") in PARA_SLUGS)}} if para_meta else {}),
         },
         "extractOnDisk": {
             "game-on-day": 392898, "championship-final": 1867, "soccer-on-day": 10423,
@@ -2188,7 +2250,7 @@ def main(argv: list[str]) -> int:
             print("--dry-run: nothing written")
             return 0
         write_inputs(facts, meta)
-        (ROOT / "data-sources/facts/inputs.json").write_text(json.dumps(rebuild_inputs.checksums(EXTRACT, ROOT), indent=1) + "\n", encoding="utf-8")
+        (ROOT / "data-sources/facts/inputs.json").write_text(json.dumps({"builtOn": date.today().isoformat(), "inputs": rebuild_inputs.checksums(EXTRACT, ROOT)}, indent=1) + "\n", encoding="utf-8")
     return lay_out(facts, meta)
 
 

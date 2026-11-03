@@ -223,6 +223,9 @@ export function uniqueRecordIds(records: readonly OnThisDayRecord[]): boolean {
   return new Set(ids).size === ids.length;
 }
 
+/** Leagues whose games count for less in `significance`: minor, college and developmental ones. */
+const MINOR_LEAGUES: ReadonlySet<string> = new Set(["ahl", "echl", "ncaaf", "pwhl", "nwsl"]);
+
 /**
  * How much a fact is worth showing: finals, famous people and playoff drama above routine results. A pure function of the fact's fields.
  * @param record - A fact.
@@ -279,7 +282,8 @@ export function significance(record: OnThisDayRecord): number {
       return score;
     }
     default: {
-      let score = 20;
+      // A game of a minor, college or developmental league counts for less than the same game of a major one, so a playoff shutout of the AHL does not outrank a famous venue's opening.
+      let score = MINOR_LEAGUES.has(record.league ?? "") ? 0 : 20;
       if (record.phase === "playoffs") score += 25;
       if (tags.has("overtime-result")) score += 15;
       if (reasons.has("playoff-shutout")) score += 20;

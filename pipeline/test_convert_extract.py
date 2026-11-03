@@ -358,7 +358,7 @@ class ConvertExtractTests(unittest.TestCase):
             finally:
                 convert.EXTRACT = original
         message = str(stop.exception)
-        self.assertIn("extract_wikidata_famous.json", message)
+        self.assertIn("extract_games_on_day.json", message)
         self.assertIn("extract_nhl_career_records.json", message)
 
 

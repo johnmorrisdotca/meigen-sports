@@ -34,7 +34,7 @@ test("para sports are in the data in every new category, in many sports, each fr
   }
   for (const sport of sports) assert.ok(isParaSport(sport), `${sport}`);
   for (const r of para) {
-    assert.deepEqual(r.source, { sourceId: "wikidata", licence: "CC0 1.0", attribution: "Wikidata contributors, CC0.", url: `https://www.wikidata.org/wiki/${r.recordId.split(":")[2]}` }, r.recordId);
+    assert.deepEqual(r.source, { sourceId: "wikidata", licence: "CC0 1.0", attribution: "Wikidata contributors, CC0.", url: `https://www.wikidata.org/wiki/${r.recordId.match(/Q\d+/)![0]}` }, r.recordId);
     assert.equal(r.datePrecision, "day");
     assert.equal(r.basis, "source");
     assert.ok(r.tags.includes(`sport:${r.sport}`), r.recordId);
@@ -50,10 +50,10 @@ test("a date is a real day: not January 1 or December 31 for an event, from 1850
   }
   const edition = new Map<string, { start?: string; end?: string }>();
   for (const r of events) {
-    const entry = edition.get(r.recordId.split(":")[2]!) ?? {};
+    const entry = edition.get(r.recordId.match(/Q\d+/)![0]) ?? {};
     if (r.category === "competition-start") entry.start = r.eventDate ?? undefined;
     if (r.category === "competition-end") entry.end = r.eventDate ?? undefined;
-    edition.set(r.recordId.split(":")[2]!, entry);
+    edition.set(r.recordId.match(/Q\d+/)![0], entry);
   }
   for (const [qid, { start, end }] of edition) if (start && end) assert.ok(start < end, `${qid}: ${start} to ${end}`);
 });

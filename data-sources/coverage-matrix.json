@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "factsReady": 105924,
+  "factsReady": 126810,
   "rows": [
     {
       "sport": "ice-hockey",
@@ -46,311 +46,311 @@
       "sport": "ice-hockey",
       "decade": 1870,
       "tag": "player-birthday",
-      "downloaded": 1,
-      "archived": 1,
-      "identityLinked": 1,
-      "rightsCleared": 1,
-      "feedReady": 9
-    },
-    {
-      "sport": "ice-hockey",
-      "decade": 1870,
-      "tag": "age-at-event",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "ice-hockey",
-      "decade": 1870,
-      "tag": "award-honour",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "ice-hockey",
-      "decade": 1870,
-      "tag": "franchise-identity-change",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "ice-hockey",
-      "decade": 1870,
-      "tag": "venue-history",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "ice-hockey",
-      "decade": 1870,
-      "tag": "draft-selection",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "ice-hockey",
-      "decade": 1870,
-      "tag": "sport-record",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "ice-hockey",
-      "decade": 1870,
-      "tag": "career-stat-milestone",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "ice-hockey",
-      "decade": 1870,
-      "tag": "winning-streak",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "ice-hockey",
-      "decade": 1870,
-      "tag": "combat-sport-result",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "ice-hockey",
-      "decade": 1870,
-      "tag": "athletics-performance",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "ice-hockey",
-      "decade": 1880,
-      "tag": "championship-win",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "ice-hockey",
-      "decade": 1880,
-      "tag": "match-result",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "ice-hockey",
-      "decade": 1880,
-      "tag": "overtime-result",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "ice-hockey",
-      "decade": 1880,
-      "tag": "shutout",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "ice-hockey",
-      "decade": 1880,
-      "tag": "player-birthday",
-      "downloaded": 4,
-      "archived": 4,
-      "identityLinked": 4,
-      "rightsCleared": 4,
-      "feedReady": 19
-    },
-    {
-      "sport": "ice-hockey",
-      "decade": 1880,
-      "tag": "age-at-event",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "ice-hockey",
-      "decade": 1880,
-      "tag": "award-honour",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "ice-hockey",
-      "decade": 1880,
-      "tag": "franchise-identity-change",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "ice-hockey",
-      "decade": 1880,
-      "tag": "venue-history",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "ice-hockey",
-      "decade": 1880,
-      "tag": "draft-selection",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "ice-hockey",
-      "decade": 1880,
-      "tag": "sport-record",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "ice-hockey",
-      "decade": 1880,
-      "tag": "career-stat-milestone",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "ice-hockey",
-      "decade": 1880,
-      "tag": "winning-streak",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "ice-hockey",
-      "decade": 1880,
-      "tag": "combat-sport-result",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "ice-hockey",
-      "decade": 1880,
-      "tag": "athletics-performance",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "ice-hockey",
-      "decade": 1890,
-      "tag": "championship-win",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "ice-hockey",
-      "decade": 1890,
-      "tag": "match-result",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "ice-hockey",
-      "decade": 1890,
-      "tag": "overtime-result",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "ice-hockey",
-      "decade": 1890,
-      "tag": "shutout",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 0
-    },
-    {
-      "sport": "ice-hockey",
-      "decade": 1890,
-      "tag": "player-birthday",
       "downloaded": 8,
       "archived": 8,
       "identityLinked": 8,
       "rightsCleared": 8,
-      "feedReady": 26
+      "feedReady": 10
+    },
+    {
+      "sport": "ice-hockey",
+      "decade": 1870,
+      "tag": "age-at-event",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "ice-hockey",
+      "decade": 1870,
+      "tag": "award-honour",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "ice-hockey",
+      "decade": 1870,
+      "tag": "franchise-identity-change",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "ice-hockey",
+      "decade": 1870,
+      "tag": "venue-history",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "ice-hockey",
+      "decade": 1870,
+      "tag": "draft-selection",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "ice-hockey",
+      "decade": 1870,
+      "tag": "sport-record",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "ice-hockey",
+      "decade": 1870,
+      "tag": "career-stat-milestone",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "ice-hockey",
+      "decade": 1870,
+      "tag": "winning-streak",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "ice-hockey",
+      "decade": 1870,
+      "tag": "combat-sport-result",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "ice-hockey",
+      "decade": 1870,
+      "tag": "athletics-performance",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "ice-hockey",
+      "decade": 1880,
+      "tag": "championship-win",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "ice-hockey",
+      "decade": 1880,
+      "tag": "match-result",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "ice-hockey",
+      "decade": 1880,
+      "tag": "overtime-result",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "ice-hockey",
+      "decade": 1880,
+      "tag": "shutout",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "ice-hockey",
+      "decade": 1880,
+      "tag": "player-birthday",
+      "downloaded": 26,
+      "archived": 26,
+      "identityLinked": 26,
+      "rightsCleared": 26,
+      "feedReady": 33
+    },
+    {
+      "sport": "ice-hockey",
+      "decade": 1880,
+      "tag": "age-at-event",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "ice-hockey",
+      "decade": 1880,
+      "tag": "award-honour",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "ice-hockey",
+      "decade": 1880,
+      "tag": "franchise-identity-change",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "ice-hockey",
+      "decade": 1880,
+      "tag": "venue-history",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "ice-hockey",
+      "decade": 1880,
+      "tag": "draft-selection",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "ice-hockey",
+      "decade": 1880,
+      "tag": "sport-record",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "ice-hockey",
+      "decade": 1880,
+      "tag": "career-stat-milestone",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "ice-hockey",
+      "decade": 1880,
+      "tag": "winning-streak",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "ice-hockey",
+      "decade": 1880,
+      "tag": "combat-sport-result",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "ice-hockey",
+      "decade": 1880,
+      "tag": "athletics-performance",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "ice-hockey",
+      "decade": 1890,
+      "tag": "championship-win",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "ice-hockey",
+      "decade": 1890,
+      "tag": "match-result",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "ice-hockey",
+      "decade": 1890,
+      "tag": "overtime-result",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "ice-hockey",
+      "decade": 1890,
+      "tag": "shutout",
+      "downloaded": 0,
+      "archived": 0,
+      "identityLinked": 0,
+      "rightsCleared": 0,
+      "feedReady": 0
+    },
+    {
+      "sport": "ice-hockey",
+      "decade": 1890,
+      "tag": "player-birthday",
+      "downloaded": 22,
+      "archived": 22,
+      "identityLinked": 22,
+      "rightsCleared": 22,
+      "feedReady": 36
     },
     {
       "sport": "ice-hockey",
@@ -496,10 +496,10 @@
       "sport": "ice-hockey",
       "decade": 1900,
       "tag": "player-birthday",
-      "downloaded": 17,
-      "archived": 17,
-      "identityLinked": 17,
-      "rightsCleared": 17,
+      "downloaded": 23,
+      "archived": 23,
+      "identityLinked": 23,
+      "rightsCleared": 23,
       "feedReady": 32
     },
     {
@@ -646,20 +646,20 @@
       "sport": "ice-hockey",
       "decade": 1910,
       "tag": "player-birthday",
-      "downloaded": 22,
-      "archived": 22,
-      "identityLinked": 22,
-      "rightsCleared": 22,
+      "downloaded": 27,
+      "archived": 27,
+      "identityLinked": 27,
+      "rightsCleared": 27,
       "feedReady": 33
     },
     {
       "sport": "ice-hockey",
       "decade": 1910,
       "tag": "age-at-event",
-      "downloaded": 2,
-      "archived": 2,
-      "identityLinked": 2,
-      "rightsCleared": 2,
+      "downloaded": 3,
+      "archived": 3,
+      "identityLinked": 3,
+      "rightsCleared": 3,
       "feedReady": 7
     },
     {
@@ -706,9 +706,9 @@
       "sport": "ice-hockey",
       "decade": 1910,
       "tag": "sport-record",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
+      "downloaded": 6,
+      "archived": 6,
+      "identityLinked": 6,
       "rightsCleared": 0,
       "feedReady": 0
     },
@@ -796,21 +796,21 @@
       "sport": "ice-hockey",
       "decade": 1920,
       "tag": "player-birthday",
-      "downloaded": 28,
-      "archived": 28,
-      "identityLinked": 28,
-      "rightsCleared": 28,
+      "downloaded": 33,
+      "archived": 33,
+      "identityLinked": 33,
+      "rightsCleared": 33,
       "feedReady": 42
     },
     {
       "sport": "ice-hockey",
       "decade": 1920,
       "tag": "age-at-event",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 3
+      "downloaded": 4,
+      "archived": 4,
+      "identityLinked": 4,
+      "rightsCleared": 4,
+      "feedReady": 5
     },
     {
       "sport": "ice-hockey",
@@ -856,9 +856,9 @@
       "sport": "ice-hockey",
       "decade": 1920,
       "tag": "sport-record",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
+      "downloaded": 20,
+      "archived": 20,
+      "identityLinked": 20,
       "rightsCleared": 0,
       "feedReady": 0
     },
@@ -946,30 +946,30 @@
       "sport": "ice-hockey",
       "decade": 1930,
       "tag": "player-birthday",
-      "downloaded": 34,
-      "archived": 34,
-      "identityLinked": 34,
-      "rightsCleared": 34,
-      "feedReady": 61
+      "downloaded": 53,
+      "archived": 53,
+      "identityLinked": 53,
+      "rightsCleared": 53,
+      "feedReady": 72
     },
     {
       "sport": "ice-hockey",
       "decade": 1930,
       "tag": "age-at-event",
-      "downloaded": 3,
-      "archived": 3,
-      "identityLinked": 3,
-      "rightsCleared": 3,
-      "feedReady": 14
+      "downloaded": 12,
+      "archived": 12,
+      "identityLinked": 12,
+      "rightsCleared": 12,
+      "feedReady": 16
     },
     {
       "sport": "ice-hockey",
       "decade": 1930,
       "tag": "award-honour",
-      "downloaded": 52,
-      "archived": 52,
+      "downloaded": 56,
+      "archived": 56,
       "identityLinked": 40,
-      "rightsCleared": 42,
+      "rightsCleared": 46,
       "feedReady": 0
     },
     {
@@ -1006,9 +1006,9 @@
       "sport": "ice-hockey",
       "decade": 1930,
       "tag": "sport-record",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
+      "downloaded": 20,
+      "archived": 20,
+      "identityLinked": 20,
       "rightsCleared": 0,
       "feedReady": 0
     },
@@ -1096,30 +1096,30 @@
       "sport": "ice-hockey",
       "decade": 1940,
       "tag": "player-birthday",
-      "downloaded": 36,
-      "archived": 36,
-      "identityLinked": 36,
-      "rightsCleared": 36,
-      "feedReady": 66
+      "downloaded": 170,
+      "archived": 170,
+      "identityLinked": 170,
+      "rightsCleared": 170,
+      "feedReady": 199
     },
     {
       "sport": "ice-hockey",
       "decade": 1940,
       "tag": "age-at-event",
-      "downloaded": 1,
-      "archived": 1,
-      "identityLinked": 1,
-      "rightsCleared": 1,
-      "feedReady": 15
+      "downloaded": 7,
+      "archived": 7,
+      "identityLinked": 7,
+      "rightsCleared": 7,
+      "feedReady": 20
     },
     {
       "sport": "ice-hockey",
       "decade": 1940,
       "tag": "award-honour",
-      "downloaded": 55,
-      "archived": 55,
+      "downloaded": 65,
+      "archived": 65,
       "identityLinked": 43,
-      "rightsCleared": 45,
+      "rightsCleared": 55,
       "feedReady": 0
     },
     {
@@ -1156,9 +1156,9 @@
       "sport": "ice-hockey",
       "decade": 1940,
       "tag": "sport-record",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
+      "downloaded": 20,
+      "archived": 20,
+      "identityLinked": 20,
       "rightsCleared": 0,
       "feedReady": 0
     },
@@ -1246,30 +1246,30 @@
       "sport": "ice-hockey",
       "decade": 1950,
       "tag": "player-birthday",
-      "downloaded": 68,
-      "archived": 68,
-      "identityLinked": 68,
-      "rightsCleared": 68,
-      "feedReady": 90
+      "downloaded": 177,
+      "archived": 177,
+      "identityLinked": 177,
+      "rightsCleared": 177,
+      "feedReady": 194
     },
     {
       "sport": "ice-hockey",
       "decade": 1950,
       "tag": "age-at-event",
-      "downloaded": 5,
-      "archived": 5,
-      "identityLinked": 5,
-      "rightsCleared": 5,
-      "feedReady": 29
+      "downloaded": 12,
+      "archived": 12,
+      "identityLinked": 12,
+      "rightsCleared": 12,
+      "feedReady": 32
     },
     {
       "sport": "ice-hockey",
       "decade": 1950,
       "tag": "award-honour",
-      "downloaded": 70,
-      "archived": 70,
+      "downloaded": 80,
+      "archived": 80,
       "identityLinked": 57,
-      "rightsCleared": 60,
+      "rightsCleared": 70,
       "feedReady": 0
     },
     {
@@ -1306,9 +1306,9 @@
       "sport": "ice-hockey",
       "decade": 1950,
       "tag": "sport-record",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
+      "downloaded": 20,
+      "archived": 20,
+      "identityLinked": 20,
       "rightsCleared": 0,
       "feedReady": 0
     },
@@ -1396,30 +1396,30 @@
       "sport": "ice-hockey",
       "decade": 1960,
       "tag": "player-birthday",
-      "downloaded": 69,
-      "archived": 69,
-      "identityLinked": 69,
-      "rightsCleared": 69,
+      "downloaded": 74,
+      "archived": 74,
+      "identityLinked": 74,
+      "rightsCleared": 74,
       "feedReady": 123
     },
     {
       "sport": "ice-hockey",
       "decade": 1960,
       "tag": "age-at-event",
-      "downloaded": 9,
-      "archived": 9,
-      "identityLinked": 9,
-      "rightsCleared": 9,
-      "feedReady": 54
+      "downloaded": 24,
+      "archived": 24,
+      "identityLinked": 24,
+      "rightsCleared": 24,
+      "feedReady": 59
     },
     {
       "sport": "ice-hockey",
       "decade": 1960,
       "tag": "award-honour",
-      "downloaded": 84,
-      "archived": 84,
+      "downloaded": 94,
+      "archived": 94,
       "identityLinked": 74,
-      "rightsCleared": 74,
+      "rightsCleared": 84,
       "feedReady": 0
     },
     {
@@ -1456,9 +1456,9 @@
       "sport": "ice-hockey",
       "decade": 1960,
       "tag": "sport-record",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
+      "downloaded": 20,
+      "archived": 20,
+      "identityLinked": 20,
       "rightsCleared": 0,
       "feedReady": 0
     },
@@ -1506,21 +1506,21 @@
       "sport": "ice-hockey",
       "decade": 1970,
       "tag": "championship-win",
-      "downloaded": 54,
-      "archived": 54,
-      "identityLinked": 54,
-      "rightsCleared": 0,
-      "feedReady": 11
+      "downloaded": 80,
+      "archived": 80,
+      "identityLinked": 80,
+      "rightsCleared": 26,
+      "feedReady": 17
     },
     {
       "sport": "ice-hockey",
       "decade": 1970,
       "tag": "match-result",
-      "downloaded": 6954,
-      "archived": 6954,
-      "identityLinked": 6954,
-      "rightsCleared": 0,
-      "feedReady": 0
+      "downloaded": 10457,
+      "archived": 10457,
+      "identityLinked": 10457,
+      "rightsCleared": 3503,
+      "feedReady": 291
     },
     {
       "sport": "ice-hockey",
@@ -1540,36 +1540,36 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 90
     },
     {
       "sport": "ice-hockey",
       "decade": 1970,
       "tag": "player-birthday",
-      "downloaded": 55,
-      "archived": 55,
-      "identityLinked": 55,
-      "rightsCleared": 55,
+      "downloaded": 62,
+      "archived": 62,
+      "identityLinked": 62,
+      "rightsCleared": 62,
       "feedReady": 156
     },
     {
       "sport": "ice-hockey",
       "decade": 1970,
       "tag": "age-at-event",
-      "downloaded": 12,
-      "archived": 12,
-      "identityLinked": 12,
-      "rightsCleared": 12,
-      "feedReady": 56
+      "downloaded": 16,
+      "archived": 16,
+      "identityLinked": 16,
+      "rightsCleared": 16,
+      "feedReady": 59
     },
     {
       "sport": "ice-hockey",
       "decade": 1970,
       "tag": "award-honour",
-      "downloaded": 127,
-      "archived": 127,
+      "downloaded": 137,
+      "archived": 137,
       "identityLinked": 108,
-      "rightsCleared": 117,
+      "rightsCleared": 127,
       "feedReady": 0
     },
     {
@@ -1606,9 +1606,9 @@
       "sport": "ice-hockey",
       "decade": 1970,
       "tag": "sport-record",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
+      "downloaded": 20,
+      "archived": 20,
+      "identityLinked": 20,
       "rightsCleared": 0,
       "feedReady": 0
     },
@@ -1666,11 +1666,11 @@
       "sport": "ice-hockey",
       "decade": 1980,
       "tag": "match-result",
-      "downloaded": 9172,
-      "archived": 9172,
-      "identityLinked": 9172,
-      "rightsCleared": 0,
-      "feedReady": 0
+      "downloaded": 9521,
+      "archived": 9521,
+      "identityLinked": 9521,
+      "rightsCleared": 349,
+      "feedReady": 30
     },
     {
       "sport": "ice-hockey",
@@ -1690,36 +1690,36 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 12
     },
     {
       "sport": "ice-hockey",
       "decade": 1980,
       "tag": "player-birthday",
-      "downloaded": 59,
-      "archived": 59,
-      "identityLinked": 59,
-      "rightsCleared": 59,
+      "downloaded": 67,
+      "archived": 67,
+      "identityLinked": 67,
+      "rightsCleared": 67,
       "feedReady": 230
     },
     {
       "sport": "ice-hockey",
       "decade": 1980,
       "tag": "age-at-event",
-      "downloaded": 17,
-      "archived": 17,
-      "identityLinked": 17,
-      "rightsCleared": 17,
-      "feedReady": 75
+      "downloaded": 27,
+      "archived": 27,
+      "identityLinked": 27,
+      "rightsCleared": 27,
+      "feedReady": 81
     },
     {
       "sport": "ice-hockey",
       "decade": 1980,
       "tag": "award-honour",
-      "downloaded": 154,
-      "archived": 154,
+      "downloaded": 166,
+      "archived": 166,
       "identityLinked": 134,
-      "rightsCleared": 144,
+      "rightsCleared": 156,
       "feedReady": 0
     },
     {
@@ -1756,9 +1756,9 @@
       "sport": "ice-hockey",
       "decade": 1980,
       "tag": "sport-record",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
+      "downloaded": 20,
+      "archived": 20,
+      "identityLinked": 20,
       "rightsCleared": 0,
       "feedReady": 0
     },
@@ -1816,11 +1816,11 @@
       "sport": "ice-hockey",
       "decade": 1990,
       "tag": "match-result",
-      "downloaded": 10551,
-      "archived": 10551,
-      "identityLinked": 10551,
-      "rightsCleared": 0,
-      "feedReady": 0
+      "downloaded": 11392,
+      "archived": 11392,
+      "identityLinked": 11392,
+      "rightsCleared": 841,
+      "feedReady": 98
     },
     {
       "sport": "ice-hockey",
@@ -1840,36 +1840,36 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 75
     },
     {
       "sport": "ice-hockey",
       "decade": 1990,
       "tag": "player-birthday",
-      "downloaded": 49,
-      "archived": 49,
-      "identityLinked": 49,
-      "rightsCleared": 49,
+      "downloaded": 56,
+      "archived": 56,
+      "identityLinked": 56,
+      "rightsCleared": 56,
       "feedReady": 174
     },
     {
       "sport": "ice-hockey",
       "decade": 1990,
       "tag": "age-at-event",
-      "downloaded": 17,
-      "archived": 17,
-      "identityLinked": 17,
-      "rightsCleared": 17,
-      "feedReady": 74
+      "downloaded": 23,
+      "archived": 23,
+      "identityLinked": 23,
+      "rightsCleared": 23,
+      "feedReady": 78
     },
     {
       "sport": "ice-hockey",
       "decade": 1990,
       "tag": "award-honour",
-      "downloaded": 161,
-      "archived": 161,
+      "downloaded": 181,
+      "archived": 181,
       "identityLinked": 138,
-      "rightsCleared": 151,
+      "rightsCleared": 171,
       "feedReady": 0
     },
     {
@@ -1906,9 +1906,9 @@
       "sport": "ice-hockey",
       "decade": 1990,
       "tag": "sport-record",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
+      "downloaded": 20,
+      "archived": 20,
+      "identityLinked": 20,
       "rightsCleared": 0,
       "feedReady": 0
     },
@@ -1966,11 +1966,11 @@
       "sport": "ice-hockey",
       "decade": 2000,
       "tag": "match-result",
-      "downloaded": 12454,
-      "archived": 12454,
-      "identityLinked": 12454,
-      "rightsCleared": 0,
-      "feedReady": 0
+      "downloaded": 14001,
+      "archived": 14001,
+      "identityLinked": 14001,
+      "rightsCleared": 1547,
+      "feedReady": 259
     },
     {
       "sport": "ice-hockey",
@@ -1990,7 +1990,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 230
     },
     {
       "sport": "ice-hockey",
@@ -2006,20 +2006,20 @@
       "sport": "ice-hockey",
       "decade": 2000,
       "tag": "age-at-event",
-      "downloaded": 13,
-      "archived": 13,
-      "identityLinked": 13,
-      "rightsCleared": 13,
-      "feedReady": 72
+      "downloaded": 30,
+      "archived": 30,
+      "identityLinked": 30,
+      "rightsCleared": 30,
+      "feedReady": 82
     },
     {
       "sport": "ice-hockey",
       "decade": 2000,
       "tag": "award-honour",
-      "downloaded": 155,
-      "archived": 155,
+      "downloaded": 175,
+      "archived": 175,
       "identityLinked": 135,
-      "rightsCleared": 146,
+      "rightsCleared": 166,
       "feedReady": 0
     },
     {
@@ -2056,9 +2056,9 @@
       "sport": "ice-hockey",
       "decade": 2000,
       "tag": "sport-record",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
+      "downloaded": 18,
+      "archived": 18,
+      "identityLinked": 18,
       "rightsCleared": 0,
       "feedReady": 0
     },
@@ -2116,11 +2116,11 @@
       "sport": "ice-hockey",
       "decade": 2010,
       "tag": "match-result",
-      "downloaded": 12869,
-      "archived": 12869,
-      "identityLinked": 12869,
-      "rightsCleared": 0,
-      "feedReady": 0
+      "downloaded": 14232,
+      "archived": 14232,
+      "identityLinked": 14232,
+      "rightsCleared": 1363,
+      "feedReady": 175
     },
     {
       "sport": "ice-hockey",
@@ -2140,7 +2140,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 161
     },
     {
       "sport": "ice-hockey",
@@ -2156,20 +2156,20 @@
       "sport": "ice-hockey",
       "decade": 2010,
       "tag": "age-at-event",
-      "downloaded": 27,
-      "archived": 27,
-      "identityLinked": 27,
-      "rightsCleared": 27,
-      "feedReady": 126
+      "downloaded": 47,
+      "archived": 47,
+      "identityLinked": 47,
+      "rightsCleared": 47,
+      "feedReady": 139
     },
     {
       "sport": "ice-hockey",
       "decade": 2010,
       "tag": "award-honour",
-      "downloaded": 181,
-      "archived": 181,
+      "downloaded": 199,
+      "archived": 199,
       "identityLinked": 158,
-      "rightsCleared": 171,
+      "rightsCleared": 189,
       "feedReady": 0
     },
     {
@@ -2206,9 +2206,9 @@
       "sport": "ice-hockey",
       "decade": 2010,
       "tag": "sport-record",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
+      "downloaded": 20,
+      "archived": 20,
+      "identityLinked": 20,
       "rightsCleared": 0,
       "feedReady": 0
     },
@@ -2266,11 +2266,11 @@
       "sport": "ice-hockey",
       "decade": 2020,
       "tag": "match-result",
-      "downloaded": 9876,
-      "archived": 9876,
-      "identityLinked": 9876,
-      "rightsCleared": 0,
-      "feedReady": 0
+      "downloaded": 11054,
+      "archived": 11054,
+      "identityLinked": 11054,
+      "rightsCleared": 1178,
+      "feedReady": 160
     },
     {
       "sport": "ice-hockey",
@@ -2290,7 +2290,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 147
     },
     {
       "sport": "ice-hockey",
@@ -2306,20 +2306,20 @@
       "sport": "ice-hockey",
       "decade": 2020,
       "tag": "age-at-event",
-      "downloaded": 27,
-      "archived": 27,
-      "identityLinked": 27,
-      "rightsCleared": 27,
-      "feedReady": 86
+      "downloaded": 53,
+      "archived": 53,
+      "identityLinked": 53,
+      "rightsCleared": 53,
+      "feedReady": 108
     },
     {
       "sport": "ice-hockey",
       "decade": 2020,
       "tag": "award-honour",
-      "downloaded": 107,
-      "archived": 107,
+      "downloaded": 121,
+      "archived": 121,
       "identityLinked": 91,
-      "rightsCleared": 101,
+      "rightsCleared": 112,
       "feedReady": 0
     },
     {
@@ -2356,9 +2356,9 @@
       "sport": "ice-hockey",
       "decade": 2020,
       "tag": "sport-record",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
+      "downloaded": 12,
+      "archived": 12,
+      "identityLinked": 12,
       "rightsCleared": 0,
       "feedReady": 0
     },
@@ -2466,10 +2466,10 @@
       "sport": "baseball",
       "decade": 1870,
       "tag": "award-honour",
-      "downloaded": 0,
-      "archived": 0,
+      "downloaded": 13,
+      "archived": 13,
       "identityLinked": 0,
-      "rightsCleared": 0,
+      "rightsCleared": 13,
       "feedReady": 0
     },
     {
@@ -2570,7 +2570,7 @@
       "archived": 8759,
       "identityLinked": 8759,
       "rightsCleared": 8759,
-      "feedReady": 770
+      "feedReady": 776
     },
     {
       "sport": "baseball",
@@ -2590,16 +2590,16 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 124
+      "feedReady": 127
     },
     {
       "sport": "baseball",
       "decade": 1880,
       "tag": "player-birthday",
-      "downloaded": 5,
-      "archived": 5,
-      "identityLinked": 5,
-      "rightsCleared": 5,
+      "downloaded": 9,
+      "archived": 9,
+      "identityLinked": 9,
+      "rightsCleared": 9,
       "feedReady": 20
     },
     {
@@ -2616,10 +2616,10 @@
       "sport": "baseball",
       "decade": 1880,
       "tag": "award-honour",
-      "downloaded": 0,
-      "archived": 0,
+      "downloaded": 30,
+      "archived": 30,
       "identityLinked": 0,
-      "rightsCleared": 0,
+      "rightsCleared": 30,
       "feedReady": 0
     },
     {
@@ -2746,10 +2746,10 @@
       "sport": "baseball",
       "decade": 1890,
       "tag": "player-birthday",
-      "downloaded": 7,
-      "archived": 7,
-      "identityLinked": 7,
-      "rightsCleared": 7,
+      "downloaded": 9,
+      "archived": 9,
+      "identityLinked": 9,
+      "rightsCleared": 9,
       "feedReady": 14
     },
     {
@@ -2766,10 +2766,10 @@
       "sport": "baseball",
       "decade": 1890,
       "tag": "award-honour",
-      "downloaded": 0,
-      "archived": 0,
+      "downloaded": 24,
+      "archived": 24,
       "identityLinked": 0,
-      "rightsCleared": 0,
+      "rightsCleared": 24,
       "feedReady": 0
     },
     {
@@ -2896,10 +2896,10 @@
       "sport": "baseball",
       "decade": 1900,
       "tag": "player-birthday",
-      "downloaded": 13,
-      "archived": 13,
-      "identityLinked": 13,
-      "rightsCleared": 13,
+      "downloaded": 15,
+      "archived": 15,
+      "identityLinked": 15,
+      "rightsCleared": 15,
       "feedReady": 33
     },
     {
@@ -2916,10 +2916,10 @@
       "sport": "baseball",
       "decade": 1900,
       "tag": "award-honour",
-      "downloaded": 6,
-      "archived": 6,
+      "downloaded": 12,
+      "archived": 12,
       "identityLinked": 0,
-      "rightsCleared": 0,
+      "rightsCleared": 6,
       "feedReady": 0
     },
     {
@@ -3046,10 +3046,10 @@
       "sport": "baseball",
       "decade": 1910,
       "tag": "player-birthday",
-      "downloaded": 15,
-      "archived": 15,
-      "identityLinked": 15,
-      "rightsCleared": 15,
+      "downloaded": 16,
+      "archived": 16,
+      "identityLinked": 16,
+      "rightsCleared": 16,
       "feedReady": 33
     },
     {
@@ -3066,10 +3066,10 @@
       "sport": "baseball",
       "decade": 1910,
       "tag": "award-honour",
-      "downloaded": 11,
-      "archived": 11,
+      "downloaded": 13,
+      "archived": 13,
       "identityLinked": 1,
-      "rightsCleared": 1,
+      "rightsCleared": 3,
       "feedReady": 0
     },
     {
@@ -3206,10 +3206,10 @@
       "sport": "baseball",
       "decade": 1920,
       "tag": "age-at-event",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
       "feedReady": 11
     },
     {
@@ -3346,11 +3346,11 @@
       "sport": "baseball",
       "decade": 1930,
       "tag": "player-birthday",
-      "downloaded": 80,
-      "archived": 80,
-      "identityLinked": 80,
-      "rightsCleared": 80,
-      "feedReady": 101
+      "downloaded": 81,
+      "archived": 81,
+      "identityLinked": 81,
+      "rightsCleared": 81,
+      "feedReady": 102
     },
     {
       "sport": "baseball",
@@ -3506,10 +3506,10 @@
       "sport": "baseball",
       "decade": 1940,
       "tag": "age-at-event",
-      "downloaded": 4,
-      "archived": 4,
-      "identityLinked": 4,
-      "rightsCleared": 4,
+      "downloaded": 6,
+      "archived": 6,
+      "identityLinked": 6,
+      "rightsCleared": 6,
       "feedReady": 14
     },
     {
@@ -3656,11 +3656,11 @@
       "sport": "baseball",
       "decade": 1950,
       "tag": "age-at-event",
-      "downloaded": 5,
-      "archived": 5,
-      "identityLinked": 5,
-      "rightsCleared": 5,
-      "feedReady": 22
+      "downloaded": 8,
+      "archived": 8,
+      "identityLinked": 8,
+      "rightsCleared": 8,
+      "feedReady": 23
     },
     {
       "sport": "baseball",
@@ -3796,20 +3796,20 @@
       "sport": "baseball",
       "decade": 1960,
       "tag": "player-birthday",
-      "downloaded": 146,
-      "archived": 146,
-      "identityLinked": 146,
-      "rightsCleared": 146,
+      "downloaded": 147,
+      "archived": 147,
+      "identityLinked": 147,
+      "rightsCleared": 147,
       "feedReady": 164
     },
     {
       "sport": "baseball",
       "decade": 1960,
       "tag": "age-at-event",
-      "downloaded": 7,
-      "archived": 7,
-      "identityLinked": 7,
-      "rightsCleared": 7,
+      "downloaded": 8,
+      "archived": 8,
+      "identityLinked": 8,
+      "rightsCleared": 8,
       "feedReady": 17
     },
     {
@@ -3956,11 +3956,11 @@
       "sport": "baseball",
       "decade": 1970,
       "tag": "age-at-event",
-      "downloaded": 17,
-      "archived": 17,
-      "identityLinked": 17,
-      "rightsCleared": 17,
-      "feedReady": 36
+      "downloaded": 18,
+      "archived": 18,
+      "identityLinked": 18,
+      "rightsCleared": 18,
+      "feedReady": 37
     },
     {
       "sport": "baseball",
@@ -4106,10 +4106,10 @@
       "sport": "baseball",
       "decade": 1980,
       "tag": "age-at-event",
-      "downloaded": 9,
-      "archived": 9,
-      "identityLinked": 9,
-      "rightsCleared": 9,
+      "downloaded": 10,
+      "archived": 10,
+      "identityLinked": 10,
+      "rightsCleared": 10,
       "feedReady": 28
     },
     {
@@ -4256,10 +4256,10 @@
       "sport": "baseball",
       "decade": 1990,
       "tag": "age-at-event",
-      "downloaded": 20,
-      "archived": 20,
-      "identityLinked": 20,
-      "rightsCleared": 20,
+      "downloaded": 21,
+      "archived": 21,
+      "identityLinked": 21,
+      "rightsCleared": 21,
       "feedReady": 38
     },
     {
@@ -4356,21 +4356,21 @@
       "sport": "baseball",
       "decade": 2000,
       "tag": "championship-win",
-      "downloaded": 54,
-      "archived": 54,
-      "identityLinked": 54,
-      "rightsCleared": 13,
+      "downloaded": 53,
+      "archived": 53,
+      "identityLinked": 53,
+      "rightsCleared": 12,
       "feedReady": 5
     },
     {
       "sport": "baseball",
       "decade": 2000,
       "tag": "match-result",
-      "downloaded": 25978,
-      "archived": 25978,
-      "identityLinked": 25978,
-      "rightsCleared": 5129,
-      "feedReady": 232
+      "downloaded": 25896,
+      "archived": 25896,
+      "identityLinked": 25896,
+      "rightsCleared": 5047,
+      "feedReady": 224
     },
     {
       "sport": "baseball",
@@ -4390,7 +4390,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 50
+      "feedReady": 48
     },
     {
       "sport": "baseball",
@@ -4406,10 +4406,10 @@
       "sport": "baseball",
       "decade": 2000,
       "tag": "age-at-event",
-      "downloaded": 32,
-      "archived": 32,
-      "identityLinked": 32,
-      "rightsCleared": 32,
+      "downloaded": 33,
+      "archived": 33,
+      "identityLinked": 33,
+      "rightsCleared": 33,
       "feedReady": 62
     },
     {
@@ -4516,10 +4516,10 @@
       "sport": "baseball",
       "decade": 2010,
       "tag": "match-result",
-      "downloaded": 24664,
-      "archived": 24664,
-      "identityLinked": 24664,
-      "rightsCleared": 19734,
+      "downloaded": 24660,
+      "archived": 24660,
+      "identityLinked": 24660,
+      "rightsCleared": 19730,
       "feedReady": 776
     },
     {
@@ -4560,7 +4560,7 @@
       "archived": 41,
       "identityLinked": 41,
       "rightsCleared": 41,
-      "feedReady": 78
+      "feedReady": 80
     },
     {
       "sport": "baseball",
@@ -4656,21 +4656,21 @@
       "sport": "baseball",
       "decade": 2020,
       "tag": "championship-win",
-      "downloaded": 35,
-      "archived": 35,
-      "identityLinked": 35,
-      "rightsCleared": 35,
-      "feedReady": 12
+      "downloaded": 40,
+      "archived": 40,
+      "identityLinked": 40,
+      "rightsCleared": 40,
+      "feedReady": 13
     },
     {
       "sport": "baseball",
       "decade": 2020,
       "tag": "match-result",
-      "downloaded": 15777,
-      "archived": 15777,
-      "identityLinked": 15777,
-      "rightsCleared": 15777,
-      "feedReady": 728
+      "downloaded": 15778,
+      "archived": 15778,
+      "identityLinked": 15778,
+      "rightsCleared": 15778,
+      "feedReady": 733
     },
     {
       "sport": "baseball",
@@ -4710,14 +4710,14 @@
       "archived": 60,
       "identityLinked": 60,
       "rightsCleared": 60,
-      "feedReady": 91
+      "feedReady": 92
     },
     {
       "sport": "baseball",
       "decade": 2020,
       "tag": "award-honour",
-      "downloaded": 306,
-      "archived": 306,
+      "downloaded": 307,
+      "archived": 307,
       "identityLinked": 298,
       "rightsCleared": 300,
       "feedReady": 0
@@ -5446,11 +5446,11 @@
       "sport": "basketball",
       "decade": 1910,
       "tag": "player-birthday",
-      "downloaded": 70,
-      "archived": 70,
-      "identityLinked": 70,
-      "rightsCleared": 70,
-      "feedReady": 74
+      "downloaded": 69,
+      "archived": 69,
+      "identityLinked": 69,
+      "rightsCleared": 69,
+      "feedReady": 73
     },
     {
       "sport": "basketball",
@@ -5596,11 +5596,11 @@
       "sport": "basketball",
       "decade": 1920,
       "tag": "player-birthday",
-      "downloaded": 386,
-      "archived": 386,
-      "identityLinked": 386,
-      "rightsCleared": 386,
-      "feedReady": 391
+      "downloaded": 380,
+      "archived": 380,
+      "identityLinked": 380,
+      "rightsCleared": 380,
+      "feedReady": 384
     },
     {
       "sport": "basketball",
@@ -5750,7 +5750,7 @@
       "archived": 204,
       "identityLinked": 204,
       "rightsCleared": 204,
-      "feedReady": 212
+      "feedReady": 211
     },
     {
       "sport": "basketball",
@@ -6166,11 +6166,11 @@
       "sport": "basketball",
       "decade": 1960,
       "tag": "match-result",
-      "downloaded": 4333,
-      "archived": 4333,
-      "identityLinked": 4333,
-      "rightsCleared": 4333,
-      "feedReady": 378
+      "downloaded": 4322,
+      "archived": 4322,
+      "identityLinked": 4322,
+      "rightsCleared": 4322,
+      "feedReady": 377
     },
     {
       "sport": "basketball",
@@ -6306,21 +6306,21 @@
       "sport": "basketball",
       "decade": 1970,
       "tag": "championship-win",
-      "downloaded": 55,
-      "archived": 55,
-      "identityLinked": 55,
-      "rightsCleared": 55,
+      "downloaded": 56,
+      "archived": 56,
+      "identityLinked": 56,
+      "rightsCleared": 56,
       "feedReady": 24
     },
     {
       "sport": "basketball",
       "decade": 1970,
       "tag": "match-result",
-      "downloaded": 5270,
-      "archived": 5270,
-      "identityLinked": 5270,
-      "rightsCleared": 5270,
-      "feedReady": 441
+      "downloaded": 5901,
+      "archived": 5901,
+      "identityLinked": 5901,
+      "rightsCleared": 5901,
+      "feedReady": 485
     },
     {
       "sport": "basketball",
@@ -6456,21 +6456,21 @@
       "sport": "basketball",
       "decade": 1980,
       "tag": "championship-win",
-      "downloaded": 55,
-      "archived": 55,
-      "identityLinked": 55,
-      "rightsCleared": 55,
+      "downloaded": 58,
+      "archived": 58,
+      "identityLinked": 58,
+      "rightsCleared": 58,
       "feedReady": 18
     },
     {
       "sport": "basketball",
       "decade": 1980,
       "tag": "match-result",
-      "downloaded": 3596,
-      "archived": 3596,
-      "identityLinked": 3596,
-      "rightsCleared": 3596,
-      "feedReady": 282
+      "downloaded": 7294,
+      "archived": 7294,
+      "identityLinked": 7294,
+      "rightsCleared": 7294,
+      "feedReady": 487
     },
     {
       "sport": "basketball",
@@ -6496,21 +6496,21 @@
       "sport": "basketball",
       "decade": 1980,
       "tag": "player-birthday",
-      "downloaded": 717,
-      "archived": 717,
-      "identityLinked": 717,
-      "rightsCleared": 717,
+      "downloaded": 718,
+      "archived": 718,
+      "identityLinked": 718,
+      "rightsCleared": 718,
       "feedReady": 778
     },
     {
       "sport": "basketball",
       "decade": 1980,
       "tag": "age-at-event",
-      "downloaded": 84,
-      "archived": 84,
-      "identityLinked": 84,
-      "rightsCleared": 84,
-      "feedReady": 100
+      "downloaded": 83,
+      "archived": 83,
+      "identityLinked": 83,
+      "rightsCleared": 83,
+      "feedReady": 99
     },
     {
       "sport": "basketball",
@@ -6606,21 +6606,21 @@
       "sport": "basketball",
       "decade": 1990,
       "tag": "championship-win",
-      "downloaded": 55,
-      "archived": 55,
-      "identityLinked": 55,
-      "rightsCleared": 55,
+      "downloaded": 56,
+      "archived": 56,
+      "identityLinked": 56,
+      "rightsCleared": 56,
       "feedReady": 19
     },
     {
       "sport": "basketball",
       "decade": 1990,
       "tag": "match-result",
-      "downloaded": 5087,
-      "archived": 5087,
-      "identityLinked": 5087,
-      "rightsCleared": 5087,
-      "feedReady": 437
+      "downloaded": 7801,
+      "archived": 7801,
+      "identityLinked": 7801,
+      "rightsCleared": 7801,
+      "feedReady": 634
     },
     {
       "sport": "basketball",
@@ -6656,18 +6656,18 @@
       "sport": "basketball",
       "decade": 1990,
       "tag": "age-at-event",
-      "downloaded": 128,
-      "archived": 128,
-      "identityLinked": 128,
-      "rightsCleared": 128,
-      "feedReady": 171
+      "downloaded": 126,
+      "archived": 126,
+      "identityLinked": 126,
+      "rightsCleared": 126,
+      "feedReady": 169
     },
     {
       "sport": "basketball",
       "decade": 1990,
       "tag": "award-honour",
-      "downloaded": 92,
-      "archived": 92,
+      "downloaded": 95,
+      "archived": 95,
       "identityLinked": 72,
       "rightsCleared": 82,
       "feedReady": 0
@@ -6766,11 +6766,11 @@
       "sport": "basketball",
       "decade": 2000,
       "tag": "match-result",
-      "downloaded": 11799,
-      "archived": 11799,
-      "identityLinked": 11799,
-      "rightsCleared": 1824,
-      "feedReady": 139
+      "downloaded": 14546,
+      "archived": 14546,
+      "identityLinked": 14546,
+      "rightsCleared": 4571,
+      "feedReady": 265
     },
     {
       "sport": "basketball",
@@ -6806,18 +6806,18 @@
       "sport": "basketball",
       "decade": 2000,
       "tag": "age-at-event",
-      "downloaded": 226,
-      "archived": 226,
-      "identityLinked": 226,
-      "rightsCleared": 226,
-      "feedReady": 272
+      "downloaded": 222,
+      "archived": 222,
+      "identityLinked": 222,
+      "rightsCleared": 222,
+      "feedReady": 269
     },
     {
       "sport": "basketball",
       "decade": 2000,
       "tag": "award-honour",
-      "downloaded": 91,
-      "archived": 91,
+      "downloaded": 101,
+      "archived": 101,
       "identityLinked": 76,
       "rightsCleared": 81,
       "feedReady": 0
@@ -6916,11 +6916,11 @@
       "sport": "basketball",
       "decade": 2010,
       "tag": "match-result",
-      "downloaded": 13007,
-      "archived": 13007,
-      "identityLinked": 13007,
-      "rightsCleared": 9108,
-      "feedReady": 772
+      "downloaded": 15116,
+      "archived": 15116,
+      "identityLinked": 15116,
+      "rightsCleared": 11217,
+      "feedReady": 914
     },
     {
       "sport": "basketball",
@@ -6960,14 +6960,14 @@
       "archived": 286,
       "identityLinked": 286,
       "rightsCleared": 286,
-      "feedReady": 370
+      "feedReady": 371
     },
     {
       "sport": "basketball",
       "decade": 2010,
       "tag": "award-honour",
-      "downloaded": 93,
-      "archived": 93,
+      "downloaded": 103,
+      "archived": 103,
       "identityLinked": 74,
       "rightsCleared": 83,
       "feedReady": 0
@@ -6980,7 +6980,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 30
+      "feedReady": 0
     },
     {
       "sport": "basketball",
@@ -7066,11 +7066,11 @@
       "sport": "basketball",
       "decade": 2020,
       "tag": "match-result",
-      "downloaded": 9551,
-      "archived": 9551,
-      "identityLinked": 9551,
-      "rightsCleared": 9551,
-      "feedReady": 964
+      "downloaded": 11305,
+      "archived": 11305,
+      "identityLinked": 11305,
+      "rightsCleared": 11305,
+      "feedReady": 1121
     },
     {
       "sport": "basketball",
@@ -7110,14 +7110,14 @@
       "archived": 210,
       "identityLinked": 210,
       "rightsCleared": 210,
-      "feedReady": 282
+      "feedReady": 281
     },
     {
       "sport": "basketball",
       "decade": 2020,
       "tag": "award-honour",
-      "downloaded": 58,
-      "archived": 58,
+      "downloaded": 64,
+      "archived": 64,
       "identityLinked": 46,
       "rightsCleared": 52,
       "feedReady": 0
@@ -7396,11 +7396,11 @@
       "sport": "american-football",
       "decade": 1880,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 3
+      "downloaded": 16,
+      "archived": 16,
+      "identityLinked": 16,
+      "rightsCleared": 16,
+      "feedReady": 20
     },
     {
       "sport": "american-football",
@@ -7546,11 +7546,11 @@
       "sport": "american-football",
       "decade": 1890,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 8
+      "downloaded": 304,
+      "archived": 304,
+      "identityLinked": 304,
+      "rightsCleared": 304,
+      "feedReady": 304
     },
     {
       "sport": "american-football",
@@ -7696,11 +7696,11 @@
       "sport": "american-football",
       "decade": 1900,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 16
+      "downloaded": 349,
+      "archived": 349,
+      "identityLinked": 349,
+      "rightsCleared": 349,
+      "feedReady": 356
     },
     {
       "sport": "american-football",
@@ -7846,11 +7846,11 @@
       "sport": "american-football",
       "decade": 1910,
       "tag": "player-birthday",
-      "downloaded": 1,
-      "archived": 1,
-      "identityLinked": 1,
-      "rightsCleared": 1,
-      "feedReady": 17
+      "downloaded": 969,
+      "archived": 969,
+      "identityLinked": 969,
+      "rightsCleared": 969,
+      "feedReady": 973
     },
     {
       "sport": "american-football",
@@ -7996,21 +7996,21 @@
       "sport": "american-football",
       "decade": 1920,
       "tag": "player-birthday",
-      "downloaded": 5,
-      "archived": 5,
-      "identityLinked": 5,
-      "rightsCleared": 5,
-      "feedReady": 36
+      "downloaded": 1114,
+      "archived": 1114,
+      "identityLinked": 1114,
+      "rightsCleared": 1114,
+      "feedReady": 1117
     },
     {
       "sport": "american-football",
       "decade": 1920,
       "tag": "age-at-event",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 1
+      "downloaded": 4,
+      "archived": 4,
+      "identityLinked": 4,
+      "rightsCleared": 4,
+      "feedReady": 5
     },
     {
       "sport": "american-football",
@@ -8106,21 +8106,21 @@
       "sport": "american-football",
       "decade": 1930,
       "tag": "championship-win",
-      "downloaded": 3,
-      "archived": 3,
-      "identityLinked": 3,
-      "rightsCleared": 3,
-      "feedReady": 3
+      "downloaded": 7,
+      "archived": 7,
+      "identityLinked": 7,
+      "rightsCleared": 7,
+      "feedReady": 7
     },
     {
       "sport": "american-football",
       "decade": 1930,
       "tag": "match-result",
-      "downloaded": 584,
-      "archived": 584,
-      "identityLinked": 584,
-      "rightsCleared": 584,
-      "feedReady": 109
+      "downloaded": 581,
+      "archived": 581,
+      "identityLinked": 581,
+      "rightsCleared": 581,
+      "feedReady": 112
     },
     {
       "sport": "american-football",
@@ -8146,21 +8146,21 @@
       "sport": "american-football",
       "decade": 1930,
       "tag": "player-birthday",
-      "downloaded": 4,
-      "archived": 4,
-      "identityLinked": 4,
-      "rightsCleared": 4,
-      "feedReady": 55
+      "downloaded": 1259,
+      "archived": 1259,
+      "identityLinked": 1259,
+      "rightsCleared": 1259,
+      "feedReady": 1266
     },
     {
       "sport": "american-football",
       "decade": 1930,
       "tag": "age-at-event",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 2
+      "downloaded": 18,
+      "archived": 18,
+      "identityLinked": 18,
+      "rightsCleared": 18,
+      "feedReady": 17
     },
     {
       "sport": "american-football",
@@ -8256,11 +8256,11 @@
       "sport": "american-football",
       "decade": 1940,
       "tag": "championship-win",
-      "downloaded": 9,
-      "archived": 9,
-      "identityLinked": 9,
-      "rightsCleared": 9,
-      "feedReady": 9
+      "downloaded": 14,
+      "archived": 14,
+      "identityLinked": 14,
+      "rightsCleared": 14,
+      "feedReady": 14
     },
     {
       "sport": "american-football",
@@ -8270,7 +8270,7 @@
       "archived": 770,
       "identityLinked": 770,
       "rightsCleared": 770,
-      "feedReady": 243
+      "feedReady": 247
     },
     {
       "sport": "american-football",
@@ -8296,21 +8296,21 @@
       "sport": "american-football",
       "decade": 1940,
       "tag": "player-birthday",
-      "downloaded": 17,
-      "archived": 17,
-      "identityLinked": 17,
-      "rightsCleared": 17,
-      "feedReady": 66
+      "downloaded": 2005,
+      "archived": 2005,
+      "identityLinked": 2005,
+      "rightsCleared": 2005,
+      "feedReady": 2009
     },
     {
       "sport": "american-football",
       "decade": 1940,
       "tag": "age-at-event",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 4
+      "downloaded": 67,
+      "archived": 67,
+      "identityLinked": 67,
+      "rightsCleared": 67,
+      "feedReady": 66
     },
     {
       "sport": "american-football",
@@ -8406,11 +8406,11 @@
       "sport": "american-football",
       "decade": 1950,
       "tag": "championship-win",
-      "downloaded": 7,
-      "archived": 7,
-      "identityLinked": 7,
-      "rightsCleared": 7,
-      "feedReady": 7
+      "downloaded": 10,
+      "archived": 10,
+      "identityLinked": 10,
+      "rightsCleared": 10,
+      "feedReady": 10
     },
     {
       "sport": "american-football",
@@ -8420,7 +8420,7 @@
       "archived": 741,
       "identityLinked": 741,
       "rightsCleared": 741,
-      "feedReady": 186
+      "feedReady": 188
     },
     {
       "sport": "american-football",
@@ -8446,21 +8446,21 @@
       "sport": "american-football",
       "decade": 1950,
       "tag": "player-birthday",
-      "downloaded": 41,
-      "archived": 41,
-      "identityLinked": 41,
-      "rightsCleared": 41,
-      "feedReady": 56
+      "downloaded": 145,
+      "archived": 145,
+      "identityLinked": 145,
+      "rightsCleared": 145,
+      "feedReady": 161
     },
     {
       "sport": "american-football",
       "decade": 1950,
       "tag": "age-at-event",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 6
+      "downloaded": 101,
+      "archived": 101,
+      "identityLinked": 101,
+      "rightsCleared": 101,
+      "feedReady": 104
     },
     {
       "sport": "american-football",
@@ -8556,11 +8556,11 @@
       "sport": "american-football",
       "decade": 1960,
       "tag": "championship-win",
-      "downloaded": 9,
-      "archived": 9,
-      "identityLinked": 9,
-      "rightsCleared": 9,
-      "feedReady": 12
+      "downloaded": 17,
+      "archived": 17,
+      "identityLinked": 17,
+      "rightsCleared": 17,
+      "feedReady": 20
     },
     {
       "sport": "american-football",
@@ -8570,7 +8570,7 @@
       "archived": 1649,
       "identityLinked": 1649,
       "rightsCleared": 1649,
-      "feedReady": 415
+      "feedReady": 421
     },
     {
       "sport": "american-football",
@@ -8596,21 +8596,21 @@
       "sport": "american-football",
       "decade": 1960,
       "tag": "player-birthday",
-      "downloaded": 23,
-      "archived": 23,
-      "identityLinked": 23,
-      "rightsCleared": 23,
+      "downloaded": 25,
+      "archived": 25,
+      "identityLinked": 25,
+      "rightsCleared": 25,
       "feedReady": 49
     },
     {
       "sport": "american-football",
       "decade": 1960,
       "tag": "age-at-event",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 11
+      "downloaded": 246,
+      "archived": 246,
+      "identityLinked": 246,
+      "rightsCleared": 246,
+      "feedReady": 239
     },
     {
       "sport": "american-football",
@@ -8750,17 +8750,17 @@
       "archived": 45,
       "identityLinked": 45,
       "rightsCleared": 45,
-      "feedReady": 61
+      "feedReady": 60
     },
     {
       "sport": "american-football",
       "decade": 1970,
       "tag": "age-at-event",
-      "downloaded": 1,
-      "archived": 1,
-      "identityLinked": 1,
-      "rightsCleared": 1,
-      "feedReady": 21
+      "downloaded": 369,
+      "archived": 369,
+      "identityLinked": 369,
+      "rightsCleared": 369,
+      "feedReady": 365
     },
     {
       "sport": "american-football",
@@ -8906,11 +8906,11 @@
       "sport": "american-football",
       "decade": 1980,
       "tag": "age-at-event",
-      "downloaded": 1,
-      "archived": 1,
-      "identityLinked": 1,
-      "rightsCleared": 1,
-      "feedReady": 16
+      "downloaded": 486,
+      "archived": 486,
+      "identityLinked": 486,
+      "rightsCleared": 486,
+      "feedReady": 478
     },
     {
       "sport": "american-football",
@@ -9056,11 +9056,11 @@
       "sport": "american-football",
       "decade": 1990,
       "tag": "age-at-event",
-      "downloaded": 1,
-      "archived": 1,
-      "identityLinked": 1,
-      "rightsCleared": 1,
-      "feedReady": 26
+      "downloaded": 725,
+      "archived": 725,
+      "identityLinked": 725,
+      "rightsCleared": 725,
+      "feedReady": 709
     },
     {
       "sport": "american-football",
@@ -9166,11 +9166,11 @@
       "sport": "american-football",
       "decade": 2000,
       "tag": "match-result",
-      "downloaded": 3052,
-      "archived": 3052,
-      "identityLinked": 3052,
-      "rightsCleared": 547,
-      "feedReady": 97
+      "downloaded": 10614,
+      "archived": 10614,
+      "identityLinked": 10614,
+      "rightsCleared": 8109,
+      "feedReady": 2960
     },
     {
       "sport": "american-football",
@@ -9190,7 +9190,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 18
+      "feedReady": 371
     },
     {
       "sport": "american-football",
@@ -9206,20 +9206,20 @@
       "sport": "american-football",
       "decade": 2000,
       "tag": "age-at-event",
-      "downloaded": 8,
-      "archived": 8,
-      "identityLinked": 8,
-      "rightsCleared": 8,
-      "feedReady": 41
+      "downloaded": 899,
+      "archived": 899,
+      "identityLinked": 899,
+      "rightsCleared": 899,
+      "feedReady": 870
     },
     {
       "sport": "american-football",
       "decade": 2000,
       "tag": "award-honour",
-      "downloaded": 51,
-      "archived": 51,
+      "downloaded": 61,
+      "archived": 61,
       "identityLinked": 41,
-      "rightsCleared": 41,
+      "rightsCleared": 51,
       "feedReady": 0
     },
     {
@@ -9316,11 +9316,11 @@
       "sport": "american-football",
       "decade": 2010,
       "tag": "match-result",
-      "downloaded": 2751,
-      "archived": 2751,
-      "identityLinked": 2751,
-      "rightsCleared": 2126,
-      "feedReady": 371
+      "downloaded": 11320,
+      "archived": 11320,
+      "identityLinked": 11320,
+      "rightsCleared": 10695,
+      "feedReady": 3822
     },
     {
       "sport": "american-football",
@@ -9340,7 +9340,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 34
+      "feedReady": 376
     },
     {
       "sport": "american-football",
@@ -9356,20 +9356,20 @@
       "sport": "american-football",
       "decade": 2010,
       "tag": "age-at-event",
-      "downloaded": 8,
-      "archived": 8,
-      "identityLinked": 8,
-      "rightsCleared": 8,
-      "feedReady": 65
+      "downloaded": 976,
+      "archived": 976,
+      "identityLinked": 976,
+      "rightsCleared": 976,
+      "feedReady": 942
     },
     {
       "sport": "american-football",
       "decade": 2010,
       "tag": "award-honour",
-      "downloaded": 52,
-      "archived": 52,
+      "downloaded": 62,
+      "archived": 62,
       "identityLinked": 42,
-      "rightsCleared": 42,
+      "rightsCleared": 52,
       "feedReady": 0
     },
     {
@@ -9466,11 +9466,11 @@
       "sport": "american-football",
       "decade": 2020,
       "tag": "match-result",
-      "downloaded": 1976,
-      "archived": 1976,
-      "identityLinked": 1976,
-      "rightsCleared": 1976,
-      "feedReady": 302
+      "downloaded": 7102,
+      "archived": 7102,
+      "identityLinked": 7102,
+      "rightsCleared": 7102,
+      "feedReady": 2237
     },
     {
       "sport": "american-football",
@@ -9490,7 +9490,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 24
+      "feedReady": 223
     },
     {
       "sport": "american-football",
@@ -9506,20 +9506,20 @@
       "sport": "american-football",
       "decade": 2020,
       "tag": "age-at-event",
-      "downloaded": 7,
-      "archived": 7,
-      "identityLinked": 7,
-      "rightsCleared": 7,
-      "feedReady": 59
+      "downloaded": 632,
+      "archived": 632,
+      "identityLinked": 632,
+      "rightsCleared": 632,
+      "feedReady": 626
     },
     {
       "sport": "american-football",
       "decade": 2020,
       "tag": "award-honour",
-      "downloaded": 32,
-      "archived": 32,
+      "downloaded": 38,
+      "archived": 38,
       "identityLinked": 25,
-      "rightsCleared": 25,
+      "rightsCleared": 31,
       "feedReady": 0
     },
     {
@@ -9950,7 +9950,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 1
+      "feedReady": 0
     },
     {
       "sport": "canadian-football",
@@ -10546,11 +10546,11 @@
       "sport": "canadian-football",
       "decade": 1930,
       "tag": "player-birthday",
-      "downloaded": 16,
-      "archived": 16,
-      "identityLinked": 16,
-      "rightsCleared": 16,
-      "feedReady": 19
+      "downloaded": 13,
+      "archived": 13,
+      "identityLinked": 13,
+      "rightsCleared": 13,
+      "feedReady": 15
     },
     {
       "sport": "canadian-football",
@@ -10696,11 +10696,11 @@
       "sport": "canadian-football",
       "decade": 1940,
       "tag": "player-birthday",
-      "downloaded": 154,
-      "archived": 154,
-      "identityLinked": 154,
-      "rightsCleared": 154,
-      "feedReady": 161
+      "downloaded": 124,
+      "archived": 124,
+      "identityLinked": 124,
+      "rightsCleared": 124,
+      "feedReady": 129
     },
     {
       "sport": "canadian-football",
@@ -10816,11 +10816,11 @@
       "sport": "canadian-football",
       "decade": 1950,
       "tag": "match-result",
-      "downloaded": 2,
-      "archived": 2,
-      "identityLinked": 2,
-      "rightsCleared": 2,
-      "feedReady": 0
+      "downloaded": 127,
+      "archived": 127,
+      "identityLinked": 127,
+      "rightsCleared": 127,
+      "feedReady": 11
     },
     {
       "sport": "canadian-football",
@@ -10840,17 +10840,17 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 0
+      "feedReady": 2
     },
     {
       "sport": "canadian-football",
       "decade": 1950,
       "tag": "player-birthday",
-      "downloaded": 430,
-      "archived": 430,
-      "identityLinked": 430,
-      "rightsCleared": 430,
-      "feedReady": 456
+      "downloaded": 424,
+      "archived": 424,
+      "identityLinked": 424,
+      "rightsCleared": 424,
+      "feedReady": 448
     },
     {
       "sport": "canadian-football",
@@ -10966,11 +10966,11 @@
       "sport": "canadian-football",
       "decade": 1960,
       "tag": "match-result",
-      "downloaded": 115,
-      "archived": 115,
-      "identityLinked": 115,
-      "rightsCleared": 115,
-      "feedReady": 34
+      "downloaded": 521,
+      "archived": 521,
+      "identityLinked": 521,
+      "rightsCleared": 521,
+      "feedReady": 91
     },
     {
       "sport": "canadian-football",
@@ -10990,7 +10990,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 5
+      "feedReady": 13
     },
     {
       "sport": "canadian-football",
@@ -11116,11 +11116,11 @@
       "sport": "canadian-football",
       "decade": 1970,
       "tag": "match-result",
-      "downloaded": 318,
-      "archived": 318,
-      "identityLinked": 318,
-      "rightsCleared": 318,
-      "feedReady": 73
+      "downloaded": 630,
+      "archived": 630,
+      "identityLinked": 630,
+      "rightsCleared": 630,
+      "feedReady": 122
     },
     {
       "sport": "canadian-football",
@@ -11140,7 +11140,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 7
+      "feedReady": 10
     },
     {
       "sport": "canadian-football",
@@ -11266,11 +11266,11 @@
       "sport": "canadian-football",
       "decade": 1980,
       "tag": "match-result",
-      "downloaded": 591,
-      "archived": 591,
-      "identityLinked": 591,
-      "rightsCleared": 591,
-      "feedReady": 165
+      "downloaded": 771,
+      "archived": 771,
+      "identityLinked": 771,
+      "rightsCleared": 771,
+      "feedReady": 206
     },
     {
       "sport": "canadian-football",
@@ -11290,7 +11290,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 4
+      "feedReady": 5
     },
     {
       "sport": "canadian-football",
@@ -11416,11 +11416,11 @@
       "sport": "canadian-football",
       "decade": 1990,
       "tag": "match-result",
-      "downloaded": 832,
-      "archived": 832,
-      "identityLinked": 832,
-      "rightsCleared": 832,
-      "feedReady": 221
+      "downloaded": 857,
+      "archived": 857,
+      "identityLinked": 857,
+      "rightsCleared": 857,
+      "feedReady": 225
     },
     {
       "sport": "canadian-football",
@@ -11566,10 +11566,10 @@
       "sport": "canadian-football",
       "decade": 2000,
       "tag": "match-result",
-      "downloaded": 839,
-      "archived": 839,
-      "identityLinked": 839,
-      "rightsCleared": 152,
+      "downloaded": 840,
+      "archived": 840,
+      "identityLinked": 840,
+      "rightsCleared": 153,
       "feedReady": 31
     },
     {
@@ -11606,11 +11606,11 @@
       "sport": "canadian-football",
       "decade": 2000,
       "tag": "age-at-event",
-      "downloaded": 32,
-      "archived": 32,
-      "identityLinked": 32,
-      "rightsCleared": 32,
-      "feedReady": 37
+      "downloaded": 31,
+      "archived": 31,
+      "identityLinked": 31,
+      "rightsCleared": 31,
+      "feedReady": 36
     },
     {
       "sport": "canadian-football",
@@ -11756,11 +11756,11 @@
       "sport": "canadian-football",
       "decade": 2010,
       "tag": "age-at-event",
-      "downloaded": 72,
-      "archived": 72,
-      "identityLinked": 72,
-      "rightsCleared": 72,
-      "feedReady": 73
+      "downloaded": 67,
+      "archived": 67,
+      "identityLinked": 67,
+      "rightsCleared": 67,
+      "feedReady": 67
     },
     {
       "sport": "canadian-football",
@@ -11870,7 +11870,7 @@
       "archived": 491,
       "identityLinked": 491,
       "rightsCleared": 491,
-      "feedReady": 79
+      "feedReady": 80
     },
     {
       "sport": "canadian-football",
@@ -11906,11 +11906,11 @@
       "sport": "canadian-football",
       "decade": 2020,
       "tag": "age-at-event",
-      "downloaded": 82,
-      "archived": 82,
-      "identityLinked": 82,
-      "rightsCleared": 82,
-      "feedReady": 82
+      "downloaded": 69,
+      "archived": 69,
+      "identityLinked": 69,
+      "rightsCleared": 69,
+      "feedReady": 69
     },
     {
       "sport": "canadian-football",
@@ -12806,10 +12806,10 @@
       "sport": "soccer",
       "decade": 1920,
       "tag": "age-at-event",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
       "feedReady": 3
     },
     {
@@ -13696,10 +13696,10 @@
       "sport": "soccer",
       "decade": 1980,
       "tag": "player-birthday",
-      "downloaded": 7,
-      "archived": 7,
-      "identityLinked": 7,
-      "rightsCleared": 7,
+      "downloaded": 8,
+      "archived": 8,
+      "identityLinked": 8,
+      "rightsCleared": 8,
       "feedReady": 1747
     },
     {
@@ -13816,10 +13816,10 @@
       "sport": "soccer",
       "decade": 1990,
       "tag": "match-result",
-      "downloaded": 821,
-      "archived": 821,
-      "identityLinked": 821,
-      "rightsCleared": 821,
+      "downloaded": 3922,
+      "archived": 3922,
+      "identityLinked": 3922,
+      "rightsCleared": 3922,
       "feedReady": 55
     },
     {
@@ -13860,7 +13860,7 @@
       "archived": 1,
       "identityLinked": 1,
       "rightsCleared": 1,
-      "feedReady": 108
+      "feedReady": 109
     },
     {
       "sport": "soccer",
@@ -13966,10 +13966,10 @@
       "sport": "soccer",
       "decade": 2000,
       "tag": "match-result",
-      "downloaded": 1919,
-      "archived": 1919,
-      "identityLinked": 1919,
-      "rightsCleared": 1919,
+      "downloaded": 6476,
+      "archived": 6476,
+      "identityLinked": 6476,
+      "rightsCleared": 5163,
       "feedReady": 69
     },
     {
@@ -14010,7 +14010,7 @@
       "archived": 2,
       "identityLinked": 2,
       "rightsCleared": 2,
-      "feedReady": 116
+      "feedReady": 117
     },
     {
       "sport": "soccer",
@@ -14116,11 +14116,11 @@
       "sport": "soccer",
       "decade": 2010,
       "tag": "match-result",
-      "downloaded": 3846,
-      "archived": 3846,
-      "identityLinked": 3846,
-      "rightsCleared": 3846,
-      "feedReady": 96
+      "downloaded": 18896,
+      "archived": 18896,
+      "identityLinked": 18896,
+      "rightsCleared": 18896,
+      "feedReady": 122
     },
     {
       "sport": "soccer",
@@ -14140,7 +14140,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 75
+      "feedReady": 96
     },
     {
       "sport": "soccer",
@@ -14166,8 +14166,8 @@
       "sport": "soccer",
       "decade": 2010,
       "tag": "award-honour",
-      "downloaded": 0,
-      "archived": 0,
+      "downloaded": 7,
+      "archived": 7,
       "identityLinked": 0,
       "rightsCleared": 0,
       "feedReady": 0
@@ -14260,17 +14260,17 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 87
+      "feedReady": 88
     },
     {
       "sport": "soccer",
       "decade": 2020,
       "tag": "match-result",
-      "downloaded": 3425,
-      "archived": 3425,
-      "identityLinked": 3425,
-      "rightsCleared": 3425,
-      "feedReady": 80
+      "downloaded": 15884,
+      "archived": 15884,
+      "identityLinked": 15884,
+      "rightsCleared": 15884,
+      "feedReady": 114
     },
     {
       "sport": "soccer",
@@ -14290,7 +14290,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 58
+      "feedReady": 90
     },
     {
       "sport": "soccer",
@@ -14316,8 +14316,8 @@
       "sport": "soccer",
       "decade": 2020,
       "tag": "award-honour",
-      "downloaded": 0,
-      "archived": 0,
+      "downloaded": 5,
+      "archived": 5,
       "identityLinked": 0,
       "rightsCleared": 0,
       "feedReady": 0
@@ -15196,10 +15196,10 @@
       "sport": "tennis",
       "decade": 1920,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
       "feedReady": 17
     },
     {
@@ -15496,10 +15496,10 @@
       "sport": "tennis",
       "decade": 1940,
       "tag": "player-birthday",
-      "downloaded": 1,
-      "archived": 1,
-      "identityLinked": 1,
-      "rightsCleared": 1,
+      "downloaded": 2,
+      "archived": 2,
+      "identityLinked": 2,
+      "rightsCleared": 2,
       "feedReady": 28
     },
     {
@@ -15646,10 +15646,10 @@
       "sport": "tennis",
       "decade": 1950,
       "tag": "player-birthday",
-      "downloaded": 2,
-      "archived": 2,
-      "identityLinked": 2,
-      "rightsCleared": 2,
+      "downloaded": 6,
+      "archived": 6,
+      "identityLinked": 6,
+      "rightsCleared": 6,
       "feedReady": 25
     },
     {
@@ -15946,10 +15946,10 @@
       "sport": "tennis",
       "decade": 1970,
       "tag": "player-birthday",
-      "downloaded": 1,
-      "archived": 1,
-      "identityLinked": 1,
-      "rightsCleared": 1,
+      "downloaded": 3,
+      "archived": 3,
+      "identityLinked": 3,
+      "rightsCleared": 3,
       "feedReady": 112
     },
     {
@@ -16096,10 +16096,10 @@
       "sport": "tennis",
       "decade": 1980,
       "tag": "player-birthday",
-      "downloaded": 3,
-      "archived": 3,
-      "identityLinked": 3,
-      "rightsCleared": 3,
+      "downloaded": 6,
+      "archived": 6,
+      "identityLinked": 6,
+      "rightsCleared": 6,
       "feedReady": 258
     },
     {
@@ -16406,10 +16406,10 @@
       "sport": "tennis",
       "decade": 2000,
       "tag": "age-at-event",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
       "feedReady": 39
     },
     {
@@ -17296,10 +17296,10 @@
       "sport": "golf",
       "decade": 1900,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
       "feedReady": 10
     },
     {
@@ -17446,10 +17446,10 @@
       "sport": "golf",
       "decade": 1910,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
       "feedReady": 10
     },
     {
@@ -17596,10 +17596,10 @@
       "sport": "golf",
       "decade": 1920,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
       "feedReady": 15
     },
     {
@@ -17746,10 +17746,10 @@
       "sport": "golf",
       "decade": 1930,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 2,
+      "archived": 2,
+      "identityLinked": 2,
+      "rightsCleared": 2,
       "feedReady": 13
     },
     {
@@ -17896,10 +17896,10 @@
       "sport": "golf",
       "decade": 1940,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 2,
+      "archived": 2,
+      "identityLinked": 2,
+      "rightsCleared": 2,
       "feedReady": 19
     },
     {
@@ -18046,10 +18046,10 @@
       "sport": "golf",
       "decade": 1950,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
       "feedReady": 26
     },
     {
@@ -18346,20 +18346,20 @@
       "sport": "golf",
       "decade": 1970,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 2,
+      "archived": 2,
+      "identityLinked": 2,
+      "rightsCleared": 2,
       "feedReady": 37
     },
     {
       "sport": "golf",
       "decade": 1970,
       "tag": "age-at-event",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
       "feedReady": 9
     },
     {
@@ -18496,10 +18496,10 @@
       "sport": "golf",
       "decade": 1980,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
       "feedReady": 41
     },
     {
@@ -18656,10 +18656,10 @@
       "sport": "golf",
       "decade": 1990,
       "tag": "age-at-event",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
       "feedReady": 8
     },
     {
@@ -18956,10 +18956,10 @@
       "sport": "golf",
       "decade": 2010,
       "tag": "age-at-event",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 2,
+      "archived": 2,
+      "identityLinked": 2,
+      "rightsCleared": 2,
       "feedReady": 17
     },
     {
@@ -19106,10 +19106,10 @@
       "sport": "golf",
       "decade": 2020,
       "tag": "age-at-event",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
       "feedReady": 11
     },
     {
@@ -20296,10 +20296,10 @@
       "sport": "boxing",
       "decade": 1940,
       "tag": "player-birthday",
-      "downloaded": 1,
-      "archived": 1,
-      "identityLinked": 1,
-      "rightsCleared": 1,
+      "downloaded": 2,
+      "archived": 2,
+      "identityLinked": 2,
+      "rightsCleared": 2,
       "feedReady": 49
     },
     {
@@ -20446,10 +20446,10 @@
       "sport": "boxing",
       "decade": 1950,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 3,
+      "archived": 3,
+      "identityLinked": 3,
+      "rightsCleared": 3,
       "feedReady": 46
     },
     {
@@ -20596,10 +20596,10 @@
       "sport": "boxing",
       "decade": 1960,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
       "feedReady": 79
     },
     {
@@ -20746,10 +20746,10 @@
       "sport": "boxing",
       "decade": 1970,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 2,
+      "archived": 2,
+      "identityLinked": 2,
+      "rightsCleared": 2,
       "feedReady": 106
     },
     {
@@ -21356,10 +21356,10 @@
       "sport": "boxing",
       "decade": 2010,
       "tag": "age-at-event",
-      "downloaded": 1,
-      "archived": 1,
-      "identityLinked": 1,
-      "rightsCleared": 1,
+      "downloaded": 2,
+      "archived": 2,
+      "identityLinked": 2,
+      "rightsCleared": 2,
       "feedReady": 107
     },
     {
@@ -21506,11 +21506,11 @@
       "sport": "boxing",
       "decade": 2020,
       "tag": "age-at-event",
-      "downloaded": 1,
-      "archived": 1,
-      "identityLinked": 1,
-      "rightsCleared": 1,
-      "feedReady": 66
+      "downloaded": 2,
+      "archived": 2,
+      "identityLinked": 2,
+      "rightsCleared": 2,
+      "feedReady": 67
     },
     {
       "sport": "boxing",
@@ -22996,10 +22996,10 @@
       "sport": "mma",
       "decade": 1960,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 3,
+      "archived": 3,
+      "identityLinked": 3,
+      "rightsCleared": 3,
       "feedReady": 23
     },
     {
@@ -23146,10 +23146,10 @@
       "sport": "mma",
       "decade": 1970,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 9,
+      "archived": 9,
+      "identityLinked": 9,
+      "rightsCleared": 9,
       "feedReady": 78
     },
     {
@@ -23296,10 +23296,10 @@
       "sport": "mma",
       "decade": 1980,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 20,
+      "archived": 20,
+      "identityLinked": 20,
+      "rightsCleared": 20,
       "feedReady": 187
     },
     {
@@ -23446,10 +23446,10 @@
       "sport": "mma",
       "decade": 1990,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 2,
+      "archived": 2,
+      "identityLinked": 2,
+      "rightsCleared": 2,
       "feedReady": 92
     },
     {
@@ -24196,11 +24196,11 @@
       "sport": "athletics",
       "decade": 1880,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 12
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
+      "feedReady": 11
     },
     {
       "sport": "athletics",
@@ -24496,10 +24496,10 @@
       "sport": "athletics",
       "decade": 1900,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
       "feedReady": 24
     },
     {
@@ -24646,10 +24646,10 @@
       "sport": "athletics",
       "decade": 1910,
       "tag": "player-birthday",
-      "downloaded": 1,
-      "archived": 1,
-      "identityLinked": 1,
-      "rightsCleared": 1,
+      "downloaded": 3,
+      "archived": 3,
+      "identityLinked": 3,
+      "rightsCleared": 3,
       "feedReady": 27
     },
     {
@@ -24796,10 +24796,10 @@
       "sport": "athletics",
       "decade": 1920,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
       "feedReady": 25
     },
     {
@@ -24946,10 +24946,10 @@
       "sport": "athletics",
       "decade": 1930,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
       "feedReady": 38
     },
     {
@@ -25096,11 +25096,11 @@
       "sport": "athletics",
       "decade": 1940,
       "tag": "player-birthday",
-      "downloaded": 1,
-      "archived": 1,
-      "identityLinked": 1,
-      "rightsCleared": 1,
-      "feedReady": 48
+      "downloaded": 4,
+      "archived": 4,
+      "identityLinked": 4,
+      "rightsCleared": 4,
+      "feedReady": 46
     },
     {
       "sport": "athletics",
@@ -25246,21 +25246,21 @@
       "sport": "athletics",
       "decade": 1950,
       "tag": "player-birthday",
-      "downloaded": 1,
-      "archived": 1,
-      "identityLinked": 1,
-      "rightsCleared": 1,
+      "downloaded": 3,
+      "archived": 3,
+      "identityLinked": 3,
+      "rightsCleared": 3,
       "feedReady": 50
     },
     {
       "sport": "athletics",
       "decade": 1950,
       "tag": "age-at-event",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
-      "feedReady": 38
+      "downloaded": 2,
+      "archived": 2,
+      "identityLinked": 2,
+      "rightsCleared": 2,
+      "feedReady": 37
     },
     {
       "sport": "athletics",
@@ -25396,10 +25396,10 @@
       "sport": "athletics",
       "decade": 1960,
       "tag": "player-birthday",
-      "downloaded": 5,
-      "archived": 5,
-      "identityLinked": 5,
-      "rightsCleared": 5,
+      "downloaded": 11,
+      "archived": 11,
+      "identityLinked": 11,
+      "rightsCleared": 11,
       "feedReady": 74
     },
     {
@@ -25546,10 +25546,10 @@
       "sport": "athletics",
       "decade": 1970,
       "tag": "player-birthday",
-      "downloaded": 2,
-      "archived": 2,
-      "identityLinked": 2,
-      "rightsCleared": 2,
+      "downloaded": 4,
+      "archived": 4,
+      "identityLinked": 4,
+      "rightsCleared": 4,
       "feedReady": 98
     },
     {
@@ -25696,20 +25696,20 @@
       "sport": "athletics",
       "decade": 1980,
       "tag": "player-birthday",
-      "downloaded": 2,
-      "archived": 2,
-      "identityLinked": 2,
-      "rightsCleared": 2,
+      "downloaded": 11,
+      "archived": 11,
+      "identityLinked": 11,
+      "rightsCleared": 11,
       "feedReady": 175
     },
     {
       "sport": "athletics",
       "decade": 1980,
       "tag": "age-at-event",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 3,
+      "archived": 3,
+      "identityLinked": 3,
+      "rightsCleared": 3,
       "feedReady": 72
     },
     {
@@ -25846,10 +25846,10 @@
       "sport": "athletics",
       "decade": 1990,
       "tag": "player-birthday",
-      "downloaded": 2,
-      "archived": 2,
-      "identityLinked": 2,
-      "rightsCleared": 2,
+      "downloaded": 5,
+      "archived": 5,
+      "identityLinked": 5,
+      "rightsCleared": 5,
       "feedReady": 196
     },
     {
@@ -25996,21 +25996,21 @@
       "sport": "athletics",
       "decade": 2000,
       "tag": "player-birthday",
-      "downloaded": 1,
-      "archived": 1,
-      "identityLinked": 1,
-      "rightsCleared": 1,
+      "downloaded": 2,
+      "archived": 2,
+      "identityLinked": 2,
+      "rightsCleared": 2,
       "feedReady": 32
     },
     {
       "sport": "athletics",
       "decade": 2000,
       "tag": "age-at-event",
-      "downloaded": 1,
-      "archived": 1,
-      "identityLinked": 1,
-      "rightsCleared": 1,
-      "feedReady": 85
+      "downloaded": 4,
+      "archived": 4,
+      "identityLinked": 4,
+      "rightsCleared": 4,
+      "feedReady": 84
     },
     {
       "sport": "athletics",
@@ -28096,10 +28096,10 @@
       "sport": "swimming",
       "decade": 1980,
       "tag": "player-birthday",
-      "downloaded": 1,
-      "archived": 1,
-      "identityLinked": 1,
-      "rightsCleared": 1,
+      "downloaded": 3,
+      "archived": 3,
+      "identityLinked": 3,
+      "rightsCleared": 3,
       "feedReady": 131
     },
     {
@@ -28246,10 +28246,10 @@
       "sport": "swimming",
       "decade": 1990,
       "tag": "player-birthday",
-      "downloaded": 2,
-      "archived": 2,
-      "identityLinked": 2,
-      "rightsCleared": 2,
+      "downloaded": 3,
+      "archived": 3,
+      "identityLinked": 3,
+      "rightsCleared": 3,
       "feedReady": 166
     },
     {
@@ -28396,10 +28396,10 @@
       "sport": "swimming",
       "decade": 2000,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 2,
+      "archived": 2,
+      "identityLinked": 2,
+      "rightsCleared": 2,
       "feedReady": 58
     },
     {
@@ -30196,10 +30196,10 @@
       "sport": "formula-one",
       "decade": 1960,
       "tag": "player-birthday",
-      "downloaded": 1,
-      "archived": 1,
-      "identityLinked": 1,
-      "rightsCleared": 1,
+      "downloaded": 2,
+      "archived": 2,
+      "identityLinked": 2,
+      "rightsCleared": 2,
       "feedReady": 3
     },
     {
@@ -30496,10 +30496,10 @@
       "sport": "formula-one",
       "decade": 1980,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
       "feedReady": 3
     },
     {
@@ -32146,10 +32146,10 @@
       "sport": "stock-car-racing",
       "decade": 1930,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
       "feedReady": 1
     },
     {
@@ -34696,10 +34696,10 @@
       "sport": "motorcycle-racing",
       "decade": 1940,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
       "feedReady": 26
     },
     {
@@ -35146,10 +35146,10 @@
       "sport": "motorcycle-racing",
       "decade": 1970,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
       "feedReady": 49
     },
     {
@@ -35446,10 +35446,10 @@
       "sport": "motorcycle-racing",
       "decade": 1990,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
       "feedReady": 71
     },
     {
@@ -44296,10 +44296,10 @@
       "sport": "cycling",
       "decade": 1940,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
       "feedReady": 31
     },
     {
@@ -44596,10 +44596,10 @@
       "sport": "cycling",
       "decade": 1960,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
       "feedReady": 53
     },
     {
@@ -44750,7 +44750,7 @@
       "archived": 0,
       "identityLinked": 0,
       "rightsCleared": 0,
-      "feedReady": 112
+      "feedReady": 111
     },
     {
       "sport": "cycling",
@@ -44896,10 +44896,10 @@
       "sport": "cycling",
       "decade": 1980,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 2,
+      "archived": 2,
+      "identityLinked": 2,
+      "rightsCleared": 2,
       "feedReady": 222
     },
     {
@@ -49096,10 +49096,10 @@
       "sport": "cricket",
       "decade": 1940,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
       "feedReady": 21
     },
     {
@@ -49246,10 +49246,10 @@
       "sport": "cricket",
       "decade": 1950,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 4,
+      "archived": 4,
+      "identityLinked": 4,
+      "rightsCleared": 4,
       "feedReady": 30
     },
     {
@@ -49396,10 +49396,10 @@
       "sport": "cricket",
       "decade": 1960,
       "tag": "player-birthday",
-      "downloaded": 1,
-      "archived": 1,
-      "identityLinked": 1,
-      "rightsCleared": 1,
+      "downloaded": 3,
+      "archived": 3,
+      "identityLinked": 3,
+      "rightsCleared": 3,
       "feedReady": 47
     },
     {
@@ -49546,10 +49546,10 @@
       "sport": "cricket",
       "decade": 1970,
       "tag": "player-birthday",
-      "downloaded": 2,
-      "archived": 2,
-      "identityLinked": 2,
-      "rightsCleared": 2,
+      "downloaded": 8,
+      "archived": 8,
+      "identityLinked": 8,
+      "rightsCleared": 8,
       "feedReady": 67
     },
     {
@@ -49696,10 +49696,10 @@
       "sport": "cricket",
       "decade": 1980,
       "tag": "player-birthday",
-      "downloaded": 1,
-      "archived": 1,
-      "identityLinked": 1,
-      "rightsCleared": 1,
+      "downloaded": 6,
+      "archived": 6,
+      "identityLinked": 6,
+      "rightsCleared": 6,
       "feedReady": 174
     },
     {
@@ -49846,20 +49846,20 @@
       "sport": "cricket",
       "decade": 1990,
       "tag": "player-birthday",
-      "downloaded": 1,
-      "archived": 1,
-      "identityLinked": 1,
-      "rightsCleared": 1,
+      "downloaded": 2,
+      "archived": 2,
+      "identityLinked": 2,
+      "rightsCleared": 2,
       "feedReady": 175
     },
     {
       "sport": "cricket",
       "decade": 1990,
       "tag": "age-at-event",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
       "feedReady": 11
     },
     {
@@ -50306,10 +50306,10 @@
       "sport": "cricket",
       "decade": 2020,
       "tag": "age-at-event",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
       "feedReady": 32
     },
     {
@@ -51346,10 +51346,10 @@
       "sport": "horse-racing",
       "decade": 1930,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
       "feedReady": 4
     },
     {
@@ -51796,10 +51796,10 @@
       "sport": "horse-racing",
       "decade": 1960,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 2,
+      "archived": 2,
+      "identityLinked": 2,
+      "rightsCleared": 2,
       "feedReady": 8
     },
     {
@@ -51946,10 +51946,10 @@
       "sport": "horse-racing",
       "decade": 1970,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
       "feedReady": 5
     },
     {
@@ -52096,10 +52096,10 @@
       "sport": "horse-racing",
       "decade": 1980,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
       "feedReady": 2
     },
     {
@@ -52406,10 +52406,10 @@
       "sport": "horse-racing",
       "decade": 2000,
       "tag": "age-at-event",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
       "feedReady": 3
     },
     {
@@ -52706,10 +52706,10 @@
       "sport": "horse-racing",
       "decade": 2020,
       "tag": "age-at-event",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
       "feedReady": 1
     },
     {
@@ -54046,10 +54046,10 @@
       "sport": "alpine-skiing",
       "decade": 1950,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
       "feedReady": 47
     },
     {
@@ -54346,10 +54346,10 @@
       "sport": "alpine-skiing",
       "decade": 1970,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
       "feedReady": 83
     },
     {
@@ -54496,10 +54496,10 @@
       "sport": "alpine-skiing",
       "decade": 1980,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
       "feedReady": 158
     },
     {
@@ -54646,10 +54646,10 @@
       "sport": "alpine-skiing",
       "decade": 1990,
       "tag": "player-birthday",
-      "downloaded": 0,
-      "archived": 0,
-      "identityLinked": 0,
-      "rightsCleared": 0,
+      "downloaded": 1,
+      "archived": 1,
+      "identityLinked": 1,
+      "rightsCleared": 1,
       "feedReady": 131
     },
     {

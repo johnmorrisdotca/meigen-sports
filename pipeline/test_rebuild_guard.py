@@ -62,10 +62,14 @@ class InputsTests(unittest.TestCase):
         self.assertEqual(self.extract_problems(self.make_dir()), [])
 
     def test_a_missing_extract_is_named(self):
-        found = self.extract_problems(self.make_dir(skip=("extract_nhl_career_records.json", "extract_wikidata_famous.json")))
+        found = self.extract_problems(self.make_dir(skip=("extract_nhl_career_records.json", "extract_deaths.json")))
         self.assertEqual(len(found), 2)
         self.assertTrue(any("missing" in p and "extract_nhl_career_records.json" in p for p in found))
-        self.assertTrue(any("missing" in p and "extract_wikidata_famous.json" in p for p in found))
+        self.assertTrue(any("missing" in p and "extract_deaths.json" in p for p in found))
+
+    def test_the_famous_extract_may_be_absent_for_a_stated_reason(self):
+        self.assertEqual(self.extract_problems(self.make_dir(skip=("extract_wikidata_famous.json",))), [])
+        self.assertIn("no published fact comes from it", inputs.EXTRACTS["extract_wikidata_famous.json"]["absent_ok"])
 
     def test_an_empty_list_is_named(self):
         found = self.extract_problems(self.make_dir(empty=("extract_deaths.json",)))
@@ -103,7 +107,7 @@ class InputsTests(unittest.TestCase):
 
 
 class GuardTests(unittest.TestCase):
-    old = table(fact("a:Q1"), fact("a:Q2"), fact("g:1", "game-on-day", gameId=1), fact("a:Q3", "award"))
+    old = table(fact("a:Q1"), fact("a:Q2"), fact("g:1", "game-on-day", gameId=1, home={"name": "A"}, away={"name": "B"}), fact("a:Q3", "award"))
 
     def run_judge(self, new, entries=(), baseline="0.24.0"):
         diff = guard.compare(self.old, new)
@@ -145,7 +149,7 @@ class GuardTests(unittest.TestCase):
     def test_a_changed_id_is_found_and_stops_the_rebuild(self):
         new = dict(self.old)
         del new["g:1"]
-        new["h:1"] = fact("h:1", "game-on-day", gameId=1)
+        new["h:1"] = fact("h:1", "game-on-day", gameId=1, home={"name": "A"}, away={"name": "B"})
         diff, errors = self.run_judge(new)
         self.assertEqual(diff["idChanged"], {"g:1": "h:1"})
         self.assertEqual(diff["removed"], [])
@@ -189,6 +193,20 @@ class GuardTests(unittest.TestCase):
         diff = guard.compare(self.old, new)
         errors = guard.judge(diff, self.old, allow(), "0.24.0", {"a:Q2"})
         self.assertTrue(any("published offline set are lost" in e for e in errors))
+        allowed = allow({"kind": "removed", "recordId": "a:Q2", "reason": "the person was merged into Q1"}, {"kind": "count-drop", "category": "player-birthday", "max": 1, "reason": "same merge"})
+        self.assertEqual(guard.judge(diff, self.old, allowed, "0.24.0", {"a:Q2"}), [])
+
+    def test_the_same_person_and_day_under_another_prefix_is_a_changed_id(self):
+        old = table(fact("meigen:player-birthday:wikidata:Q5:1990-01-02"))
+        new = table(fact("spx:player-birthday:wikidata:Q5:1990-01-02"))
+        diff = guard.compare(old, new)
+        self.assertEqual(diff["idChanged"], {"meigen:player-birthday:wikidata:Q5:1990-01-02": "spx:player-birthday:wikidata:Q5:1990-01-02"})
+        self.assertEqual(diff["removed"], [])
+
+    def test_a_person_of_another_day_is_not_a_changed_id(self):
+        old = table(fact("meigen:player-birthday:wikidata:Q5:1990-01-02"))
+        new = table(fact("spx:player-birthday:wikidata:Q5:1990-01-03", day="1990-01-03"))
+        self.assertEqual(guard.compare(old, new)["idChanged"], {})
 
     def test_the_summary_has_a_row_per_category_and_a_total(self):
         text = guard.summary(guard.compare(self.old, dict(self.old)))

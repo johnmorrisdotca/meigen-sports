@@ -2,12 +2,13 @@
 
 `convert_extract.py` used to print "missing <file>" and carry on with an empty list, so a rebuild on a Mac that lacked two extracts quietly lost the facts
 they gave. A rebuild now needs every input below; `problems()` lists each one that is wrong, by file name, with the command that makes it.
-`checksums()` is the SHA-256 of every input, written beside the facts (`data-sources/facts/inputs.json`) so a later rebuild can say what it was made from.
+`checksums()` is the SHA-256 of every input, written beside the facts (`data-sources/facts/inputs.json`, with the day of the rebuild) so a later rebuild, and the catalogue, can say what the facts were made from.
 """
 from __future__ import annotations
 
 import hashlib
 import json
+from datetime import date
 from pathlib import Path
 
 BIG = 50_000_000  # a file larger than this is not parsed to look for an empty list (extract_games_on_day.json is 450 MB)
@@ -15,7 +16,7 @@ BIG = 50_000_000  # a file larger than this is not parsed to look for an empty l
 DS1 = "the DS1 extracts (`python3 -I pipeline/extract_ds1.py` prints the commands; machine1 runs them and copies the files)"
 DUMP = "the Wikidata dump passes (need the filtered dump files on machine1)"
 
-# name -> what it is, how it is made, the lists that must not be empty ("" is a bare list), the extracts it must not be older than.
+# name -> how it is made, the lists that must not be empty ("" is a bare list), the extracts it must not be older than, and, where it may be missing or empty, why (`absent_ok`, `empty_ok`).
 EXTRACTS: dict[str, dict] = {
     "player-birthday-candidates.json": {"made": DS1, "lists": ("records",)},
     "extract_deaths.json": {"made": DS1, "lists": ("records",)},
@@ -34,7 +35,10 @@ EXTRACTS: dict[str, dict] = {
     "extract_all_star.json": {"script": "pipeline/extract_all_star.py", "made": "`python3 -I pipeline/extract_all_star.py`", "lists": ("games", "events")},
     "extract_mlb_feats.json": {"script": "pipeline/extract_mlb_feats.py", "made": "`python3 -I pipeline/extract_mlb_feats.py`", "lists": ("records",)},
     "extract_milestones.json": {"script": "pipeline/extract_milestones.py", "made": "`pnpm data:milestones`", "lists": ("records",)},
-    "extract_wikidata_famous.json": {"script": "pipeline/fetch_wikidata_open.py", "made": "`python3 -I pipeline/fetch_wikidata_open.py`", "lists": ("records",)},
+    "extract_wikidata_famous.json": {
+        "script": "pipeline/fetch_wikidata_open.py", "made": "`python3 -I pipeline/fetch_wikidata_open.py`", "lists": ("records",),
+        "absent_ok": "no published fact comes from it (the facts' meta has had no topFamous since the dump passes took over; a rebuild without it, checked 2026-11-03, lost nothing); its 500 birthdays, deaths and awards would add unreviewed facts",
+    },
     "extract_wikidata_dump_people.json": {"script": "pipeline/wikidata_dump_people.py", "made": "`pnpm data:dump`; " + DUMP, "lists": ("records",)},
     "extract_wikidata_dump_events.json": {"script": "pipeline/wikidata_dump_events.py", "made": "`pnpm data:events`; " + DUMP, "lists": ("records",)},
     "extract_wikidata_dump_para.json": {"script": "pipeline/wikidata_dump_para.py", "made": "`pnpm data:para`; " + DUMP, "lists": ("records",), "after": ("extract_wikidata_dump_people.json",)},
@@ -81,7 +85,8 @@ def problems(extract_dir: Path, root: Path) -> list[str]:
     for name, spec in EXTRACTS.items():
         path = extract_dir / name
         if not path.exists():
-            found.append(f"missing {path}: made by {spec['made']}")
+            if not spec.get("absent_ok"):
+                found.append(f"missing {path}: made by {spec['made']}")
             continue
         if path.stat().st_size == 0:
             found.append(f"empty file {path}: made by {spec['made']}")
@@ -152,7 +157,7 @@ def checksums(extract_dir: Path, root: Path) -> dict[str, dict]:
     for name in EXTRACTS:
         path = extract_dir / name
         if path.exists():
-            out[name] = {"sha256": sha256_of(path), "bytes": path.stat().st_size}
+            out[name] = {"sha256": sha256_of(path), "bytes": path.stat().st_size, "modified": date.fromtimestamp(path.stat().st_mtime).isoformat()}
     for name in REPO_FILES:
         path = root / name
         if path.exists():

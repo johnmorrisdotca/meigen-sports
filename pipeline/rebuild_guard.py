@@ -1,7 +1,7 @@
 """The rebuild guard: compare freshly built facts with the published ones and stop a rebuild that loses something.
 
 A fact is lost when its `recordId` is in the published set and not in the new one; an id has changed when a lost fact and a new one are the same thing
-(same day, same kind, same subject) under two ids; a category count has dropped when the new set has fewer facts of a category than the published one.
+(same day, same subject: the person, or the two clubs of a game) under two ids; a category count has dropped when the new set has fewer facts of a category than the published one.
 Each of the three fails the rebuild unless `data-sources/rebuild-allow.json` lists it with a reason. Added and changed facts (same id, other content)
 are only counted. The published facts are those of the last release tag (`git`), so an allowance holds until the next release and then must be written again.
 
@@ -64,8 +64,11 @@ def last_release_ref(root: Path) -> str:
 def subject_key(fact: dict) -> tuple:
     """What a fact is about, whatever its id: day, kind and the first of the game, the person, the Wikidata item, the text."""
     person = fact.get("person") or {}
-    about = fact.get("gameId") or person.get("qid") or fact.get("wikidata") or fact.get("entityId") or fact.get("text") or ""
-    return (fact.get("eventDate"), fact.get("category"), str(about))
+    home, away = (fact.get("home") or {}).get("name"), (fact.get("away") or {}).get("name")
+    about = (f"{home} v {away}" if home and away else None) or person.get("qid") or fact.get("wikidata") or fact.get("entityId") or fact.get("text") or ""
+    # A game that becomes a final (or a final that is only a game again) is the same game under another id and kind.
+    kind = "game" if home and away else fact.get("category")
+    return (fact.get("eventDate"), kind, str(about))
 
 
 def compare(old: dict[str, dict], new: dict[str, dict]) -> dict:
@@ -123,16 +126,15 @@ def judge(diff: dict, old: dict[str, dict], allow: dict, baseline_version: str, 
     if entries and allow.get("baseline") != baseline_version:
         errors.append(f"rebuild-allow.json is for {allow.get('baseline')}, the published facts are {baseline_version}: write the allowances again for this release")
     used = [0] * len(entries)
+    permitted: set[str] = set()
 
     def allowed(kind: str, record_id: str, category: str) -> bool:
         for n, e in enumerate(entries):
             if e.get("kind") != kind:
                 continue
-            if e.get("recordId") == record_id:
+            if e.get("recordId") == record_id or (e.get("category") == category and not e.get("recordId") and used[n] < int(e.get("max") or 0)):
                 used[n] += 1
-                return True
-            if e.get("category") == category and not e.get("recordId") and used[n] < int(e.get("max") or 0):
-                used[n] += 1
+                permitted.add(record_id)
                 return True
         return False
 
@@ -156,7 +158,7 @@ def judge(diff: dict, old: dict[str, dict], allow: dict, baseline_version: str, 
                 used[k] += 1
             if n > sum(int(entries[k].get("max") or 0) for k in matching):
                 errors.append(f"{n} {c} fact(s) changed {field} (same id, other content)")
-    lost_offline = sorted(i for i in (offline_ids or ()) if i in set(diff["removed"]) | set(diff["idChanged"]))
+    lost_offline = sorted(i for i in (offline_ids or ()) if i in (set(diff["removed"]) | set(diff["idChanged"])) - permitted)
     if lost_offline:
         errors.append(f"{len(lost_offline)} fact(s) of the published offline set are lost: {', '.join(lost_offline[:5])}")
     for n, e in enumerate(entries):

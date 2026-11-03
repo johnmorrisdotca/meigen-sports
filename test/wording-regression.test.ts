@@ -33,8 +33,8 @@ test("no sentence names a club as if it were a trade, or a trophy as a capitalis
 });
 
 test("a club and no position is 'of the club'", () => {
-  const r = facts.find((f) => f.person?.name === "Gregg Popovich" && f.category === "player-birthday");
-  assert.ok(r?.text?.startsWith("Gregg Popovich, of the San Antonio Spurs, was born on"), r?.text);
+  const r = facts.find((f) => f.category === "player-birthday" && (f.clubNames?.length ?? 0) > 0 && !f.position && !f.highlight && !f.championships && !f.personAward);
+  assert.match(r?.text ?? "", /^[^,]+, of the [^,]+, was born on /, r?.text);
   const titled = facts.find((f) => f.category === "player-birthday" && (f.clubNames?.length ?? 0) > 0 && !f.position && (f.championships ?? 0) > 0 && f.championshipName === "Grey Cup");
   assert.match(titled?.text ?? "", /^[^,]+, of the [^,]+, (?:two-time |three-time |four-time )?Grey Cup winner, was born on /, titled?.text);
 });

@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "checkedOn": "2026-10-20",
+ "checkedOn": "2026-11-03",
  "sources": "Wikidata (CC0) and English Wikipedia (CC BY-SA 4.0), fetched by pipeline/golden/build_golden.py",
  "must": [
   {
@@ -4774,7 +4774,7 @@
    "sport": "athletics",
    "league": null,
    "fame": "star",
-   "label": "Sergei Bubka born",
+   "label": "Sergey Bubka born",
    "date": "1963-12-04",
    "era": "1920-1969",
    "match": {

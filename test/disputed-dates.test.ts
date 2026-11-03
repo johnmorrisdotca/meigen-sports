@@ -7,6 +7,7 @@ import { tagsOf } from "../src/facts.ts";
 import type { OnThisDayRecord } from "../src/schema.ts";
 import { dateNote, dayContext, render, renderRun, TEMPLATES } from "../src/templates/index.ts";
 import { isDate } from "../src/dates.ts";
+import { OFFLINE_BUILD } from "../src/data/offline.ts";
 
 // The people Wikidata itself disagrees about (equal-rank values, no preferred one), made by `pipeline/audit_dates.py --write-disputed` from the dump of 2026-10-12.
 // Every fact that states one of those dates keeps the date it had and carries the others. `pnpm test:dates` compares the file with the dump itself.
@@ -55,14 +56,14 @@ test("every fact that states a contested date is marked, with every other day th
     for (const alt of [...wantOwn, ...wantBirth, ...wantDeath]) assert.ok(isDate(alt) && alt !== r.eventDate && alt !== r.birthDate && alt !== r.deathDate, `${r.recordId}: ${alt}`);
   }
   assert.deepEqual(problems, []);
-  assert.equal(marked.length, 717);
+  assert.equal(marked.length, 722);
   assert.equal(own, 427, "facts whose own day is disputed");
-  assert.equal(marked.filter((r) => r.category === "player-birthday").length, 349);
-  assert.equal(marked.filter((r) => r.category === "player-death").length, 368);
-  assert.equal(marked.filter((r) => r.birthDateAlternatives).length, 216);
-  assert.equal(marked.filter((r) => r.deathDateAlternatives).length, 93);
+  assert.equal(marked.filter((r) => r.category === "player-birthday").length, 352);
+  assert.equal(marked.filter((r) => r.category === "player-death").length, 370);
+  assert.equal(marked.filter((r) => r.birthDateAlternatives).length, 218);
+  assert.equal(marked.filter((r) => r.deathDateAlternatives).length, 96);
   // A disputed fact stays where it was: nothing is dropped, and no fact is added.
-  assert.equal(facts.all.length, 105924);
+  assert.equal(facts.all.length, OFFLINE_BUILD.factsRecords);
 });
 
 test("a disputed fact carries the tag `date:disputed`, a note in both languages, and its sentence still names the date it always had", () => {
@@ -105,7 +106,7 @@ test("the note is short, says every alternative and decides nothing", () => {
 
 test("an age the dates leave open lists the other ages, and the published age is never one of them", () => {
   const withAge = marked.filter((r) => r.ageAlternatives);
-  assert.equal(withAge.length, 100);
+  assert.equal(withAge.length, 101);
   for (const r of withAge) {
     assert.equal(r.category, "player-death", r.recordId);
     assert.ok(r.ageYears != null && !r.ageAlternatives!.includes(r.ageYears), r.recordId);

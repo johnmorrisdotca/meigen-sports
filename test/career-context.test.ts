@@ -51,8 +51,10 @@ test("the facts of other sports are about their own sport, and a para sport is o
 });
 
 test("a priority athlete's birthday says what he was, with no gender, para or year words", () => {
+  // A priority athlete DS1 now holds keeps the DS1 row (an `spx:` id); the priority list's own row (`meigen:`) is for the rest.
+  assert.ok(people.filter((r) => r.priorityAthlete).length >= 600, "priority people");
   const fromList = people.filter((r) => r.recordId.startsWith("meigen:"));
-  assert.ok(fromList.length >= 600, `${fromList.length} priority people`);
+  assert.ok(fromList.length >= 40, `${fromList.length} priority-list people`);
   for (const r of fromList) {
     assert.ok(r.priorityAthlete && r.text && r.highlight, r.recordId);
     assert.doesNotMatch(r.highlight!, /female|\bmale\b|woman|women|girl|para|wheelchair|deaf|blind|\d/i, r.recordId);
