@@ -10,6 +10,7 @@ const inView = (page: Page, selector: string) =>
   }, selector);
 
 test("the switches are in the first screen and off at first; the address turns each on", async ({ page }) => {
+  await page.clock.setFixedTime(new Date(2026, 10, 3, 12, 0, 0));
   await page.goto(`/?lang=en&${GRETZKY}`);
   await expect(page.locator("#today-facts .record")).toHaveCount(3);
   expect(await inView(page, '[data-testid="today-options"]')).toBe(true);
