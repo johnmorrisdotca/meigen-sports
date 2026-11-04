@@ -1,7 +1,10 @@
 // The builder: the day, the calendar page, the layout, the language and the number of facts are rows of buttons and fields; the card is drawn with the package's own functions from the
 // facts bundled in it (the offline set), and the code under it is the call that draws the same card, or the address of the embed page. Nothing is sent or stored.
+import "@johnmorrisdotca/kazoku-ui/embed-panel/define";
+import type { EmbedChangeDetail, EmbedPanelElement } from "@johnmorrisdotca/kazoku-ui/embed-panel/element";
 import { CALENDAR_THEMES, CALENDAR_THEME_LABELS, calendarIcon, DISPLAY_LAYOUTS, displayMarkup, factsFor, renderRun, type CalendarTheme, type DisplayLayout } from "../src/index.ts";
 import { offline } from "../src/data/offline.ts";
+import { embedCode, frameCode, frameQuery, type Card } from "./embed-code.ts";
 
 type Locale = "en" | "ja";
 interface State { theme: CalendarTheme; layout: DisplayLayout; lang: Locale; month: string; day: string; n: string }
@@ -12,7 +15,10 @@ if (askedTheme) state.theme = askedTheme;
 const askedLayout = DISPLAY_LAYOUTS.find((one) => one === query.get("layout"));
 if (askedLayout) state.layout = askedLayout;
 if (query.get("lang") === "ja") state.lang = "ja";
-let way = "module";
+const panel = document.getElementById("embed-panel") as EmbedPanelElement;
+const KINDS = ["module", "html", "react", "vue", "angular", "svelte", "iframe"];
+panel.kinds = KINDS;
+panel.kind = KINDS.includes(query.get("embed") ?? "") ? (query.get("embed") as string) : "module";
 const $ = (id: string): HTMLElement => document.getElementById(id) as HTMLElement;
 const two = (value: string): string => String(Math.min(99, Math.max(1, Number.parseInt(value, 10) || 1))).padStart(2, "0");
 
@@ -28,28 +34,10 @@ function cardOptions() {
   const count = Math.min(12, Math.max(1, Number.parseInt(state.n, 10) || 3));
   return { month, day, key, count };
 }
-function module(): string {
+const card = (): Card => {
   const { month, day, key, count } = cardOptions();
-  return `import { calendarIcon, displayMarkup, factsFor, renderRun } from "@johnmorrisdotca/meigen-sports";
-import offline from "@johnmorrisdotca/meigen-sports/offline";
-
-const facts = factsFor(offline, { date: "${key}" }).slice(0, ${count});
-const sentences = renderRun(facts, { seed: "${key}", locale: "${state.lang}", asOf: "2026-${key}" });
-const html = displayMarkup({
-  layout: "${state.layout}",
-  icon: calendarIcon({ theme: "${state.theme}", month: ${month}, day: ${day}, year: 2026, locale: "${state.lang}" }),
-  items: sentences.map((sentence, i) => ({ text: sentence.text, year: facts[i]?.eventDate?.slice(0, 4) })),
-});
-document.querySelector("#card").innerHTML = html;`;
-}
-function frame(): string {
-  const { key, count } = cardOptions();
-  return `<iframe
-  src="https://johnmorrisdotca.github.io/meigen-sports/embed.html?date=${key}&theme=${state.theme}&layout=${state.layout}&lang=${state.lang}&n=${count}"
-  title="Sports history for ${key}"
-  width="420" height="360" loading="lazy" style="border: 0"
-></iframe>`;
-}
+  return { key, month, day, count, theme: state.theme, layout: state.layout, lang: state.lang };
+};
 function draw(): void {
   const { month, day, key, count } = cardOptions();
   const facts = factsFor(offline, { date: key }).slice(0, count);
@@ -59,9 +47,9 @@ function draw(): void {
     icon: calendarIcon({ theme: state.theme, month, day, year: 2026, locale: state.lang }),
     items: sentences.map((sentence, index) => ({ text: sentence.text, year: facts[index]?.eventDate?.slice(0, 4) })),
   });
-  $("code").textContent = way === "module" ? module() : frame();
+  panel.openHref = `embed.html?${frameQuery(card())}`;
+  panel.update();
   for (const group of document.querySelectorAll<HTMLElement>("[data-choice]")) for (const button of group.querySelectorAll("button")) button.setAttribute("aria-pressed", String(button.dataset["value"] === (state as unknown as Record<string, string>)[group.dataset["choice"] ?? ""]));
-  for (const button of $("tabs").querySelectorAll("button")) button.setAttribute("aria-selected", String(button.dataset["way"] === way));
   document.body.dataset["ready"] = "true";
 }
 
@@ -100,21 +88,24 @@ for (const [key, label] of [["month", "Month"], ["day", "Day"], ["n", "Facts"]] 
   fields.append(wrap);
 }
 $("controls").replaceChildren(...rows, fields);
-for (const [name, text] of [["module", "Module"], ["frame", "Frame"]] as const) {
-  const button = document.createElement("button");
-  button.type = "button";
-  button.setAttribute("role", "tab");
-  button.dataset["way"] = name;
-  button.textContent = text;
-  button.addEventListener("click", () => { way = name; draw(); });
-  $("tabs").append(button);
-}
-$("copy").addEventListener("click", async () => {
-  try {
-    await navigator.clipboard.writeText($("code").textContent ?? "");
-    $("status").textContent = "Copied to the clipboard.";
-  } catch {
-    $("status").textContent = "Could not copy: select the code and copy it.";
-  }
+panel.labels = { module: "Module", iframe: "Frame" };
+panel.generate = ({ kind, size, preview }) => (kind === "iframe" ? frameCode(card(), size, preview) : (embedCode(kind, card()) ?? ""));
+panel.preview = ({ size }) => {
+  const holder = document.createElement("template");
+  holder.innerHTML = frameCode(card(), size, true);
+  const found = holder.content.querySelector("iframe");
+  if (found === null) return undefined;
+  const picture = document.createElement("iframe");
+  for (const name of found.getAttributeNames()) if (name !== "style") picture.setAttribute(name, found.getAttribute(name) ?? "");
+  return picture;
+};
+panel.credits = "Meigen Sports by John Morris (MIT). Facts from Wikidata and openfootball (CC0) and English Wikipedia's lists (CC BY-SA 4.0); each fact names its own source and licence (NOTICE.md).";
+panel.addEventListener("kazoku-embedchange", (event) => {
+  const { kind, reason } = (event as CustomEvent<EmbedChangeDetail>).detail;
+  if (reason === "init") return;
+  const next = new URLSearchParams(location.search);
+  if (kind === "module") next.delete("embed");
+  else next.set("embed", kind);
+  history.replaceState(history.state, "", `${location.pathname}${next.size > 0 ? `?${next}` : ""}`);
 });
 draw();

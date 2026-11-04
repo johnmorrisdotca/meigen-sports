@@ -30,12 +30,7 @@
     .fields input { font: inherit; color: var(--ink); background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 6px 8px; min-height: 44px; width: 100%; }
     .stage { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px; min-height: 240px; overflow-x: auto; }
     .stage .meigen-calendar .meigen-cal svg { width: 6rem; }
-    .tabs { display: inline-flex; flex-wrap: wrap; gap: 4px; padding: 3px; background: var(--card); border: 1px solid var(--line); border-radius: 999px; margin: 12px 0 8px; }
-    .tabs button { font: inherit; font-weight: 700; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 0; background: transparent; color: var(--ink); cursor: pointer; }
-    .tabs button[aria-selected="true"] { background: var(--tab); color: var(--tab-ink); }
-    pre { margin: 0 0 8px; padding: 12px 14px; background: var(--card); border: 1px solid var(--line); border-radius: 10px; overflow-x: auto; font-size: .82rem; max-height: 20rem; }
-    .copy { font: inherit; font-weight: 800; min-height: 48px; padding: 0 22px; border-radius: 999px; border: 0; background: var(--tab); color: var(--tab-ink); cursor: pointer; }
-    #status { margin-left: 10px; color: var(--muted); }
+    kazoku-embed-panel { margin-top: 12px; --kazoku-ink: var(--ink); --kazoku-surface: var(--card); --kazoku-line: var(--line); --kazoku-accent: var(--accent); --kazoku-preview-width: 300px; }
   </style>
 </head>
 <body>
@@ -47,9 +42,7 @@
       <div class="controls" id="controls" data-testid="controls"></div>
       <div>
         <div class="stage" id="stage" data-testid="stage"></div>
-        <div class="tabs" role="tablist" id="tabs" aria-label="The code"></div>
-        <pre><code id="code" data-testid="code"></code></pre>
-        <button type="button" class="copy" id="copy" data-testid="copy">Copy the code</button><span id="status" role="status" aria-live="polite"></span>
+        <kazoku-embed-panel id="embed-panel" sizes="320 420 520" size="420" aspect="0.857" docs-href="docs/index.html" data-testid="embed-panel"></kazoku-embed-panel>
         <p class="note" style="margin-top:12px"><a href="https://github.com/johnmorrisdotca/meigen-sports/blob/main/docs/guides/getting-started.md">Getting started</a> · <a href="https://github.com/johnmorrisdotca/meigen-sports/blob/main/docs/guides/architecture.md">Architecture</a> · <a href="./embed.html">The embed page</a> · <a href="./catalogue.html">What is inside</a></p>
       </div>
     </div>

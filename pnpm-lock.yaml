@@ -34,8 +34,8 @@ importers:
         specifier: 1.7.2
         version: 1.7.2
       '@johnmorrisdotca/kazoku-ui':
-        specifier: ^0.12.0
-        version: 0.12.0
+        specifier: ^0.15.1
+        version: 0.15.1
       '@johnmorrisdotca/senshu-jerseys':
         specifier: 0.33.1
         version: 0.33.1
@@ -380,8 +380,8 @@ packages:
     resolution: {integrity: sha512-ULxtLeW1n+GekfILrfFAaDbEegqFpmbc70rI1AzNksmftZvha95lthNmHZdgl6csrACUVZH5Kvqq5VixqYgiog==}
     engines: {node: '>=24'}
 
-  '@johnmorrisdotca/kazoku-ui@0.12.0':
-    resolution: {integrity: sha512-1lwzvgUfV+D5UsvR+swBGQHyQ3YO7zt/9se+fMck9gflO7NB0Ele+dFsbi9y0V4M2g7OhVgub8sifaEFd32iHQ==}
+  '@johnmorrisdotca/kazoku-ui@0.15.1':
+    resolution: {integrity: sha512-vRsEPyrvJEattAkumncfifHpGo0pd0/KnmJXo0F9RRgc1l0qzdmAYjZYLln7hQWgrlk1tft6B2Umw3Z0llLatA==}
     engines: {node: '>=22'}
     peerDependencies:
       three: '>=0.160.0'
@@ -1778,7 +1778,7 @@ snapshots:
 
   '@johnmorrisdotca/hata@1.7.2': {}
 
-  '@johnmorrisdotca/kazoku-ui@0.12.0': {}
+  '@johnmorrisdotca/kazoku-ui@0.15.1': {}
 
   '@johnmorrisdotca/koyomi-calendars@0.1.0': {}
 

@@ -5,7 +5,7 @@ order: 5
 description: Put a day's sports history on any page with an iframe of the embed page, and choose the day, the theme and the language in the address.
 ---
 
-The embed page is made for an `<iframe>`: one card and nothing else. The address says what it shows, so you need no code of your own.
+The embed page is made for an `<iframe>`: one card and nothing else. The address says what it shows, so you need no code of your own. The demo's [builder](https://johnmorrisdotca.github.io/meigen-sports/builder.html) writes the iframe for the day, calendar page, layout and language you choose: its code section is the family's embed panel, with the frame at three widths, the call for a module, a plain page, React, Vue, Angular and Svelte, and the embed page itself beside the code.
 
 ```html
 <!doctype html>
