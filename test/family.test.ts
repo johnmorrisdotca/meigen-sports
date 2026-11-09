@@ -13,6 +13,7 @@ interface Template {
   FAMILY_PITCH: Record<string, string>;
   FAMILY_NOT_ON_NPM: string[];
   FAMILY_TEMPLATE_VERSION: string;
+  familyRepo(id: string): string;
   familyHeader(options: { id: string }): string;
   familyFooter(options: { id: string }): string;
 }
@@ -29,9 +30,9 @@ const pkg = JSON.parse(read("package.json")) as { name: string };
 const id = pkg.name.replace(/^@[^/]+\//, "");
 
 // 2026-10-16 adds Meigen Sports (not on npm yet) after Senshu Jerseys. Copy this file into the
-// other family repositories in one sweep so every package lists twenty-nine.
-const TEMPLATE = { version: "2026-11-02", sha256: "e178ff62eb70d49c9f703596448cc954ab3315437e57955aecf2b2be61c03f11" };
-const WRITER_SHA256 = "6752eaa287a9007af87d9019e4cee4c36fe1d79b60bf24478e7851ebe75138c4";
+// other family repositories in one sweep so every package lists forty-one.
+const TEMPLATE = { version: "2026-11-09", sha256: "75ca7e7da99092f360e5a539e34b109b14c92e9c04e7ad98f9e4b1e715c9240e" };
+const WRITER_SHA256 = "dfd4c27b70fe5d7d5f82724180cc739812f0dd13d209c41c053dbdc61bf90188";
 
 test("the family template is the one file, byte for byte, in every package", () => {
   assert.equal(template.FAMILY_TEMPLATE_VERSION, TEMPLATE.version);
@@ -43,8 +44,11 @@ test("it lists every package of the family, in order, each with its Japanese nam
   assert.deepEqual(
     template.FAMILY.map((one) => one.id),
     [
-      "korokoro", "kyuubu", "hitotsu", "toranpu", "tane", "narabe", "tenka", "kumimoji", "tsunagi", "jarajara",
-      "suido", "domino", "kotoba", "sugoroku", "kazu", "meikyuu", "hikidashi", "chizu", "bushu", "tobiishi", "jirai", "gunjin", "karakuri", "houseki", "kyogijo-stadiums", "taisen-brackets", "dougu-sports", "senshu-jerseys", "meigen-sports",
+      "domino", "gunjin", "narabe", "sugoroku", "tenka", "fuda-cards", "hitotsu", "jarajara", "kumimoji", "toranpu",
+      "houseki", "jirai", "karakuri", "kazu", "kyuubu", "meikyuu", "suido", "tobiishi", "tsunagi", "korokoro",
+      "tane", "bushu", "hikidashi", "jisho", "kotoba", "chikyu-earth", "hoshi-stars", "uchusen-rockets", "wakusei-planets", "address-plus",
+      "chizu", "hako-devices", "hata", "koyomi-calendars", "kuni", "dougu-sports", "kyogijo-stadiums", "meigen-sports", "senshu-jerseys", "taisen-brackets",
+      "rest-in-pieces",
     ],
   );
   for (const one of template.FAMILY) {
@@ -57,10 +61,10 @@ test("it lists every package of the family, in order, each with its Japanese nam
   assert.ok(template.FAMILY.some((one) => one.id === id));
 });
 
-test("this package is not on npm yet: the header has no npm pill and the footer says so", () => {
-  assert.ok(template.FAMILY_NOT_ON_NPM.includes(id));
-  assert.ok(!template.familyHeader({ id }).includes(`https://www.npmjs.com/package/@johnmorrisdotca/${id}`));
-  assert.ok(template.familyFooter({ id }).includes("Not on npm yet"));
+test("this package is on npm: the header has its npm pill and the footer does not say otherwise", () => {
+  assert.ok(!template.FAMILY_NOT_ON_NPM.includes(id));
+  assert.ok(template.familyHeader({ id }).includes(`https://www.npmjs.com/package/@johnmorrisdotca/${id}`));
+  assert.ok(!template.familyFooter({ id }).includes("Not on npm yet"));
 });
 
 test("the demo page is made with the family's header and footer", () => {
@@ -77,5 +81,5 @@ test("the README's family is the block scripts/family-readme.mjs writes from the
   assert.equal(block, writer.familyReadmeBlock(id));
   assert.equal(readme.split("<!-- family:start").length - 1, 1);
   assert.match(readme, /\n#{2,3} The family\n+<!-- family:start/);
-  for (const one of template.FAMILY) assert.equal((block ?? "").split(`](https://github.com/johnmorrisdotca/${one.id})`).length - 1, 1, one.id);
+  for (const one of template.FAMILY) assert.equal((block ?? "").split(`](${template.familyRepo(one.id)})`).length - 1, 1, one.id);
 });

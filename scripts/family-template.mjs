@@ -46,46 +46,71 @@
 const OWNER = "johnmorrisdotca";
 
 /** The day this file was last changed, in every repository at once. A test records the file's hash beside it. */
-export const FAMILY_TEMPLATE_VERSION = "2026-11-02";
+export const FAMILY_TEMPLATE_VERSION = "2026-11-09";
 
 /** The packages, in the order the footer lists them. `kana` is the name as it is written in Japanese. */
 export const FAMILY = [
-  { id: "korokoro", name: "Korokoro", kana: "コロコロ" },
-  { id: "kyuubu", name: "Kyuubu", kana: "キューブ" },
-  { id: "hitotsu", name: "Hitotsu", kana: "一つ" },
-  { id: "toranpu", name: "Toranpu", kana: "トランプ" },
-  { id: "tane", name: "Tane", kana: "種" },
-  { id: "narabe", name: "Narabe", kana: "並べ" },
-  { id: "tenka", name: "Tenka", kana: "天下" },
-  { id: "kumimoji", name: "Kumimoji", kana: "組み文字" },
-  { id: "tsunagi", name: "Tsunagi", kana: "繋ぎ" },
-  { id: "jarajara", name: "Jarajara", kana: "ジャラジャラ" },
-  { id: "suido", name: "Suido", kana: "水道" },
   { id: "domino", name: "Domino", kana: "ドミノ" },
-  { id: "kotoba", name: "Kotoba", kana: "言葉" },
-  { id: "sugoroku", name: "Sugoroku", kana: "双六" },
-  { id: "kazu", name: "Kazu", kana: "数" },
-  { id: "meikyuu", name: "Meikyuu", kana: "迷宮" },
-  { id: "hikidashi", name: "Hikidashi", kana: "引き出し" },
-  { id: "chizu", name: "Chizu", kana: "地図" },
-  { id: "bushu", name: "Bushu", kana: "部首" },
-  { id: "tobiishi", name: "Tobiishi", kana: "飛び石" },
-  { id: "jirai", name: "Jirai", kana: "地雷" },
   { id: "gunjin", name: "Gunjin", kana: "軍人" },
-  { id: "karakuri", name: "Karakuri", kana: "からくり" },
+  { id: "narabe", name: "Narabe", kana: "並べ" },
+  { id: "sugoroku", name: "Sugoroku", kana: "双六" },
+  { id: "tenka", name: "Tenka", kana: "天下" },
+  { id: "fuda-cards", name: "Fuda Cards", kana: "札" },
+  { id: "hitotsu", name: "Hitotsu", kana: "一つ" },
+  { id: "jarajara", name: "Jarajara", kana: "ジャラジャラ" },
+  { id: "kumimoji", name: "Kumimoji", kana: "組み文字" },
+  { id: "toranpu", name: "Toranpu", kana: "トランプ" },
   { id: "houseki", name: "Houseki", kana: "宝石" },
-  { id: "kyogijo-stadiums", name: "Kyogijo Stadiums", kana: "競技場" },
-  { id: "taisen-brackets", name: "Taisen Brackets", kana: "対戦" },
+  { id: "jirai", name: "Jirai", kana: "地雷" },
+  { id: "karakuri", name: "Karakuri", kana: "からくり" },
+  { id: "kazu", name: "Kazu", kana: "数" },
+  { id: "kyuubu", name: "Kyuubu", kana: "キューブ" },
+  { id: "meikyuu", name: "Meikyuu", kana: "迷宮" },
+  { id: "suido", name: "Suido", kana: "水道" },
+  { id: "tobiishi", name: "Tobiishi", kana: "飛び石" },
+  { id: "tsunagi", name: "Tsunagi", kana: "繋ぎ" },
+  { id: "korokoro", name: "Korokoro", kana: "コロコロ" },
+  { id: "tane", name: "Tane", kana: "種" },
+  { id: "bushu", name: "Bushu", kana: "部首" },
+  { id: "hikidashi", name: "Hikidashi", kana: "引き出し" },
+  { id: "jisho", name: "Jisho", kana: "辞書" },
+  { id: "kotoba", name: "Kotoba", kana: "言葉" },
+  { id: "chikyu-earth", name: "Chikyu Earth", kana: "地球" },
+  { id: "hoshi-stars", name: "Hoshi Stars", kana: "星" },
+  { id: "uchusen-rockets", name: "Uchusen Rockets", kana: "宇宙船" },
+  { id: "wakusei-planets", name: "Wakusei Planets", kana: "惑星" },
+  { id: "address-plus", name: "address-plus", kana: "アドレスプラス", repo: "https://github.com/johnmorrisdotca/address-plus", site: "https://johnmorrisdotca.github.io/address-plus/" },
+  { id: "chizu", name: "Chizu", kana: "地図" },
+  { id: "hako-devices", name: "Hako Devices", kana: "箱" },
+  { id: "hata", name: "Hata", kana: "旗" },
+  { id: "koyomi-calendars", name: "Koyomi Calendars", kana: "暦" },
+  { id: "kuni", name: "Kuni", kana: "国" },
   { id: "dougu-sports", name: "Dougu Sports", kana: "道具" },
-  { id: "senshu-jerseys", name: "Senshu Jerseys", kana: "選手" },
+  { id: "kyogijo-stadiums", name: "Kyogijo Stadiums", kana: "競技場" },
   { id: "meigen-sports", name: "Meigen Sports", kana: "名言" },
+  { id: "senshu-jerseys", name: "Senshu Jerseys", kana: "選手" },
+  { id: "taisen-brackets", name: "Taisen Brackets", kana: "対戦" },
+  { id: "rest-in-pieces", name: "REST in Pieces", kana: "レスト・イン・ピーシーズ", repo: "https://github.com/spxis/rest-in-pieces", site: "https://spxis.github.io/rest-in-pieces/" },
+];
+
+/** The kinds, in display order, with members alphabetical within each kind. */
+export const FAMILY_GROUPS = [
+  { id: "board", en: "Games — board", ja: "ボードゲーム", members: ["domino", "gunjin", "narabe", "sugoroku", "tenka"] },
+  { id: "cards", en: "Games — cards & tiles", ja: "カードと牌のゲーム", members: ["fuda-cards", "hitotsu", "jarajara", "kumimoji", "toranpu"] },
+  { id: "puzzles", en: "Games — puzzles", ja: "パズルゲーム", members: ["houseki", "jirai", "karakuri", "kazu", "kyuubu", "meikyuu", "suido", "tobiishi", "tsunagi"] },
+  { id: "random", en: "Games — dice & random", ja: "ダイスと乱数", members: ["korokoro", "tane"] },
+  { id: "language", en: "Language", ja: "ことばと文字", members: ["bushu", "hikidashi", "jisho", "kotoba"] },
+  { id: "space", en: "Space Program X", ja: "Space Program X", members: ["chikyu-earth", "hoshi-stars", "uchusen-rockets", "wakusei-planets"] },
+  { id: "geography", en: "Geography & data", ja: "地理とデータ", members: ["address-plus", "chizu", "hako-devices", "hata", "koyomi-calendars", "kuni"] },
+  { id: "sports", en: "Sports", ja: "スポーツ", members: ["dougu-sports", "kyogijo-stadiums", "meigen-sports", "senshu-jerseys", "taisen-brackets"] },
+  { id: "developer", en: "Developer tools", ja: "開発ツール", members: ["rest-in-pieces"] },
 ];
 
 /**
  * The packages of FAMILY that are not on npm yet. Such a package's header has no npm pill, its footer says so in
  * place of the install line, and the README's line on it ends "Not on npm yet." Take the id out the day it is published.
  */
-export const FAMILY_NOT_ON_NPM = ["meigen-sports"];
+export const FAMILY_NOT_ON_NPM = [];
 
 /**
  * One line on each package, for the README's "The family" block: lower case, no full stop, no number that can
@@ -110,18 +135,44 @@ export const FAMILY_PITCH = {
   kazu: "grid number puzzles: Sudoku and its variants, Futoshiki and Skyscrapers",
   meikyuu: "mazes on squares, hexagons, triangles and circles, made from a seed and drawn through with a finger or the mouse",
   hikidashi: "a drawer of small Japanese text tools: era dates, kanji numerals, readings and sentence difficulty",
+  "chikyu-earth": "a line-drawn globe that turns at the Earth's own rate, with an optional realistic Earth from space and markers for any place",
   chizu: "maps of the world and of countries' regions, in English and Japanese, with a quiz and callouts",
+  "hako-devices": "line drawings and 3D views of computers, phones, consoles and NAS boxes, from published sizes",
+  "hoshi-stars": "the stars you can see without a telescope, with names, colours and distances, the constellations with their lines and boundaries, and the Messier objects, drawn on any of seven sky maps",
   bushu: "find a kanji by the parts it is made of",
   tobiishi: "peg solitaire with nine boards and seeded solvable challenges",
   jirai: "minesweeper on shaped grids with verified no-guess boards",
   gunjin: "five hidden-rank strategy games with pass-the-device play",
   karakuri: "eight hyper-casual puzzle games, some of them physics: draw a shield, pull pins, cut ropes, slide blocks, pour tubes",
   houseki: "gem and stone matching puzzles: falling triplets, stone collapse, colour chains and gem swap",
+  "address-plus": "parse and format addresses in the United States, Canada, Japan, Australia, France, Germany and the United Kingdom",
+  "hata": "country and regional flags as SVG, at their true proportions and keyed by ISO code",
+  "kuni": "countries and their regions, with ISO codes and names in English and Japanese",
+  "uchusen-rockets": "rockets drawn from sourced sizes, as line drawings and 3D views you can take apart and turn, with a check that a rocket really goes together",
+  "wakusei-planets": "the Sun, the planets and their moons, as line drawings, shaded drawings and painted surface maps, with their real sizes, tilt and rotation",
+  "rest-in-pieces": "seeded test data and REST APIs for frontend development, with latency and error drills",
   "kyogijo-stadiums": "sports fields, rinks, courts and ballparks drawn to scale as SVG, with each team and the score on them",
   "taisen-brackets": "a sport-agnostic tournament bracket, drawn as SVG, from a list of ties",
   "dougu-sports": "sports emblems as SVG: trophies, medals, crests, and the ball and gear of every sport, with optional 3D turning",
   "senshu-jerseys": "sports jerseys, sweaters, kits, caps, helmets and retired-number banners as SVG, front and back, with optional 2.5D turning",
+  "fuda-cards": "collectible card frames with a true thickness, foil, stacks, wear and a binder, as two web components",
+  jisho: "words of Japanese looked up by reading or written form, and the grades, JLPT levels, readings and look-alike pairs of 2,999 kanji",
   "meigen-sports": "sports quotations and on-this-day history",
+  "koyomi-calendars": "calendar-page icons and whole months as SVG, in light and dark, with page-turning from one day to the next",
+};
+
+/** Japanese pitches for the new geography and developer members; awaiting native review. */
+export const FAMILY_PITCH_JA = {
+  "address-plus": "アメリカ、カナダ、日本、オーストラリア、フランス、ドイツ、イギリスの住所を解析・整形",
+  "hako-devices": "公開された寸法から、コンピューター、電話、ゲーム機、NASの線画と3Dを描きます",
+  "hoshi-stars": "肉眼で見える星の名前・色・距離、星座の線と境界、メシエ天体を収録。7種類の星図で描けます",
+  "hata": "国と行政区画の旗を、実際の縦横比のSVGで収録。ISOコードで引けます",
+  "kuni": "世界の国と行政区画を、ISOコードと英語・日本語の名称つきで収録",
+  "uchusen-rockets": "出典つきの寸法からロケットを描きます。線画と3Dで、分解して回して見られ、ロケットが本当に組み合わさるかも確かめられます",
+  "wakusei-planets": "太陽・惑星・衛星を、線画・陰影つきの絵・表面の地図で描きます。実際の大きさ・傾き・自転つき",
+  "rest-in-pieces": "フロントエンド開発向けの、シード値で固定できるテストデータとREST API（遅延・エラーの再現つき）",
+  "fuda-cards": "コレクション用のカード枠。本物の厚み、箔、山、傷み、バインダーを、2つのWebコンポーネントで",
+  jisho: "日本語の単語を読みや表記から引け、2,999字の漢字の学年、JLPTレベル、読み、形の似た漢字の組も収録",
 };
 
 /**
@@ -140,8 +191,8 @@ export const FAMILY_CLOTHS = {
 
 /** The words the shared header and footer say themselves, in both languages. A page's own table is laid over these. */
 export const FAMILY_WORDS = {
-  en: { family: "The family:", licence: "MIT", help: "Help", helpTip: "Show a short note under each option, saying what it does", cloth: "Table cloth", cloth_green: "Green", cloth_blue: "Blue", cloth_red: "Red", cloth_black: "Black", cloth_wood: "Wood" },
-  ja: { family: "姉妹パッケージ:", licence: "MIT", help: "説明", helpTip: "各項目の下に、その使い方を短く表示します", cloth: "テーブルの色", cloth_green: "緑", cloth_blue: "青", cloth_red: "赤", cloth_black: "黒", cloth_wood: "木目" },
+  en: { family: "The family:", licence: "MIT", help: "Help", helpTip: "Show a short note under each option, saying what it does", cloth: "Table cloth", cloth_green: "Green", cloth_blue: "Blue", cloth_red: "Red", cloth_black: "Black", cloth_wood: "Wood", ...Object.fromEntries(FAMILY_GROUPS.map((group) => [`family_${group.id}`, group.en])) },
+  ja: { family: "ファミリー：", licence: "MIT", help: "説明", helpTip: "各項目の下に、その使い方を短く表示します", cloth: "テーブルの色", cloth_green: "緑", cloth_blue: "青", cloth_red: "赤", cloth_black: "黒", cloth_wood: "木目", ...Object.fromEntries(FAMILY_GROUPS.map((group) => [`family_${group.id}`, group.ja])) },
 };
 
 const escape = (text) => String(text).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -150,8 +201,10 @@ const member = (id) => {
   if (found === undefined) throw new Error(`${id} is not in the family`);
   return found;
 };
-const repo = (id) => `https://github.com/${OWNER}/${id}`;
-const site = (id) => `https://${OWNER}.github.io/${id}/`;
+export const familyRepo = (id) => member(id).repo ?? `https://github.com/${OWNER}/${id}`;
+const repo = familyRepo;
+export const familySite = (id) => member(id).site ?? `https://${OWNER}.github.io/${id}/`;
+const site = familySite;
 const npm = (id) => `https://www.npmjs.com/package/@${OWNER}/${id}`;
 
 /** The lines of <head> every site shares: charset, viewport, title, description, theme colour, Open Graph. The page adds its icon and its stylesheets. */
@@ -204,12 +257,19 @@ export function familyUnreviewed({ id }) {
 /** The footer: the page's own note (data-say="foot"), the install line and the licence, and the family, each by its demo site, this package marked as the one being read. */
 export function familyFooter({ id }) {
   member(id);
+  const groups = FAMILY_GROUPS.map((group) => {
+    const links = group.members.map((memberId) => {
+      const one = member(memberId);
+      const pitch = FAMILY_PITCH_JA[one.id] === undefined ? "" : ` data-tip-en="${escape(FAMILY_PITCH[one.id])}" data-tip-ja="${escape(FAMILY_PITCH_JA[one.id])}"`;
+      return `<a href="${site(one.id)}"${one.id === id ? ` aria-current="page"` : ""}${pitch}>${escape(one.name)}</a>`;
+    }).join("");
+    return `<span class="family-group" style="display:flex;flex-wrap:wrap;align-items:center;gap:0 4px;flex:1 1 100%;min-width:0"><strong data-say="family_${group.id}">${escape(group.en)}</strong>${links}</span>`;
+  }).join("");
   const onNpm = !FAMILY_NOT_ON_NPM.includes(id);
-  const links = FAMILY.map((one) => `<a href="${site(one.id)}"${one.id === id ? ` aria-current="page"` : ""}>${one.name}</a>`).join("");
   return `<footer>
         <span data-say="foot"></span>
         <span>${onNpm ? `<code>npm install @${OWNER}/${id}</code>` : "Not on npm yet"} · <a href="${repo(id)}/blob/main/LICENSE" data-say="licence"></a> © John Morris</span>
-        <span class="family"><span data-say="family"></span>${links}<a href="https://itsutsu.com">itsutsu.com</a></span>
+        <span class="family"><span data-say="family"></span>${groups}<a href="https://itsutsu.com">itsutsu.com</a></span>
       </footer>`;
 }
 
@@ -231,7 +291,7 @@ export const FAMILY_SCRIPT = `var familyHelp = (function familyHelpSwitch() {
   style.textContent = STYLE;
   document.head.appendChild(style);
   var root = document.documentElement;
-  var asked = new URLSearchParams(location.search).get("help");
+  var asked = new globalThis.URLSearchParams(location.search).get("help");
   var kept = null;
   try { kept = localStorage.getItem(KEY); } catch (error) { /* A browser that keeps nothing starts with Help off. */ }
   var state = { on: asked === "on" || asked === "1" ? true : asked === "off" || asked === "0" ? false : kept === "on" };
@@ -301,7 +361,7 @@ export const FAMILY_SCRIPT = `var familyHelp = (function familyHelpSwitch() {
 (function familyCloth() {
   var CLOTHS = ${JSON.stringify(FAMILY_CLOTHS)};
   var KEY = "johnmorrisdotca.cloth";
-  var asked = new URLSearchParams(location.search).get("cloth");
+  var asked = new globalThis.URLSearchParams(location.search).get("cloth");
   var kept = null;
   try { kept = localStorage.getItem(KEY); } catch (error) { /* A browser that keeps nothing starts on green. */ }
   var wear = function (name, keep) {
@@ -322,10 +382,10 @@ export const FAMILY_SCRIPT = `var familyHelp = (function familyHelpSwitch() {
     });
     if (keep) {
       try { localStorage.setItem(KEY, name); } catch (error) { /* Not remembered; still worn. */ }
-      var query = new URLSearchParams(location.search);
+      var query = new globalThis.URLSearchParams(location.search);
       if (name === "green") query.delete("cloth"); else query.set("cloth", name);
       var search = query.toString();
-      history.replaceState(history.state, "", location.pathname + (search ? "?" + search : "") + location.hash);
+      globalThis.history.replaceState(history.state, "", location.pathname + (search ? "?" + search : "") + location.hash);
     }
     document.dispatchEvent(new CustomEvent("family-cloth", { detail: { cloth: name, colours: cloth } }));
   };
@@ -337,7 +397,7 @@ export const FAMILY_SCRIPT = `var familyHelp = (function familyHelpSwitch() {
 function familyLanguage(options) {
   var SHARED = ${JSON.stringify(FAMILY_WORDS)};
   var KEY = options.id + ".page.lang";
-  var asked = new URLSearchParams(location.search).get("lang");
+  var asked = new globalThis.URLSearchParams(location.search).get("lang");
   if (asked !== "ja" && asked !== "en") asked = null;
   var kept = null;
   try { kept = localStorage.getItem(KEY); } catch (error) { /* A browser that keeps nothing follows its own language. */ }
@@ -375,3 +435,589 @@ function familyLanguage(options) {
   state.say();
   return state;
 }`;
+
+/**
+ * The shared embed builder. A package supplies its option list, groups, makers,
+ * version and words; rendering a live preview remains the package's job.
+ * This function is self-contained so a site can emit it as a browser module.
+ */
+export const FAMILY_EMBED_BUILDER_WORDS = {
+  "en": {
+    "pitch": "Choose settings, preview the embed, and copy the code for your page.",
+    "previewTitle": "Preview",
+    "makerLabel": "What to build",
+    "notSet": "Not set",
+    "on": "On",
+    "off": "Off",
+    "reset": "Reset",
+    "startAgain": "Start again",
+    "copy": "Copy code",
+    "copied": "Copied.",
+    "copyLink": "Copy a link to this setup",
+    "linkCopied": "The link is copied.",
+    "codeTitle": "The code",
+    "codeText": "Choose how to embed this on your page.",
+    "onlyDifferent": "Only choices that differ from the defaults are included in the code.",
+    "defaultIs": "Default: {value}"
+  },
+  "ja": {
+    "pitch": "設定を選んでプレビューを確認し、ページに埋め込むコードをコピーできます。",
+    "previewTitle": "プレビュー",
+    "makerLabel": "作るもの",
+    "notSet": "指定なし",
+    "on": "オン",
+    "off": "オフ",
+    "reset": "元に戻す",
+    "startAgain": "最初からやり直す",
+    "copy": "コードをコピー",
+    "copied": "コピーしました。",
+    "copyLink": "この設定へのリンクをコピー",
+    "linkCopied": "リンクをコピーしました。",
+    "codeTitle": "コード",
+    "codeText": "ページへの埋め込み方法を選びます。",
+    "onlyDifferent": "初期値と異なる選択だけがコードに含まれます。",
+    "defaultIs": "初期値：{value}"
+  }
+};
+
+export function familyEmbedBuilder(config) {
+  const japaneseChoices = {"small": "小", "medium": "中", "large": "大", "auto": "自動", "light": "明るい", "dark": "暗い", "en": "英語", "ja": "日本語", "fr": "フランス語", "on": "オン", "off": "オフ", "none": "なし", "standard": "標準", "paper": "紙", "stickerless": "ステッカーレス", "focus": "フォーカス中", "page": "ページ全体", "fast": "速い", "normal": "標準", "slow": "遅い", "green": "緑", "blue": "青", "red": "赤", "black": "黒", "wood": "木", "own": "本来の縦横比", "round": "丸", "plain": "シンプル", "four-colour": "4色", "english": "イギリス式", "realistic": "写実的", "classic-red": "クラシック（赤）", "classic-blue": "クラシック（青）", "ink-dots": "水玉", "rank": "数字順", "suit": "スート順", "face": "絵札順", "front": "先頭", "end": "末尾", "dealt": "配られた順", "kind": "種類順", "code": "コード順", "one": "1つだけ", "jade": "翡翠", "bamboo": "竹", "ink": "墨", "jarajara": "ジャラジャラ", "riichi": "リーチ麻雀", "riichi-black": "リーチ麻雀（黒）", "marble": "マーブル", "bright": "鮮やか", "colour-blind": "色覚に配慮", "soft": "やわらかい", "classic": "通常", "portals": "ワープ", "colours": "色", "numbers": "数字", "marbles": "玉", "lines": "線", "clockwise": "時計回り", "anticlockwise": "反時計回り", "world": "世界", "water": "水域", "all": "すべて", "place": "答えを入れる", "show": "表示", "count": "数える", "easy": "やさしい", "hard": "むずかしい"};
+  const displayChoice = (option, lang, value) => option.choiceLabels?.[lang]?.[value] ?? (lang === "ja" ? option.id === "level" && value === "medium" ? "ふつう" : japaneseChoices[value] : undefined) ?? value;
+  const titleFor = (settings) => String(globalThis.document?.documentElement?.lang ?? settings.lang ?? "en").startsWith("ja") ? config.titleJa ?? config.title ?? "埋め込み" : config.title ?? "Embed";
+  const { packageName, major, site, makers, options = [], groups = {}, leftOut = {} } = config;
+  if (!packageName || !/^\d+$/.test(String(major))) throw new Error("An embed builder needs a package name and npm major");
+  const cdn = `https://cdn.jsdelivr.net/npm/${packageName}@${major}/dist/element-define.js`;
+  const formats = config.formats ?? {
+    element: { label: { en: "Custom element", ja: "カスタム要素" }, language: "html" },
+    image: { label: { en: "Image", ja: "画像" }, language: "html" },
+    iframe: { label: { en: "iframe", ja: "iframe" }, language: "html" },
+    module: { label: { en: "ES module", ja: "ESモジュール" }, language: "js" },
+    react: { label: { en: "React 19", ja: "React 19" }, language: "tsx" },
+    vue: { label: { en: "Vue", ja: "Vue" }, language: "vue" },
+    svelte: { label: { en: "Svelte", ja: "Svelte" }, language: "svelte" },
+    angular: { label: { en: "Angular", ja: "Angular" }, language: "ts" },
+    html: { label: { en: "Plain HTML", ja: "HTML" }, language: "html" },
+    url: { label: { en: "iframe URL", ja: "iframe URL" }, language: "text" },
+  };
+  const quote = (text) => JSON.stringify(String(text)).replaceAll("<", "\\u003c");
+  const plain = (value) => typeof value === "string" ? quote(value) : String(value);
+  const escape = (value) => String(value).replaceAll("&", "&amp;").replaceAll('"', "&quot;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
+  const specFor = (maker) => {
+    if (!Object.hasOwn(makers, maker)) throw new Error(`Unknown embed maker: ${maker}`);
+    return makers[maker];
+  };
+  const required = (maker, id) => (specFor(maker).required ?? []).includes(id);
+  const standing = (option, value) => {
+    if (value === undefined || value === null || value === "") return true;
+    if (option.default === undefined) return false;
+    if (option.kind === "number") return Number(value) === Number(option.default);
+    if (option.kind === "boolean") return Boolean(value) === Boolean(option.default);
+    return String(value).toLowerCase() === String(option.default).toLowerCase();
+  };
+  const converted = (option, raw, maker) => {
+    if (option.kind === "number") return Number((Number(raw) * (option.factor?.[maker] ?? 1)).toFixed(6));
+    if (option.kind === "boolean") return Boolean(raw);
+    if (option.choices?.every((choice) => /^[0-9.]+$/.test(choice))) return Number(raw);
+    return raw;
+  };
+  function entriesFor(list, settings, maker) {
+    const spec = specFor(maker);
+    const out = [];
+    for (const option of list) {
+      const name = option.names[spec.names];
+      if (name === undefined || standing(option, settings[option.id]) && !required(maker, option.id)) continue;
+      const raw = settings[option.id] === undefined || settings[option.id] === "" ? option.default : settings[option.id];
+      if (raw !== undefined) out.push({ id: option.id, name, value: converted(option, raw, maker), option });
+    }
+    return out;
+  }
+  function attributesFor(list, settings, maker) {
+    const spec = specFor(maker);
+    const out = [];
+    for (const option of list) {
+      const name = option.names[spec.element];
+      if (name === undefined || standing(option, settings[option.id]) && !required(maker, option.id)) continue;
+      const raw = settings[option.id] === undefined || settings[option.id] === "" ? option.default : settings[option.id];
+      if (raw !== undefined) out.push([name, option.kind === "boolean" ? raw ? "" : "false" : String(raw)]);
+    }
+    return out;
+  }
+  const attr = ([name, value]) => value === "" ? ` ${name}` : ` ${name}="${escape(value)}"`;
+  const tagOf = (spec, attributes, indent = "") => {
+    const text = `<${spec.tag}${attributes.map(attr).join("")}></${spec.tag}>`;
+    if (text.length + indent.length <= 80 || attributes.length < 3) return text;
+    return `<${spec.tag}\n${attributes.map((one) => `${indent}  ${attr(one).trim()}`).join("\n")}\n${indent}></${spec.tag}>`;
+  };
+  const literal = (lines, indent = "") => {
+    const one = `{ ${lines.join(", ")} }`;
+    return one.length + indent.length <= 78 ? one : `{\n${lines.map((line) => `${indent}  ${line},`).join("\n")}\n${indent}}`;
+  };
+  function embedAddress(list, settings, maker) {
+    const spec = specFor(maker);
+    if (!spec.embed) return null;
+    const pairs = attributesFor(list, settings, maker).map(([name, value]) => {
+      const option = list.find((one) => one.names[spec.element] === name);
+      return [name, option?.kind === "boolean" ? value === "" ? "1" : "0" : value];
+    });
+    const query = pairs.map(([name, value]) => `${encodeURIComponent(name)}=${encodeURIComponent(value).replaceAll("%20", "+").replaceAll("%27", "'")}`).join("&");
+    return `${spec.embed}${query ? `${spec.parameters === "hash" ? "#" : "?"}${query}` : ""}`;
+  }
+  function frameSide(maker, settings) {
+    const spec = specFor(maker);
+    return typeof spec.width === "function" ? spec.width(settings) : spec.width ?? 360;
+  }
+  function codeFor(maker, format, list, settings) {
+    const spec = specFor(maker);
+    if (!spec.formats.includes(format)) return null;
+    const call = entriesFor(list, settings, maker);
+    const attrs = spec.element === undefined ? [] : attributesFor(list, settings, maker);
+    const context = { maker, format, list, settings, call, attrs, spec, packageName, cdn, site, quote, plain, literal, tagOf, embedAddress, frameSide };
+    const custom = config.code?.(context);
+    if (custom !== undefined) return custom;
+    const tag = tagOf(spec, attrs);
+    const define = `import "${packageName}/element/define";`;
+    if (format === "element" || format === "html") return `<script type="module" src="${cdn}"></script>\n${tag}`;
+    if (format === "image") {
+      const src = spec.image?.(settings);
+      return src ? `<img src="${escape(src)}" alt="${escape(settings.label ?? titleFor(settings))}" />` : null;
+    }
+    if (format === "iframe" || format === "url") {
+      const address = embedAddress(list, settings, maker);
+      if (address === null) return null;
+      const src = new globalThis.URL(address, site).href;
+      if (format === "url") return src;
+      const width = frameSide(maker, settings);
+      const height = typeof spec.height === "function" ? spec.height(settings) : spec.height ?? width;
+      return `<iframe src="${escape(src)}" title="${escape(titleFor(settings))}" width="${width}" height="${height}" style="border:0;max-width:100%" loading="lazy"></iframe>`;
+    }
+    if (format === "react") {
+      const props = attrs.map(([name, value]) => {
+        const option = list.find((one) => one.names[spec.element] === name);
+        if (value === "") return name;
+        if (value === "false" && option?.kind === "boolean") return `${name}={false}`;
+        if (/^-?\d+(\.\d+)?$/.test(value) && option?.kind === "number") return `${name}={${value}}`;
+        return /["\\<&>\r\n\t]/.test(value) ? `${name}={${quote(value)}}` : `${name}=${quote(value)}`;
+      });
+      const line = `<${spec.tag} ${props.join(" ")} />`;
+      const body = line.length > 64 ? `(\n    <${spec.tag}\n${props.map((one) => `      ${one}`).join("\n")}\n    />\n  )` : line;
+      return `// React 19 sets a custom element's properties, which write its attributes.\n${define}\n\nexport function ${config.component ?? "Example"}() {\n  return ${body};\n}`;
+    }
+    if (format === "vue") return `<script setup>\n${define}\n// In vite.config: vue({ template: { compilerOptions: { isCustomElement: (tag) => tag.startsWith(${quote(spec.prefix ?? `${spec.tag.split("-")[0]}-`)}) } } })\n</script>\n\n<template>\n  ${tagOf(spec, attrs, "  ")}\n</template>`;
+    if (format === "svelte") return `<script>\n  ${define}\n</script>\n\n${tagOf(spec, attrs)}`;
+    if (format === "angular") return `import { CUSTOM_ELEMENTS_SCHEMA, Component } from "@angular/core";\n${define}\n\n@Component({\n  selector: ${quote(config.selector ?? "app-example")},\n  schemas: [CUSTOM_ELEMENTS_SCHEMA],\n  template: \`${tagOf(spec, attrs, "    ").replaceAll("\\", "\\\\").replaceAll("`", "\\`").replaceAll("${", "\\${")}\`,\n})\nexport class ${config.component ?? "Example"}Component {}`;
+    if (format === "module") return `${define}\n\nconst element = globalThis.document.createElement(${quote(spec.tag)});\n${attrs.map(([name, value]) => `element.setAttribute(${quote(name)}, ${quote(value)});`).join("\n")}\ndocument.body.append(element);`;
+    return null;
+  }
+  function toAddress(maker, list, settings) {
+    const pairs = [["make", maker]];
+    for (const option of list) {
+      const value = settings[option.id];
+      if (standing(option, value) && !required(maker, option.id) || value === undefined || value === "") continue;
+      pairs.push([option.id, typeof value === "boolean" ? value ? "1" : "0" : String(value)]);
+    }
+    return pairs.map(([name, value]) => `${name}=${encodeURIComponent(value).replaceAll("%20", "+")}`).join("&");
+  }
+  function fromAddress(text, list) {
+    const query = new globalThis.URLSearchParams(text.replace(/^[#?]/, ""));
+    const asked = query.get("make");
+    const maker = Object.hasOwn(makers, asked) ? asked : config.defaultMaker ?? Object.keys(makers)[0];
+    const settings = {};
+    for (const option of list) {
+      if (!query.has(option.id)) continue;
+      const raw = query.get(option.id);
+      if (option.kind === "boolean") settings[option.id] = raw === "1" || raw === "true";
+      else if (option.kind === "number") {
+        const number = Number(raw);
+        if (raw !== "" && Number.isFinite(number)) settings[option.id] = option.range ? Math.max(option.range.min, Math.min(option.range.max, number)) : number;
+      } else if (option.kind === "choice") {
+        if (option.choices.includes(raw)) settings[option.id] = raw;
+      } else settings[option.id] = raw;
+    }
+    return { maker, settings };
+  }
+  function validateCoverage(declared) {
+    const missing = [];
+    for (const [kind, names] of Object.entries(declared)) {
+      const listed = new Set(options.flatMap((option) => option.names[kind] === undefined ? [] : [option.names[kind].split(".")[0]]));
+      for (const name of names) {
+        if (listed.has(name)) continue;
+        const reason = leftOut[`${kind}.${name}`];
+        if (typeof reason !== "string" || reason.trim().length === 0) missing.push(`${kind}.${name}`);
+      }
+    }
+    if (missing.length) throw new Error(`Embed options need rows or reasons: ${missing.join(", ")}`);
+    return true;
+  }
+  /** Restore a copied setup from schema defaults; starter choices apply only on a fresh visit. */
+  function restoreState(address, initial = {}, list = options) {
+    const asked = fromAddress(address, list);
+    const linked = new globalThis.URLSearchParams(String(address ?? "").replace(/^#/, "")).has("make");
+    return { maker: asked.maker, settings: { ...(linked ? {} : initial[asked.maker]), ...asked.settings } };
+  }
+
+  const api = { makers, formats, options, groups, leftOut, cdn, entriesFor, attributesFor, embedAddress, frameSide, codeFor, toAddress, fromAddress, restoreState, validateCoverage,
+    allCode: (maker, list, settings) => Object.fromEntries(specFor(maker).formats.map((format) => [format, codeFor(maker, format, list, settings)])),
+    liveFor: (maker, list, settings) => ({ call: entriesFor(list, settings, maker), attrs: specFor(maker).element === undefined ? [] : attributesFor(list, settings, maker) }),
+  };
+  function mount({ words, language = globalThis.familyLanguage, renderPreview,
+    initial = {}, colourDefault = (option) => option.default ?? "#000000", classPrefix = "family-bld" } = {}) {
+  if (typeof language !== "function" || typeof renderPreview !== "function") throw new Error("A builder needs a language helper and live preview renderer");
+    const $ = (id) => globalThis.document.getElementById(id);
+
+    const WORDS = { en: { ...FAMILY_EMBED_BUILDER_WORDS.en, ...words.en }, ja: { ...FAMILY_EMBED_BUILDER_WORDS.ja, ...words.ja } };
+    const START = initial;
+    const optionList = api.options;
+    const optionGroups = api.groups;
+    const makerList = api.makers;
+    const formatList = api.formats;
+    const { codeFor, toAddress } = api;
+    const asked = restoreState(globalThis.location.hash, START, optionList);
+    let maker = asked.maker;
+    let settings = asked.settings;
+    let format = new globalThis.URLSearchParams(globalThis.location.hash.replace(/^#/, "")).get("show") ?? "";
+    let preview = null;
+    let previewKey = "";
+    let typing = 0;
+
+    const page = language({ id: config.id, words: WORDS, onChange: () => draw() });
+    const say = (key, values = {}) => Object.entries(values).reduce((text, [name, value]) => text.replaceAll(`{${name}}`, String(value)), WORDS[page.lang]?.[key] ?? page.word(key) ?? key);
+
+    const spec = () => makerList[maker];
+    /** Whether a choice is there for the way of making a preview chosen. */
+    const applies = (option) => option.names[spec().names] !== undefined || (spec().element !== undefined && option.names[spec().element] !== undefined);
+    const valueOf = (option) => settings[option.id] ?? option.default;
+    const unit = (option) => config.unit?.(option) ?? option.unit ?? "";
+
+    function drawPreview() {
+      const stage = $("bld-stage");
+      const state = api.liveFor(maker, optionList, settings);
+      const key = JSON.stringify([maker, state.call.map(({ name, value }) => [name, value]), state.attrs]);
+      if (key === previewKey) return;
+      previewKey = key;
+      preview?.destroy?.();
+      stage.dataset.maker = maker;
+      stage.replaceChildren();
+      const note = $("bld-note");
+      note.textContent = "";
+      preview = renderPreview({ stage, maker, settings, call: state.call, attrs: state.attrs, note, say });
+    }
+
+    function drawCode() {
+      const formats = spec().formats;
+      if (!formats.includes(format)) format = formats[0];
+      const tabs = $("bld-formats");
+      tabs.replaceChildren(
+        ...formats.map((name) => {
+          const tab = globalThis.document.createElement("button");
+          tab.type = "button";
+          tab.setAttribute("role", "tab");
+          tab.id = `bld-tab-${name}`;
+          tab.dataset.format = name;
+          tab.setAttribute("aria-controls", "bld-panel");
+          tab.setAttribute("aria-selected", String(name === format));
+          tab.tabIndex = name === format ? 0 : -1;
+          tab.textContent = formatList[name].label[page.lang];
+          tab.addEventListener("click", () => {
+            format = name;
+            drawCode();
+            keepAddress();
+            // The tabs were drawn again, so the focus is put back on the one now chosen.
+            $(`bld-tab-${format}`).focus();
+          });
+          tab.addEventListener("keydown", (event) => {
+            const at = formats.indexOf(format);
+            const to = event.key === "ArrowRight" ? Math.min(formats.length - 1, at + 1) : event.key === "ArrowLeft" ? Math.max(0, at - 1) : event.key === "Home" ? 0 : event.key === "End" ? formats.length - 1 : null;
+            if (to === null) return;
+            event.preventDefault();
+            format = formats[to];
+            drawCode();
+            keepAddress();
+            $(`bld-tab-${format}`).focus();
+          });
+          return tab;
+        }),
+      );
+      refreshCode();
+    }
+
+    function refreshCode() {
+      $("bld-panel").setAttribute("aria-labelledby", `bld-tab-${format}`);
+      $("bld-code").textContent = codeFor(maker, format, optionList, settings) ?? "";
+      $("bld-copy").disabled = $("bld-code").textContent === "";
+      $("bld-code").dataset.format = format;
+      $("bld-code").dataset.language = formatList[format].language;
+    }
+
+    function keepAddress() {
+      globalThis.history.replaceState(null, "", `#${toAddress(maker, optionList, settings)}&show=${format}`);
+    }
+
+    /** Something was chosen: the preview, the code and the address follow. Text being typed waits a moment for the next key. */
+    function changed(slowly = false) {
+      const now = () => {
+        drawPreview();
+        drawCode();
+        keepAddress();
+      };
+      globalThis.clearTimeout(typing);
+      if (slowly) typing = globalThis.setTimeout(now, 200);
+      else now();
+    }
+
+    /* ----- the controls, one for each choice the package offers ----- */
+
+    function setValue(option, value, slowly = false) {
+      if (value === undefined || value === "") delete settings[option.id];
+      else settings[option.id] = value;
+      keepAddress();
+      changed(slowly);
+    }
+
+    const labelFor = (option, control) => {
+      const label = globalThis.document.createElement("label");
+      label.textContent = option.say[page.lang].label;
+      label.htmlFor = control.id;
+      return label;
+    };
+    const helpFor = (option) => {
+      const line = globalThis.document.createElement("p");
+      line.className = "fam-fine";
+      line.textContent = option.say[page.lang].help;
+      if (option.default !== undefined && option.kind !== "moves") {
+        const shown = option.kind === "boolean" ? say(option.default ? "on" : "off") : `${option.default}${unit(option)}`;
+        line.textContent += ` ${say("defaultIs", { value: shown })}`;
+      }
+      return line;
+    };
+
+    function segmented(option, values, labelOf) {
+      const group = globalThis.document.createElement("div");
+      group.className = "fam-seg";
+      group.id = `opt-${option.id}`;
+      group.setAttribute("role", "group");
+      group.setAttribute("aria-label", option.say[page.lang].label);
+      const shown = () => String(settings[option.id] ?? "");
+      const made = [];
+      for (const value of values) {
+        const button = globalThis.document.createElement("button");
+        button.type = "button";
+        button.dataset.value = value;
+        button.textContent = labelOf(value);
+        const pressed = () => (value === "" ? settings[option.id] === undefined && option.default === undefined : shown() === value || (settings[option.id] === undefined && String(option.default) === value));
+        button.setAttribute("aria-pressed", String(pressed()));
+        button.addEventListener("click", () => {
+          setValue(option, value === "" ? undefined : option.kind === "number" ? Number(value) : value);
+          for (const other of made) other.setAttribute("aria-pressed", String(other.dataset.value === value));
+        });
+        made.push(button);
+        group.append(button);
+      }
+      return group;
+    }
+
+    function control(option) {
+      const box = globalThis.document.createElement("div");
+      box.className = `${classPrefix}-option`;
+      box.dataset.testid = `opt-${option.id}`;
+      box.dataset.option = option.id;
+      const name = option.say[page.lang].label;
+      let main;
+      if (option.kind === "boolean") {
+        main = globalThis.document.createElement("button");
+        main.type = "button";
+        main.className = "fam-button";
+        main.id = `opt-${option.id}`;
+        const draw = () => {
+          main.setAttribute("aria-pressed", String(Boolean(valueOf(option))));
+          main.textContent = `${name}${page.lang === "ja" ? "：" : ": "}${say(valueOf(option) ? "on" : "off")}`;
+        };
+        draw();
+        main.addEventListener("click", () => {
+          setValue(option, !valueOf(option));
+          draw();
+        });
+        box.append(main, helpFor(option));
+        return box;
+      }
+      if (option.kind === "choice" && option.control === "select") {
+        main = globalThis.document.createElement("select");
+        main.className = "fam-field";
+        main.id = `opt-${option.id}`;
+        for (const value of option.choices) {
+          const item = globalThis.document.createElement("option");
+          item.value = value;
+          item.textContent = displayChoice(option, page.lang, value);
+          main.append(item);
+        }
+        main.value = String(valueOf(option) ?? "");
+        main.addEventListener("change", () => setValue(option, main.value));
+        box.append(labelFor(option, main), main, helpFor(option));
+        return box;
+      }
+      if (option.kind === "choice") {
+        const values = [...(option.default === undefined ? [""] : []), ...option.choices];
+        main = segmented(option, values, (value) => (value === "" ? say("notSet") : displayChoice(option, page.lang, value)));
+        const heading = globalThis.document.createElement("span");
+        heading.className = "fam-label";
+        heading.id = `opt-${option.id}-label`;
+        heading.textContent = name;
+        main.setAttribute("aria-labelledby", heading.id);
+        main.removeAttribute("aria-label");
+        box.append(heading, main, helpFor(option));
+        return box;
+      }
+      if (option.kind === "number") {
+        const { min, max, step } = option.range;
+        if ((max - min) / step <= 6) {
+          main = segmented(option, Array.from({ length: Math.round((max - min) / step) + 1 }, (_, at) => String(min + at * step)), (value) => value);
+          const heading = globalThis.document.createElement("span");
+          heading.className = "fam-label";
+          heading.id = `opt-${option.id}-label`;
+          heading.textContent = name;
+          main.setAttribute("aria-labelledby", heading.id);
+          main.removeAttribute("aria-label");
+          box.append(heading, main, helpFor(option));
+          return box;
+        }
+        const row = globalThis.document.createElement("div");
+        row.className = `${classPrefix}-number`;
+        const number = globalThis.document.createElement("input");
+        number.type = "number";
+        number.className = "fam-field";
+        number.id = `opt-${option.id}`;
+        Object.assign(number, { min, max, step });
+        number.value = settings[option.id] === undefined ? "" : String(settings[option.id]);
+        number.placeholder = option.default === undefined ? say("notSet") : String(option.default);
+        const range = globalThis.document.createElement("input");
+        range.type = "range";
+        Object.assign(range, { min, max, step });
+        range.value = String(valueOf(option) ?? min);
+        range.setAttribute("aria-label", name);
+        range.addEventListener("input", () => {
+          number.value = range.value;
+          setValue(option, Number(range.value));
+        });
+        number.addEventListener("input", () => {
+          const parsed = Number(number.value);
+          if (number.value === "") setValue(option, undefined, true);
+          else if (Number.isFinite(parsed)) {
+            range.value = number.value;
+            setValue(option, Math.max(min, Math.min(max, parsed)), true);
+          }
+        });
+        row.append(number, range);
+        box.append(labelFor(option, number), row, helpFor(option));
+        return box;
+      }
+      if (option.kind === "colour") {
+        const row = globalThis.document.createElement("div");
+        row.className = `${classPrefix}-colour`;
+        const input = globalThis.document.createElement("input");
+        input.type = "color";
+        input.id = `opt-${option.id}`;
+        const fallback = () => colourDefault(option);
+        input.value = settings[option.id] ?? fallback();
+        const clear = globalThis.document.createElement("button");
+        clear.type = "button";
+        clear.className = "fam-button";
+        clear.textContent = say("reset");
+        clear.hidden = settings[option.id] === undefined;
+        input.addEventListener("input", () => {
+          setValue(option, input.value);
+          clear.hidden = false;
+        });
+        clear.addEventListener("click", () => {
+          setValue(option, undefined);
+          input.value = fallback();
+          clear.hidden = true;
+        });
+        row.append(input, clear);
+        box.append(labelFor(option, input), row, helpFor(option));
+        return box;
+      }
+      const field = globalThis.document.createElement(option.kind === "moves" ? "textarea" : "input");
+      field.className = "fam-field";
+      field.id = `opt-${option.id}`;
+      if (option.kind === "moves") {
+        field.rows = 2;
+        field.dataset.mono = "true";
+        field.spellcheck = false;
+        field.autocapitalize = "off";
+      }
+      field.value = settings[option.id] ?? (option.kind === "moves" ? option.default : "");
+      field.addEventListener("input", () => setValue(option, field.value, true));
+      box.append(labelFor(option, field), field, helpFor(option));
+      return box;
+    }
+
+    function drawControls() {
+      const groups = $("bld-groups");
+      const order = Object.keys(optionGroups);
+      const made = [];
+      for (const group of order) {
+        const options = optionList.filter((option) => option.group === group && applies(option));
+        if (options.length === 0) continue;
+        const details = globalThis.document.createElement("details");
+        details.className = `fam-panel ${classPrefix}-group`;
+        details.open = true;
+        details.dataset.group = group;
+        const summary = globalThis.document.createElement("summary");
+        summary.textContent = optionGroups[group][page.lang];
+        const body = globalThis.document.createElement("div");
+        body.className = `${classPrefix}-options`;
+        const faces = options.filter((option) => option.kind === "colour");
+        for (const option of options.filter((one) => one.kind !== "colour")) body.append(control(option));
+        if (faces.length > 0) {
+          const grid = globalThis.document.createElement("div");
+          grid.className = `${classPrefix}-colours`;
+          for (const option of faces) grid.append(control(option));
+          body.append(grid);
+        }
+        details.append(summary, body);
+        made.push(details);
+      }
+      groups.replaceChildren(...made);
+    }
+
+    function draw() {
+      for (const button of $("bld-makers").children) button.setAttribute("aria-pressed", String(button.dataset.maker === maker));
+      $("bld-maker-says").textContent = say(spec().description);
+      drawControls();
+      previewKey = "";
+      changed();
+    }
+
+    for (const button of $("bld-makers").children) {
+      button.addEventListener("click", () => {
+        maker = button.dataset.maker;
+        settings = { ...START[maker], ...settings };
+        draw();
+      });
+    }
+    $("bld-reset").addEventListener("click", () => {
+      settings = { ...START[maker] };
+      draw();
+    });
+
+    const copy = async (text, into, word) => {
+      try {
+        await globalThis.navigator.clipboard.writeText(text);
+        into.textContent = say(word);
+      } catch {
+        into.textContent = "";
+      }
+    };
+    $("bld-copy").addEventListener("click", () => { changed(); if ($("bld-code").textContent !== "") void copy($("bld-code").textContent, $("bld-code-copied"), "copied"); });
+    $("bld-link").addEventListener("click", () => { keepAddress(); void copy(globalThis.location.href, $("bld-copied"), "linkCopied"); });
+
+    draw();
+    globalThis.document.documentElement.dataset.ready = "true";
+
+    return { get maker() { return maker; }, get settings() { return { ...settings }; },
+      draw, refreshCode, destroy() { globalThis.clearTimeout(typing); preview?.destroy?.(); },
+    };
+
+  }
+  api.mount = mount;
+  return api;
+}

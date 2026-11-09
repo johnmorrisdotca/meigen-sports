@@ -19,6 +19,8 @@ const NOT_COUNTED = [
   /(^|\/)__snapshots__\//,
   // Written by scripts/data.ts and scripts/offline.ts: the generators are the place to fix their size.
   /^src\/data\/(history|offline|quotes)\.ts$/,
+  // The family's shared copy, identical in every package, so it is not split here.
+  /^scripts\/family-template\.mjs$/,
 ];
 // File path -> its line count when it was listed. Why each is listed is in the board ticket named beside it.
 const KNOWN_OVER = {
